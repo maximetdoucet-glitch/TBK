@@ -35,7 +35,7 @@ export default function CategoryGrid() {
                        className="object-cover transition-transform group-hover:scale-110"
                     />
                  </div>
-                 <span className="font-montserrat text-[13px] font-bold uppercase tracking-widest text-[#2b3e51]">
+                 <span className="font-sans text-sm font-bold text-[#2b3e51]">
                     {cat.name}
                  </span>
               </div>

@@ -77,7 +77,7 @@ export default function ProductSlider() {
                       <Star key={i} className={cn("size-3 fill-current", i >= product.rating && "text-gray-200")} />
                     ))}
                   </div>
-                  <Link href={`/product/${product.id}`} className="font-montserrat text-xs font-bold uppercase tracking-widest mb-1 group-hover:text-primary transition-colors line-clamp-2">
+                  <Link href={`/product/${product.id}`} className="font-sans text-sm font-bold text-[#2b3e51] mb-1 group-hover:text-primary transition-colors line-clamp-2">
                     {product.name}
                   </Link>
                   <p className="text-[10px] text-gray-400 mb-3 italic">
