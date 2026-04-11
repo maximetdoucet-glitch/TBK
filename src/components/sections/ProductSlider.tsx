@@ -12,12 +12,12 @@ import { ArrowLeft, ArrowRight, Heart, ShoppingBag, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const PRODUCTS = [
-  { id: 1, name: "Rizla Vloei Oranje Box", price: "24.50", oldPrice: "29.95", image: "/images/rizla.png", rating: 5, category: "Vloei" },
-  { id: 2, name: "Zippo Street Chrome", price: "39.95", image: "/images/hero_zippo.png", rating: 4, category: "Zippo" },
-  { id: 3, name: "Mascotte Original Vloei Box", price: "12.20", image: "/images/vloei.png", rating: 5, category: "Vloei" },
-  { id: 4, name: "Clipper Classic - Set", price: "12.50", image: "/images/clipper.png", rating: 5, category: "Aanstekers" },
-  { id: 5, name: "Colibri V-Cut", price: "45.00", image: "/images/cutters.png", rating: 5, category: "Sigarenknippers" },
-  { id: 6, name: "BIC Maxi J26", price: "1.95", image: "/images/featured_1.png", rating: 4, category: "Aanstekers" },
+  { id: 1, name: "Rizla Vloei Oranje Box", description: "Volledige doos met 50 pakjes Rizla Oranje.", price: "24.50", oldPrice: "29.95", image: "/images/rizla.png", rating: 5, category: "Vloei" },
+  { id: 2, name: "Zippo Street Chrome", description: "Klassieke Zippo met een robuuste chrome afwerking.", price: "39.95", image: "/images/hero_zippo.png", rating: 4, category: "Zippo" },
+  { id: 3, name: "Mascotte Original Vloei Box", description: "Premium vloei van Nederlandse bodem.", price: "12.20", image: "/images/vloei.png", rating: 5, category: "Vloei" },
+  { id: 4, name: "Clipper Classic - Set", description: "Set van 4 iconische hervulbare aanstekers.", price: "12.50", image: "/images/clipper.png", rating: 5, category: "Aanstekers" },
+  { id: 5, name: "Colibri V-Cut", description: "Hoogwaardige sigarenknipper met diepe V-snede.", price: "45.00", image: "/images/cutters.png", rating: 5, category: "Sigarenknippers" },
+  { id: 6, name: "BIC Maxi J26", description: "De betrouwbaarste wegwerpaansteker ter wereld.", price: "1.95", image: "/images/featured_1.png", rating: 4, category: "Aanstekers" },
 ];
 
 export default function ProductSlider() {
@@ -77,9 +77,12 @@ export default function ProductSlider() {
                       <Star key={i} className={cn("size-3 fill-current", i >= product.rating && "text-gray-200")} />
                     ))}
                   </div>
-                  <Link href={`/product/${product.id}`} className="font-montserrat text-xs font-bold uppercase tracking-widest mb-2 group-hover:text-primary transition-colors line-clamp-2 min-h-[40px]">
+                  <Link href={`/product/${product.id}`} className="font-montserrat text-xs font-bold uppercase tracking-widest mb-1 group-hover:text-primary transition-colors line-clamp-2">
                     {product.name}
                   </Link>
+                  <p className="text-[10px] text-gray-400 mb-3 italic">
+                    {product.description}
+                  </p>
                   <p className="text-[10px] text-[#2b3e51]/40 uppercase font-bold tracking-[0.2em] mb-4">
                     {product.category}
                   </p>
