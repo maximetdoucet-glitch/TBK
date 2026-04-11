@@ -42,7 +42,7 @@ export default function BrandCarousel() {
           whileHover={{ animationPlayState: "paused" }}
         >
           {ALL_BRANDS.map((brand, i) => (
-             <div key={`${brand.name}-${i}`} className="relative h-16 w-32 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500 cursor-pointer">
+             <div key={`${brand.name}-${i}`} className="relative h-16 w-32 transition-all duration-500 cursor-pointer hover:scale-110">
                 <Image 
                    src={brand.image}
                    alt={brand.name}
