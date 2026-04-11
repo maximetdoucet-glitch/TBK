@@ -40,11 +40,11 @@ export default function Highlights() {
                 >
                    {/* Live Text Overlay for Zippo */}
                    <div className="flex-1 pr-4 z-10">
-                      <h3 className="font-montserrat text-2xl font-black text-[#2b3e51] mb-1 uppercase tracking-tighter leading-[0.9] group-hover:text-primary transition-colors">
-                         {item.title}
+                      <h3 className="font-montserrat text-3xl md:text-4xl font-black text-[#2b3e51] mb-2 uppercase tracking-tighter leading-none group-hover:text-primary transition-colors">
+                         ZIPPO<br />AANSTEKERS
                       </h3>
-                      <p className="text-[#2b3e51]/50 text-[10px] font-bold uppercase tracking-widest mb-6">
-                         {item.tagline}
+                      <p className="text-[#2b3e51]/60 text-[11px] font-bold uppercase tracking-widest mb-6">
+                         Verzamel ze allemaal
                       </p>
                       <Button className="bg-[#829e85] hover:bg-[#6b8e6b] text-white rounded-none h-10 px-6 font-bold uppercase tracking-widest text-[11px] shadow-sm transform transition-transform group-hover:scale-105">
                          Bekijk aanbod
