@@ -29,15 +29,15 @@ export default function Highlights() {
             <Link 
               key={item.title} 
               href={item.href}
-              className="bg-[#ebebeb] border border-gray-100 block transition-all hover:shadow-lg overflow-hidden relative min-h-[220px] group"
+              className="bg-[#ebebeb] border border-gray-100 block transition-all hover:shadow-lg overflow-hidden relative aspect-[820/450] group"
             >
-               {/* 1:1 Haddock's look: Image contains both the text and button */}
+               {/* 1:1 Haddock's look: Native 1.8:1 aspect ratio prevents word clipping */}
                <div className="absolute inset-0 z-0">
                   <Image 
                      src={item.image}
                      alt={item.title}
                      fill
-                     className="object-cover object-right transition-transform duration-700 group-hover:scale-105"
+                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                </div>
                
