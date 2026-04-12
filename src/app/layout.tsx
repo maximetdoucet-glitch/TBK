@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Montserrat, Open_Sans } from "next/font/google";
+import { Montserrat, Nunito_Sans } from "next/font/google";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -7,9 +7,9 @@ const montserrat = Montserrat({
   variable: "--font-montserrat",
 });
 
-const openSans = Open_Sans({
+const nunitoSans = Nunito_Sans({
   subsets: ["latin"],
-  variable: "--font-open-sans",
+  variable: "--font-nunito-sans",
 });
 
 export const metadata: Metadata = {
@@ -24,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="nl">
-      <body className={`${montserrat.variable} ${openSans.variable} font-sans antialiased`}>
+      <body className={`${montserrat.variable} ${nunitoSans.variable} font-sans antialiased`}>
         {children}
       </body>
     </html>
