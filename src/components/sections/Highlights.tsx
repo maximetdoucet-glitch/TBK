@@ -50,7 +50,7 @@ export default function Highlights() {
                         fontSize: "clamp(26px, 2.8vw, 36px)",
                         lineHeight: 0.95,
                         letterSpacing: "-0.04em",
-                        color: "#333333",
+                        color: "#5669aa",
                         textTransform: "uppercase" as const,
                       }}>
                          {item.title_line1}<br />{item.title_line2}
@@ -60,7 +60,7 @@ export default function Highlights() {
                         fontFamily: "'Nunito Sans', 'Helvetica', 'Arial', sans-serif",
                         fontWeight: 400,
                         fontSize: "13px",
-                        color: "#333333",
+                        color: "#5669aa",
                         marginTop: "8px",
                         marginBottom: "20px",
                       }}>
