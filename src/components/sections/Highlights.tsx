@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
 
 const HIGHLIGHTS = [
   {
@@ -32,28 +31,28 @@ export default function Highlights() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {HIGHLIGHTS.map((item) => {
             if (item.type === "custom") {
-              // Zippo box: same aspect ratio as Haddock banners, matching typography
+              // Zippo box: exact Haddock's styling
               return (
                 <Link 
                   key={item.title} 
                   href={item.href}
                   className="bg-[#f2f2f2] border border-gray-100 flex items-center justify-between aspect-[820/450] group transition-all hover:shadow-lg overflow-hidden relative px-8 md:px-10"
                 >
-                   {/* Text - Matching Haddock's condensed bold style */}
+                   {/* Text - Exact Haddock's: Montserrat Black, uppercase, #2b3e51, tight tracking */}
                    <div className="flex-1 pr-4 z-10">
-                      <h3 className="font-montserrat text-[28px] md:text-[32px] font-black text-[#2b3e51] mb-1 uppercase tracking-tighter leading-[1.05]">
+                      <h3 style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 900, letterSpacing: "-0.05em", lineHeight: 1.05, color: "#2b3e51", textTransform: "uppercase" as const, fontSize: "clamp(24px, 2.5vw, 34px)" }}>
                          ZIPPO<br />AANSTEKERS
                       </h3>
-                      <p className="text-[#2b3e51]/50 text-[11px] font-medium mb-5">
+                      <p style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 400, color: "#2b3e51", fontSize: "13px", marginTop: "6px", marginBottom: "18px" }}>
                          Verzamel ze allemaal
                       </p>
-                      <button className="bg-[#7b927a] hover:bg-[#6b8e6b] text-white px-5 py-2.5 text-[11px] font-bold uppercase tracking-wide rounded-sm transition-colors">
+                      <button style={{ backgroundColor: "#7b927a", color: "#ffffff", fontFamily: "'Montserrat', sans-serif", fontWeight: 700, fontSize: "12px", padding: "10px 20px", border: "none", cursor: "pointer", textTransform: "uppercase" as const, letterSpacing: "0.02em" }} className="hover:brightness-90 transition-all">
                          Bekijk aanbod
                       </button>
                    </div>
 
-                   {/* Image - blended into background */}
-                   <div className="relative w-36 md:w-44 h-full flex-shrink-0 z-0 group-hover:scale-105 transition-transform duration-700">
+                   {/* Image - Clean white background Zippos, blended into #f2f2f2 box */}
+                   <div className="relative w-40 md:w-48 h-full flex-shrink-0 z-0 group-hover:scale-105 transition-transform duration-700">
                       <Image 
                          src={item.image}
                          alt={item.title}
