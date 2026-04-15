@@ -21,27 +21,27 @@ const ARTICLES = [
 
 export default function ArticleSection() {
   return (
-    <section className="bg-white py-16 border-t border-gray-100">
-      <div className="container mx-auto max-w-[1300px] px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
+    <section className="bg-white py-12 sm:py-16 border-t border-gray-100">
+      <div className="container mx-auto max-w-[1300px] px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-10">
           {ARTICLES.map((article) => (
-             <Link key={article.title} href={article.href} className="flex gap-6 group">
-                <div className="relative size-32 md:size-48 flex-shrink-0 overflow-hidden rounded-full border-4 border-gray-100 bg-gray-50">
-                   <Image 
+             <Link key={article.title} href={article.href} className="flex gap-5 group">
+                <div className="relative size-24 sm:size-36 md:size-44 flex-shrink-0 overflow-hidden rounded-full border-4 border-gray-100 bg-gray-50">
+                   <Image
                       src={article.image}
                       alt={article.title}
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-110"
                    />
                 </div>
-                <div className="flex flex-col justify-center">
-                   <h3 className="font-montserrat text-lg font-black text-[#2b3e51] mb-2 uppercase tracking-tight group-hover:text-primary transition-colors">
+                <div className="flex flex-col justify-center min-w-0">
+                   <h3 className="text-base font-semibold text-[#2b3e51] mb-2 leading-snug group-hover:text-primary transition-colors line-clamp-2">
                       {article.title}
                    </h3>
-                   <p className="text-[#2b3e51]/60 text-xs leading-relaxed mb-4 font-bold line-clamp-3">
+                   <p className="text-[#2b3e51]/50 text-xs leading-relaxed mb-4 line-clamp-3">
                       {article.excerpt}
                    </p>
-                   <span className="text-[10px] font-bold uppercase tracking-widest text-[#2b3e51] border-b border-[#2b3e51] w-max pb-1 group-hover:text-primary group-hover:border-primary transition-all">
+                   <span className="text-xs font-medium text-[#2b3e51] border-b border-[#2b3e51] w-max pb-0.5 group-hover:text-primary group-hover:border-primary transition-all">
                       Lees meer
                    </span>
                 </div>

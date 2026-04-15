@@ -24,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="nl">
-      <body className={`${montserrat.variable} ${nunitoSans.variable} font-sans antialiased`}>
+      <body className={`${montserrat.variable} ${nunitoSans.variable} antialiased`} style={{ fontFamily: "var(--font-nunito-sans), sans-serif" }}>
         {children}
       </body>
     </html>

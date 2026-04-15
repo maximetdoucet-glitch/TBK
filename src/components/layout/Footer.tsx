@@ -5,7 +5,7 @@ import { ArrowUpRight, MapPin, Phone, Mail } from "lucide-react";
 export default function Footer() {
   return (
     <footer className="bg-[#2b3e51] py-24 text-white">
-      <div className="container mx-auto max-w-[1300px] px-4">
+      <div className="container mx-auto max-w-[1300px] px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
           {/* Brand Info */}
           <div className="flex flex-col gap-8">

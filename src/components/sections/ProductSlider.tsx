@@ -22,8 +22,8 @@ const PRODUCTS = [
 
 export default function ProductSlider() {
   return (
-    <section className="bg-white py-16 overflow-hidden">
-      <div className="container mx-auto max-w-[1300px] px-4">
+    <section className="bg-white py-12 sm:py-16 overflow-hidden">
+      <div className="container mx-auto max-w-[1300px] px-4 sm:px-6 lg:px-8">
         {/* Header with Arrows Top-Right */}
         <div className="flex justify-between items-center mb-12 border-b border-gray-100 pb-6">
           <h2 className="font-montserrat text-3xl font-black text-[#2b3e51] uppercase tracking-tighter">

@@ -23,8 +23,8 @@ const ALL_BRANDS = [...BRANDS, ...BRANDS];
 export default function BrandCarousel() {
   return (
     <section className="bg-white py-20 border-t border-gray-100 overflow-hidden">
-      <div className="container mx-auto max-w-[1300px] px-4 mb-12">
-        <h2 className="font-montserrat text-2xl font-black text-[#2b3e51] uppercase tracking-tighter mb-4">
+      <div className="container mx-auto max-w-[1300px] px-4 sm:px-6 lg:px-8 mb-10">
+        <h2 className="text-xl font-semibold text-[#2b3e51] mb-4">
            Onze merken
         </h2>
         <div className="flex h-1.5 w-24 bg-[#829e85]" />

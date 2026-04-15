@@ -9,7 +9,7 @@ const HIGHLIGHTS = [
     title_line2: "AANSTEKERS",
     tagline: "Verzamel ze allemaal",
     image: "/images/tbk-highlight-zippos.png",
-    href: "/category/zippo",
+    href: "/aanstekers",
   },
   {
     type: "haddock",
@@ -17,7 +17,7 @@ const HIGHLIGHTS = [
     title_line2: "",
     tagline: "",
     image: "/images/haddock-banner-vloei.png",
-    href: "/category/vloei",
+    href: "/aanstekers",
   },
   {
     type: "haddock",
@@ -25,14 +25,14 @@ const HIGHLIGHTS = [
     title_line2: "",
     tagline: "",
     image: "/images/haddock-banner-cutters.png",
-    href: "/category/sigarenknippers",
+    href: "/aanstekers",
   },
 ];
 
 export default function Highlights() {
   return (
-    <section className="bg-white py-12">
-      <div className="container mx-auto max-w-[1300px] px-4">
+    <section className="bg-white pb-10 sm:pb-12">
+      <div className="container mx-auto max-w-[1300px] px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {HIGHLIGHTS.map((item, idx) => {
             if (item.type === "custom") {

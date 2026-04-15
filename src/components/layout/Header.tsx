@@ -18,7 +18,7 @@ export default function Header() {
   return (
     <header className="w-full bg-white">
       {/* Top Header: Logo, Search, Actions */}
-      <div className="container mx-auto max-w-[1300px] px-4 py-6 flex items-center justify-between gap-8">
+      <div className="container mx-auto max-w-[1300px] px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between gap-4 md:gap-8">
         {/* Typographic Logo */}
         <Link href="/" className="flex flex-col items-center">
           <span className="font-montserrat text-3xl font-black tracking-[0.1em] text-[#2b3e51] leading-none uppercase">
@@ -29,8 +29,8 @@ export default function Header() {
           </span>
         </Link>
 
-        {/* Search Bar - Haddock Style */}
-        <div className="hidden md:flex flex-1 max-w-xl relative">
+        {/* Search Bar */}
+        <div className="flex flex-1 max-w-xl relative">
           <Input 
             placeholder="Zoeken.." 
             className="w-full h-11 pl-4 pr-12 rounded-full border-gray-200 focus:border-primary focus:ring-0 text-sm"
@@ -67,11 +67,36 @@ export default function Header() {
                   <Menu className="size-6" />
                 </Button>
               } />
-              <SheetContent side="left" className="w-[300px]">
+              <SheetContent side="left" className="w-[280px] flex flex-col">
                 <SheetHeader>
-                   <SheetTitle>Menu</SheetTitle>
+                  <SheetTitle className="font-montserrat text-lg font-black tracking-widest text-[#2b3e51] uppercase text-left">Menu</SheetTitle>
                 </SheetHeader>
-                {/* Mobile nav content */}
+                <nav className="flex flex-col mt-6 divide-y divide-gray-100">
+                  {[
+                    { label: "Zippo aanstekers", href: "#" },
+                    { label: "Aanstekers", href: "/aanstekers" },
+                    { label: "Vloei", href: "#" },
+                    { label: "Sigarenknippers", href: "#" },
+                    { label: "Bekijk alles", href: "#" },
+                    { label: "Sale", href: "#" },
+                  ].map((item) => (
+                    <Link
+                      key={item.label}
+                      href={item.href}
+                      className="py-4 text-sm font-medium text-[#2b3e51] hover:text-primary transition-colors"
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </nav>
+                <div className="mt-auto pt-6 border-t border-gray-100 flex flex-col gap-3">
+                  <Link href="#" className="flex items-center gap-3 text-sm text-gray-500 hover:text-[#2b3e51] transition-colors">
+                    <User className="size-4" /> Mijn account
+                  </Link>
+                  <Link href="#" className="flex items-center gap-3 text-sm text-gray-500 hover:text-[#2b3e51] transition-colors">
+                    <Heart className="size-4" /> Verlanglijst
+                  </Link>
+                </div>
               </SheetContent>
             </Sheet>
           </div>
@@ -80,19 +105,25 @@ export default function Header() {
 
       {/* Main Navigation Bar */}
       <nav className="w-full bg-[#2b3e51] text-white">
-        <div className="container mx-auto max-w-[1300px] px-4 flex items-center justify-between h-12">
+        <div className="container mx-auto max-w-[1300px] px-4 sm:px-6 lg:px-8 flex items-center justify-between h-12">
           <div className="flex items-center h-full">
             <Button className="bg-[#f39c12] hover:bg-[#e67e22] text-white rounded-none h-full px-6 font-bold uppercase tracking-widest text-[11px] flex items-center gap-2">
               Assortiment <ChevronDown className="size-4" />
             </Button>
             <div className="hidden lg:flex items-center h-full ml-4">
-               {["Zippo aanstekers", "Aanstekers", "Vloei", "Sigarenknippers", "Bekijk alles"].map((item) => (
-                 <Link 
-                   key={item} 
-                   href="#" 
+               {[
+                 { label: "Zippo aanstekers", href: "#" },
+                 { label: "Aanstekers", href: "/aanstekers" },
+                 { label: "Vloei", href: "#" },
+                 { label: "Sigarenknippers", href: "#" },
+                 { label: "Bekijk alles", href: "#" },
+               ].map((item) => (
+                 <Link
+                   key={item.label}
+                   href={item.href}
                    className="px-6 h-full flex items-center text-[11px] font-bold uppercase tracking-widest hover:bg-white/10 transition-colors"
                  >
-                   {item}
+                   {item.label}
                  </Link>
                ))}
             </div>
@@ -108,20 +139,23 @@ export default function Header() {
         </div>
       </nav>
 
-      {/* USP Bar - Haddock's Style (Below Nav) */}
-      <div className="w-full bg-[#f8f8f8] border-b border-gray-100 py-3">
-        <div className="container mx-auto max-w-[1300px] px-4 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] font-bold uppercase tracking-[0.1em] text-gray-500">
-          <div className="flex items-center gap-2">
-            <Check className="size-4 text-primary" />
-            <span><span className="text-gray-900">Gratis verzending</span> vanaf € 80,- (NL) & € 100,- (BE)</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Check className="size-4 text-primary" />
-            <span><span className="text-gray-900">Op werkdagen voor 16:00 uur besteld</span>, dezelfde dag verstuurd*</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Check className="size-4 text-primary" />
-            <span><span className="text-gray-900">Gratis retourneren</span> binnen Nederland</span>
+      {/* USP Bar */}
+      <div className="w-full bg-[#f8f8f8] border-b border-gray-100 py-2.5 overflow-hidden">
+        <div className="container mx-auto max-w-[1300px] px-4 sm:px-6 lg:px-8">
+          {/* Mobile: single scrollable row */}
+          <div className="flex items-center gap-6 overflow-x-auto scrollbar-none md:justify-between text-[10px] font-bold uppercase tracking-[0.1em] text-gray-500 whitespace-nowrap">
+            <div className="flex items-center gap-2 shrink-0">
+              <Check className="size-3.5 text-primary shrink-0" />
+              <span><span className="text-gray-900">Gratis verzending</span> vanaf € 80,-</span>
+            </div>
+            <div className="flex items-center gap-2 shrink-0">
+              <Check className="size-3.5 text-primary shrink-0" />
+              <span><span className="text-gray-900">Voor 16:00 besteld</span>, dezelfde dag verstuurd</span>
+            </div>
+            <div className="flex items-center gap-2 shrink-0">
+              <Check className="size-3.5 text-primary shrink-0" />
+              <span><span className="text-gray-900">Gratis retourneren</span> binnen Nederland</span>
+            </div>
           </div>
         </div>
       </div>
