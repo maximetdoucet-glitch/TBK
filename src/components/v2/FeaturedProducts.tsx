@@ -14,6 +14,20 @@ function badgeColor(badge: string | null | undefined) {
   return "#829e85";
 }
 
+function getCardBg(product: Product): string {
+  const brand = product.brand?.toLowerCase() ?? "";
+  const cat = (product.xmlCategory ?? product.category ?? "").toLowerCase();
+  if (brand === "zippo") return "/images/categories/zippo.jpg";
+  if (brand === "clipper") return "/images/categories/clipper.jpg";
+  if (cat.includes("jetflame") || cat.includes("e-sigaret") || ["smok","vaporesso","voopoo","aspire","lost vape"].includes(brand))
+    return "/images/categories/jetflame.jpg";
+  if (cat.includes("humidor") || brand === "adorini") return "/images/categories/humidors.jpg";
+  if (cat.includes("knipper") || cat.includes("cutter")) return "/images/categories/knippers.jpg";
+  if (cat.includes("koker") || cat.includes("tube")) return "/images/categories/kokers.jpg";
+  if (cat.includes("vloei") || cat.includes("filter") || cat.includes("liquid")) return "/images/categories/vloei.jpg";
+  return "/images/categories/zippo.jpg";
+}
+
 // Curated featured product IDs (Zippo + accessories + e-sig)
 const FEATURED_IDS = [156, 33, 151, 48, 421, 414, 331, 528];
 
@@ -58,6 +72,7 @@ function ProductCard({ product }: { product: Product }) {
   const [addedToCart, setAddedToCart] = useState(false);
 
   const price = parseFloat(product.price);
+  const bg = getCardBg(product);
 
   const handleCart = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -70,12 +85,25 @@ function ProductCard({ product }: { product: Product }) {
       href={`/product/${product.id}`}
       className="group flex flex-col bg-white border border-gray-100 rounded-xl overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
     >
-      <div className="relative bg-gray-50 aspect-square overflow-hidden">
+      <div className="relative aspect-square overflow-hidden">
+        {/* Atmospheric background image */}
+        <Image
+          src={bg}
+          alt=""
+          fill
+          className="object-cover scale-105 group-hover:scale-110 transition-transform duration-700 blur-[2px]"
+          unoptimized
+          aria-hidden
+        />
+        {/* Dark overlay so product stands out */}
+        <div className="absolute inset-0 bg-[#1a2535]/60 group-hover:bg-[#1a2535]/50 transition-colors duration-500" />
+        {/* Product image on top */}
         <Image
           src={product.image}
           alt={product.name}
           fill
-          className="object-contain p-6 transition-transform duration-500 group-hover:scale-105"
+          className="relative object-contain p-6 transition-transform duration-500 group-hover:scale-105 drop-shadow-2xl"
+          style={{ zIndex: 1 }}
           unoptimized
         />
         {product.badge && (
