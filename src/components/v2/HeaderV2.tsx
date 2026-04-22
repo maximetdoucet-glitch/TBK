@@ -92,11 +92,9 @@ const CURRENCIES = [
 ];
 
 const NAV_ITEMS = [
-  { label: "Zippo aanstekers", href: "#" },
   { label: "Aanstekers", href: "/aanstekers" },
-  { label: "Vloei & Filters", href: "#" },
-  { label: "Sigarenknippers", href: "#" },
   { label: "Accessoires", href: "#" },
+  { label: "E-liquids", href: "#" },
   { label: "Sale", href: "#", accent: true },
 ];
 
@@ -104,24 +102,25 @@ const MEGA_MENU = [
   {
     title: "Aanstekers",
     items: [
-      { label: "Zippo aanstekers", href: "#", image: "/images/categories/zippo.jpg" },
-      { label: "Clipper aanstekers", href: "#", image: "/images/categories/clipper.jpg" },
-      { label: "Jetflame aanstekers", href: "#", image: "/images/categories/jetflame.jpg" },
+      { label: "Zippo aanstekers", href: "/aanstekers", image: "https://www.uegholland.com/media/catalog/product/_/0/_0140_60007371.jpg" },
+      { label: "Clipper & regulier", href: "/aanstekers", image: "https://www.uegholland.com/media/catalog/product/1/8/189079-3.jpg" },
+      { label: "Zippo accessoires", href: "#", image: "https://www.uegholland.com/media/catalog/product/z/i/zippo_butane_1__1_25.jpg" },
     ],
   },
   {
-    title: "Roken",
+    title: "Accessoires",
     items: [
-      { label: "Vloei", href: "#", image: "/images/categories/vloei.jpg" },
-      { label: "Hulzen", href: "#", image: "/images/categories/hulzen.jpg" },
-      { label: "Sigarettenkokers", href: "#", image: "/images/categories/kokers.jpg" },
+      { label: "Sigaretten-accessoires", href: "#", image: "https://www.uegholland.com/media/catalog/product/9/7/970713_18.jpg" },
+      { label: "Sigaren-accessoires", href: "#", image: "https://www.uegholland.com/media/catalog/product/2/7/270078_1_22.jpg" },
+      { label: "Asbakken & kokers", href: "#", image: "https://www.uegholland.com/media/catalog/product/2/7/279803_1_33.jpg" },
     ],
   },
   {
-    title: "Sigaren",
+    title: "E-liquids",
     items: [
-      { label: "Sigarenknippers", href: "#", image: "/images/categories/knippers.jpg" },
-      { label: "Humidors", href: "#", image: "/images/categories/humidors.jpg" },
+      { label: "Filter capsules", href: "#", image: "https://www.uegholland.com/media/catalog/product/a/r/aroma-king-flavour-balls-watermelon-mint_40.jpg" },
+      { label: "Aromas & bases", href: "#", image: "https://www.uegholland.com/media/catalog/product/9/7/970713_18.jpg" },
+      { label: "Nic salts", href: "#", image: "https://www.uegholland.com/media/catalog/product/a/r/aroma-king-flavour-balls-watermelon-mint_40.jpg" },
     ],
   },
 ];

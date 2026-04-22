@@ -6,8 +6,8 @@ import { cn } from "@/lib/utils";
 
 const STATS = [
   { value: "1928", label: "Opgericht" },
-  { value: "1400+", label: "Zippo modellen" },
-  { value: "96 jaar", label: "Vakmanschap" },
+  { value: "185+", label: "Zippo modellen" },
+  { value: "98 jaar", label: "Vakmanschap" },
   { value: "4.8 ★", label: "Google Reviews" },
 ];
 
