@@ -1,28 +1,26 @@
 import Header from "@/components/v2/HeaderV2";
 import Footer from "@/components/v2/FooterV2";
-import Hero from "@/components/sections/Hero";
-import Highlights from "@/components/sections/Highlights";
-import CategoryGrid from "@/components/sections/CategoryGrid";
-import ProductSlider from "@/components/sections/ProductSlider";
-import ArticleSection from "@/components/sections/ArticleSection";
+import PromoBar from "@/components/v2/PromoBar";
+import HeroCarousel from "@/components/v2/HeroCarousel";
+import CategoryShowcase from "@/components/v2/CategoryShowcase";
+import FeaturedProducts from "@/components/v2/FeaturedProducts";
 import BrandCarousel from "@/components/sections/BrandCarousel";
-import NewsletterSection from "@/components/sections/NewsletterSection";
-import SEOContent from "@/components/sections/SEOContent";
+import AboutSection from "@/components/v2/AboutSection";
+import EmailCTA from "@/components/v2/EmailCTA";
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
+      <PromoBar />
       <Header />
       <main className="flex-1">
-        <Hero />
-        <Highlights />
-        <CategoryGrid />
-        <ProductSlider />
-        <ArticleSection />
+        <HeroCarousel />
+        <CategoryShowcase />
+        <FeaturedProducts />
         <BrandCarousel />
-        <NewsletterSection />
-        <SEOContent />
+        <AboutSection />
       </main>
+      <EmailCTA />
       <Footer />
     </div>
   );
