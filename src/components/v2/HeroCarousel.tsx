@@ -65,6 +65,20 @@ export default function HeroCarousel() {
         minHeight: "clamp(580px, 90vh, 780px)",
       }}
     >
+      {/* ── Background photo ── */}
+      <div aria-hidden className="absolute inset-0 pointer-events-none">
+        <Image
+          src="https://images.unsplash.com/photo-1734984099763-717aafbd419f?w=1600&q=85&fit=crop"
+          alt=""
+          fill
+          className="object-cover object-center"
+          style={{ opacity: 0.18 }}
+          priority
+          unoptimized
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0b0f14] via-[#0b0f14]/70 to-[#0b0f14]/50" />
+      </div>
+
       {/* ── Giant typographic backdrop ── */}
       <div
         aria-hidden
