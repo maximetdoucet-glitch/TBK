@@ -93,7 +93,8 @@ const CURRENCIES = [
 
 const NAV_ITEMS = [
   { label: "Aanstekers", href: "/aanstekers" },
-  { label: "Accessoires", href: "#" },
+  { label: "Rook-accessoires", href: "#" },
+  { label: "Vape-accessoires", href: "#" },
   { label: "E-liquids", href: "#" },
   { label: "Sale", href: "#", accent: true },
 ];
@@ -108,11 +109,19 @@ const MEGA_MENU = [
     ],
   },
   {
-    title: "Accessoires",
+    title: "Rook-accessoires",
     items: [
       { label: "Sigaretten-accessoires", href: "#", image: "https://www.uegholland.com/media/catalog/product/9/7/970713_18.jpg" },
       { label: "Sigaren-accessoires", href: "#", image: "https://www.uegholland.com/media/catalog/product/2/7/270078_1_22.jpg" },
       { label: "Asbakken & kokers", href: "#", image: "https://www.uegholland.com/media/catalog/product/2/7/279803_1_33.jpg" },
+    ],
+  },
+  {
+    title: "Vape-accessoires",
+    items: [
+      { label: "Coils & wicks", href: "#", image: "https://www.uegholland.com/media/catalog/product/j/o/joyetech-bfhn-ego-aio-eco-coils_1_1_15.jpg" },
+      { label: "Batterijen & opladers", href: "#", image: "https://www.uegholland.com/media/catalog/product/4/2/422831_23.jpg" },
+      { label: "Clearomizers & tanks", href: "#", image: "https://www.uegholland.com/media/catalog/product/b/a/base_1_13.png" },
     ],
   },
   {
