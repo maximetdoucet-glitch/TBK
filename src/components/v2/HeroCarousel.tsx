@@ -1,297 +1,289 @@
 "use client";
 
-import React, { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Flame, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { cn } from "@/lib/utils";
 
 const PRODUCTS = [
   {
     id: 156,
+    index: "01",
     name: "Vintage Street Chrome",
-    brand: "Zippo",
+    tagline: "Het klassieke model. Tijdloos, navulbaar, levenslange garantie.",
     price: "€ 44.90",
     image: "https://www.uegholland.com/media/catalog/product/6/0/60001317_22.jpg",
-    bg: "radial-gradient(ellipse at 60% 40%, #4a6fa5 0%, #1e3a5f 45%, #2b3e51 100%)",
-    accent: "#4a6fa5",
   },
   {
     id: 33,
+    index: "02",
     name: "Hunting Dog Design",
-    brand: "Zippo",
+    tagline: "Gegraveerd met precisie. Ideaal cadeau voor de buitenliefhebber.",
     price: "€ 49.90",
     image: "https://www.uegholland.com/media/catalog/product/_/0/_0140_60007371.jpg",
-    bg: "radial-gradient(ellipse at 55% 45%, #5c4a1e 0%, #3b2d0e 40%, #1a1208 100%)",
-    accent: "#c49a3c",
   },
   {
     id: 151,
+    index: "03",
     name: "Armor Case Brushed Chrome",
-    brand: "Zippo",
+    tagline: "Zwaardere behuizing. Gemaakt om generaties mee te gaan.",
     price: "€ 44.90",
     image: "https://www.uegholland.com/media/catalog/product/6/0/60000849_22.jpg",
-    bg: "radial-gradient(ellipse at 50% 40%, #2a3f55 0%, #16283a 45%, #0a141e 100%)",
-    accent: "#7ab3d4",
   },
   {
     id: 48,
+    index: "04",
     name: "Wild West Cowboy",
-    brand: "Zippo",
+    tagline: "Iconisch Amerikaans design. Een statement in je zak.",
     price: "€ 52.90",
     image: "https://www.uegholland.com/media/catalog/product/_/0/_0116_60007379.jpg",
-    bg: "radial-gradient(ellipse at 55% 45%, #6b3a1f 0%, #3d1f0a 45%, #1a0c04 100%)",
-    accent: "#d47a3c",
   },
   {
     id: 7,
+    index: "05",
     name: "Harley-Davidson Logo",
-    brand: "Zippo",
+    tagline: "Officiële licentie. Voor de rijder die zijn passie draagt.",
     price: "€ 72.90",
     image: "https://www.uegholland.com/media/catalog/product/6/0/60004741-5_18.jpg",
-    bg: "radial-gradient(ellipse at 55% 40%, #5c1a00 0%, #2e0d00 45%, #0f0400 100%)",
-    accent: "#e85d00",
   },
 ];
-
-const STATS = [
-  { value: "1400+", label: "Zippo modellen" },
-  { value: "98 jr", label: "vakmanschap" },
-  { value: "4.8★", label: "Google reviews" },
-];
-
-const variants = {
-  enter: (dir: number) => ({
-    x: dir > 0 ? 180 : -180,
-    opacity: 0,
-    scale: 0.85,
-  }),
-  center: {
-    x: 0,
-    opacity: 1,
-    scale: 1,
-  },
-  exit: (dir: number) => ({
-    x: dir > 0 ? -180 : 180,
-    opacity: 0,
-    scale: 0.85,
-  }),
-};
 
 export default function HeroCarousel() {
-  const [[active, direction], setActive] = useState([0, 0]);
+  const [active, setActive] = useState(0);
 
-  const go = useCallback((next: number, dir: number) => {
-    setActive([next, dir]);
+  const go = useCallback((i: number) => {
+    setActive(i);
   }, []);
 
-  const prev = () => go((active - 1 + PRODUCTS.length) % PRODUCTS.length, -1);
-  const next = useCallback(() => go((active + 1) % PRODUCTS.length, 1), [active, go]);
+  const next = useCallback(() => go((active + 1) % PRODUCTS.length), [active, go]);
 
   useEffect(() => {
-    const t = setTimeout(next, 5000);
+    const t = setTimeout(next, 6000);
     return () => clearTimeout(t);
   }, [active, next]);
 
-  const product = PRODUCTS[active];
+  const p = PRODUCTS[active];
 
   return (
-    <section className="relative bg-[#111c27] overflow-hidden min-h-[580px] md:min-h-[660px] flex items-center">
+    <section
+      className="relative overflow-hidden flex items-center"
+      style={{
+        background: "#0b0f14",
+        minHeight: "clamp(580px, 90vh, 780px)",
+      }}
+    >
+      {/* ── Giant typographic backdrop ── */}
+      <div
+        aria-hidden
+        className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden"
+      >
+        <span
+          className="font-montserrat font-black text-white leading-none tracking-tighter"
+          style={{ fontSize: "clamp(120px, 22vw, 340px)", opacity: 0.025 }}
+        >
+          ZIPPO
+        </span>
+      </div>
 
-      {/* Glow blobs */}
-      <div className="absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full bg-[#f5a623]/8 blur-[120px] pointer-events-none" />
-      <div className="absolute top-1/2 right-[10%] -translate-y-1/2 w-[560px] h-[560px] rounded-full bg-[#f5a623]/10 blur-[90px] pointer-events-none" />
+      {/* ── Subtle horizontal scan line ── */}
+      <div className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: "repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(255,255,255,0.008) 3px, rgba(255,255,255,0.008) 4px)",
+        }}
+      />
 
-      <div className="relative z-10 max-w-[1300px] mx-auto px-6 sm:px-10 lg:px-16 w-full py-16 md:py-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-6 items-center">
+      {/* ── Left edge: vertical label ── */}
+      <div className="absolute left-5 top-1/2 -translate-y-1/2 hidden lg:flex flex-col items-center gap-3 z-20">
+        <div className="w-px h-16 bg-white/15" />
+        <span
+          className="text-[9px] font-black uppercase tracking-[0.4em] text-white/25"
+          style={{ writingMode: "vertical-rl", transform: "rotate(180deg)" }}
+        >
+          Sinds 1932
+        </span>
+        <div className="w-px h-16 bg-white/15" />
+      </div>
 
-          {/* ── Left: Text ── */}
-          <motion.div
-            initial={{ opacity: 0, x: -28 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            className="flex flex-col gap-6 max-w-lg"
-          >
-            <div className="flex items-center gap-2">
-              <Flame className="size-3.5 text-[#f5a623]" />
-              <span className="text-[10px] font-black uppercase tracking-[0.4em] text-[#f5a623]">
-                Nijmegen&apos;s aansteker specialist
+      {/* ── Main layout ── */}
+      <div className="relative z-10 w-full max-w-[1300px] mx-auto px-8 sm:px-12 lg:px-20 py-16">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_420px_220px] gap-8 lg:gap-0 items-center">
+
+          {/* ── Col 1: Copy ── */}
+          <div className="flex flex-col gap-8 pr-0 lg:pr-12">
+
+            {/* Eyebrow */}
+            <div className="flex items-center gap-3">
+              <div className="h-px w-8 bg-white/30" />
+              <span className="text-[10px] font-black uppercase tracking-[0.45em] text-white/40">
+                Nijmegen · Nederland
               </span>
             </div>
 
-            <div>
-              <h1 className="font-montserrat font-black leading-[0.88] tracking-tighter text-white">
-                <span className="block text-6xl sm:text-7xl lg:text-8xl">1400+</span>
-                <span className="block text-5xl sm:text-6xl lg:text-7xl text-white/90">Zippo</span>
-                <span className="block text-5xl sm:text-6xl lg:text-7xl text-[#f5a623]">Aanstekers</span>
-              </h1>
-              <div className="mt-5 h-[3px] w-20 bg-[#f5a623]" />
+            {/* Headline */}
+            <div className="flex flex-col">
+              <span
+                className="font-montserrat font-black text-white leading-[0.85] tracking-tighter"
+                style={{ fontSize: "clamp(52px, 8vw, 108px)" }}
+              >
+                1400+
+              </span>
+              <span
+                className="font-montserrat font-black text-white/80 leading-[0.85] tracking-tighter"
+                style={{ fontSize: "clamp(36px, 5.5vw, 72px)" }}
+              >
+                Aanstekers
+              </span>
+              <span
+                className="font-montserrat font-black text-white/30 leading-[0.85] tracking-tighter mt-1"
+                style={{ fontSize: "clamp(20px, 3vw, 38px)" }}
+              >
+                in één collectie
+              </span>
             </div>
 
-            <p className="text-white/55 text-[15px] leading-relaxed font-medium">
-              De grootste collectie van de regio — elk model, elk ontwerp.
-              Online besteld, morgen in huis.
-            </p>
+            {/* Active product tagline */}
+            <AnimatePresence mode="wait">
+              <motion.p
+                key={active}
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -8 }}
+                transition={{ duration: 0.4 }}
+                className="text-white/45 text-[14px] leading-relaxed max-w-xs font-medium"
+              >
+                {p.tagline}
+              </motion.p>
+            </AnimatePresence>
 
-            <div className="flex flex-wrap items-center gap-3 pt-1">
+            {/* CTA — minimal, no button shape */}
+            <div className="flex items-center gap-8">
               <Link
                 href="/aanstekers"
-                className="inline-flex items-center gap-2.5 px-8 py-4 bg-[#f5a623] hover:bg-[#e8b355] text-white font-black uppercase tracking-widest text-[11px] rounded-lg transition-all duration-300 group hover:gap-3.5"
+                className="group flex items-center gap-3 text-white font-black uppercase tracking-[0.2em] text-[11px] hover:gap-4 transition-all duration-300"
               >
+                <span className="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center group-hover:bg-white group-hover:border-white transition-all duration-300">
+                  <ArrowRight className="size-3.5 group-hover:text-[#0b0f14] transition-colors" />
+                </span>
                 Bekijk collectie
-                <ArrowRight className="size-4 group-hover:translate-x-0.5 transition-transform" />
               </Link>
               <Link
                 href="#"
-                className="inline-flex items-center gap-2 px-8 py-4 border border-white/15 hover:border-white/40 text-white/60 hover:text-white font-bold uppercase tracking-widest text-[11px] rounded-lg transition-all duration-300"
+                className="text-[11px] font-bold uppercase tracking-[0.2em] text-white/30 hover:text-white/60 transition-colors"
               >
                 Onze merken
               </Link>
             </div>
 
-            <div className="flex items-center gap-6 pt-2 border-t border-white/8">
-              {STATS.map((s, i) => (
-                <React.Fragment key={s.label}>
-                  <div className="flex flex-col">
-                    <span className="font-montserrat text-xl font-black text-white tracking-tight">{s.value}</span>
-                    <span className="text-[10px] text-white/35 uppercase tracking-wider font-bold">{s.label}</span>
-                  </div>
-                  {i < STATS.length - 1 && <div className="h-8 w-px bg-white/10" />}
-                </React.Fragment>
+            {/* Stats */}
+            <div className="flex items-center gap-7 pt-2">
+              {[
+                { v: "1400+", l: "modellen" },
+                { v: "98 jr", l: "vakmanschap" },
+                { v: "4.8★", l: "reviews" },
+              ].map((s) => (
+                <div key={s.l} className="flex flex-col">
+                  <span className="font-montserrat text-lg font-black text-white tracking-tight">{s.v}</span>
+                  <span className="text-[9px] text-white/30 uppercase tracking-widest font-bold">{s.l}</span>
+                </div>
               ))}
             </div>
-          </motion.div>
+          </div>
 
-          {/* ── Right: Product Carousel ── */}
-          <div className="flex flex-col items-center gap-6">
+          {/* ── Col 2: Product ── */}
+          <div className="relative flex items-center justify-center h-[380px] lg:h-[480px]">
 
-            {/* Card + arrows row */}
-            <div className="flex items-center gap-4 w-full justify-center">
+            {/* Studio light: radial gradient so multiply-blend works */}
+            <div
+              className="absolute inset-0 rounded-full"
+              style={{
+                background: "radial-gradient(ellipse at 50% 48%, #c8d0d8 0%, #4a5666 45%, transparent 72%)",
+                opacity: 0.28,
+              }}
+            />
 
-              {/* Prev arrow */}
-              <button
-                onClick={prev}
-                className="shrink-0 size-11 rounded-full border border-white/12 bg-white/5 hover:bg-white/12 hover:border-white/30 flex items-center justify-center text-white/60 hover:text-white transition-all duration-200"
-                aria-label="Vorige"
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={active}
+                initial={{ opacity: 0, scale: 0.92, y: 16 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.94, y: -12 }}
+                transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                className="absolute inset-0 flex items-center justify-center"
               >
-                <ChevronLeft className="size-5" />
-              </button>
-
-              {/* Product card */}
-              <div className="relative w-[260px] h-[340px] flex-shrink-0">
-                <AnimatePresence initial={false} custom={direction} mode="wait">
-                  <motion.div
-                    key={active}
-                    custom={direction}
-                    variants={variants}
-                    initial="enter"
-                    animate="center"
-                    exit="exit"
-                    transition={{ duration: 0.38, ease: [0.22, 1, 0.36, 1] }}
-                    className="absolute inset-0"
-                  >
-                    <Link href={`/product/${product.id}`} className="block w-full h-full group">
-                      <div
-                        className="relative w-full h-full rounded-2xl overflow-hidden"
-                        style={{
-                          background: "#1e2d3d",
-                          border: "1px solid rgba(255,255,255,0.08)",
-                          boxShadow: "0 30px 80px rgba(0,0,0,0.55)",
-                        }}
-                      >
-                        {/* White area — multiply blend removes white from product image */}
-                        <div className="relative w-full h-[260px] bg-white">
-                          <Image
-                            src={product.image}
-                            alt={product.name}
-                            fill
-                            className="object-contain p-8 transition-transform duration-500 group-hover:scale-105"
-                            style={{ mixBlendMode: "multiply" }}
-                            unoptimized
-                          />
-                          {/* Fade bottom of white area into dark card */}
-                          <div className="absolute bottom-0 left-0 right-0 h-16 pointer-events-none"
-                            style={{ background: "linear-gradient(to top, #1e2d3d 0%, transparent 100%)" }} />
-                        </div>
-
-                        {/* Info bar */}
-                        <div className="px-5 py-4 flex items-end justify-between">
-                          <div>
-                            <p className="text-[9px] font-black uppercase tracking-[0.25em] text-[#f5a623] mb-0.5">{product.brand}</p>
-                            <p className="text-white font-black text-[13px] leading-tight">{product.name}</p>
-                          </div>
-                          <span
-                            className="text-[13px] font-black text-white px-3 py-1.5 rounded-lg shrink-0 ml-3"
-                            style={{ background: "rgba(243,156,18,0.18)", border: "1px solid rgba(243,156,18,0.45)" }}
-                          >
-                            {product.price}
-                          </span>
-                        </div>
-                      </div>
-                    </Link>
-                  </motion.div>
-                </AnimatePresence>
-              </div>
-
-              {/* Next arrow */}
-              <button
-                onClick={next}
-                className="shrink-0 size-11 rounded-full border border-white/12 bg-white/5 hover:bg-white/12 hover:border-white/30 flex items-center justify-center text-white/60 hover:text-white transition-all duration-200"
-                aria-label="Volgende"
-              >
-                <ChevronRight className="size-5" />
-              </button>
-            </div>
-
-            {/* Dot navigation + thumbnails */}
-            <div className="flex items-center gap-2">
-              {PRODUCTS.map((p, i) => (
-                <button
-                  key={p.id}
-                  onClick={() => go(i, i > active ? 1 : -1)}
-                  className={cn(
-                    "transition-all duration-300 rounded-full",
-                    i === active
-                      ? "w-7 h-2 bg-[#f5a623]"
-                      : "w-2 h-2 bg-white/20 hover:bg-white/45"
-                  )}
-                  aria-label={p.name}
-                />
-              ))}
-            </div>
-
-            {/* Thumbnail strip */}
-            <div className="flex items-center gap-2">
-              {PRODUCTS.map((p, i) => (
-                <button
-                  key={p.id}
-                  onClick={() => go(i, i > active ? 1 : -1)}
-                  className={cn(
-                    "relative w-14 h-14 rounded-xl overflow-hidden transition-all duration-300 flex-shrink-0",
-                    i === active
-                      ? "ring-2 ring-[#f5a623] ring-offset-2 ring-offset-[#111c27] opacity-100"
-                      : "opacity-35 hover:opacity-65"
-                  )}
-                  style={{ background: "#243347", border: "1px solid rgba(255,255,255,0.06)" }}
-                  aria-label={p.name}
-                >
+                <Link href={`/product/${p.id}`} className="block relative w-full h-full group">
                   <Image
                     src={p.image}
                     alt={p.name}
                     fill
-                    className="object-contain p-1.5"
+                    className="object-contain transition-transform duration-700 group-hover:scale-105"
+                    style={{ mixBlendMode: "multiply" }}
                     unoptimized
                   />
-                </button>
-              ))}
-            </div>
+                </Link>
+              </motion.div>
+            </AnimatePresence>
 
+            {/* Floating price tag — bottom right of product area */}
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={`price-${active}`}
+                initial={{ opacity: 0, x: 12 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.35, delay: 0.15 }}
+                className="absolute bottom-6 right-0 flex flex-col items-end gap-0.5 z-10"
+              >
+                <span className="text-[9px] font-black uppercase tracking-[0.3em] text-white/35">{p.name}</span>
+                <span className="font-montserrat text-2xl font-black text-white tracking-tight">{p.price}</span>
+              </motion.div>
+            </AnimatePresence>
           </div>
+
+          {/* ── Col 3: Product selector ── */}
+          <div className="hidden lg:flex flex-col gap-1 pl-10 border-l border-white/8">
+            {PRODUCTS.map((item, i) => (
+              <button
+                key={item.id}
+                onClick={() => go(i)}
+                className="group flex items-center gap-4 py-3 text-left transition-all duration-300"
+              >
+                <span className={`font-montserrat text-[11px] font-black tabular-nums transition-colors duration-300 ${i === active ? "text-white" : "text-white/20 group-hover:text-white/50"}`}>
+                  {item.index}
+                </span>
+                <div className="flex flex-col gap-0.5 min-w-0">
+                  <span className={`text-[12px] font-black leading-tight truncate transition-colors duration-300 ${i === active ? "text-white" : "text-white/20 group-hover:text-white/50"}`}>
+                    {item.name}
+                  </span>
+                  <span className={`text-[10px] font-bold transition-colors duration-300 ${i === active ? "text-white/40" : "text-white/10"}`}>
+                    {item.price}
+                  </span>
+                </div>
+                {/* Active indicator */}
+                <div className={`ml-auto w-1 rounded-full flex-shrink-0 transition-all duration-400 ${i === active ? "h-8 bg-white" : "h-1 bg-white/15"}`} />
+              </button>
+            ))}
+
+            {/* Progress line */}
+            <div className="mt-4 flex items-center gap-2">
+              <div className="h-px flex-1 bg-white/10 relative overflow-hidden">
+                <motion.div
+                  className="absolute top-0 left-0 h-full bg-white/50"
+                  animate={{ width: `${((active + 1) / PRODUCTS.length) * 100}%` }}
+                  transition={{ duration: 0.4 }}
+                />
+              </div>
+              <span className="text-[10px] font-black text-white/25 tabular-nums">
+                {String(active + 1).padStart(2, "0")}/{String(PRODUCTS.length).padStart(2, "0")}
+              </span>
+            </div>
+          </div>
+
         </div>
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-[#111c27]/60 to-transparent pointer-events-none" />
+      {/* ── Bottom fade ── */}
+      <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[#0b0f14] to-transparent pointer-events-none" />
     </section>
   );
 }
