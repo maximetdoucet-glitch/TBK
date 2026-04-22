@@ -152,8 +152,7 @@ export default function ArticleSection() {
               <span className="text-[10px] font-black uppercase tracking-[0.4em] text-[#f5a623]">Kennisbank</span>
             </div>
             <h2 className="font-montserrat text-3xl sm:text-4xl font-black text-white tracking-tight leading-tight">
-              Alles wat je moet<br />
-              <span className="text-[#f5a623]">weten over roken</span>
+              Alles wat je moet weten over <span className="text-[#f5a623]">aanstekers & accessoires</span>
             </h2>
           </div>
           <Link
