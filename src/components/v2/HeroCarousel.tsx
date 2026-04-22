@@ -214,18 +214,26 @@ export default function HeroCarousel() {
               </motion.div>
             </AnimatePresence>
 
-            {/* Floating price tag — bottom right of product area */}
+            {/* CTA button — bottom of product area */}
             <AnimatePresence mode="wait">
               <motion.div
-                key={`price-${active}`}
-                initial={{ opacity: 0, x: 12 }}
-                animate={{ opacity: 1, x: 0 }}
+                key={`cta-${active}`}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.35, delay: 0.15 }}
-                className="absolute bottom-6 right-0 flex flex-col items-end gap-0.5 z-10"
+                className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10"
               >
-                <span className="text-[9px] font-black uppercase tracking-[0.3em] text-white/35">{p.name}</span>
-                <span className="font-montserrat text-2xl font-black text-white tracking-tight">{p.price}</span>
+                <Link
+                  href={`/product/${p.id}`}
+                  className="group flex items-center gap-3 px-6 py-3 border border-white/20 hover:border-white/50 hover:bg-white/5 transition-all duration-300 rounded-lg"
+                >
+                  <div className="flex flex-col items-start">
+                    <span className="text-[9px] font-black uppercase tracking-[0.35em] text-white/35">{p.name}</span>
+                    <span className="font-montserrat text-lg font-black text-white tracking-tight leading-tight">{p.price}</span>
+                  </div>
+                  <ArrowRight className="size-4 text-white/40 group-hover:text-white group-hover:translate-x-0.5 transition-all duration-300" />
+                </Link>
               </motion.div>
             </AnimatePresence>
           </div>
