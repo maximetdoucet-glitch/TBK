@@ -4,8 +4,8 @@ import React, { useState, use } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Heart, ShoppingBag, Star, Check, ChevronDown, ArrowLeft } from "lucide-react";
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
+import Header from "@/components/v2/HeaderV2";
+import Footer from "@/components/v2/FooterV2";
 import { Button } from "@/components/ui/button";
 import { PRODUCTS, getProductById } from "@/lib/products";
 

@@ -1,5 +1,5 @@
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
+import Header from "@/components/v2/HeaderV2";
+import Footer from "@/components/v2/FooterV2";
 import Hero from "@/components/sections/Hero";
 import Highlights from "@/components/sections/Highlights";
 import CategoryGrid from "@/components/sections/CategoryGrid";

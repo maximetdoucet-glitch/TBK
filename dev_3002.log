@@ -1,0 +1,30 @@
+
+> de_vlam_lightshop@0.1.0 dev
+> next dev -p 3002
+
+▲ Next.js 16.2.3 (Turbopack)
+- Local:         http://localhost:3002
+- Network:       http://145.116.153.45:3002
+✓ Ready in 1003ms
+
+ GET / 200 in 2.6s (next.js: 1045ms, application-code: 1578ms)
+[browser] Image with src "/images/tbk-highlight-zippos.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes (file:///Users/maximedoucet/Documents/Anti gravity/Shop Websites/de_vlam_lightshop/.next/dev/static/chunks/node_modules_next_dist_115brz8._.js:1294:25)
+[browser] Image with src "/images/haddock-banner-vloei.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes (file:///Users/maximedoucet/Documents/Anti gravity/Shop Websites/de_vlam_lightshop/.next/dev/static/chunks/node_modules_next_dist_115brz8._.js:1294:25)
+[browser] Image with src "/images/haddock-banner-cutters.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes (file:///Users/maximedoucet/Documents/Anti gravity/Shop Websites/de_vlam_lightshop/.next/dev/static/chunks/node_modules_next_dist_115brz8._.js:1294:25)
+○ Compiling /aanstekers ...
+ GET /aanstekers 200 in 5.9s (next.js: 5.8s, application-code: 110ms)
+ GET /aanstekers 200 in 1824ms (next.js: 1495ms, application-code: 329ms)
+ GET /product/1 200 in 4.7s (next.js: 4.6s, application-code: 163ms)
+ GET / 200 in 182ms (next.js: 45ms, application-code: 137ms)
+[browser] Image with src "/images/featured_1.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes (file:///Users/maximedoucet/Documents/Anti gravity/Shop Websites/de_vlam_lightshop/.next/dev/static/chunks/node_modules_next_dist_115brz8._.js:1294:25)
+[browser] Image with src "/images/hero_zippo.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes (file:///Users/maximedoucet/Documents/Anti gravity/Shop Websites/de_vlam_lightshop/.next/dev/static/chunks/node_modules_next_dist_115brz8._.js:1294:25)
+[browser] Image with src "/images/brands/caseti.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes (file:///Users/maximedoucet/Documents/Anti gravity/Shop Websites/de_vlam_lightshop/.next/dev/static/chunks/node_modules_next_dist_115brz8._.js:1294:25)
+[browser] Image with src "/images/brands/clipper.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes (file:///Users/maximedoucet/Documents/Anti gravity/Shop Websites/de_vlam_lightshop/.next/dev/static/chunks/node_modules_next_dist_115brz8._.js:1294:25)
+[browser] Image with src "/images/brands/colibri.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes (file:///Users/maximedoucet/Documents/Anti gravity/Shop Websites/de_vlam_lightshop/.next/dev/static/chunks/node_modules_next_dist_115brz8._.js:1294:25)
+[browser] Image with src "/images/brands/guy-janot.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes (file:///Users/maximedoucet/Documents/Anti gravity/Shop Websites/de_vlam_lightshop/.next/dev/static/chunks/node_modules_next_dist_115brz8._.js:1294:25)
+[browser] Image with src "/images/brands/hemparillo.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes (file:///Users/maximedoucet/Documents/Anti gravity/Shop Websites/de_vlam_lightshop/.next/dev/static/chunks/node_modules_next_dist_115brz8._.js:1294:25)
+[browser] Image with src "/images/brands/juicy-jays.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes (file:///Users/maximedoucet/Documents/Anti gravity/Shop Websites/de_vlam_lightshop/.next/dev/static/chunks/node_modules_next_dist_115brz8._.js:1294:25)
+[browser] Image with src "/images/brands/st-dupont.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes (file:///Users/maximedoucet/Documents/Anti gravity/Shop Websites/de_vlam_lightshop/.next/dev/static/chunks/node_modules_next_dist_115brz8._.js:1294:25)
+[browser] Image with src "/images/brands/vom-hofe.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes (file:///Users/maximedoucet/Documents/Anti gravity/Shop Websites/de_vlam_lightshop/.next/dev/static/chunks/node_modules_next_dist_115brz8._.js:1294:25)
+[browser] Image with src "/images/brands/xikar.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes (file:///Users/maximedoucet/Documents/Anti gravity/Shop Websites/de_vlam_lightshop/.next/dev/static/chunks/node_modules_next_dist_115brz8._.js:1294:25)
+[browser] Image with src "/images/brands/zippo.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes (file:///Users/maximedoucet/Documents/Anti gravity/Shop Websites/de_vlam_lightshop/.next/dev/static/chunks/node_modules_next_dist_115brz8._.js:1294:25)
