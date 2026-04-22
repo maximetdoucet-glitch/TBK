@@ -88,7 +88,7 @@ export default function FooterV2() {
           {/* Col 1 — Brand */}
           <div className="flex flex-col gap-6 pr-10 py-16">
             <Link href="/" className="inline-flex flex-col w-fit">
-              <span className="font-montserrat text-4xl font-black tracking-[0.06em] text-white leading-none">TBK</span>
+              <span className="font-montserrat text-3xl font-black tracking-tight text-white leading-none">OneConnect</span>
               <span className="font-montserrat text-[9px] font-bold tracking-[0.5em] text-white/40 mt-1">LIGHTSHOP</span>
             </Link>
             <p className="text-white/45 text-[13px] leading-relaxed">
@@ -160,7 +160,7 @@ export default function FooterV2() {
 
           {/* Cols 1-3 — Legal links */}
           <div style={{ gridColumn: 'span 3' }} className="flex flex-wrap items-center gap-x-5 gap-y-1 py-6">
-            <span className="text-[11px] text-white/25">© {new Date().getFullYear()} TBK Lightshop</span>
+            <span className="text-[11px] text-white/25">© {new Date().getFullYear()} OneConnect Lightshop</span>
             {["Privacybeleid", "Algemene voorwaarden", "Cookiebeleid"].map((label) => (
               <Link key={label} href="#" className="text-[11px] text-white/25 hover:text-white/60 transition-colors">{label}</Link>
             ))}
