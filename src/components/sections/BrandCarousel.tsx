@@ -45,7 +45,7 @@ export default function BrandCarousel() {
               <img
                 src={brand.img}
                 alt={brand.name}
-                className="h-12 w-auto max-w-[160px] object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
+                className="h-20 w-auto max-w-[180px] object-contain opacity-75 hover:opacity-100 transition-opacity duration-300 [filter:drop-shadow(0_1px_4px_rgba(0,0,0,0.10))]"
               />
             </div>
           ))}
