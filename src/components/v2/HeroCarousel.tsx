@@ -99,19 +99,9 @@ export default function HeroCarousel() {
   return (
     <section className="relative bg-[#111c27] overflow-hidden min-h-[580px] md:min-h-[660px] flex items-center">
 
-      {/* Subtle grid */}
-      <div
-        className="absolute inset-0 opacity-[0.025]"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)",
-          backgroundSize: "60px 60px",
-        }}
-      />
-
       {/* Glow blobs */}
-      <div className="absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full bg-[#f5a623]/8 blur-[120px] pointer-events-none" />
-      <div className="absolute top-1/2 right-[10%] -translate-y-1/2 w-[560px] h-[560px] rounded-full bg-[#f5a623]/10 blur-[90px] pointer-events-none" />
+      <div className="absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full bg-[#f9c76b]/8 blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/2 right-[10%] -translate-y-1/2 w-[560px] h-[560px] rounded-full bg-[#f9c76b]/10 blur-[90px] pointer-events-none" />
 
       <div className="relative z-10 max-w-[1300px] mx-auto px-6 sm:px-10 lg:px-16 w-full py-16 md:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-6 items-center">
@@ -124,8 +114,8 @@ export default function HeroCarousel() {
             className="flex flex-col gap-6 max-w-lg"
           >
             <div className="flex items-center gap-2">
-              <Flame className="size-3.5 text-[#f5a623]" />
-              <span className="text-[10px] font-black uppercase tracking-[0.4em] text-[#f5a623]">
+              <Flame className="size-3.5 text-[#f9c76b]" />
+              <span className="text-[10px] font-black uppercase tracking-[0.4em] text-[#f9c76b]">
                 Nijmegen&apos;s aansteker specialist
               </span>
             </div>
@@ -134,9 +124,9 @@ export default function HeroCarousel() {
               <h1 className="font-montserrat font-black leading-[0.88] tracking-tighter text-white">
                 <span className="block text-6xl sm:text-7xl lg:text-8xl">1400+</span>
                 <span className="block text-5xl sm:text-6xl lg:text-7xl text-white/90">Zippo</span>
-                <span className="block text-5xl sm:text-6xl lg:text-7xl text-[#f5a623]">Aanstekers</span>
+                <span className="block text-5xl sm:text-6xl lg:text-7xl text-[#f9c76b]">Aanstekers</span>
               </h1>
-              <div className="mt-5 h-[3px] w-20 bg-[#f5a623]" />
+              <div className="mt-5 h-[3px] w-20 bg-[#f9c76b]" />
             </div>
 
             <p className="text-white/55 text-[15px] leading-relaxed font-medium">
@@ -147,14 +137,14 @@ export default function HeroCarousel() {
             <div className="flex flex-wrap items-center gap-3 pt-1">
               <Link
                 href="/aanstekers"
-                className="inline-flex items-center gap-2.5 px-8 py-4 bg-[#f5a623] hover:bg-[#e08910] text-white font-black uppercase tracking-widest text-[11px] transition-all duration-300 group hover:gap-3.5"
+                className="inline-flex items-center gap-2.5 px-8 py-4 bg-[#f9c76b] hover:bg-[#e8b355] text-white font-black uppercase tracking-widest text-[11px] rounded-lg transition-all duration-300 group hover:gap-3.5"
               >
                 Bekijk collectie
                 <ArrowRight className="size-4 group-hover:translate-x-0.5 transition-transform" />
               </Link>
               <Link
                 href="#"
-                className="inline-flex items-center gap-2 px-8 py-4 border border-white/15 hover:border-white/40 text-white/60 hover:text-white font-bold uppercase tracking-widest text-[11px] transition-all duration-300"
+                className="inline-flex items-center gap-2 px-8 py-4 border border-white/15 hover:border-white/40 text-white/60 hover:text-white font-bold uppercase tracking-widest text-[11px] rounded-lg transition-all duration-300"
               >
                 Onze merken
               </Link>
@@ -228,7 +218,7 @@ export default function HeroCarousel() {
                         {/* Info bar */}
                         <div className="px-5 py-4 flex items-end justify-between">
                           <div>
-                            <p className="text-[9px] font-black uppercase tracking-[0.25em] text-[#f5a623] mb-0.5">{product.brand}</p>
+                            <p className="text-[9px] font-black uppercase tracking-[0.25em] text-[#f9c76b] mb-0.5">{product.brand}</p>
                             <p className="text-white font-black text-[13px] leading-tight">{product.name}</p>
                           </div>
                           <span
@@ -263,7 +253,7 @@ export default function HeroCarousel() {
                   className={cn(
                     "transition-all duration-300 rounded-full",
                     i === active
-                      ? "w-7 h-2 bg-[#f5a623]"
+                      ? "w-7 h-2 bg-[#f9c76b]"
                       : "w-2 h-2 bg-white/20 hover:bg-white/45"
                   )}
                   aria-label={p.name}
@@ -280,7 +270,7 @@ export default function HeroCarousel() {
                   className={cn(
                     "relative w-14 h-14 rounded-xl overflow-hidden transition-all duration-300 flex-shrink-0",
                     i === active
-                      ? "ring-2 ring-[#f5a623] ring-offset-2 ring-offset-[#111c27] opacity-100"
+                      ? "ring-2 ring-[#f9c76b] ring-offset-2 ring-offset-[#111c27] opacity-100"
                       : "opacity-35 hover:opacity-65"
                   )}
                   style={{ background: "#243347", border: "1px solid rgba(255,255,255,0.06)" }}

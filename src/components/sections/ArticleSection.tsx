@@ -49,7 +49,7 @@ export default function ArticleSection() {
           ))}
         </div>
         <div className="flex justify-center">
-           <Button className="bg-[#f5a623] hover:bg-[#6b8e6b] text-white rounded-none h-14 px-12 font-bold uppercase tracking-widest text-xs">
+           <Button className="bg-[#f9c76b] hover:bg-[#6b8e6b] text-white rounded-lg h-14 px-12 font-bold uppercase tracking-widest text-xs">
               Bekijk alles <ArrowRight className="ml-2 size-4" />
            </Button>
         </div>

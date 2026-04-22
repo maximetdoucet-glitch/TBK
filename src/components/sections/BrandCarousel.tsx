@@ -27,7 +27,7 @@ export default function BrandCarousel() {
     <section className="bg-white py-14 border-t border-gray-100 overflow-hidden">
       <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 mb-8">
         <h2 className="text-xl font-semibold text-[#2b3e51] mb-3">Onze merken</h2>
-        <div className="h-1.5 w-24 bg-[#f5a623]" />
+        <div className="h-1.5 w-24 bg-[#f9c76b]" />
       </div>
 
       <div className="relative overflow-hidden">

@@ -107,7 +107,7 @@ export default function Header() {
       <nav className="w-full bg-[#2b3e51] text-white">
         <div className="container mx-auto max-w-[1300px] px-4 sm:px-6 lg:px-8 flex items-center justify-between h-12">
           <div className="flex items-center h-full">
-            <Button className="bg-[#f5a623] hover:bg-[#e67e22] text-white rounded-none h-full px-6 font-bold uppercase tracking-widest text-[11px] flex items-center gap-2">
+            <Button className="bg-[#f9c76b] hover:bg-[#e67e22] text-white rounded-lg h-full px-6 font-bold uppercase tracking-widest text-[11px] flex items-center gap-2">
               Assortiment <ChevronDown className="size-4" />
             </Button>
             <div className="hidden lg:flex items-center h-full ml-4">
@@ -131,7 +131,7 @@ export default function Header() {
           
           {/* Ratings */}
           <div className="hidden md:flex items-center gap-2 text-[10px] font-bold">
-            <div className="flex text-[#f5a623]">
+            <div className="flex text-[#f9c76b]">
               {[...Array(5)].map((_, i) => <span key={i}>★</span>)}
             </div>
             <span className="tracking-widest capitalize">4.8 / 5 GOOGLE REVIEWS</span>
