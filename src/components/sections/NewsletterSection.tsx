@@ -16,7 +16,7 @@ export default function NewsletterSection() {
                We helpen je graag en staan voor je klaar! Voor informatie omtrent producten of je order, neem contact op met de klantenservice.
             </p>
             <div>
-               <Button className="bg-[#f39c12] hover:bg-[#e67e22] text-white rounded-none h-11 sm:h-14 px-8 sm:px-12 font-semibold text-sm transition-colors">
+               <Button className="bg-[#f5a623] hover:bg-[#e67e22] text-white rounded-none h-11 sm:h-14 px-8 sm:px-12 font-semibold text-sm transition-colors">
                   Neem contact op
                </Button>
             </div>
@@ -35,7 +35,7 @@ export default function NewsletterSection() {
                   placeholder="E-mailadres"
                   className="bg-white text-gray-900 h-11 sm:h-14 px-5 rounded-none border-none text-sm placeholder:text-gray-400 focus-visible:ring-0 focus-visible:ring-offset-0 w-full"
                />
-               <Button className="bg-[#f39c12] hover:bg-[#e67e22] text-white rounded-none h-11 sm:h-14 px-8 font-semibold text-sm flex-shrink-0 transition-colors">
+               <Button className="bg-[#f5a623] hover:bg-[#e67e22] text-white rounded-none h-11 sm:h-14 px-8 font-semibold text-sm flex-shrink-0 transition-colors">
                   Abonneer
                </Button>
             </div>

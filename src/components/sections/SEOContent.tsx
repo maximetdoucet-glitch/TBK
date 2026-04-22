@@ -35,7 +35,7 @@ export default function SEOContent() {
                  "Persoonlijk advies",
                ].map((item) => (
                  <div key={item} className="flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-[#2b3e51]">
-                    <CheckCircle2 className="size-5 text-[#f39c12]" />
+                    <CheckCircle2 className="size-5 text-[#f5a623]" />
                     {item}
                  </div>
                ))}
@@ -52,15 +52,15 @@ export default function SEOContent() {
                </p>
                <div className="flex flex-col gap-4">
                   <div className="flex items-center gap-4 border-b border-white/10 pb-4">
-                     <div className="size-10 rounded-full bg-white/10 flex items-center justify-center font-bold text-[#f39c12]">1</div>
+                     <div className="size-10 rounded-full bg-white/10 flex items-center justify-center font-bold text-[#f5a623]">1</div>
                      <span className="text-[11px] font-bold uppercase tracking-widest">Grootste Zippo Dealer</span>
                   </div>
                   <div className="flex items-center gap-4 border-b border-white/10 pb-4">
-                     <div className="size-10 rounded-full bg-white/10 flex items-center justify-center font-bold text-[#f39c12]">2</div>
+                     <div className="size-10 rounded-full bg-white/10 flex items-center justify-center font-bold text-[#f5a623]">2</div>
                      <span className="text-[11px] font-bold uppercase tracking-widest">Snelle Worldwide Shipping</span>
                   </div>
                   <div className="flex items-center gap-4">
-                     <div className="size-10 rounded-full bg-white/10 flex items-center justify-center font-bold text-[#f39c12]">3</div>
+                     <div className="size-10 rounded-full bg-white/10 flex items-center justify-center font-bold text-[#f5a623]">3</div>
                      <span className="text-[11px] font-bold uppercase tracking-widest">Officieel Dealer Topmerken</span>
                   </div>
                </div>
@@ -68,7 +68,7 @@ export default function SEOContent() {
 
             <div className="p-10 border border-gray-200 bg-white">
                <h3 className="font-montserrat text-lg font-bold text-[#2b3e51] mb-8 uppercase tracking-tight flex items-center gap-3">
-                  <HelpCircle className="size-6 text-[#f39c12]" />
+                  <HelpCircle className="size-6 text-[#f5a623]" />
                   Veelgestelde Vragen
                </h3>
                <div className="space-y-6">

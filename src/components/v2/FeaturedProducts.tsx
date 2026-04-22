@@ -8,25 +8,12 @@ import { cn } from "@/lib/utils";
 import { PRODUCTS, type Product } from "@/lib/products";
 
 function badgeColor(badge: string | null | undefined) {
-  if (badge === "Bestseller") return "#f39c12";
+  if (badge === "Bestseller") return "#f5a623";
   if (badge === "Nieuw") return "#2b3e51";
   if (badge === "Sale") return "#e53e3e";
-  return "#f39c12";
+  return "#f5a623";
 }
 
-function getCardBg(product: Product): string {
-  const brand = product.brand?.toLowerCase() ?? "";
-  const cat = (product.xmlCategory ?? product.category ?? "").toLowerCase();
-  if (brand === "zippo") return "/images/categories/zippo.jpg";
-  if (brand === "clipper") return "/images/categories/clipper.jpg";
-  if (cat.includes("jetflame") || cat.includes("e-sigaret") || ["smok","vaporesso","voopoo","aspire","lost vape"].includes(brand))
-    return "/images/categories/jetflame.jpg";
-  if (cat.includes("humidor") || brand === "adorini") return "/images/categories/humidors.jpg";
-  if (cat.includes("knipper") || cat.includes("cutter")) return "/images/categories/knippers.jpg";
-  if (cat.includes("koker") || cat.includes("tube")) return "/images/categories/kokers.jpg";
-  if (cat.includes("vloei") || cat.includes("filter") || cat.includes("liquid")) return "/images/categories/vloei.jpg";
-  return "/images/categories/zippo.jpg";
-}
 
 // Curated featured product IDs (Zippo + accessories + e-sig)
 const FEATURED_IDS = [156, 33, 151, 48, 421, 414, 331, 528];
@@ -58,7 +45,7 @@ function StarRating({ rating, count }: { rating: number; count: number }) {
         {[...Array(5)].map((_, i) => (
           <Star
             key={i}
-            className={cn("size-3 fill-current", i < Math.round(rating) ? "text-[#f39c12]" : "text-gray-200")}
+            className={cn("size-3 fill-current", i < Math.round(rating) ? "text-[#f5a623]" : "text-gray-200")}
           />
         ))}
       </div>
@@ -72,7 +59,6 @@ function ProductCard({ product }: { product: Product }) {
   const [addedToCart, setAddedToCart] = useState(false);
 
   const price = parseFloat(product.price);
-  const bg = getCardBg(product);
 
   const handleCart = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -85,25 +71,14 @@ function ProductCard({ product }: { product: Product }) {
       href={`/product/${product.id}`}
       className="group flex flex-col bg-white border border-gray-100 rounded-xl overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
     >
-      <div className="relative aspect-square overflow-hidden">
-        {/* Atmospheric background image */}
-        <Image
-          src={bg}
-          alt=""
-          fill
-          className="object-cover scale-105 group-hover:scale-110 transition-transform duration-700 blur-[2px]"
-          unoptimized
-          aria-hidden
-        />
-        {/* Dark overlay so product stands out */}
-        <div className="absolute inset-0 bg-[#1a2535]/60 group-hover:bg-[#1a2535]/50 transition-colors duration-500" />
-        {/* Product image on top */}
+      <div className="relative aspect-square overflow-hidden bg-[#f4f5f6]">
+        {/* multiply blend makes the product image's white bg invisible */}
         <Image
           src={product.image}
           alt={product.name}
           fill
-          className="relative object-contain p-6 transition-transform duration-500 group-hover:scale-105 drop-shadow-2xl"
-          style={{ zIndex: 1 }}
+          className="object-contain p-6 transition-transform duration-500 group-hover:scale-105"
+          style={{ mixBlendMode: "multiply" }}
           unoptimized
         />
         {product.badge && (
@@ -132,7 +107,7 @@ function ProductCard({ product }: { product: Product }) {
         <p className="text-[9px] font-black uppercase tracking-[0.2em] text-[#2b3e51]/30 mb-1">
           {product.brand} · {product.category}
         </p>
-        <h3 className="font-montserrat text-sm font-black text-[#2b3e51] leading-snug mb-1.5 group-hover:text-[#f39c12] transition-colors line-clamp-2">
+        <h3 className="font-montserrat text-sm font-black text-[#2b3e51] leading-snug mb-1.5 group-hover:text-[#f5a623] transition-colors line-clamp-2">
           {product.name}
         </h3>
         <StarRating rating={product.rating} count={product.reviewCount} />
@@ -146,7 +121,7 @@ function ProductCard({ product }: { product: Product }) {
               "flex items-center gap-2 px-3.5 py-2.5 rounded-lg font-bold text-[10px] uppercase tracking-wider transition-all duration-300",
               addedToCart
                 ? "bg-green-500 text-white scale-95"
-                : "bg-[#2b3e51] hover:bg-[#f39c12] text-white"
+                : "bg-[#2b3e51] hover:bg-[#f5a623] text-white"
             )}
             aria-label="In winkelwagen"
           >
@@ -175,7 +150,7 @@ export default function FeaturedProducts() {
       <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
           <div>
-            <p className="text-[10px] font-black uppercase tracking-[0.3em] text-[#f39c12] mb-1">
+            <p className="text-[10px] font-black uppercase tracking-[0.3em] text-[#f5a623] mb-1">
               Populair dit seizoen
             </p>
             <h2 className="font-montserrat text-3xl sm:text-4xl font-black text-[#2b3e51] tracking-tighter">
@@ -207,7 +182,7 @@ export default function FeaturedProducts() {
         <div className="mt-10 flex justify-center">
           <Link
             href="/aanstekers"
-            className="inline-flex items-center gap-3 px-10 py-4 bg-[#2b3e51] hover:bg-[#f39c12] text-white font-bold uppercase tracking-widest text-[11px] transition-all duration-300 rounded-none group"
+            className="inline-flex items-center gap-3 px-10 py-4 bg-[#2b3e51] hover:bg-[#f5a623] text-white font-bold uppercase tracking-widest text-[11px] transition-all duration-300 rounded-none group"
           >
             Bekijk volledig aanbod
             <ArrowRight className="size-4 group-hover:translate-x-1 transition-transform" />

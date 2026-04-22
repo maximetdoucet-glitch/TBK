@@ -35,7 +35,7 @@ export default function PromoBar() {
         {msg.cta && (
           <Link
             href={msg.href!}
-            className="flex items-center gap-0.5 text-[#f39c12] hover:text-[#f39c12]/80 transition-colors whitespace-nowrap"
+            className="flex items-center gap-0.5 text-[#f5a623] hover:text-[#f5a623]/80 transition-colors whitespace-nowrap"
           >
             {msg.cta} <ChevronRight className="size-3" />
           </Link>
