@@ -119,7 +119,7 @@ export default function HeroCarousel() {
                 className="font-montserrat font-black text-white leading-[0.85] tracking-tighter"
                 style={{ fontSize: "clamp(52px, 8vw, 108px)" }}
               >
-                1400+
+                500+
               </span>
               <span
                 className="font-montserrat font-black text-white/80 leading-[0.85] tracking-tighter"
@@ -171,7 +171,7 @@ export default function HeroCarousel() {
             {/* Stats */}
             <div className="flex items-center gap-7 pt-2">
               {[
-                { v: "1400+", l: "modellen" },
+                { v: "500+", l: "modellen" },
                 { v: "98 jr", l: "vakmanschap" },
                 { v: "4.8★", l: "reviews" },
               ].map((s) => (
