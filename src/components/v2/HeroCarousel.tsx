@@ -228,11 +228,8 @@ export default function HeroCarousel() {
                   href={`/product/${p.id}`}
                   className="group flex items-center gap-3 px-6 py-3 border border-white/20 hover:border-white/50 hover:bg-white/5 transition-all duration-300 rounded-lg"
                 >
-                  <div className="flex flex-col items-start">
-                    <span className="text-[9px] font-black uppercase tracking-[0.35em] text-white/35">{p.name}</span>
-                    <span className="font-montserrat text-lg font-black text-white tracking-tight leading-tight">{p.price}</span>
-                  </div>
-                  <ArrowRight className="size-4 text-white/40 group-hover:text-white group-hover:translate-x-0.5 transition-all duration-300" />
+                  <span className="text-[11px] font-black uppercase tracking-[0.25em] text-white/70 group-hover:text-white transition-colors duration-300">Ga naar product</span>
+                  <ArrowRight className="size-3.5 text-white/40 group-hover:text-white group-hover:translate-x-0.5 transition-all duration-300" />
                 </Link>
               </motion.div>
             </AnimatePresence>
