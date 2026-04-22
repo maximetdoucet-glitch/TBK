@@ -189,13 +189,15 @@ export default function HeaderV2() {
         </button>
 
         {/* Logo */}
-        <Link href="/preview" className="flex flex-col items-center shrink-0">
-          <span className="font-montserrat text-[28px] font-black tracking-[0.08em] text-[#2b3e51] leading-none uppercase">
-            TBK
-          </span>
-          <span className="font-montserrat text-[9px] font-bold tracking-[0.45em] text-[#2b3e51]/60 mt-0.5 uppercase">
-            LIGHTSHOP
-          </span>
+        <Link href="/preview" className="shrink-0">
+          <Image
+            src="/images/logo.png"
+            alt="De Vlam Lightshop"
+            width={120}
+            height={60}
+            className="object-contain h-12 w-auto"
+            priority
+          />
         </Link>
 
         {/* Search — grows to fill space, pushing icons to far right */}
@@ -483,10 +485,14 @@ export default function HeaderV2() {
                 </Link>
               ))}
             </nav>
-            <div className="px-5 py-4 border-t border-gray-100 bg-gray-50">
-              <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400">
-                TBK Lightshop — Nijmegen
-              </p>
+            <div className="px-5 py-4 border-t border-gray-100 bg-gray-50 flex items-center gap-3">
+              <Image
+                src="/images/logo.png"
+                alt="De Vlam Lightshop"
+                width={80}
+                height={40}
+                className="object-contain h-8 w-auto"
+              />
             </div>
           </div>
         </div>
