@@ -2,25 +2,25 @@
 
 import { motion } from "framer-motion";
 
-// Actual brands from the product XML (shown categories: Aanstekers, Accessoires, E-liquids)
 const BRANDS = [
-  "Zippo",
-  "Clipper",
-  "Zorr",
-  "Champ",
-  "Ronson",
-  "Prof",
-  "AromaKING",
-  "Bookwill",
-  "LUX",
-  "Sansie",
-  "Mascotte",
-  "Zengaz",
-  "Formula",
-  "BIC",
+  { name: "Zippo",      img: "/brands/zippo.png" },
+  { name: "BIC",        img: "/brands/bic.png" },
+  { name: "Clipper",    img: "/brands/clipper.png" },
+  { name: "Ronson",     img: "/brands/ronson.png" },
+  { name: "Zorr",       img: "/brands/zorr.png" },
+  { name: "Zengaz",     img: "/brands/zengaz.png" },
+  { name: "Mascotte",   img: "/brands/mascotte.png" },
+  { name: "SMOK",       img: "/brands/smok.png" },
+  { name: "Vaporesso",  img: "/brands/vaporesso.png" },
+  { name: "VOOPOO",     img: "/brands/voopoo.png" },
+  { name: "Aspire",     img: "/brands/aspire.png" },
+  { name: "Lost Vape",  img: "/brands/lostvape.png" },
+  { name: "AromaKING",  img: "/brands/aromaking.png" },
 ];
 
-const ALL_BRANDS = [...BRANDS, ...BRANDS];
+// Duplicate twice for seamless infinite loop
+const ALL_BRANDS = [...BRANDS, ...BRANDS, ...BRANDS];
+
 
 export default function BrandCarousel() {
   return (
@@ -30,21 +30,23 @@ export default function BrandCarousel() {
         <div className="h-1.5 w-24 bg-[#829e85]" />
       </div>
 
-      <div className="relative flex whitespace-nowrap overflow-hidden">
+      <div className="relative overflow-hidden">
         <motion.div
-          className="flex items-center gap-0"
-          animate={{ x: [0, `-${BRANDS.length * 200}px`] }}
-          transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
+          className="flex items-center"
+          animate={{ x: [0, -(BRANDS.length * 228)] }}
+          transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
         >
           {ALL_BRANDS.map((brand, i) => (
             <div
-              key={`${brand}-${i}`}
-              className="flex items-center gap-0 px-10"
+              key={`${brand.name}-${i}`}
+              className="flex-shrink-0 flex items-center justify-center w-[228px]"
             >
-              <span className="font-montserrat font-black text-2xl tracking-tighter text-[#2b3e51]/20 hover:text-[#829e85] transition-colors duration-300 cursor-default select-none uppercase">
-                {brand}
-              </span>
-              <span className="ml-10 text-[#2b3e51]/10 text-lg select-none">·</span>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={brand.img}
+                alt={brand.name}
+                className="h-12 w-auto max-w-[160px] object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
+              />
             </div>
           ))}
         </motion.div>
