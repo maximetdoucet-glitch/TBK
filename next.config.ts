@@ -8,6 +8,10 @@ const nextConfig: NextConfig = {
         hostname: "www.uegholland.com",
         pathname: "/media/catalog/product/**",
       },
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+      },
     ],
   },
 };

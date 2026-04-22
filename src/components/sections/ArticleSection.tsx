@@ -11,7 +11,7 @@ const ARTICLES = [
     category: "Aanstekers",
     title: "Hoe kies je de perfecte Zippo voor jouw stijl?",
     excerpt: "Van gebürstet chrome tot gegraveerde limited editions — Zippo biedt meer dan 1400 modellen. We helpen je kiezen op basis van gebruik, persoonlijkheid en budget.",
-    image: "/images/categories/zippo.jpg",
+    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=85&fit=crop",
     href: "/blog/zippo-kiezen",
     readTime: "5 min",
     featured: true,
@@ -21,7 +21,7 @@ const ARTICLES = [
     category: "Onderhoud",
     title: "Zippo onderhoud: zo blijft jouw aansteker als nieuw",
     excerpt: "Een Zippo gaat een leven lang mee — maar alleen als je hem goed onderhoudt. Ontdek hoe je navult, de steen vervangt en de buitenkant polijst.",
-    image: "/images/tbk-highlight-zippos.png",
+    image: "https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=800&q=85&fit=crop",
     href: "/blog/zippo-onderhoud",
     readTime: "4 min",
     featured: false,
@@ -31,7 +31,7 @@ const ARTICLES = [
     category: "Vergelijking",
     title: "Clipper vs Zippo: welke aansteker past bij jou?",
     excerpt: "Beide zijn legendarisch, maar voor heel verschillende gebruikers. We vergelijken vlam, navulbaarheid, design en prijs zodat jij de juiste keuze maakt.",
-    image: "/images/categories/clipper.jpg",
+    image: "https://images.unsplash.com/photo-1574169208507-84376144848b?w=800&q=85&fit=crop",
     href: "/blog/clipper-vs-zippo",
     readTime: "3 min",
     featured: false,
@@ -55,6 +55,7 @@ function FeaturedCard({ article }: { article: typeof ARTICLES[0] }) {
           alt={article.title}
           fill
           className={`object-cover transition-transform duration-700 ${hovered ? "scale-105" : "scale-100"}`}
+          unoptimized
         />
         {/* Gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#0d1520] via-[#0d1520]/40 to-transparent" />
@@ -109,6 +110,7 @@ function SmallCard({ article }: { article: typeof ARTICLES[0] }) {
           alt={article.title}
           fill
           className={`object-cover transition-transform duration-500 ${hovered ? "scale-110" : "scale-100"}`}
+          unoptimized
         />
         <div className="absolute inset-0 bg-[#0d1520]/30" />
       </div>
