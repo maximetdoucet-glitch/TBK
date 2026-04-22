@@ -17,7 +17,7 @@ export default function SEOContent() {
               TBK LIGHTSHOP NIJMEGEN
             </h2>
             <p className="mb-6 leading-relaxed">
-              In onze speciaalzaak in hartje Nijmegen vind je alles om jouw rookmoment compleet te maken. Van exclusieve Zippo's tot dagelijkse benodigdheden zoals vloei en filters. Met jarenlange ervaring adviseren wij onze klanten zowel in onze fysieke winkel als online over de beste producten en accessoires.
+              In onze speciaalzaak in hartje Nijmegen vind je alles om jouw rookmoment compleet te maken. Van exclusieve Zippo&apos;s tot dagelijkse benodigdheden zoals vloei en filters. Met jarenlange ervaring adviseren wij onze klanten zowel in onze fysieke winkel als online over de beste producten en accessoires.
             </p>
             
             <h3 className="font-montserrat text-xl font-bold text-[#2b3e51] mb-6 uppercase tracking-tight border-b border-gray-200 pb-2">
@@ -35,7 +35,7 @@ export default function SEOContent() {
                  "Persoonlijk advies",
                ].map((item) => (
                  <div key={item} className="flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-[#2b3e51]">
-                    <CheckCircle2 className="size-5 text-[#829e85]" />
+                    <CheckCircle2 className="size-5 text-[#f39c12]" />
                     {item}
                  </div>
                ))}
@@ -68,7 +68,7 @@ export default function SEOContent() {
 
             <div className="p-10 border border-gray-200 bg-white">
                <h3 className="font-montserrat text-lg font-bold text-[#2b3e51] mb-8 uppercase tracking-tight flex items-center gap-3">
-                  <HelpCircle className="size-6 text-[#829e85]" />
+                  <HelpCircle className="size-6 text-[#f39c12]" />
                   Veelgestelde Vragen
                </h3>
                <div className="space-y-6">

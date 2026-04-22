@@ -28,7 +28,7 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
             <p className="text-6xl font-semibold text-[#2b3e51] mb-3">404</p>
             <p className="text-sm text-gray-400 mb-8">Product niet gevonden</p>
             <Link href="/aanstekers">
-              <Button className="bg-[#829e85] hover:bg-[#6b8e6b] rounded-sm text-sm px-8 h-11">
+              <Button className="bg-[#f39c12] hover:bg-[#6b8e6b] rounded-sm text-sm px-8 h-11">
                 Terug naar aanstekers
               </Button>
             </Link>
@@ -106,7 +106,7 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
             {/* ── RIGHT: Product Info ── */}
             <div className="flex flex-col">
               {/* Brand */}
-              <p className="text-xs text-[#829e85] font-medium mb-2">{product.brand}</p>
+              <p className="text-xs text-[#f39c12] font-medium mb-2">{product.brand}</p>
 
               {/* Title */}
               <h1 className="text-2xl xl:text-3xl font-semibold text-[#2b3e51] leading-snug mb-4">
@@ -191,7 +191,7 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
                   onClick={handleAddToCart}
                   className={`flex-1 min-w-[160px] h-11 rounded-sm text-sm font-semibold transition-all ${
                     added
-                      ? "bg-[#829e85] hover:bg-[#829e85]"
+                      ? "bg-[#f39c12] hover:bg-[#f39c12]"
                       : "bg-[#2b3e51] hover:bg-[#1e2d3d]"
                   }`}
                 >
@@ -215,7 +215,7 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
                   "Gratis retourneren binnen Nederland",
                 ].map((item) => (
                   <div key={item} className="flex items-center gap-2.5">
-                    <Check className="size-3.5 text-[#829e85] shrink-0" />
+                    <Check className="size-3.5 text-[#f39c12] shrink-0" />
                     <span className="text-xs text-gray-500">{item}</span>
                   </div>
                 ))}
@@ -284,7 +284,7 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
               <h2 className="text-xl font-semibold text-[#2b3e51]">Gerelateerde producten</h2>
               <Link
                 href="/aanstekers"
-                className="flex items-center gap-1.5 text-xs text-[#829e85] hover:text-[#2b3e51] transition-colors"
+                className="flex items-center gap-1.5 text-xs text-[#f39c12] hover:text-[#2b3e51] transition-colors"
               >
                 <ArrowLeft className="size-3" /> Terug naar collectie
               </Link>
@@ -309,7 +309,7 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
                       />
                     </div>
                     <div className="p-4">
-                      <p className="text-[10px] text-[#829e85] font-medium mb-1">{related.brand}</p>
+                      <p className="text-[10px] text-[#f39c12] font-medium mb-1">{related.brand}</p>
                       <p className="text-sm font-medium text-[#2b3e51] leading-snug mb-2 line-clamp-2 group-hover:text-primary transition-colors">
                         {related.name}
                       </p>

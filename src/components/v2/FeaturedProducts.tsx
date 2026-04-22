@@ -8,10 +8,10 @@ import { cn } from "@/lib/utils";
 import { PRODUCTS, type Product } from "@/lib/products";
 
 function badgeColor(badge: string | null | undefined) {
-  if (badge === "Bestseller") return "#829e85";
+  if (badge === "Bestseller") return "#f39c12";
   if (badge === "Nieuw") return "#2b3e51";
   if (badge === "Sale") return "#e53e3e";
-  return "#829e85";
+  return "#f39c12";
 }
 
 function getCardBg(product: Product): string {
@@ -132,7 +132,7 @@ function ProductCard({ product }: { product: Product }) {
         <p className="text-[9px] font-black uppercase tracking-[0.2em] text-[#2b3e51]/30 mb-1">
           {product.brand} · {product.category}
         </p>
-        <h3 className="font-montserrat text-sm font-black text-[#2b3e51] leading-snug mb-1.5 group-hover:text-[#829e85] transition-colors line-clamp-2">
+        <h3 className="font-montserrat text-sm font-black text-[#2b3e51] leading-snug mb-1.5 group-hover:text-[#f39c12] transition-colors line-clamp-2">
           {product.name}
         </h3>
         <StarRating rating={product.rating} count={product.reviewCount} />
@@ -146,7 +146,7 @@ function ProductCard({ product }: { product: Product }) {
               "flex items-center gap-2 px-3.5 py-2.5 rounded-lg font-bold text-[10px] uppercase tracking-wider transition-all duration-300",
               addedToCart
                 ? "bg-green-500 text-white scale-95"
-                : "bg-[#2b3e51] hover:bg-[#829e85] text-white"
+                : "bg-[#2b3e51] hover:bg-[#f39c12] text-white"
             )}
             aria-label="In winkelwagen"
           >
@@ -175,7 +175,7 @@ export default function FeaturedProducts() {
       <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
           <div>
-            <p className="text-[10px] font-black uppercase tracking-[0.3em] text-[#829e85] mb-1">
+            <p className="text-[10px] font-black uppercase tracking-[0.3em] text-[#f39c12] mb-1">
               Populair dit seizoen
             </p>
             <h2 className="font-montserrat text-3xl sm:text-4xl font-black text-[#2b3e51] tracking-tighter">
@@ -207,7 +207,7 @@ export default function FeaturedProducts() {
         <div className="mt-10 flex justify-center">
           <Link
             href="/aanstekers"
-            className="inline-flex items-center gap-3 px-10 py-4 bg-[#2b3e51] hover:bg-[#829e85] text-white font-bold uppercase tracking-widest text-[11px] transition-all duration-300 rounded-none group"
+            className="inline-flex items-center gap-3 px-10 py-4 bg-[#2b3e51] hover:bg-[#f39c12] text-white font-bold uppercase tracking-widest text-[11px] transition-all duration-300 rounded-none group"
           >
             Bekijk volledig aanbod
             <ArrowRight className="size-4 group-hover:translate-x-1 transition-transform" />

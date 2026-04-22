@@ -191,7 +191,7 @@ export default function HeaderV2() {
         {/* Logo */}
         <Link href="/preview" className="shrink-0 flex flex-col leading-none">
           <span className="font-montserrat text-xl font-black tracking-tight text-[#2b3e51]">OneConnect</span>
-          <span className="font-montserrat text-[9px] font-bold tracking-[0.4em] text-[#829e85] uppercase mt-0.5">Lightshop</span>
+          <span className="font-montserrat text-[9px] font-bold tracking-[0.4em] text-[#f39c12] uppercase mt-0.5">Lightshop</span>
         </Link>
 
         {/* Search — grows to fill space, pushing icons to far right */}
@@ -201,7 +201,7 @@ export default function HeaderV2() {
         )}>
           <Input
             placeholder="Zoek op product, merk of categorie…"
-            className="w-full h-10 pl-4 pr-12 rounded-full border-gray-200 bg-gray-50 focus:bg-white focus:border-[#829e85] text-sm transition-all"
+            className="w-full h-10 pl-4 pr-12 rounded-full border-gray-200 bg-gray-50 focus:bg-white focus:border-[#f39c12] text-sm transition-all"
             onFocus={() => setSearchFocused(true)}
             onBlur={() => setSearchFocused(false)}
           />
@@ -243,7 +243,7 @@ export default function HeaderV2() {
                         className={cn(
                           "w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-left transition-colors",
                           selectedLocale.code === loc.code
-                            ? "bg-[#829e85]/10 text-[#829e85]"
+                            ? "bg-[#f39c12]/10 text-[#f39c12]"
                             : "hover:bg-gray-50 text-[#2b3e51]"
                         )}
                       >
@@ -252,7 +252,7 @@ export default function HeaderV2() {
                         </span>
                         <span className="text-sm font-semibold">{loc.label}</span>
                         {selectedLocale.code === loc.code && (
-                          <Check className="size-3.5 ml-auto text-[#829e85]" />
+                          <Check className="size-3.5 ml-auto text-[#f39c12]" />
                         )}
                       </button>
                     ))}
@@ -276,7 +276,7 @@ export default function HeaderV2() {
                         className={cn(
                           "w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-left transition-colors",
                           selectedCurrency.code === cur.code
-                            ? "bg-[#829e85]/10 text-[#829e85]"
+                            ? "bg-[#f39c12]/10 text-[#f39c12]"
                             : "hover:bg-gray-50 text-[#2b3e51]"
                         )}
                       >
@@ -288,7 +288,7 @@ export default function HeaderV2() {
                           <span className="text-[11px] text-gray-400">{cur.label}</span>
                         </div>
                         {selectedCurrency.code === cur.code && (
-                          <Check className="size-3.5 ml-auto text-[#829e85]" />
+                          <Check className="size-3.5 ml-auto text-[#f39c12]" />
                         )}
                       </button>
                     ))}
@@ -302,7 +302,7 @@ export default function HeaderV2() {
             href="#"
             className="hidden sm:flex flex-col items-center gap-0.5 px-3 py-1.5 rounded-lg hover:bg-gray-50 transition-colors group"
           >
-            <User className="size-5 text-[#2b3e51] group-hover:text-[#829e85] transition-colors" />
+            <User className="size-5 text-[#2b3e51] group-hover:text-[#f39c12] transition-colors" />
             <span className="hidden xl:block text-[10px] font-bold uppercase tracking-wider text-[#2b3e51]/60">
               Account
             </span>
@@ -311,7 +311,7 @@ export default function HeaderV2() {
             href="#"
             className="hidden sm:flex flex-col items-center gap-0.5 px-3 py-1.5 rounded-lg hover:bg-gray-50 transition-colors group"
           >
-            <Heart className="size-5 text-[#2b3e51] group-hover:text-[#829e85] transition-colors" />
+            <Heart className="size-5 text-[#2b3e51] group-hover:text-[#f39c12] transition-colors" />
             <span className="hidden xl:block text-[10px] font-bold uppercase tracking-wider text-[#2b3e51]/60">
               Verlanglijst
             </span>
@@ -320,11 +320,11 @@ export default function HeaderV2() {
             href="#"
             className="relative flex flex-col items-center gap-0.5 px-3 py-1.5 rounded-lg hover:bg-gray-50 transition-colors group"
           >
-            <ShoppingCart className="size-5 text-[#2b3e51] group-hover:text-[#829e85] transition-colors" />
+            <ShoppingCart className="size-5 text-[#2b3e51] group-hover:text-[#f39c12] transition-colors" />
             <span className="hidden xl:block text-[10px] font-bold uppercase tracking-wider text-[#2b3e51]/60">
               Winkelwagen
             </span>
-            <span className="absolute top-1 right-1 bg-[#829e85] text-white text-[9px] font-black size-4 rounded-full flex items-center justify-center border border-white">
+            <span className="absolute top-1 right-1 bg-[#f39c12] text-white text-[9px] font-black size-4 rounded-full flex items-center justify-center border border-white">
               0
             </span>
           </Link>
@@ -405,7 +405,7 @@ export default function HeaderV2() {
                                 className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
                               />
                             </div>
-                            <span className="text-sm font-semibold group-hover:text-[#829e85] transition-colors">
+                            <span className="text-sm font-semibold group-hover:text-[#f39c12] transition-colors">
                               {item.label}
                             </span>
                           </Link>
@@ -421,7 +421,7 @@ export default function HeaderV2() {
               </div>
 
               <div className="mt-6 pt-6 border-t border-gray-100 flex items-center gap-6">
-                <Link href="#" onClick={() => setMegaOpen(false)} className="text-[11px] font-bold uppercase tracking-widest text-[#829e85] hover:underline">
+                <Link href="#" onClick={() => setMegaOpen(false)} className="text-[11px] font-bold uppercase tracking-widest text-[#f39c12] hover:underline">
                   Bekijk volledig assortiment →
                 </Link>
                 <Link href="#" onClick={() => setMegaOpen(false)} className="text-[11px] font-bold uppercase tracking-widest text-[#2b3e51]/40 hover:text-[#2b3e51] transition-colors">
@@ -446,7 +446,7 @@ export default function HeaderV2() {
             "Veilig betalen via iDEAL & Klarna",
           ].map((usp) => (
             <div key={usp} className="flex items-center gap-1.5 shrink-0">
-              <Check className="size-3 text-[#829e85] shrink-0" />
+              <Check className="size-3 text-[#f39c12] shrink-0" />
               <span>{usp}</span>
             </div>
           ))}
@@ -482,7 +482,7 @@ export default function HeaderV2() {
             <div className="px-5 py-4 border-t border-gray-100 bg-gray-50 flex items-center gap-3">
               <span className="flex flex-col leading-none">
                 <span className="font-montserrat text-base font-black tracking-tight text-[#2b3e51]">OneConnect</span>
-                <span className="font-montserrat text-[8px] font-bold tracking-[0.4em] text-[#829e85] uppercase mt-0.5">Lightshop</span>
+                <span className="font-montserrat text-[8px] font-bold tracking-[0.4em] text-[#f39c12] uppercase mt-0.5">Lightshop</span>
               </span>
             </div>
           </div>

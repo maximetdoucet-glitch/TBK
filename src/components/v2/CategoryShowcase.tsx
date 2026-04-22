@@ -24,7 +24,7 @@ const CATEGORIES = [
     href: "/aanstekers",
     image: "https://www.uegholland.com/media/catalog/product/6/0/60001317_22.jpg",
     span: "row",   // spans both rows
-    accent: "#829e85",
+    accent: "#f39c12",
   },
   {
     name: "E-sigaretten",
@@ -65,7 +65,7 @@ export default function CategoryShowcase() {
         {/* Header */}
         <div className="flex items-end justify-between mb-6">
           <div>
-            <p className="text-[10px] font-black uppercase tracking-[0.3em] text-[#829e85] mb-1">
+            <p className="text-[10px] font-black uppercase tracking-[0.3em] text-[#f39c12] mb-1">
               Ons assortiment
             </p>
             <h2 className="font-montserrat text-3xl sm:text-4xl font-black text-[#2b3e51] tracking-tighter">
@@ -74,7 +74,7 @@ export default function CategoryShowcase() {
           </div>
           <Link
             href="/aanstekers"
-            className="hidden sm:flex items-center gap-2 text-[11px] font-bold uppercase tracking-widest text-[#2b3e51]/50 hover:text-[#829e85] transition-colors"
+            className="hidden sm:flex items-center gap-2 text-[11px] font-bold uppercase tracking-widest text-[#2b3e51]/50 hover:text-[#f39c12] transition-colors"
           >
             Alles bekijken <ArrowRight className="size-3.5" />
           </Link>

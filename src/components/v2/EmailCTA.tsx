@@ -55,7 +55,7 @@ export default function EmailCTA() {
             </div>
             <h2 className="font-montserrat font-black text-white text-3xl tracking-tighter leading-[0.95]">
               Schrijf je in en<br />
-              <span className="text-[#829e85]">ontvang direct je code</span>
+              <span className="text-[#f39c12]">ontvang direct je code</span>
             </h2>
             <p className="text-[13px] text-white/40 leading-relaxed max-w-xs">
               Blijf op de hoogte van nieuwe collecties en deals. Alleen wat echt de moeite waard is.
@@ -72,7 +72,7 @@ export default function EmailCTA() {
                 <p className="font-montserrat font-black text-white text-xl tracking-tight">
                   🎉 Check je inbox!
                 </p>
-                <p className="text-[#829e85] text-sm">
+                <p className="text-[#f39c12] text-sm">
                   Je kortingscode van 10% is onderweg.
                 </p>
               </div>
@@ -81,7 +81,7 @@ export default function EmailCTA() {
                 {/* Social proof — top */}
                 <div className="flex items-center gap-2.5">
                   <div className="flex -space-x-2">
-                    {["bg-[#829e85]", "bg-[#4a7c5e]", "bg-[#f39c12]", "bg-[#2b3e51]"].map((cls) => (
+                    {["bg-[#f39c12]", "bg-[#4a7c5e]", "bg-[#f39c12]", "bg-[#2b3e51]"].map((cls) => (
                       <div
                         key={cls}
                         className={`size-6 rounded-full border-[1.5px] border-[#0f0d0a] ${cls}`}
@@ -97,7 +97,7 @@ export default function EmailCTA() {
                 <div className="flex items-center gap-4 text-[11px] text-white/25">
                   {["Geen spam", "Altijd uitschrijven", "Direct geldig"].map((t) => (
                     <span key={t} className="flex items-center gap-1.5">
-                      <span className="text-[#829e85] text-xs">✓</span>
+                      <span className="text-[#f39c12] text-xs">✓</span>
                       {t}
                     </span>
                   ))}
@@ -141,7 +141,7 @@ export default function EmailCTA() {
           <div className="flex flex-col gap-2">
             <h2 className="font-montserrat font-black text-white text-3xl tracking-tighter leading-[0.95]">
               Schrijf je in en<br />
-              <span className="text-[#829e85]">ontvang direct je code</span>
+              <span className="text-[#f39c12]">ontvang direct je code</span>
             </h2>
             <p className="text-[13px] text-white/40 max-w-xs mx-auto leading-relaxed">
               Nieuwe collecties, exclusieve deals — direct in je inbox.
@@ -151,7 +151,7 @@ export default function EmailCTA() {
           {submitted ? (
             <div className="text-center py-2">
               <p className="font-montserrat font-black text-white text-lg">🎉 Check je inbox!</p>
-              <p className="text-[#829e85] text-sm mt-1">Je kortingscode van 10% is onderweg.</p>
+              <p className="text-[#f39c12] text-sm mt-1">Je kortingscode van 10% is onderweg.</p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="flex flex-col gap-3 w-full max-w-sm">

@@ -68,7 +68,7 @@ function Accordion({ faq }: { faq: (typeof FAQS)[0] }) {
         <span
           className={cn(
             "text-sm font-bold text-[#2b3e51] leading-snug transition-colors",
-            open ? "text-[#829e85]" : "group-hover:text-[#829e85]"
+            open ? "text-[#f39c12]" : "group-hover:text-[#f39c12]"
           )}
         >
           {faq.q}
@@ -77,8 +77,8 @@ function Accordion({ faq }: { faq: (typeof FAQS)[0] }) {
           className={cn(
             "shrink-0 size-6 rounded-full border flex items-center justify-center transition-all mt-0.5",
             open
-              ? "bg-[#829e85] border-[#829e85] text-white"
-              : "border-gray-200 text-gray-400 group-hover:border-[#829e85] group-hover:text-[#829e85]"
+              ? "bg-[#f39c12] border-[#f39c12] text-white"
+              : "border-gray-200 text-gray-400 group-hover:border-[#f39c12] group-hover:text-[#f39c12]"
           )}
         >
           {open ? <Minus className="size-3" /> : <Plus className="size-3" />}
@@ -122,12 +122,12 @@ export default function AboutSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
           {/* Left — brand story */}
           <div>
-            <p className="text-[10px] font-black uppercase tracking-[0.3em] text-[#829e85] mb-3">
+            <p className="text-[10px] font-black uppercase tracking-[0.3em] text-[#f39c12] mb-3">
               Over ons
             </p>
             <h2 className="font-montserrat text-4xl sm:text-5xl font-black text-[#2b3e51] tracking-tighter leading-[0.92] mb-8">
               Nijmegen's specialist<br />
-              <span className="text-[#829e85]">sinds 1928</span>
+              <span className="text-[#f39c12]">sinds 1928</span>
             </h2>
             <div className="space-y-4 text-[15px] text-gray-500 leading-relaxed">
               <p>
@@ -147,8 +147,8 @@ export default function AboutSection() {
             <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6">
               {PILLARS.map((p) => (
                 <div key={p.title} className="group flex gap-4">
-                  <div className="shrink-0 size-10 rounded-lg bg-[#f8f8f8] border border-gray-100 flex items-center justify-center group-hover:bg-[#829e85] group-hover:border-[#829e85] transition-all duration-300">
-                    <p.icon className="size-4.5 text-[#829e85] group-hover:text-white transition-colors" />
+                  <div className="shrink-0 size-10 rounded-lg bg-[#f8f8f8] border border-gray-100 flex items-center justify-center group-hover:bg-[#f39c12] group-hover:border-[#f39c12] transition-all duration-300">
+                    <p.icon className="size-4.5 text-[#f39c12] group-hover:text-white transition-colors" />
                   </div>
                   <div>
                     <p className="font-bold text-[#2b3e51] text-sm mb-1">
@@ -167,7 +167,7 @@ export default function AboutSection() {
           <div className="lg:pt-2">
             <div className="flex items-end justify-between mb-8">
               <div>
-                <p className="text-[10px] font-black uppercase tracking-[0.3em] text-[#829e85] mb-2">
+                <p className="text-[10px] font-black uppercase tracking-[0.3em] text-[#f39c12] mb-2">
                   FAQ
                 </p>
                 <h3 className="font-montserrat text-2xl sm:text-3xl font-black text-[#2b3e51] tracking-tighter">
@@ -184,7 +184,7 @@ export default function AboutSection() {
 
             {/* Still have questions */}
             <div className="mt-8 p-6 bg-[#f8f8f8] rounded-xl flex items-start gap-4">
-              <div className="size-10 rounded-full bg-[#829e85]/15 flex items-center justify-center shrink-0 mt-0.5">
+              <div className="size-10 rounded-full bg-[#f39c12]/15 flex items-center justify-center shrink-0 mt-0.5">
                 <span className="text-lg">💬</span>
               </div>
               <div>
@@ -195,7 +195,7 @@ export default function AboutSection() {
                   Ons team staat klaar om je te helpen.{" "}
                   <a
                     href="#"
-                    className="text-[#829e85] font-bold hover:underline"
+                    className="text-[#f39c12] font-bold hover:underline"
                   >
                     Neem contact op →
                   </a>

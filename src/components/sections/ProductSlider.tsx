@@ -30,10 +30,10 @@ export default function ProductSlider() {
             Deze week het vaakst verkocht
           </h2>
           <div className="flex gap-4">
-             <button className="swiper-prev-btn text-[#2b3e51] hover:text-primary transition-colors">
+             <button className="swiper-prev-btn text-[#2b3e51] hover:text-primary transition-colors" title="Previous product" aria-label="Previous product">
                 <ArrowLeft className="size-6" />
              </button>
-             <button className="swiper-next-btn text-[#2b3e51] hover:text-primary transition-colors">
+             <button className="swiper-next-btn text-[#2b3e51] hover:text-primary transition-colors" title="Next product" aria-label="Next product">
                 <ArrowRight className="size-6" />
              </button>
           </div>
@@ -65,7 +65,7 @@ export default function ProductSlider() {
                     className="object-contain transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                     <button className="p-2 bg-white shadow-md text-gray-400 hover:text-primary rounded-full">
+                     <button className="p-2 bg-white shadow-md text-gray-400 hover:text-primary rounded-full" title="Add to wishlist" aria-label="Add to wishlist">
                         <Heart className="size-4" />
                      </button>
                   </div>
@@ -95,7 +95,7 @@ export default function ProductSlider() {
                     )}
                     <span className="font-montserrat text-lg font-black text-[#2b3e51]">€ {product.price}</span>
                   </div>
-                  <Button size="icon" className="bg-[#829e85] hover:bg-[#6b8e6b] rounded-lg size-10">
+                  <Button size="icon" className="bg-[#f39c12] hover:bg-[#6b8e6b] rounded-lg size-10">
                     <ShoppingBag className="size-5" />
                   </Button>
                 </div>
@@ -106,7 +106,7 @@ export default function ProductSlider() {
 
         {/* Centered Button Below Swiper */}
         <div className="flex justify-center mt-12">
-           <Button className="bg-[#829e85] hover:bg-[#6b8e6b] text-white rounded-none h-14 px-12 font-bold uppercase tracking-widest text-xs">
+           <Button className="bg-[#f39c12] hover:bg-[#6b8e6b] text-white rounded-none h-14 px-12 font-bold uppercase tracking-widest text-xs">
               Bekijk aanbod <ArrowRight className="ml-2 size-4" />
            </Button>
         </div>
@@ -115,6 +115,6 @@ export default function ProductSlider() {
   );
 }
 
-function cn(...inputs: any[]) {
+function cn(...inputs: (string | undefined | null | false)[]) {
   return inputs.filter(Boolean).join(" ");
 }

@@ -129,7 +129,7 @@ export default function AanstekersPage() {
                     <span className="text-[10px] text-gray-400 ml-1">({product.reviewCount})</span>
                   </div>
 
-                  <p className="text-[10px] text-[#829e85] font-medium mb-1">{product.brand}</p>
+                  <p className="text-[10px] text-[#f39c12] font-medium mb-1">{product.brand}</p>
 
                   <Link
                     href={`/product/${product.id}`}
@@ -161,7 +161,7 @@ export default function AanstekersPage() {
                       >
                         Bekijk
                       </Link>
-                      <Button size="icon" className="bg-[#829e85] hover:bg-[#6b8e6b] rounded-sm size-8">
+                      <Button size="icon" className="bg-[#f39c12] hover:bg-[#6b8e6b] rounded-sm size-8">
                         <ShoppingBag className="size-4" />
                       </Button>
                     </div>

@@ -39,7 +39,7 @@ export default function CategoryGrid() {
                     {cat.name}
                  </span>
               </div>
-              <div className="size-8 rounded-full bg-[#829e85]/10 flex items-center justify-center text-[#829e85] group-hover:bg-[#829e85] group-hover:text-white transition-all">
+              <div className="size-8 rounded-full bg-[#f39c12]/10 flex items-center justify-center text-[#f39c12] group-hover:bg-[#f39c12] group-hover:text-white transition-all">
                  <ArrowRight className="size-4" />
               </div>
             </Link>
