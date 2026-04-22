@@ -8,12 +8,12 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const PRODUCTS = [
   {
-    id: 156,
+    id: 7,
     index: "01",
-    name: "Vintage Street Chrome",
-    tagline: "Het klassieke model. Tijdloos, navulbaar, levenslange garantie.",
-    price: "€ 44.90",
-    image: "https://www.uegholland.com/media/catalog/product/6/0/60001317_22.jpg",
+    name: "Harley-Davidson Logo",
+    tagline: "Officiële licentie. Voor de rijder die zijn passie draagt.",
+    price: "€ 72.90",
+    image: "/products/P1-removebg-preview.png",
   },
   {
     id: 33,
@@ -21,31 +21,23 @@ const PRODUCTS = [
     name: "Hunting Dog Design",
     tagline: "Gegraveerd met precisie. Ideaal cadeau voor de buitenliefhebber.",
     price: "€ 49.90",
-    image: "https://www.uegholland.com/media/catalog/product/_/0/_0140_60007371.jpg",
+    image: "/products/P2-removebg-preview.png",
+  },
+  {
+    id: 156,
+    index: "03",
+    name: "Vintage Street Chrome",
+    tagline: "Het klassieke model. Tijdloos, navulbaar, levenslange garantie.",
+    price: "€ 44.90",
+    image: "/products/P3-removebg-preview.png",
   },
   {
     id: 151,
-    index: "03",
+    index: "04",
     name: "Armor Case Brushed Chrome",
     tagline: "Zwaardere behuizing. Gemaakt om generaties mee te gaan.",
     price: "€ 44.90",
-    image: "https://www.uegholland.com/media/catalog/product/6/0/60000849_22.jpg",
-  },
-  {
-    id: 48,
-    index: "04",
-    name: "Wild West Cowboy",
-    tagline: "Iconisch Amerikaans design. Een statement in je zak.",
-    price: "€ 52.90",
-    image: "https://www.uegholland.com/media/catalog/product/_/0/_0116_60007379.jpg",
-  },
-  {
-    id: 7,
-    index: "05",
-    name: "Harley-Davidson Logo",
-    tagline: "Officiële licentie. Voor de rijder die zijn passie draagt.",
-    price: "€ 72.90",
-    image: "https://www.uegholland.com/media/catalog/product/6/0/60004741-5_18.jpg",
+    image: "/products/P4-removebg-preview.png",
   },
 ];
 
@@ -217,8 +209,6 @@ export default function HeroCarousel() {
                     alt={p.name}
                     fill
                     className="object-contain transition-transform duration-700 group-hover:scale-105"
-                    style={{ mixBlendMode: "multiply" }}
-                    unoptimized
                   />
                 </Link>
               </motion.div>
@@ -245,6 +235,7 @@ export default function HeroCarousel() {
             {PRODUCTS.map((item, i) => (
               <button
                 key={item.id}
+                type="button"
                 onClick={() => go(i)}
                 className="group flex items-center gap-4 py-3 text-left transition-all duration-300"
               >
