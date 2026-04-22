@@ -203,19 +203,15 @@ export default function HeroCarousel() {
                   >
                     <Link href={`/product/${product.id}`} className="block w-full h-full group">
                       <div
-                        className="relative w-full h-full rounded-2xl overflow-hidden transition-all duration-500 group-hover:shadow-[0_0_60px_rgba(0,0,0,0.5)]"
+                        className="relative w-full h-full rounded-2xl overflow-hidden"
                         style={{
-                          background: product.bg,
+                          background: "#111820",
                           border: "1px solid rgba(255,255,255,0.08)",
                           boxShadow: "0 30px 80px rgba(0,0,0,0.55)",
                         }}
                       >
-                        {/* Noise texture overlay for depth */}
-                        <div className="absolute inset-0 opacity-[0.04] pointer-events-none"
-                          style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")", backgroundSize: "150px" }} />
-
-                        {/* Product image — multiply blends away white bg */}
-                        <div className="relative w-full h-[260px]">
+                        {/* White area — multiply blend removes white from product image */}
+                        <div className="relative w-full h-[260px] bg-white">
                           <Image
                             src={product.image}
                             alt={product.name}
@@ -224,21 +220,20 @@ export default function HeroCarousel() {
                             style={{ mixBlendMode: "multiply" }}
                             unoptimized
                           />
+                          {/* Fade bottom of white area into dark card */}
+                          <div className="absolute bottom-0 left-0 right-0 h-16 pointer-events-none"
+                            style={{ background: "linear-gradient(to top, #111820 0%, transparent 100%)" }} />
                         </div>
 
-                        {/* Shine */}
-                        <div className="absolute inset-0 bg-gradient-to-br from-white/8 via-transparent to-transparent pointer-events-none rounded-2xl" />
-
                         {/* Info bar */}
-                        <div className="absolute bottom-0 left-0 right-0 px-5 py-4 flex items-end justify-between"
-                          style={{ background: "linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 100%)" }}>
+                        <div className="px-5 py-4 flex items-end justify-between">
                           <div>
-                            <p className="text-[9px] font-black uppercase tracking-[0.25em] mb-0.5" style={{ color: product.accent }}>{product.brand}</p>
+                            <p className="text-[9px] font-black uppercase tracking-[0.25em] text-[#829e85] mb-0.5">{product.brand}</p>
                             <p className="text-white font-black text-[13px] leading-tight">{product.name}</p>
                           </div>
                           <span
                             className="text-[13px] font-black text-white px-3 py-1.5 rounded-lg shrink-0 ml-3"
-                            style={{ background: `${product.accent}30`, border: `1px solid ${product.accent}60` }}
+                            style={{ background: "rgba(130,158,133,0.22)", border: "1px solid rgba(130,158,133,0.4)" }}
                           >
                             {product.price}
                           </span>
