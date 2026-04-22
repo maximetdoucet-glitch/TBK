@@ -7,11 +7,11 @@ import { Heart, ShoppingBag, Star, Check, ChevronDown, ArrowLeft } from "lucide-
 import Header from "@/components/v2/HeaderV2";
 import Footer from "@/components/v2/FooterV2";
 import { Button } from "@/components/ui/button";
-import { PRODUCTS, getProductById } from "@/lib/products";
+import { PRODUCTS } from "@/lib/products";
 
 export default function ProductPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params);
-  const product = getProductById(Number(id));
+  const product = PRODUCTS.find((p) => p.id === Number(id));
 
   const [selectedVariant, setSelectedVariant] = useState(0);
   const [quantity, setQuantity] = useState(1);
