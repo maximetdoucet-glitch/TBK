@@ -19,7 +19,7 @@ export default function PromoBar() {
   const msg = MESSAGES[current];
 
   return (
-    <div className="w-full bg-[#2b3e51] text-white text-[11px] font-bold uppercase tracking-[0.12em]">
+    <div className="w-full bg-[#2e4560] text-white text-[11px] font-bold uppercase tracking-[0.12em]">
       <div className="max-w-[1300px] mx-auto px-4 flex items-center justify-center gap-4 h-9 relative">
         {/* Prev */}
         <button
@@ -35,7 +35,7 @@ export default function PromoBar() {
         {msg.cta && (
           <Link
             href={msg.href!}
-            className="flex items-center gap-0.5 text-[#f9c76b] hover:text-[#f9c76b]/80 transition-colors whitespace-nowrap"
+            className="flex items-center gap-0.5 text-[#f5a623] hover:text-[#f5a623]/80 transition-colors whitespace-nowrap"
           >
             {msg.cta} <ChevronRight className="size-3" />
           </Link>

@@ -201,7 +201,7 @@ export default function HeaderV2() {
         )}>
           <Input
             placeholder="Zoek op product, merk of categorie…"
-            className="w-full h-10 pl-4 pr-12 rounded-full border-gray-200 bg-gray-50 focus:bg-white focus:border-[#f9c76b] text-sm transition-all"
+            className="w-full h-10 pl-4 pr-12 rounded-full border-gray-200 bg-gray-50 focus:bg-white focus:border-[#f5a623] text-sm transition-all"
             onFocus={() => setSearchFocused(true)}
             onBlur={() => setSearchFocused(false)}
           />
@@ -243,7 +243,7 @@ export default function HeaderV2() {
                         className={cn(
                           "w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-left transition-colors",
                           selectedLocale.code === loc.code
-                            ? "bg-[#f9c76b]/10 text-[#f9c76b]"
+                            ? "bg-[#f5a623]/10 text-[#f5a623]"
                             : "hover:bg-gray-50 text-[#2b3e51]"
                         )}
                       >
@@ -252,7 +252,7 @@ export default function HeaderV2() {
                         </span>
                         <span className="text-sm font-semibold">{loc.label}</span>
                         {selectedLocale.code === loc.code && (
-                          <Check className="size-3.5 ml-auto text-[#f9c76b]" />
+                          <Check className="size-3.5 ml-auto text-[#f5a623]" />
                         )}
                       </button>
                     ))}
@@ -276,7 +276,7 @@ export default function HeaderV2() {
                         className={cn(
                           "w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-left transition-colors",
                           selectedCurrency.code === cur.code
-                            ? "bg-[#f9c76b]/10 text-[#f9c76b]"
+                            ? "bg-[#f5a623]/10 text-[#f5a623]"
                             : "hover:bg-gray-50 text-[#2b3e51]"
                         )}
                       >
@@ -288,7 +288,7 @@ export default function HeaderV2() {
                           <span className="text-[11px] text-gray-400">{cur.label}</span>
                         </div>
                         {selectedCurrency.code === cur.code && (
-                          <Check className="size-3.5 ml-auto text-[#f9c76b]" />
+                          <Check className="size-3.5 ml-auto text-[#f5a623]" />
                         )}
                       </button>
                     ))}
@@ -302,7 +302,7 @@ export default function HeaderV2() {
             href="#"
             className="hidden sm:flex flex-col items-center gap-0.5 px-3 py-1.5 rounded-lg hover:bg-gray-50 transition-colors group"
           >
-            <User className="size-5 text-[#2b3e51] group-hover:text-[#f9c76b] transition-colors" />
+            <User className="size-5 text-[#2b3e51] group-hover:text-[#f5a623] transition-colors" />
             <span className="hidden xl:block text-[10px] font-bold uppercase tracking-wider text-[#2b3e51]/60">
               Account
             </span>
@@ -311,7 +311,7 @@ export default function HeaderV2() {
             href="#"
             className="hidden sm:flex flex-col items-center gap-0.5 px-3 py-1.5 rounded-lg hover:bg-gray-50 transition-colors group"
           >
-            <Heart className="size-5 text-[#2b3e51] group-hover:text-[#f9c76b] transition-colors" />
+            <Heart className="size-5 text-[#2b3e51] group-hover:text-[#f5a623] transition-colors" />
             <span className="hidden xl:block text-[10px] font-bold uppercase tracking-wider text-[#2b3e51]/60">
               Verlanglijst
             </span>
@@ -320,11 +320,11 @@ export default function HeaderV2() {
             href="#"
             className="relative flex flex-col items-center gap-0.5 px-3 py-1.5 rounded-lg hover:bg-gray-50 transition-colors group"
           >
-            <ShoppingCart className="size-5 text-[#2b3e51] group-hover:text-[#f9c76b] transition-colors" />
+            <ShoppingCart className="size-5 text-[#2b3e51] group-hover:text-[#f5a623] transition-colors" />
             <span className="hidden xl:block text-[10px] font-bold uppercase tracking-wider text-[#2b3e51]/60">
               Winkelwagen
             </span>
-            <span className="absolute top-1 right-1 bg-[#f9c76b] text-white text-[9px] font-black size-4 rounded-full flex items-center justify-center border border-white">
+            <span className="absolute top-1 right-1 bg-[#f5a623] text-white text-[9px] font-black size-4 rounded-full flex items-center justify-center border border-white">
               0
             </span>
           </Link>
@@ -332,7 +332,7 @@ export default function HeaderV2() {
       </div>
 
       {/* ── Nav bar — hidden when scrolled ── */}
-      <nav className={cn("w-full bg-[#2b3e51] text-white relative transition-all duration-300", scrolled ? "h-0 overflow-hidden" : "overflow-visible")}>
+      <nav className={cn("w-full bg-[#2e4560] text-white relative transition-all duration-300", scrolled ? "h-0 overflow-hidden" : "overflow-visible")}>
         <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center h-11">
           {/* Assortiment mega button */}
           <button
@@ -340,7 +340,7 @@ export default function HeaderV2() {
             onClick={() => setMegaOpen((o) => !o)}
             className={cn(
               "flex items-center gap-2 h-full px-5 font-bold uppercase tracking-widest text-[11px] transition-colors shrink-0",
-              megaOpen ? "bg-[#f9c76b]" : "bg-[#f9c76b] hover:bg-[#e0890d]"
+              megaOpen ? "bg-[#f5a623]" : "bg-[#f5a623] hover:bg-[#e0890d]"
             )}
           >
             <Menu className="size-4" />
@@ -357,7 +357,7 @@ export default function HeaderV2() {
                 className={cn(
                   "px-5 h-full flex items-center text-[11px] font-bold uppercase tracking-widest transition-colors",
                   item.accent
-                    ? "text-[#f9c76b] hover:text-[#f9c76b]/80"
+                    ? "text-[#f5a623] hover:text-[#f5a623]/80"
                     : "hover:bg-white/10 text-white/90 hover:text-white"
                 )}
               >
@@ -368,7 +368,7 @@ export default function HeaderV2() {
 
           {/* Google rating */}
           <div className="hidden md:flex items-center gap-2 ml-auto text-[10px] font-bold tracking-widest">
-            <div className="flex text-[#f9c76b] gap-px">
+            <div className="flex text-[#f5a623] gap-px">
               {[...Array(5)].map((_, i) => <span key={i}>★</span>)}
             </div>
             <span className="text-white/60">4.8 / 5 Google Reviews</span>
@@ -379,7 +379,7 @@ export default function HeaderV2() {
         {megaOpen && (
           <div
             ref={megaRef}
-            className="absolute top-full left-0 right-0 bg-white text-[#2b3e51] shadow-2xl z-50 border-t-2 border-[#f9c76b]"
+            className="absolute top-full left-0 right-0 bg-white text-[#2b3e51] shadow-2xl z-50 border-t-2 border-[#f5a623]"
           >
             <div className="max-w-[1300px] mx-auto px-8 py-8">
               <div className="grid grid-cols-3 gap-10">
@@ -405,7 +405,7 @@ export default function HeaderV2() {
                                 className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
                               />
                             </div>
-                            <span className="text-sm font-semibold group-hover:text-[#f9c76b] transition-colors">
+                            <span className="text-sm font-semibold group-hover:text-[#f5a623] transition-colors">
                               {item.label}
                             </span>
                           </Link>
@@ -421,7 +421,7 @@ export default function HeaderV2() {
               </div>
 
               <div className="mt-6 pt-6 border-t border-gray-100 flex items-center gap-6">
-                <Link href="#" onClick={() => setMegaOpen(false)} className="text-[11px] font-bold uppercase tracking-widest text-[#f9c76b] hover:underline">
+                <Link href="#" onClick={() => setMegaOpen(false)} className="text-[11px] font-bold uppercase tracking-widest text-[#f5a623] hover:underline">
                   Bekijk volledig assortiment →
                 </Link>
                 <Link href="#" onClick={() => setMegaOpen(false)} className="text-[11px] font-bold uppercase tracking-widest text-[#2b3e51]/40 hover:text-[#2b3e51] transition-colors">
@@ -446,7 +446,7 @@ export default function HeaderV2() {
             "Veilig betalen via iDEAL & Klarna",
           ].map((usp) => (
             <div key={usp} className="flex items-center gap-1.5 shrink-0">
-              <Check className="size-3 text-[#f9c76b] shrink-0" />
+              <Check className="size-3 text-[#f5a623] shrink-0" />
               <span>{usp}</span>
             </div>
           ))}

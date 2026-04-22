@@ -31,7 +31,7 @@ export default function Hero() {
                 De grootste collectie verzamelobjecten van de regio.
              </p>
              <div>
-                <Button className="bg-[#f9c76b] hover:bg-[#6b8e6b] text-white rounded-lg h-11 sm:h-14 px-8 sm:px-12 font-semibold text-xs sm:text-sm shadow-md transition-colors">
+                <Button className="bg-[#f5a623] hover:bg-[#6b8e6b] text-white rounded-lg h-11 sm:h-14 px-8 sm:px-12 font-semibold text-xs sm:text-sm shadow-md transition-colors">
                    Bekijk aanbod
                 </Button>
              </div>

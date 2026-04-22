@@ -72,7 +72,7 @@ export default function ProductSlider() {
                 </div>
 
                 <div className="flex-1">
-                  <div className="flex gap-0.5 mb-2 text-[#f9c76b]">
+                  <div className="flex gap-0.5 mb-2 text-[#f5a623]">
                     {[...Array(5)].map((_, i) => (
                       <Star key={i} className={cn("size-3 fill-current", i >= product.rating && "text-gray-200")} />
                     ))}
@@ -95,7 +95,7 @@ export default function ProductSlider() {
                     )}
                     <span className="font-montserrat text-lg font-black text-[#2b3e51]">€ {product.price}</span>
                   </div>
-                  <Button size="icon" className="bg-[#f9c76b] hover:bg-[#6b8e6b] rounded-lg size-10">
+                  <Button size="icon" className="bg-[#f5a623] hover:bg-[#6b8e6b] rounded-lg size-10">
                     <ShoppingBag className="size-5" />
                   </Button>
                 </div>
@@ -106,7 +106,7 @@ export default function ProductSlider() {
 
         {/* Centered Button Below Swiper */}
         <div className="flex justify-center mt-12">
-           <Button className="bg-[#f9c76b] hover:bg-[#6b8e6b] text-white rounded-lg h-14 px-12 font-bold uppercase tracking-widest text-xs">
+           <Button className="bg-[#f5a623] hover:bg-[#6b8e6b] text-white rounded-lg h-14 px-12 font-bold uppercase tracking-widest text-xs">
               Bekijk aanbod <ArrowRight className="ml-2 size-4" />
            </Button>
         </div>

@@ -101,7 +101,7 @@ export default function FooterV2() {
                 { icon: Mail, text: "service@tbk-lightshop.nl" },
               ].map(({ icon: Icon, text }) => (
                 <li key={text} className="flex items-center gap-3 text-[12px] text-white/40 hover:text-white/70 transition-colors">
-                  <Icon className="size-3.5 text-[#f9c76b] shrink-0" />
+                  <Icon className="size-3.5 text-[#f5a623] shrink-0" />
                   {text}
                 </li>
               ))}
@@ -112,7 +112,7 @@ export default function FooterV2() {
                 { label: "Facebook", svg: <svg viewBox="0 0 24 24" className="size-4" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg> },
                 { label: "X / Twitter", svg: <svg viewBox="0 0 24 24" className="size-4" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg> },
               ].map(({ label, svg }) => (
-                <Link key={label} href="#" aria-label={label} className="size-9 rounded-lg border border-white/10 flex items-center justify-center text-white/40 hover:text-white hover:border-[#f9c76b] hover:bg-[#f9c76b]/10 transition-all">
+                <Link key={label} href="#" aria-label={label} className="size-9 rounded-lg border border-white/10 flex items-center justify-center text-white/40 hover:text-white hover:border-[#f5a623] hover:bg-[#f5a623]/10 transition-all">
                   {svg}
                 </Link>
               ))}

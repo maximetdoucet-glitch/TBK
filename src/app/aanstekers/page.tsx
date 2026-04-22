@@ -103,7 +103,7 @@ export default function AanstekersPage() {
                     className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
                   />
                   {product.badge && (
-                    <span className="absolute top-3 left-3 bg-[#f9c76b] text-white text-[10px] font-medium px-2.5 py-0.5 rounded-sm">
+                    <span className="absolute top-3 left-3 bg-[#f5a623] text-white text-[10px] font-medium px-2.5 py-0.5 rounded-sm">
                       {product.badge}
                     </span>
                   )}
@@ -123,13 +123,13 @@ export default function AanstekersPage() {
                     {[...Array(5)].map((_, i) => (
                       <Star
                         key={i}
-                        className={`size-3 fill-current ${i < product.rating ? "text-[#f9c76b]" : "text-gray-200"}`}
+                        className={`size-3 fill-current ${i < product.rating ? "text-[#f5a623]" : "text-gray-200"}`}
                       />
                     ))}
                     <span className="text-[10px] text-gray-400 ml-1">({product.reviewCount})</span>
                   </div>
 
-                  <p className="text-[10px] text-[#f9c76b] font-medium mb-1">{product.brand}</p>
+                  <p className="text-[10px] text-[#f5a623] font-medium mb-1">{product.brand}</p>
 
                   <Link
                     href={`/product/${product.id}`}
@@ -161,7 +161,7 @@ export default function AanstekersPage() {
                       >
                         Bekijk
                       </Link>
-                      <Button size="icon" className="bg-[#f9c76b] hover:bg-[#6b8e6b] rounded-sm size-8">
+                      <Button size="icon" className="bg-[#f5a623] hover:bg-[#6b8e6b] rounded-sm size-8">
                         <ShoppingBag className="size-4" />
                       </Button>
                     </div>
