@@ -14,6 +14,8 @@ const PRODUCTS = [
     brand: "Zippo",
     price: "€ 44.90",
     image: "https://www.uegholland.com/media/catalog/product/6/0/60001317_22.jpg",
+    bg: "radial-gradient(ellipse at 60% 40%, #4a6fa5 0%, #1e3a5f 45%, #0d1520 100%)",
+    accent: "#4a6fa5",
   },
   {
     id: 33,
@@ -21,6 +23,8 @@ const PRODUCTS = [
     brand: "Zippo",
     price: "€ 49.90",
     image: "https://www.uegholland.com/media/catalog/product/_/0/_0140_60007371.jpg",
+    bg: "radial-gradient(ellipse at 55% 45%, #5c4a1e 0%, #3b2d0e 40%, #1a1208 100%)",
+    accent: "#c49a3c",
   },
   {
     id: 151,
@@ -28,6 +32,8 @@ const PRODUCTS = [
     brand: "Zippo",
     price: "€ 44.90",
     image: "https://www.uegholland.com/media/catalog/product/6/0/60000849_22.jpg",
+    bg: "radial-gradient(ellipse at 50% 40%, #2a3f55 0%, #16283a 45%, #0a141e 100%)",
+    accent: "#7ab3d4",
   },
   {
     id: 48,
@@ -35,6 +41,8 @@ const PRODUCTS = [
     brand: "Zippo",
     price: "€ 52.90",
     image: "https://www.uegholland.com/media/catalog/product/_/0/_0116_60007379.jpg",
+    bg: "radial-gradient(ellipse at 55% 45%, #6b3a1f 0%, #3d1f0a 45%, #1a0c04 100%)",
+    accent: "#d47a3c",
   },
   {
     id: 7,
@@ -42,6 +50,8 @@ const PRODUCTS = [
     brand: "Zippo",
     price: "€ 72.90",
     image: "https://www.uegholland.com/media/catalog/product/6/0/60004741-5_18.jpg",
+    bg: "radial-gradient(ellipse at 55% 40%, #5c1a00 0%, #2e0d00 45%, #0f0400 100%)",
+    accent: "#e85d00",
   },
 ];
 
@@ -193,37 +203,42 @@ export default function HeroCarousel() {
                   >
                     <Link href={`/product/${product.id}`} className="block w-full h-full group">
                       <div
-                        className="relative w-full h-full rounded-2xl overflow-hidden transition-shadow duration-300 group-hover:shadow-[0_0_50px_rgba(130,158,133,0.2)]"
+                        className="relative w-full h-full rounded-2xl overflow-hidden transition-all duration-500 group-hover:shadow-[0_0_60px_rgba(0,0,0,0.5)]"
                         style={{
-                          background: "linear-gradient(145deg, #1c2b3a 0%, #111820 100%)",
+                          background: product.bg,
                           border: "1px solid rgba(255,255,255,0.08)",
                           boxShadow: "0 30px 80px rgba(0,0,0,0.55)",
                         }}
                       >
-                        {/* Product image */}
+                        {/* Noise texture overlay for depth */}
+                        <div className="absolute inset-0 opacity-[0.04] pointer-events-none"
+                          style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")", backgroundSize: "150px" }} />
+
+                        {/* Product image — multiply blends away white bg */}
                         <div className="relative w-full h-[260px]">
                           <Image
                             src={product.image}
                             alt={product.name}
                             fill
                             className="object-contain p-8 transition-transform duration-500 group-hover:scale-105"
+                            style={{ mixBlendMode: "multiply" }}
                             unoptimized
                           />
                         </div>
 
                         {/* Shine */}
-                        <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent pointer-events-none rounded-2xl" />
+                        <div className="absolute inset-0 bg-gradient-to-br from-white/8 via-transparent to-transparent pointer-events-none rounded-2xl" />
 
                         {/* Info bar */}
                         <div className="absolute bottom-0 left-0 right-0 px-5 py-4 flex items-end justify-between"
-                          style={{ background: "linear-gradient(to top, rgba(13,21,32,0.95) 0%, transparent 100%)" }}>
+                          style={{ background: "linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 100%)" }}>
                           <div>
-                            <p className="text-[9px] font-black uppercase tracking-[0.25em] text-[#829e85] mb-0.5">{product.brand}</p>
+                            <p className="text-[9px] font-black uppercase tracking-[0.25em] mb-0.5" style={{ color: product.accent }}>{product.brand}</p>
                             <p className="text-white font-black text-[13px] leading-tight">{product.name}</p>
                           </div>
                           <span
                             className="text-[13px] font-black text-white px-3 py-1.5 rounded-lg shrink-0 ml-3"
-                            style={{ background: "rgba(130,158,133,0.22)", border: "1px solid rgba(130,158,133,0.35)" }}
+                            style={{ background: `${product.accent}30`, border: `1px solid ${product.accent}60` }}
                           >
                             {product.price}
                           </span>
