@@ -72,24 +72,11 @@ export default function HeroCarousel() {
           alt=""
           fill
           className="object-cover object-center"
-          style={{ opacity: 0.18 }}
+          style={{ opacity: 0.33 }}
           priority
           unoptimized
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#0b0f14] via-[#0b0f14]/70 to-[#0b0f14]/50" />
-      </div>
-
-      {/* ── Giant typographic backdrop ── */}
-      <div
-        aria-hidden
-        className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden"
-      >
-        <span
-          className="font-montserrat font-black text-white leading-none tracking-tighter"
-          style={{ fontSize: "clamp(120px, 22vw, 340px)", opacity: 0.025 }}
-        >
-          ZIPPO
-        </span>
       </div>
 
       {/* ── Subtle horizontal scan line ── */}
