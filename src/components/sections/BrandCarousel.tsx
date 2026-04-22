@@ -9,7 +9,7 @@ const BRANDS = [
   { name: "Ronson",     img: "/brands/ronson.png" },
   { name: "Zorr",       img: "/brands/zorr.png" },
   { name: "Zengaz",     img: "/brands/zengaz.png" },
-  { name: "Mascotte",   img: "/brands/mascotte.png" },
+  { name: "Mascotte",   img: "/brands/mascotte2.png" },
   { name: "SMOK",       img: "/brands/smok.png" },
   { name: "Vaporesso",  img: "/brands/vaporesso.png" },
   { name: "VOOPOO",     img: "/brands/voopoo.png" },
