@@ -133,7 +133,7 @@ export default function CategoryShowcase() {
               alt={esig.name}
               fill
               unoptimized
-              className="object-contain object-center p-8 transition-transform duration-500 group-hover:scale-105 opacity-85 group-hover:opacity-100"
+              className="object-cover object-center transition-transform duration-500 group-hover:scale-105 opacity-85 group-hover:opacity-100"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
             <div
@@ -163,7 +163,7 @@ export default function CategoryShowcase() {
               alt={acc.name}
               fill
               unoptimized
-              className="object-contain object-center p-8 transition-transform duration-500 group-hover:scale-105 opacity-85 group-hover:opacity-100"
+              className="object-cover object-center transition-transform duration-500 group-hover:scale-105 opacity-85 group-hover:opacity-100"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
             <div
