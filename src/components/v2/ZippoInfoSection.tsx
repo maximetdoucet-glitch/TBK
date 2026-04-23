@@ -129,7 +129,7 @@ export default function ZippoInfoSection() {
 
       {/* Gradient transition: page bg (#f8f9fa) → dark */}
       <div className="bg-gradient-to-b from-[#f8f9fa] via-[#1b2333] to-[#0d1117]">
-        <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-4">
+        <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-24">
 
           {/* Soft lead-in label — first thing visible as page fades */}
           <div className="flex items-center gap-3 mb-8">
@@ -227,7 +227,7 @@ export default function ZippoInfoSection() {
           SECTION 2 — HOW TO REFILL
           Steps with oversized ghost numbers
       ══════════════════════════════════════════════ */}
-      <div className="border-t border-white/6">
+      <div className="bg-[#0d1117] border-t border-white/6">
         <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 py-20">
 
           {/* Tight, functional header */}
@@ -285,7 +285,7 @@ export default function ZippoInfoSection() {
           SECTION 3 — FAQ
           Left border treatment, numbered tags
       ══════════════════════════════════════════════ */}
-      <div className="border-t border-white/6">
+      <div className="bg-[#0d1117] border-t border-white/6">
         <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 py-20">
 
           <div className="grid grid-cols-1 lg:grid-cols-[300px_1fr] gap-16 items-start">
