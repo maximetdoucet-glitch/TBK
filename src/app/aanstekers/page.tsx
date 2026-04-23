@@ -13,18 +13,16 @@ export const metadata = {
 };
 
 const PER_PAGE = 24;
+const PRICE_MAX = 430;
 
-// Only lighters — everything else gets its own page later
 const ALL_LIGHTERS = PRODUCTS.filter((p) => p.category === "Aanstekers");
 
-// Sidebar subcategories (xmlCategory within Aanstekers)
-const SUBCATEGORIES: { label: string; xmlCat: string }[] = [
+const SUBCATEGORIES = [
   { label: "Zippo aanstekers", xmlCat: "Zippo-aanstekers" },
   { label: "Alle aanstekers", xmlCat: "Aanstekers" },
   { label: "Zippo accessoires", xmlCat: "Zippo-accessoires" },
 ];
 
-// Pre-computed counts (static, based on full lighter set)
 const CAT_COUNTS = ALL_LIGHTERS.reduce<Record<string, number>>((acc, p) => {
   if (p.xmlCategory) acc[p.xmlCategory] = (acc[p.xmlCategory] ?? 0) + 1;
   return acc;
@@ -52,6 +50,8 @@ function buildUrl(base: SP, overrides: SP): string {
   if (merged.cat) p.set("cat", merged.cat);
   if (merged.brand) p.set("brand", merged.brand);
   if (merged.sort && merged.sort !== "recommended") p.set("sort", merged.sort);
+  if (merged.min_price && merged.min_price !== "0") p.set("min_price", merged.min_price);
+  if (merged.max_price && merged.max_price !== String(PRICE_MAX)) p.set("max_price", merged.max_price);
   if (merged.page && merged.page !== "1") p.set("page", merged.page);
   const qs = p.toString();
   return `/aanstekers${qs ? `?${qs}` : ""}`;
@@ -67,11 +67,15 @@ export default async function AanstekersPage({
   const activeBrand = sp.brand ?? "";
   const activeSort = sp.sort ?? "recommended";
   const page = Math.max(1, parseInt(sp.page ?? "1", 10));
+  const minPrice = parseFloat(sp.min_price ?? "0");
+  const maxPrice = parseFloat(sp.max_price ?? String(PRICE_MAX));
 
-  // --- Filter within lighters only ---
+  // --- Filter ---
   let filtered = ALL_LIGHTERS;
   if (activeCat) filtered = filtered.filter((p) => p.xmlCategory === activeCat);
   if (activeBrand) filtered = filtered.filter((p) => p.brand === activeBrand);
+  if (sp.min_price) filtered = filtered.filter((p) => parseFloat(p.price) >= minPrice);
+  if (sp.max_price) filtered = filtered.filter((p) => parseFloat(p.price) <= maxPrice);
 
   // --- Sort ---
   if (activeSort === "price_asc")
@@ -88,7 +92,7 @@ export default async function AanstekersPage({
   const start = (safePage - 1) * PER_PAGE;
   const pageProducts = filtered.slice(start, start + PER_PAGE);
 
-  // Brand counts scoped to current cat filter
+  // Brand counts scoped to active cat
   const brandBase = activeCat
     ? ALL_LIGHTERS.filter((p) => p.xmlCategory === activeCat)
     : ALL_LIGHTERS;
@@ -101,20 +105,15 @@ export default async function AanstekersPage({
     count: brandCounts[brand] ?? 0,
   })).filter((b) => b.count > 0);
 
-  // Active filter display label
-  const activeCatLabel =
-    SUBCATEGORIES.find((s) => s.xmlCat === activeCat)?.label ?? activeCat;
+  const activeCatLabel = SUBCATEGORIES.find((s) => s.xmlCat === activeCat)?.label ?? activeCat;
+  const hasPriceFilter = sp.min_price !== undefined || sp.max_price !== undefined;
 
-  // Pagination numbers with ellipsis
+  // Pagination numbers
   const pageNumbers: (number | "…")[] = [];
   for (let n = 1; n <= totalPages; n++) {
     if (n === 1 || n === totalPages || Math.abs(n - safePage) <= 2) {
-      if (
-        pageNumbers.length > 0 &&
-        typeof pageNumbers[pageNumbers.length - 1] === "number"
-      ) {
-        const prev = pageNumbers[pageNumbers.length - 1] as number;
-        if (n - prev > 1) pageNumbers.push("…");
+      if (pageNumbers.length > 0 && typeof pageNumbers[pageNumbers.length - 1] === "number") {
+        if (n - (pageNumbers[pageNumbers.length - 1] as number) > 1) pageNumbers.push("…");
       }
       pageNumbers.push(n);
     }
@@ -127,14 +126,14 @@ export default async function AanstekersPage({
 
       <main className="flex-1 bg-[#f8f9fa]">
 
-        {/* ── Page banner ── */}
+        {/* ── Banner ── */}
         <div className="bg-[#111820] py-10">
           <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8">
             <nav className="flex items-center gap-1.5 text-[11px] text-white/40 mb-4">
               <Link href="/" className="hover:text-white transition-colors">Home</Link>
               <ChevronRight className="size-3" />
               <span className="text-white/70">Aanstekers</span>
-              {activeCatLabel && activeCat && (
+              {activeCat && (
                 <>
                   <ChevronRight className="size-3" />
                   <span className="text-white/70">{activeCatLabel}</span>
@@ -150,11 +149,7 @@ export default async function AanstekersPage({
             <div className="flex items-end justify-between">
               <div>
                 <h1 className="font-montserrat text-2xl font-black text-white tracking-tight">
-                  {activeCatLabel && activeCat
-                    ? activeCatLabel
-                    : activeBrand
-                    ? `${activeBrand} aanstekers`
-                    : "Aanstekers"}
+                  {activeCat ? activeCatLabel : activeBrand ? `${activeBrand} aanstekers` : "Aanstekers"}
                 </h1>
                 <p className="text-white/35 text-[11px] mt-1">{total} producten</p>
               </div>
@@ -169,32 +164,32 @@ export default async function AanstekersPage({
         <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="flex gap-8 items-start">
 
-            {/* ── Sidebar ── */}
-            <aside className="hidden lg:flex flex-col gap-7 w-52 flex-shrink-0 sticky top-6">
+            {/* ═══════════════════════════════
+                SIDEBAR
+            ═══════════════════════════════ */}
+            <aside className="hidden lg:block w-56 flex-shrink-0 sticky top-6 space-y-0 bg-white border border-gray-100 rounded-sm overflow-hidden">
 
-              {/* All lighters */}
-              <div>
-                <Link
-                  href="/aanstekers"
-                  className={`flex items-center justify-between text-[11px] font-black uppercase tracking-[0.15em] pb-2 border-b border-gray-200 transition-colors ${
-                    !activeCat && !activeBrand
-                      ? "text-[#f5a623]"
-                      : "text-[#2b3e51] hover:text-[#f5a623]"
-                  }`}
-                >
-                  Alle aanstekers
-                  <span className="text-[11px] font-normal text-gray-400 tabular-nums">
-                    {ALL_LIGHTERS.length}
-                  </span>
-                </Link>
-              </div>
-
-              {/* Subcategories */}
-              <div>
-                <p className="text-[9px] font-black uppercase tracking-[0.25em] text-gray-400 mb-2">
-                  Categorie
+              {/* ── Categorieën ── */}
+              <div className="px-5 py-4 border-b border-gray-100">
+                <p className="text-[11px] font-black uppercase tracking-[0.15em] text-[#2b3e51] mb-3">
+                  Categorieën
                 </p>
-                <ul className="space-y-0.5">
+                <ul className="space-y-1">
+                  {/* All */}
+                  <li>
+                    <Link
+                      href="/aanstekers"
+                      className="flex items-center gap-2.5 py-1 group"
+                    >
+                      <span className={`w-4 h-4 rounded-full border-2 flex items-center justify-center flex-shrink-0 transition-colors ${!activeCat ? "border-[#f5a623] bg-[#f5a623]" : "border-gray-300 group-hover:border-[#2b3e51]"}`}>
+                        {!activeCat && <span className="w-1.5 h-1.5 rounded-full bg-white" />}
+                      </span>
+                      <span className={`text-[12px] transition-colors ${!activeCat ? "text-[#2b3e51] font-bold" : "text-gray-500 group-hover:text-[#2b3e51]"}`}>
+                        Alle aanstekers
+                      </span>
+                      <span className="ml-auto text-[10px] text-gray-300 tabular-nums">{ALL_LIGHTERS.length}</span>
+                    </Link>
+                  </li>
                   {SUBCATEGORIES.map(({ label, xmlCat }) => {
                     const count = CAT_COUNTS[xmlCat] ?? 0;
                     if (count === 0) return null;
@@ -202,23 +197,16 @@ export default async function AanstekersPage({
                     return (
                       <li key={xmlCat}>
                         <Link
-                          href={buildUrl(sp, {
-                            cat: isActive ? undefined : xmlCat,
-                            page: "1",
-                          })}
-                          className={`flex items-center justify-between text-[12px] py-1.5 px-2 rounded transition-colors ${
-                            isActive
-                              ? "bg-[#f5a623]/10 text-[#f5a623] font-bold"
-                              : "text-gray-500 hover:text-[#2b3e51] hover:bg-gray-100"
-                          }`}
+                          href={buildUrl(sp, { cat: isActive ? undefined : xmlCat, page: "1" })}
+                          className="flex items-center gap-2.5 py-1 group"
                         >
-                          <span className="flex items-center gap-2">
-                            {isActive && (
-                              <span className="w-1.5 h-1.5 rounded-full bg-[#f5a623] flex-shrink-0" />
-                            )}
+                          <span className={`w-4 h-4 rounded-full border-2 flex items-center justify-center flex-shrink-0 transition-colors ${isActive ? "border-[#f5a623] bg-[#f5a623]" : "border-gray-300 group-hover:border-[#2b3e51]"}`}>
+                            {isActive && <span className="w-1.5 h-1.5 rounded-full bg-white" />}
+                          </span>
+                          <span className={`text-[12px] transition-colors ${isActive ? "text-[#2b3e51] font-bold" : "text-gray-500 group-hover:text-[#2b3e51]"}`}>
                             {label}
                           </span>
-                          <span className="text-[10px] text-gray-300 tabular-nums">{count}</span>
+                          <span className="ml-auto text-[10px] text-gray-300 tabular-nums">{count}</span>
                         </Link>
                       </li>
                     );
@@ -226,57 +214,133 @@ export default async function AanstekersPage({
                 </ul>
               </div>
 
-              {/* Brands */}
-              <div>
-                <p className="text-[9px] font-black uppercase tracking-[0.25em] text-gray-400 mb-2">
-                  Merk
+              {/* ── Merken ── */}
+              <div className="px-5 py-4 border-b border-gray-100">
+                <p className="text-[11px] font-black uppercase tracking-[0.15em] text-[#2b3e51] mb-3">
+                  Merken
                 </p>
-                <ul className="space-y-0.5">
+                {/* All brands radio */}
+                <ul className="space-y-1">
+                  <li>
+                    <Link
+                      href={buildUrl(sp, { brand: undefined, page: "1" })}
+                      className="flex items-center gap-2.5 py-1 group"
+                    >
+                      <span className={`w-4 h-4 rounded-full border-2 flex items-center justify-center flex-shrink-0 transition-colors ${!activeBrand ? "border-[#f5a623] bg-[#f5a623]" : "border-gray-300 group-hover:border-[#2b3e51]"}`}>
+                        {!activeBrand && <span className="w-1.5 h-1.5 rounded-full bg-white" />}
+                      </span>
+                      <span className={`text-[12px] transition-colors ${!activeBrand ? "text-[#2b3e51] font-bold" : "text-gray-500 group-hover:text-[#2b3e51]"}`}>
+                        Alle merken
+                      </span>
+                    </Link>
+                  </li>
                   {scopedBrands.map(({ brand, count }) => {
                     const isActive = activeBrand === brand;
                     return (
                       <li key={brand}>
                         <Link
-                          href={buildUrl(sp, {
-                            brand: isActive ? undefined : brand,
-                            page: "1",
-                          })}
-                          className={`flex items-center justify-between text-[12px] py-1.5 px-2 rounded transition-colors ${
-                            isActive
-                              ? "bg-[#f5a623]/10 text-[#f5a623] font-bold"
-                              : "text-gray-500 hover:text-[#2b3e51] hover:bg-gray-100"
-                          }`}
+                          href={buildUrl(sp, { brand: isActive ? undefined : brand, page: "1" })}
+                          className="flex items-center gap-2.5 py-1 group"
                         >
-                          <span className="flex items-center gap-2">
-                            {isActive && (
-                              <span className="w-1.5 h-1.5 rounded-full bg-[#f5a623] flex-shrink-0" />
-                            )}
+                          <span className={`w-4 h-4 rounded-full border-2 flex items-center justify-center flex-shrink-0 transition-colors ${isActive ? "border-[#f5a623] bg-[#f5a623]" : "border-gray-300 group-hover:border-[#2b3e51]"}`}>
+                            {isActive && <span className="w-1.5 h-1.5 rounded-full bg-white" />}
+                          </span>
+                          <span className={`text-[12px] transition-colors ${isActive ? "text-[#2b3e51] font-bold" : "text-gray-500 group-hover:text-[#2b3e51]"}`}>
                             {brand}
                           </span>
-                          <span className="text-[10px] text-gray-300 tabular-nums">{count}</span>
+                          <span className="ml-auto text-[10px] text-gray-300 tabular-nums">{count}</span>
                         </Link>
                       </li>
                     );
                   })}
                 </ul>
               </div>
+
+              {/* ── Prijs ── */}
+              <div className="px-5 py-4">
+                <p className="text-[11px] font-black uppercase tracking-[0.15em] text-[#2b3e51] mb-3">
+                  Prijs
+                </p>
+                <form action="/aanstekers" method="get">
+                  {/* Preserve other active filters */}
+                  {activeCat && <input type="hidden" name="cat" value={activeCat} />}
+                  {activeBrand && <input type="hidden" name="brand" value={activeBrand} />}
+                  {activeSort !== "recommended" && (
+                    <input type="hidden" name="sort" value={activeSort} />
+                  )}
+                  <div className="flex items-center gap-2 mb-3">
+                    <div className="flex-1">
+                      <label className="text-[9px] text-gray-400 font-bold uppercase tracking-wider block mb-1">Min</label>
+                      <div className="flex items-center border border-gray-200 rounded px-2 py-1.5 focus-within:border-[#2b3e51]">
+                        <span className="text-[11px] text-gray-400 mr-0.5">€</span>
+                        <input
+                          type="number"
+                          name="min_price"
+                          min="0"
+                          max={PRICE_MAX}
+                          step="1"
+                          defaultValue={sp.min_price ?? "0"}
+                          placeholder="0"
+                          title="Minimumprijs"
+                          className="w-full text-[12px] text-[#2b3e51] font-semibold outline-none bg-transparent"
+                        />
+                      </div>
+                    </div>
+                    <span className="text-gray-300 text-sm mt-4">—</span>
+                    <div className="flex-1">
+                      <label className="text-[9px] text-gray-400 font-bold uppercase tracking-wider block mb-1">Max</label>
+                      <div className="flex items-center border border-gray-200 rounded px-2 py-1.5 focus-within:border-[#2b3e51]">
+                        <span className="text-[11px] text-gray-400 mr-0.5">€</span>
+                        <input
+                          type="number"
+                          name="max_price"
+                          min="0"
+                          max={PRICE_MAX}
+                          step="1"
+                          defaultValue={sp.max_price ?? String(PRICE_MAX)}
+                          placeholder="430"
+                          title="Maximumprijs"
+                          className="w-full text-[12px] text-[#2b3e51] font-semibold outline-none bg-transparent"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <button
+                    type="submit"
+                    className="w-full py-2 text-[11px] font-black uppercase tracking-[0.15em] bg-[#2b3e51] text-white rounded hover:bg-[#f5a623] transition-colors"
+                  >
+                    Toepassen
+                  </button>
+                  {hasPriceFilter && (
+                    <Link
+                      href={buildUrl(sp, { min_price: undefined, max_price: undefined, page: "1" })}
+                      className="block text-center text-[10px] text-gray-400 hover:text-[#2b3e51] mt-2 transition-colors"
+                    >
+                      Prijs filter wissen
+                    </Link>
+                  )}
+                </form>
+              </div>
             </aside>
 
-            {/* ── Main content ── */}
+            {/* ═══════════════════════════════
+                MAIN CONTENT
+            ═══════════════════════════════ */}
             <div className="flex-1 min-w-0">
 
               {/* Toolbar */}
               <div className="flex flex-wrap items-center justify-between gap-3 mb-5">
                 <div className="flex items-center gap-3">
-                  <button type="button" className="lg:hidden flex items-center gap-1.5 text-[11px] font-bold text-[#2b3e51] border border-gray-200 px-3 py-2 rounded">
+                  <button
+                    type="button"
+                    className="lg:hidden flex items-center gap-1.5 text-[11px] font-bold text-[#2b3e51] border border-gray-200 bg-white px-3 py-2 rounded"
+                  >
                     <SlidersHorizontal className="size-3.5" />
                     Filters
                   </button>
                   <p className="text-[11px] text-gray-400">
                     <span className="font-bold text-[#2b3e51]">
-                      {total > 0
-                        ? `${start + 1}–${Math.min(start + PER_PAGE, total)}`
-                        : "0"}
+                      {total > 0 ? `${start + 1}–${Math.min(start + PER_PAGE, total)}` : "0"}
                     </span>{" "}
                     van {total} producten
                   </p>
@@ -290,7 +354,7 @@ export default async function AanstekersPage({
                       className={`text-[11px] px-3 py-1.5 border rounded-full transition-all ${
                         activeSort === opt.value
                           ? "border-[#2b3e51] bg-[#2b3e51] text-white"
-                          : "border-gray-200 text-gray-500 hover:border-[#2b3e51] hover:text-[#2b3e51]"
+                          : "border-gray-200 bg-white text-gray-500 hover:border-[#2b3e51] hover:text-[#2b3e51]"
                       }`}
                     >
                       {opt.label}
@@ -300,7 +364,7 @@ export default async function AanstekersPage({
               </div>
 
               {/* Active filter chips */}
-              {(activeCat || activeBrand) && (
+              {(activeCat || activeBrand || hasPriceFilter) && (
                 <div className="flex flex-wrap items-center gap-2 mb-5">
                   {activeCat && (
                     <Link
@@ -318,9 +382,17 @@ export default async function AanstekersPage({
                       {activeBrand} ✕
                     </Link>
                   )}
+                  {hasPriceFilter && (
+                    <Link
+                      href={buildUrl(sp, { min_price: undefined, max_price: undefined, page: "1" })}
+                      className="flex items-center gap-1.5 text-[11px] font-bold px-3 py-1.5 bg-[#2b3e51] text-white rounded-full"
+                    >
+                      €{sp.min_price ?? "0"} – €{sp.max_price ?? PRICE_MAX} ✕
+                    </Link>
+                  )}
                   <Link
                     href="/aanstekers"
-                    className="text-[11px] px-3 py-1.5 border border-gray-200 text-gray-400 rounded-full hover:border-[#2b3e51] hover:text-[#2b3e51] transition-colors"
+                    className="text-[11px] px-3 py-1.5 border border-gray-200 bg-white text-gray-400 rounded-full hover:border-[#2b3e51] hover:text-[#2b3e51] transition-colors"
                   >
                     Wis alle filters
                   </Link>
@@ -331,10 +403,7 @@ export default async function AanstekersPage({
               {pageProducts.length === 0 ? (
                 <div className="text-center py-24">
                   <p className="text-gray-400 font-semibold">Geen producten gevonden</p>
-                  <Link
-                    href="/aanstekers"
-                    className="text-[#f5a623] text-sm mt-2 inline-block underline"
-                  >
+                  <Link href="/aanstekers" className="text-[#f5a623] text-sm mt-2 inline-block underline">
                     Wis filters
                   </Link>
                 </div>
@@ -345,7 +414,6 @@ export default async function AanstekersPage({
                       key={product.id}
                       className="group bg-white border border-gray-100 flex flex-col hover:shadow-md transition-all duration-300 rounded-sm"
                     >
-                      {/* Image */}
                       <Link
                         href={`/product/${product.id}`}
                         className="relative block overflow-hidden bg-[#f8f8f8] aspect-square p-4 sm:p-6"
@@ -368,27 +436,26 @@ export default async function AanstekersPage({
                             SALE
                           </span>
                         )}
-                        <button type="button" aria-label="Voeg toe aan verlanglijst" className="absolute bottom-2 right-2 p-1.5 bg-white shadow-sm text-gray-300 hover:text-[#f5a623] opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-full">
+                        <button
+                          type="button"
+                          aria-label="Voeg toe aan verlanglijst"
+                          className="absolute bottom-2 right-2 p-1.5 bg-white shadow-sm text-gray-300 hover:text-[#f5a623] opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-full"
+                        >
                           <Heart className="size-3.5" />
                         </button>
                       </Link>
 
-                      {/* Info */}
                       <div className="p-3 sm:p-4 flex flex-col flex-1">
                         <div className="flex items-center gap-0.5 mb-1.5">
                           {[...Array(5)].map((_, i) => (
                             <Star
                               key={i}
                               className={`size-2.5 fill-current ${
-                                i < Math.round(product.rating)
-                                  ? "text-[#f5a623]"
-                                  : "text-gray-200"
+                                i < Math.round(product.rating) ? "text-[#f5a623]" : "text-gray-200"
                               }`}
                             />
                           ))}
-                          <span className="text-[10px] text-gray-400 ml-1">
-                            ({product.reviewCount})
-                          </span>
+                          <span className="text-[10px] text-gray-400 ml-1">({product.reviewCount})</span>
                         </div>
 
                         <p className="text-[10px] text-[#f5a623] font-black mb-1 tracking-wide">
@@ -402,7 +469,6 @@ export default async function AanstekersPage({
                           {product.name}
                         </Link>
 
-                        {/* Price + CTA */}
                         <div className="flex items-center justify-between mt-3 pt-3 border-t border-gray-50">
                           <div className="flex flex-col">
                             {product.oldPrice && (
@@ -414,7 +480,11 @@ export default async function AanstekersPage({
                               € {product.price}
                             </span>
                           </div>
-                          <button type="button" aria-label="Voeg toe aan winkelwagen" className="size-8 bg-[#f5a623] hover:bg-[#2b3e51] rounded-sm flex items-center justify-center transition-colors">
+                          <button
+                            type="button"
+                            aria-label="Voeg toe aan winkelwagen"
+                            className="size-8 bg-[#f5a623] hover:bg-[#2b3e51] rounded-sm flex items-center justify-center transition-colors"
+                          >
                             <ShoppingBag className="size-4 text-white" />
                           </button>
                         </div>
@@ -430,20 +500,14 @@ export default async function AanstekersPage({
                   {safePage > 1 && (
                     <Link
                       href={buildUrl(sp, { page: String(safePage - 1) })}
-                      className="px-4 py-2 text-[11px] font-bold border border-gray-200 text-gray-500 hover:border-[#2b3e51] hover:text-[#2b3e51] rounded transition-all"
+                      className="px-4 py-2 text-[11px] font-bold border border-gray-200 bg-white text-gray-500 hover:border-[#2b3e51] hover:text-[#2b3e51] rounded transition-all"
                     >
                       ← Vorige
                     </Link>
                   )}
-
                   {pageNumbers.map((item, i) =>
                     item === "…" ? (
-                      <span
-                        key={`dots-${i}`}
-                        className="px-2 text-gray-400 text-[11px] select-none"
-                      >
-                        …
-                      </span>
+                      <span key={`dots-${i}`} className="px-2 text-gray-400 text-[11px] select-none">…</span>
                     ) : (
                       <Link
                         key={item}
@@ -451,18 +515,17 @@ export default async function AanstekersPage({
                         className={`w-9 h-9 flex items-center justify-center text-[11px] font-bold border rounded transition-all ${
                           item === safePage
                             ? "bg-[#2b3e51] border-[#2b3e51] text-white"
-                            : "border-gray-200 text-gray-500 hover:border-[#2b3e51] hover:text-[#2b3e51]"
+                            : "border-gray-200 bg-white text-gray-500 hover:border-[#2b3e51] hover:text-[#2b3e51]"
                         }`}
                       >
                         {item}
                       </Link>
                     )
                   )}
-
                   {safePage < totalPages && (
                     <Link
                       href={buildUrl(sp, { page: String(safePage + 1) })}
-                      className="px-4 py-2 text-[11px] font-bold border border-gray-200 text-gray-500 hover:border-[#2b3e51] hover:text-[#2b3e51] rounded transition-all"
+                      className="px-4 py-2 text-[11px] font-bold border border-gray-200 bg-white text-gray-500 hover:border-[#2b3e51] hover:text-[#2b3e51] rounded transition-all"
                     >
                       Volgende →
                     </Link>
