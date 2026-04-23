@@ -7,38 +7,35 @@ import PromoBar from "@/components/v2/PromoBar";
 import { PRODUCTS } from "@/lib/products";
 
 export const metadata = {
-  title: "Collectie — OneConnect Lightshop",
+  title: "Aanstekers — OneConnect Lightshop",
   description:
-    "Het complete assortiment aanstekers, e-sigaretten, e-liquids en rookaccessoires bij OneConnect Lightshop Nijmegen.",
+    "Ontdek 330+ aanstekers van Zippo, Clipper, Ronson en meer bij OneConnect Lightshop Nijmegen. Gratis verzending vanaf €50.",
 };
 
 const PER_PAGE = 24;
 
-const SIDEBAR_GROUPS = [
-  {
-    label: "Aanstekers",
-    subs: ["Aanstekers", "Zippo-aanstekers", "Zippo-accessoires"],
-  },
-  {
-    label: "E-sigaretten",
-    subs: ["Startset", "Open POD", "Clearomizer", "Coils", "Batterij", "Batterij Oplader"],
-  },
-  {
-    label: "E-liquids",
-    subs: ["Liquid 10ML", "Base"],
-  },
-  {
-    label: "Accessoires",
-    subs: [
-      "Sigaretten-accessoires",
-      "Sigaren-accessoires",
-      "Filter Flavours",
-      "Pijpen en accessoires",
-      "Cannabis-accessoires",
-      "Accessoires Overig",
-    ],
-  },
+// Only lighters — everything else gets its own page later
+const ALL_LIGHTERS = PRODUCTS.filter((p) => p.category === "Aanstekers");
+
+// Sidebar subcategories (xmlCategory within Aanstekers)
+const SUBCATEGORIES: { label: string; xmlCat: string }[] = [
+  { label: "Zippo aanstekers", xmlCat: "Zippo-aanstekers" },
+  { label: "Alle aanstekers", xmlCat: "Aanstekers" },
+  { label: "Zippo accessoires", xmlCat: "Zippo-accessoires" },
 ];
+
+// Pre-computed counts (static, based on full lighter set)
+const CAT_COUNTS = ALL_LIGHTERS.reduce<Record<string, number>>((acc, p) => {
+  if (p.xmlCategory) acc[p.xmlCategory] = (acc[p.xmlCategory] ?? 0) + 1;
+  return acc;
+}, {});
+
+const ALL_BRANDS = Object.entries(
+  ALL_LIGHTERS.reduce<Record<string, number>>((acc, p) => {
+    acc[p.brand] = (acc[p.brand] ?? 0) + 1;
+    return acc;
+  }, {})
+).sort((a, b) => b[1] - a[1]);
 
 const SORT_OPTIONS = [
   { label: "Aanbevolen", value: "recommended" },
@@ -71,8 +68,8 @@ export default async function AanstekersPage({
   const activeSort = sp.sort ?? "recommended";
   const page = Math.max(1, parseInt(sp.page ?? "1", 10));
 
-  // --- Filter ---
-  let filtered = PRODUCTS;
+  // --- Filter within lighters only ---
+  let filtered = ALL_LIGHTERS;
   if (activeCat) filtered = filtered.filter((p) => p.xmlCategory === activeCat);
   if (activeBrand) filtered = filtered.filter((p) => p.brand === activeBrand);
 
@@ -91,26 +88,31 @@ export default async function AanstekersPage({
   const start = (safePage - 1) * PER_PAGE;
   const pageProducts = filtered.slice(start, start + PER_PAGE);
 
-  // --- Sidebar counts ---
-  const catCounts = PRODUCTS.reduce<Record<string, number>>((acc, p) => {
-    if (p.xmlCategory) acc[p.xmlCategory] = (acc[p.xmlCategory] ?? 0) + 1;
-    return acc;
-  }, {});
-
+  // Brand counts scoped to current cat filter
   const brandBase = activeCat
-    ? PRODUCTS.filter((p) => p.xmlCategory === activeCat)
-    : PRODUCTS;
+    ? ALL_LIGHTERS.filter((p) => p.xmlCategory === activeCat)
+    : ALL_LIGHTERS;
   const brandCounts = brandBase.reduce<Record<string, number>>((acc, p) => {
     acc[p.brand] = (acc[p.brand] ?? 0) + 1;
     return acc;
   }, {});
-  const sortedBrands = Object.entries(brandCounts).sort((a, b) => b[1] - a[1]);
+  const scopedBrands = ALL_BRANDS.map(([brand]) => ({
+    brand,
+    count: brandCounts[brand] ?? 0,
+  })).filter((b) => b.count > 0);
 
-  // --- Pagination page numbers ---
+  // Active filter display label
+  const activeCatLabel =
+    SUBCATEGORIES.find((s) => s.xmlCat === activeCat)?.label ?? activeCat;
+
+  // Pagination numbers with ellipsis
   const pageNumbers: (number | "…")[] = [];
   for (let n = 1; n <= totalPages; n++) {
     if (n === 1 || n === totalPages || Math.abs(n - safePage) <= 2) {
-      if (pageNumbers.length > 0 && typeof pageNumbers[pageNumbers.length - 1] === "number") {
+      if (
+        pageNumbers.length > 0 &&
+        typeof pageNumbers[pageNumbers.length - 1] === "number"
+      ) {
         const prev = pageNumbers[pageNumbers.length - 1] as number;
         if (n - prev > 1) pageNumbers.push("…");
       }
@@ -125,29 +127,39 @@ export default async function AanstekersPage({
 
       <main className="flex-1 bg-[#f8f9fa]">
 
-        {/* ── Banner ── */}
+        {/* ── Page banner ── */}
         <div className="bg-[#111820] py-10">
           <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8">
             <nav className="flex items-center gap-1.5 text-[11px] text-white/40 mb-4">
               <Link href="/" className="hover:text-white transition-colors">Home</Link>
               <ChevronRight className="size-3" />
-              <span className="text-white/70">Collectie</span>
-              {activeCat && (
+              <span className="text-white/70">Aanstekers</span>
+              {activeCatLabel && activeCat && (
                 <>
                   <ChevronRight className="size-3" />
-                  <span className="text-white/70">{activeCat}</span>
+                  <span className="text-white/70">{activeCatLabel}</span>
+                </>
+              )}
+              {activeBrand && (
+                <>
+                  <ChevronRight className="size-3" />
+                  <span className="text-white/70">{activeBrand}</span>
                 </>
               )}
             </nav>
             <div className="flex items-end justify-between">
               <div>
                 <h1 className="font-montserrat text-2xl font-black text-white tracking-tight">
-                  {activeCat || activeBrand || "Alle producten"}
+                  {activeCatLabel && activeCat
+                    ? activeCatLabel
+                    : activeBrand
+                    ? `${activeBrand} aanstekers`
+                    : "Aanstekers"}
                 </h1>
                 <p className="text-white/35 text-[11px] mt-1">{total} producten</p>
               </div>
               <p className="text-white/25 text-[11px] hidden md:block tracking-wide">
-                Nijmegen · Specialist since 1928
+                330+ aanstekers · Nijmegen · Specialist since 1928
               </p>
             </div>
           </div>
@@ -160,65 +172,75 @@ export default async function AanstekersPage({
             {/* ── Sidebar ── */}
             <aside className="hidden lg:flex flex-col gap-7 w-52 flex-shrink-0 sticky top-6">
 
-              {/* All products */}
+              {/* All lighters */}
               <div>
                 <Link
                   href="/aanstekers"
                   className={`flex items-center justify-between text-[11px] font-black uppercase tracking-[0.15em] pb-2 border-b border-gray-200 transition-colors ${
-                    !activeCat && !activeBrand ? "text-[#f5a623]" : "text-[#2b3e51] hover:text-[#f5a623]"
+                    !activeCat && !activeBrand
+                      ? "text-[#f5a623]"
+                      : "text-[#2b3e51] hover:text-[#f5a623]"
                   }`}
                 >
-                  Alle producten
-                  <span className="text-[11px] font-normal text-gray-400 tabular-nums">{PRODUCTS.length}</span>
+                  Alle aanstekers
+                  <span className="text-[11px] font-normal text-gray-400 tabular-nums">
+                    {ALL_LIGHTERS.length}
+                  </span>
                 </Link>
               </div>
 
-              {/* Category groups */}
-              {SIDEBAR_GROUPS.map((group) => (
-                <div key={group.label}>
-                  <p className="text-[9px] font-black uppercase tracking-[0.25em] text-gray-400 mb-2">
-                    {group.label}
-                  </p>
-                  <ul className="space-y-0.5">
-                    {group.subs.map((sub) => {
-                      const count = catCounts[sub] ?? 0;
-                      if (count === 0) return null;
-                      const isActive = activeCat === sub;
-                      return (
-                        <li key={sub}>
-                          <Link
-                            href={buildUrl(sp, { cat: isActive ? undefined : sub, page: "1" })}
-                            className={`flex items-center justify-between text-[12px] py-1.5 px-2 rounded transition-colors ${
-                              isActive
-                                ? "bg-[#f5a623]/10 text-[#f5a623] font-bold"
-                                : "text-gray-500 hover:text-[#2b3e51] hover:bg-gray-100"
-                            }`}
-                          >
-                            <span className="flex items-center gap-2">
-                              {isActive && (
-                                <span className="w-1.5 h-1.5 rounded-full bg-[#f5a623] flex-shrink-0" />
-                              )}
-                              {sub}
-                            </span>
-                            <span className="text-[10px] text-gray-300 tabular-nums">{count}</span>
-                          </Link>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
-              ))}
+              {/* Subcategories */}
+              <div>
+                <p className="text-[9px] font-black uppercase tracking-[0.25em] text-gray-400 mb-2">
+                  Categorie
+                </p>
+                <ul className="space-y-0.5">
+                  {SUBCATEGORIES.map(({ label, xmlCat }) => {
+                    const count = CAT_COUNTS[xmlCat] ?? 0;
+                    if (count === 0) return null;
+                    const isActive = activeCat === xmlCat;
+                    return (
+                      <li key={xmlCat}>
+                        <Link
+                          href={buildUrl(sp, {
+                            cat: isActive ? undefined : xmlCat,
+                            page: "1",
+                          })}
+                          className={`flex items-center justify-between text-[12px] py-1.5 px-2 rounded transition-colors ${
+                            isActive
+                              ? "bg-[#f5a623]/10 text-[#f5a623] font-bold"
+                              : "text-gray-500 hover:text-[#2b3e51] hover:bg-gray-100"
+                          }`}
+                        >
+                          <span className="flex items-center gap-2">
+                            {isActive && (
+                              <span className="w-1.5 h-1.5 rounded-full bg-[#f5a623] flex-shrink-0" />
+                            )}
+                            {label}
+                          </span>
+                          <span className="text-[10px] text-gray-300 tabular-nums">{count}</span>
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
 
               {/* Brands */}
               <div>
-                <p className="text-[9px] font-black uppercase tracking-[0.25em] text-gray-400 mb-2">Merken</p>
+                <p className="text-[9px] font-black uppercase tracking-[0.25em] text-gray-400 mb-2">
+                  Merk
+                </p>
                 <ul className="space-y-0.5">
-                  {sortedBrands.map(([brand, count]) => {
+                  {scopedBrands.map(({ brand, count }) => {
                     const isActive = activeBrand === brand;
                     return (
                       <li key={brand}>
                         <Link
-                          href={buildUrl(sp, { brand: isActive ? undefined : brand, page: "1" })}
+                          href={buildUrl(sp, {
+                            brand: isActive ? undefined : brand,
+                            page: "1",
+                          })}
                           className={`flex items-center justify-between text-[12px] py-1.5 px-2 rounded transition-colors ${
                             isActive
                               ? "bg-[#f5a623]/10 text-[#f5a623] font-bold"
@@ -240,25 +262,26 @@ export default async function AanstekersPage({
               </div>
             </aside>
 
-            {/* ── Main ── */}
+            {/* ── Main content ── */}
             <div className="flex-1 min-w-0">
 
               {/* Toolbar */}
               <div className="flex flex-wrap items-center justify-between gap-3 mb-5">
                 <div className="flex items-center gap-3">
-                  {/* Mobile filter label */}
-                  <button className="lg:hidden flex items-center gap-1.5 text-[11px] font-bold text-[#2b3e51] border border-gray-200 px-3 py-2 rounded">
+                  <button type="button" className="lg:hidden flex items-center gap-1.5 text-[11px] font-bold text-[#2b3e51] border border-gray-200 px-3 py-2 rounded">
                     <SlidersHorizontal className="size-3.5" />
                     Filters
                   </button>
                   <p className="text-[11px] text-gray-400">
                     <span className="font-bold text-[#2b3e51]">
-                      {total > 0 ? `${start + 1}–${Math.min(start + PER_PAGE, total)}` : "0"}
+                      {total > 0
+                        ? `${start + 1}–${Math.min(start + PER_PAGE, total)}`
+                        : "0"}
                     </span>{" "}
                     van {total} producten
                   </p>
                 </div>
-                <div className="flex items-center gap-1.5">
+                <div className="flex items-center gap-1.5 flex-wrap">
                   <span className="text-[11px] text-gray-400 hidden sm:inline">Sorteren:</span>
                   {SORT_OPTIONS.map((opt) => (
                     <Link
@@ -284,7 +307,7 @@ export default async function AanstekersPage({
                       href={buildUrl(sp, { cat: undefined, page: "1" })}
                       className="flex items-center gap-1.5 text-[11px] font-bold px-3 py-1.5 bg-[#2b3e51] text-white rounded-full"
                     >
-                      {activeCat} ✕
+                      {activeCatLabel} ✕
                     </Link>
                   )}
                   {activeBrand && (
@@ -308,12 +331,15 @@ export default async function AanstekersPage({
               {pageProducts.length === 0 ? (
                 <div className="text-center py-24">
                   <p className="text-gray-400 font-semibold">Geen producten gevonden</p>
-                  <Link href="/aanstekers" className="text-[#f5a623] text-sm mt-2 inline-block underline">
+                  <Link
+                    href="/aanstekers"
+                    className="text-[#f5a623] text-sm mt-2 inline-block underline"
+                  >
                     Wis filters
                   </Link>
                 </div>
               ) : (
-                <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4">
+                <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4">
                   {pageProducts.map((product) => (
                     <div
                       key={product.id}
@@ -342,7 +368,7 @@ export default async function AanstekersPage({
                             SALE
                           </span>
                         )}
-                        <button className="absolute bottom-2 right-2 p-1.5 bg-white shadow-sm text-gray-300 hover:text-[#f5a623] opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-full">
+                        <button type="button" aria-label="Voeg toe aan verlanglijst" className="absolute bottom-2 right-2 p-1.5 bg-white shadow-sm text-gray-300 hover:text-[#f5a623] opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-full">
                           <Heart className="size-3.5" />
                         </button>
                       </Link>
@@ -354,7 +380,9 @@ export default async function AanstekersPage({
                             <Star
                               key={i}
                               className={`size-2.5 fill-current ${
-                                i < Math.round(product.rating) ? "text-[#f5a623]" : "text-gray-200"
+                                i < Math.round(product.rating)
+                                  ? "text-[#f5a623]"
+                                  : "text-gray-200"
                               }`}
                             />
                           ))}
@@ -386,7 +414,7 @@ export default async function AanstekersPage({
                               € {product.price}
                             </span>
                           </div>
-                          <button className="size-8 bg-[#f5a623] hover:bg-[#2b3e51] rounded-sm flex items-center justify-center transition-colors">
+                          <button type="button" aria-label="Voeg toe aan winkelwagen" className="size-8 bg-[#f5a623] hover:bg-[#2b3e51] rounded-sm flex items-center justify-center transition-colors">
                             <ShoppingBag className="size-4 text-white" />
                           </button>
                         </div>
@@ -410,7 +438,10 @@ export default async function AanstekersPage({
 
                   {pageNumbers.map((item, i) =>
                     item === "…" ? (
-                      <span key={`dots-${i}`} className="px-2 text-gray-400 text-[11px] select-none">
+                      <span
+                        key={`dots-${i}`}
+                        className="px-2 text-gray-400 text-[11px] select-none"
+                      >
                         …
                       </span>
                     ) : (
@@ -439,7 +470,6 @@ export default async function AanstekersPage({
                 </nav>
               )}
 
-              {/* Page info below pagination */}
               {totalPages > 1 && (
                 <p className="text-center text-[11px] text-gray-400 mt-3">
                   Pagina {safePage} van {totalPages}
