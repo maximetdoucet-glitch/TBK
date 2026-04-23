@@ -165,13 +165,13 @@ export default function ZippoInfoSection() {
               <div className="relative z-10">
                 <Shield className="size-8 text-[#f5a623] mb-5 opacity-90" />
                 <h3 className="font-montserrat text-xl font-black text-[#2b3e51] tracking-tight mb-3">
-                  Levenslange garantie
+                  Levenslange garantie — zonder uitzondering
                 </h3>
-                <p className="text-[13px] text-gray-500 leading-relaxed max-w-sm">
-                  Elke Zippo wordt geleverd met een levenslange garantie. Kapot is kapot — Zippo repareert of vervangt, zonder kosten, zonder discussie. Altijd.
+                <p className="text-[13px] text-gray-500 leading-relaxed max-w-md">
+                  Elke Zippo die ooit is gemaakt — van 1932 tot vandaag — valt onder de levenslange garantie. Geen aankoopbewijs nodig, geen tijdslimiet, geen kleine lettertjes. Een kapotte scharnier van dertig jaar oud? Zippo repareert of vervangt hem, kosteloos. Dat is niet marketing; het staat gewoon in hun beleid.
                 </p>
                 <div className="mt-6 flex items-center gap-2 text-[#f5a623]">
-                  <span className="text-[11px] font-black uppercase tracking-[0.2em]">Lifetime warranty</span>
+                  <span className="text-[11px] font-black uppercase tracking-[0.2em]">Lifetime warranty since 1932</span>
                   <div className="h-px flex-1 bg-[#f5a623]/30 max-w-[60px]" />
                 </div>
               </div>
@@ -181,10 +181,10 @@ export default function ZippoInfoSection() {
             <div className="bg-gray-50 border border-gray-200 rounded-sm p-6 group hover:border-[#f5a623]/40 hover:bg-[#f5a623]/3 transition-all duration-300">
               <RefreshCw className="size-5 text-gray-400 mb-4 group-hover:text-[#f5a623] transition-colors duration-300" />
               <h3 className="font-montserrat text-[14px] font-black text-[#2b3e51] tracking-tight mb-2">
-                Navulbaar & duurzaam
+                Navulbaar & milieuvriendelijk
               </h3>
               <p className="text-[12px] text-gray-500 leading-relaxed">
-                Koop één keer, gebruik een leven lang. Bijvullen met originele benzine en je bent klaar.
+                Een wegwerpaansteker gooi je na 3.000 vonken weg. Een Zippo vul je bij — onbeperkt, voor een paar euro per jaar. Gebruik uitsluitend originele Zippo-benzine: andere soorten tasten de watten aan en geven ongewenste reukgeur.
               </p>
             </div>
 
@@ -192,10 +192,10 @@ export default function ZippoInfoSection() {
             <div className="bg-gray-50 border border-gray-200 rounded-sm p-6 group hover:border-[#f5a623]/40 hover:bg-[#f5a623]/3 transition-all duration-300">
               <Wind className="size-5 text-gray-400 mb-4 group-hover:text-[#f5a623] transition-colors duration-300" />
               <h3 className="font-montserrat text-[14px] font-black text-[#2b3e51] tracking-tight mb-2">
-                Windbestendig
+                Windbestendig door ontwerp
               </h3>
               <p className="text-[12px] text-gray-500 leading-relaxed">
-                Ontworpen voor buiten. De vlam brandt ook bij harde wind — in de bergen, op het terras.
+                De perforaties in het binnenwerk laten lucht van onderaf toe en blokkeren zijwind. Dat is geen toeval — het is een beproefd mechanisme dat al negen decennia onveranderd werkt, van bergkampen tot scheepsdekken.
               </p>
             </div>
 
@@ -203,10 +203,10 @@ export default function ZippoInfoSection() {
             <div className="sm:col-span-2 lg:col-span-1 bg-gray-50 border border-gray-200 rounded-sm p-6 group hover:border-[#f5a623]/40 hover:bg-[#f5a623]/3 transition-all duration-300">
               <Star className="size-5 text-gray-400 mb-4 group-hover:text-[#f5a623] transition-colors duration-300" />
               <h3 className="font-montserrat text-[14px] font-black text-[#2b3e51] tracking-tight mb-2">
-                Collector&apos;s item
+                500+ modellen, limited editions
               </h3>
               <p className="text-[12px] text-gray-500 leading-relaxed">
-                Honderden ontwerpen, jaarlijkse limited editions. Elke Zippo is een uniek stuk dat in waarde stijgt.
+                Zippo brengt jaarlijks gelimiteerde series uit die binnen uren uitverkopen. Vintage modellen uit de jaren &apos;40–&apos;60 worden op veilingen verhandeld voor honderden euro&apos;s. Elke aankoop is een stuk dat potentieel in waarde stijgt.
               </p>
             </div>
 
