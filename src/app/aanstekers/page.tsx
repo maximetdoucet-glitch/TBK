@@ -5,6 +5,7 @@ import Header from "@/components/v2/HeaderV2";
 import Footer from "@/components/v2/FooterV2";
 import PromoBar from "@/components/v2/PromoBar";
 import { PRODUCTS } from "@/lib/products";
+import PriceRangeSlider, { PRICE_ABSOLUTE_MAX } from "@/components/v2/PriceRangeSlider";
 
 export const metadata = {
   title: "Aanstekers — OneConnect Lightshop",
@@ -13,7 +14,6 @@ export const metadata = {
 };
 
 const PER_PAGE = 24;
-const PRICE_MAX = 430;
 
 const ALL_LIGHTERS = PRODUCTS.filter((p) => p.category === "Aanstekers");
 
@@ -51,7 +51,7 @@ function buildUrl(base: SP, overrides: SP): string {
   if (merged.brand) p.set("brand", merged.brand);
   if (merged.sort && merged.sort !== "recommended") p.set("sort", merged.sort);
   if (merged.min_price && merged.min_price !== "0") p.set("min_price", merged.min_price);
-  if (merged.max_price && merged.max_price !== String(PRICE_MAX)) p.set("max_price", merged.max_price);
+  if (merged.max_price && merged.max_price !== String(PRICE_ABSOLUTE_MAX)) p.set("max_price", merged.max_price);
   if (merged.page && merged.page !== "1") p.set("page", merged.page);
   const qs = p.toString();
   return `/aanstekers${qs ? `?${qs}` : ""}`;
@@ -68,7 +68,7 @@ export default async function AanstekersPage({
   const activeSort = sp.sort ?? "recommended";
   const page = Math.max(1, parseInt(sp.page ?? "1", 10));
   const minPrice = parseFloat(sp.min_price ?? "0");
-  const maxPrice = parseFloat(sp.max_price ?? String(PRICE_MAX));
+  const maxPrice = parseFloat(sp.max_price ?? String(PRICE_ABSOLUTE_MAX));
 
   // --- Filter ---
   let filtered = ALL_LIGHTERS;
@@ -261,65 +261,21 @@ export default async function AanstekersPage({
                 <p className="text-[11px] font-black uppercase tracking-[0.15em] text-[#2b3e51] mb-3">
                   Prijs
                 </p>
-                <form action="/aanstekers" method="get">
-                  {/* Preserve other active filters */}
-                  {activeCat && <input type="hidden" name="cat" value={activeCat} />}
-                  {activeBrand && <input type="hidden" name="brand" value={activeBrand} />}
-                  {activeSort !== "recommended" && (
-                    <input type="hidden" name="sort" value={activeSort} />
-                  )}
-                  <div className="flex items-center gap-2 mb-3">
-                    <div className="flex-1">
-                      <label className="text-[9px] text-gray-400 font-bold uppercase tracking-wider block mb-1">Min</label>
-                      <div className="flex items-center border border-gray-200 rounded px-2 py-1.5 focus-within:border-[#2b3e51]">
-                        <span className="text-[11px] text-gray-400 mr-0.5">€</span>
-                        <input
-                          type="number"
-                          name="min_price"
-                          min="0"
-                          max={PRICE_MAX}
-                          step="1"
-                          defaultValue={sp.min_price ?? "0"}
-                          placeholder="0"
-                          title="Minimumprijs"
-                          className="w-full text-[12px] text-[#2b3e51] font-semibold outline-none bg-transparent"
-                        />
-                      </div>
-                    </div>
-                    <span className="text-gray-300 text-sm mt-4">—</span>
-                    <div className="flex-1">
-                      <label className="text-[9px] text-gray-400 font-bold uppercase tracking-wider block mb-1">Max</label>
-                      <div className="flex items-center border border-gray-200 rounded px-2 py-1.5 focus-within:border-[#2b3e51]">
-                        <span className="text-[11px] text-gray-400 mr-0.5">€</span>
-                        <input
-                          type="number"
-                          name="max_price"
-                          min="0"
-                          max={PRICE_MAX}
-                          step="1"
-                          defaultValue={sp.max_price ?? String(PRICE_MAX)}
-                          placeholder="430"
-                          title="Maximumprijs"
-                          className="w-full text-[12px] text-[#2b3e51] font-semibold outline-none bg-transparent"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <button
-                    type="submit"
-                    className="w-full py-2 text-[11px] font-black uppercase tracking-[0.15em] bg-[#2b3e51] text-white rounded hover:bg-[#f5a623] transition-colors"
+                <PriceRangeSlider
+                  initMin={minPrice}
+                  initMax={maxPrice}
+                  cat={activeCat || undefined}
+                  brand={activeBrand || undefined}
+                  sort={activeSort !== "recommended" ? activeSort : undefined}
+                />
+                {hasPriceFilter && (
+                  <Link
+                    href={buildUrl(sp, { min_price: undefined, max_price: undefined, page: "1" })}
+                    className="block text-center text-[10px] text-gray-400 hover:text-[#2b3e51] mt-3 transition-colors"
                   >
-                    Toepassen
-                  </button>
-                  {hasPriceFilter && (
-                    <Link
-                      href={buildUrl(sp, { min_price: undefined, max_price: undefined, page: "1" })}
-                      className="block text-center text-[10px] text-gray-400 hover:text-[#2b3e51] mt-2 transition-colors"
-                    >
-                      Prijs filter wissen
-                    </Link>
-                  )}
-                </form>
+                    Prijs filter wissen
+                  </Link>
+                )}
               </div>
             </aside>
 
@@ -387,7 +343,7 @@ export default async function AanstekersPage({
                       href={buildUrl(sp, { min_price: undefined, max_price: undefined, page: "1" })}
                       className="flex items-center gap-1.5 text-[11px] font-bold px-3 py-1.5 bg-[#2b3e51] text-white rounded-full"
                     >
-                      €{sp.min_price ?? "0"} – €{sp.max_price ?? PRICE_MAX} ✕
+                      €{sp.min_price ?? "0"} – €{sp.max_price ?? PRICE_ABSOLUTE_MAX} ✕
                     </Link>
                   )}
                   <Link
