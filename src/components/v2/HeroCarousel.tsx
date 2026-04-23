@@ -153,10 +153,10 @@ export default function HeroCarousel() {
             <div className="flex items-center gap-8">
               <Link
                 href="/aanstekers"
-                className="group flex items-center gap-3 text-[#f5d38a] font-black uppercase tracking-[0.2em] text-[11px] hover:gap-4 transition-all duration-300"
+                className="group flex items-center gap-3 text-[#f5a623] font-black uppercase tracking-[0.2em] text-[11px] hover:gap-4 transition-all duration-300"
               >
-                <span className="w-8 h-8 rounded-full border border-[#f5d38a]/40 flex items-center justify-center group-hover:bg-[#f5d38a]/15 group-hover:border-[#f5d38a]/70 transition-all duration-300">
-                  <ArrowRight className="size-3.5 text-[#f5d38a]" />
+                <span className="w-8 h-8 rounded-full border border-[#f5a623]/40 flex items-center justify-center group-hover:bg-[#f5a623]/15 group-hover:border-[#f5a623]/70 transition-all duration-300">
+                  <ArrowRight className="size-3.5 text-[#f5a623]" />
                 </span>
                 Bekijk collectie
               </Link>
