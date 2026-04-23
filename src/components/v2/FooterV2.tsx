@@ -81,12 +81,11 @@ export default function FooterV2() {
           Both the nav row and bottom bar use this same grid, so column boundaries are identical.
           Payment icons live in column 4 only → right edge of PayPal = right edge of MIJN ACCOUNT. Guaranteed.
         */}
-        <div className="w-full grid" style={{ gridTemplateColumns: '280px 1fr 1fr 1fr' }}>
+        {/* ── Row 1: nav columns ── */}
+        <div className="flex gap-12 py-16">
 
-          {/* ── Row 1: nav columns ── */}
-
-          {/* Col 1 — Brand */}
-          <div className="flex flex-col gap-6 pr-10 py-16">
+          {/* Brand */}
+          <div className="w-64 flex-shrink-0 flex flex-col gap-6">
             <Link href="/" className="inline-flex flex-col w-fit">
               <span className="font-montserrat text-3xl font-black tracking-tight text-white leading-none">OneConnect</span>
               <span className="font-montserrat text-[9px] font-bold tracking-[0.5em] text-white/40 mt-1">LIGHTSHOP</span>
@@ -119,55 +118,59 @@ export default function FooterV2() {
             </div>
           </div>
 
-          {/* Col 2 — Assortiment */}
-          <div className="px-6 py-16">
-            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-white/30 mb-6 pb-3 border-b border-white/8">Assortiment</p>
-            <ul className="space-y-3">
-              {LINKS.shop.map((l) => (
-                <li key={l.label}><Link href={l.href} className="text-[13px] text-white/50 hover:text-white transition-colors">{l.label}</Link></li>
-              ))}
-            </ul>
-          </div>
+          {/* 3 nav columns — flex-1 so they fill all remaining space */}
+          <div className="flex-1 grid grid-cols-3">
 
-          {/* Col 3 — Klantenservice */}
-          <div className="px-6 py-16">
-            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-white/30 mb-6 pb-3 border-b border-white/8">Klantenservice</p>
-            <ul className="space-y-3">
-              {LINKS.service.map((l) => (
-                <li key={l.label}><Link href={l.href} className="text-[13px] text-white/50 hover:text-white transition-colors">{l.label}</Link></li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Col 4 — Mijn account */}
-          <div className="pl-6 py-16">
-            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-white/30 mb-6 pb-3 border-b border-white/8">Mijn account</p>
-            <ul className="space-y-3">
-              {LINKS.account.map((l) => (
-                <li key={l.label}><Link href={l.href} className="text-[13px] text-white/50 hover:text-white transition-colors">{l.label}</Link></li>
-              ))}
-            </ul>
-            <div className="mt-8 inline-flex flex-col border border-white/8 px-4 py-3 rounded-lg">
-              <span className="text-[9px] font-black uppercase tracking-[0.3em] text-white/25">Opgericht</span>
-              <span className="font-montserrat text-2xl font-black text-white/20 tracking-tight mt-0.5">1928</span>
+            {/* Assortiment */}
+            <div className="px-6">
+              <p className="text-[10px] font-black uppercase tracking-[0.2em] text-white/30 mb-6 pb-3 border-b border-white/8">Assortiment</p>
+              <ul className="space-y-3">
+                {LINKS.shop.map((l) => (
+                  <li key={l.label}><Link href={l.href} className="text-[13px] text-white/50 hover:text-white transition-colors">{l.label}</Link></li>
+                ))}
+              </ul>
             </div>
+
+            {/* Klantenservice */}
+            <div className="px-6">
+              <p className="text-[10px] font-black uppercase tracking-[0.2em] text-white/30 mb-6 pb-3 border-b border-white/8">Klantenservice</p>
+              <ul className="space-y-3">
+                {LINKS.service.map((l) => (
+                  <li key={l.label}><Link href={l.href} className="text-[13px] text-white/50 hover:text-white transition-colors">{l.label}</Link></li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Mijn account */}
+            <div className="px-6">
+              <p className="text-[10px] font-black uppercase tracking-[0.2em] text-white/30 mb-6 pb-3 border-b border-white/8">Mijn account</p>
+              <ul className="space-y-3">
+                {LINKS.account.map((l) => (
+                  <li key={l.label}><Link href={l.href} className="text-[13px] text-white/50 hover:text-white transition-colors">{l.label}</Link></li>
+                ))}
+              </ul>
+              <div className="mt-8 inline-flex flex-col border border-white/8 px-4 py-3 rounded-lg">
+                <span className="text-[9px] font-black uppercase tracking-[0.3em] text-white/25">Opgericht</span>
+                <span className="font-montserrat text-2xl font-black text-white/20 tracking-tight mt-0.5">1928</span>
+              </div>
+            </div>
+
           </div>
+        </div>
 
-          {/* ── Divider: spans all 4 columns ── */}
-          <div className="col-span-4" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }} />
+        {/* ── Bottom bar ── */}
+        <div className="flex items-center justify-between py-6" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
 
-          {/* ── Row 2: bottom bar ── */}
-
-          {/* Cols 1-3 — Legal links */}
-          <div className="col-span-3 flex flex-wrap items-center gap-x-5 gap-y-1 py-6">
+          {/* Legal links */}
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-1">
             <span className="text-[11px] text-white/25">© {new Date().getFullYear()} OneConnect Lightshop</span>
             {["Privacybeleid", "Algemene voorwaarden", "Cookiebeleid"].map((label) => (
               <Link key={label} href="#" className="text-[11px] text-white/25 hover:text-white/60 transition-colors">{label}</Link>
             ))}
           </div>
 
-          {/* Col 4 — Payment icons, right-aligned within MIJN ACCOUNT column */}
-          <div className="pl-6 py-6 flex items-center justify-end gap-2">
+          {/* Payment icons */}
+          <div className="flex items-center gap-2">
             <IdealIcon />
             <VisaIcon />
             <MastercardIcon />
