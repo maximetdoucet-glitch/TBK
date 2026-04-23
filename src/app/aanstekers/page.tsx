@@ -1,174 +1,451 @@
-import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Heart, ShoppingBag, Star, SlidersHorizontal } from "lucide-react";
+import { Heart, ShoppingBag, Star, ChevronRight, SlidersHorizontal } from "lucide-react";
 import Header from "@/components/v2/HeaderV2";
 import Footer from "@/components/v2/FooterV2";
-import { Button } from "@/components/ui/button";
+import PromoBar from "@/components/v2/PromoBar";
 import { PRODUCTS } from "@/lib/products";
 
 export const metadata = {
-  title: "Clipper Aanstekers — TBK Lightshop",
+  title: "Collectie — OneConnect Lightshop",
   description:
-    "Ontdek het volledige assortiment Clipper aanstekers bij TBK Lightshop Nijmegen. Navulbaar, duurzaam en altijd betrouwbaar.",
+    "Het complete assortiment aanstekers, e-sigaretten, e-liquids en rookaccessoires bij OneConnect Lightshop Nijmegen.",
 };
 
-const FILTERS = ["Alle merken", "Clipper", "Zippo", "BIC"];
-const SORT_OPTIONS = [
-  "Aanbevolen",
-  "Nieuwste eerst",
-  "Prijs: laag → hoog",
-  "Prijs: hoog → laag",
-  "Meest beoordeeld",
+const PER_PAGE = 24;
+
+const SIDEBAR_GROUPS = [
+  {
+    label: "Aanstekers",
+    subs: ["Aanstekers", "Zippo-aanstekers", "Zippo-accessoires"],
+  },
+  {
+    label: "E-sigaretten",
+    subs: ["Startset", "Open POD", "Clearomizer", "Coils", "Batterij", "Batterij Oplader"],
+  },
+  {
+    label: "E-liquids",
+    subs: ["Liquid 10ML", "Base"],
+  },
+  {
+    label: "Accessoires",
+    subs: [
+      "Sigaretten-accessoires",
+      "Sigaren-accessoires",
+      "Filter Flavours",
+      "Pijpen en accessoires",
+      "Cannabis-accessoires",
+      "Accessoires Overig",
+    ],
+  },
 ];
 
-export default function AanstekersPage() {
+const SORT_OPTIONS = [
+  { label: "Aanbevolen", value: "recommended" },
+  { label: "Prijs ↑", value: "price_asc" },
+  { label: "Prijs ↓", value: "price_desc" },
+  { label: "Beoordeling", value: "rating" },
+];
+
+type SP = Record<string, string | undefined>;
+
+function buildUrl(base: SP, overrides: SP): string {
+  const merged = { ...base, ...overrides };
+  const p = new URLSearchParams();
+  if (merged.cat) p.set("cat", merged.cat);
+  if (merged.brand) p.set("brand", merged.brand);
+  if (merged.sort && merged.sort !== "recommended") p.set("sort", merged.sort);
+  if (merged.page && merged.page !== "1") p.set("page", merged.page);
+  const qs = p.toString();
+  return `/aanstekers${qs ? `?${qs}` : ""}`;
+}
+
+export default async function AanstekersPage({
+  searchParams,
+}: {
+  searchParams: Promise<Record<string, string | undefined>>;
+}) {
+  const sp = await searchParams;
+  const activeCat = sp.cat ?? "";
+  const activeBrand = sp.brand ?? "";
+  const activeSort = sp.sort ?? "recommended";
+  const page = Math.max(1, parseInt(sp.page ?? "1", 10));
+
+  // --- Filter ---
+  let filtered = PRODUCTS;
+  if (activeCat) filtered = filtered.filter((p) => p.xmlCategory === activeCat);
+  if (activeBrand) filtered = filtered.filter((p) => p.brand === activeBrand);
+
+  // --- Sort ---
+  if (activeSort === "price_asc")
+    filtered = [...filtered].sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
+  else if (activeSort === "price_desc")
+    filtered = [...filtered].sort((a, b) => parseFloat(b.price) - parseFloat(a.price));
+  else if (activeSort === "rating")
+    filtered = [...filtered].sort((a, b) => b.rating - a.rating);
+
+  // --- Paginate ---
+  const total = filtered.length;
+  const totalPages = Math.max(1, Math.ceil(total / PER_PAGE));
+  const safePage = Math.min(page, totalPages);
+  const start = (safePage - 1) * PER_PAGE;
+  const pageProducts = filtered.slice(start, start + PER_PAGE);
+
+  // --- Sidebar counts ---
+  const catCounts = PRODUCTS.reduce<Record<string, number>>((acc, p) => {
+    if (p.xmlCategory) acc[p.xmlCategory] = (acc[p.xmlCategory] ?? 0) + 1;
+    return acc;
+  }, {});
+
+  const brandBase = activeCat
+    ? PRODUCTS.filter((p) => p.xmlCategory === activeCat)
+    : PRODUCTS;
+  const brandCounts = brandBase.reduce<Record<string, number>>((acc, p) => {
+    acc[p.brand] = (acc[p.brand] ?? 0) + 1;
+    return acc;
+  }, {});
+  const sortedBrands = Object.entries(brandCounts).sort((a, b) => b[1] - a[1]);
+
+  // --- Pagination page numbers ---
+  const pageNumbers: (number | "…")[] = [];
+  for (let n = 1; n <= totalPages; n++) {
+    if (n === 1 || n === totalPages || Math.abs(n - safePage) <= 2) {
+      if (pageNumbers.length > 0 && typeof pageNumbers[pageNumbers.length - 1] === "number") {
+        const prev = pageNumbers[pageNumbers.length - 1] as number;
+        if (n - prev > 1) pageNumbers.push("…");
+      }
+      pageNumbers.push(n);
+    }
+  }
+
   return (
     <div className="flex flex-col min-h-screen">
+      <PromoBar />
       <Header />
 
-      <main className="flex-1 bg-white">
-        {/* Page Header Banner */}
-        <div className="w-full bg-[#2b3e51] py-10">
-          <div className="container mx-auto max-w-[1300px] px-4 sm:px-6 lg:px-8">
-            {/* Breadcrumb */}
-            <nav className="flex items-center gap-2 text-xs text-white/40 mb-5">
-              <Link href="/" className="hover:text-white transition-colors">Home</Link>
-              <span>/</span>
-              <Link href="/aanstekers" className="hover:text-white transition-colors">Aanstekers</Link>
-              <span>/</span>
-              <span className="text-white/80">Clipper Aanstekers</span>
-            </nav>
+      <main className="flex-1 bg-[#f8f9fa]">
 
-            <div className="flex flex-col md:flex-row md:items-end justify-between gap-3">
+        {/* ── Banner ── */}
+        <div className="bg-[#111820] py-10">
+          <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8">
+            <nav className="flex items-center gap-1.5 text-[11px] text-white/40 mb-4">
+              <Link href="/" className="hover:text-white transition-colors">Home</Link>
+              <ChevronRight className="size-3" />
+              <span className="text-white/70">Collectie</span>
+              {activeCat && (
+                <>
+                  <ChevronRight className="size-3" />
+                  <span className="text-white/70">{activeCat}</span>
+                </>
+              )}
+            </nav>
+            <div className="flex items-end justify-between">
               <div>
-                <h1 className="text-2xl font-semibold text-white leading-snug">
-                  Clipper Aanstekers
+                <h1 className="font-montserrat text-2xl font-black text-white tracking-tight">
+                  {activeCat || activeBrand || "Alle producten"}
                 </h1>
-                <p className="text-white/40 text-xs mt-1">{PRODUCTS.length} producten</p>
+                <p className="text-white/35 text-[11px] mt-1">{total} producten</p>
               </div>
-              <p className="text-white/40 text-xs hidden md:block">
-                Specialist in herlaadbare aanstekers ·{" "}
-                <span className="text-white/60">Gevestigd in Nijmegen</span>
+              <p className="text-white/25 text-[11px] hidden md:block tracking-wide">
+                Nijmegen · Specialist since 1928
               </p>
             </div>
           </div>
         </div>
 
-        <div className="container mx-auto max-w-[1300px] px-4 sm:px-6 lg:px-8 py-10">
-          {/* Toolbar */}
-          <div className="flex flex-col gap-3 mb-8 pb-6 border-b border-gray-100">
-            {/* Filters + Sort row */}
-            <div className="flex items-center justify-between gap-3">
-              <div className="flex items-center gap-2 overflow-x-auto scrollbar-none flex-1">
-                <SlidersHorizontal className="size-4 text-gray-400 shrink-0" />
-                {FILTERS.map((f, i) => (
-                  <button
-                    key={f}
-                    className={`text-xs px-4 py-1.5 border rounded-full transition-all whitespace-nowrap shrink-0 ${
-                      i === 0
-                        ? "border-[#2b3e51] bg-[#2b3e51] text-white"
-                        : "border-gray-200 text-gray-500 hover:border-[#2b3e51] hover:text-[#2b3e51]"
-                    }`}
-                  >
-                    {f}
-                  </button>
-                ))}
-              </div>
-              <div className="flex items-center gap-2 shrink-0">
-                <span className="text-xs text-gray-400 hidden sm:inline">Sorteren:</span>
-                <select className="text-xs text-[#2b3e51] border border-gray-200 px-3 py-1.5 rounded appearance-none cursor-pointer focus:outline-none focus:border-[#2b3e51] bg-white">
-                  {SORT_OPTIONS.map((o) => (
-                    <option key={o}>{o}</option>
-                  ))}
-                </select>
-              </div>
-            </div>
-          </div>
+        {/* ── Body ── */}
+        <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="flex gap-8 items-start">
 
-          {/* Product Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-            {PRODUCTS.map((product) => (
-              <div
-                key={product.id}
-                className="group bg-white border border-gray-100 flex flex-col hover:shadow-md transition-all duration-300 rounded-sm"
-              >
-                {/* Image */}
-                <Link href={`/product/${product.id}`} className="relative block overflow-hidden bg-[#f8f8f8] aspect-square p-5 sm:p-8">
-                  <Image
-                    src={product.image}
-                    alt={product.name}
-                    width={300}
-                    height={300}
-                    className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
-                  />
-                  {product.badge && (
-                    <span className="absolute top-3 left-3 bg-[#f5a623] text-white text-[10px] font-medium px-2.5 py-0.5 rounded-sm">
-                      {product.badge}
-                    </span>
-                  )}
-                  {product.oldPrice && (
-                    <span className="absolute top-3 right-3 bg-[#2b3e51] text-white text-[10px] font-medium px-2.5 py-0.5 rounded-sm">
-                      Sale
-                    </span>
-                  )}
-                  <button className="absolute bottom-3 right-3 p-2 bg-white shadow-sm text-gray-300 hover:text-primary opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-full">
-                    <Heart className="size-4" />
-                  </button>
+            {/* ── Sidebar ── */}
+            <aside className="hidden lg:flex flex-col gap-7 w-52 flex-shrink-0 sticky top-6">
+
+              {/* All products */}
+              <div>
+                <Link
+                  href="/aanstekers"
+                  className={`flex items-center justify-between text-[11px] font-black uppercase tracking-[0.15em] pb-2 border-b border-gray-200 transition-colors ${
+                    !activeCat && !activeBrand ? "text-[#f5a623]" : "text-[#2b3e51] hover:text-[#f5a623]"
+                  }`}
+                >
+                  Alle producten
+                  <span className="text-[11px] font-normal text-gray-400 tabular-nums">{PRODUCTS.length}</span>
                 </Link>
+              </div>
 
-                {/* Info */}
-                <div className="p-4 sm:p-5 flex flex-col flex-1">
-                  <div className="flex gap-0.5 mb-2">
-                    {[...Array(5)].map((_, i) => (
-                      <Star
-                        key={i}
-                        className={`size-3 fill-current ${i < product.rating ? "text-[#f5a623]" : "text-gray-200"}`}
-                      />
-                    ))}
-                    <span className="text-[10px] text-gray-400 ml-1">({product.reviewCount})</span>
-                  </div>
-
-                  <p className="text-[10px] text-[#f5a623] font-medium mb-1">{product.brand}</p>
-
-                  <Link
-                    href={`/product/${product.id}`}
-                    className="text-sm font-semibold text-[#2b3e51] leading-snug mb-2 hover:text-primary transition-colors line-clamp-2"
-                  >
-                    {product.name}
-                  </Link>
-
-                  <p className="text-xs text-gray-400 leading-relaxed mb-4 line-clamp-2 flex-1">
-                    {product.description}
+              {/* Category groups */}
+              {SIDEBAR_GROUPS.map((group) => (
+                <div key={group.label}>
+                  <p className="text-[9px] font-black uppercase tracking-[0.25em] text-gray-400 mb-2">
+                    {group.label}
                   </p>
+                  <ul className="space-y-0.5">
+                    {group.subs.map((sub) => {
+                      const count = catCounts[sub] ?? 0;
+                      if (count === 0) return null;
+                      const isActive = activeCat === sub;
+                      return (
+                        <li key={sub}>
+                          <Link
+                            href={buildUrl(sp, { cat: isActive ? undefined : sub, page: "1" })}
+                            className={`flex items-center justify-between text-[12px] py-1.5 px-2 rounded transition-colors ${
+                              isActive
+                                ? "bg-[#f5a623]/10 text-[#f5a623] font-bold"
+                                : "text-gray-500 hover:text-[#2b3e51] hover:bg-gray-100"
+                            }`}
+                          >
+                            <span className="flex items-center gap-2">
+                              {isActive && (
+                                <span className="w-1.5 h-1.5 rounded-full bg-[#f5a623] flex-shrink-0" />
+                              )}
+                              {sub}
+                            </span>
+                            <span className="text-[10px] text-gray-300 tabular-nums">{count}</span>
+                          </Link>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+              ))}
 
-                  {/* Price + CTA */}
-                  <div className="flex items-center justify-between mt-auto pt-4 border-t border-gray-50">
-                    <div className="flex flex-col">
-                      {product.oldPrice && (
-                        <span className="text-[10px] text-gray-400 line-through leading-none mb-0.5">
-                          € {product.oldPrice}
-                        </span>
-                      )}
-                      <span className="text-base font-semibold text-[#2b3e51]">
-                        € {product.price}
-                      </span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Link
-                        href={`/product/${product.id}`}
-                        className="text-xs text-[#2b3e51] hover:text-primary transition-colors underline underline-offset-4"
-                      >
-                        Bekijk
-                      </Link>
-                      <Button size="icon" className="bg-[#f5a623] hover:bg-[#6b8e6b] rounded-sm size-8">
-                        <ShoppingBag className="size-4" />
-                      </Button>
-                    </div>
-                  </div>
+              {/* Brands */}
+              <div>
+                <p className="text-[9px] font-black uppercase tracking-[0.25em] text-gray-400 mb-2">Merken</p>
+                <ul className="space-y-0.5">
+                  {sortedBrands.map(([brand, count]) => {
+                    const isActive = activeBrand === brand;
+                    return (
+                      <li key={brand}>
+                        <Link
+                          href={buildUrl(sp, { brand: isActive ? undefined : brand, page: "1" })}
+                          className={`flex items-center justify-between text-[12px] py-1.5 px-2 rounded transition-colors ${
+                            isActive
+                              ? "bg-[#f5a623]/10 text-[#f5a623] font-bold"
+                              : "text-gray-500 hover:text-[#2b3e51] hover:bg-gray-100"
+                          }`}
+                        >
+                          <span className="flex items-center gap-2">
+                            {isActive && (
+                              <span className="w-1.5 h-1.5 rounded-full bg-[#f5a623] flex-shrink-0" />
+                            )}
+                            {brand}
+                          </span>
+                          <span className="text-[10px] text-gray-300 tabular-nums">{count}</span>
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            </aside>
+
+            {/* ── Main ── */}
+            <div className="flex-1 min-w-0">
+
+              {/* Toolbar */}
+              <div className="flex flex-wrap items-center justify-between gap-3 mb-5">
+                <div className="flex items-center gap-3">
+                  {/* Mobile filter label */}
+                  <button className="lg:hidden flex items-center gap-1.5 text-[11px] font-bold text-[#2b3e51] border border-gray-200 px-3 py-2 rounded">
+                    <SlidersHorizontal className="size-3.5" />
+                    Filters
+                  </button>
+                  <p className="text-[11px] text-gray-400">
+                    <span className="font-bold text-[#2b3e51]">
+                      {total > 0 ? `${start + 1}–${Math.min(start + PER_PAGE, total)}` : "0"}
+                    </span>{" "}
+                    van {total} producten
+                  </p>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <span className="text-[11px] text-gray-400 hidden sm:inline">Sorteren:</span>
+                  {SORT_OPTIONS.map((opt) => (
+                    <Link
+                      key={opt.value}
+                      href={buildUrl(sp, { sort: opt.value, page: "1" })}
+                      className={`text-[11px] px-3 py-1.5 border rounded-full transition-all ${
+                        activeSort === opt.value
+                          ? "border-[#2b3e51] bg-[#2b3e51] text-white"
+                          : "border-gray-200 text-gray-500 hover:border-[#2b3e51] hover:text-[#2b3e51]"
+                      }`}
+                    >
+                      {opt.label}
+                    </Link>
+                  ))}
                 </div>
               </div>
-            ))}
+
+              {/* Active filter chips */}
+              {(activeCat || activeBrand) && (
+                <div className="flex flex-wrap items-center gap-2 mb-5">
+                  {activeCat && (
+                    <Link
+                      href={buildUrl(sp, { cat: undefined, page: "1" })}
+                      className="flex items-center gap-1.5 text-[11px] font-bold px-3 py-1.5 bg-[#2b3e51] text-white rounded-full"
+                    >
+                      {activeCat} ✕
+                    </Link>
+                  )}
+                  {activeBrand && (
+                    <Link
+                      href={buildUrl(sp, { brand: undefined, page: "1" })}
+                      className="flex items-center gap-1.5 text-[11px] font-bold px-3 py-1.5 bg-[#2b3e51] text-white rounded-full"
+                    >
+                      {activeBrand} ✕
+                    </Link>
+                  )}
+                  <Link
+                    href="/aanstekers"
+                    className="text-[11px] px-3 py-1.5 border border-gray-200 text-gray-400 rounded-full hover:border-[#2b3e51] hover:text-[#2b3e51] transition-colors"
+                  >
+                    Wis alle filters
+                  </Link>
+                </div>
+              )}
+
+              {/* Product grid */}
+              {pageProducts.length === 0 ? (
+                <div className="text-center py-24">
+                  <p className="text-gray-400 font-semibold">Geen producten gevonden</p>
+                  <Link href="/aanstekers" className="text-[#f5a623] text-sm mt-2 inline-block underline">
+                    Wis filters
+                  </Link>
+                </div>
+              ) : (
+                <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4">
+                  {pageProducts.map((product) => (
+                    <div
+                      key={product.id}
+                      className="group bg-white border border-gray-100 flex flex-col hover:shadow-md transition-all duration-300 rounded-sm"
+                    >
+                      {/* Image */}
+                      <Link
+                        href={`/product/${product.id}`}
+                        className="relative block overflow-hidden bg-[#f8f8f8] aspect-square p-4 sm:p-6"
+                      >
+                        <Image
+                          src={product.image}
+                          alt={product.name}
+                          width={280}
+                          height={280}
+                          className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
+                          unoptimized
+                        />
+                        {product.badge && (
+                          <span className="absolute top-2 left-2 bg-[#f5a623] text-white text-[9px] font-black px-2 py-0.5 rounded-sm tracking-wide">
+                            {product.badge}
+                          </span>
+                        )}
+                        {product.oldPrice && !product.badge && (
+                          <span className="absolute top-2 left-2 bg-[#2b3e51] text-white text-[9px] font-black px-2 py-0.5 rounded-sm tracking-wide">
+                            SALE
+                          </span>
+                        )}
+                        <button className="absolute bottom-2 right-2 p-1.5 bg-white shadow-sm text-gray-300 hover:text-[#f5a623] opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-full">
+                          <Heart className="size-3.5" />
+                        </button>
+                      </Link>
+
+                      {/* Info */}
+                      <div className="p-3 sm:p-4 flex flex-col flex-1">
+                        <div className="flex items-center gap-0.5 mb-1.5">
+                          {[...Array(5)].map((_, i) => (
+                            <Star
+                              key={i}
+                              className={`size-2.5 fill-current ${
+                                i < Math.round(product.rating) ? "text-[#f5a623]" : "text-gray-200"
+                              }`}
+                            />
+                          ))}
+                          <span className="text-[10px] text-gray-400 ml-1">
+                            ({product.reviewCount})
+                          </span>
+                        </div>
+
+                        <p className="text-[10px] text-[#f5a623] font-black mb-1 tracking-wide">
+                          {product.brand}
+                        </p>
+
+                        <Link
+                          href={`/product/${product.id}`}
+                          className="text-[12px] font-semibold text-[#2b3e51] leading-snug mb-auto hover:text-[#f5a623] transition-colors line-clamp-2"
+                        >
+                          {product.name}
+                        </Link>
+
+                        {/* Price + CTA */}
+                        <div className="flex items-center justify-between mt-3 pt-3 border-t border-gray-50">
+                          <div className="flex flex-col">
+                            {product.oldPrice && (
+                              <span className="text-[10px] text-gray-400 line-through leading-none mb-0.5">
+                                € {product.oldPrice}
+                              </span>
+                            )}
+                            <span className="text-[13px] font-black text-[#2b3e51]">
+                              € {product.price}
+                            </span>
+                          </div>
+                          <button className="size-8 bg-[#f5a623] hover:bg-[#2b3e51] rounded-sm flex items-center justify-center transition-colors">
+                            <ShoppingBag className="size-4 text-white" />
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {/* ── Pagination ── */}
+              {totalPages > 1 && (
+                <nav className="flex items-center justify-center gap-1 mt-12 flex-wrap">
+                  {safePage > 1 && (
+                    <Link
+                      href={buildUrl(sp, { page: String(safePage - 1) })}
+                      className="px-4 py-2 text-[11px] font-bold border border-gray-200 text-gray-500 hover:border-[#2b3e51] hover:text-[#2b3e51] rounded transition-all"
+                    >
+                      ← Vorige
+                    </Link>
+                  )}
+
+                  {pageNumbers.map((item, i) =>
+                    item === "…" ? (
+                      <span key={`dots-${i}`} className="px-2 text-gray-400 text-[11px] select-none">
+                        …
+                      </span>
+                    ) : (
+                      <Link
+                        key={item}
+                        href={buildUrl(sp, { page: String(item) })}
+                        className={`w-9 h-9 flex items-center justify-center text-[11px] font-bold border rounded transition-all ${
+                          item === safePage
+                            ? "bg-[#2b3e51] border-[#2b3e51] text-white"
+                            : "border-gray-200 text-gray-500 hover:border-[#2b3e51] hover:text-[#2b3e51]"
+                        }`}
+                      >
+                        {item}
+                      </Link>
+                    )
+                  )}
+
+                  {safePage < totalPages && (
+                    <Link
+                      href={buildUrl(sp, { page: String(safePage + 1) })}
+                      className="px-4 py-2 text-[11px] font-bold border border-gray-200 text-gray-500 hover:border-[#2b3e51] hover:text-[#2b3e51] rounded transition-all"
+                    >
+                      Volgende →
+                    </Link>
+                  )}
+                </nav>
+              )}
+
+              {/* Page info below pagination */}
+              {totalPages > 1 && (
+                <p className="text-center text-[11px] text-gray-400 mt-3">
+                  Pagina {safePage} van {totalPages}
+                </p>
+              )}
+            </div>
           </div>
         </div>
       </main>
