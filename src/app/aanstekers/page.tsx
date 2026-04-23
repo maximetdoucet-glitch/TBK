@@ -6,6 +6,7 @@ import Footer from "@/components/v2/FooterV2";
 import PromoBar from "@/components/v2/PromoBar";
 import { PRODUCTS } from "@/lib/products";
 import PriceRangeSlider, { PRICE_ABSOLUTE_MAX } from "@/components/v2/PriceRangeSlider";
+import ZippoInfoSection from "@/components/v2/ZippoInfoSection";
 
 export const metadata = {
   title: "Aanstekers — OneConnect Lightshop",
@@ -499,6 +500,7 @@ export default async function AanstekersPage({
         </div>
       </main>
 
+      <ZippoInfoSection />
       <Footer />
     </div>
   );
