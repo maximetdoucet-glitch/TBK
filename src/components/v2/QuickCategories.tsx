@@ -50,7 +50,7 @@ export default function QuickCategories() {
     <section className="bg-white py-10 border-y border-gray-100">
       <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8">
 
-        <p className="text-[10px] font-black uppercase tracking-[0.3em] text-[#f5a623] mb-5">
+        <p className="text-[10px] font-black uppercase tracking-[0.3em] text-[#2b3e51] mb-5">
           Snel navigeren
         </p>
 
@@ -79,7 +79,7 @@ export default function QuickCategories() {
               </span>
 
               {/* Arrow */}
-              <div className="w-6 h-6 rounded-full bg-[#f5a623] flex items-center justify-center flex-shrink-0 group-hover:bg-[#2b3e51] transition-colors duration-200">
+              <div className="w-6 h-6 rounded-full bg-[#2b3e51] flex items-center justify-center flex-shrink-0 group-hover:bg-[#f5a623] transition-colors duration-200">
                 <ArrowRight className="size-3 text-white" />
               </div>
             </Link>

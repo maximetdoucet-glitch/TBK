@@ -324,7 +324,7 @@ export default function HeaderV2() {
             <span className="hidden xl:block text-[10px] font-bold uppercase tracking-wider text-[#2b3e51]/60">
               Winkelwagen
             </span>
-            <span className="absolute top-1 right-1 bg-[#f5a623] text-white text-[9px] font-black size-4 rounded-full flex items-center justify-center border border-white">
+            <span className="absolute top-1 right-1 bg-[#2b3e51] text-white text-[9px] font-black size-4 rounded-full flex items-center justify-center border border-white">
               0
             </span>
           </Link>
