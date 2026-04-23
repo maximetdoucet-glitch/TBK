@@ -120,28 +120,44 @@ function FaqItem({ index, q, a }: { index: number; q: string; a: string }) {
 
 export default function ZippoInfoSection() {
   return (
-    <div className="bg-[#0d1117]">
+    <div>
 
       {/* ══════════════════════════════════════════════
           SECTION 1 — WHY ZIPPO
-          Bento layout: 1 hero card + 3 smaller
+          Gradient bridge from page into dark
       ══════════════════════════════════════════════ */}
-      <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
 
-        {/* Editorial header — no eyebrow, straight to the point */}
-        <div className="mb-12">
-          <div className="flex items-baseline gap-5 flex-wrap">
-            <h2 className="font-montserrat font-black text-white leading-[0.85] tracking-tighter text-[clamp(48px,6vw,88px)]">
-              Gebouwd voor
-            </h2>
-            <span className="font-montserrat font-black text-[#f5a623] leading-[0.85] tracking-tighter text-[clamp(48px,6vw,88px)]">
-              de eeuwigheid.
+      {/* Gradient transition: page bg (#f8f9fa) → dark */}
+      <div className="bg-gradient-to-b from-[#f8f9fa] via-[#1b2333] to-[#0d1117]">
+        <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-4">
+
+          {/* Soft lead-in label — first thing visible as page fades */}
+          <div className="flex items-center gap-3 mb-8">
+            <div className="h-px w-8 bg-[#f5a623]/30" />
+            <span className="text-[10px] font-black uppercase tracking-[0.35em] text-white/30">
+              Alles over Zippo aanstekers
             </span>
           </div>
-          <p className="text-white/35 text-[13px] mt-4 max-w-lg leading-relaxed">
-            Zippo wordt al gemaakt op dezelfde manier — van 1932 tot nu. Niet omdat het goedkoop is, maar omdat het goed is.
-          </p>
+
+          {/* Editorial headline — slightly smaller so it doesn't slam */}
+          <div className="mb-10">
+            <div className="flex items-baseline gap-4 flex-wrap">
+              <h2 className="font-montserrat font-black text-white leading-[0.88] tracking-tighter text-[clamp(38px,5vw,72px)]">
+                Gebouwd voor
+              </h2>
+              <span className="font-montserrat font-black text-[#f5a623] leading-[0.88] tracking-tighter text-[clamp(38px,5vw,72px)]">
+                de eeuwigheid.
+              </span>
+            </div>
+            <p className="text-white/35 text-[13px] mt-4 max-w-lg leading-relaxed">
+              Zippo wordt al gemaakt op dezelfde manier — van 1932 tot nu. Niet omdat het goedkoop is, maar omdat het goed is.
+            </p>
+          </div>
         </div>
+      </div>
+
+      <div className="bg-[#0d1117]">
+      <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 pb-16">
 
         {/* Bento grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
@@ -204,6 +220,7 @@ export default function ZippoInfoSection() {
           </div>
 
         </div>
+      </div>
       </div>
 
       {/* ══════════════════════════════════════════════
