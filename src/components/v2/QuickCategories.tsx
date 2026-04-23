@@ -47,7 +47,7 @@ const CATS = [
 
 export default function QuickCategories() {
   return (
-    <section className="bg-[#f8f8f8] py-8 border-b border-gray-100">
+    <section className="bg-white py-10 border-y border-gray-100">
       <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8">
 
         <p className="text-[10px] font-black uppercase tracking-[0.3em] text-[#f5a623] mb-5">
@@ -59,7 +59,7 @@ export default function QuickCategories() {
             <Link
               key={cat.label}
               href={cat.href}
-              className="group flex items-center gap-3 bg-white border border-gray-100 rounded-xl px-4 py-3 hover:border-[#f5a623]/40 hover:shadow-sm transition-all duration-200"
+              className="group flex items-center gap-3 bg-[#f8f9fa] border border-gray-200 rounded-xl px-4 py-3 hover:border-[#f5a623]/50 hover:bg-white hover:shadow-sm transition-all duration-200"
             >
               {/* Thumbnail */}
               <div className="relative w-10 h-10 flex-shrink-0 rounded-lg overflow-hidden bg-[#f4f5f6]">
