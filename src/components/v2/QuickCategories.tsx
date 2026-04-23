@@ -1,0 +1,92 @@
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+
+const CATS = [
+  {
+    label: "Zippo aanstekers",
+    href: "/aanstekers",
+    image: "https://www.uegholland.com/media/catalog/product/6/0/60004741-5_18.jpg",
+  },
+  {
+    label: "Clipper aanstekers",
+    href: "/aanstekers",
+    image: "https://www.uegholland.com/media/catalog/product/1/8/184170_conf.jpg",
+  },
+  {
+    label: "Sigaretten-accessoires",
+    href: "/aanstekers",
+    image: "https://www.uegholland.com/media/catalog/product/9/7/970713_18.jpg",
+  },
+  {
+    label: "Sigaren-accessoires",
+    href: "/aanstekers",
+    image: "https://www.uegholland.com/media/catalog/product/2/7/270078_1_22.jpg",
+  },
+  {
+    label: "E-sig startsets",
+    href: "/aanstekers",
+    image: "https://www.uegholland.com/media/catalog/product/l/a/large-aspire_oby_stick-pod_4_17.jpg",
+  },
+  {
+    label: "E-liquids",
+    href: "/aanstekers",
+    image: "https://www.uegholland.com/media/catalog/product/n/l/nl_box_sansie-vape_blacklabel_original_3mg_1.jpg",
+  },
+  {
+    label: "Filter Flavours",
+    href: "/aanstekers",
+    image: "https://www.uegholland.com/media/catalog/product/a/r/aroma-king-flavour-balls-watermelon-mint_40.jpg",
+  },
+  {
+    label: "Pijpen & accessoires",
+    href: "/aanstekers",
+    image: "https://www.uegholland.com/media/catalog/product/b/o/bookwill_-_pijp-bestek_-_3-delig_-_basic.jpg",
+  },
+];
+
+export default function QuickCategories() {
+  return (
+    <section className="bg-[#f8f8f8] py-8 border-b border-gray-100">
+      <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8">
+
+        <p className="text-[10px] font-black uppercase tracking-[0.3em] text-[#f5a623] mb-5">
+          Snel navigeren
+        </p>
+
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3">
+          {CATS.map((cat) => (
+            <Link
+              key={cat.label}
+              href={cat.href}
+              className="group flex items-center gap-3 bg-white border border-gray-100 rounded-xl px-4 py-3 hover:border-[#f5a623]/40 hover:shadow-sm transition-all duration-200"
+            >
+              {/* Thumbnail */}
+              <div className="relative w-10 h-10 flex-shrink-0 rounded-lg overflow-hidden bg-[#f4f5f6]">
+                <Image
+                  src={cat.image}
+                  alt={cat.label}
+                  fill
+                  className="object-contain p-1"
+                  style={{ mixBlendMode: "multiply" }}
+                  unoptimized
+                />
+              </div>
+
+              {/* Label */}
+              <span className="flex-1 font-montserrat text-[12px] font-black text-[#2b3e51] leading-tight group-hover:text-[#f5a623] transition-colors duration-200 min-w-0 truncate">
+                {cat.label}
+              </span>
+
+              {/* Arrow */}
+              <div className="w-6 h-6 rounded-full bg-[#f5a623] flex items-center justify-center flex-shrink-0 group-hover:bg-[#2b3e51] transition-colors duration-200">
+                <ArrowRight className="size-3 text-white" />
+              </div>
+            </Link>
+          ))}
+        </div>
+
+      </div>
+    </section>
+  );
+}
