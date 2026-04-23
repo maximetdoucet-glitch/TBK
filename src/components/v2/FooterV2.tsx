@@ -81,7 +81,7 @@ export default function FooterV2() {
           Both the nav row and bottom bar use this same grid, so column boundaries are identical.
           Payment icons live in column 4 only → right edge of PayPal = right edge of MIJN ACCOUNT. Guaranteed.
         */}
-        <div style={{ display: 'grid', gridTemplateColumns: '420px 1fr 1fr 1fr' }}>
+        <div className="w-full grid" style={{ gridTemplateColumns: '280px 1fr 1fr 1fr' }}>
 
           {/* ── Row 1: nav columns ── */}
 
@@ -154,12 +154,12 @@ export default function FooterV2() {
           </div>
 
           {/* ── Divider: spans all 4 columns ── */}
-          <div style={{ gridColumn: 'span 4', borderTop: '1px solid rgba(255,255,255,0.06)' }} />
+          <div className="col-span-4" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }} />
 
           {/* ── Row 2: bottom bar ── */}
 
           {/* Cols 1-3 — Legal links */}
-          <div style={{ gridColumn: 'span 3' }} className="flex flex-wrap items-center gap-x-5 gap-y-1 py-6">
+          <div className="col-span-3 flex flex-wrap items-center gap-x-5 gap-y-1 py-6">
             <span className="text-[11px] text-white/25">© {new Date().getFullYear()} OneConnect Lightshop</span>
             {["Privacybeleid", "Algemene voorwaarden", "Cookiebeleid"].map((label) => (
               <Link key={label} href="#" className="text-[11px] text-white/25 hover:text-white/60 transition-colors">{label}</Link>
