@@ -85,7 +85,7 @@ export default function FooterV2() {
         <div className="flex gap-12 py-16">
 
           {/* Brand */}
-          <div className="w-64 flex-shrink-0 flex flex-col gap-6">
+          <div className="w-60 shrink-0 flex flex-col gap-6">
             <Link href="/" className="inline-flex flex-col w-fit">
               <span className="font-montserrat text-3xl font-black tracking-tight text-white leading-none">OneConnect</span>
               <span className="font-montserrat text-[9px] font-bold tracking-[0.5em] text-white/40 mt-1">LIGHTSHOP</span>
@@ -118,43 +118,40 @@ export default function FooterV2() {
             </div>
           </div>
 
-          {/* 3 nav columns — flex-1 so they fill all remaining space */}
-          <div className="flex-1 grid grid-cols-3">
+          {/* 3 nav columns — each flex-1 so they share and fill all remaining space */}
 
-            {/* Assortiment */}
-            <div className="px-6">
-              <p className="text-[10px] font-black uppercase tracking-[0.2em] text-white/30 mb-6 pb-3 border-b border-white/8">Assortiment</p>
-              <ul className="space-y-3">
-                {LINKS.shop.map((l) => (
-                  <li key={l.label}><Link href={l.href} className="text-[13px] text-white/50 hover:text-white transition-colors">{l.label}</Link></li>
-                ))}
-              </ul>
+          {/* Assortiment */}
+          <div className="flex-1 px-6">
+            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-white/30 mb-6 pb-3 border-b border-white/8">Assortiment</p>
+            <ul className="space-y-3">
+              {LINKS.shop.map((l) => (
+                <li key={l.label}><Link href={l.href} className="text-[13px] text-white/50 hover:text-white transition-colors">{l.label}</Link></li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Klantenservice */}
+          <div className="flex-1 px-6">
+            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-white/30 mb-6 pb-3 border-b border-white/8">Klantenservice</p>
+            <ul className="space-y-3">
+              {LINKS.service.map((l) => (
+                <li key={l.label}><Link href={l.href} className="text-[13px] text-white/50 hover:text-white transition-colors">{l.label}</Link></li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Mijn account */}
+          <div className="flex-1 px-6">
+            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-white/30 mb-6 pb-3 border-b border-white/8">Mijn account</p>
+            <ul className="space-y-3">
+              {LINKS.account.map((l) => (
+                <li key={l.label}><Link href={l.href} className="text-[13px] text-white/50 hover:text-white transition-colors">{l.label}</Link></li>
+              ))}
+            </ul>
+            <div className="mt-8 inline-flex flex-col border border-white/8 px-4 py-3 rounded-lg">
+              <span className="text-[9px] font-black uppercase tracking-[0.3em] text-white/25">Opgericht</span>
+              <span className="font-montserrat text-2xl font-black text-white/20 tracking-tight mt-0.5">1928</span>
             </div>
-
-            {/* Klantenservice */}
-            <div className="px-6">
-              <p className="text-[10px] font-black uppercase tracking-[0.2em] text-white/30 mb-6 pb-3 border-b border-white/8">Klantenservice</p>
-              <ul className="space-y-3">
-                {LINKS.service.map((l) => (
-                  <li key={l.label}><Link href={l.href} className="text-[13px] text-white/50 hover:text-white transition-colors">{l.label}</Link></li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Mijn account */}
-            <div className="px-6">
-              <p className="text-[10px] font-black uppercase tracking-[0.2em] text-white/30 mb-6 pb-3 border-b border-white/8">Mijn account</p>
-              <ul className="space-y-3">
-                {LINKS.account.map((l) => (
-                  <li key={l.label}><Link href={l.href} className="text-[13px] text-white/50 hover:text-white transition-colors">{l.label}</Link></li>
-                ))}
-              </ul>
-              <div className="mt-8 inline-flex flex-col border border-white/8 px-4 py-3 rounded-lg">
-                <span className="text-[9px] font-black uppercase tracking-[0.3em] text-white/25">Opgericht</span>
-                <span className="font-montserrat text-2xl font-black text-white/20 tracking-tight mt-0.5">1928</span>
-              </div>
-            </div>
-
           </div>
         </div>
 
