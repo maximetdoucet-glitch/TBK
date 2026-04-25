@@ -94,8 +94,8 @@ const CURRENCIES = [
 const NAV_ITEMS = [
   { label: "Aanstekers", href: "/aanstekers" },
   { label: "Rook-accessoires", href: "#" },
-  { label: "Vape-accessoires", href: "#" },
-  { label: "E-liquids", href: "#" },
+  { label: "Batterijen", href: "#" },
+  { label: "Accessoires", href: "#" },
   { label: "Sale", href: "#", accent: true },
 ];
 
@@ -105,7 +105,7 @@ const MEGA_MENU = [
     items: [
       { label: "Zippo aanstekers", href: "/aanstekers", image: "https://www.uegholland.com/media/catalog/product/_/0/_0140_60007371.jpg" },
       { label: "Clipper & regulier", href: "/aanstekers", image: "https://www.uegholland.com/media/catalog/product/1/8/189079-3.jpg" },
-      { label: "Zippo accessoires", href: "#", image: "https://www.uegholland.com/media/catalog/product/z/i/zippo_butane_1__1_25.jpg" },
+      { label: "Zippo accessoires", href: "/aanstekers", image: "https://www.uegholland.com/media/catalog/product/z/i/zippo_butane_1__1_25.jpg" },
     ],
   },
   {
@@ -113,23 +113,23 @@ const MEGA_MENU = [
     items: [
       { label: "Sigaretten-accessoires", href: "#", image: "https://www.uegholland.com/media/catalog/product/9/7/970713_18.jpg" },
       { label: "Sigaren-accessoires", href: "#", image: "https://www.uegholland.com/media/catalog/product/2/7/270078_1_22.jpg" },
-      { label: "Asbakken & kokers", href: "#", image: "https://www.uegholland.com/media/catalog/product/2/7/279803_1_33.jpg" },
+      { label: "Pijpen & accessoires", href: "#", image: "https://www.uegholland.com/media/catalog/product/2/7/279803_1_33.jpg" },
     ],
   },
   {
-    title: "Vape-accessoires",
+    title: "Batterijen",
     items: [
-      { label: "Coils & wicks", href: "#", image: "https://www.uegholland.com/media/catalog/product/j/o/joyetech-bfhn-ego-aio-eco-coils_1_1_15.jpg" },
-      { label: "Batterijen & opladers", href: "#", image: "https://www.uegholland.com/media/catalog/product/4/2/422831_23.jpg" },
-      { label: "Clearomizers & tanks", href: "#", image: "https://www.uegholland.com/media/catalog/product/b/a/base_1_13.png" },
+      { label: "Losse batterijen", href: "#", image: "https://www.uegholland.com/media/catalog/product/4/2/422831_23.jpg" },
+      { label: "Batterij opladers", href: "#", image: "https://www.uegholland.com/media/catalog/product/e/f/efest-luc-blu6-oled-intelligent-charger_6.jpg" },
+      { label: "Externe batterijen", href: "#", image: "https://www.uegholland.com/media/catalog/product/6/9/6958946201972-1.jpg" },
     ],
   },
   {
-    title: "E-liquids",
+    title: "Accessoires",
     items: [
-      { label: "Filter capsules", href: "#", image: "https://www.uegholland.com/media/catalog/product/a/r/aroma-king-flavour-balls-watermelon-mint_40.jpg" },
-      { label: "Aromas & bases", href: "#", image: "https://www.uegholland.com/media/catalog/product/9/7/970713_18.jpg" },
-      { label: "Nic salts", href: "#", image: "https://www.uegholland.com/media/catalog/product/a/r/aroma-king-flavour-balls-watermelon-mint_40.jpg" },
+      { label: "Cannabis-accessoires", href: "#", image: "https://www.uegholland.com/media/catalog/product/c/h/champ-420-grinder-small_1_1.jpg" },
+      { label: "Vervangglas", href: "#", image: "https://www.uegholland.com/media/catalog/product/j/u/justfog-q16-pro-glass_1_5.jpg" },
+      { label: "Overige accessoires", href: "#", image: "https://www.uegholland.com/media/catalog/product/b/o/bookwill-drankflacon-chrome-satin-177ml_1_14.jpg" },
     ],
   },
 ];

@@ -3,12 +3,12 @@ import { MapPin, Phone, Mail } from "lucide-react";
 
 const LINKS = {
   shop: [
-    { label: "Zippo aanstekers", href: "#" },
-    { label: "Clipper aanstekers", href: "/aanstekers" },
-    { label: "Jetflame aanstekers", href: "#" },
-    { label: "Sigarenknippers", href: "#" },
-    { label: "Humidors", href: "#" },
-    { label: "Vloei & Filters", href: "#" },
+    { label: "Zippo aanstekers", href: "/aanstekers" },
+    { label: "Clipper & regulier", href: "/aanstekers" },
+    { label: "Rook-accessoires", href: "#" },
+    { label: "Batterijen & opladers", href: "#" },
+    { label: "Sigaren-accessoires", href: "#" },
+    { label: "Accessoires", href: "#" },
   ],
   service: [
     { label: "Contact", href: "#" },
