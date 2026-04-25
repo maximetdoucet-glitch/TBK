@@ -94,8 +94,6 @@ const CURRENCIES = [
 const NAV_ITEMS = [
   { label: "Aanstekers", href: "/aanstekers" },
   { label: "Rook-accessoires", href: "#" },
-  { label: "Batterijen", href: "#" },
-  { label: "Accessoires", href: "#" },
   { label: "Sale", href: "#", accent: true },
 ];
 
@@ -114,22 +112,6 @@ const MEGA_MENU = [
       { label: "Sigaretten-accessoires", href: "#", image: "https://www.uegholland.com/media/catalog/product/9/7/970713_18.jpg" },
       { label: "Sigaren-accessoires", href: "#", image: "https://www.uegholland.com/media/catalog/product/2/7/270078_1_22.jpg" },
       { label: "Pijpen & accessoires", href: "#", image: "https://www.uegholland.com/media/catalog/product/2/7/279803_1_33.jpg" },
-    ],
-  },
-  {
-    title: "Batterijen",
-    items: [
-      { label: "Losse batterijen", href: "#", image: "https://www.uegholland.com/media/catalog/product/4/2/422831_23.jpg" },
-      { label: "Batterij opladers", href: "#", image: "https://www.uegholland.com/media/catalog/product/e/f/efest-luc-blu6-oled-intelligent-charger_6.jpg" },
-      { label: "Externe batterijen", href: "#", image: "https://www.uegholland.com/media/catalog/product/6/9/6958946201972-1.jpg" },
-    ],
-  },
-  {
-    title: "Accessoires",
-    items: [
-      { label: "Cannabis-accessoires", href: "#", image: "https://www.uegholland.com/media/catalog/product/c/h/champ-420-grinder-small_1_1.jpg" },
-      { label: "Vervangglas", href: "#", image: "https://www.uegholland.com/media/catalog/product/j/u/justfog-q16-pro-glass_1_5.jpg" },
-      { label: "Overige accessoires", href: "#", image: "https://www.uegholland.com/media/catalog/product/b/o/bookwill-drankflacon-chrome-satin-177ml_1_14.jpg" },
     ],
   },
 ];
@@ -382,7 +364,7 @@ export default function HeaderV2() {
             className="absolute top-full left-0 right-0 bg-white text-[#2b3e51] shadow-2xl z-50 border-t-2 border-[#f5a623]"
           >
             <div className="max-w-[1300px] mx-auto px-8 py-8">
-              <div className="grid grid-cols-3 gap-10">
+              <div className="grid grid-cols-2 gap-10">
                 {MEGA_MENU.map((group) => (
                   <div key={group.title}>
                     <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#2b3e51]/40 mb-4 border-b border-gray-100 pb-2">

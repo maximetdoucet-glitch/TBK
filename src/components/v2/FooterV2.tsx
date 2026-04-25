@@ -5,10 +5,10 @@ const LINKS = {
   shop: [
     { label: "Zippo aanstekers", href: "/aanstekers" },
     { label: "Clipper & regulier", href: "/aanstekers" },
-    { label: "Rook-accessoires", href: "#" },
-    { label: "Batterijen & opladers", href: "#" },
+    { label: "Sigaretten-accessoires", href: "#" },
     { label: "Sigaren-accessoires", href: "#" },
-    { label: "Accessoires", href: "#" },
+    { label: "Pijpen & accessoires", href: "#" },
+    { label: "Cannabis-accessoires", href: "#" },
   ],
   service: [
     { label: "Contact", href: "#" },
