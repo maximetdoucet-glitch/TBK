@@ -3,6 +3,7 @@ import PromoBar from "@/components/v2/PromoBar";
 import HeaderV2 from "@/components/v2/HeaderV2";
 import HeroCarousel from "@/components/v2/HeroCarousel";
 import CategoryShowcase from "@/components/v2/CategoryShowcase";
+import SubcategoryNav from "@/components/v2/SubcategoryNav";
 import FeaturedProducts from "@/components/v2/FeaturedProducts";
 import AboutSection from "@/components/v2/AboutSection";
 import EmailCTA from "@/components/v2/EmailCTA";
@@ -20,6 +21,7 @@ export default function PreviewPage() {
       <main className="flex-1">
         <HeroCarousel />
         <CategoryShowcase />
+        <SubcategoryNav />
         <FeaturedProducts />
         <ArticleSection />
         <BrandCarousel />
