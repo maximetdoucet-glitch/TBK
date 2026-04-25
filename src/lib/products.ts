@@ -23,5 +23,5 @@ export type Product = {
 
 export const PRODUCTS: Product[] = rawProducts as Product[];
 
-export const CATEGORIES = ['Aanstekers', 'E-sigaretten', 'Accessoires', 'E-liquids'] as const;
+export const CATEGORIES = ['Aanstekers', 'Rook-accessoires', 'Batterijen', 'Accessoires'] as const;
 export type CategoryName = (typeof CATEGORIES)[number];
