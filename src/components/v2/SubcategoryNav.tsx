@@ -61,7 +61,7 @@ export default function SubcategoryNav() {
         <p className="text-[10px] font-black uppercase tracking-[0.3em] text-[#f5a623] mb-1">
           Snel navigeren
         </p>
-        <h2 className="font-montserrat text-2xl font-black text-[#2b3e51] tracking-tighter mb-6">
+        <h2 className="font-montserrat text-3xl sm:text-4xl font-black text-[#2b3e51] tracking-tighter mb-6">
           Populaire categorieën
         </h2>
 
