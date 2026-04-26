@@ -93,7 +93,9 @@ const CURRENCIES = [
 
 const NAV_ITEMS = [
   { label: "Aanstekers", href: "/aanstekers" },
-  { label: "Rook-accessoires", href: "#" },
+  { label: "Kokers & Etuis", href: "#" },
+  { label: "Knippers & Asbakken", href: "#" },
+  { label: "Pijpen", href: "#" },
   { label: "Sale", href: "#", accent: true },
 ];
 
@@ -107,11 +109,27 @@ const MEGA_MENU = [
     ],
   },
   {
-    title: "Rook-accessoires",
+    title: "Kokers & Etuis",
     items: [
-      { label: "Sigaretten-accessoires", href: "#", image: "https://www.uegholland.com/media/catalog/product/9/7/970713_18.jpg" },
-      { label: "Sigaren-accessoires", href: "#", image: "https://www.uegholland.com/media/catalog/product/2/7/270078_1_22.jpg" },
-      { label: "Pijpen & accessoires", href: "#", image: "https://www.uegholland.com/media/catalog/product/2/7/279803_1_33.jpg" },
+      { label: "Sigarettenkokers", href: "#", image: "https://www.uegholland.com/media/catalog/product/9/7/970713_18.jpg" },
+      { label: "Filters & houders", href: "#", image: "https://www.uegholland.com/media/catalog/product/d/e/denicotea-filter_1_14.jpg" },
+      { label: "Asbakken", href: "#", image: "https://www.uegholland.com/media/catalog/product/b/o/bookwill-auto-asbak_1_14.jpg" },
+    ],
+  },
+  {
+    title: "Knippers & Asbakken",
+    items: [
+      { label: "Sigarenknippers", href: "#", image: "https://www.uegholland.com/media/catalog/product/2/7/270078_1_22.jpg" },
+      { label: "Sigaren-etuis", href: "#", image: "https://www.uegholland.com/media/catalog/product/b/o/bookwill-sigarenetui_1_14.jpg" },
+      { label: "Sigaren-asbakken", href: "#", image: "https://www.uegholland.com/media/catalog/product/b/o/bookwill-sigaren-asbak_1_14.jpg" },
+    ],
+  },
+  {
+    title: "Pijpen",
+    items: [
+      { label: "Bruyère pijpen", href: "#", image: "https://www.uegholland.com/media/catalog/product/2/7/279803_1_33.jpg" },
+      { label: "Pijp-bestek", href: "#", image: "https://www.uegholland.com/media/catalog/product/b/o/bookwill_-_pijp-bestek_-_3-delig_-_basic.jpg" },
+      { label: "Grinders", href: "#", image: "https://www.uegholland.com/media/catalog/product/c/h/champ-420-grinder-small_1_1.jpg" },
     ],
   },
 ];
@@ -364,7 +382,7 @@ export default function HeaderV2() {
             className="absolute top-full left-0 right-0 bg-white text-[#2b3e51] shadow-2xl z-50 border-t-2 border-[#f5a623]"
           >
             <div className="max-w-[1300px] mx-auto px-8 py-8">
-              <div className="grid grid-cols-2 gap-10">
+              <div className="grid grid-cols-4 gap-8">
                 {MEGA_MENU.map((group) => (
                   <div key={group.title}>
                     <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#2b3e51]/40 mb-4 border-b border-gray-100 pb-2">
