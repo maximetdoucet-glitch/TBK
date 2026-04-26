@@ -40,7 +40,7 @@ const SUBCATEGORIES = [
     image: "https://www.uegholland.com/media/catalog/product/2/7/270078_1_22.jpg",
   },
   {
-    label: "Pijpen",
+    label: "Rook-accessoires",
     count: 15,
     href: "#",
     image: "https://www.uegholland.com/media/catalog/product/2/7/279803_1_33.jpg",

@@ -8,7 +8,7 @@ const LINKS = {
     { label: "Clipper & regulier", href: "/aanstekers" },
     { label: "Kokers & Etuis", href: "#" },
     { label: "Knippers & Asbakken", href: "#" },
-    { label: "Pijpen", href: "#" },
+    { label: "Rook-accessoires", href: "#" },
   ],
   service: [
     { label: "Contact", href: "#" },

@@ -95,7 +95,7 @@ const NAV_ITEMS = [
   { label: "Aanstekers", href: "/aanstekers" },
   { label: "Kokers & Etuis", href: "#" },
   { label: "Knippers & Asbakken", href: "#" },
-  { label: "Pijpen", href: "#" },
+  { label: "Rook-accessoires", href: "#" },
   { label: "Sale", href: "#", accent: true },
 ];
 
@@ -125,11 +125,11 @@ const MEGA_MENU = [
     ],
   },
   {
-    title: "Pijpen",
+    title: "Rook-accessoires",
     items: [
       { label: "Bruyère pijpen", href: "#", image: "https://www.uegholland.com/media/catalog/product/2/7/279803_1_33.jpg" },
       { label: "Pijp-bestek", href: "#", image: "https://www.uegholland.com/media/catalog/product/b/o/bookwill_-_pijp-bestek_-_3-delig_-_basic.jpg" },
-      { label: "Grinders", href: "#", image: "https://www.uegholland.com/media/catalog/product/c/h/champ-420-grinder-small_1_1.jpg" },
+      { label: "Tabaksgrinders", href: "#", image: "https://www.uegholland.com/media/catalog/product/c/h/champ-420-grinder-small_1_1.jpg" },
     ],
   },
 ];
