@@ -20,8 +20,8 @@ export default function PreviewPage() {
       <HeaderV2 />
       <main className="flex-1">
         <HeroCarousel />
-        <CategoryShowcase />
         <SubcategoryNav />
+        <CategoryShowcase />
         <FeaturedProducts />
         <ArticleSection />
         <BrandCarousel />
