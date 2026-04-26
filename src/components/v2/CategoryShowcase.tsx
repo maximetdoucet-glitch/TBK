@@ -30,7 +30,7 @@ const PANELS = [
     tagline: "113 producten",
     description: "Alles voor de roker — sigarettenaccessoires, sigaren-etuis, pijpen en cannabis-accessoires.",
     href: "#",
-    image: "https://images.unsplash.com/photo-1764270720063-bdc0ee2c5c72?w=1400&q=85&fit=crop",
+    image: "https://images.unsplash.com/photo-1765293995378-e283e7ff8e3b?w=1400&q=85&fit=crop",
     accent: "#c8922a",
     accentDim: "#9e6f1e",
     icon: Wind,
