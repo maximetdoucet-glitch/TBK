@@ -46,7 +46,7 @@ const PANELS = [
     tagline: "28 producten",
     description: "Precisieknippers, elegante asbakken en sigaren-etuis van topmerken zoals Bookwill en Faro.",
     href: "#",
-    image: "https://images.unsplash.com/photo-1566889034246-6d10a9ece1f1?w=1400&q=85&fit=crop",
+    image: "https://images.unsplash.com/photo-1756362728219-239765919a4f?w=1400&q=85&fit=crop",
     accent: "#8a8a8a",
     icon: Scissors,
     stats: [
@@ -63,7 +63,7 @@ const PANELS = [
     tagline: "15 producten",
     description: "Tabakspijpen, bestek en grinders — vakkundig geselecteerd voor de echte liefhebber.",
     href: "#",
-    image: "https://images.unsplash.com/photo-1596128894729-aa5f436085e7?w=1400&q=85&fit=crop",
+    image: "https://images.unsplash.com/photo-1673905513691-307991ec74ed?w=1400&q=85&fit=crop",
     accent: "#4a90a4",
     icon: Wind,
     stats: [
