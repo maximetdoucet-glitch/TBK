@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Flame, Wind } from "lucide-react";
+import { ArrowRight, Flame, Box, Scissors, Wind } from "lucide-react";
 import { useState } from "react";
 
 const PANELS = [
@@ -14,32 +14,64 @@ const PANELS = [
     href: "/aanstekers",
     image: "https://images.unsplash.com/photo-1565555384748-b7032af559fc?w=1400&q=85&fit=crop",
     accent: "#f5a623",
-    accentDim: "#c8841a",
     icon: Flame,
     stats: [
       { value: "170+", label: "Zippo modellen" },
-      { value: "149", label: "Regulier & Clipper" },
+      { value: "149", label: "Clipper & regulier" },
       { value: "12", label: "Zippo accessoires" },
     ],
     brands: ["Zippo", "Clipper", "Ronson", "LUX", "Prof", "Zorr"],
     cta: "Bekijk collectie",
   },
   {
-    id: "rook",
-    name: "Rookwaren",
-    tagline: "113 producten",
-    description: "Kokers, etuis, knippers, asbakken en pijpen — alles voor de roker onder één dak.",
+    id: "kokers",
+    name: "Kokers & Etuis",
+    tagline: "70 producten",
+    description: "Sigarettenkokers, etuis, filters en houders — stijlvol en praktisch voor elke roker.",
     href: "#",
-    image: "https://images.unsplash.com/photo-1741306444151-ec7f9ac433ef?w=1400&q=85&fit=crop",
-    accent: "#c8922a",
-    accentDim: "#9e6f1e",
+    image: "https://images.unsplash.com/photo-1675010787842-17ff5beb6c9b?w=1400&q=85&fit=crop",
+    accent: "#b07030",
+    icon: Box,
+    stats: [
+      { value: "40+", label: "Kokers & etuis" },
+      { value: "20+", label: "Filters & houders" },
+      { value: "7", label: "Merken" },
+    ],
+    brands: ["Belbox", "Bookwill", "Denicotea", "Wildfire", "Zorr", "Champ"],
+    cta: "Bekijk collectie",
+  },
+  {
+    id: "knippers",
+    name: "Knippers & Asbakken",
+    tagline: "28 producten",
+    description: "Precisieknippers, elegante asbakken en sigaren-etuis van topmerken zoals Bookwill en Faro.",
+    href: "#",
+    image: "https://images.unsplash.com/photo-1566889034246-6d10a9ece1f1?w=1400&q=85&fit=crop",
+    accent: "#8a8a8a",
+    icon: Scissors,
+    stats: [
+      { value: "15+", label: "Knippers" },
+      { value: "8+", label: "Asbakken" },
+      { value: "6", label: "Merken" },
+    ],
+    brands: ["Bookwill", "Faro", "Fox", "Formula", "Zippo", "Zorr"],
+    cta: "Bekijk collectie",
+  },
+  {
+    id: "rook",
+    name: "Rook-accessoires",
+    tagline: "15 producten",
+    description: "Tabakspijpen, bestek en grinders — vakkundig geselecteerd voor de echte liefhebber.",
+    href: "#",
+    image: "https://images.unsplash.com/photo-1596128894729-aa5f436085e7?w=1400&q=85&fit=crop",
+    accent: "#4a90a4",
     icon: Wind,
     stats: [
-      { value: "70", label: "Kokers & Etuis" },
-      { value: "28", label: "Knippers & Asbakken" },
-      { value: "15", label: "Pijpen" },
+      { value: "9", label: "Grinders" },
+      { value: "3", label: "Pijp-bestek sets" },
+      { value: "2", label: "Merken" },
     ],
-    brands: ["Champ", "Bookwill", "Denicotea", "Belbox", "Faro", "Prof"],
+    brands: ["Champ", "Bookwill"],
     cta: "Bekijk collectie",
   },
 ];
@@ -69,10 +101,10 @@ export default function CategoryShowcase() {
           </Link>
         </div>
 
-        {/* ── Desktop: interactive split panels ── */}
+        {/* ── Desktop: 4-panel interactive split ── */}
         <div
           className="hidden md:flex rounded-2xl overflow-hidden"
-          style={{ height: 480 }}
+          style={{ height: 500 }}
           onMouseLeave={() => setHovered(null)}
         >
           {PANELS.map((panel) => {
@@ -84,9 +116,9 @@ export default function CategoryShowcase() {
               <Link
                 key={panel.id}
                 href={panel.href}
-                className="relative overflow-hidden flex-shrink-0 transition-all duration-500 ease-in-out group cursor-pointer"
+                className="relative overflow-hidden flex-shrink-0 transition-all duration-500 ease-in-out cursor-pointer"
                 style={{
-                  flexBasis: isHovered ? "62%" : isOtherHovered ? "38%" : "50%",
+                  flexBasis: isHovered ? "52%" : isOtherHovered ? "16%" : "25%",
                 }}
                 onMouseEnter={() => setHovered(panel.id)}
               >
@@ -100,14 +132,19 @@ export default function CategoryShowcase() {
                   style={{ transform: isHovered ? "scale(1.05)" : "scale(1)" }}
                 />
 
-                {/* Dark gradient overlay */}
+                {/* Gradient overlay */}
                 <div
                   className="absolute inset-0 transition-opacity duration-500"
                   style={{
-                    background: "linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.35) 50%, rgba(0,0,0,0.15) 100%)",
-                    opacity: isHovered ? 1 : 0.85,
+                    background: "linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.15) 100%)",
+                    opacity: isHovered ? 1 : isOtherHovered ? 0.85 : 0.75,
                   }}
                 />
+
+                {/* Dim overlay on non-hovered panels */}
+                {isOtherHovered && (
+                  <div className="absolute inset-0 bg-black/30 transition-all duration-500" />
+                )}
 
                 {/* Accent top border */}
                 <div
@@ -116,30 +153,33 @@ export default function CategoryShowcase() {
                 />
 
                 {/* Content */}
-                <div className="absolute inset-0 flex flex-col justify-end p-8 z-10">
+                <div className="absolute inset-0 flex flex-col justify-end p-6 z-10">
 
                   {/* Icon badge */}
                   <div
-                    className="mb-4 size-10 rounded-xl flex items-center justify-center transition-all duration-300"
+                    className="mb-3 size-9 rounded-xl flex items-center justify-center transition-all duration-300 shrink-0"
                     style={{
-                      background: isHovered ? panel.accent : "rgba(255,255,255,0.1)",
-                      opacity: isHovered ? 1 : 0.7,
+                      background: isHovered ? panel.accent : "rgba(255,255,255,0.12)",
                     }}
                   >
-                    <Icon className="size-5 text-white" />
+                    <Icon className="size-4 text-white" />
                   </div>
 
-                  {/* Label */}
+                  {/* Tagline */}
                   <p
-                    className="text-[9px] font-black uppercase tracking-[0.4em] mb-1 transition-opacity duration-300"
+                    className="text-[9px] font-black uppercase tracking-[0.4em] mb-1 whitespace-nowrap overflow-hidden transition-opacity duration-300"
                     style={{ color: panel.accent, opacity: isHovered ? 1 : 0.8 }}
                   >
                     {panel.tagline}
                   </p>
 
                   {/* Name */}
-                  <h3 className="font-montserrat font-black text-white tracking-tighter leading-none mb-3 transition-all duration-300"
-                    style={{ fontSize: isHovered ? "2.5rem" : "1.875rem" }}
+                  <h3
+                    className="font-montserrat font-black text-white leading-none mb-0 transition-all duration-300 whitespace-nowrap overflow-hidden"
+                    style={{
+                      fontSize: isHovered ? "2rem" : "1.1rem",
+                      marginBottom: isHovered ? "0.75rem" : "0",
+                    }}
                   >
                     {panel.name}
                   </h3>
@@ -147,38 +187,41 @@ export default function CategoryShowcase() {
                   {/* Description — only on hover */}
                   <div
                     className="transition-all duration-400 overflow-hidden"
-                    style={{ maxHeight: isHovered ? 80 : 0, opacity: isHovered ? 1 : 0 }}
+                    style={{ maxHeight: isHovered ? 60 : 0, opacity: isHovered ? 1 : 0 }}
                   >
-                    <p className="text-[13px] text-white/60 mb-5 leading-relaxed">
+                    <p className="text-[12px] text-white/60 mb-4 leading-relaxed">
                       {panel.description}
                     </p>
                   </div>
 
-                  {/* Stats row — only on hover */}
+                  {/* Stats — only on hover */}
                   <div
-                    className="flex gap-5 mb-5 transition-all duration-400 overflow-hidden"
-                    style={{ maxHeight: isHovered ? 60 : 0, opacity: isHovered ? 1 : 0 }}
+                    className="flex gap-4 transition-all duration-400 overflow-hidden"
+                    style={{ maxHeight: isHovered ? 56 : 0, opacity: isHovered ? 1 : 0 }}
                   >
                     {panel.stats.map((stat) => (
-                      <div key={stat.label} className="flex flex-col">
-                        <span className="font-montserrat text-xl font-black text-white leading-none" style={{ color: panel.accent }}>
+                      <div key={stat.label} className="flex flex-col shrink-0">
+                        <span className="font-montserrat text-lg font-black leading-none" style={{ color: panel.accent }}>
                           {stat.value}
                         </span>
-                        <span className="text-[10px] text-white/45 mt-0.5">{stat.label}</span>
+                        <span className="text-[9px] text-white/45 mt-0.5 whitespace-nowrap">{stat.label}</span>
                       </div>
                     ))}
                   </div>
 
-                  {/* Brands — always visible */}
-                  <div className="flex flex-wrap gap-1.5 mb-5">
+                  {/* Brands — only on hover */}
+                  <div
+                    className="flex flex-wrap gap-1 transition-all duration-400 overflow-hidden"
+                    style={{ maxHeight: isHovered ? 48 : 0, opacity: isHovered ? 1 : 0, marginTop: isHovered ? "0.75rem" : 0 }}
+                  >
                     {panel.brands.map((brand) => (
                       <span
                         key={brand}
-                        className="text-[9px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full border transition-all duration-300"
+                        className="text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full border transition-all duration-300"
                         style={{
-                          borderColor: isHovered ? `${panel.accent}60` : "rgba(255,255,255,0.15)",
-                          color: isHovered ? panel.accent : "rgba(255,255,255,0.5)",
-                          background: isHovered ? `${panel.accent}15` : "transparent",
+                          borderColor: `${panel.accent}60`,
+                          color: panel.accent,
+                          background: `${panel.accent}15`,
                         }}
                       >
                         {brand}
@@ -186,36 +229,27 @@ export default function CategoryShowcase() {
                     ))}
                   </div>
 
-                  {/* CTA */}
-                  <div>
+                  {/* CTA — only on hover */}
+                  <div
+                    className="transition-all duration-400 overflow-hidden"
+                    style={{ maxHeight: isHovered ? 52 : 0, opacity: isHovered ? 1 : 0, marginTop: isHovered ? "1rem" : 0 }}
+                  >
                     <span
-                      className="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-widest px-5 py-2.5 rounded-full transition-all duration-300"
-                      style={{
-                        background: isHovered ? panel.accent : "rgba(255,255,255,0.12)",
-                        color: "white",
-                        border: isHovered ? `1px solid ${panel.accent}` : "1px solid rgba(255,255,255,0.2)",
-                      }}
+                      className="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-widest px-4 py-2 rounded-full text-white transition-all duration-300"
+                      style={{ background: panel.accent }}
                     >
                       {panel.cta}
-                      <ArrowRight
-                        className="size-3 transition-transform duration-300"
-                        style={{ transform: isHovered ? "translateX(2px)" : "translateX(0)" }}
-                      />
+                      <ArrowRight className="size-3" />
                     </span>
                   </div>
                 </div>
-
-                {/* Vertical divider glow on non-hovered side */}
-                {!isHovered && hovered !== null && (
-                  <div className="absolute inset-0 bg-black/20 transition-all duration-500" />
-                )}
               </Link>
             );
           })}
         </div>
 
-        {/* ── Mobile: stacked cards ── */}
-        <div className="flex flex-col gap-3 md:hidden">
+        {/* ── Mobile: 2x2 grid ── */}
+        <div className="grid grid-cols-2 gap-3 md:hidden">
           {PANELS.map((panel) => {
             const Icon = panel.icon;
             return (
@@ -223,27 +257,27 @@ export default function CategoryShowcase() {
                 key={panel.id}
                 href={panel.href}
                 className="group relative overflow-hidden rounded-xl bg-gray-900"
-                style={{ height: 200 }}
+                style={{ height: 160 }}
               >
                 <Image
                   src={panel.image}
                   alt={panel.name}
                   fill
                   unoptimized
-                  className="object-cover object-center opacity-75 group-hover:opacity-90 transition-all duration-500 group-hover:scale-105"
+                  className="object-cover object-center opacity-70 group-hover:opacity-85 transition-all duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/35 to-transparent" />
-                <div className="absolute inset-0 flex flex-col justify-end p-5">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
+                <div className="absolute inset-0 flex flex-col justify-end p-4">
                   <div
-                    className="mb-2 size-8 rounded-lg flex items-center justify-center"
+                    className="mb-1.5 size-7 rounded-lg flex items-center justify-center"
                     style={{ background: panel.accent }}
                   >
-                    <Icon className="size-4 text-white" />
+                    <Icon className="size-3.5 text-white" />
                   </div>
-                  <p className="text-[9px] font-black uppercase tracking-[0.3em] mb-0.5" style={{ color: panel.accent }}>
+                  <p className="text-[8px] font-black uppercase tracking-[0.3em] mb-0.5" style={{ color: panel.accent }}>
                     {panel.tagline}
                   </p>
-                  <h3 className="font-montserrat text-2xl font-black text-white tracking-tight">
+                  <h3 className="font-montserrat text-sm font-black text-white tracking-tight leading-tight">
                     {panel.name}
                   </h3>
                 </div>
