@@ -60,7 +60,7 @@ const FAQS = [
   },
   {
     q: "Kan ik een Zippo laten graveren?",
-    a: "Ja. Veel modellen zijn geschikt voor gravure — naam, datum of afbeelding. Kom langs in de Molenstraat 44 voor de mogelijkheden.",
+    a: "Ja. Veel modellen zijn geschikt voor gravure — naam, datum of afbeelding. Kom langs in de Molenstraat 120 voor de mogelijkheden.",
   },
 ];
 
@@ -303,7 +303,7 @@ export default function ZippoInfoSection() {
                 <div className="flex items-center gap-2 group cursor-pointer">
                   <MessageCircle className="size-4 text-[#f5a623]" />
                   <span className="text-[12px] text-white/50 group-hover:text-white/80 transition-colors">
-                    Molenstraat 44, Nijmegen
+                    Molenstraat 120, Nijmegen
                   </span>
                 </div>
                 <div className="flex items-center gap-2 group cursor-pointer">

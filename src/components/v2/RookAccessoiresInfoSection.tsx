@@ -118,7 +118,7 @@ export default function RookAccessoiresInfoSection() {
           <Info className="size-3.5 text-[#2b3e51]/50 mt-0.5 flex-shrink-0" />
           <p>
             Verkoop uitsluitend aan 18+. Onze rook-accessoires zijn bedoeld voor wettige doeleinden in overeenstemming met de Nederlandse Opiumwet en Tabaks- en Rookwarenwet. Vragen?{" "}
-            <span className="text-[#2b3e51] font-bold">Molenstraat 44, Nijmegen</span>{" "}
+            <span className="text-[#2b3e51] font-bold">Molenstraat 120, Nijmegen</span>{" "}
             · service@tbk-lightshop.nl
           </p>
         </div>

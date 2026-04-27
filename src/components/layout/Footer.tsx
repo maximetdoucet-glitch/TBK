@@ -18,7 +18,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-white/60 text-[11px] leading-relaxed uppercase tracking-widest font-bold pr-12">
-              Sinds 1928 de specialist in aanstekers en rookaccessoires. Nu gevestigd in hartje Nijmegen. Kwaliteit, service en vakmanschap staan centraal.
+              De grootste tabakspecialist van Nijmegen — gespecialiseerd in aanstekers en rookaccessoires. Gevestigd in hartje Nijmegen. Kwaliteit, service en vakmanschap staan centraal.
             </p>
             <div className="flex gap-4">
                {["IG", "FB", "X"].map((social) => (
@@ -63,7 +63,7 @@ export default function Footer() {
             <ul className="flex flex-col gap-6 text-[11px] uppercase tracking-widest font-bold text-white/50">
               <li className="flex gap-4 group">
                 <MapPin className="size-5 text-primary shrink-0 transition-transform group-hover:scale-110" />
-                <span className="leading-relaxed">Molenstraat 44, <br /> 6511 HG Nijmegen, NL</span>
+                <span className="leading-relaxed">Molenstraat 120, <br /> 6511 HG Nijmegen, NL</span>
               </li>
               <li className="flex gap-4 group">
                 <Phone className="size-5 text-primary shrink-0 transition-transform group-hover:scale-110" />
@@ -87,7 +87,7 @@ export default function Footer() {
                  <span>ALL RIGHTS RESERVED</span>
                  <div className="flex gap-4">
                     <span className="text-primary tracking-[0.2em]">TBK</span>
-                    <span>EST. 1928</span>
+                    <span>NIJMEGEN</span>
                  </div>
               </div>
            </div>

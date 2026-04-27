@@ -17,7 +17,7 @@ export const metadata = {
 const PER_PAGE = 24;
 const COLLECTION_NAME = "Knippers & Asbakken";
 const COLLECTION_SLUG = "/knippers-asbakken";
-const COLLECTION_TAGLINE = "28 producten · Nijmegen · Specialist since 1928";
+const COLLECTION_TAGLINE = "28 producten · Grootste tabakspecialist van Nijmegen";
 
 const ALL_PRODUCTS = PRODUCTS.filter((p) => p.category === COLLECTION_NAME);
 

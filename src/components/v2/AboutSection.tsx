@@ -5,7 +5,7 @@ import { Plus, Minus, Award, Truck, ShieldCheck, MapPin } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const STATS = [
-  { value: "1928", label: "Opgericht" },
+  { value: "Nr. 1", label: "Tabakspecialist Nijmegen" },
   { value: "185+", label: "Zippo modellen" },
   { value: "98 jaar", label: "Vakmanschap" },
   { value: "4.8 ★", label: "Google Reviews" },
@@ -30,7 +30,7 @@ const PILLARS = [
   {
     icon: MapPin,
     title: "Fysieke winkel",
-    body: "Bezoek ons in de Molenstraat 44 in hartje Nijmegen. Persoonlijk advies van echte kenners.",
+    body: "Bezoek ons in de Molenstraat 120 in hartje Nijmegen. Persoonlijk advies van echte kenners.",
   },
 ];
 
@@ -53,7 +53,7 @@ const FAQS = [
   },
   {
     q: "Kan ik ook in de winkel terecht?",
-    a: "Zeker. Onze winkel in de Molenstraat 44 in Nijmegen is open op maandag t/m vrijdag van 09:00–18:00 en op zaterdag van 10:00–17:00. Je kunt er terecht voor persoonlijk advies, directe aankoop en het bekijken van de volledige collectie — inclusief Zippo-modellen die niet online staan.",
+    a: "Zeker. Onze winkel in de Molenstraat 120 in Nijmegen is open op maandag t/m vrijdag van 09:00–18:00 en op zaterdag van 10:00–17:00. Je kunt er terecht voor persoonlijk advies, directe aankoop en het bekijken van de volledige collectie — inclusief Zippo-modellen die niet online staan.",
   },
 ];
 
@@ -127,7 +127,7 @@ export default function AboutSection() {
             </p>
             <h2 className="font-montserrat text-4xl sm:text-5xl font-black text-[#2b3e51] tracking-tighter leading-[0.92] mb-8">
               Nijmegen's specialist<br />
-              <span className="text-[#f5a623]">sinds 1928</span>
+              <span className="text-[#f5a623]">in Nijmegen</span>
             </h2>
             <div className="space-y-4 text-[15px] text-gray-500 leading-relaxed">
               <p>

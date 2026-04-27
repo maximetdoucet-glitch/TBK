@@ -7,7 +7,7 @@ import { X, ChevronRight } from "lucide-react";
 const MESSAGES = [
   { text: "Nieuw: Zippo Limited Edition 2025 collectie is binnen", cta: "Bekijk nu", href: "#" },
   { text: "Gratis verzending vanaf €80 — Voor 16:00 besteld, dezelfde dag verstuurd", cta: null, href: null },
-  { text: "Gevestigd in Nijmegen sinds 1928 — Bezoek onze winkel", cta: "Routebeschrijving", href: "#" },
+  { text: "De grootste tabakspecialist van Nijmegen — Bezoek onze winkel", cta: "Routebeschrijving", href: "#" },
 ];
 
 export default function PromoBar() {

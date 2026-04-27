@@ -45,7 +45,7 @@ export default function SEOContent() {
           <div className="flex flex-col gap-8">
             <div className="p-8 md:p-12 bg-[#2b3e51] text-white shadow-xl shadow-[#2b3e51]/10">
                <h3 className="font-montserrat text-2xl font-black mb-8 uppercase tracking-tighter italic">
-                  ERVARING SINDS 1928.
+                  GROOTSTE TABAKSPECIALIST VAN NIJMEGEN.
                </h3>
                <p className="text-white/80 text-sm leading-relaxed mb-8">
                   TBK Lightshop is een begrip in de regio. Onze passie voor vakmanschap en oog voor detail maken ons de specialist voor elke roker en verzamelaar.

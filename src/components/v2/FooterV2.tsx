@@ -91,11 +91,11 @@ export default function FooterV2() {
               <span className="font-montserrat text-[9px] font-bold tracking-[0.5em] text-white/40 mt-1">LIGHTSHOP</span>
             </Link>
             <p className="text-white/45 text-[13px] leading-relaxed">
-              Nijmegen's specialist in aanstekers en rookaccessoires. Opgericht in 1928. Online en fysiek in de Molenstraat.
+              De grootste tabakspecialist van Nijmegen — gespecialiseerd in aanstekers en rookaccessoires. Online en fysiek in de Molenstraat.
             </p>
             <ul className="space-y-3">
               {[
-                { icon: MapPin, text: "Molenstraat 44, 6511 HG Nijmegen" },
+                { icon: MapPin, text: "Molenstraat 120, 6511 HG Nijmegen" },
                 { icon: Phone, text: "+31 (0)24 123 4567" },
                 { icon: Mail, text: "service@tbk-lightshop.nl" },
               ].map(({ icon: Icon, text }) => (
@@ -149,8 +149,8 @@ export default function FooterV2() {
               ))}
             </ul>
             <div className="mt-8 inline-flex flex-col border border-white/8 px-4 py-3 rounded-lg">
-              <span className="text-[9px] font-black uppercase tracking-[0.3em] text-white/25">Opgericht</span>
-              <span className="font-montserrat text-2xl font-black text-white/20 tracking-tight mt-0.5">1928</span>
+              <span className="text-[9px] font-black uppercase tracking-[0.3em] text-white/25">Specialiteit</span>
+              <span className="font-montserrat text-base font-black tracking-tight text-white/30 mt-1">Tabak · Nijmegen</span>
             </div>
           </div>
         </div>

@@ -155,7 +155,7 @@ export default async function AanstekersPage({
                 <p className="text-white/35 text-[11px] mt-1">{total} producten</p>
               </div>
               <p className="text-white/25 text-[11px] hidden md:block tracking-wide">
-                330+ aanstekers · Nijmegen · Specialist since 1928
+                330+ aanstekers · Grootste tabakspecialist van Nijmegen
               </p>
             </div>
           </div>
