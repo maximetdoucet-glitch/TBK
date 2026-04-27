@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ChevronRight, Tag, ShoppingBag } from "lucide-react";
+import { ChevronRight, Tag, ShoppingBag, Sparkles } from "lucide-react";
 import Header from "@/components/v2/HeaderV2";
 import Footer from "@/components/v2/FooterV2";
 import PromoBar from "@/components/v2/PromoBar";
@@ -46,14 +46,20 @@ type SoldOutItem = {
 };
 
 const SOLD_OUT: SoldOutItem[] = [
-  { sku: "170432",  name: "Porsche Design — P3643 MPL JetFlame aansteker", brand: "Porsche Design", image: "https://www.uegholland.com/media/catalog/product/1/7/170432_1_15.jpg", price: "230.00", category: "Aanstekers" },
-  { sku: "60004897", name: "Zippo — Ouija Board", brand: "Zippo", image: "https://www.uegholland.com/media/catalog/product/6/0/60004897-6_16.jpg", price: "229.90", category: "Aanstekers" },
-  { sku: "970178",  name: "Shark — Hulzenstopper Elektrisch PowerMatic 3", brand: "Shark", image: "https://www.uegholland.com/media/catalog/product/9/7/970178.jpg", price: "299.00", category: "Kokers & Etuis" },
-  { sku: "419707",  name: "Zorr — Hulzenstopper Elektrisch Powermatic 4", brand: "Zorr", image: "https://www.uegholland.com/media/catalog/product/4/1/419707-5.jpg", price: "125.00", category: "Kokers & Etuis" },
-  { sku: "915623",  name: "Cigsor — Hygrometer WiFi Luxury 18K", brand: "Cigsor", image: "https://www.uegholland.com/media/catalog/product/9/1/915623_1_15.jpg", price: "899.00", category: "Knippers & Asbakken" },
-  { sku: "425583",  name: "Bookwill Humidor — Kabinet 4-lades, 80 sigaren", brand: "Bookwill", image: "https://www.uegholland.com/media/catalog/product/4/2/425583_7.jpg", price: "199.50", category: "Knippers & Asbakken" },
-  { sku: "930030",  name: "Bookwill — Pijpboor (Pipe Reamer) Chrome", brand: "Bookwill", image: "https://www.uegholland.com/media/catalog/product/9/3/930030-1.jpg", price: "37.95",  category: "Rook-accessoires" },
-  { sku: "422736",  name: "Hookah — Waterpijp set (2-slangen) Zwart in Alukoffer", brand: "Hookah", image: "https://www.uegholland.com/media/catalog/product/h/o/hookah_-_waterpijp_2-slangen_-_zwart_-_in_alukoffer_26.jpg", price: "34.95", category: "Rook-accessoires" },
+  // Aanstekers — 1 premium showcase + 1 upper-mid + 2 cheap entry points
+  { sku: "60004897", name: "Zippo — Ouija Board",                                 brand: "Zippo",    image: "https://www.uegholland.com/media/catalog/product/6/0/60004897-6_16.jpg", price: "229.90", category: "Aanstekers" },
+  { sku: "2007831",  name: "Zippo — Werewolf",                                    brand: "Zippo",    image: "https://www.uegholland.com/media/catalog/product/2/0/2007831_19.jpg",     price: "89.90",  category: "Aanstekers" },
+  { sku: "419112",   name: "Clipper Metal aansteker — Zwart Gradient (Giftbox)",  brand: "Clipper",  image: "https://www.uegholland.com/media/catalog/product/4/1/419112-1_9.jpg",     price: "13.20",  category: "Aanstekers" },
+  { sku: "424813",   name: "Zorr — Turbo aansteker Crown — Display (6-stuks)",    brand: "Zorr",     image: "https://www.uegholland.com/media/catalog/product/z/o/zorr_-_turbo_aansteker_-_crown_-_display_6-stuks__4.jpg", price: "11.50", category: "Aanstekers" },
+  // Kokers & Etuis — 2 upper-mid leather cases
+  { sku: "310411",   name: "Bookwill — Sigarettenkoker Leer Suede Zwart",         brand: "Bookwill", image: "https://www.uegholland.com/media/catalog/product/3/1/310411_1_22.jpg",    price: "43.00",  category: "Kokers & Etuis" },
+  { sku: "310415",   name: "Bookwill — Sigarettenkoker Leer Black Carbon",        brand: "Bookwill", image: "https://www.uegholland.com/media/catalog/product/3/1/310415_1_21.jpg",    price: "37.00",  category: "Kokers & Etuis" },
+  // Knippers & Asbakken — 1 premium humidor + 1 upper-mid cigar cutter
+  { sku: "425583",   name: "Bookwill Humidor — Kabinet 4-lades, 80 sigaren",      brand: "Bookwill", image: "https://www.uegholland.com/media/catalog/product/4/2/425583_7.jpg",       price: "199.50", category: "Knippers & Asbakken" },
+  { sku: "422394",   name: "FOX — Otello Sigarenknipper Chrome",                  brand: "Fox",      image: "https://www.uegholland.com/media/catalog/product/4/2/422394-1.jpg",       price: "89.95",  category: "Knippers & Asbakken" },
+  // Rook-accessoires — Hookah + premium pipe filters
+  { sku: "422736",   name: "Hookah — Waterpijp set (2-slangen) Zwart, Alukoffer", brand: "Hookah",   image: "https://www.uegholland.com/media/catalog/product/h/o/hookah_-_waterpijp_2-slangen_-_zwart_-_in_alukoffer_26.jpg", price: "34.95", category: "Rook-accessoires" },
+  { sku: "420748",   name: "Big Ben — Premium 9mm Pijpfilters (200 stuks)",       brand: "Big Ben",  image: "https://www.uegholland.com/media/catalog/product/4/2/420748_3.jpg",       price: "33.25",  category: "Rook-accessoires" },
 ];
 
 // ─── Build interleaved render list — every 3rd slot is sold-out ──────────────
@@ -79,14 +85,22 @@ function buildEntries(): SaleEntry[] {
   }
   const sold: SaleEntry[] = SOLD_OUT.map((item) => ({ kind: "sold", item }));
 
-  // Interleave: 2 active, 1 sold, repeat.
+  // Even distribution — sold-out cards spaced through the grid so neither
+  // group clumps. With 18 active + 10 sold (28 total) this lays them out as
+  // ~ A A S A A S A A S A A S A S A A S A A S A A S A A S A S
+  const total = active.length + sold.length;
   const out: SaleEntry[] = [];
   let ai = 0;
   let si = 0;
-  while (ai < active.length || si < sold.length) {
-    if (ai < active.length) out.push(active[ai++]);
-    if (ai < active.length) out.push(active[ai++]);
-    if (si < sold.length) out.push(sold[si++]);
+  for (let i = 0; i < total; i++) {
+    const expectedSold = Math.floor(((i + 1) * sold.length) / total);
+    if (si < expectedSold && si < sold.length) {
+      out.push(sold[si++]);
+    } else if (ai < active.length) {
+      out.push(active[ai++]);
+    } else if (si < sold.length) {
+      out.push(sold[si++]);
+    }
   }
   return out;
 }
@@ -121,7 +135,7 @@ export default function SalePage() {
                     Sale · Tijdelijke aanbiedingen
                   </h1>
                   <p className="text-white/35 text-[11px] mt-1">
-                    {totalActive} aanbiedingen actief · {totalSold} premium items niet leverbaar
+                    {totalActive} actieve aanbiedingen · {totalSold} stuks uit premium-collectie momenteel niet leverbaar
                   </p>
                 </div>
               </div>
@@ -135,20 +149,48 @@ export default function SalePage() {
         {/* ── Body ── */}
         <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 py-10">
 
-          {/* Intro line */}
-          <div className="mb-8 max-w-2xl">
-            <p className="text-[10px] font-black uppercase tracking-[0.3em] text-[#e53e3e] mb-2">
-              Geselecteerde kortingen
+          {/* Editorial intro — split into two columns on wider screens for rhythm */}
+          <div className="grid lg:grid-cols-[1.4fr_1fr] gap-8 lg:gap-12 items-end mb-10 pb-8 border-b border-gray-100">
+            <div>
+              <div className="flex items-center gap-3 mb-3">
+                <Sparkles className="size-3.5 text-[#e53e3e]" />
+                <p className="text-[10px] font-black uppercase tracking-[0.3em] text-[#e53e3e]">
+                  Geselecteerde kortingen
+                </p>
+              </div>
+              <h2 className="font-montserrat text-[clamp(26px,3vw,40px)] font-black text-[#2b3e51] tracking-tight leading-[1.05]">
+                Van betaalbare klassiekers tot premium stukken —{" "}
+                <span className="text-[#e53e3e]">10 tot 20% korting.</span>
+              </h2>
+            </div>
+            <p className="text-[13px] text-gray-500 leading-relaxed lg:pl-8 lg:border-l lg:border-gray-100">
+              Een wisselende selectie uit alle vier de collecties — niet alleen instapprijzen, ook
+              een handvol stukken uit de bovenkant van het assortiment. De items met label{" "}
+              <span className="font-bold text-[#2b3e51]">Uitverkocht</span> zijn premium-pieces die
+              tijdelijk niet leverbaar zijn. Mail naar{" "}
+              <span className="text-[#2b3e51] font-bold">service@tbk-lightshop.nl</span> om er een te reserveren.
             </p>
-            <h2 className="font-montserrat text-2xl sm:text-3xl font-black text-[#2b3e51] tracking-tight leading-tight">
-              Van betaalbare klassiekers tot premium stukken — 10 tot 20% korting.
-            </h2>
-            <p className="text-[12px] text-gray-500 mt-3 leading-relaxed">
-              Een wisselende selectie uit alle vier de collecties. Items met de label{" "}
-              <span className="font-bold text-gray-700">Uitverkocht</span> zijn premium-stukken die
-              tijdelijk niet leverbaar zijn — laat ons weten via{" "}
-              <span className="text-[#2b3e51] font-bold">service@tbk-lightshop.nl</span> als je er een wilt reserveren.
+          </div>
+
+          {/* Toolbar — matches the other collection pages so the rhythm continues */}
+          <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
+            <p className="text-[11px] text-gray-400">
+              <span className="font-bold text-[#2b3e51]">{entries.length}</span> producten ·{" "}
+              <span className="font-bold text-[#e53e3e]">{SALE_ITEMS.length} aanbiedingen</span>{" "}
+              · <span className="font-bold text-gray-500">{SOLD_OUT.length} niet leverbaar</span>
             </p>
+            <div className="flex items-center gap-1.5 flex-wrap">
+              <span className="text-[11px] text-gray-400 hidden sm:inline">Tonen:</span>
+              <span className="text-[11px] px-3 py-1.5 border border-[#f5a623] bg-[#f5a623] text-white rounded-full font-bold">
+                Alle items
+              </span>
+              <Link
+                href="/sale#beschikbaar"
+                className="text-[11px] px-3 py-1.5 border border-[#2b3e51] bg-white text-[#2b3e51] hover:border-[#f5a623] hover:bg-[#f5a623] hover:text-white rounded-full transition-all"
+              >
+                Alleen op voorraad
+              </Link>
+            </div>
           </div>
 
           {/* Product grid — single page, 4 columns on desktop */}
@@ -160,6 +202,14 @@ export default function SalePage() {
                 <SoldCard key={`s-${entry.item.sku}-${idx}`} item={entry.item} />
               )
             )}
+          </div>
+
+          {/* Footer note — gentle close to the page */}
+          <div className="mt-12 pt-6 border-t border-gray-100 text-center">
+            <p className="text-[11px] text-gray-400 leading-relaxed">
+              Aanbiedingen geldig zolang de voorraad strekt · Prijzen incl. BTW · Vragen? Bezoek ons in de{" "}
+              <span className="text-[#2b3e51] font-bold">Molenstraat 120 in Nijmegen</span>
+            </p>
           </div>
         </div>
       </main>
