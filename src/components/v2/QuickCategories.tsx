@@ -15,32 +15,17 @@ const CATS = [
   },
   {
     label: "Sigaretten-accessoires",
-    href: "/aanstekers",
+    href: "/kokers-etuis",
     image: "https://www.uegholland.com/media/catalog/product/9/7/970713_18.jpg",
   },
   {
     label: "Sigaren-accessoires",
-    href: "/aanstekers",
+    href: "/knippers-asbakken",
     image: "https://www.uegholland.com/media/catalog/product/2/7/270078_1_22.jpg",
   },
   {
-    label: "E-sig startsets",
-    href: "/aanstekers",
-    image: "https://www.uegholland.com/media/catalog/product/l/a/large-aspire_oby_stick-pod_4_17.jpg",
-  },
-  {
-    label: "E-liquids",
-    href: "/aanstekers",
-    image: "https://www.uegholland.com/media/catalog/product/n/l/nl_box_sansie-vape_blacklabel_original_3mg_1.jpg",
-  },
-  {
-    label: "Filter Flavours",
-    href: "/aanstekers",
-    image: "https://www.uegholland.com/media/catalog/product/a/r/aroma-king-flavour-balls-watermelon-mint_40.jpg",
-  },
-  {
     label: "Pijpen & accessoires",
-    href: "/aanstekers",
+    href: "/rook-accessoires",
     image: "https://www.uegholland.com/media/catalog/product/b/o/bookwill_-_pijp-bestek_-_3-delig_-_basic.jpg",
   },
 ];

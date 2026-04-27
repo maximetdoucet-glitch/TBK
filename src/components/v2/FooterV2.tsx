@@ -6,9 +6,9 @@ const LINKS = {
     { label: "Aanstekers", href: "/aanstekers" },
     { label: "Zippo aanstekers", href: "/aanstekers" },
     { label: "Clipper & regulier", href: "/aanstekers" },
-    { label: "Kokers & Etuis", href: "#" },
-    { label: "Knippers & Asbakken", href: "#" },
-    { label: "Rook-accessoires", href: "#" },
+    { label: "Kokers & Etuis", href: "/kokers-etuis" },
+    { label: "Knippers & Asbakken", href: "/knippers-asbakken" },
+    { label: "Rook-accessoires", href: "/rook-accessoires" },
   ],
   service: [
     { label: "Contact", href: "#" },

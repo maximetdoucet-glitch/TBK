@@ -93,9 +93,9 @@ const CURRENCIES = [
 
 const NAV_ITEMS = [
   { label: "Aanstekers", href: "/aanstekers" },
-  { label: "Kokers & Etuis", href: "#" },
-  { label: "Knippers & Asbakken", href: "#" },
-  { label: "Rook-accessoires", href: "#" },
+  { label: "Kokers & Etuis", href: "/kokers-etuis" },
+  { label: "Knippers & Asbakken", href: "/knippers-asbakken" },
+  { label: "Rook-accessoires", href: "/rook-accessoires" },
   { label: "Sale", href: "#", accent: true },
 ];
 
@@ -111,25 +111,25 @@ const MEGA_MENU = [
   {
     title: "Kokers & Etuis",
     items: [
-      { label: "Sigarettenkokers", href: "#", image: "https://www.uegholland.com/media/catalog/product/9/7/970713_18.jpg" },
-      { label: "Filters & houders", href: "#", image: "https://www.uegholland.com/media/catalog/product/d/e/denicotea-filter_1_14.jpg" },
-      { label: "Asbakken", href: "#", image: "https://www.uegholland.com/media/catalog/product/b/o/bookwill-auto-asbak_1_14.jpg" },
+      { label: "Sigarettenkokers", href: "/kokers-etuis", image: "https://www.uegholland.com/media/catalog/product/9/7/970713_18.jpg" },
+      { label: "Filters & houders", href: "/kokers-etuis", image: "https://www.uegholland.com/media/catalog/product/d/e/denicotea-filter_1_14.jpg" },
+      { label: "Asbakken", href: "/kokers-etuis", image: "https://www.uegholland.com/media/catalog/product/b/o/bookwill-auto-asbak_1_14.jpg" },
     ],
   },
   {
     title: "Knippers & Asbakken",
     items: [
-      { label: "Sigarenknippers", href: "#", image: "https://www.uegholland.com/media/catalog/product/2/7/270078_1_22.jpg" },
-      { label: "Sigaren-etuis", href: "#", image: "https://www.uegholland.com/media/catalog/product/b/o/bookwill-sigarenetui_1_14.jpg" },
-      { label: "Sigaren-asbakken", href: "#", image: "https://www.uegholland.com/media/catalog/product/b/o/bookwill-sigaren-asbak_1_14.jpg" },
+      { label: "Sigarenknippers", href: "/knippers-asbakken", image: "https://www.uegholland.com/media/catalog/product/2/7/270078_1_22.jpg" },
+      { label: "Sigaren-etuis", href: "/knippers-asbakken", image: "https://www.uegholland.com/media/catalog/product/b/o/bookwill-sigarenetui_1_14.jpg" },
+      { label: "Sigaren-asbakken", href: "/knippers-asbakken", image: "https://www.uegholland.com/media/catalog/product/b/o/bookwill-sigaren-asbak_1_14.jpg" },
     ],
   },
   {
     title: "Rook-accessoires",
     items: [
-      { label: "Bruyère pijpen", href: "#", image: "https://www.uegholland.com/media/catalog/product/2/7/279803_1_33.jpg" },
-      { label: "Pijp-bestek", href: "#", image: "https://www.uegholland.com/media/catalog/product/b/o/bookwill_-_pijp-bestek_-_3-delig_-_basic.jpg" },
-      { label: "Tabaksgrinders", href: "#", image: "https://www.uegholland.com/media/catalog/product/c/h/champ-420-grinder-small_1_1.jpg" },
+      { label: "Bruyère pijpen", href: "/rook-accessoires", image: "https://www.uegholland.com/media/catalog/product/2/7/279803_1_33.jpg" },
+      { label: "Pijp-bestek", href: "/rook-accessoires", image: "https://www.uegholland.com/media/catalog/product/b/o/bookwill_-_pijp-bestek_-_3-delig_-_basic.jpg" },
+      { label: "Tabaksgrinders", href: "/rook-accessoires", image: "https://www.uegholland.com/media/catalog/product/c/h/champ-420-grinder-small_1_1.jpg" },
     ],
   },
 ];
