@@ -3,19 +3,13 @@
 import { motion } from "framer-motion";
 
 const BRANDS = [
-  { name: "Zippo",      img: "/brands/zippo.png" },
-  { name: "BIC",        img: "/brands/bic.png" },
-  { name: "Clipper",    img: "/brands/clipper.png" },
-  { name: "Ronson",     img: "/brands/ronson.png" },
-  { name: "Zorr",       img: "/brands/zorr.png" },
-  { name: "Zengaz",     img: "/brands/zengaz.png" },
-  { name: "Mascotte",   img: "/brands/mascotte2.png" },
-  { name: "SMOK",       img: "/brands/smok.png" },
-  { name: "Vaporesso",  img: "/brands/vaporesso.png" },
-  { name: "VOOPOO",     img: "/brands/voopoo.png" },
-  { name: "Aspire",     img: "/brands/aspire.png" },
-  { name: "Lost Vape",  img: "/brands/lostvape.png" },
-  { name: "AromaKING",  img: "/brands/aromaking.png" },
+  { name: "Zippo",    img: "/brands/zippo.png" },
+  { name: "BIC",      img: "/brands/bic.png" },
+  { name: "Clipper",  img: "/brands/clipper.png" },
+  { name: "Ronson",   img: "/brands/ronson.png" },
+  { name: "Zorr",     img: "/brands/zorr.png" },
+  { name: "Zengaz",   img: "/brands/zengaz.png" },
+  { name: "Mascotte", img: "/brands/mascotte2.png" },
 ];
 
 // Duplicate twice for seamless infinite loop
