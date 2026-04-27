@@ -149,8 +149,8 @@ export default function FooterV2() {
               ))}
             </ul>
             <div className="mt-8 inline-flex flex-col border border-white/8 px-4 py-3 rounded-lg">
-              <span className="text-[9px] font-black uppercase tracking-[0.3em] text-white/25">Specialiteit</span>
-              <span className="font-montserrat text-base font-black tracking-tight text-white/30 mt-1">Tabak · Nijmegen</span>
+              <span className="text-[9px] font-black uppercase tracking-[0.3em] text-white/25">Tabaksspeciaalzaak</span>
+              <span className="font-montserrat text-lg font-black tracking-tight text-white/30 mt-1">Nijmegen</span>
             </div>
           </div>
         </div>
