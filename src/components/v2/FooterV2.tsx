@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { MapPin, Phone, Mail } from "lucide-react";
+import { MapPin, Phone, Mail, Flame } from "lucide-react";
 
 const LINKS = {
   shop: [
@@ -85,8 +85,14 @@ export default function FooterV2() {
 
           {/* Brand */}
           <div className="w-60 shrink-0 flex flex-col gap-6">
-            <Link href="/" className="inline-flex flex-col w-fit">
-              <span className="font-montserrat text-2xl font-black tracking-tight text-white leading-none">Rookersbenodigheden</span>
+            <Link href="/" className="inline-flex items-center gap-3 w-fit group" aria-label="Rookersbenodigheden — naar startpagina">
+              <span className="relative flex items-center justify-center size-11 rounded-md bg-white/10 group-hover:bg-[#f5a623] transition-colors">
+                <Flame className="size-5 text-[#f5a623] group-hover:text-white transition-colors" strokeWidth={2.5} />
+              </span>
+              <span className="font-montserrat text-2xl font-black tracking-tight leading-none">
+                <span className="text-white">Rookers</span>
+                <span className="text-[#f5a623]">benodigheden</span>
+              </span>
             </Link>
             <p className="text-white/45 text-[13px] leading-relaxed">
               De grootste tabakspecialist van Nijmegen — gespecialiseerd in aanstekers en rookaccessoires. Online en fysiek in de Molenstraat.

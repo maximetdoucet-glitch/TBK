@@ -4,7 +4,7 @@ import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {
-  Search, ShoppingCart, User, Heart, ChevronDown, Menu, X, Check,
+  Search, ShoppingCart, User, Heart, ChevronDown, Menu, X, Check, Flame,
 } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
@@ -189,8 +189,18 @@ export default function HeaderV2() {
         </button>
 
         {/* Logo */}
-        <Link href="/preview" className="shrink-0 flex flex-col leading-none">
-          <span className="font-montserrat text-base font-black tracking-tight text-[#2b3e51]">Rookersbenodigheden</span>
+        <Link
+          href="/preview"
+          className="shrink-0 flex items-center gap-2 leading-none group"
+          aria-label="Rookersbenodigheden — naar startpagina"
+        >
+          <span className="relative flex items-center justify-center size-9 rounded-md bg-[#2b3e51] group-hover:bg-[#f5a623] transition-colors">
+            <Flame className="size-4 text-[#f5a623] group-hover:text-white transition-colors" strokeWidth={2.5} />
+          </span>
+          <span className="font-montserrat text-[17px] font-black tracking-tight leading-none">
+            <span className="text-[#2b3e51]">Rookers</span>
+            <span className="text-[#f5a623]">benodigheden</span>
+          </span>
         </Link>
 
         {/* Search — grows to fill space, pushing icons to far right */}
@@ -479,8 +489,12 @@ export default function HeaderV2() {
               ))}
             </nav>
             <div className="px-5 py-4 border-t border-gray-100 bg-gray-50 flex items-center gap-3">
-              <span className="flex flex-col leading-none">
-                <span className="font-montserrat text-sm font-black tracking-tight text-[#2b3e51]">Rookersbenodigheden</span>
+              <span className="relative flex items-center justify-center size-7 rounded-md bg-[#2b3e51]">
+                <Flame className="size-3.5 text-[#f5a623]" strokeWidth={2.5} />
+              </span>
+              <span className="font-montserrat text-sm font-black tracking-tight leading-none">
+                <span className="text-[#2b3e51]">Rookers</span>
+                <span className="text-[#f5a623]">benodigheden</span>
               </span>
             </div>
           </div>
