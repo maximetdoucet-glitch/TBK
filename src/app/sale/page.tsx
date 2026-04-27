@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ChevronRight, Tag, ShoppingBag, Sparkles } from "lucide-react";
+import { ChevronRight, Tag, ShoppingBag } from "lucide-react";
 import Header from "@/components/v2/HeaderV2";
 import Footer from "@/components/v2/FooterV2";
 import PromoBar from "@/components/v2/PromoBar";
@@ -67,7 +67,14 @@ type SaleEntry =
   | { kind: "active"; product: Product; oldPrice: string; newPrice: string; pct: number }
   | { kind: "sold"; item: SoldOutItem };
 
-function buildEntries(): SaleEntry[] {
+const COLLECTIONS = [
+  "Aanstekers",
+  "Kokers & Etuis",
+  "Knippers & Asbakken",
+  "Rook-accessoires",
+] as const;
+
+function buildAllEntries(): SaleEntry[] {
   const byId = new Map(PRODUCTS.map((p) => [p.id, p]));
   const active: SaleEntry[] = [];
   for (const { id, discount } of SALE_ITEMS) {
@@ -86,8 +93,7 @@ function buildEntries(): SaleEntry[] {
   const sold: SaleEntry[] = SOLD_OUT.map((item) => ({ kind: "sold", item }));
 
   // Even distribution — sold-out cards spaced through the grid so neither
-  // group clumps. With 18 active + 10 sold (28 total) this lays them out as
-  // ~ A A S A A S A A S A A S A S A A S A A S A A S A A S A S
+  // group clumps.
   const total = active.length + sold.length;
   const out: SaleEntry[] = [];
   let ai = 0;
@@ -105,10 +111,43 @@ function buildEntries(): SaleEntry[] {
   return out;
 }
 
-export default function SalePage() {
-  const entries = buildEntries();
+function entryCategory(e: SaleEntry): string {
+  return e.kind === "active" ? e.product.category : e.item.category;
+}
+
+export default async function SalePage({
+  searchParams,
+}: {
+  searchParams: Promise<Record<string, string | undefined>>;
+}) {
+  const sp = await searchParams;
+  const activeCat = sp.cat ?? "";
+  const availability = sp.availability ?? ""; // "" | "available" | "soldout"
+
+  const allEntries = buildAllEntries();
+
+  let entries = allEntries;
+  if (activeCat) entries = entries.filter((e) => entryCategory(e) === activeCat);
+  if (availability === "available") entries = entries.filter((e) => e.kind === "active");
+  if (availability === "soldout") entries = entries.filter((e) => e.kind === "sold");
+
+  const counts = COLLECTIONS.reduce<Record<string, number>>((acc, c) => {
+    acc[c] = allEntries.filter((e) => entryCategory(e) === c).length;
+    return acc;
+  }, {});
   const totalActive = SALE_ITEMS.length;
   const totalSold = SOLD_OUT.length;
+  const visibleActive = entries.filter((e) => e.kind === "active").length;
+  const visibleSold = entries.filter((e) => e.kind === "sold").length;
+
+  function buildUrl(overrides: Partial<Record<"cat" | "availability", string | undefined>>): string {
+    const merged = { cat: activeCat, availability, ...overrides };
+    const p = new URLSearchParams();
+    if (merged.cat) p.set("cat", merged.cat);
+    if (merged.availability) p.set("availability", merged.availability);
+    const qs = p.toString();
+    return `/sale${qs ? `?${qs}` : ""}`;
+  }
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -124,6 +163,12 @@ export default function SalePage() {
               <Link href="/" className="hover:text-white transition-colors">Home</Link>
               <ChevronRight className="size-3" />
               <span className="text-white/70">Sale</span>
+              {activeCat && (
+                <>
+                  <ChevronRight className="size-3" />
+                  <span className="text-white/70">{activeCat}</span>
+                </>
+              )}
             </nav>
             <div className="flex items-end justify-between">
               <div className="flex items-center gap-4">
@@ -132,7 +177,7 @@ export default function SalePage() {
                 </div>
                 <div>
                   <h1 className="font-montserrat text-2xl font-black text-white tracking-tight">
-                    Sale · Tijdelijke aanbiedingen
+                    {activeCat ? `Sale · ${activeCat}` : "Sale · Tijdelijke aanbiedingen"}
                   </h1>
                   <p className="text-white/35 text-[11px] mt-1">
                     {totalActive} actieve aanbiedingen · {totalSold} stuks uit premium-collectie momenteel niet leverbaar
@@ -147,69 +192,178 @@ export default function SalePage() {
         </div>
 
         {/* ── Body ── */}
-        <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="flex gap-8 items-start">
 
-          {/* Editorial intro — split into two columns on wider screens for rhythm */}
-          <div className="grid lg:grid-cols-[1.4fr_1fr] gap-8 lg:gap-12 items-end mb-10 pb-8 border-b border-gray-100">
-            <div>
-              <div className="flex items-center gap-3 mb-3">
-                <Sparkles className="size-3.5 text-[#e53e3e]" />
-                <p className="text-[10px] font-black uppercase tracking-[0.3em] text-[#e53e3e]">
-                  Geselecteerde kortingen
+            {/* ═══════════════════════════════
+                SIDEBAR — mirrors the other collection pages
+            ═══════════════════════════════ */}
+            <aside className="hidden lg:block w-56 flex-shrink-0 sticky top-6 space-y-0 bg-white border border-gray-100 rounded-sm overflow-hidden">
+
+              {/* Categorieën */}
+              <div className="px-5 py-4 border-b border-gray-100">
+                <p className="text-[11px] font-black uppercase tracking-[0.15em] text-[#2b3e51] mb-3">
+                  Categorieën
+                </p>
+                <ul className="space-y-1">
+                  <li>
+                    <Link
+                      href={buildUrl({ cat: undefined })}
+                      className="flex items-center gap-2.5 py-1 group"
+                    >
+                      <span className={`w-4 h-4 rounded-full border-2 flex items-center justify-center flex-shrink-0 transition-colors ${!activeCat ? "border-[#2b3e51] bg-[#2b3e51]" : "border-gray-300 group-hover:border-[#2b3e51]"}`}>
+                        {!activeCat && <span className="w-1.5 h-1.5 rounded-full bg-white" />}
+                      </span>
+                      <span className={`text-[12px] transition-colors ${!activeCat ? "text-[#2b3e51] font-bold" : "text-gray-500 group-hover:text-[#2b3e51]"}`}>
+                        Alle categorieën
+                      </span>
+                      <span className="ml-auto text-[10px] text-gray-300 tabular-nums">{allEntries.length}</span>
+                    </Link>
+                  </li>
+                  {COLLECTIONS.map((c) => {
+                    const count = counts[c] ?? 0;
+                    if (count === 0) return null;
+                    const isActive = activeCat === c;
+                    return (
+                      <li key={c}>
+                        <Link
+                          href={buildUrl({ cat: isActive ? undefined : c })}
+                          className="flex items-center gap-2.5 py-1 group"
+                        >
+                          <span className={`w-4 h-4 rounded-full border-2 flex items-center justify-center flex-shrink-0 transition-colors ${isActive ? "border-[#2b3e51] bg-[#2b3e51]" : "border-gray-300 group-hover:border-[#2b3e51]"}`}>
+                            {isActive && <span className="w-1.5 h-1.5 rounded-full bg-white" />}
+                          </span>
+                          <span className={`text-[12px] transition-colors ${isActive ? "text-[#2b3e51] font-bold" : "text-gray-500 group-hover:text-[#2b3e51]"}`}>
+                            {c}
+                          </span>
+                          <span className="ml-auto text-[10px] text-gray-300 tabular-nums">{count}</span>
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+
+              {/* Beschikbaarheid */}
+              <div className="px-5 py-4">
+                <p className="text-[11px] font-black uppercase tracking-[0.15em] text-[#2b3e51] mb-3">
+                  Beschikbaarheid
+                </p>
+                <ul className="space-y-1">
+                  {[
+                    { key: "", label: "Alle items" },
+                    { key: "available", label: "Op voorraad" },
+                    { key: "soldout", label: "Niet leverbaar" },
+                  ].map(({ key, label }) => {
+                    const isActive = availability === key;
+                    return (
+                      <li key={key || "all"}>
+                        <Link
+                          href={buildUrl({ availability: key || undefined })}
+                          className="flex items-center gap-2.5 py-1 group"
+                        >
+                          <span className={`w-4 h-4 rounded-full border-2 flex items-center justify-center flex-shrink-0 transition-colors ${isActive ? "border-[#2b3e51] bg-[#2b3e51]" : "border-gray-300 group-hover:border-[#2b3e51]"}`}>
+                            {isActive && <span className="w-1.5 h-1.5 rounded-full bg-white" />}
+                          </span>
+                          <span className={`text-[12px] transition-colors ${isActive ? "text-[#2b3e51] font-bold" : "text-gray-500 group-hover:text-[#2b3e51]"}`}>
+                            {label}
+                          </span>
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            </aside>
+
+            {/* ═══════════════════════════════
+                MAIN
+            ═══════════════════════════════ */}
+            <div className="flex-1 min-w-0">
+
+              {/* Toolbar */}
+              <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
+                <p className="text-[11px] text-gray-400">
+                  <span className="font-bold text-[#2b3e51]">{entries.length}</span> producten
+                  {visibleActive > 0 && (
+                    <>
+                      {" "}· <span className="font-bold text-[#e53e3e]">{visibleActive} aanbiedingen</span>
+                    </>
+                  )}
+                  {visibleSold > 0 && (
+                    <>
+                      {" "}· <span className="font-bold text-gray-500">{visibleSold} niet leverbaar</span>
+                    </>
+                  )}
+                </p>
+                {(activeCat || availability) && (
+                  <Link
+                    href="/sale"
+                    className="text-[11px] px-3 py-1.5 border border-[#2b3e51] bg-white text-[#2b3e51] hover:border-[#f5a623] hover:bg-[#f5a623] hover:text-white rounded-full transition-all"
+                  >
+                    Wis filters
+                  </Link>
+                )}
+              </div>
+
+              {/* Active filter chips */}
+              {(activeCat || availability) && (
+                <div className="flex flex-wrap items-center gap-2 mb-5">
+                  {activeCat && (
+                    <Link
+                      href={buildUrl({ cat: undefined })}
+                      className="flex items-center gap-1.5 text-[11px] font-bold px-3 py-1.5 bg-[#2b3e51] hover:bg-[#f5a623] text-white rounded-full transition-colors"
+                    >
+                      {activeCat} ✕
+                    </Link>
+                  )}
+                  {availability === "available" && (
+                    <Link
+                      href={buildUrl({ availability: undefined })}
+                      className="flex items-center gap-1.5 text-[11px] font-bold px-3 py-1.5 bg-[#2b3e51] hover:bg-[#f5a623] text-white rounded-full transition-colors"
+                    >
+                      Op voorraad ✕
+                    </Link>
+                  )}
+                  {availability === "soldout" && (
+                    <Link
+                      href={buildUrl({ availability: undefined })}
+                      className="flex items-center gap-1.5 text-[11px] font-bold px-3 py-1.5 bg-[#2b3e51] hover:bg-[#f5a623] text-white rounded-full transition-colors"
+                    >
+                      Niet leverbaar ✕
+                    </Link>
+                  )}
+                </div>
+              )}
+
+              {/* Product grid */}
+              {entries.length === 0 ? (
+                <div className="text-center py-24">
+                  <p className="text-gray-400 font-semibold">Geen producten gevonden</p>
+                  <Link href="/sale" className="text-[#f5a623] text-sm mt-2 inline-block underline">
+                    Wis filters
+                  </Link>
+                </div>
+              ) : (
+                <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4">
+                  {entries.map((entry, idx) =>
+                    entry.kind === "active" ? (
+                      <ActiveCard key={`a-${entry.product.id}`} entry={entry} />
+                    ) : (
+                      <SoldCard key={`s-${entry.item.sku}-${idx}`} item={entry.item} />
+                    )
+                  )}
+                </div>
+              )}
+
+              {/* Footer note */}
+              <div className="mt-12 pt-6 border-t border-gray-100 text-center">
+                <p className="text-[11px] text-gray-400 leading-relaxed">
+                  Aanbiedingen geldig zolang de voorraad strekt · Prijzen incl. BTW · Vragen? Bezoek ons in de{" "}
+                  <span className="text-[#2b3e51] font-bold">Molenstraat 120 in Nijmegen</span>
                 </p>
               </div>
-              <h2 className="font-montserrat text-[clamp(26px,3vw,40px)] font-black text-[#2b3e51] tracking-tight leading-[1.05]">
-                Van betaalbare klassiekers tot premium stukken —{" "}
-                <span className="text-[#e53e3e]">10 tot 20% korting.</span>
-              </h2>
             </div>
-            <p className="text-[13px] text-gray-500 leading-relaxed lg:pl-8 lg:border-l lg:border-gray-100">
-              Een wisselende selectie uit alle vier de collecties — niet alleen instapprijzen, ook
-              een handvol stukken uit de bovenkant van het assortiment. De items met label{" "}
-              <span className="font-bold text-[#2b3e51]">Uitverkocht</span> zijn premium-pieces die
-              tijdelijk niet leverbaar zijn. Mail naar{" "}
-              <span className="text-[#2b3e51] font-bold">service@tbk-lightshop.nl</span> om er een te reserveren.
-            </p>
-          </div>
-
-          {/* Toolbar — matches the other collection pages so the rhythm continues */}
-          <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
-            <p className="text-[11px] text-gray-400">
-              <span className="font-bold text-[#2b3e51]">{entries.length}</span> producten ·{" "}
-              <span className="font-bold text-[#e53e3e]">{SALE_ITEMS.length} aanbiedingen</span>{" "}
-              · <span className="font-bold text-gray-500">{SOLD_OUT.length} niet leverbaar</span>
-            </p>
-            <div className="flex items-center gap-1.5 flex-wrap">
-              <span className="text-[11px] text-gray-400 hidden sm:inline">Tonen:</span>
-              <span className="text-[11px] px-3 py-1.5 border border-[#f5a623] bg-[#f5a623] text-white rounded-full font-bold">
-                Alle items
-              </span>
-              <Link
-                href="/sale#beschikbaar"
-                className="text-[11px] px-3 py-1.5 border border-[#2b3e51] bg-white text-[#2b3e51] hover:border-[#f5a623] hover:bg-[#f5a623] hover:text-white rounded-full transition-all"
-              >
-                Alleen op voorraad
-              </Link>
-            </div>
-          </div>
-
-          {/* Product grid — single page, 4 columns on desktop */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4">
-            {entries.map((entry, idx) =>
-              entry.kind === "active" ? (
-                <ActiveCard key={`a-${entry.product.id}`} entry={entry} />
-              ) : (
-                <SoldCard key={`s-${entry.item.sku}-${idx}`} item={entry.item} />
-              )
-            )}
-          </div>
-
-          {/* Footer note — gentle close to the page */}
-          <div className="mt-12 pt-6 border-t border-gray-100 text-center">
-            <p className="text-[11px] text-gray-400 leading-relaxed">
-              Aanbiedingen geldig zolang de voorraad strekt · Prijzen incl. BTW · Vragen? Bezoek ons in de{" "}
-              <span className="text-[#2b3e51] font-bold">Molenstraat 120 in Nijmegen</span>
-            </p>
           </div>
         </div>
       </main>
