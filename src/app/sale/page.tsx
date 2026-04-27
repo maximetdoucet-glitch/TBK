@@ -74,9 +74,9 @@ const COLLECTIONS = [
   "Rook-accessoires",
 ] as const;
 
-function buildAllEntries(): SaleEntry[] {
+function buildLists() {
   const byId = new Map(PRODUCTS.map((p) => [p.id, p]));
-  const active: SaleEntry[] = [];
+  const active: Extract<SaleEntry, { kind: "active" }>[] = [];
   for (const { id, discount } of SALE_ITEMS) {
     const p = byId.get(id);
     if (!p) continue;
@@ -90,25 +90,8 @@ function buildAllEntries(): SaleEntry[] {
       pct: Math.round(discount * 100),
     });
   }
-  const sold: SaleEntry[] = SOLD_OUT.map((item) => ({ kind: "sold", item }));
-
-  // Even distribution — sold-out cards spaced through the grid so neither
-  // group clumps.
-  const total = active.length + sold.length;
-  const out: SaleEntry[] = [];
-  let ai = 0;
-  let si = 0;
-  for (let i = 0; i < total; i++) {
-    const expectedSold = Math.floor(((i + 1) * sold.length) / total);
-    if (si < expectedSold && si < sold.length) {
-      out.push(sold[si++]);
-    } else if (ai < active.length) {
-      out.push(active[ai++]);
-    } else if (si < sold.length) {
-      out.push(sold[si++]);
-    }
-  }
-  return out;
+  const sold: Extract<SaleEntry, { kind: "sold" }>[] = SOLD_OUT.map((item) => ({ kind: "sold", item }));
+  return { active, sold };
 }
 
 function entryCategory(e: SaleEntry): string {
@@ -122,29 +105,35 @@ export default async function SalePage({
 }) {
   const sp = await searchParams;
   const activeCat = sp.cat ?? "";
-  const availability = sp.availability ?? ""; // "" | "available" | "soldout"
+  const requestedPage = Math.max(1, parseInt(sp.page ?? "1", 10));
 
-  const allEntries = buildAllEntries();
+  const { active, sold } = buildLists();
 
-  let entries = allEntries;
-  if (activeCat) entries = entries.filter((e) => entryCategory(e) === activeCat);
-  if (availability === "available") entries = entries.filter((e) => e.kind === "active");
-  if (availability === "soldout") entries = entries.filter((e) => e.kind === "sold");
+  // Apply category filter to both lists
+  const activeFiltered = activeCat ? active.filter((e) => entryCategory(e) === activeCat) : active;
+  const soldFiltered = activeCat ? sold.filter((e) => entryCategory(e) === activeCat) : sold;
 
+  // Two pages: page 1 = active items still on sale, page 2 = sold-out picks
+  const hasSoldPage = soldFiltered.length > 0;
+  const totalPages = hasSoldPage ? 2 : 1;
+  const page = Math.min(requestedPage, totalPages);
+  const entries: SaleEntry[] = page === 1 ? activeFiltered : soldFiltered;
+
+  // Counts for sidebar (combined active + sold per category)
   const counts = COLLECTIONS.reduce<Record<string, number>>((acc, c) => {
-    acc[c] = allEntries.filter((e) => entryCategory(e) === c).length;
+    acc[c] = active.filter((e) => entryCategory(e) === c).length
+           + sold.filter((e) => entryCategory(e) === c).length;
     return acc;
   }, {});
-  const totalActive = SALE_ITEMS.length;
-  const totalSold = SOLD_OUT.length;
-  const visibleActive = entries.filter((e) => e.kind === "active").length;
-  const visibleSold = entries.filter((e) => e.kind === "sold").length;
+  const allCount = active.length + sold.length;
+  const totalActiveFiltered = activeFiltered.length;
+  const totalSoldFiltered = soldFiltered.length;
 
-  function buildUrl(overrides: Partial<Record<"cat" | "availability", string | undefined>>): string {
-    const merged = { cat: activeCat, availability, ...overrides };
+  function buildUrl(overrides: Partial<{ cat: string | undefined; page: string | undefined }>): string {
+    const merged = { cat: activeCat, page: page > 1 ? String(page) : undefined, ...overrides };
     const p = new URLSearchParams();
     if (merged.cat) p.set("cat", merged.cat);
-    if (merged.availability) p.set("availability", merged.availability);
+    if (merged.page && merged.page !== "1") p.set("page", merged.page);
     const qs = p.toString();
     return `/sale${qs ? `?${qs}` : ""}`;
   }
@@ -180,7 +169,7 @@ export default async function SalePage({
                     {activeCat ? `Sale · ${activeCat}` : "Sale · Tijdelijke aanbiedingen"}
                   </h1>
                   <p className="text-white/35 text-[11px] mt-1">
-                    {totalActive} actieve aanbiedingen · {totalSold} stuks uit premium-collectie momenteel niet leverbaar
+                    Nog {totalActiveFiltered} stuks op voorraad uit onze premium sale-collectie · {totalSoldFiltered} uitverkocht
                   </p>
                 </div>
               </div>
@@ -217,7 +206,7 @@ export default async function SalePage({
                       <span className={`text-[12px] transition-colors ${!activeCat ? "text-[#2b3e51] font-bold" : "text-gray-500 group-hover:text-[#2b3e51]"}`}>
                         Alle categorieën
                       </span>
-                      <span className="ml-auto text-[10px] text-gray-300 tabular-nums">{allEntries.length}</span>
+                      <span className="ml-auto text-[10px] text-gray-300 tabular-nums">{allCount}</span>
                     </Link>
                   </li>
                   {COLLECTIONS.map((c) => {
@@ -244,36 +233,6 @@ export default async function SalePage({
                 </ul>
               </div>
 
-              {/* Beschikbaarheid */}
-              <div className="px-5 py-4">
-                <p className="text-[11px] font-black uppercase tracking-[0.15em] text-[#2b3e51] mb-3">
-                  Beschikbaarheid
-                </p>
-                <ul className="space-y-1">
-                  {[
-                    { key: "", label: "Alle items" },
-                    { key: "available", label: "Op voorraad" },
-                    { key: "soldout", label: "Niet leverbaar" },
-                  ].map(({ key, label }) => {
-                    const isActive = availability === key;
-                    return (
-                      <li key={key || "all"}>
-                        <Link
-                          href={buildUrl({ availability: key || undefined })}
-                          className="flex items-center gap-2.5 py-1 group"
-                        >
-                          <span className={`w-4 h-4 rounded-full border-2 flex items-center justify-center flex-shrink-0 transition-colors ${isActive ? "border-[#2b3e51] bg-[#2b3e51]" : "border-gray-300 group-hover:border-[#2b3e51]"}`}>
-                            {isActive && <span className="w-1.5 h-1.5 rounded-full bg-white" />}
-                          </span>
-                          <span className={`text-[12px] transition-colors ${isActive ? "text-[#2b3e51] font-bold" : "text-gray-500 group-hover:text-[#2b3e51]"}`}>
-                            {label}
-                          </span>
-                        </Link>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
             </aside>
 
             {/* ═══════════════════════════════
@@ -284,19 +243,18 @@ export default async function SalePage({
               {/* Toolbar */}
               <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
                 <p className="text-[11px] text-gray-400">
-                  <span className="font-bold text-[#2b3e51]">{entries.length}</span> producten
-                  {visibleActive > 0 && (
+                  <span className="font-bold text-[#e53e3e]">{totalActiveFiltered} over</span>
+                  {" "}· <span className="font-bold text-gray-500">{totalSoldFiltered} uitverkocht</span>
+                  {totalPages > 1 && (
                     <>
-                      {" "}· <span className="font-bold text-[#e53e3e]">{visibleActive} aanbiedingen</span>
-                    </>
-                  )}
-                  {visibleSold > 0 && (
-                    <>
-                      {" "}· <span className="font-bold text-gray-500">{visibleSold} niet leverbaar</span>
+                      {" "}·{" "}
+                      <span className="text-gray-400">
+                        Pagina {page} van {totalPages}
+                      </span>
                     </>
                   )}
                 </p>
-                {(activeCat || availability) && (
+                {activeCat && (
                   <Link
                     href="/sale"
                     className="text-[11px] px-3 py-1.5 border border-[#2b3e51] bg-white text-[#2b3e51] hover:border-[#f5a623] hover:bg-[#f5a623] hover:text-white rounded-full transition-all"
@@ -306,33 +264,15 @@ export default async function SalePage({
                 )}
               </div>
 
-              {/* Active filter chips */}
-              {(activeCat || availability) && (
+              {/* Active filter chip */}
+              {activeCat && (
                 <div className="flex flex-wrap items-center gap-2 mb-5">
-                  {activeCat && (
-                    <Link
-                      href={buildUrl({ cat: undefined })}
-                      className="flex items-center gap-1.5 text-[11px] font-bold px-3 py-1.5 bg-[#2b3e51] hover:bg-[#f5a623] text-white rounded-full transition-colors"
-                    >
-                      {activeCat} ✕
-                    </Link>
-                  )}
-                  {availability === "available" && (
-                    <Link
-                      href={buildUrl({ availability: undefined })}
-                      className="flex items-center gap-1.5 text-[11px] font-bold px-3 py-1.5 bg-[#2b3e51] hover:bg-[#f5a623] text-white rounded-full transition-colors"
-                    >
-                      Op voorraad ✕
-                    </Link>
-                  )}
-                  {availability === "soldout" && (
-                    <Link
-                      href={buildUrl({ availability: undefined })}
-                      className="flex items-center gap-1.5 text-[11px] font-bold px-3 py-1.5 bg-[#2b3e51] hover:bg-[#f5a623] text-white rounded-full transition-colors"
-                    >
-                      Niet leverbaar ✕
-                    </Link>
-                  )}
+                  <Link
+                    href={buildUrl({ cat: undefined })}
+                    className="flex items-center gap-1.5 text-[11px] font-bold px-3 py-1.5 bg-[#2b3e51] hover:bg-[#f5a623] text-white rounded-full transition-colors"
+                  >
+                    {activeCat} ✕
+                  </Link>
                 </div>
               )}
 
@@ -354,6 +294,41 @@ export default async function SalePage({
                     )
                   )}
                 </div>
+              )}
+
+              {/* Pagination */}
+              {totalPages > 1 && (
+                <nav className="flex items-center justify-center gap-1 mt-12 flex-wrap">
+                  {page > 1 && (
+                    <Link
+                      href={buildUrl({ page: String(page - 1) })}
+                      className="px-4 py-2 text-[11px] font-bold border border-[#2b3e51] bg-white text-[#2b3e51] hover:border-[#f5a623] hover:bg-[#f5a623] hover:text-white rounded transition-all"
+                    >
+                      ← Op voorraad
+                    </Link>
+                  )}
+                  {[1, 2].slice(0, totalPages).map((n) => (
+                    <Link
+                      key={n}
+                      href={buildUrl({ page: String(n) })}
+                      className={`w-9 h-9 flex items-center justify-center text-[11px] font-bold border rounded transition-all ${
+                        n === page
+                          ? "bg-[#f5a623] border-[#f5a623] text-white"
+                          : "border-[#2b3e51] bg-white text-[#2b3e51] hover:border-[#f5a623] hover:bg-[#f5a623] hover:text-white"
+                      }`}
+                    >
+                      {n}
+                    </Link>
+                  ))}
+                  {page < totalPages && (
+                    <Link
+                      href={buildUrl({ page: String(page + 1) })}
+                      className="px-4 py-2 text-[11px] font-bold border border-[#2b3e51] bg-white text-[#2b3e51] hover:border-[#f5a623] hover:bg-[#f5a623] hover:text-white rounded transition-all"
+                    >
+                      Uitverkocht →
+                    </Link>
+                  )}
+                </nav>
               )}
 
               {/* Footer note */}
