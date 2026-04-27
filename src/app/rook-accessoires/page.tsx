@@ -6,6 +6,7 @@ import Footer from "@/components/v2/FooterV2";
 import PromoBar from "@/components/v2/PromoBar";
 import { PRODUCTS } from "@/lib/products";
 import PriceRangeSlider, { PRICE_ABSOLUTE_MAX } from "@/components/v2/PriceRangeSlider";
+import RookAccessoiresInfoSection from "@/components/v2/RookAccessoiresInfoSection";
 
 export const metadata = {
   title: "Rook-accessoires — OneConnect Lightshop",
@@ -490,6 +491,7 @@ export default async function RookAccessoiresPage({
         </div>
       </main>
 
+      <RookAccessoiresInfoSection />
       <Footer />
     </div>
   );
