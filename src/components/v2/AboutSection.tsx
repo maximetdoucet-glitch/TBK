@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 const STATS = [
   { value: "Nr. 1", label: "Tabakspecialist Nijmegen" },
   { value: "185+", label: "Zippo modellen" },
-  { value: "98 jaar", label: "Vakmanschap" },
+  { value: "400+", label: "Producten" },
   { value: "4.8 ★", label: "Google Reviews" },
 ];
 
