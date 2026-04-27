@@ -15,15 +15,20 @@ function badgeColor(badge: string | null | undefined) {
 }
 
 
-// Curated featured product IDs (Zippo + accessories + e-sig)
-const FEATURED_IDS = [156, 33, 151, 48, 421, 414, 331, 528];
+// Curated featured product IDs — spread across the 4 collections
+const FEATURED_IDS = [156, 151, 421, 414, 528, 92, 229, 226];
 
 function getFeatured(): Product[] {
   const byId = new Map(PRODUCTS.map((p) => [p.id, p]));
   const curated = FEATURED_IDS.map((id) => byId.get(id)).filter(Boolean) as Product[];
-  // Fill remaining slots from bestsellers
-  const bs = PRODUCTS.filter((p) => p.badge === "Bestseller" && !FEATURED_IDS.includes(p.id));
-  return [...curated, ...bs].slice(0, 8);
+  // Fill any missing slots with the highest-rated remaining products
+  if (curated.length < 8) {
+    const fill = PRODUCTS
+      .filter((p) => !FEATURED_IDS.includes(p.id))
+      .sort((a, b) => b.rating - a.rating || b.reviewCount - a.reviewCount);
+    return [...curated, ...fill].slice(0, 8);
+  }
+  return curated;
 }
 
 function getTabProducts(tab: string): Product[] {
