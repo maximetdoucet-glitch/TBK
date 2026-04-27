@@ -1,11 +1,12 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 
 export const PRICE_ABSOLUTE_MAX = 430;
 
 function buildUrl(
+  basePath: string,
   min: number,
   max: number,
   cat?: string,
@@ -19,7 +20,7 @@ function buildUrl(
   if (min > 0) p.set("min_price", String(min));
   if (max < PRICE_ABSOLUTE_MAX) p.set("max_price", String(max));
   const qs = p.toString();
-  return `/aanstekers${qs ? `?${qs}` : ""}`;
+  return `${basePath}${qs ? `?${qs}` : ""}`;
 }
 
 type Props = {
@@ -64,14 +65,15 @@ export default function PriceRangeSlider({
   sort,
 }: Props) {
   const router = useRouter();
+  const pathname = usePathname() || "/aanstekers";
   const [min, setMin] = useState(initMin);
   const [max, setMax] = useState(initMax);
 
   const commit = useCallback(
     (lo: number, hi: number) => {
-      router.push(buildUrl(lo, hi, cat, brand, sort));
+      router.push(buildUrl(pathname, lo, hi, cat, brand, sort));
     },
-    [cat, brand, sort, router]
+    [pathname, cat, brand, sort, router]
   );
 
   const minPct = (min / PRICE_ABSOLUTE_MAX) * 100;
