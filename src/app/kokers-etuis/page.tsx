@@ -178,7 +178,7 @@ export default async function KokersEtuisPage({
                         href={COLLECTION_SLUG}
                         className="flex items-center gap-2.5 py-1 group"
                       >
-                        <span className={`w-4 h-4 rounded-full border-2 flex items-center justify-center flex-shrink-0 transition-colors ${!activeCat ? "border-[#f5a623] bg-[#f5a623]" : "border-gray-300 group-hover:border-[#2b3e51]"}`}>
+                        <span className={`w-4 h-4 rounded-full border-2 flex items-center justify-center flex-shrink-0 transition-colors ${!activeCat ? "border-[#2b3e51] bg-[#2b3e51]" : "border-gray-300 group-hover:border-[#2b3e51]"}`}>
                           {!activeCat && <span className="w-1.5 h-1.5 rounded-full bg-white" />}
                         </span>
                         <span className={`text-[12px] transition-colors ${!activeCat ? "text-[#2b3e51] font-bold" : "text-gray-500 group-hover:text-[#2b3e51]"}`}>
@@ -197,7 +197,7 @@ export default async function KokersEtuisPage({
                             href={buildUrl(sp, { cat: isActive ? undefined : xmlCat, page: "1" })}
                             className="flex items-center gap-2.5 py-1 group"
                           >
-                            <span className={`w-4 h-4 rounded-full border-2 flex items-center justify-center flex-shrink-0 transition-colors ${isActive ? "border-[#f5a623] bg-[#f5a623]" : "border-gray-300 group-hover:border-[#2b3e51]"}`}>
+                            <span className={`w-4 h-4 rounded-full border-2 flex items-center justify-center flex-shrink-0 transition-colors ${isActive ? "border-[#2b3e51] bg-[#2b3e51]" : "border-gray-300 group-hover:border-[#2b3e51]"}`}>
                               {isActive && <span className="w-1.5 h-1.5 rounded-full bg-white" />}
                             </span>
                             <span className={`text-[12px] transition-colors ${isActive ? "text-[#2b3e51] font-bold" : "text-gray-500 group-hover:text-[#2b3e51]"}`}>
@@ -222,7 +222,7 @@ export default async function KokersEtuisPage({
                       href={buildUrl(sp, { brand: undefined, page: "1" })}
                       className="flex items-center gap-2.5 py-1 group"
                     >
-                      <span className={`w-4 h-4 rounded-full border-2 flex items-center justify-center flex-shrink-0 transition-colors ${!activeBrand ? "border-[#f5a623] bg-[#f5a623]" : "border-gray-300 group-hover:border-[#2b3e51]"}`}>
+                      <span className={`w-4 h-4 rounded-full border-2 flex items-center justify-center flex-shrink-0 transition-colors ${!activeBrand ? "border-[#2b3e51] bg-[#2b3e51]" : "border-gray-300 group-hover:border-[#2b3e51]"}`}>
                         {!activeBrand && <span className="w-1.5 h-1.5 rounded-full bg-white" />}
                       </span>
                       <span className={`text-[12px] transition-colors ${!activeBrand ? "text-[#2b3e51] font-bold" : "text-gray-500 group-hover:text-[#2b3e51]"}`}>
@@ -238,7 +238,7 @@ export default async function KokersEtuisPage({
                           href={buildUrl(sp, { brand: isActive ? undefined : brand, page: "1" })}
                           className="flex items-center gap-2.5 py-1 group"
                         >
-                          <span className={`w-4 h-4 rounded-full border-2 flex items-center justify-center flex-shrink-0 transition-colors ${isActive ? "border-[#f5a623] bg-[#f5a623]" : "border-gray-300 group-hover:border-[#2b3e51]"}`}>
+                          <span className={`w-4 h-4 rounded-full border-2 flex items-center justify-center flex-shrink-0 transition-colors ${isActive ? "border-[#2b3e51] bg-[#2b3e51]" : "border-gray-300 group-hover:border-[#2b3e51]"}`}>
                             {isActive && <span className="w-1.5 h-1.5 rounded-full bg-white" />}
                           </span>
                           <span className={`text-[12px] transition-colors ${isActive ? "text-[#2b3e51] font-bold" : "text-gray-500 group-hover:text-[#2b3e51]"}`}>
@@ -303,7 +303,7 @@ export default async function KokersEtuisPage({
                       href={buildUrl(sp, { sort: opt.value, page: "1" })}
                       className={`text-[11px] px-3 py-1.5 border rounded-full transition-all ${
                         activeSort === opt.value
-                          ? "border-[#f5a623] bg-[#f5a623] text-white"
+                          ? "border-[#2b3e51] bg-[#2b3e51] text-white"
                           : "border-[#2b3e51] bg-white text-[#2b3e51] hover:border-[#f5a623] hover:bg-[#f5a623] hover:text-white"
                       }`}
                     >
