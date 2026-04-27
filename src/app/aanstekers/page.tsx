@@ -272,7 +272,7 @@ export default async function AanstekersPage({
                 {hasPriceFilter && (
                   <Link
                     href={buildUrl(sp, { min_price: undefined, max_price: undefined, page: "1" })}
-                    className="block text-center text-[10px] text-gray-400 hover:text-[#2b3e51] mt-3 transition-colors"
+                    className="block text-center text-[10px] text-[#2b3e51] hover:text-[#f5a623] mt-3 transition-colors"
                   >
                     Prijs filter wissen
                   </Link>
@@ -310,8 +310,8 @@ export default async function AanstekersPage({
                       href={buildUrl(sp, { sort: opt.value, page: "1" })}
                       className={`text-[11px] px-3 py-1.5 border rounded-full transition-all ${
                         activeSort === opt.value
-                          ? "border-[#2b3e51] bg-[#2b3e51] text-white"
-                          : "border-gray-200 bg-white text-gray-500 hover:border-[#2b3e51] hover:text-[#2b3e51]"
+                          ? "border-[#f5a623] bg-[#f5a623] text-white"
+                          : "border-[#2b3e51] bg-white text-[#2b3e51] hover:border-[#f5a623] hover:bg-[#f5a623] hover:text-white"
                       }`}
                     >
                       {opt.label}
@@ -326,7 +326,7 @@ export default async function AanstekersPage({
                   {activeCat && (
                     <Link
                       href={buildUrl(sp, { cat: undefined, page: "1" })}
-                      className="flex items-center gap-1.5 text-[11px] font-bold px-3 py-1.5 bg-[#2b3e51] text-white rounded-full"
+                      className="flex items-center gap-1.5 text-[11px] font-bold px-3 py-1.5 bg-[#2b3e51] hover:bg-[#f5a623] text-white rounded-full transition-colors"
                     >
                       {activeCatLabel} ✕
                     </Link>
@@ -334,7 +334,7 @@ export default async function AanstekersPage({
                   {activeBrand && (
                     <Link
                       href={buildUrl(sp, { brand: undefined, page: "1" })}
-                      className="flex items-center gap-1.5 text-[11px] font-bold px-3 py-1.5 bg-[#2b3e51] text-white rounded-full"
+                      className="flex items-center gap-1.5 text-[11px] font-bold px-3 py-1.5 bg-[#2b3e51] hover:bg-[#f5a623] text-white rounded-full transition-colors"
                     >
                       {activeBrand} ✕
                     </Link>
@@ -342,14 +342,14 @@ export default async function AanstekersPage({
                   {hasPriceFilter && (
                     <Link
                       href={buildUrl(sp, { min_price: undefined, max_price: undefined, page: "1" })}
-                      className="flex items-center gap-1.5 text-[11px] font-bold px-3 py-1.5 bg-[#2b3e51] text-white rounded-full"
+                      className="flex items-center gap-1.5 text-[11px] font-bold px-3 py-1.5 bg-[#2b3e51] hover:bg-[#f5a623] text-white rounded-full transition-colors"
                     >
                       €{sp.min_price ?? "0"} – €{sp.max_price ?? PRICE_ABSOLUTE_MAX} ✕
                     </Link>
                   )}
                   <Link
                     href="/aanstekers"
-                    className="text-[11px] px-3 py-1.5 border border-gray-200 bg-white text-gray-400 rounded-full hover:border-[#2b3e51] hover:text-[#2b3e51] transition-colors"
+                    className="text-[11px] px-3 py-1.5 border border-[#2b3e51] bg-white text-[#2b3e51] rounded-full hover:border-[#f5a623] hover:bg-[#f5a623] hover:text-white transition-colors"
                   >
                     Wis alle filters
                   </Link>
@@ -396,7 +396,7 @@ export default async function AanstekersPage({
                         <button
                           type="button"
                           aria-label="Voeg toe aan verlanglijst"
-                          className="absolute bottom-2 right-2 p-1.5 bg-white shadow-sm text-gray-300 hover:text-[#f5a623] opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-full"
+                          className="absolute bottom-2 right-2 p-1.5 bg-white shadow-sm text-[#2b3e51] hover:text-[#f5a623] opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-full"
                         >
                           <Heart className="size-3.5" />
                         </button>
@@ -440,7 +440,7 @@ export default async function AanstekersPage({
                           <button
                             type="button"
                             aria-label="Voeg toe aan winkelwagen"
-                            className="size-8 bg-[#f5a623] hover:bg-[#2b3e51] rounded-sm flex items-center justify-center transition-colors"
+                            className="size-8 bg-[#2b3e51] hover:bg-[#f5a623] rounded-sm flex items-center justify-center transition-colors"
                           >
                             <ShoppingBag className="size-4 text-white" />
                           </button>
@@ -457,7 +457,7 @@ export default async function AanstekersPage({
                   {safePage > 1 && (
                     <Link
                       href={buildUrl(sp, { page: String(safePage - 1) })}
-                      className="px-4 py-2 text-[11px] font-bold border border-gray-200 bg-white text-gray-500 hover:border-[#2b3e51] hover:text-[#2b3e51] rounded transition-all"
+                      className="px-4 py-2 text-[11px] font-bold border border-[#2b3e51] bg-white text-[#2b3e51] hover:border-[#f5a623] hover:bg-[#f5a623] hover:text-white rounded transition-all"
                     >
                       ← Vorige
                     </Link>
@@ -471,8 +471,8 @@ export default async function AanstekersPage({
                         href={buildUrl(sp, { page: String(item) })}
                         className={`w-9 h-9 flex items-center justify-center text-[11px] font-bold border rounded transition-all ${
                           item === safePage
-                            ? "bg-[#2b3e51] border-[#2b3e51] text-white"
-                            : "border-gray-200 bg-white text-gray-500 hover:border-[#2b3e51] hover:text-[#2b3e51]"
+                            ? "bg-[#f5a623] border-[#f5a623] text-white"
+                            : "border-[#2b3e51] bg-white text-[#2b3e51] hover:border-[#f5a623] hover:bg-[#f5a623] hover:text-white"
                         }`}
                       >
                         {item}
@@ -482,7 +482,7 @@ export default async function AanstekersPage({
                   {safePage < totalPages && (
                     <Link
                       href={buildUrl(sp, { page: String(safePage + 1) })}
-                      className="px-4 py-2 text-[11px] font-bold border border-gray-200 bg-white text-gray-500 hover:border-[#2b3e51] hover:text-[#2b3e51] rounded transition-all"
+                      className="px-4 py-2 text-[11px] font-bold border border-[#2b3e51] bg-white text-[#2b3e51] hover:border-[#f5a623] hover:bg-[#f5a623] hover:text-white rounded transition-all"
                     >
                       Volgende →
                     </Link>
