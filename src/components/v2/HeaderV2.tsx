@@ -96,7 +96,7 @@ const NAV_ITEMS = [
   { label: "Kokers & Etuis", href: "/kokers-etuis" },
   { label: "Knippers & Asbakken", href: "/knippers-asbakken" },
   { label: "Rook-accessoires", href: "/rook-accessoires" },
-  { label: "Sale", href: "#", accent: true },
+  { label: "Sale", href: "/sale", accent: true },
 ];
 
 const MEGA_MENU = [
