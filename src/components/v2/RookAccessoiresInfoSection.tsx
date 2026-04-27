@@ -1,111 +1,136 @@
 "use client";
 
-import { Wind, Award, Leaf, Sparkles, Flame, Wrench } from "lucide-react";
-import CategoryInfoSection, { type CategoryInfoData } from "./CategoryInfoSection";
+import { useState } from "react";
+import { Award, Wrench, Scale, Info } from "lucide-react";
 
-const DATA: CategoryInfoData = {
-  aboutLabel: "Alles over pijpen, bestek & grinders",
-  headlineDark: "Een ritueel",
-  headlineAccent: "uit de oude wereld.",
-  introBody:
-    "Een pijproker heeft geen haast. Een grinder vraagt geen batterij. De accessoires in deze collectie zijn voor wie het hele proces waardeert — niet alleen het eindresultaat. Bruyère hout, gepolijst messing, vlijmscherp staal.",
-
-  bento: [
-    {
-      icon: Award,
-      hero: true,
-      heroBgNumber: "1850",
-      heroTagline: "Bruyère · Cederhout · Massief messing",
-      title: "Materialen die het proces respecteren",
-      body:
-        "Bruyère hout — de wortelknobbel van de heideboom — is sinds 1850 de standaard voor pijpen. Het is hittebestendig, neutraal van smaak en ontwikkelt na honderden vullingen een eigen rookkarakter. Onze grinders zijn vliegtuig-aluminium met diamantvormige tanden; ons pijp-bestek is messing dat niet roest in de tabak. Geen plastic, geen compromissen.",
-    },
-    {
-      icon: Leaf,
-      title: "Pijp-bestek — drie stuks die alles doen",
-      body:
-        "Een aandrukker, een ruimer, een prikker. Met deze drie houd je je pijp schoon, voorkom je verstopping en verleng je de levensduur tot decennia. Een Bookwill 3-delig bestek past in een binnenzak en gaat een leven mee.",
-    },
-    {
-      icon: Sparkles,
-      title: "Grinders met precisie-tanden",
-      body:
-        "Een goede grinder heeft scherpe diamantvormige tanden, magnetisch sluitend deksel en pollen-katcher. Champ-grinders zijn vliegtuig-aluminium, vaatwasserbestendig en houden hun snijvlak jaren. Het verschil met goedkope plastic versies merk je direct.",
-    },
-    {
-      icon: Wind,
-      title: "Bewaring & geur",
-      body:
-        "Tabak in een open zak verliest binnen dagen aroma. Een goede tabakspot of luchtdichte grinder houdt vocht en geur weken vast. Cederhouten bewaardozen voegen subtiele kruidigheid toe — hetzelfde principe als bij sigaren.",
-    },
-  ],
-
-  stepsLabel: "Een pijp stoppen — Stap voor stap",
-  stepsHeading: "Vullen in<br />vier stappen.",
-  stepsTipIcon: Flame,
-  stepsTip:
-    "<span class='text-gray-700 font-bold'>Tip:</span> Vul nooit vast aan — een te strak gestopte pijp trekt slecht en bittert snel.",
-  steps: [
-    {
-      n: "01",
-      title: "Vul luchtig",
-      desc: "Druppel tabak losjes in de kop tot net over de rand. Niet aanduwen — laat hem bezakken.",
-    },
-    {
-      n: "02",
-      title: "Lichte druk",
-      desc: "Met de aandrukker zachtjes effen tot je trekt — als ademen door een rietje, niet door een blokje.",
-    },
-    {
-      n: "03",
-      title: "Aansteken in tweeën",
-      desc: "Eerste vlam: charring light, laat doven. Tweede vlam: echt aansteken terwijl je rustig trekt.",
-    },
-    {
-      n: "04",
-      title: "Eerste asch",
-      desc: "Na 2–3 minuten klop je de eerste asch eraf. Dit is de 'true light' — vanaf hier rookt hij gelijkmatig.",
-    },
-  ],
-  bottomBadgeIcon: Wrench,
-  bottomBadgeText: "Pijpreiniging & bestek-onderhoud beschikbaar in onze winkel",
-
-  faqHeadingDark: "Vragen over",
-  faqHeadingAccent: "pijpen & accessoires?",
-  faqIntro:
-    "Welke pijp voor de beginner, hoe je een grinder kiest, en waarom bestek geen luxe is maar noodzaak — eerlijk uitgelegd.",
-  faqs: [
-    {
-      q: "Wat is bruyère hout en waarom is het de standaard?",
-      a: "Bruyère is de wortelknobbel van de boomheide (Erica arborea), die groeit in het Middellandse Zeegebied. Het hout is van nature hittebestendig tot ver boven de rookgloed, geurneutraal en poreus genoeg om vocht te absorberen. Sinds 1850 het standaardmateriaal voor kwaliteitspijpen — geen synthetisch alternatief komt eraan.",
-    },
-    {
-      q: "Heb ik echt een 3-delig pijp-bestek nodig?",
-      a: "Ja, als je je pijp wilt onderhouden. De aandrukker zorgt voor gelijkmatige verbranding, de ruimer haalt verkoold residu uit de kop en de prikker maakt verstoppingen los. Zonder bestek raken pijpen verbrand, verstopt of bitter. Een set kost weinig en gaat decennia mee.",
-    },
-    {
-      q: "Hoe vaak maak ik mijn pijp schoon?",
-      a: "Na elke rooksessie: kop legen en met een pijpragertje door het mondstuk. Wekelijks: grondiger met de ruimer. Maandelijks (bij intensief gebruik): laat de pijp 24u rusten en wrijf de buitenkant met een zachte doek. Een goed onderhouden pijp gaat een leven mee.",
-    },
-    {
-      q: "Welke grinder-grootte is praktisch?",
-      a: "Voor thuisgebruik 50-55mm doorsnee — past in de hand, capaciteit voor meerdere sessies. Voor onderweg 40mm — past in een broekzak. 4-laags grinders met pollen-katcher zijn de gulden middenweg: bovenkant grind, middelste laag opvang, onderste laag pollen. Vliegtuig-aluminium boven plastic; magnetisch sluitend boven schroef.",
-    },
-    {
-      q: "Kan ik een grinder in de vaatwasser?",
-      a: "Aluminium grinders van Champ kunnen op koud programma — meestal niet aan te raden voor de afdichtingen. Beter: handmatig met warm water en een zachte borstel. Voor hardnekkig residu: 30 minuten in lauwwarm water met afwasmiddel, daarna goed drogen. Plastic grinders altijd handmatig.",
-    },
-    {
-      q: "Welke pijp is geschikt voor een beginner?",
-      a: "Een rechte (straight) bruyère-pijp van middelgrote kop, smooth-finish, met klassiek mondstuk. Vermijd extreem gebogen pijpen of zware meerschuim — die vragen ervaring. Een eenvoudige Bruyère-pijp uit onze collectie tussen 50–100 euro is duurzaam genoeg om jaren mee te leren.",
-    },
-    {
-      q: "Hoe bewaar ik losse tabak?",
-      a: "Luchtdichte tabakspot bij kamertemperatuur, weg van direct zonlicht. Voor langere bewaring (>1 maand): een vochtbalans-element zoals een Boveda erbij. Tabak in een open zak verliest binnen 7 dagen het grootste deel van zijn aroma — geur is vluchtig, vocht ook.",
-    },
-  ],
-};
+const TABS = [
+  {
+    id: "vakmanschap",
+    label: "Vakmanschap",
+    icon: Award,
+    title: "Materialen die het proces respecteren",
+    body:
+      "Bruyère hout — de wortelknobbel van de heideboom — is sinds 1850 de standaard voor pijpen. Hittebestendig, geurneutraal, en het ontwikkelt na honderden vullingen een eigen rookkarakter. Onze grinders zijn vliegtuig-aluminium met diamantvormige tanden; ons bestek is messing dat niet roest in de tabak.",
+    fact: "Sinds 1850",
+  },
+  {
+    id: "onderhoud",
+    label: "Onderhoud",
+    icon: Wrench,
+    title: "Klein gereedschap, lange levensduur",
+    body:
+      "Een 3-delig pijp-bestek (aandrukker, ruimer, prikker) houdt je pijp schoon en voorkomt verstopping. Grinders maak je handmatig schoon met warm water en een zachte borstel — niet in de vaatwasser. Goed onderhouden gereedschap gaat decennia mee.",
+    fact: "Decennia mee",
+  },
+  {
+    id: "verantwoord",
+    label: "Verantwoord",
+    icon: Scale,
+    title: "Verkoop volgens Nederlandse wetgeving",
+    body:
+      "Wij verkopen uitsluitend rook-gereedschap en accessoires (pijpen, grinders, bestek) — geen tabak of plantenmateriaal via deze webshop. Verkoop aan personen onder de 18 jaar is niet toegestaan. Bij twijfel over leeftijd vragen wij om legitimatie bij ophalen of bezorging.",
+    fact: "18+ legitimatie",
+  },
+];
 
 export default function RookAccessoiresInfoSection() {
-  return <CategoryInfoSection data={DATA} />;
+  const [active, setActive] = useState(TABS[0].id);
+  const tab = TABS.find((t) => t.id === active) ?? TABS[0];
+  const ActiveIcon = tab.icon;
+
+  return (
+    <div className="bg-white border-t border-gray-100">
+      <div className="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8 py-16">
+
+        {/* Lead-in */}
+        <div className="flex items-center gap-3 mb-6">
+          <div className="h-px w-8 bg-[#2b3e51]/40" />
+          <span className="text-[10px] font-black uppercase tracking-[0.35em] text-gray-400">
+            Goed om te weten
+          </span>
+        </div>
+
+        {/* Editorial headline */}
+        <div className="mb-8 max-w-2xl">
+          <h2 className="font-montserrat font-black tracking-tight leading-[0.95] text-[clamp(28px,4vw,44px)]">
+            <span className="text-[#2b3e51]">Pijpen, bestek</span>{" "}
+            <span className="text-[#f5a623]">& grinders.</span>
+          </h2>
+          <p className="text-gray-500 text-[13px] mt-3 leading-relaxed">
+            Klein gereedschap voor wie het proces waardeert — eerlijk uitgelegd in drie korte hoofdstukken.
+          </p>
+        </div>
+
+        {/* Interactive tab card */}
+        <div className="border border-gray-200 rounded-sm overflow-hidden bg-white">
+
+          {/* Tab strip */}
+          <div role="tablist" className="flex border-b border-gray-100 bg-gray-50/60">
+            {TABS.map((t) => {
+              const Icon = t.icon;
+              const isActive = t.id === active;
+              return (
+                <button
+                  key={t.id}
+                  type="button"
+                  role="tab"
+                  aria-selected={isActive ? "true" : "false"}
+                  onClick={() => setActive(t.id)}
+                  className={`flex-1 flex items-center justify-center gap-2 px-4 py-4 text-[12px] font-black uppercase tracking-[0.12em] transition-all duration-300 border-b-2 ${
+                    isActive
+                      ? "border-[#f5a623] text-[#2b3e51] bg-white"
+                      : "border-transparent text-gray-400 hover:text-[#2b3e51] hover:bg-white"
+                  }`}
+                >
+                  <Icon className={`size-4 transition-colors ${isActive ? "text-[#f5a623]" : "text-gray-300"}`} />
+                  <span className="hidden sm:inline">{t.label}</span>
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Active panel */}
+          <div role="tabpanel" key={tab.id} className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-8 p-8 md:p-10 animate-[fadeIn_0.35s_ease-out]">
+            <div>
+              <h3 className="font-montserrat text-lg sm:text-xl font-black text-[#2b3e51] tracking-tight mb-3">
+                {tab.title}
+              </h3>
+              <p className="text-[13px] text-gray-500 leading-relaxed max-w-xl">
+                {tab.body}
+              </p>
+            </div>
+
+            {/* Big number-style accent */}
+            <div className="hidden md:flex flex-col items-end justify-center pl-6 border-l border-gray-100 min-w-[160px]">
+              <ActiveIcon className="size-6 text-[#f5a623] mb-2" />
+              <span className="font-montserrat text-[10px] font-black uppercase tracking-[0.2em] text-gray-300 mb-1">
+                Kernpunt
+              </span>
+              <span className="font-montserrat text-base font-black text-[#2b3e51] tracking-tight text-right">
+                {tab.fact}
+              </span>
+            </div>
+          </div>
+        </div>
+
+        {/* Compact legal/contact note */}
+        <div className="mt-6 flex items-start gap-3 text-[11px] text-gray-400 leading-relaxed">
+          <Info className="size-3.5 text-[#2b3e51]/50 mt-0.5 flex-shrink-0" />
+          <p>
+            Verkoop uitsluitend aan 18+. Onze rook-accessoires zijn bedoeld voor wettige doeleinden in overeenstemming met de Nederlandse Opiumwet en Tabaks- en Rookwarenwet. Vragen?{" "}
+            <span className="text-[#2b3e51] font-bold">Molenstraat 44, Nijmegen</span>{" "}
+            · service@tbk-lightshop.nl
+          </p>
+        </div>
+
+      </div>
+
+      <style>{`
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(4px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+      `}</style>
+    </div>
+  );
 }
