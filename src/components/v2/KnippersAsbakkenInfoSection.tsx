@@ -1,3 +1,5 @@
+"use client";
+
 import { Scissors, Award, Wind, Flame, Hand, Wrench } from "lucide-react";
 import CategoryInfoSection, { type CategoryInfoData } from "./CategoryInfoSection";
 

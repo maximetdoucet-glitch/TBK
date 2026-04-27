@@ -1,3 +1,5 @@
+"use client";
+
 import { Box, Filter, Sparkles, Award, Droplet, Wrench } from "lucide-react";
 import CategoryInfoSection, { type CategoryInfoData } from "./CategoryInfoSection";
 
