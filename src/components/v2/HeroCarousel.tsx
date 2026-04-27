@@ -171,8 +171,8 @@ export default function HeroCarousel() {
             {/* Stats */}
             <div className="flex items-center gap-7 pt-2">
               {[
-                { v: "500+", l: "modellen" },
-                { v: "98 jr", l: "vakmanschap" },
+                { v: "300+", l: "modellen" },
+                { v: "5+", l: "merken" },
                 { v: "4.8★", l: "reviews" },
               ].map((s) => (
                 <div key={s.l} className="flex flex-col">

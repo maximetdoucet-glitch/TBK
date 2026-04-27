@@ -4,11 +4,10 @@ import { MapPin, Phone, Mail } from "lucide-react";
 const LINKS = {
   shop: [
     { label: "Aanstekers", href: "/aanstekers" },
-    { label: "Zippo aanstekers", href: "/aanstekers" },
-    { label: "Clipper & regulier", href: "/aanstekers" },
     { label: "Kokers & Etuis", href: "/kokers-etuis" },
     { label: "Knippers & Asbakken", href: "/knippers-asbakken" },
     { label: "Rook-accessoires", href: "/rook-accessoires" },
+    { label: "Sale", href: "/sale" },
   ],
   service: [
     { label: "Contact", href: "#" },
