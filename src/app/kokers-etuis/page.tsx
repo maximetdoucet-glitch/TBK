@@ -6,6 +6,7 @@ import Footer from "@/components/v2/FooterV2";
 import PromoBar from "@/components/v2/PromoBar";
 import { PRODUCTS } from "@/lib/products";
 import PriceRangeSlider, { PRICE_ABSOLUTE_MAX } from "@/components/v2/PriceRangeSlider";
+import KokersEtuisInfoSection from "@/components/v2/KokersEtuisInfoSection";
 
 export const metadata = {
   title: "Kokers & Etuis — OneConnect Lightshop",
@@ -489,6 +490,7 @@ export default async function KokersEtuisPage({
         </div>
       </main>
 
+      <KokersEtuisInfoSection />
       <Footer />
     </div>
   );
