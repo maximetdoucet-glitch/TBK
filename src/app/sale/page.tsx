@@ -109,15 +109,29 @@ export default async function SalePage({
 
   const { active, sold } = buildLists();
 
-  // Apply category filter to both lists
+  // Apply category filter to both lists, then interleave them so sold-out
+  // items are evenly distributed through the grid (no clumping).
   const activeFiltered = activeCat ? active.filter((e) => entryCategory(e) === activeCat) : active;
   const soldFiltered = activeCat ? sold.filter((e) => entryCategory(e) === activeCat) : sold;
+  const interleaved: SaleEntry[] = [];
+  {
+    const total = activeFiltered.length + soldFiltered.length;
+    let ai = 0;
+    let si = 0;
+    for (let i = 0; i < total; i++) {
+      const expectedSold = Math.floor(((i + 1) * soldFiltered.length) / total);
+      if (si < expectedSold && si < soldFiltered.length) interleaved.push(soldFiltered[si++]);
+      else if (ai < activeFiltered.length) interleaved.push(activeFiltered[ai++]);
+      else if (si < soldFiltered.length) interleaved.push(soldFiltered[si++]);
+    }
+  }
 
-  // Two pages: page 1 = active items still on sale, page 2 = sold-out picks
-  const hasSoldPage = soldFiltered.length > 0;
-  const totalPages = hasSoldPage ? 2 : 1;
-  const page = Math.min(requestedPage, totalPages);
-  const entries: SaleEntry[] = page === 1 ? activeFiltered : soldFiltered;
+  // Split the interleaved list across 2 pages — items per page = ceil(total/2)
+  const PER_PAGE = Math.max(1, Math.ceil(interleaved.length / 2));
+  const totalPages = Math.max(1, Math.ceil(interleaved.length / PER_PAGE));
+  const page = Math.min(Math.max(1, requestedPage), totalPages);
+  const start = (page - 1) * PER_PAGE;
+  const entries: SaleEntry[] = interleaved.slice(start, start + PER_PAGE);
 
   // Counts for sidebar (combined active + sold per category)
   const counts = COLLECTIONS.reduce<Record<string, number>>((acc, c) => {
@@ -304,10 +318,10 @@ export default async function SalePage({
                       href={buildUrl({ page: String(page - 1) })}
                       className="px-4 py-2 text-[11px] font-bold border border-[#2b3e51] bg-white text-[#2b3e51] hover:border-[#f5a623] hover:bg-[#f5a623] hover:text-white rounded transition-all"
                     >
-                      ← Op voorraad
+                      ← Vorige
                     </Link>
                   )}
-                  {[1, 2].slice(0, totalPages).map((n) => (
+                  {Array.from({ length: totalPages }, (_, i) => i + 1).map((n) => (
                     <Link
                       key={n}
                       href={buildUrl({ page: String(n) })}
@@ -325,7 +339,7 @@ export default async function SalePage({
                       href={buildUrl({ page: String(page + 1) })}
                       className="px-4 py-2 text-[11px] font-bold border border-[#2b3e51] bg-white text-[#2b3e51] hover:border-[#f5a623] hover:bg-[#f5a623] hover:text-white rounded transition-all"
                     >
-                      Uitverkocht →
+                      Volgende →
                     </Link>
                   )}
                 </nav>
