@@ -10,12 +10,12 @@ const LINKS = {
     { label: "Sale", href: "/sale" },
   ],
   service: [
-    { label: "Contact", href: "#" },
-    { label: "Verzenden & leveren", href: "#" },
-    { label: "Ruilen & retourneren", href: "#" },
-    { label: "Betaalmethoden", href: "#" },
-    { label: "Veelgestelde vragen", href: "#" },
-    { label: "Garantiebeleid", href: "#" },
+    { label: "Contact", href: "/klantenservice/contact" },
+    { label: "Verzenden & leveren", href: "/klantenservice/verzenden" },
+    { label: "Ruilen & retourneren", href: "/klantenservice/retourneren" },
+    { label: "Betaalmethoden", href: "/klantenservice/betaalmethoden" },
+    { label: "Veelgestelde vragen", href: "/klantenservice/faq" },
+    { label: "Garantiebeleid", href: "/klantenservice/garantie" },
   ],
   account: [
     { label: "Inloggen", href: "#" },
