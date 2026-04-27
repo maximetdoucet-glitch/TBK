@@ -21,7 +21,7 @@ const PRODUCTS = [
     name: "Zorr Shag-zak Bruin PU Leather",
     tagline: "PU leather shag-zak in warm bruin — display van 8 stuks, klaar voor de toonbank.",
     price: "€ 8.50",
-    image: "https://www.uegholland.com/media/catalog/product/3/2/32367-2_38.jpg",
+    image: "/products/P2_-removebg-preview.png",
   },
   {
     id: 72,
@@ -29,7 +29,7 @@ const PRODUCTS = [
     name: "Bookwill Sigaren-asbak Zwart",
     tagline: "200x100x25mm met 1-leggers — strakke matzwarte afwerking voor de sigarenliefhebber.",
     price: "€ 39.95",
-    image: "https://www.uegholland.com/media/catalog/product/2/7/270078_1_22.jpg",
+    image: "/products/P3-removebg-preview.png",
   },
   {
     id: 231,
@@ -37,7 +37,7 @@ const PRODUCTS = [
     name: "Bookwill Pijp-asbak Chroom Kurk",
     tagline: "16x4.5cm chroom met kurk-knopper — tik je pijp uit zonder de kop te beschadigen.",
     price: "€ 16.99",
-    image: "https://www.uegholland.com/media/catalog/product/b/o/bookwill_-_pijp-asbak_-_chroom_met_kurk_16x4_5cm_.jpg",
+    image: "/products/P4-removebg-preview.png",
   },
 ];
 
