@@ -8,35 +8,35 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const PRODUCTS = [
   {
-    id: 7,
+    id: 456,
     index: "01",
-    name: "Harley-Davidson Logo",
-    tagline: "Officiële licentie. Voor de rijder die zijn passie draagt.",
-    price: "€ 72.90",
+    name: "Zippo T-Rex Design",
+    tagline: "Statement design op het iconische chassis — levenslange garantie inbegrepen.",
+    price: "€ 52.90",
     image: "/products/P1-removebg-preview.png",
   },
   {
-    id: 33,
+    id: 92,
     index: "02",
-    name: "Hunting Dog Design",
-    tagline: "Gegraveerd met precisie. Ideaal cadeau voor de buitenliefhebber.",
-    price: "€ 49.90",
+    name: "Bookwill Asbak Chrome",
+    tagline: "11 cm massief chrome — gewicht in de basis, as die niet wegwaait.",
+    price: "€ 8.50",
     image: "/products/P2-removebg-preview.png",
   },
   {
-    id: 156,
+    id: 286,
     index: "03",
-    name: "Vintage Street Chrome",
-    tagline: "Het klassieke model. Tijdloos, navulbaar, levenslange garantie.",
-    price: "€ 44.90",
+    name: "Bookwill Humidor 25 Sigaren",
+    tagline: "Tobacco Leaf afwerking, cederhouten interieur — bewaart sigaren weken in topconditie.",
+    price: "€ 138.50",
     image: "/products/P3-removebg-preview.png",
   },
   {
-    id: 151,
+    id: 226,
     index: "04",
-    name: "Armor Case Brushed Chrome",
-    tagline: "Zwaardere behuizing. Gemaakt om generaties mee te gaan.",
-    price: "€ 44.90",
+    name: "Bookwill Pijp-Bestek Polished",
+    tagline: "3-delig: aandrukker, ruimer, prikker. Het complete onderhoud in één set.",
+    price: "€ 10.99",
     image: "/products/P4-removebg-preview.png",
   },
 ];
@@ -93,7 +93,7 @@ export default function HeroCarousel() {
           className="text-[9px] font-black uppercase tracking-[0.4em] text-white/25"
           style={{ writingMode: "vertical-rl", transform: "rotate(180deg)" }}
         >
-          Sinds 1932
+          Tabaksspeciaalzaak Nijmegen
         </span>
         <div className="w-px h-16 bg-white/15" />
       </div>
@@ -119,7 +119,7 @@ export default function HeroCarousel() {
                 className="font-montserrat font-black text-white leading-[0.85] tracking-tighter"
                 style={{ fontSize: "clamp(52px, 8vw, 108px)" }}
               >
-                500+
+                300+
               </span>
               <span
                 className="font-montserrat font-black text-white/80 leading-[0.85] tracking-tighter"
