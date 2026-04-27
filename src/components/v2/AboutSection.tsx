@@ -126,8 +126,8 @@ export default function AboutSection() {
               Over ons
             </p>
             <h2 className="font-montserrat text-4xl sm:text-5xl font-black text-[#2b3e51] tracking-tighter leading-[0.92] mb-8">
-              Nijmegen's specialist<br />
-              <span className="text-[#f5a623]">in Nijmegen</span>
+              Grootste tabaksspeciaalzaak<br />
+              <span className="text-[#f5a623]">van Nijmegen</span>
             </h2>
             <div className="space-y-4 text-[15px] text-gray-500 leading-relaxed">
               <p>
