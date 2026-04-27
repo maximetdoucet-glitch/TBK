@@ -6,6 +6,7 @@ import Footer from "@/components/v2/FooterV2";
 import PromoBar from "@/components/v2/PromoBar";
 import { PRODUCTS } from "@/lib/products";
 import PriceRangeSlider, { PRICE_ABSOLUTE_MAX } from "@/components/v2/PriceRangeSlider";
+import KnippersAsbakkenInfoSection from "@/components/v2/KnippersAsbakkenInfoSection";
 
 export const metadata = {
   title: "Knippers & Asbakken — OneConnect Lightshop",
@@ -489,6 +490,7 @@ export default async function KnippersAsbakkenPage({
         </div>
       </main>
 
+      <KnippersAsbakkenInfoSection />
       <Footer />
     </div>
   );
