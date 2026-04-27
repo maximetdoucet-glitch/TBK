@@ -191,7 +191,6 @@ export default function HeaderV2() {
         {/* Logo */}
         <Link href="/preview" className="shrink-0 flex flex-col leading-none">
           <span className="font-montserrat text-base font-black tracking-tight text-[#2b3e51]">Rookersbenodigheden</span>
-          <span className="font-montserrat text-[9px] font-bold tracking-[0.4em] text-[#94a3b8] uppercase mt-0.5">Nijmegen</span>
         </Link>
 
         {/* Search — grows to fill space, pushing icons to far right */}
@@ -482,7 +481,6 @@ export default function HeaderV2() {
             <div className="px-5 py-4 border-t border-gray-100 bg-gray-50 flex items-center gap-3">
               <span className="flex flex-col leading-none">
                 <span className="font-montserrat text-sm font-black tracking-tight text-[#2b3e51]">Rookersbenodigheden</span>
-                <span className="font-montserrat text-[8px] font-bold tracking-[0.4em] text-[#94a3b8] uppercase mt-0.5">Nijmegen</span>
               </span>
             </div>
           </div>

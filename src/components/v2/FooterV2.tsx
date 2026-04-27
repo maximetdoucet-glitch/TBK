@@ -87,7 +87,6 @@ export default function FooterV2() {
           <div className="w-60 shrink-0 flex flex-col gap-6">
             <Link href="/" className="inline-flex flex-col w-fit">
               <span className="font-montserrat text-2xl font-black tracking-tight text-white leading-none">Rookersbenodigheden</span>
-              <span className="font-montserrat text-[9px] font-bold tracking-[0.5em] text-white/40 mt-1">NIJMEGEN</span>
             </Link>
             <p className="text-white/45 text-[13px] leading-relaxed">
               De grootste tabakspecialist van Nijmegen — gespecialiseerd in aanstekers en rookaccessoires. Online en fysiek in de Molenstraat.
