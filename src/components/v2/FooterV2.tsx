@@ -18,11 +18,11 @@ const LINKS = {
     { label: "Garantiebeleid", href: "/klantenservice/garantie" },
   ],
   account: [
-    { label: "Inloggen", href: "#" },
-    { label: "Registreren", href: "#" },
-    { label: "Bestelhistorie", href: "#" },
-    { label: "Verlanglijst", href: "#" },
-    { label: "Persoonlijke gegevens", href: "#" },
+    { label: "Inloggen", href: "/account/inloggen" },
+    { label: "Registreren", href: "/account/registreren" },
+    { label: "Bestelhistorie", href: "/account/bestelhistorie" },
+    { label: "Verlanglijst", href: "/account/verlanglijst" },
+    { label: "Persoonlijke gegevens", href: "/account/gegevens" },
   ],
 };
 

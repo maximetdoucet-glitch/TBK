@@ -299,7 +299,7 @@ export default function HeaderV2() {
           </div>
 
           <Link
-            href="#"
+            href="/account/inloggen"
             className="hidden sm:flex flex-col items-center gap-0.5 px-3 py-1.5 rounded-lg hover:bg-gray-50 transition-colors group"
           >
             <User className="size-5 text-[#2b3e51] group-hover:text-[#f5a623] transition-colors" />
@@ -308,7 +308,7 @@ export default function HeaderV2() {
             </span>
           </Link>
           <Link
-            href="#"
+            href="/account/verlanglijst"
             className="hidden sm:flex flex-col items-center gap-0.5 px-3 py-1.5 rounded-lg hover:bg-gray-50 transition-colors group"
           >
             <Heart className="size-5 text-[#2b3e51] group-hover:text-[#f5a623] transition-colors" />
@@ -467,7 +467,7 @@ export default function HeaderV2() {
               </button>
             </div>
             <nav className="flex-1 overflow-y-auto py-2">
-              {[...NAV_ITEMS, { label: "Mijn account", href: "#" }, { label: "Verlanglijst", href: "#" }].map((item) => (
+              {[...NAV_ITEMS, { label: "Mijn account", href: "/account/inloggen" }, { label: "Verlanglijst", href: "/account/verlanglijst" }].map((item) => (
                 <Link
                   key={item.label}
                   href={item.href}
