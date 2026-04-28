@@ -194,8 +194,13 @@ export default function HeaderV2() {
           className="shrink-0 flex items-center gap-2 leading-none group"
           aria-label="Rookersbenodigheden — naar startpagina"
         >
-          <span className="text-[18px] font-extrabold tracking-tight leading-none text-[#2b3e51]">
-            Rookersbenodigheden
+          <span className="flex flex-col leading-none text-[#2b3e51]">
+            <span className="text-[19px] font-black uppercase tracking-[0.15em]">
+              Rookers
+            </span>
+            <span className="text-[10px] font-semibold uppercase tracking-[0.42em] text-[#2b3e51]/55 mt-1">
+              benodigheden
+            </span>
           </span>
         </Link>
 
