@@ -14,6 +14,9 @@ const PRODUCTS = [
     tagline: "Statement design op het iconische chassis — levenslange garantie inbegrepen.",
     price: "€ 52.90",
     image: "/products/P1-removebg-preview.png",
+    count: "300+",
+    category: "Aanstekers",
+    accent: "#f5a623",
   },
   {
     id: 91,
@@ -22,6 +25,9 @@ const PRODUCTS = [
     tagline: "PU leather shag-zak in warm bruin — display van 8 stuks, klaar voor de toonbank.",
     price: "€ 8.50",
     image: "/products/P2_-removebg-preview.png",
+    count: "70+",
+    category: "Kokers & Etuis",
+    accent: "#b08968",
   },
   {
     id: 72,
@@ -30,6 +36,9 @@ const PRODUCTS = [
     tagline: "200x100x25mm met 1-leggers — strakke matzwarte afwerking voor de sigarenliefhebber.",
     price: "€ 39.95",
     image: "/products/P3-removebg-preview.png",
+    count: "25+",
+    category: "Asbakken",
+    accent: "#7a8a9a",
   },
   {
     id: 231,
@@ -38,6 +47,9 @@ const PRODUCTS = [
     tagline: "16x4.5cm chroom met kurk-knopper — tik je pijp uit zonder de kop te beschadigen.",
     price: "€ 16.99",
     image: "/products/P4-removebg-preview.png",
+    count: "15+",
+    category: "Pijp-accessoires",
+    accent: "#c9a06a",
   },
 ];
 
@@ -72,11 +84,45 @@ export default function HeroCarousel() {
           alt=""
           fill
           className="object-cover object-center"
-          style={{ opacity: 0.33 }}
+          style={{ opacity: 0.22 }}
           priority
           unoptimized
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0b0f14] via-[#0b0f14]/70 to-[#0b0f14]/50" />
+        {/* Per-slide blurred product as ambient backdrop */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={`bg-${active}`}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 0.35 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.9, ease: "easeOut" }}
+            className="absolute inset-0"
+            style={{ filter: "blur(80px) saturate(1.2)", transform: "scale(1.1)" }}
+          >
+            <Image
+              src={p.image}
+              alt=""
+              fill
+              className="object-contain object-center"
+              unoptimized
+            />
+          </motion.div>
+        </AnimatePresence>
+        {/* Per-slide accent glow */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={`glow-${active}`}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.9, ease: "easeOut" }}
+            className="absolute inset-0"
+            style={{
+              background: `radial-gradient(ellipse at 70% 50%, ${p.accent}26 0%, transparent 55%)`,
+            }}
+          />
+        </AnimatePresence>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0b0f14] via-[#0b0f14]/80 to-[#0b0f14]/55" />
       </div>
 
       {/* ── Subtle horizontal scan line ── */}
@@ -114,26 +160,35 @@ export default function HeroCarousel() {
             </div>
 
             {/* Headline */}
-            <div className="flex flex-col">
-              <span
-                className="font-montserrat font-black text-white leading-[0.85] tracking-tighter"
-                style={{ fontSize: "clamp(52px, 8vw, 108px)" }}
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={`headline-${active}`}
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -8 }}
+                transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                className="flex flex-col"
               >
-                300+
-              </span>
-              <span
-                className="font-montserrat font-black text-white/80 leading-[0.85] tracking-tighter"
-                style={{ fontSize: "clamp(36px, 5.5vw, 72px)" }}
-              >
-                Aanstekers
-              </span>
-              <span
-                className="font-montserrat font-black text-white/30 leading-[0.85] tracking-tighter mt-1"
-                style={{ fontSize: "clamp(20px, 3vw, 38px)" }}
-              >
-                in één collectie
-              </span>
-            </div>
+                <span
+                  className="font-montserrat font-black text-white leading-[0.85] tracking-tighter"
+                  style={{ fontSize: "clamp(52px, 8vw, 108px)" }}
+                >
+                  {p.count}
+                </span>
+                <span
+                  className="font-montserrat font-black text-white/80 leading-[0.85] tracking-tighter"
+                  style={{ fontSize: "clamp(36px, 5.5vw, 72px)" }}
+                >
+                  {p.category}
+                </span>
+                <span
+                  className="font-montserrat font-black text-white/30 leading-[0.85] tracking-tighter mt-1"
+                  style={{ fontSize: "clamp(20px, 3vw, 38px)" }}
+                >
+                  in één collectie
+                </span>
+              </motion.div>
+            </AnimatePresence>
 
             {/* Active product tagline */}
             <AnimatePresence mode="wait">
