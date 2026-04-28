@@ -14,6 +14,7 @@ const PRODUCTS = [
     tagline: "Statement design op het iconische chassis — levenslange garantie inbegrepen.",
     price: "€ 52.90",
     image: "/products/P1-removebg-preview.png",
+    bg: "https://images.unsplash.com/photo-1734984099763-717aafbd419f?w=1600&q=85&fit=crop",
     count: "300+",
     category: "Aanstekers",
     accent: "#f5a623",
@@ -25,6 +26,7 @@ const PRODUCTS = [
     tagline: "PU leather shag-zak in warm bruin — display van 8 stuks, klaar voor de toonbank.",
     price: "€ 8.50",
     image: "/products/P2_-removebg-preview.png",
+    bg: "https://images.unsplash.com/photo-1657603719375-8ffdacaac790?w=1600&q=85&fit=crop",
     count: "70+",
     category: "Kokers & Etuis",
     accent: "#b08968",
@@ -36,6 +38,7 @@ const PRODUCTS = [
     tagline: "200x100x25mm met 1-leggers — strakke matzwarte afwerking voor de sigarenliefhebber.",
     price: "€ 39.95",
     image: "/products/P3-removebg-preview.png",
+    bg: "https://images.unsplash.com/photo-1642846465253-099e3fd7c231?w=1600&q=85&fit=crop",
     count: "25+",
     category: "Asbakken",
     accent: "#7a8a9a",
@@ -47,6 +50,7 @@ const PRODUCTS = [
     tagline: "16x4.5cm chroom met kurk-knopper — tik je pijp uit zonder de kop te beschadigen.",
     price: "€ 16.99",
     image: "/products/P4-removebg-preview.png",
+    bg: "https://images.unsplash.com/photo-1546484750-259a1104b00c?w=1600&q=85&fit=crop",
     count: "15+",
     category: "Pijp-accessoires",
     accent: "#c9a06a",
@@ -77,17 +81,27 @@ export default function HeroCarousel() {
         minHeight: "clamp(580px, 90vh, 780px)",
       }}
     >
-      {/* ── Background photo ── */}
+      {/* ── Background photo (per-slide) ── */}
       <div aria-hidden className="absolute inset-0 pointer-events-none">
-        <Image
-          src="https://images.unsplash.com/photo-1734984099763-717aafbd419f?w=1600&q=85&fit=crop"
-          alt=""
-          fill
-          className="object-cover object-center"
-          style={{ opacity: 0.22 }}
-          priority
-          unoptimized
-        />
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={`scene-${active}`}
+            initial={{ opacity: 0, scale: 1.05 }}
+            animate={{ opacity: 0.28, scale: 1 }}
+            exit={{ opacity: 0, scale: 1.02 }}
+            transition={{ duration: 1.0, ease: "easeOut" }}
+            className="absolute inset-0"
+          >
+            <Image
+              src={p.bg}
+              alt=""
+              fill
+              className="object-cover object-center"
+              priority
+              unoptimized
+            />
+          </motion.div>
+        </AnimatePresence>
         {/* Per-slide blurred product as ambient backdrop */}
         <AnimatePresence mode="wait">
           <motion.div
