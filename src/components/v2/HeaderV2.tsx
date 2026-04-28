@@ -4,7 +4,7 @@ import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {
-  Search, ShoppingCart, User, Heart, ChevronDown, Menu, X, Check, Flame,
+  Search, ShoppingCart, User, Heart, ChevronDown, Menu, X, Check,
 } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
@@ -194,12 +194,8 @@ export default function HeaderV2() {
           className="shrink-0 flex items-center gap-2 leading-none group"
           aria-label="Rookersbenodigheden — naar startpagina"
         >
-          <span className="relative flex items-center justify-center size-9 rounded-md bg-[#2b3e51] group-hover:bg-[#f5a623] transition-colors">
-            <Flame className="size-4 text-[#f5a623] group-hover:text-white transition-colors" strokeWidth={2.5} />
-          </span>
-          <span className="text-[18px] font-extrabold tracking-tight leading-none">
-            <span className="text-[#2b3e51]">Rookers</span>
-            <span className="text-[#f5a623]">benodigheden</span>
+          <span className="text-[18px] font-extrabold tracking-tight leading-none text-[#2b3e51]">
+            Rookersbenodigheden
           </span>
         </Link>
 
@@ -489,12 +485,8 @@ export default function HeaderV2() {
               ))}
             </nav>
             <div className="px-5 py-4 border-t border-gray-100 bg-gray-50 flex items-center gap-3">
-              <span className="relative flex items-center justify-center size-7 rounded-md bg-[#2b3e51]">
-                <Flame className="size-3.5 text-[#f5a623]" strokeWidth={2.5} />
-              </span>
-              <span className="text-sm font-extrabold tracking-tight leading-none">
-                <span className="text-[#2b3e51]">Rookers</span>
-                <span className="text-[#f5a623]">benodigheden</span>
+              <span className="text-sm font-extrabold tracking-tight leading-none text-[#2b3e51]">
+                Rookersbenodigheden
               </span>
             </div>
           </div>
