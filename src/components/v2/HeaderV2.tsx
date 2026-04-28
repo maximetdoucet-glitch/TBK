@@ -197,7 +197,7 @@ export default function HeaderV2() {
           <span className="relative flex items-center justify-center size-9 rounded-md bg-[#2b3e51] group-hover:bg-[#f5a623] transition-colors">
             <Flame className="size-4 text-[#f5a623] group-hover:text-white transition-colors" strokeWidth={2.5} />
           </span>
-          <span className="font-montserrat text-[17px] font-black tracking-tight leading-none">
+          <span className="text-[18px] font-extrabold tracking-tight leading-none">
             <span className="text-[#2b3e51]">Rookers</span>
             <span className="text-[#f5a623]">benodigheden</span>
           </span>
@@ -492,7 +492,7 @@ export default function HeaderV2() {
               <span className="relative flex items-center justify-center size-7 rounded-md bg-[#2b3e51]">
                 <Flame className="size-3.5 text-[#f5a623]" strokeWidth={2.5} />
               </span>
-              <span className="font-montserrat text-sm font-black tracking-tight leading-none">
+              <span className="text-sm font-extrabold tracking-tight leading-none">
                 <span className="text-[#2b3e51]">Rookers</span>
                 <span className="text-[#f5a623]">benodigheden</span>
               </span>
