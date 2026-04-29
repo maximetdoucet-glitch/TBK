@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Heart, ShoppingBag, ArrowRight, Star } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { PRODUCTS, type Product } from "@/lib/products";
+import { useLocale } from "@/i18n/LocaleContext";
 
 function badgeColor(badge: string | null | undefined) {
   if (badge === "Bestseller") return "#f5a623";
@@ -60,10 +61,16 @@ function StarRating({ rating, count }: { rating: number; count: number }) {
 }
 
 function ProductCard({ product }: { product: Product }) {
+  const { t } = useLocale();
   const [wishlisted, setWishlisted] = useState(false);
   const [addedToCart, setAddedToCart] = useState(false);
 
   const price = parseFloat(product.price);
+  const badgeMap: Record<string, string> = {
+    Bestseller: t("featuredProducts.badges.bestseller"),
+    Nieuw: t("featuredProducts.badges.new"),
+    Sale: t("featuredProducts.badges.sale"),
+  };
 
   const handleCart = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -91,7 +98,7 @@ function ProductCard({ product }: { product: Product }) {
             className="absolute top-3 left-3 text-white text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-md"
             style={{ backgroundColor: badgeColor(product.badge) }}
           >
-            {product.badge}
+            {badgeMap[product.badge] ?? product.badge}
           </div>
         )}
         <button
@@ -102,7 +109,7 @@ function ProductCard({ product }: { product: Product }) {
               ? "bg-red-50 text-red-500 opacity-100"
               : "bg-white/80 text-gray-400 opacity-0 group-hover:opacity-100 hover:text-red-400 backdrop-blur-sm"
           )}
-          aria-label="Verlanglijst"
+          aria-label={t("featuredProducts.wishlist")}
         >
           <Heart className={cn("size-4", wishlisted && "fill-current")} />
         </button>
@@ -128,10 +135,10 @@ function ProductCard({ product }: { product: Product }) {
                 ? "bg-green-500 text-white scale-95"
                 : "bg-[#2b3e51] hover:bg-[#f5a623] text-white"
             )}
-            aria-label="In winkelwagen"
+            aria-label={t("featuredProducts.inCart")}
           >
             <ShoppingBag className="size-4 shrink-0" />
-            <span className="hidden sm:block">{addedToCart ? "Toegevoegd!" : "In wagen"}</span>
+            <span className="hidden sm:block">{addedToCart ? t("featuredProducts.addedToCart") : t("featuredProducts.addToCart")}</span>
           </button>
         </div>
       </div>
@@ -140,12 +147,13 @@ function ProductCard({ product }: { product: Product }) {
 }
 
 export default function FeaturedProducts() {
+  const { t } = useLocale();
   const [activeTab, setActiveTab] = useState("bestsellers");
 
   const tabs = [
-    { id: "bestsellers", label: "Bestsellers" },
-    { id: "nieuw", label: "Nieuw binnen" },
-    { id: "sale", label: "Voordeel" },
+    { id: "bestsellers", label: t("featuredProducts.tabs.bestsellers") },
+    { id: "nieuw", label: t("featuredProducts.tabs.new") },
+    { id: "sale", label: t("featuredProducts.tabs.sale") },
   ];
 
   const filtered = getTabProducts(activeTab);
@@ -156,10 +164,10 @@ export default function FeaturedProducts() {
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
           <div>
             <p className="text-[10px] font-black uppercase tracking-[0.3em] text-[#f5a623] mb-1">
-              Populair dit seizoen
+              {t("featuredProducts.eyebrow")}
             </p>
             <h2 className="font-montserrat text-3xl sm:text-4xl font-black text-[#2b3e51] tracking-tighter">
-              Aanbevolen producten
+              {t("featuredProducts.heading")}
             </h2>
           </div>
           <div className="flex rounded-full border border-gray-200 bg-white p-1 self-start sm:self-auto">
@@ -189,7 +197,7 @@ export default function FeaturedProducts() {
             href="/aanstekers"
             className="inline-flex items-center gap-3 px-10 py-4 bg-[#2b3e51] hover:bg-[#f5a623] text-white font-bold uppercase tracking-widest text-[11px] transition-all duration-300 rounded-lg group"
           >
-            Bekijk volledig aanbod
+            {t("featuredProducts.viewAll")}
             <ArrowRight className="size-4 group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>

@@ -4,79 +4,57 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Flame, Box, Scissors, Wind } from "lucide-react";
 import { useState } from "react";
+import { useLocale } from "@/i18n/LocaleContext";
 
 const PANELS = [
   {
     id: "aanstekers",
-    name: "Aanstekers",
-    tagline: "336 modellen",
-    description: "Van tijdloze Zippo's tot betrouwbare Clipper en Ronson — de grootste selectie aanstekers in Nederland.",
+    tKey: "aanstekers",
     href: "/aanstekers",
     image: "https://images.unsplash.com/photo-1565555384748-b7032af559fc?w=1400&q=85&fit=crop",
     accent: "#f5a623",
     icon: Flame,
-    stats: [
-      { value: "170+", label: "Zippo modellen" },
-      { value: "149", label: "Clipper & regulier" },
-      { value: "12", label: "Zippo accessoires" },
-    ],
+    statValues: ["170+", "149", "12"],
+    statKeys: ["zippoModels", "clipperRegular", "zippoAcc"],
     brands: ["Zippo", "Clipper", "Ronson", "LUX", "Prof", "Zorr"],
-    cta: "Bekijk collectie",
   },
   {
     id: "kokers",
-    name: "Kokers & Etuis",
-    tagline: "70 producten",
-    description: "Sigarettenkokers, etuis, filters en houders — stijlvol en praktisch voor elke roker.",
+    tKey: "kokers",
     href: "/kokers-etuis",
     image: "https://images.unsplash.com/photo-1675010787842-17ff5beb6c9b?w=1400&q=85&fit=crop",
     accent: "#b07030",
     icon: Box,
-    stats: [
-      { value: "40+", label: "Kokers & etuis" },
-      { value: "20+", label: "Filters & houders" },
-      { value: "7", label: "Merken" },
-    ],
+    statValues: ["40+", "20+", "7"],
+    statKeys: ["casesEtuis", "filtersHolders", "brands"],
     brands: ["Belbox", "Bookwill", "Denicotea", "Wildfire", "Zorr", "Champ"],
-    cta: "Bekijk collectie",
   },
   {
     id: "knippers",
-    name: "Knippers & Asbakken",
-    tagline: "28 producten",
-    description: "Precisieknippers, elegante asbakken en sigaren-etuis van topmerken zoals Bookwill en Faro.",
+    tKey: "knippers",
     href: "/knippers-asbakken",
     image: "https://images.unsplash.com/photo-1756362728219-239765919a4f?w=1400&q=85&fit=crop",
     accent: "#8a8a8a",
     icon: Scissors,
-    stats: [
-      { value: "15+", label: "Knippers" },
-      { value: "8+", label: "Asbakken" },
-      { value: "6", label: "Merken" },
-    ],
+    statValues: ["15+", "8+", "6"],
+    statKeys: ["cutters", "ashtrays", "brands"],
     brands: ["Bookwill", "Faro", "Fox", "Formula", "Zippo", "Zorr"],
-    cta: "Bekijk collectie",
   },
   {
     id: "rook",
-    name: "Rook-accessoires",
-    tagline: "15 producten",
-    description: "Tabakspijpen, bestek en grinders — vakkundig geselecteerd voor de echte liefhebber.",
+    tKey: "rook",
     href: "/rook-accessoires",
     image: "https://images.unsplash.com/photo-1673905513691-307991ec74ed?w=1400&q=85&fit=crop",
     accent: "#4a90a4",
     icon: Wind,
-    stats: [
-      { value: "9", label: "Grinders" },
-      { value: "3", label: "Pijp-bestek sets" },
-      { value: "2", label: "Merken" },
-    ],
+    statValues: ["9", "3", "2"],
+    statKeys: ["grinders", "pipeSets", "brands"],
     brands: ["Champ", "Bookwill"],
-    cta: "Bekijk collectie",
   },
-];
+] as const;
 
 export default function CategoryShowcase() {
+  const { t } = useLocale();
   const [hovered, setHovered] = useState<string | null>(null);
 
   return (
@@ -87,17 +65,17 @@ export default function CategoryShowcase() {
         <div className="flex items-end justify-between mb-6">
           <div>
             <p className="text-[10px] font-black uppercase tracking-[0.3em] text-[#f5a623] mb-1">
-              Ons assortiment
+              {t("categoryShowcase.eyebrow")}
             </p>
             <h2 className="font-montserrat text-3xl sm:text-4xl font-black text-[#2b3e51] tracking-tighter">
-              Productcategorieën
+              {t("categoryShowcase.heading")}
             </h2>
           </div>
           <Link
             href="/aanstekers"
             className="hidden sm:flex items-center gap-2 text-[11px] font-bold uppercase tracking-widest text-[#2b3e51]/50 hover:text-[#f5a623] transition-colors"
           >
-            Alles bekijken <ArrowRight className="size-3.5" />
+            {t("categoryShowcase.viewAll")} <ArrowRight className="size-3.5" />
           </Link>
         </div>
 
@@ -111,6 +89,10 @@ export default function CategoryShowcase() {
             const isHovered = hovered === panel.id;
             const isOtherHovered = hovered !== null && !isHovered;
             const Icon = panel.icon;
+            const name = t(`categoryShowcase.${panel.tKey}.name`);
+            const tagline = t(`categoryShowcase.${panel.tKey}.tagline`);
+            const description = t(`categoryShowcase.${panel.tKey}.description`);
+            const cta = t("categoryShowcase.cta");
 
             return (
               <Link
@@ -125,7 +107,7 @@ export default function CategoryShowcase() {
                 {/* Background image */}
                 <Image
                   src={panel.image}
-                  alt={panel.name}
+                  alt={name}
                   fill
                   unoptimized
                   className="object-cover object-center transition-transform duration-700"
@@ -170,7 +152,7 @@ export default function CategoryShowcase() {
                     className="text-[9px] font-black uppercase tracking-[0.4em] mb-1 whitespace-nowrap overflow-hidden transition-opacity duration-300"
                     style={{ color: panel.accent, opacity: isHovered ? 1 : 0.8 }}
                   >
-                    {panel.tagline}
+                    {tagline}
                   </p>
 
                   {/* Name */}
@@ -181,7 +163,7 @@ export default function CategoryShowcase() {
                       marginBottom: isHovered ? "0.75rem" : "0",
                     }}
                   >
-                    {panel.name}
+                    {name}
                   </h3>
 
                   {/* Description — only on hover */}
@@ -190,7 +172,7 @@ export default function CategoryShowcase() {
                     style={{ maxHeight: isHovered ? 60 : 0, opacity: isHovered ? 1 : 0 }}
                   >
                     <p className="text-[12px] text-white/60 mb-4 leading-relaxed">
-                      {panel.description}
+                      {description}
                     </p>
                   </div>
 
@@ -199,14 +181,17 @@ export default function CategoryShowcase() {
                     className="flex gap-4 transition-all duration-400 overflow-hidden"
                     style={{ maxHeight: isHovered ? 56 : 0, opacity: isHovered ? 1 : 0 }}
                   >
-                    {panel.stats.map((stat) => (
-                      <div key={stat.label} className="flex flex-col shrink-0">
-                        <span className="font-montserrat text-lg font-black leading-none" style={{ color: panel.accent }}>
-                          {stat.value}
-                        </span>
-                        <span className="text-[9px] text-white/45 mt-0.5 whitespace-nowrap">{stat.label}</span>
-                      </div>
-                    ))}
+                    {panel.statValues.map((value, i) => {
+                      const statLabel = t(`categoryShowcase.${panel.tKey}.stats.${panel.statKeys[i]}`);
+                      return (
+                        <div key={panel.statKeys[i]} className="flex flex-col shrink-0">
+                          <span className="font-montserrat text-lg font-black leading-none" style={{ color: panel.accent }}>
+                            {value}
+                          </span>
+                          <span className="text-[9px] text-white/45 mt-0.5 whitespace-nowrap">{statLabel}</span>
+                        </div>
+                      );
+                    })}
                   </div>
 
                   {/* Brands — only on hover */}
@@ -238,7 +223,7 @@ export default function CategoryShowcase() {
                       className="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-widest px-4 py-2 rounded-full text-white transition-all duration-300"
                       style={{ background: panel.accent }}
                     >
-                      {panel.cta}
+                      {cta}
                       <ArrowRight className="size-3" />
                     </span>
                   </div>
@@ -252,6 +237,8 @@ export default function CategoryShowcase() {
         <div className="grid grid-cols-2 gap-3 md:hidden">
           {PANELS.map((panel) => {
             const Icon = panel.icon;
+            const name = t(`categoryShowcase.${panel.tKey}.name`);
+            const tagline = t(`categoryShowcase.${panel.tKey}.tagline`);
             return (
               <Link
                 key={panel.id}
@@ -261,7 +248,7 @@ export default function CategoryShowcase() {
               >
                 <Image
                   src={panel.image}
-                  alt={panel.name}
+                  alt={name}
                   fill
                   unoptimized
                   className="object-cover object-center opacity-70 group-hover:opacity-85 transition-all duration-500 group-hover:scale-105"
@@ -275,10 +262,10 @@ export default function CategoryShowcase() {
                     <Icon className="size-3.5 text-white" />
                   </div>
                   <p className="text-[8px] font-black uppercase tracking-[0.3em] mb-0.5" style={{ color: panel.accent }}>
-                    {panel.tagline}
+                    {tagline}
                   </p>
                   <h3 className="font-montserrat text-sm font-black text-white tracking-tight leading-tight">
-                    {panel.name}
+                    {name}
                   </h3>
                 </div>
               </Link>

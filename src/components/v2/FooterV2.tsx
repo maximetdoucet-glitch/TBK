@@ -1,30 +1,33 @@
+"use client";
+
 import Link from "next/link";
 import { MapPin, Phone, Mail } from "lucide-react";
+import { useLocale } from "@/i18n/LocaleContext";
 
 const LINKS = {
   shop: [
-    { label: "Aanstekers", href: "/aanstekers" },
-    { label: "Kokers & Etuis", href: "/kokers-etuis" },
-    { label: "Knippers & Asbakken", href: "/knippers-asbakken" },
-    { label: "Rook-accessoires", href: "/rook-accessoires" },
-    { label: "Sale", href: "/sale" },
+    { key: "aanstekers", href: "/aanstekers" },
+    { key: "kokersEtuis", href: "/kokers-etuis" },
+    { key: "knippersAsbakken", href: "/knippers-asbakken" },
+    { key: "rookAccessoires", href: "/rook-accessoires" },
+    { key: "sale", href: "/sale" },
   ],
   service: [
-    { label: "Contact", href: "/klantenservice/contact" },
-    { label: "Verzenden & leveren", href: "/klantenservice/verzenden" },
-    { label: "Ruilen & retourneren", href: "/klantenservice/retourneren" },
-    { label: "Betaalmethoden", href: "/klantenservice/betaalmethoden" },
-    { label: "Veelgestelde vragen", href: "/klantenservice/faq" },
-    { label: "Garantiebeleid", href: "/klantenservice/garantie" },
+    { key: "contact", href: "/klantenservice/contact" },
+    { key: "shipping", href: "/klantenservice/verzenden" },
+    { key: "returns", href: "/klantenservice/retourneren" },
+    { key: "payment", href: "/klantenservice/betaalmethoden" },
+    { key: "faq", href: "/klantenservice/faq" },
+    { key: "warranty", href: "/klantenservice/garantie" },
   ],
   account: [
-    { label: "Inloggen", href: "/account/inloggen" },
-    { label: "Registreren", href: "/account/registreren" },
-    { label: "Bestelhistorie", href: "/account/bestelhistorie" },
-    { label: "Verlanglijst", href: "/account/verlanglijst" },
-    { label: "Persoonlijke gegevens", href: "/account/gegevens" },
+    { key: "login", href: "/account/inloggen" },
+    { key: "register", href: "/account/registreren" },
+    { key: "orders", href: "/account/bestelhistorie" },
+    { key: "wishlist", href: "/account/verlanglijst" },
+    { key: "details", href: "/account/gegevens" },
   ],
-};
+} as const;
 
 function IdealIcon() {
   return (
@@ -71,6 +74,7 @@ function PaypalIcon() {
 }
 
 export default function FooterV2() {
+  const { t } = useLocale();
   return (
     <footer className="bg-[#111820] text-white">
       <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -96,7 +100,7 @@ export default function FooterV2() {
               </span>
             </Link>
             <p className="text-white/45 text-[13px] leading-relaxed">
-              De grootste tabakspecialist van Nijmegen — gespecialiseerd in aanstekers en rookaccessoires. Online en fysiek in de Molenstraat.
+              {t("footer.description")}
             </p>
             <ul className="space-y-3">
               {[
@@ -126,36 +130,36 @@ export default function FooterV2() {
 
           {/* Assortiment */}
           <div className="flex-1 px-6">
-            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-white/30 mb-6 pb-3 border-b border-white/8">Assortiment</p>
+            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-white/30 mb-6 pb-3 border-b border-white/8">{t("footer.sections.assortiment")}</p>
             <ul className="space-y-3">
               {LINKS.shop.map((l) => (
-                <li key={l.label}><Link href={l.href} className="text-[13px] text-white/50 hover:text-white transition-colors">{l.label}</Link></li>
+                <li key={l.key}><Link href={l.href} className="text-[13px] text-white/50 hover:text-white transition-colors">{t(`footer.shop.${l.key}`)}</Link></li>
               ))}
             </ul>
           </div>
 
           {/* Klantenservice */}
           <div className="flex-1 px-6">
-            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-white/30 mb-6 pb-3 border-b border-white/8">Klantenservice</p>
+            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-white/30 mb-6 pb-3 border-b border-white/8">{t("footer.sections.klantenservice")}</p>
             <ul className="space-y-3">
               {LINKS.service.map((l) => (
-                <li key={l.label}><Link href={l.href} className="text-[13px] text-white/50 hover:text-white transition-colors">{l.label}</Link></li>
+                <li key={l.key}><Link href={l.href} className="text-[13px] text-white/50 hover:text-white transition-colors">{t(`footer.service.${l.key}`)}</Link></li>
               ))}
             </ul>
           </div>
 
           {/* Mijn account */}
           <div className="flex-1 px-6">
-            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-white/30 mb-6 pb-3 border-b border-white/8">Mijn account</p>
+            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-white/30 mb-6 pb-3 border-b border-white/8">{t("footer.sections.account")}</p>
             <ul className="space-y-3">
               {LINKS.account.map((l) => (
-                <li key={l.label}><Link href={l.href} className="text-[13px] text-white/50 hover:text-white transition-colors">{l.label}</Link></li>
+                <li key={l.key}><Link href={l.href} className="text-[13px] text-white/50 hover:text-white transition-colors">{t(`footer.accountLinks.${l.key}`)}</Link></li>
               ))}
             </ul>
             <div className="mt-8 flex justify-end -mr-6">
               <div className="inline-flex flex-col items-center border border-white/8 px-4 py-3 rounded-lg">
-                <span className="text-[9px] font-black uppercase tracking-[0.3em] text-white/25">Tabaksspeciaalzaak</span>
-                <span className="font-montserrat text-lg font-black tracking-tight text-white/30 mt-1">Nijmegen</span>
+                <span className="text-[9px] font-black uppercase tracking-[0.3em] text-white/25">{t("footer.badge.eyebrow")}</span>
+                <span className="font-montserrat text-lg font-black tracking-tight text-white/30 mt-1">{t("footer.badge.city")}</span>
               </div>
             </div>
           </div>
@@ -166,9 +170,9 @@ export default function FooterV2() {
 
           {/* Legal links */}
           <div className="flex flex-wrap items-center gap-x-5 gap-y-1">
-            <span className="text-[11px] text-white/25">© {new Date().getFullYear()} Rokersbenodigheden Nijmegen</span>
-            {["Privacybeleid", "Algemene voorwaarden", "Cookiebeleid"].map((label) => (
-              <Link key={label} href="#" className="text-[11px] text-white/25 hover:text-white/60 transition-colors">{label}</Link>
+            <span className="text-[11px] text-white/25">© {new Date().getFullYear()} {t("footer.copyright")}</span>
+            {(["privacy", "terms", "cookies"] as const).map((k) => (
+              <Link key={k} href="#" className="text-[11px] text-white/25 hover:text-white/60 transition-colors">{t(`footer.legal.${k}`)}</Link>
             ))}
           </div>
 

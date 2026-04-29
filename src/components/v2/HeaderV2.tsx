@@ -8,6 +8,8 @@ import {
 } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
+import { useLocale } from "@/i18n/LocaleContext";
+import type { Locale } from "@/i18n/translations";
 
 // Circular SVG flags — clipped to circle, no external deps
 function FlagNL({ size = 20 }: { size?: number }) {
@@ -60,29 +62,15 @@ function FlagFR({ size = 20 }: { size?: number }) {
     </svg>
   );
 }
-function FlagES({ size = 20 }: { size?: number }) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 20 20">
-      <clipPath id="c-es"><circle cx="10" cy="10" r="10"/></clipPath>
-      <g clipPath="url(#c-es)">
-        <rect width="20" height="5" fill="#c60b1e"/>
-        <rect y="5" width="20" height="10" fill="#ffc400"/>
-        <rect y="15" width="20" height="5" fill="#c60b1e"/>
-      </g>
-    </svg>
-  );
-}
-
 const FLAG_COMPONENTS: Record<string, ({ size }: { size?: number }) => React.JSX.Element> = {
-  NL: FlagNL, EN: FlagGB, DE: FlagDE, FR: FlagFR, ES: FlagES,
+  NL: FlagNL, EN: FlagGB, DE: FlagDE, FR: FlagFR,
 };
 
-const LOCALES = [
+const LOCALES: { code: Locale; label: string }[] = [
   { code: "NL", label: "Nederlands" },
   { code: "EN", label: "English" },
   { code: "DE", label: "Deutsch" },
   { code: "FR", label: "Français" },
-  { code: "ES", label: "Español" },
 ];
 
 const CURRENCIES = [
@@ -92,47 +80,47 @@ const CURRENCIES = [
 ];
 
 const NAV_ITEMS = [
-  { label: "Aanstekers", href: "/aanstekers" },
-  { label: "Kokers & Etuis", href: "/kokers-etuis" },
-  { label: "Knippers & Asbakken", href: "/knippers-asbakken" },
-  { label: "Rook-accessoires", href: "/rook-accessoires" },
-  { label: "Sale", href: "/sale", accent: true },
-];
+  { key: "aanstekers", href: "/aanstekers" },
+  { key: "kokersEtuis", href: "/kokers-etuis" },
+  { key: "knippersAsbakken", href: "/knippers-asbakken" },
+  { key: "rookAccessoires", href: "/rook-accessoires" },
+  { key: "sale", href: "/sale", accent: true },
+] as const;
 
 const MEGA_MENU = [
   {
-    title: "Aanstekers",
+    titleKey: "header.mega.aanstekers.title",
     items: [
-      { label: "Zippo aanstekers", href: "/aanstekers", image: "https://www.uegholland.com/media/catalog/product/_/0/_0140_60007371.jpg" },
-      { label: "Clipper & regulier", href: "/aanstekers", image: "https://www.uegholland.com/media/catalog/product/1/8/189079-3.jpg" },
-      { label: "Zippo accessoires", href: "/aanstekers", image: "https://www.uegholland.com/media/catalog/product/z/i/zippo_butane_1__1_25.jpg" },
+      { labelKey: "header.mega.aanstekers.zippo", href: "/aanstekers", image: "https://www.uegholland.com/media/catalog/product/_/0/_0140_60007371.jpg" },
+      { labelKey: "header.mega.aanstekers.clipper", href: "/aanstekers", image: "https://www.uegholland.com/media/catalog/product/1/8/189079-3.jpg" },
+      { labelKey: "header.mega.aanstekers.zippoAcc", href: "/aanstekers", image: "https://www.uegholland.com/media/catalog/product/z/i/zippo_butane_1__1_25.jpg" },
     ],
   },
   {
-    title: "Kokers & Etuis",
+    titleKey: "header.mega.kokers.title",
     items: [
-      { label: "Sigarettenkokers", href: "/kokers-etuis", image: "https://www.uegholland.com/media/catalog/product/9/7/970713_18.jpg" },
-      { label: "Filters & houders", href: "/kokers-etuis", image: "https://www.uegholland.com/media/catalog/product/d/e/denicotea-filter_1_14.jpg" },
-      { label: "Asbakken", href: "/kokers-etuis", image: "https://www.uegholland.com/media/catalog/product/b/o/bookwill-auto-asbak_1_14.jpg" },
+      { labelKey: "header.mega.kokers.cigaretteCases", href: "/kokers-etuis", image: "https://www.uegholland.com/media/catalog/product/9/7/970713_18.jpg" },
+      { labelKey: "header.mega.kokers.filters", href: "/kokers-etuis", image: "https://www.uegholland.com/media/catalog/product/d/e/denicotea-filter_1_14.jpg" },
+      { labelKey: "header.mega.kokers.ashtrays", href: "/kokers-etuis", image: "https://www.uegholland.com/media/catalog/product/b/o/bookwill-auto-asbak_1_14.jpg" },
     ],
   },
   {
-    title: "Knippers & Asbakken",
+    titleKey: "header.mega.knippers.title",
     items: [
-      { label: "Sigarenknippers", href: "/knippers-asbakken", image: "https://www.uegholland.com/media/catalog/product/2/7/270078_1_22.jpg" },
-      { label: "Sigaren-etuis", href: "/knippers-asbakken", image: "https://www.uegholland.com/media/catalog/product/b/o/bookwill-sigarenetui_1_14.jpg" },
-      { label: "Sigaren-asbakken", href: "/knippers-asbakken", image: "https://www.uegholland.com/media/catalog/product/b/o/bookwill-sigaren-asbak_1_14.jpg" },
+      { labelKey: "header.mega.knippers.cigarCutters", href: "/knippers-asbakken", image: "https://www.uegholland.com/media/catalog/product/2/7/270078_1_22.jpg" },
+      { labelKey: "header.mega.knippers.cigarCases", href: "/knippers-asbakken", image: "https://www.uegholland.com/media/catalog/product/b/o/bookwill-sigarenetui_1_14.jpg" },
+      { labelKey: "header.mega.knippers.cigarAshtrays", href: "/knippers-asbakken", image: "https://www.uegholland.com/media/catalog/product/b/o/bookwill-sigaren-asbak_1_14.jpg" },
     ],
   },
   {
-    title: "Rook-accessoires",
+    titleKey: "header.mega.rook.title",
     items: [
-      { label: "Bruyère pijpen", href: "/rook-accessoires", image: "https://www.uegholland.com/media/catalog/product/2/7/279803_1_33.jpg" },
-      { label: "Pijp-bestek", href: "/rook-accessoires", image: "https://www.uegholland.com/media/catalog/product/b/o/bookwill_-_pijp-bestek_-_3-delig_-_basic.jpg" },
-      { label: "Tabaksgrinders", href: "/rook-accessoires", image: "https://www.uegholland.com/media/catalog/product/c/h/champ-420-grinder-small_1_1.jpg" },
+      { labelKey: "header.mega.rook.bruyerePipes", href: "/rook-accessoires", image: "https://www.uegholland.com/media/catalog/product/2/7/279803_1_33.jpg" },
+      { labelKey: "header.mega.rook.pipeCutlery", href: "/rook-accessoires", image: "https://www.uegholland.com/media/catalog/product/b/o/bookwill_-_pijp-bestek_-_3-delig_-_basic.jpg" },
+      { labelKey: "header.mega.rook.grinders", href: "/rook-accessoires", image: "https://www.uegholland.com/media/catalog/product/c/h/champ-420-grinder-small_1_1.jpg" },
     ],
   },
-];
+] as const;
 
 export default function HeaderV2() {
   const [megaOpen, setMegaOpen] = useState(false);
@@ -140,7 +128,8 @@ export default function HeaderV2() {
   const [searchFocused, setSearchFocused] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [localeOpen, setLocaleOpen] = useState(false);
-  const [selectedLocale, setSelectedLocale] = useState(LOCALES[0]);
+  const { locale, setLocale, t } = useLocale();
+  const selectedLocale = LOCALES.find((l) => l.code === locale) ?? LOCALES[0];
   const [selectedCurrency, setSelectedCurrency] = useState(CURRENCIES[0]);
   const megaRef = useRef<HTMLDivElement>(null);
   const megaBtnRef = useRef<HTMLButtonElement>(null);
@@ -183,7 +172,7 @@ export default function HeaderV2() {
         <button
           className="lg:hidden text-[#2b3e51] hover:text-primary transition-colors"
           onClick={() => setMobileOpen(true)}
-          aria-label="Menu openen"
+          aria-label={t("header.openMenu")}
         >
           <Menu className="size-6" />
         </button>
@@ -210,7 +199,7 @@ export default function HeaderV2() {
           searchFocused ? "max-w-2xl" : "max-w-xl"
         )}>
           <Input
-            placeholder="Zoek op product, merk of categorie…"
+            placeholder={t("header.searchPlaceholder")}
             className="w-full h-10 pl-4 pr-12 rounded-full border-gray-200 bg-gray-50 focus:bg-white focus:border-[#f5a623] text-sm transition-all"
             onFocus={() => setSearchFocused(true)}
             onBlur={() => setSearchFocused(false)}
@@ -242,14 +231,14 @@ export default function HeaderV2() {
                 {/* Language */}
                 <div className="px-4 pt-4 pb-2">
                   <p className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-400 mb-3">
-                    Kies uw taal
+                    {t("header.chooseLanguage")}
                   </p>
                   <div className="space-y-0.5">
                     {LOCALES.map((loc) => (
                       <button
                         type="button"
                         key={loc.code}
-                        onClick={() => { setSelectedLocale(loc); setLocaleOpen(false); }}
+                        onClick={() => { setLocale(loc.code); setLocaleOpen(false); }}
                         className={cn(
                           "w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-left transition-colors",
                           selectedLocale.code === loc.code
@@ -275,7 +264,7 @@ export default function HeaderV2() {
                 {/* Currency */}
                 <div className="px-4 pt-3 pb-4">
                   <p className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-400 mb-3">
-                    Kies uw valuta
+                    {t("header.chooseCurrency")}
                   </p>
                   <div className="space-y-0.5">
                     {CURRENCIES.map((cur) => (
@@ -314,7 +303,7 @@ export default function HeaderV2() {
           >
             <User className="size-5 text-[#2b3e51] group-hover:text-[#f5a623] transition-colors" />
             <span className="hidden xl:block text-[10px] font-bold uppercase tracking-wider text-[#2b3e51]/60">
-              Account
+              {t("header.account")}
             </span>
           </Link>
           <Link
@@ -323,7 +312,7 @@ export default function HeaderV2() {
           >
             <Heart className="size-5 text-[#2b3e51] group-hover:text-[#f5a623] transition-colors" />
             <span className="hidden xl:block text-[10px] font-bold uppercase tracking-wider text-[#2b3e51]/60">
-              Verlanglijst
+              {t("header.wishlist")}
             </span>
           </Link>
           <Link
@@ -332,7 +321,7 @@ export default function HeaderV2() {
           >
             <ShoppingCart className="size-5 text-[#2b3e51] group-hover:text-[#f5a623] transition-colors" />
             <span className="hidden xl:block text-[10px] font-bold uppercase tracking-wider text-[#2b3e51]/60">
-              Winkelwagen
+              {t("header.cart")}
             </span>
             <span className="absolute top-1 right-1 bg-[#2b3e51] text-white text-[9px] font-black size-4 rounded-full flex items-center justify-center border border-white">
               0
@@ -354,26 +343,29 @@ export default function HeaderV2() {
             )}
           >
             <Menu className="size-4" />
-            Assortiment
+            {t("header.assortiment")}
             <ChevronDown className={cn("size-3.5 transition-transform duration-200", megaOpen && "rotate-180")} />
           </button>
 
           {/* Nav links */}
           <div className="hidden lg:flex items-center h-full divide-x divide-white/10 border-l border-white/10">
-            {NAV_ITEMS.map((item) => (
-              <Link
-                key={item.label}
-                href={item.href}
-                className={cn(
-                  "px-5 h-full flex items-center text-[11px] font-bold uppercase tracking-widest transition-colors",
-                  item.accent
-                    ? "text-[#f5a623] hover:text-[#f5a623]/80"
-                    : "hover:bg-white/10 text-white/90 hover:text-white"
-                )}
-              >
-                {item.label}
-              </Link>
-            ))}
+            {NAV_ITEMS.map((item) => {
+              const accent = "accent" in item ? item.accent : false;
+              return (
+                <Link
+                  key={item.key}
+                  href={item.href}
+                  className={cn(
+                    "px-5 h-full flex items-center text-[11px] font-bold uppercase tracking-widest transition-colors",
+                    accent
+                      ? "text-[#f5a623] hover:text-[#f5a623]/80"
+                      : "hover:bg-white/10 text-white/90 hover:text-white"
+                  )}
+                >
+                  {t(`header.nav.${item.key}`)}
+                </Link>
+              );
+            })}
           </div>
 
           {/* Google rating */}
@@ -381,7 +373,7 @@ export default function HeaderV2() {
             <div className="flex text-[#f5a623] gap-px">
               {[...Array(5)].map((_, i) => <span key={i}>★</span>)}
             </div>
-            <span className="text-white/60">4.8 / 5 Google Reviews</span>
+            <span className="text-white/60">{t("header.rating")}</span>
           </div>
         </div>
 
@@ -394,33 +386,36 @@ export default function HeaderV2() {
             <div className="max-w-[1300px] mx-auto px-8 py-8">
               <div className="grid grid-cols-4 gap-8">
                 {MEGA_MENU.map((group) => (
-                  <div key={group.title}>
+                  <div key={group.titleKey}>
                     <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#2b3e51]/40 mb-4 border-b border-gray-100 pb-2">
-                      {group.title}
+                      {t(group.titleKey)}
                     </p>
                     <ul className="space-y-1">
-                      {group.items.map((item) => (
-                        <li key={item.label}>
-                          <Link
-                            href={item.href}
-                            onClick={() => setMegaOpen(false)}
-                            className="flex items-center gap-3 py-2.5 px-3 rounded-lg hover:bg-gray-50 transition-colors group"
-                          >
-                            <div className="size-10 rounded-md overflow-hidden bg-gray-100 shrink-0 border border-gray-100">
-                              <Image
-                                src={item.image}
-                                alt={item.label}
-                                width={40}
-                                height={40}
-                                className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
-                              />
-                            </div>
-                            <span className="text-sm font-semibold group-hover:text-[#f5a623] transition-colors">
-                              {item.label}
-                            </span>
-                          </Link>
-                        </li>
-                      ))}
+                      {group.items.map((item) => {
+                        const label = t(item.labelKey);
+                        return (
+                          <li key={item.labelKey}>
+                            <Link
+                              href={item.href}
+                              onClick={() => setMegaOpen(false)}
+                              className="flex items-center gap-3 py-2.5 px-3 rounded-lg hover:bg-gray-50 transition-colors group"
+                            >
+                              <div className="size-10 rounded-md overflow-hidden bg-gray-100 shrink-0 border border-gray-100">
+                                <Image
+                                  src={item.image}
+                                  alt={label}
+                                  width={40}
+                                  height={40}
+                                  className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
+                                />
+                              </div>
+                              <span className="text-sm font-semibold group-hover:text-[#f5a623] transition-colors">
+                                {label}
+                              </span>
+                            </Link>
+                          </li>
+                        );
+                      })}
                     </ul>
                   </div>
                 ))}
@@ -432,13 +427,13 @@ export default function HeaderV2() {
 
               <div className="mt-6 pt-6 border-t border-gray-100 flex items-center gap-6">
                 <Link href="#" onClick={() => setMegaOpen(false)} className="text-[11px] font-bold uppercase tracking-widest text-[#f5a623] hover:underline">
-                  Bekijk volledig assortiment →
+                  {t("header.mega.viewAll")}
                 </Link>
                 <Link href="#" onClick={() => setMegaOpen(false)} className="text-[11px] font-bold uppercase tracking-widest text-[#2b3e51]/40 hover:text-[#2b3e51] transition-colors">
-                  Aanbiedingen
+                  {t("header.mega.deals")}
                 </Link>
                 <Link href="#" onClick={() => setMegaOpen(false)} className="text-[11px] font-bold uppercase tracking-widest text-[#2b3e51]/40 hover:text-[#2b3e51] transition-colors">
-                  Nieuwe artikelen
+                  {t("header.mega.newItems")}
                 </Link>
               </div>
             </div>
@@ -449,15 +444,10 @@ export default function HeaderV2() {
       {/* ── USP bar — hidden when scrolled ── */}
       <div className={cn("w-full bg-gray-50 overflow-hidden transition-all duration-300", scrolled ? "max-h-0 py-0" : "max-h-12 py-2")}>
         <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-6 overflow-x-auto scrollbar-none text-[10px] font-bold uppercase tracking-[0.1em] text-gray-500 whitespace-nowrap">
-          {[
-            "Gratis verzending vanaf €80",
-            "Voor 16:00 besteld — zelfde dag verstuurd",
-            "Gratis retourneren",
-            "Veilig betalen via iDEAL & Klarna",
-          ].map((usp) => (
-            <div key={usp} className="flex items-center gap-1.5 shrink-0">
+          {(["freeShipping", "sameDay", "freeReturns", "securePay"] as const).map((k) => (
+            <div key={k} className="flex items-center gap-1.5 shrink-0">
               <Check className="size-3 text-[#f5a623] shrink-0" />
-              <span>{usp}</span>
+              <span>{t(`header.usp.${k}`)}</span>
             </div>
           ))}
         </div>
@@ -470,14 +460,18 @@ export default function HeaderV2() {
           <div className="absolute left-0 top-0 bottom-0 w-[300px] bg-white flex flex-col shadow-2xl">
             <div className="flex items-center justify-between px-5 py-4 border-b border-gray-100">
               <span className="font-montserrat text-lg font-black tracking-widest text-[#2b3e51] uppercase">
-                Menu
+                {t("header.mobileMenu")}
               </span>
-              <button type="button" aria-label="Menu sluiten" onClick={() => setMobileOpen(false)} className="text-gray-400 hover:text-gray-700">
+              <button type="button" aria-label={t("header.closeMenu")} onClick={() => setMobileOpen(false)} className="text-gray-400 hover:text-gray-700">
                 <X className="size-5" />
               </button>
             </div>
             <nav className="flex-1 overflow-y-auto py-2">
-              {[...NAV_ITEMS, { label: "Mijn account", href: "/account/inloggen" }, { label: "Verlanglijst", href: "/account/verlanglijst" }].map((item) => (
+              {[
+                ...NAV_ITEMS.map((i) => ({ label: t(`header.nav.${i.key}`), href: i.href })),
+                { label: t("header.mobileAccount"), href: "/account/inloggen" },
+                { label: t("header.mobileWishlist"), href: "/account/verlanglijst" },
+              ].map((item) => (
                 <Link
                   key={item.label}
                   href={item.href}

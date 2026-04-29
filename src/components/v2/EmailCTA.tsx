@@ -2,8 +2,10 @@
 
 import { useState } from "react";
 import { ArrowRight } from "lucide-react";
+import { useLocale } from "@/i18n/LocaleContext";
 
 export default function EmailCTA() {
+  const { t } = useLocale();
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
@@ -34,10 +36,10 @@ export default function EmailCTA() {
             </span>
             <div className="flex flex-col gap-0.5">
               <span className="text-[10px] font-black uppercase tracking-[0.25em] text-white/35">
-                korting op je
+                {t("email.badgeLine1")}
               </span>
               <span className="text-[10px] font-black uppercase tracking-[0.25em] text-white/35">
-                eerste bestelling
+                {t("email.badgeLine2")}
               </span>
             </div>
           </div>
@@ -50,15 +52,15 @@ export default function EmailCTA() {
             <div className="flex items-center gap-2">
               <div className="size-1.5 rounded-full bg-[#f5a623]" />
               <span className="text-[10px] font-black uppercase tracking-[0.25em] text-white/35">
-                Exclusief voor abonnees
+                {t("email.eyebrow")}
               </span>
             </div>
             <h2 className="font-montserrat font-black text-white text-3xl tracking-tighter leading-[0.95]">
-              Schrijf je in en<br />
-              <span className="text-[#f5a623]">ontvang direct je code</span>
+              {t("email.titleLine1")}<br />
+              <span className="text-[#f5a623]">{t("email.titleLine2")}</span>
             </h2>
             <p className="text-[13px] text-white/40 leading-relaxed max-w-xs">
-              Blijf op de hoogte van nieuwe collecties en deals. Alleen wat echt de moeite waard is.
+              {t("email.description")}
             </p>
           </div>
 
@@ -70,10 +72,10 @@ export default function EmailCTA() {
             {submitted ? (
               <div className="flex flex-col gap-2 py-4">
                 <p className="font-montserrat font-black text-white text-xl tracking-tight">
-                  🎉 Check je inbox!
+                  {t("email.successTitle")}
                 </p>
                 <p className="text-[#f5a623] text-sm">
-                  Je kortingscode van 10% is onderweg.
+                  {t("email.successBody")}
                 </p>
               </div>
             ) : (
@@ -89,16 +91,16 @@ export default function EmailCTA() {
                     ))}
                   </div>
                   <p className="text-[11px] text-white/30">
-                    <span className="text-white/50 font-bold">2.400+</span> abonnees gingen je voor
+                    <span className="text-white/50 font-bold">2.400+</span> {t("email.socialProof")}
                   </p>
                 </div>
 
                 {/* Trust checks — middle */}
                 <div className="flex items-center gap-4 text-[11px] text-white/25">
-                  {["Geen spam", "Altijd uitschrijven", "Direct geldig"].map((t) => (
-                    <span key={t} className="flex items-center gap-1.5">
+                  {(["noSpam", "unsubscribe", "instant"] as const).map((k) => (
+                    <span key={k} className="flex items-center gap-1.5">
                       <span className="text-[#f5a623] text-xs">✓</span>
-                      {t}
+                      {t(`email.trust.${k}`)}
                     </span>
                   ))}
                 </div>
@@ -110,14 +112,14 @@ export default function EmailCTA() {
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    placeholder="jouw@emailadres.nl"
+                    placeholder={t("email.placeholder")}
                     className="flex-1 h-12 px-5 bg-white/6 border border-white/12 hover:border-white/22 text-white placeholder:text-white/25 text-sm outline-none focus:border-[#f5a623]/40 focus:bg-white/8 transition-all rounded-lg"
                   />
                   <button
                     type="submit"
                     className="h-12 px-6 bg-[#f5a623] hover:bg-[#e08e0b] text-white font-black uppercase tracking-widest text-[10px] flex items-center gap-2 transition-colors shrink-0 rounded-lg group whitespace-nowrap"
                   >
-                    Ontvang 10%
+                    {t("email.submit")}
                     <ArrowRight className="size-3.5 group-hover:translate-x-0.5 transition-transform" />
                   </button>
                 </form>
@@ -134,24 +136,24 @@ export default function EmailCTA() {
               10%
             </span>
             <span className="text-[11px] font-black uppercase tracking-widest text-[#f5a623]/70 leading-snug text-left">
-              korting op je<br />eerste bestelling
+              {t("email.badgeLine1")}<br />{t("email.badgeLine2")}
             </span>
           </div>
 
           <div className="flex flex-col gap-2">
             <h2 className="font-montserrat font-black text-white text-3xl tracking-tighter leading-[0.95]">
-              Schrijf je in en<br />
-              <span className="text-[#f5a623]">ontvang direct je code</span>
+              {t("email.titleLine1")}<br />
+              <span className="text-[#f5a623]">{t("email.titleLine2")}</span>
             </h2>
             <p className="text-[13px] text-white/40 max-w-xs mx-auto leading-relaxed">
-              Nieuwe collecties, exclusieve deals — direct in je inbox.
+              {t("email.descriptionMobile")}
             </p>
           </div>
 
           {submitted ? (
             <div className="text-center py-2">
-              <p className="font-montserrat font-black text-white text-lg">🎉 Check je inbox!</p>
-              <p className="text-[#f5a623] text-sm mt-1">Je kortingscode van 10% is onderweg.</p>
+              <p className="font-montserrat font-black text-white text-lg">{t("email.successTitle")}</p>
+              <p className="text-[#f5a623] text-sm mt-1">{t("email.successBody")}</p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="flex flex-col gap-3 w-full max-w-sm">
@@ -160,18 +162,18 @@ export default function EmailCTA() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="jouw@emailadres.nl"
+                placeholder={t("email.placeholder")}
                 className="w-full h-12 px-5 bg-white/6 border border-white/12 text-white placeholder:text-white/25 text-sm outline-none focus:border-[#f5a623]/40 rounded-lg text-center"
               />
               <button
                 type="submit"
                 className="w-full h-12 bg-[#f5a623] hover:bg-[#e08e0b] text-white font-black uppercase tracking-widest text-[11px] flex items-center justify-center gap-2 rounded-lg transition-colors group"
               >
-                Ontvang 10% korting
+                {t("email.submitMobile")}
                 <ArrowRight className="size-4 group-hover:translate-x-0.5 transition-transform" />
               </button>
               <p className="text-[11px] text-white/25">
-                ✓ Geen spam &nbsp;·&nbsp; ✓ Altijd uitschrijven &nbsp;·&nbsp; ✓ Direct geldig
+                ✓ {t("email.trust.noSpam")} &nbsp;·&nbsp; ✓ {t("email.trust.unsubscribe")} &nbsp;·&nbsp; ✓ {t("email.trust.instant")}
               </p>
             </form>
           )}
