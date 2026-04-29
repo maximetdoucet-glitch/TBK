@@ -165,7 +165,7 @@ export default function HeaderV2() {
     <header className={cn("w-full bg-white sticky top-0 z-50 transition-shadow duration-300", scrolled ? "shadow-md" : "shadow-sm")}>
       {/* ── Top row: logo / search / actions ── */}
       <div className={cn(
-        "max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center gap-4 md:gap-6 transition-all duration-300",
+        "max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center gap-3 md:gap-6 transition-all duration-300",
         scrolled ? "py-2.5" : "py-3.5"
       )}>
         {/* Mobile menu toggle */}
@@ -184,18 +184,18 @@ export default function HeaderV2() {
           aria-label="Rokersbenodigheden — naar startpagina"
         >
           <span className="flex flex-col leading-none text-[#2b3e51]">
-            <span className="text-[19px] font-black uppercase tracking-[0.15em]">
+            <span className="text-[17px] sm:text-[19px] font-black uppercase tracking-[0.15em]">
               Rokers
             </span>
-            <span className="text-[10px] font-semibold uppercase tracking-[0.42em] text-[#2b3e51]/55 mt-1">
+            <span className="text-[9px] sm:text-[10px] font-semibold uppercase tracking-[0.42em] text-[#2b3e51]/55 mt-1">
               benodigheden
             </span>
           </span>
         </Link>
 
-        {/* Search — grows to fill space, pushing icons to far right */}
+        {/* Search — desktop only; mobile uses drawer */}
         <div className={cn(
-          "flex flex-1 relative transition-all duration-200",
+          "hidden md:flex flex-1 relative transition-all duration-200",
           searchFocused ? "max-w-2xl" : "max-w-xl"
         )}>
           <Input
@@ -211,13 +211,13 @@ export default function HeaderV2() {
         <div className="flex items-center gap-1 sm:gap-2 ml-auto">
 
           {/* Locale / currency picker */}
-          <div ref={localeRef} className="relative hidden sm:block">
+          <div ref={localeRef} className="relative">
             <button
               type="button"
               onClick={() => setLocaleOpen((o) => !o)}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg hover:bg-gray-50 transition-colors group"
+              className="flex items-center gap-1.5 px-2 sm:px-3 py-1.5 rounded-lg hover:bg-gray-50 transition-colors group"
             >
-              <span className="text-[11px] font-bold text-[#2b3e51]/70 uppercase tracking-wider">
+              <span className="hidden sm:inline text-[11px] font-bold text-[#2b3e51]/70 uppercase tracking-wider">
                 {selectedCurrency.code}
               </span>
               <span className="inline-flex rounded-full overflow-hidden ring-1 ring-gray-200 shrink-0">
@@ -330,8 +330,8 @@ export default function HeaderV2() {
         </div>
       </div>
 
-      {/* ── Nav bar — hidden when scrolled ── */}
-      <nav className={cn("w-full bg-[#2e4560] text-white relative transition-all duration-300", scrolled ? "h-0 overflow-hidden" : "overflow-visible")}>
+      {/* ── Nav bar — hidden on mobile (handled by drawer) and when scrolled ── */}
+      <nav className={cn("w-full bg-[#2e4560] text-white relative transition-all duration-300 hidden lg:block", scrolled ? "h-0 overflow-hidden" : "overflow-visible")}>
         <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center h-11">
           {/* Assortiment mega button */}
           <button
@@ -456,42 +456,87 @@ export default function HeaderV2() {
       {/* ── Mobile drawer ── */}
       {mobileOpen && (
         <div className="fixed inset-0 z-[200] lg:hidden">
-          <div className="absolute inset-0 bg-black/40" onClick={() => setMobileOpen(false)} />
-          <div className="absolute left-0 top-0 bottom-0 w-[300px] bg-white flex flex-col shadow-2xl">
-            <div className="flex items-center justify-between px-5 py-4 border-b border-gray-100">
-              <span className="font-montserrat text-lg font-black tracking-widest text-[#2b3e51] uppercase">
-                {t("header.mobileMenu")}
+          <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={() => setMobileOpen(false)} />
+          <div className="absolute left-0 top-0 bottom-0 w-[88%] max-w-[340px] bg-white flex flex-col shadow-2xl">
+            {/* Header */}
+            <div className="flex items-center justify-between px-5 py-5 border-b border-gray-100">
+              <span className="flex flex-col leading-none text-[#2b3e51]">
+                <span className="text-[16px] font-black uppercase tracking-[0.15em]">Rokers</span>
+                <span className="text-[9px] font-semibold uppercase tracking-[0.42em] text-[#2b3e51]/55 mt-1">benodigheden</span>
               </span>
-              <button type="button" aria-label={t("header.closeMenu")} onClick={() => setMobileOpen(false)} className="text-gray-400 hover:text-gray-700">
-                <X className="size-5" />
+              <button type="button" aria-label={t("header.closeMenu")} onClick={() => setMobileOpen(false)} className="size-9 rounded-full bg-gray-50 flex items-center justify-center text-gray-500 hover:text-[#2b3e51] hover:bg-gray-100 transition-colors">
+                <X className="size-4" />
               </button>
             </div>
-            <nav className="flex-1 overflow-y-auto py-2">
-              {[
-                ...NAV_ITEMS.map((i) => ({ label: t(`header.nav.${i.key}`), href: i.href })),
-                { label: t("header.mobileAccount"), href: "/account/inloggen" },
-                { label: t("header.mobileWishlist"), href: "/account/verlanglijst" },
-              ].map((item) => (
-                <Link
-                  key={item.label}
-                  href={item.href}
-                  onClick={() => setMobileOpen(false)}
-                  className="flex items-center justify-between px-5 py-3.5 text-sm font-semibold text-[#2b3e51] hover:bg-gray-50 border-b border-gray-50 transition-colors"
-                >
-                  {item.label}
-                  <ChevronDown className="size-4 -rotate-90 text-gray-300" />
-                </Link>
-              ))}
+
+            {/* Search */}
+            <div className="px-5 py-4 border-b border-gray-100">
+              <div className="relative">
+                <Input
+                  placeholder={t("header.searchPlaceholder")}
+                  className="w-full h-11 pl-4 pr-11 rounded-full border-gray-200 bg-gray-50 focus:bg-white focus:border-[#f5a623] text-sm"
+                />
+                <Search className="absolute right-4 top-1/2 -translate-y-1/2 size-4 text-gray-400" />
+              </div>
+            </div>
+
+            {/* Nav */}
+            <nav className="flex-1 overflow-y-auto">
+              <div className="py-2">
+                {[
+                  ...NAV_ITEMS.map((i) => ({ label: t(`header.nav.${i.key}`), href: i.href, accent: "accent" in i ? i.accent : false })),
+                  { label: t("header.mobileAccount"), href: "/account/inloggen", accent: false },
+                  { label: t("header.mobileWishlist"), href: "/account/verlanglijst", accent: false },
+                ].map((item) => (
+                  <Link
+                    key={item.label}
+                    href={item.href}
+                    onClick={() => setMobileOpen(false)}
+                    className={cn(
+                      "flex items-center justify-between px-5 py-3.5 text-[15px] font-semibold border-b border-gray-50 transition-colors",
+                      item.accent
+                        ? "text-[#f5a623] hover:bg-[#f5a623]/5"
+                        : "text-[#2b3e51] hover:bg-gray-50"
+                    )}
+                  >
+                    {item.label}
+                    <ChevronDown className="size-4 -rotate-90 text-gray-300" />
+                  </Link>
+                ))}
+              </div>
+
+              {/* Language picker */}
+              <div className="px-5 py-5 border-t border-gray-100">
+                <p className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-400 mb-3">
+                  {t("header.chooseLanguage")}
+                </p>
+                <div className="grid grid-cols-2 gap-2">
+                  {LOCALES.map((loc) => (
+                    <button
+                      type="button"
+                      key={loc.code}
+                      onClick={() => { setLocale(loc.code); }}
+                      className={cn(
+                        "flex items-center gap-2 px-3 py-2.5 rounded-lg text-left transition-colors",
+                        selectedLocale.code === loc.code
+                          ? "bg-[#f5a623]/10 text-[#f5a623] ring-1 ring-[#f5a623]/30"
+                          : "bg-gray-50 hover:bg-gray-100 text-[#2b3e51]"
+                      )}
+                    >
+                      <span className="inline-flex rounded-full overflow-hidden ring-1 ring-gray-200 shrink-0">
+                        {React.createElement(FLAG_COMPONENTS[loc.code], { size: 18 })}
+                      </span>
+                      <span className="text-[13px] font-semibold">{loc.label}</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
             </nav>
-            <div className="px-5 py-4 border-t border-gray-100 bg-gray-50 flex items-center gap-3">
-              <span className="flex flex-col leading-none text-[#2b3e51]">
-                <span className="text-[15px] font-black uppercase tracking-[0.15em]">
-                  Rokers
-                </span>
-                <span className="text-[8px] font-semibold uppercase tracking-[0.42em] text-[#2b3e51]/55 mt-1">
-                  benodigheden
-                </span>
-              </span>
+
+            {/* Footer USP strip */}
+            <div className="px-5 py-4 border-t border-gray-100 bg-gray-50 flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.1em] text-gray-500">
+              <Check className="size-3 text-[#f5a623] shrink-0" />
+              <span>{t("header.usp.freeShipping")}</span>
             </div>
           </div>
         </div>

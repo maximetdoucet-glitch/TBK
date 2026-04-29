@@ -89,13 +89,13 @@ function ProductCard({ product }: { product: Product }) {
           src={product.image}
           alt={product.name}
           fill
-          className="object-contain p-6 transition-transform duration-500 group-hover:scale-105"
+          className="object-contain p-4 sm:p-6 transition-transform duration-500 group-hover:scale-105"
           style={{ mixBlendMode: "multiply" }}
           unoptimized
         />
         {product.badge && (
           <div
-            className="absolute top-3 left-3 text-white text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-md"
+            className="absolute top-2.5 left-2.5 sm:top-3 sm:left-3 text-white text-[9px] sm:text-[10px] font-black uppercase tracking-wider px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-md"
             style={{ backgroundColor: badgeColor(product.badge) }}
           >
             {badgeMap[product.badge] ?? product.badge}
@@ -104,10 +104,10 @@ function ProductCard({ product }: { product: Product }) {
         <button
           onClick={(e) => { e.preventDefault(); setWishlisted((w) => !w); }}
           className={cn(
-            "absolute bottom-3 right-3 size-8 rounded-full flex items-center justify-center transition-all duration-200 shadow-sm",
+            "absolute bottom-2.5 right-2.5 sm:bottom-3 sm:right-3 size-8 rounded-full flex items-center justify-center transition-all duration-200 shadow-sm",
             wishlisted
               ? "bg-red-50 text-red-500 opacity-100"
-              : "bg-white/80 text-gray-400 opacity-0 group-hover:opacity-100 hover:text-red-400 backdrop-blur-sm"
+              : "bg-white/80 text-gray-400 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 hover:text-red-400 backdrop-blur-sm"
           )}
           aria-label={t("featuredProducts.wishlist")}
         >
@@ -115,22 +115,22 @@ function ProductCard({ product }: { product: Product }) {
         </button>
       </div>
 
-      <div className="flex flex-col flex-1 p-4">
-        <p className="text-[9px] font-black uppercase tracking-[0.2em] text-[#2b3e51]/30 mb-1">
+      <div className="flex flex-col flex-1 p-3 sm:p-4">
+        <p className="text-[9px] font-black uppercase tracking-[0.2em] text-[#2b3e51]/30 mb-1 truncate">
           {product.brand} · {product.category}
         </p>
-        <h3 className="font-montserrat text-sm font-black text-[#2b3e51] leading-snug mb-1.5 group-hover:text-[#f5a623] transition-colors line-clamp-2">
+        <h3 className="font-montserrat text-[13px] sm:text-sm font-black text-[#2b3e51] leading-snug mb-1.5 group-hover:text-[#f5a623] transition-colors line-clamp-2">
           {product.name}
         </h3>
         <StarRating rating={product.rating} count={product.reviewCount} />
-        <div className="flex items-center justify-between mt-3 pt-3 border-t border-gray-50">
-          <span className="font-montserrat text-xl font-black text-[#2b3e51]">
+        <div className="flex items-center justify-between mt-2.5 sm:mt-3 pt-2.5 sm:pt-3 border-t border-gray-50 gap-2">
+          <span className="font-montserrat text-lg sm:text-xl font-black text-[#2b3e51]">
             € {price.toFixed(2)}
           </span>
           <button
             onClick={handleCart}
             className={cn(
-              "flex items-center gap-2 px-3.5 py-2.5 rounded-lg font-bold text-[10px] uppercase tracking-wider transition-all duration-300",
+              "flex items-center gap-2 px-2.5 sm:px-3.5 py-2 sm:py-2.5 rounded-lg font-bold text-[10px] uppercase tracking-wider transition-all duration-300 shrink-0",
               addedToCart
                 ? "bg-green-500 text-white scale-95"
                 : "bg-[#2b3e51] hover:bg-[#f5a623] text-white"
@@ -138,7 +138,7 @@ function ProductCard({ product }: { product: Product }) {
             aria-label={t("featuredProducts.inCart")}
           >
             <ShoppingBag className="size-4 shrink-0" />
-            <span className="hidden sm:block">{addedToCart ? t("featuredProducts.addedToCart") : t("featuredProducts.addToCart")}</span>
+            <span className="hidden md:block">{addedToCart ? t("featuredProducts.addedToCart") : t("featuredProducts.addToCart")}</span>
           </button>
         </div>
       </div>
@@ -159,14 +159,14 @@ export default function FeaturedProducts() {
   const filtered = getTabProducts(activeTab);
 
   return (
-    <section className="bg-[#f8f8f8] py-12 sm:py-16">
+    <section className="bg-[#f8f8f8] py-10 sm:py-16">
       <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 sm:gap-4 mb-6 sm:mb-8">
           <div>
             <p className="text-[10px] font-black uppercase tracking-[0.3em] text-[#f5a623] mb-1">
               {t("featuredProducts.eyebrow")}
             </p>
-            <h2 className="font-montserrat text-3xl sm:text-4xl font-black text-[#2b3e51] tracking-tighter">
+            <h2 className="font-montserrat text-2xl sm:text-4xl font-black text-[#2b3e51] tracking-tighter">
               {t("featuredProducts.heading")}
             </h2>
           </div>
@@ -186,16 +186,16 @@ export default function FeaturedProducts() {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2.5 sm:gap-4">
           {filtered.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
         </div>
 
-        <div className="mt-10 flex justify-center">
+        <div className="mt-8 sm:mt-10 flex justify-center">
           <Link
             href="/aanstekers"
-            className="inline-flex items-center gap-3 px-10 py-4 bg-[#2b3e51] hover:bg-[#f5a623] text-white font-bold uppercase tracking-widest text-[11px] transition-all duration-300 rounded-lg group"
+            className="inline-flex items-center gap-2.5 sm:gap-3 px-7 sm:px-10 py-3.5 sm:py-4 bg-[#2b3e51] hover:bg-[#f5a623] text-white font-bold uppercase tracking-widest text-[11px] transition-all duration-300 rounded-lg group"
           >
             {t("featuredProducts.viewAll")}
             <ArrowRight className="size-4 group-hover:translate-x-1 transition-transform" />

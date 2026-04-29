@@ -58,16 +58,16 @@ export default function CategoryShowcase() {
   const [hovered, setHovered] = useState<string | null>(null);
 
   return (
-    <section className="bg-white pt-10 sm:pt-14 pb-10 sm:pb-14">
+    <section className="bg-white pt-8 sm:pt-14 pb-8 sm:pb-14">
       <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
-        <div className="flex items-end justify-between mb-6">
+        <div className="flex items-end justify-between mb-5 sm:mb-6">
           <div>
             <p className="text-[10px] font-black uppercase tracking-[0.3em] text-[#f5a623] mb-1">
               {t("categoryShowcase.eyebrow")}
             </p>
-            <h2 className="font-montserrat text-3xl sm:text-4xl font-black text-[#2b3e51] tracking-tighter">
+            <h2 className="font-montserrat text-2xl sm:text-4xl font-black text-[#2b3e51] tracking-tighter">
               {t("categoryShowcase.heading")}
             </h2>
           </div>

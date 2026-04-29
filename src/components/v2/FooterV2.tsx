@@ -85,21 +85,21 @@ export default function FooterV2() {
           Payment icons live in column 4 only → right edge of PayPal = right edge of MIJN ACCOUNT. Guaranteed.
         */}
         {/* ── Row 1: nav columns ── */}
-        <div className="flex gap-12 py-16">
+        <div className="flex flex-col lg:flex-row lg:gap-12 gap-10 py-12 lg:py-16">
 
           {/* Brand */}
-          <div className="w-60 shrink-0 flex flex-col gap-6">
+          <div className="lg:w-60 lg:shrink-0 flex flex-col gap-5 lg:gap-6">
             <Link href="/" className="inline-flex w-fit group" aria-label="Rokersbenodigheden — naar startpagina">
               <span className="flex flex-col leading-none">
-                <span className="text-[28px] font-black uppercase tracking-[0.15em] text-white">
+                <span className="text-[26px] lg:text-[28px] font-black uppercase tracking-[0.15em] text-white">
                   Rokers
                 </span>
-                <span className="text-[13px] font-semibold uppercase tracking-[0.42em] text-white/45 mt-1.5">
+                <span className="text-[12px] lg:text-[13px] font-semibold uppercase tracking-[0.42em] text-white/45 mt-1.5">
                   benodigheden
                 </span>
               </span>
             </Link>
-            <p className="text-white/45 text-[13px] leading-relaxed">
+            <p className="text-white/45 text-[13px] leading-relaxed max-w-md lg:max-w-none">
               {t("footer.description")}
             </p>
             <ul className="space-y-3">
@@ -126,47 +126,49 @@ export default function FooterV2() {
             </div>
           </div>
 
-          {/* 3 nav columns — each flex-1 so they share and fill all remaining space */}
+          {/* 3 nav columns — grid on mobile (2-col), flex on desktop */}
+          <div className="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 sm:gap-x-8 lg:flex lg:flex-1 lg:gap-0">
 
-          {/* Assortiment */}
-          <div className="flex-1 px-6">
-            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-white/30 mb-6 pb-3 border-b border-white/8">{t("footer.sections.assortiment")}</p>
-            <ul className="space-y-3">
-              {LINKS.shop.map((l) => (
-                <li key={l.key}><Link href={l.href} className="text-[13px] text-white/50 hover:text-white transition-colors">{t(`footer.shop.${l.key}`)}</Link></li>
-              ))}
-            </ul>
-          </div>
+            {/* Assortiment */}
+            <div className="lg:flex-1 lg:px-6">
+              <p className="text-[10px] font-black uppercase tracking-[0.2em] text-white/30 mb-4 lg:mb-6 pb-3 border-b border-white/8">{t("footer.sections.assortiment")}</p>
+              <ul className="space-y-3">
+                {LINKS.shop.map((l) => (
+                  <li key={l.key}><Link href={l.href} className="text-[13px] text-white/50 hover:text-white transition-colors">{t(`footer.shop.${l.key}`)}</Link></li>
+                ))}
+              </ul>
+            </div>
 
-          {/* Klantenservice */}
-          <div className="flex-1 px-6">
-            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-white/30 mb-6 pb-3 border-b border-white/8">{t("footer.sections.klantenservice")}</p>
-            <ul className="space-y-3">
-              {LINKS.service.map((l) => (
-                <li key={l.key}><Link href={l.href} className="text-[13px] text-white/50 hover:text-white transition-colors">{t(`footer.service.${l.key}`)}</Link></li>
-              ))}
-            </ul>
-          </div>
+            {/* Klantenservice */}
+            <div className="lg:flex-1 lg:px-6">
+              <p className="text-[10px] font-black uppercase tracking-[0.2em] text-white/30 mb-4 lg:mb-6 pb-3 border-b border-white/8">{t("footer.sections.klantenservice")}</p>
+              <ul className="space-y-3">
+                {LINKS.service.map((l) => (
+                  <li key={l.key}><Link href={l.href} className="text-[13px] text-white/50 hover:text-white transition-colors">{t(`footer.service.${l.key}`)}</Link></li>
+                ))}
+              </ul>
+            </div>
 
-          {/* Mijn account */}
-          <div className="flex-1 px-6">
-            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-white/30 mb-6 pb-3 border-b border-white/8">{t("footer.sections.account")}</p>
-            <ul className="space-y-3">
-              {LINKS.account.map((l) => (
-                <li key={l.key}><Link href={l.href} className="text-[13px] text-white/50 hover:text-white transition-colors">{t(`footer.accountLinks.${l.key}`)}</Link></li>
-              ))}
-            </ul>
-            <div className="mt-8 flex justify-end -mr-6">
-              <div className="inline-flex flex-col items-center border border-white/8 px-4 py-3 rounded-lg">
-                <span className="text-[9px] font-black uppercase tracking-[0.3em] text-white/25">{t("footer.badge.eyebrow")}</span>
-                <span className="font-montserrat text-lg font-black tracking-tight text-white/30 mt-1">{t("footer.badge.city")}</span>
+            {/* Mijn account */}
+            <div className="col-span-2 sm:col-span-1 lg:flex-1 lg:px-6">
+              <p className="text-[10px] font-black uppercase tracking-[0.2em] text-white/30 mb-4 lg:mb-6 pb-3 border-b border-white/8">{t("footer.sections.account")}</p>
+              <ul className="space-y-3">
+                {LINKS.account.map((l) => (
+                  <li key={l.key}><Link href={l.href} className="text-[13px] text-white/50 hover:text-white transition-colors">{t(`footer.accountLinks.${l.key}`)}</Link></li>
+                ))}
+              </ul>
+              <div className="mt-6 lg:mt-8 flex lg:justify-end lg:-mr-6">
+                <div className="inline-flex flex-col items-center border border-white/8 px-4 py-3 rounded-lg">
+                  <span className="text-[9px] font-black uppercase tracking-[0.3em] text-white/25">{t("footer.badge.eyebrow")}</span>
+                  <span className="font-montserrat text-lg font-black tracking-tight text-white/30 mt-1">{t("footer.badge.city")}</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
         {/* ── Bottom bar ── */}
-        <div className="flex items-center justify-between py-6" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+        <div className="flex flex-col-reverse sm:flex-row sm:items-center sm:justify-between gap-5 sm:gap-4 py-6" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
 
           {/* Legal links */}
           <div className="flex flex-wrap items-center gap-x-5 gap-y-1">

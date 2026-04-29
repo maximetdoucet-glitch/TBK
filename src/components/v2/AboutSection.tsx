@@ -69,12 +69,12 @@ export default function AboutSection() {
             {STATS.map((stat) => (
               <div
                 key={stat.labelKey}
-                className="flex flex-col items-center justify-center py-8 px-4 gap-1"
+                className="flex flex-col items-center justify-center py-6 sm:py-8 px-3 sm:px-4 gap-1 text-center"
               >
-                <span className="font-montserrat text-3xl sm:text-4xl font-black text-white tracking-tighter">
+                <span className="font-montserrat text-2xl sm:text-4xl font-black text-white tracking-tighter">
                   {stat.value}
                 </span>
-                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/40">
+                <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.18em] sm:tracking-[0.2em] text-white/40 leading-tight">
                   {t(`about.stats.${stat.labelKey}`)}
                 </span>
               </div>
@@ -84,24 +84,24 @@ export default function AboutSection() {
       </div>
 
       {/* ── About + Pillars ── */}
-      <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-24">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+      <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 lg:gap-24 items-start">
           {/* Left — brand story */}
           <div>
             <p className="text-[10px] font-black uppercase tracking-[0.3em] text-[#f5a623] mb-3">
               {t("about.eyebrow")}
             </p>
-            <h2 className="font-montserrat text-4xl sm:text-5xl font-black text-[#2b3e51] tracking-tighter leading-[0.92] mb-8">
+            <h2 className="font-montserrat text-3xl sm:text-5xl font-black text-[#2b3e51] tracking-tighter leading-[0.95] sm:leading-[0.92] mb-6 sm:mb-8">
               {t("about.titleLine1")}<br />
               <span className="text-[#f5a623]">{t("about.titleLine2")}</span>
             </h2>
-            <div className="space-y-4 text-[15px] text-gray-500 leading-relaxed">
+            <div className="space-y-4 text-[14px] sm:text-[15px] text-gray-500 leading-relaxed">
               <p>{t("about.para1")}</p>
               <p>{t("about.para2")}</p>
             </div>
 
             {/* Pillar grid */}
-            <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="mt-10 sm:mt-12 grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
               {PILLARS.map((p) => (
                 <div key={p.key} className="group flex gap-4">
                   <div className="shrink-0 size-10 rounded-lg bg-[#f8f8f8] border border-gray-100 flex items-center justify-center group-hover:bg-[#f5a623] group-hover:border-[#f5a623] transition-all duration-300">
@@ -122,12 +122,12 @@ export default function AboutSection() {
 
           {/* Right — FAQ */}
           <div className="lg:pt-2">
-            <div className="flex items-end justify-between mb-8">
+            <div className="flex items-end justify-between mb-6 sm:mb-8">
               <div>
                 <p className="text-[10px] font-black uppercase tracking-[0.3em] text-[#f5a623] mb-2">
                   {t("about.faqEyebrow")}
                 </p>
-                <h3 className="font-montserrat text-2xl sm:text-3xl font-black text-[#2b3e51] tracking-tighter">
+                <h3 className="font-montserrat text-xl sm:text-3xl font-black text-[#2b3e51] tracking-tighter">
                   {t("about.faqHeading")}
                 </h3>
               </div>

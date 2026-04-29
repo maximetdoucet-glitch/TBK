@@ -137,23 +137,23 @@ export default function ArticleSection() {
   const secondary = ARTICLES.filter((a) => !a.featured);
 
   return (
-    <section className="bg-[#111c27] py-16 sm:py-20">
+    <section className="bg-[#111c27] py-12 sm:py-20">
       <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-5 sm:gap-4 mb-8 sm:mb-10">
           <div>
             <div className="flex items-center gap-2 mb-3">
               <BookOpen className="size-3.5 text-[#f5a623]" />
               <span className="text-[10px] font-black uppercase tracking-[0.4em] text-[#f5a623]">{t("articles.eyebrow")}</span>
             </div>
-            <h2 className="font-montserrat text-3xl sm:text-4xl font-black text-white tracking-tight leading-tight">
+            <h2 className="font-montserrat text-2xl sm:text-4xl font-black text-white tracking-tight leading-tight">
               {t("articles.headingLine1")} <span className="text-[#f5a623]">{t("articles.headingLine2")}</span>
             </h2>
           </div>
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 px-6 py-3 border border-white/15 hover:border-[#f5a623]/50 text-white/60 hover:text-white text-[11px] font-black uppercase tracking-widest rounded-lg transition-all duration-300 group self-start sm:self-auto"
+            className="inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 border border-white/15 hover:border-[#f5a623]/50 text-white/60 hover:text-white text-[10px] sm:text-[11px] font-black uppercase tracking-widest rounded-lg transition-all duration-300 group self-start sm:self-auto"
           >
             {t("articles.viewAll")}
             <ArrowRight className="size-3.5 group-hover:translate-x-0.5 transition-transform" />
