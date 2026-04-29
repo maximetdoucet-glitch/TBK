@@ -145,7 +145,7 @@ export default function FooterV2() {
           </div>
 
           {/* Mijn account */}
-          <div className="flex-1 pl-6 pr-0">
+          <div className="flex-1 pl-6 pr-0 text-right">
             <p className="text-[10px] font-black uppercase tracking-[0.2em] text-white/30 mb-6 pb-3 border-b border-white/8">Mijn account</p>
             <ul className="space-y-3">
               {LINKS.account.map((l) => (
