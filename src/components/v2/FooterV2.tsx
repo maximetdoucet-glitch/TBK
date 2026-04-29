@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { MapPin, Phone, Mail, Flame } from "lucide-react";
+import { MapPin, Phone, Mail } from "lucide-react";
 
 const LINKS = {
   shop: [
@@ -85,13 +85,14 @@ export default function FooterV2() {
 
           {/* Brand */}
           <div className="w-60 shrink-0 flex flex-col gap-6">
-            <Link href="/" className="inline-flex items-center gap-3 w-fit group" aria-label="Rookersbenodigheden — naar startpagina">
-              <span className="relative flex items-center justify-center size-11 rounded-md bg-white/10 group-hover:bg-[#f5a623] transition-colors">
-                <Flame className="size-5 text-[#f5a623] group-hover:text-white transition-colors" strokeWidth={2.5} />
-              </span>
-              <span className="font-montserrat text-2xl font-black tracking-tight leading-none">
-                <span className="text-white">Rookers</span>
-                <span className="text-[#f5a623]">benodigheden</span>
+            <Link href="/" className="inline-flex w-fit group" aria-label="Rokersbenodigheden — naar startpagina">
+              <span className="flex flex-col leading-none">
+                <span className="text-[28px] font-black uppercase tracking-[0.15em] text-white">
+                  Rokers
+                </span>
+                <span className="text-[13px] font-semibold uppercase tracking-[0.42em] text-white/45 mt-1.5">
+                  benodigheden
+                </span>
               </span>
             </Link>
             <p className="text-white/45 text-[13px] leading-relaxed">
@@ -163,7 +164,7 @@ export default function FooterV2() {
 
           {/* Legal links */}
           <div className="flex flex-wrap items-center gap-x-5 gap-y-1">
-            <span className="text-[11px] text-white/25">© {new Date().getFullYear()} Rookersbenodigheden Nijmegen</span>
+            <span className="text-[11px] text-white/25">© {new Date().getFullYear()} Rokersbenodigheden Nijmegen</span>
             {["Privacybeleid", "Algemene voorwaarden", "Cookiebeleid"].map((label) => (
               <Link key={label} href="#" className="text-[11px] text-white/25 hover:text-white/60 transition-colors">{label}</Link>
             ))}

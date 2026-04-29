@@ -192,11 +192,11 @@ export default function HeaderV2() {
         <Link
           href="/preview"
           className="shrink-0 flex items-center gap-2 leading-none group"
-          aria-label="Rookersbenodigheden — naar startpagina"
+          aria-label="Rokersbenodigheden — naar startpagina"
         >
           <span className="flex flex-col leading-none text-[#2b3e51]">
             <span className="text-[19px] font-black uppercase tracking-[0.15em]">
-              Rookers
+              Rokers
             </span>
             <span className="text-[10px] font-semibold uppercase tracking-[0.42em] text-[#2b3e51]/55 mt-1">
               benodigheden
@@ -490,8 +490,13 @@ export default function HeaderV2() {
               ))}
             </nav>
             <div className="px-5 py-4 border-t border-gray-100 bg-gray-50 flex items-center gap-3">
-              <span className="text-sm font-extrabold tracking-tight leading-none text-[#2b3e51]">
-                Rookersbenodigheden
+              <span className="flex flex-col leading-none text-[#2b3e51]">
+                <span className="text-[15px] font-black uppercase tracking-[0.15em]">
+                  Rokers
+                </span>
+                <span className="text-[8px] font-semibold uppercase tracking-[0.42em] text-[#2b3e51]/55 mt-1">
+                  benodigheden
+                </span>
               </span>
             </div>
           </div>
