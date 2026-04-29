@@ -32,7 +32,7 @@ const CATS = [
 
 export default function QuickCategories() {
   return (
-    <section className="bg-white py-10 border-y border-gray-100">
+    <section className="bg-white py-10">
       <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8">
 
         <p className="text-[10px] font-black uppercase tracking-[0.3em] text-[#2b3e51] mb-5">

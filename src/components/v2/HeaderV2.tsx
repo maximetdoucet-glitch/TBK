@@ -447,7 +447,7 @@ export default function HeaderV2() {
       </nav>
 
       {/* ── USP bar — hidden when scrolled ── */}
-      <div className={cn("w-full bg-gray-50 border-b border-gray-100 overflow-hidden transition-all duration-300", scrolled ? "max-h-0 py-0" : "max-h-12 py-2")}>
+      <div className={cn("w-full bg-gray-50 overflow-hidden transition-all duration-300", scrolled ? "max-h-0 py-0" : "max-h-12 py-2")}>
         <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-6 overflow-x-auto scrollbar-none text-[10px] font-bold uppercase tracking-[0.1em] text-gray-500 whitespace-nowrap">
           {[
             "Gratis verzending vanaf €80",
