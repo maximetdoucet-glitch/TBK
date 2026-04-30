@@ -85,6 +85,19 @@ export type Dict = {
     submit: string; submitMobile: string;
     successTitle: string; successBody: string;
   };
+  reviews: {
+    eyebrow: string;
+    heading: string;
+    outOf: string;
+    summary: string;
+    summaryOne: string;
+    addReview: string;
+    postedOn: string;
+    showMore: string;
+    showLess: string;
+    empty: string;
+    form: { title: string; nameLabel: string; namePlaceholder: string; ratingLabel: string; reviewLabel: string; reviewPlaceholder: string; submit: string; cancel: string; thanks: string; thanksBody: string };
+  };
   subcategoryNav: {
     eyebrow: string;
     heading: string;
@@ -204,6 +217,30 @@ const NL: Dict = {
     submit: "Ontvang 10%", submitMobile: "Ontvang 10% korting",
     successTitle: "🎉 Check je inbox!", successBody: "Je kortingscode van 10% is onderweg.",
   },
+  reviews: {
+    eyebrow: "Klantbeoordelingen",
+    heading: "Reviews",
+    outOf: "/5",
+    summary: "{rating} sterren op basis van {count} beoordelingen",
+    summaryOne: "{rating} sterren op basis van {count} beoordeling",
+    addReview: "Je beoordeling toevoegen",
+    postedOn: "Geplaatst op",
+    showMore: "Meer reviews tonen",
+    showLess: "Minder tonen",
+    empty: "Nog geen beoordelingen. Wees de eerste!",
+    form: {
+      title: "Schrijf je review",
+      nameLabel: "Naam",
+      namePlaceholder: "Je naam",
+      ratingLabel: "Beoordeling",
+      reviewLabel: "Je ervaring",
+      reviewPlaceholder: "Vertel ons wat je van dit product vindt…",
+      submit: "Plaatsen",
+      cancel: "Annuleren",
+      thanks: "Bedankt voor je review!",
+      thanksBody: "Je beoordeling wordt na controle geplaatst.",
+    },
+  },
   subcategoryNav: {
     eyebrow: "Snel navigeren", heading: "Populaire categorieën", productsLabel: "producten",
     items: { zippo: "Zippo Aanstekers", clipper: "Clipper & Regulier", jetflame: "Jetflame Aanstekers", zippoAcc: "Zippo Accessoires", kokers: "Kokers & Etuis", knippers: "Knippers & Asbakken", rook: "Rook-accessoires", pipeCutlery: "Pijp-bestek" },
@@ -320,6 +357,30 @@ const EN: Dict = {
     placeholder: "your@email.com",
     submit: "Get 10%", submitMobile: "Get 10% off",
     successTitle: "🎉 Check your inbox!", successBody: "Your 10% discount code is on its way.",
+  },
+  reviews: {
+    eyebrow: "Customer reviews",
+    heading: "Reviews",
+    outOf: "/5",
+    summary: "{rating} stars based on {count} reviews",
+    summaryOne: "{rating} stars based on {count} review",
+    addReview: "Write a review",
+    postedOn: "Posted on",
+    showMore: "Show more reviews",
+    showLess: "Show fewer",
+    empty: "No reviews yet. Be the first!",
+    form: {
+      title: "Write your review",
+      nameLabel: "Name",
+      namePlaceholder: "Your name",
+      ratingLabel: "Rating",
+      reviewLabel: "Your experience",
+      reviewPlaceholder: "Tell us what you think of this product…",
+      submit: "Submit",
+      cancel: "Cancel",
+      thanks: "Thanks for your review!",
+      thanksBody: "Your review will be published after moderation.",
+    },
   },
   subcategoryNav: {
     eyebrow: "Quick navigation", heading: "Popular categories", productsLabel: "products",
@@ -438,6 +499,30 @@ const DE: Dict = {
     submit: "10% erhalten", submitMobile: "10% Rabatt erhalten",
     successTitle: "🎉 Posteingang prüfen!", successBody: "Ihr 10% Rabattcode ist unterwegs.",
   },
+  reviews: {
+    eyebrow: "Kundenbewertungen",
+    heading: "Bewertungen",
+    outOf: "/5",
+    summary: "{rating} Sterne basierend auf {count} Bewertungen",
+    summaryOne: "{rating} Sterne basierend auf {count} Bewertung",
+    addReview: "Bewertung schreiben",
+    postedOn: "Veröffentlicht am",
+    showMore: "Mehr Bewertungen zeigen",
+    showLess: "Weniger zeigen",
+    empty: "Noch keine Bewertungen. Seien Sie der Erste!",
+    form: {
+      title: "Bewertung schreiben",
+      nameLabel: "Name",
+      namePlaceholder: "Ihr Name",
+      ratingLabel: "Bewertung",
+      reviewLabel: "Ihre Erfahrung",
+      reviewPlaceholder: "Erzählen Sie uns, was Sie von diesem Produkt halten…",
+      submit: "Absenden",
+      cancel: "Abbrechen",
+      thanks: "Vielen Dank für Ihre Bewertung!",
+      thanksBody: "Ihre Bewertung wird nach der Prüfung veröffentlicht.",
+    },
+  },
   subcategoryNav: {
     eyebrow: "Schnellzugriff", heading: "Beliebte Kategorien", productsLabel: "Produkte",
     items: { zippo: "Zippo Feuerzeuge", clipper: "Clipper & Standard", jetflame: "Jetflame Feuerzeuge", zippoAcc: "Zippo Zubehör", kokers: "Etuis & Hüllen", knippers: "Cutter & Aschenbecher", rook: "Raucherzubehör", pipeCutlery: "Pfeifenbesteck" },
@@ -554,6 +639,30 @@ const FR: Dict = {
     placeholder: "votre@email.fr",
     submit: "Obtenir 10 %", submitMobile: "Obtenir 10 % de réduction",
     successTitle: "🎉 Vérifiez votre boîte mail !", successBody: "Votre code de réduction de 10 % est en route.",
+  },
+  reviews: {
+    eyebrow: "Avis clients",
+    heading: "Avis",
+    outOf: "/5",
+    summary: "{rating} étoiles sur la base de {count} avis",
+    summaryOne: "{rating} étoiles sur la base de {count} avis",
+    addReview: "Écrire un avis",
+    postedOn: "Publié le",
+    showMore: "Afficher plus d'avis",
+    showLess: "Afficher moins",
+    empty: "Aucun avis pour le moment. Soyez le premier !",
+    form: {
+      title: "Rédigez votre avis",
+      nameLabel: "Nom",
+      namePlaceholder: "Votre nom",
+      ratingLabel: "Note",
+      reviewLabel: "Votre expérience",
+      reviewPlaceholder: "Dites-nous ce que vous pensez de ce produit…",
+      submit: "Envoyer",
+      cancel: "Annuler",
+      thanks: "Merci pour votre avis !",
+      thanksBody: "Votre avis sera publié après modération.",
+    },
   },
   subcategoryNav: {
     eyebrow: "Navigation rapide", heading: "Catégories populaires", productsLabel: "produits",

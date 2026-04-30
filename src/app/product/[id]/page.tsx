@@ -6,6 +6,7 @@ import Image from "next/image";
 import { Heart, ShoppingBag, Star, Check, ChevronDown, ArrowLeft } from "lucide-react";
 import Header from "@/components/v2/HeaderV2";
 import Footer from "@/components/v2/FooterV2";
+import ProductReviews from "@/components/v2/ProductReviews";
 import { Button } from "@/components/ui/button";
 import { PRODUCTS } from "@/lib/products";
 
@@ -277,6 +278,13 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
               </div>
             </div>
           </div>
+
+          {/* Reviews */}
+          <ProductReviews
+            productId={product.id}
+            rating={product.rating}
+            reviewCount={product.reviewCount}
+          />
 
           {/* Related Products */}
           <div className="mt-12 lg:mt-20 pt-10 lg:pt-12 border-t border-gray-100">
