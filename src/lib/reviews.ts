@@ -7,9 +7,11 @@ export type Review = {
   name: string;
   date: string;         // ISO date (YYYY-MM-DD)
   body: string;
+  verified: boolean;
+  helpful: number;      // baseline count
 };
 
-const REVIEW_POOL: Omit<Review, "rating">[] = [
+const REVIEW_POOL: { name: string; date: string; body: string }[] = [
   { name: "Enzo",          date: "2026-03-20", body: "Nu al mijn favoriete aansteker. Hervullen gaat soepel, je kan zien hoe vol hij nog zit en voelt kwalitatief hoogwaardig." },
   { name: "Daniel",        date: "2025-10-19", body: "Altijd snel en keurig geleverd en een groot aanbod rokers attributen." },
   { name: "Jan Droog",     date: "2025-04-23", body: "Super, snel en correct." },
@@ -53,7 +55,18 @@ export function getReviewsForProduct(productId: number, count: number, avgRating
       avgRating >= 4.0 ? (i % 4 === 0 ? 4 : i % 7 === 0 ? 3 : 5) :
       avgRating >= 3.5 ? (i % 3 === 0 ? 3 : i % 2 === 0 ? 4 : 5) :
                          (i % 3 === 0 ? 2 : i % 2 === 0 ? 3 : 4);
-    out.push({ ...base, rating: r });
+    // Most buyers are verified; helpful counts vary deterministically per slot.
+    const verified = (hash(productId + i * 17) % 4) !== 0;
+    const helpful = (hash(productId * 7 + i * 31) % 14);
+    out.push({ ...base, rating: r, verified, helpful });
   }
   return out;
+}
+
+// Compute the rating distribution (counts per 1..5) for the product.
+export function getRatingDistribution(productId: number, count: number, avgRating: number): number[] {
+  const reviews = getReviewsForProduct(productId, count, avgRating);
+  const buckets = [0, 0, 0, 0, 0];
+  for (const r of reviews) buckets[Math.max(1, Math.min(5, r.rating)) - 1]++;
+  return buckets; // index 0 = 1★, index 4 = 5★
 }

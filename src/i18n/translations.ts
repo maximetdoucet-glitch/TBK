@@ -97,6 +97,15 @@ export type Dict = {
     showLess: string;
     empty: string;
     form: { title: string; nameLabel: string; namePlaceholder: string; ratingLabel: string; reviewLabel: string; reviewPlaceholder: string; submit: string; cancel: string; thanks: string; thanksBody: string };
+    distribution: { title: string };
+    filterAll: string;
+    filterByStars: string;
+    sortLabel: string;
+    sort: { newest: string; highest: string; lowest: string };
+    verified: string;
+    helpful: string;
+    helpfulMarked: string;
+    noMatch: string;
   };
   subcategoryNav: {
     eyebrow: string;
@@ -240,6 +249,15 @@ const NL: Dict = {
       thanks: "Bedankt voor je review!",
       thanksBody: "Je beoordeling wordt na controle geplaatst.",
     },
+    distribution: { title: "Verdeling" },
+    filterAll: "Alle",
+    filterByStars: "Filter op aantal sterren",
+    sortLabel: "Sorteer op",
+    sort: { newest: "Nieuwste eerst", highest: "Hoogste eerst", lowest: "Laagste eerst" },
+    verified: "Geverifieerde aankoop",
+    helpful: "Was dit nuttig?",
+    helpfulMarked: "Bedankt voor je feedback",
+    noMatch: "Geen reviews voor deze filter.",
   },
   subcategoryNav: {
     eyebrow: "Snel navigeren", heading: "Populaire categorieën", productsLabel: "producten",
@@ -381,6 +399,15 @@ const EN: Dict = {
       thanks: "Thanks for your review!",
       thanksBody: "Your review will be published after moderation.",
     },
+    distribution: { title: "Distribution" },
+    filterAll: "All",
+    filterByStars: "Filter by star rating",
+    sortLabel: "Sort by",
+    sort: { newest: "Newest first", highest: "Highest rated", lowest: "Lowest rated" },
+    verified: "Verified buyer",
+    helpful: "Was this helpful?",
+    helpfulMarked: "Thanks for your feedback",
+    noMatch: "No reviews match this filter.",
   },
   subcategoryNav: {
     eyebrow: "Quick navigation", heading: "Popular categories", productsLabel: "products",
@@ -522,6 +549,15 @@ const DE: Dict = {
       thanks: "Vielen Dank für Ihre Bewertung!",
       thanksBody: "Ihre Bewertung wird nach der Prüfung veröffentlicht.",
     },
+    distribution: { title: "Verteilung" },
+    filterAll: "Alle",
+    filterByStars: "Nach Sternen filtern",
+    sortLabel: "Sortieren nach",
+    sort: { newest: "Neueste zuerst", highest: "Beste Bewertung", lowest: "Schlechteste Bewertung" },
+    verified: "Verifizierter Kauf",
+    helpful: "War das hilfreich?",
+    helpfulMarked: "Danke für Ihr Feedback",
+    noMatch: "Keine Bewertungen für diesen Filter.",
   },
   subcategoryNav: {
     eyebrow: "Schnellzugriff", heading: "Beliebte Kategorien", productsLabel: "Produkte",
@@ -663,6 +699,15 @@ const FR: Dict = {
       thanks: "Merci pour votre avis !",
       thanksBody: "Votre avis sera publié après modération.",
     },
+    distribution: { title: "Répartition" },
+    filterAll: "Tous",
+    filterByStars: "Filtrer par étoiles",
+    sortLabel: "Trier par",
+    sort: { newest: "Plus récents", highest: "Meilleures notes", lowest: "Moins bonnes notes" },
+    verified: "Achat vérifié",
+    helpful: "Cet avis vous a-t-il été utile ?",
+    helpfulMarked: "Merci pour votre retour",
+    noMatch: "Aucun avis ne correspond à ce filtre.",
   },
   subcategoryNav: {
     eyebrow: "Navigation rapide", heading: "Catégories populaires", productsLabel: "produits",
