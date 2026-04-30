@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useMemo, useState, useEffect } from "react";
-import { Star, Pencil, Check, X, ShieldCheck, ThumbsUp, ChevronDown } from "lucide-react";
+import { Star, Pencil, Check, X, ThumbsUp, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useLocale } from "@/i18n/LocaleContext";
 import { getReviewsForProduct, getRatingDistribution, type Review } from "@/lib/reviews";
@@ -143,12 +143,6 @@ function ReviewCard({ review, locale, t, mountDelay }: { review: Review; locale:
         <div className="flex items-center gap-3">
           <StarRow rating={review.rating} />
           <span className="font-bold text-[14px] text-[#2b3e51]">{review.name}</span>
-          {review.verified && (
-            <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-50 border border-emerald-200/60 text-emerald-700 text-[10px] font-bold uppercase tracking-wider">
-              <ShieldCheck className="size-3" />
-              {t("reviews.verified")}
-            </span>
-          )}
         </div>
       </div>
 
