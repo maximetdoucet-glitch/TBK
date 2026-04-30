@@ -260,7 +260,7 @@ export default function ProductReviews({
       </div>
 
       {/* Summary card with distribution */}
-      <div className="grid grid-cols-1 lg:grid-cols-[auto_1fr_auto] gap-6 lg:gap-8 items-center mb-8 sm:mb-10 p-5 sm:p-7 bg-[#f8f9fb] border border-gray-200 rounded-2xl">
+      <div className="grid grid-cols-1 lg:grid-cols-[auto_1fr] gap-6 lg:gap-10 items-center mb-8 sm:mb-10 p-5 sm:p-7 bg-[#f8f9fb] border border-gray-200 rounded-2xl">
         {/* Badge + summary */}
         <div className="flex items-center gap-4 sm:gap-5">
           <div className="shrink-0 size-20 sm:size-24 rounded-full bg-[#2b3e51] flex flex-col items-center justify-center text-white shadow-sm relative">
@@ -296,15 +296,6 @@ export default function ProductReviews({
           ))}
         </div>
 
-        {/* Action */}
-        <button
-          type="button"
-          onClick={() => setFormOpen((o) => !o)}
-          className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 rounded-lg bg-[#2b3e51] hover:bg-[#f5a623] text-white text-[12px] font-bold uppercase tracking-widest transition-all duration-200 shrink-0 lg:self-stretch lg:flex-col lg:py-6 lg:px-7 lg:gap-3"
-        >
-          <Pencil className="size-3.5 lg:size-5" />
-          {t("reviews.addReview")}
-        </button>
       </div>
 
       {/* Form */}
@@ -435,6 +426,17 @@ export default function ProductReviews({
             })}
           </div>
 
+          <div className="flex items-center gap-2">
+            {/* Write review CTA */}
+            <button
+              type="button"
+              onClick={() => setFormOpen((o) => !o)}
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-bold uppercase tracking-widest border border-[#f5a623]/40 bg-[#f5a623]/5 text-[#f5a623] hover:bg-[#f5a623] hover:text-white hover:border-[#f5a623] transition-colors"
+            >
+              <Pencil className="size-3" />
+              {t("reviews.addReview")}
+            </button>
+
           {/* Sort dropdown */}
           <div className="relative">
             <button
@@ -466,6 +468,7 @@ export default function ProductReviews({
                 ))}
               </div>
             )}
+          </div>
           </div>
         </div>
       )}
