@@ -177,10 +177,10 @@ export default function HeaderV2() {
           <Menu className="size-6" />
         </button>
 
-        {/* Logo */}
+        {/* Logo — links to homepage */}
         <Link
           href="/preview"
-          className="shrink-0 flex items-center gap-2 leading-none group"
+          className="shrink-0 flex items-center gap-2 leading-none group cursor-pointer transition-opacity active:opacity-60 hover:opacity-90"
           aria-label="Rokersbenodigheden — naar startpagina"
         >
           <span className="flex flex-col leading-none text-[#2b3e51]">
@@ -443,13 +443,31 @@ export default function HeaderV2() {
 
       {/* ── USP bar — hidden when scrolled ── */}
       <div className={cn("w-full bg-gray-50 overflow-hidden transition-all duration-300", scrolled ? "max-h-0 py-0" : "max-h-12 py-2")}>
-        <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-6 overflow-x-auto scrollbar-none text-[10px] font-bold uppercase tracking-[0.1em] text-gray-500 whitespace-nowrap">
-          {(["freeShipping", "sameDay", "freeReturns", "securePay"] as const).map((k) => (
+        {/* Desktop: static evenly-spaced row */}
+        <div className="hidden sm:flex max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 items-center justify-between gap-6 overflow-x-auto scrollbar-none text-[10px] font-bold uppercase tracking-[0.1em] text-gray-500 whitespace-nowrap">
+          {(["freeShipping", "freeReturns", "securePay"] as const).map((k) => (
             <div key={k} className="flex items-center gap-1.5 shrink-0">
               <Check className="size-3 text-[#f5a623] shrink-0" />
               <span>{t(`header.usp.${k}`)}</span>
             </div>
           ))}
+        </div>
+
+        {/* Mobile: continuous marquee */}
+        <div className="sm:hidden overflow-hidden text-[10px] font-bold uppercase tracking-[0.1em] text-gray-500 whitespace-nowrap">
+          <div className="usp-marquee inline-flex gap-8 pl-4 will-change-transform">
+            {/* Duplicate the list so the loop reads seamlessly */}
+            {[0, 1].map((dup) => (
+              <div key={dup} className="flex items-center gap-8 shrink-0" {...(dup === 1 ? { "aria-hidden": "true" } : {})}>
+                {(["freeShipping", "freeReturns", "securePay"] as const).map((k) => (
+                  <div key={k} className="flex items-center gap-1.5 shrink-0">
+                    <Check className="size-3 text-[#f5a623] shrink-0" />
+                    <span>{t(`header.usp.${k}`)}</span>
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
