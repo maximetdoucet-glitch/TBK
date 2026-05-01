@@ -14,7 +14,7 @@ export default function HeroCarousel() {
         {/* ── Hero banner ── */}
         <Link
           href="/aanstekers"
-          className="group relative block overflow-hidden rounded-xl sm:rounded-2xl aspect-[5/6] sm:aspect-[16/9] lg:aspect-[21/9]"
+          className="group relative block overflow-hidden rounded-xl sm:rounded-2xl aspect-[1/1] sm:aspect-[16/9] lg:aspect-[21/9]"
         >
           {/* Background image — top-aligned on mobile so the cluttered bottom of the photo is cropped out */}
           <Image
@@ -43,28 +43,26 @@ export default function HeroCarousel() {
             }}
           />
 
-          {/* Content — mobile splits: title group upper-middle, CTA pinned to bottom; desktop centered */}
-          <div className="relative z-10 h-full flex flex-col sm:justify-center justify-between px-6 pt-[18%] pb-7 sm:pt-0 sm:pb-0 sm:px-12 lg:px-20 max-w-3xl">
-            <div>
-              <span className="block text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.35em] sm:tracking-[0.4em] text-[#f5a623] mb-3 sm:mb-4">
-                {t("hero.eyebrow")}
-              </span>
-              <h1
-                className="font-montserrat font-black text-white leading-[0.95] tracking-[-0.035em]"
-                style={{ fontSize: "clamp(34px, 9vw, 78px)" }}
-              >
-                {t("hero.titleLine1")}
-                <br />
-                {t("hero.titleLine2")}
-              </h1>
-              <p
-                className="text-white/80 mt-4 sm:mt-5 max-w-xl leading-relaxed text-[13px] sm:text-[15px] lg:text-[17px]"
-              >
-                {t("hero.description")}
-              </p>
-            </div>
+          {/* Content — title stacked above CTA, centered upper-middle on mobile, vertically centered on desktop */}
+          <div className="relative z-10 h-full flex flex-col justify-center px-6 sm:px-12 lg:px-20 max-w-3xl">
+            <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.35em] sm:tracking-[0.4em] text-[#f5a623] mb-3 sm:mb-4">
+              {t("hero.eyebrow")}
+            </span>
+            <h1
+              className="font-montserrat font-black text-white leading-[0.95] tracking-[-0.035em]"
+              style={{ fontSize: "clamp(34px, 9vw, 78px)" }}
+            >
+              {t("hero.titleLine1")}
+              <br />
+              {t("hero.titleLine2")}
+            </h1>
+            <p
+              className="text-white/80 mt-4 sm:mt-5 max-w-xl leading-relaxed text-[13px] sm:text-[15px] lg:text-[17px]"
+            >
+              {t("hero.description")}
+            </p>
 
-            <div className="mt-6 sm:mt-7">
+            <div className="mt-5 sm:mt-7">
               <span className="inline-flex items-center gap-2.5 sm:gap-3 bg-[#f5a623] hover:bg-[#e09415] text-[#1e2c3a] px-5 sm:px-7 py-3 sm:py-3.5 rounded-md font-bold text-[12px] sm:text-[13px] uppercase tracking-[0.16em] sm:tracking-[0.18em] transition-colors duration-300">
                 {t("hero.cta")}
                 <ArrowRight className="size-4 group-hover:translate-x-1 transition-transform duration-300" />
