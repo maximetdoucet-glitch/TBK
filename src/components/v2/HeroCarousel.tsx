@@ -14,7 +14,7 @@ export default function HeroCarousel() {
         {/* ── Hero banner ── */}
         <Link
           href="/aanstekers"
-          className="group relative block overflow-hidden rounded-xl sm:rounded-2xl aspect-[4/5] sm:aspect-[16/9] lg:aspect-[21/9]"
+          className="group relative block overflow-hidden rounded-xl sm:rounded-2xl aspect-[5/6] sm:aspect-[16/9] lg:aspect-[21/9]"
         >
           {/* Background image */}
           <Image
@@ -31,7 +31,7 @@ export default function HeroCarousel() {
             className="absolute inset-0 sm:hidden"
             style={{
               background:
-                "linear-gradient(180deg, rgba(10,18,28,0.85) 0%, rgba(10,18,28,0.55) 35%, rgba(10,18,28,0.35) 65%, rgba(10,18,28,0.85) 100%)",
+                "linear-gradient(180deg, rgba(10,18,28,0.9) 0%, rgba(10,18,28,0.7) 30%, rgba(10,18,28,0.45) 60%, rgba(10,18,28,0.25) 100%)",
             }}
           />
           <div
@@ -44,7 +44,7 @@ export default function HeroCarousel() {
           />
 
           {/* Content */}
-          <div className="relative z-10 h-full flex flex-col justify-end sm:justify-center px-6 pb-8 sm:pb-0 sm:px-12 lg:px-20 max-w-3xl">
+          <div className="relative z-10 h-full flex flex-col justify-start sm:justify-center px-6 pt-7 sm:pt-0 sm:px-12 lg:px-20 max-w-3xl">
             <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.35em] sm:tracking-[0.4em] text-[#f5a623] mb-3 sm:mb-4">
               {t("hero.eyebrow")}
             </span>
