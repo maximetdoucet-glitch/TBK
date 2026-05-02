@@ -7,6 +7,7 @@ import { Heart, ShoppingBag, ArrowRight, Star } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { PRODUCTS, type Product } from "@/lib/products";
 import { useLocale } from "@/i18n/LocaleContext";
+import { useCart } from "@/cart/CartContext";
 
 function badgeColor(badge: string | null | undefined) {
   if (badge === "Bestseller") return "#f5a623";
@@ -62,6 +63,7 @@ function StarRating({ rating, count }: { rating: number; count: number }) {
 
 function ProductCard({ product }: { product: Product }) {
   const { t } = useLocale();
+  const { add, openDrawer } = useCart();
   const [wishlisted, setWishlisted] = useState(false);
   const [addedToCart, setAddedToCart] = useState(false);
 
@@ -74,7 +76,16 @@ function ProductCard({ product }: { product: Product }) {
 
   const handleCart = (e: React.MouseEvent) => {
     e.preventDefault();
+    add({
+      id: product.id,
+      name: product.name,
+      brand: product.brand,
+      image: product.image,
+      price,
+      quantity: 1,
+    });
     setAddedToCart(true);
+    openDrawer();
     setTimeout(() => setAddedToCart(false), 1800);
   };
 

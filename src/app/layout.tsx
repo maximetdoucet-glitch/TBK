@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Montserrat, Nunito_Sans } from "next/font/google";
 import "./globals.css";
 import { LocaleProvider } from "@/i18n/LocaleContext";
+import { CartProvider } from "@/cart/CartContext";
+import CartDrawer from "@/components/v2/CartDrawer";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -26,7 +28,12 @@ export default function RootLayout({
   return (
     <html lang="nl">
       <body className={`${montserrat.variable} ${nunitoSans.variable} antialiased`} style={{ fontFamily: "var(--font-nunito-sans), sans-serif" }}>
-        <LocaleProvider>{children}</LocaleProvider>
+        <LocaleProvider>
+          <CartProvider>
+            {children}
+            <CartDrawer />
+          </CartProvider>
+        </LocaleProvider>
       </body>
     </html>
   );

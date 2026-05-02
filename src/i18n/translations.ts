@@ -85,6 +85,53 @@ export type Dict = {
     submit: string; submitMobile: string;
     successTitle: string; successBody: string;
   };
+  cart: {
+    title: string;
+    empty: string;
+    emptyCta: string;
+    itemsOne: string;
+    itemsMany: string;
+    qty: string;
+    remove: string;
+    subtotal: string;
+    shipping: string;
+    shippingFree: string;
+    shippingFromBe: string;
+    total: string;
+    viewCart: string;
+    checkout: string;
+    continueShopping: string;
+    addedToCart: string;
+    buyNow: string;
+    close: string;
+  };
+  checkout: {
+    title: string;
+    breadcrumb: string;
+    backToCart: string;
+    contact: string;
+    contactNote: string;
+    email: string;
+    phone: string;
+    shippingAddress: string;
+    firstName: string;
+    lastName: string;
+    address: string;
+    addressLine2: string;
+    city: string;
+    postcode: string;
+    country: string;
+    paymentMethod: string;
+    paymentNote: string;
+    methods: { ideal: string; card: string; klarna: string; paypal: string };
+    summary: string;
+    placeOrder: string;
+    placing: string;
+    success: { title: string; body: string; orderNumber: string; backHome: string };
+    emptyState: string;
+    emptyStateCta: string;
+    required: string;
+  };
   reviews: {
     eyebrow: string;
     heading: string;
@@ -225,6 +272,58 @@ const NL: Dict = {
     placeholder: "jouw@emailadres.nl",
     submit: "Ontvang 10%", submitMobile: "Ontvang 10% korting",
     successTitle: "🎉 Check je inbox!", successBody: "Je kortingscode van 10% is onderweg.",
+  },
+  cart: {
+    title: "Winkelwagen",
+    empty: "Je winkelwagen is leeg",
+    emptyCta: "Verder winkelen",
+    itemsOne: "{count} artikel",
+    itemsMany: "{count} artikelen",
+    qty: "Aantal",
+    remove: "Verwijderen",
+    subtotal: "Subtotaal",
+    shipping: "Verzending",
+    shippingFree: "Gratis vanaf €80",
+    shippingFromBe: "Naar België vanaf €100",
+    total: "Totaal",
+    viewCart: "Winkelwagen bekijken",
+    checkout: "Afrekenen",
+    continueShopping: "Verder winkelen",
+    addedToCart: "Toegevoegd aan je winkelwagen",
+    buyNow: "Direct afrekenen",
+    close: "Sluiten",
+  },
+  checkout: {
+    title: "Afrekenen",
+    breadcrumb: "Afrekenen",
+    backToCart: "← Terug naar winkelwagen",
+    contact: "Contact",
+    contactNote: "We sturen je orderbevestiging hier naartoe.",
+    email: "E-mailadres",
+    phone: "Telefoonnummer",
+    shippingAddress: "Verzendadres",
+    firstName: "Voornaam",
+    lastName: "Achternaam",
+    address: "Straat en huisnummer",
+    addressLine2: "Toevoeging (optioneel)",
+    city: "Stad",
+    postcode: "Postcode",
+    country: "Land",
+    paymentMethod: "Betaalmethode",
+    paymentNote: "Demo-omgeving — er wordt geen echte betaling verwerkt.",
+    methods: { ideal: "iDEAL", card: "Creditcard", klarna: "Klarna — Achteraf betalen", paypal: "PayPal" },
+    summary: "Besteloverzicht",
+    placeOrder: "Bestelling plaatsen",
+    placing: "Bestelling plaatsen…",
+    success: {
+      title: "Bedankt voor je bestelling!",
+      body: "We hebben je orderbevestiging per e-mail verstuurd.",
+      orderNumber: "Bestelnummer",
+      backHome: "Terug naar de winkel",
+    },
+    emptyState: "Je winkelwagen is leeg.",
+    emptyStateCta: "Begin met winkelen",
+    required: "Verplicht",
   },
   reviews: {
     eyebrow: "Klantbeoordelingen",
@@ -376,6 +475,58 @@ const EN: Dict = {
     submit: "Get 10%", submitMobile: "Get 10% off",
     successTitle: "🎉 Check your inbox!", successBody: "Your 10% discount code is on its way.",
   },
+  cart: {
+    title: "Cart",
+    empty: "Your cart is empty",
+    emptyCta: "Continue shopping",
+    itemsOne: "{count} item",
+    itemsMany: "{count} items",
+    qty: "Qty",
+    remove: "Remove",
+    subtotal: "Subtotal",
+    shipping: "Shipping",
+    shippingFree: "Free over €80",
+    shippingFromBe: "To Belgium free over €100",
+    total: "Total",
+    viewCart: "View cart",
+    checkout: "Checkout",
+    continueShopping: "Continue shopping",
+    addedToCart: "Added to your cart",
+    buyNow: "Buy now",
+    close: "Close",
+  },
+  checkout: {
+    title: "Checkout",
+    breadcrumb: "Checkout",
+    backToCart: "← Back to cart",
+    contact: "Contact",
+    contactNote: "We'll send your order confirmation here.",
+    email: "Email address",
+    phone: "Phone number",
+    shippingAddress: "Shipping address",
+    firstName: "First name",
+    lastName: "Last name",
+    address: "Street and number",
+    addressLine2: "Apartment, suite (optional)",
+    city: "City",
+    postcode: "Postcode",
+    country: "Country",
+    paymentMethod: "Payment method",
+    paymentNote: "Demo environment — no real payment is processed.",
+    methods: { ideal: "iDEAL", card: "Credit card", klarna: "Klarna — Pay later", paypal: "PayPal" },
+    summary: "Order summary",
+    placeOrder: "Place order",
+    placing: "Placing order…",
+    success: {
+      title: "Thank you for your order!",
+      body: "We've sent your order confirmation by email.",
+      orderNumber: "Order number",
+      backHome: "Back to the shop",
+    },
+    emptyState: "Your cart is empty.",
+    emptyStateCta: "Start shopping",
+    required: "Required",
+  },
   reviews: {
     eyebrow: "Customer reviews",
     heading: "Reviews",
@@ -526,6 +677,58 @@ const DE: Dict = {
     submit: "10% erhalten", submitMobile: "10% Rabatt erhalten",
     successTitle: "🎉 Posteingang prüfen!", successBody: "Ihr 10% Rabattcode ist unterwegs.",
   },
+  cart: {
+    title: "Warenkorb",
+    empty: "Ihr Warenkorb ist leer",
+    emptyCta: "Weiter einkaufen",
+    itemsOne: "{count} Artikel",
+    itemsMany: "{count} Artikel",
+    qty: "Menge",
+    remove: "Entfernen",
+    subtotal: "Zwischensumme",
+    shipping: "Versand",
+    shippingFree: "Gratis ab €80",
+    shippingFromBe: "Nach Belgien gratis ab €100",
+    total: "Gesamt",
+    viewCart: "Warenkorb ansehen",
+    checkout: "Zur Kasse",
+    continueShopping: "Weiter einkaufen",
+    addedToCart: "Zum Warenkorb hinzugefügt",
+    buyNow: "Jetzt kaufen",
+    close: "Schließen",
+  },
+  checkout: {
+    title: "Kasse",
+    breadcrumb: "Kasse",
+    backToCart: "← Zurück zum Warenkorb",
+    contact: "Kontakt",
+    contactNote: "Wir senden Ihre Bestellbestätigung an diese Adresse.",
+    email: "E-Mail-Adresse",
+    phone: "Telefonnummer",
+    shippingAddress: "Lieferadresse",
+    firstName: "Vorname",
+    lastName: "Nachname",
+    address: "Straße und Hausnummer",
+    addressLine2: "Adresszusatz (optional)",
+    city: "Stadt",
+    postcode: "PLZ",
+    country: "Land",
+    paymentMethod: "Zahlungsmethode",
+    paymentNote: "Demo-Umgebung — es wird keine echte Zahlung verarbeitet.",
+    methods: { ideal: "iDEAL", card: "Kreditkarte", klarna: "Klarna — Später bezahlen", paypal: "PayPal" },
+    summary: "Bestellübersicht",
+    placeOrder: "Bestellung aufgeben",
+    placing: "Bestellung wird aufgegeben…",
+    success: {
+      title: "Vielen Dank für Ihre Bestellung!",
+      body: "Wir haben Ihre Bestellbestätigung per E-Mail gesendet.",
+      orderNumber: "Bestellnummer",
+      backHome: "Zurück zum Shop",
+    },
+    emptyState: "Ihr Warenkorb ist leer.",
+    emptyStateCta: "Mit dem Einkauf beginnen",
+    required: "Pflichtfeld",
+  },
   reviews: {
     eyebrow: "Kundenbewertungen",
     heading: "Bewertungen",
@@ -675,6 +878,58 @@ const FR: Dict = {
     placeholder: "votre@email.fr",
     submit: "Obtenir 10 %", submitMobile: "Obtenir 10 % de réduction",
     successTitle: "🎉 Vérifiez votre boîte mail !", successBody: "Votre code de réduction de 10 % est en route.",
+  },
+  cart: {
+    title: "Panier",
+    empty: "Votre panier est vide",
+    emptyCta: "Continuer mes achats",
+    itemsOne: "{count} article",
+    itemsMany: "{count} articles",
+    qty: "Qté",
+    remove: "Supprimer",
+    subtotal: "Sous-total",
+    shipping: "Livraison",
+    shippingFree: "Offerte dès 80 €",
+    shippingFromBe: "Vers la Belgique offerte dès 100 €",
+    total: "Total",
+    viewCart: "Voir le panier",
+    checkout: "Commander",
+    continueShopping: "Continuer mes achats",
+    addedToCart: "Ajouté à votre panier",
+    buyNow: "Acheter maintenant",
+    close: "Fermer",
+  },
+  checkout: {
+    title: "Commander",
+    breadcrumb: "Commande",
+    backToCart: "← Retour au panier",
+    contact: "Contact",
+    contactNote: "Nous enverrons votre confirmation de commande ici.",
+    email: "Adresse e-mail",
+    phone: "Téléphone",
+    shippingAddress: "Adresse de livraison",
+    firstName: "Prénom",
+    lastName: "Nom",
+    address: "Rue et numéro",
+    addressLine2: "Complément d'adresse (optionnel)",
+    city: "Ville",
+    postcode: "Code postal",
+    country: "Pays",
+    paymentMethod: "Mode de paiement",
+    paymentNote: "Environnement de démonstration — aucun paiement réel n'est traité.",
+    methods: { ideal: "iDEAL", card: "Carte bancaire", klarna: "Klarna — Payer plus tard", paypal: "PayPal" },
+    summary: "Récapitulatif",
+    placeOrder: "Passer commande",
+    placing: "Validation de la commande…",
+    success: {
+      title: "Merci pour votre commande !",
+      body: "Nous vous avons envoyé la confirmation par e-mail.",
+      orderNumber: "Numéro de commande",
+      backHome: "Retour à la boutique",
+    },
+    emptyState: "Votre panier est vide.",
+    emptyStateCta: "Commencer mes achats",
+    required: "Obligatoire",
   },
   reviews: {
     eyebrow: "Avis clients",

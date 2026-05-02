@@ -3,16 +3,22 @@
 import React, { useState, use } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Heart, ShoppingBag, Star, Check, ChevronDown, ArrowLeft } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { Heart, ShoppingBag, Star, Check, ChevronDown, ArrowLeft, Zap } from "lucide-react";
 import Header from "@/components/v2/HeaderV2";
 import Footer from "@/components/v2/FooterV2";
 import ProductReviews from "@/components/v2/ProductReviews";
 import { Button } from "@/components/ui/button";
 import { PRODUCTS } from "@/lib/products";
+import { useCart } from "@/cart/CartContext";
+import { useLocale } from "@/i18n/LocaleContext";
 
 export default function ProductPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params);
   const product = PRODUCTS.find((p) => p.id === Number(id));
+  const router = useRouter();
+  const { add, openDrawer } = useCart();
+  const { t } = useLocale();
 
   const [selectedVariant, setSelectedVariant] = useState(0);
   const [quantity, setQuantity] = useState(1);
@@ -40,9 +46,34 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
     );
   }
 
+  function buildCartItem() {
+    if (!product) return null;
+    const variantValue = product.variants.values[selectedVariant];
+    return {
+      id: product.id,
+      name: product.name,
+      brand: product.brand,
+      image: product.image,
+      price: Number(product.price),
+      quantity,
+      variant: variantValue || undefined,
+    };
+  }
+
   function handleAddToCart() {
+    const item = buildCartItem();
+    if (!item) return;
+    add(item);
+    openDrawer();
     setAdded(true);
     setTimeout(() => setAdded(false), 2000);
+  }
+
+  function handleBuyNow() {
+    const item = buildCartItem();
+    if (!item) return;
+    add(item);
+    router.push("/checkout");
   }
 
   const discount = product.oldPrice
@@ -197,16 +228,25 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
                   }`}
                 >
                   {added ? (
-                    <><Check className="size-4 mr-2" /> Toegevoegd</>
+                    <><Check className="size-4 mr-2" /> {t("featuredProducts.addedToCart")}</>
                   ) : (
-                    <><ShoppingBag className="size-4 mr-2" /> In winkelwagen</>
+                    <><ShoppingBag className="size-4 mr-2" /> {t("header.cart")}</>
                   )}
                 </Button>
 
-                <button className="w-11 h-11 border border-gray-200 rounded-sm flex items-center justify-center text-gray-400 hover:border-[#2b3e51] hover:text-[#2b3e51] transition-all">
+                <button type="button" aria-label={t("header.wishlist")} className="w-11 h-11 border border-gray-200 rounded-sm flex items-center justify-center text-gray-400 hover:border-[#2b3e51] hover:text-[#2b3e51] transition-all">
                   <Heart className="size-4" />
                 </button>
               </div>
+
+              {/* Buy now — direct to checkout */}
+              <button
+                type="button"
+                onClick={handleBuyNow}
+                className="w-full h-11 mb-7 -mt-3 rounded-sm text-sm font-semibold bg-[#f5a623] hover:bg-[#e09415] text-white transition-colors flex items-center justify-center gap-2"
+              >
+                <Zap className="size-4" /> {t("cart.buyNow")}
+              </button>
 
               {/* Trust Badges */}
               <div className="flex flex-col gap-2.5 py-5 border-t border-b border-gray-100 mb-7">

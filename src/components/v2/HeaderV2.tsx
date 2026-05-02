@@ -10,6 +10,7 @@ import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import { useLocale } from "@/i18n/LocaleContext";
 import type { Locale } from "@/i18n/translations";
+import { useCart } from "@/cart/CartContext";
 
 // Circular SVG flags — clipped to circle, no external deps
 function FlagNL({ size = 20 }: { size?: number }) {
@@ -129,6 +130,7 @@ export default function HeaderV2() {
   const [scrolled, setScrolled] = useState(false);
   const [localeOpen, setLocaleOpen] = useState(false);
   const { locale, setLocale, t } = useLocale();
+  const { count: cartCount, openDrawer } = useCart();
   const selectedLocale = LOCALES.find((l) => l.code === locale) ?? LOCALES[0];
   const [selectedCurrency, setSelectedCurrency] = useState(CURRENCIES[0]);
   const megaRef = useRef<HTMLDivElement>(null);
@@ -315,18 +317,25 @@ export default function HeaderV2() {
               {t("header.wishlist")}
             </span>
           </Link>
-          <Link
-            href="#"
-            className="relative flex flex-col items-center gap-0.5 px-3 py-1.5 rounded-lg hover:bg-gray-50 transition-colors group"
+          <button
+            type="button"
+            onClick={openDrawer}
+            aria-label={t("header.cart")}
+            className="relative flex flex-col items-center gap-0.5 px-3 py-1.5 rounded-lg hover:bg-gray-50 transition-colors group cursor-pointer"
           >
             <ShoppingCart className="size-5 text-[#2b3e51] group-hover:text-[#f5a623] transition-colors" />
             <span className="hidden xl:block text-[10px] font-bold uppercase tracking-wider text-[#2b3e51]/60">
               {t("header.cart")}
             </span>
-            <span className="absolute top-1 right-1 bg-[#2b3e51] text-white text-[9px] font-black size-4 rounded-full flex items-center justify-center border border-white">
-              0
+            <span
+              className={cn(
+                "absolute top-1 right-1 text-white text-[9px] font-black min-w-4 h-4 px-1 rounded-full flex items-center justify-center border border-white tabular-nums transition-all",
+                cartCount > 0 ? "bg-[#f5a623] scale-100" : "bg-[#2b3e51] scale-90"
+              )}
+            >
+              {cartCount}
             </span>
-          </Link>
+          </button>
         </div>
       </div>
 
