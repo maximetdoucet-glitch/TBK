@@ -74,23 +74,35 @@ const COLLECTIONS = [
   "Rook-accessoires",
 ] as const;
 
+// Round any euro amount to the nearest psychological price ending in .49 or .99.
+function toPsychPrice(v: number): number {
+  const rounded = Math.round((v + 0.01) * 2) / 2 - 0.01;
+  return Math.max(0.49, Math.round(rounded * 100) / 100);
+}
+
 function buildLists() {
   const byId = new Map(PRODUCTS.map((p) => [p.id, p]));
   const active: Extract<SaleEntry, { kind: "active" }>[] = [];
   for (const { id, discount } of SALE_ITEMS) {
     const p = byId.get(id);
     if (!p) continue;
-    const old = parseFloat(p.price);
-    const next = old * (1 - discount);
+    const oldRaw = parseFloat(p.price);
+    const oldPsy = toPsychPrice(oldRaw);
+    let newPsy = toPsychPrice(oldRaw * (1 - discount));
+    // Guarantee the discounted price stays strictly below the strikethrough one.
+    if (newPsy >= oldPsy) newPsy = toPsychPrice(oldPsy - 0.5);
     active.push({
       kind: "active",
       product: p,
-      oldPrice: old.toFixed(2),
-      newPrice: next.toFixed(2),
-      pct: Math.round(discount * 100),
+      oldPrice: oldPsy.toFixed(2),
+      newPrice: newPsy.toFixed(2),
+      pct: Math.max(1, Math.round((1 - newPsy / oldPsy) * 100)),
     });
   }
-  const sold: Extract<SaleEntry, { kind: "sold" }>[] = SOLD_OUT.map((item) => ({ kind: "sold", item }));
+  const sold: Extract<SaleEntry, { kind: "sold" }>[] = SOLD_OUT.map((item) => ({
+    kind: "sold",
+    item: { ...item, price: toPsychPrice(parseFloat(item.price)).toFixed(2) },
+  }));
   return { active, sold };
 }
 
