@@ -5,27 +5,11 @@ import { Star, Pencil, Check, X, ThumbsUp, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useLocale } from "@/i18n/LocaleContext";
 import { getReviewsForProduct, getRatingDistribution, type Review } from "@/lib/reviews";
+import StarRow from "@/components/ui/StarRating";
 
 const VISIBLE_COUNT = 4;
 
 type SortKey = "newest" | "highest" | "lowest";
-
-function StarRow({ rating, size = 14 }: { rating: number; size?: number }) {
-  return (
-    <div className="flex gap-0.5">
-      {[...Array(5)].map((_, i) => (
-        <Star
-          key={i}
-          style={{ width: size, height: size }}
-          className={cn(
-            "fill-current",
-            i < Math.round(rating) ? "text-[#f5a623]" : "text-gray-200"
-          )}
-        />
-      ))}
-    </div>
-  );
-}
 
 function StarPicker({ value, onChange }: { value: number; onChange: (v: number) => void }) {
   const [hover, setHover] = useState(0);

@@ -3,7 +3,8 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Heart, ShoppingBag, ArrowRight, Star } from "lucide-react";
+import { Heart, ShoppingBag, ArrowRight } from "lucide-react";
+import StarRow from "@/components/ui/StarRating";
 import { cn } from "@/lib/utils";
 import { PRODUCTS, type Product } from "@/lib/products";
 import { useLocale } from "@/i18n/LocaleContext";
@@ -48,14 +49,7 @@ function getTabProducts(tab: string): Product[] {
 function StarRating({ rating, count }: { rating: number; count: number }) {
   return (
     <div className="flex items-center gap-1.5">
-      <div className="flex gap-0.5">
-        {[...Array(5)].map((_, i) => (
-          <Star
-            key={i}
-            className={cn("size-3 fill-current", i < Math.round(rating) ? "text-[#f5a623]" : "text-gray-200")}
-          />
-        ))}
-      </div>
+      <StarRow rating={rating} size={12} />
       <span className="text-[10px] text-gray-400 font-medium">({count})</span>
     </div>
   );

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Heart, ShoppingBag, Star, ChevronRight, SlidersHorizontal } from "lucide-react";
+import { Heart, ShoppingBag, ChevronRight, SlidersHorizontal } from "lucide-react";
+import StarRating from "@/components/ui/StarRating";
 import Header from "@/components/v2/HeaderV2";
 import Footer from "@/components/v2/FooterV2";
 import PromoBar from "@/components/v2/PromoBar";
@@ -403,16 +404,9 @@ export default async function AanstekersPage({
                       </Link>
 
                       <div className="p-3 sm:p-4 flex flex-col flex-1">
-                        <div className="flex items-center gap-0.5 mb-1.5">
-                          {[...Array(5)].map((_, i) => (
-                            <Star
-                              key={i}
-                              className={`size-2.5 fill-current ${
-                                i < Math.round(product.rating) ? "text-[#f5a623]" : "text-gray-200"
-                              }`}
-                            />
-                          ))}
-                          <span className="text-[10px] text-gray-400 ml-1">({product.reviewCount})</span>
+                        <div className="flex items-center gap-1.5 mb-1.5">
+                          <StarRating rating={product.rating} size={10} />
+                          <span className="text-[10px] text-gray-400">({product.reviewCount})</span>
                         </div>
 
                         <p className="text-[10px] text-[#f5a623] font-black mb-1 tracking-wide">

@@ -4,7 +4,8 @@ import React, { useState, use } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { Heart, ShoppingBag, Star, Check, ChevronDown, ArrowLeft, Zap } from "lucide-react";
+import { Heart, ShoppingBag, Check, ChevronDown, ArrowLeft, Zap } from "lucide-react";
+import StarRating from "@/components/ui/StarRating";
 import Header from "@/components/v2/HeaderV2";
 import Footer from "@/components/v2/FooterV2";
 import ProductReviews from "@/components/v2/ProductReviews";
@@ -147,16 +148,9 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
 
               {/* Rating */}
               <div className="flex items-center gap-3 mb-6">
-                <div className="flex gap-0.5">
-                  {[...Array(5)].map((_, i) => (
-                    <Star
-                      key={i}
-                      className={`size-4 fill-current ${i < product.rating ? "text-[#f5a623]" : "text-gray-200"}`}
-                    />
-                  ))}
-                </div>
+                <StarRating rating={product.rating} size={16} />
                 <span className="text-xs text-gray-400">
-                  {product.rating}.0 / 5 · {product.reviewCount} beoordelingen
+                  {product.rating.toFixed(1)} / 5 · {product.reviewCount} beoordelingen
                 </span>
               </div>
 
