@@ -34,6 +34,8 @@ const REVIEW_POOL: { name: string; date: string; body: string }[] = [
   { name: "Sophie",        date: "2026-01-28", body: "Knap stukje vakmanschap voor deze prijs. Voelt zwaar en stevig aan." },
 ];
 
+const VISIBLE_MAX = 20;
+
 // Cheap deterministic hash so the same id always produces the same slice
 function hash(n: number): number {
   let x = n * 2654435761;
@@ -41,32 +43,82 @@ function hash(n: number): number {
   return x;
 }
 
-export function getReviewsForProduct(productId: number, count: number, avgRating: number): Review[] {
-  const n = Math.min(Math.max(count, 0), 12); // cap at 12 in the UI; "show more" can come later
-  if (n === 0) return [];
-  const start = hash(productId) % REVIEW_POOL.length;
-  const out: Review[] = [];
-  for (let i = 0; i < n; i++) {
-    const base = REVIEW_POOL[(start + i) % REVIEW_POOL.length];
-    // Distribute ratings around the product's average so the displayed
-    // average matches roughly. Mostly 5s with occasional 4s and 3s.
-    const r =
-      avgRating >= 4.6 ? (i % 5 === 4 ? 4 : 5) :
-      avgRating >= 4.0 ? (i % 4 === 0 ? 4 : i % 7 === 0 ? 3 : 5) :
-      avgRating >= 3.5 ? (i % 3 === 0 ? 3 : i % 2 === 0 ? 4 : 5) :
-                         (i % 3 === 0 ? 2 : i % 2 === 0 ? 3 : 4);
-    // Most buyers are verified; helpful counts vary deterministically per slot.
-    const verified = (hash(productId + i * 17) % 4) !== 0;
-    const helpful = (hash(productId * 7 + i * 31) % 14);
-    out.push({ ...base, rating: r, verified, helpful });
+// Compute the rating distribution (counts per 1..5) for the product. The
+// returned array sums to exactly `count` and is biased so its weighted
+// average is close to `avgRating`. Per-product variance is mixed in so two
+// products with the same avg don't show identical buckets.
+export function getRatingDistribution(productId: number, count: number, avgRating: number): number[] {
+  if (count <= 0) return [0, 0, 0, 0, 0];
+
+  // Base shape: bell curve peaked at avgRating, exponential decay outward.
+  const proportions: number[] = [];
+  for (let r = 1; r <= 5; r++) {
+    const d = Math.abs(r - avgRating);
+    proportions.push(Math.exp(-d * 1.55));
   }
-  return out;
+
+  // Per-bucket multiplier 0.55x..1.45x driven by productId hash, so the
+  // shape varies between products even if the avg is identical.
+  for (let i = 0; i < 5; i++) {
+    const seed = (hash(productId * 31 + i * 1009) % 1000) / 1000; // 0..1
+    proportions[i] *= 0.55 + 0.9 * seed;
+  }
+
+  // Normalise to fractional counts, floor, then distribute the remainder
+  // to whichever buckets had the largest fractional remainders.
+  const sum = proportions.reduce((a, b) => a + b, 0) || 1;
+  const exact = proportions.map((p) => (p / sum) * count);
+  const counts = exact.map((v) => Math.floor(v));
+  let used = counts.reduce((a, b) => a + b, 0);
+  const fracs = exact.map((v, i) => ({ i, frac: v - counts[i] }));
+  fracs.sort((a, b) => b.frac - a.frac);
+  let k = 0;
+  while (used < count) {
+    counts[fracs[k % 5].i]++;
+    used++;
+    k++;
+  }
+  return counts;
 }
 
-// Compute the rating distribution (counts per 1..5) for the product.
-export function getRatingDistribution(productId: number, count: number, avgRating: number): number[] {
-  const reviews = getReviewsForProduct(productId, count, avgRating);
-  const buckets = [0, 0, 0, 0, 0];
-  for (const r of reviews) buckets[Math.max(1, Math.min(5, r.rating)) - 1]++;
-  return buckets; // index 0 = 1★, index 4 = 5★
+// Build the visible review list. Returns up to VISIBLE_MAX reviews whose
+// per-rating split is proportional to the full distribution, so a product
+// with 69 reviews showing a 30/22/10/5/2 split will surface visible cards
+// in roughly the same shape.
+export function getReviewsForProduct(productId: number, count: number, avgRating: number): Review[] {
+  if (count <= 0) return [];
+  const visible = Math.min(count, VISIBLE_MAX);
+  const dist = getRatingDistribution(productId, count, avgRating);
+
+  // Scale each bucket down to fit `visible`, preserving proportions.
+  const exact = dist.map((c) => (c / count) * visible);
+  const visBuckets = exact.map((v) => Math.floor(v));
+  let placed = visBuckets.reduce((a, b) => a + b, 0);
+  const fracs = exact.map((v, i) => ({ i, frac: v - visBuckets[i] }));
+  fracs.sort((a, b) => b.frac - a.frac);
+  let k = 0;
+  while (placed < visible) {
+    visBuckets[fracs[k % 5].i]++;
+    placed++;
+    k++;
+  }
+
+  // Build the rating queue and interleave so cards don't clump by rating.
+  const queue: number[] = [];
+  for (let r = 4; r >= 0; r--) {
+    for (let j = 0; j < visBuckets[r]; j++) queue.push(r + 1);
+  }
+  // Deterministic shuffle keyed off the product id
+  const indexed = queue.map((rating, i) => ({ rating, key: hash(productId + i * 7919) }));
+  indexed.sort((a, b) => a.key - b.key);
+
+  const out: Review[] = [];
+  const poolStart = hash(productId) % REVIEW_POOL.length;
+  for (let i = 0; i < indexed.length; i++) {
+    const base = REVIEW_POOL[(poolStart + i) % REVIEW_POOL.length];
+    const verified = (hash(productId + i * 17) % 4) !== 0;
+    const helpful = hash(productId * 7 + i * 31) % 14;
+    out.push({ ...base, rating: indexed[i].rating, verified, helpful });
+  }
+  return out;
 }
