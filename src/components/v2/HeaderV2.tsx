@@ -88,37 +88,40 @@ const NAV_ITEMS = [
   { key: "sale", href: "/sale", accent: true },
 ] as const;
 
+// Subcategory links use the `?cat=<xmlCategory>` filter that the listing
+// pages already understand. Images are pulled from real catalog products
+// (highest-rated entry per group) so they're guaranteed to load.
 const MEGA_MENU = [
   {
     titleKey: "header.mega.aanstekers.title",
     items: [
-      { labelKey: "header.mega.aanstekers.zippo", href: "/aanstekers", image: "https://www.uegholland.com/media/catalog/product/_/0/_0140_60007371.jpg" },
-      { labelKey: "header.mega.aanstekers.clipper", href: "/aanstekers", image: "https://www.uegholland.com/media/catalog/product/1/8/189079-3.jpg" },
-      { labelKey: "header.mega.aanstekers.zippoAcc", href: "/aanstekers", image: "https://www.uegholland.com/media/catalog/product/z/i/zippo_butane_1__1_25.jpg" },
+      { labelKey: "header.mega.aanstekers.zippo",    href: "/aanstekers?cat=Zippo-aanstekers",   image: "https://www.uegholland.com/media/catalog/product/6/0/60007692.jpg" },
+      { labelKey: "header.mega.aanstekers.clipper",  href: "/aanstekers?cat=Aanstekers",         image: "https://www.uegholland.com/media/catalog/product/4/2/426339-1.jpg" },
+      { labelKey: "header.mega.aanstekers.zippoAcc", href: "/aanstekers?cat=Zippo-accessoires",  image: "https://www.uegholland.com/media/catalog/product/_/0/_0260_60001255.jpg" },
     ],
   },
   {
     titleKey: "header.mega.kokers.title",
     items: [
-      { labelKey: "header.mega.kokers.cigaretteCases", href: "/kokers-etuis", image: "https://www.uegholland.com/media/catalog/product/9/7/970713_18.jpg" },
-      { labelKey: "header.mega.kokers.filters", href: "/kokers-etuis", image: "https://www.uegholland.com/media/catalog/product/d/e/denicotea-filter_1_14.jpg" },
-      { labelKey: "header.mega.kokers.ashtrays", href: "/kokers-etuis", image: "https://www.uegholland.com/media/catalog/product/b/o/bookwill-auto-asbak_1_14.jpg" },
+      { labelKey: "header.mega.kokers.cigaretteCases", href: "/kokers-etuis", image: "https://www.uegholland.com/media/catalog/product/3/1/310144_34.png" },
+      { labelKey: "header.mega.kokers.filters",        href: "/kokers-etuis", image: "https://www.uegholland.com/media/catalog/product/4/2/426469.jpg" },
+      { labelKey: "header.mega.kokers.ashtrays",       href: "/kokers-etuis", image: "https://www.uegholland.com/media/catalog/product/4/2/420746_25.jpg" },
     ],
   },
   {
     titleKey: "header.mega.knippers.title",
     items: [
-      { labelKey: "header.mega.knippers.cigarCutters", href: "/knippers-asbakken", image: "https://www.uegholland.com/media/catalog/product/2/7/270078_1_22.jpg" },
-      { labelKey: "header.mega.knippers.cigarCases", href: "/knippers-asbakken", image: "https://www.uegholland.com/media/catalog/product/b/o/bookwill-sigarenetui_1_14.jpg" },
-      { labelKey: "header.mega.knippers.cigarAshtrays", href: "/knippers-asbakken", image: "https://www.uegholland.com/media/catalog/product/b/o/bookwill-sigaren-asbak_1_14.jpg" },
+      { labelKey: "header.mega.knippers.cigarCutters",  href: "/knippers-asbakken", image: "https://www.uegholland.com/media/catalog/product/9/1/910112_1_41.jpg" },
+      { labelKey: "header.mega.knippers.cigarCases",    href: "/knippers-asbakken", image: "https://www.uegholland.com/media/catalog/product/4/5/453466.jpg" },
+      { labelKey: "header.mega.knippers.cigarAshtrays", href: "/knippers-asbakken", image: "https://www.uegholland.com/media/catalog/product/b/o/bookwill_-_sigaren-asbak_-_bakelite_-_zwart_15x15x3_5cm_.jpg" },
     ],
   },
   {
     titleKey: "header.mega.rook.title",
     items: [
-      { labelKey: "header.mega.rook.bruyerePipes", href: "/rook-accessoires", image: "https://www.uegholland.com/media/catalog/product/2/7/279803_1_33.jpg" },
-      { labelKey: "header.mega.rook.pipeCutlery", href: "/rook-accessoires", image: "https://www.uegholland.com/media/catalog/product/b/o/bookwill_-_pijp-bestek_-_3-delig_-_basic.jpg" },
-      { labelKey: "header.mega.rook.grinders", href: "/rook-accessoires", image: "https://www.uegholland.com/media/catalog/product/c/h/champ-420-grinder-small_1_1.jpg" },
+      { labelKey: "header.mega.rook.bruyerePipes", href: "/rook-accessoires?cat=Pijpen en accessoires",   image: "https://www.uegholland.com/media/catalog/product/b/o/bookwill_-_bruyere_assortie_pijpen_-_rustic_6-stuks_.jpg" },
+      { labelKey: "header.mega.rook.pipeCutlery",  href: "/rook-accessoires?cat=Pijpen en accessoires",   image: "https://www.uegholland.com/media/catalog/product/b/o/bookwill_-_pijp-bestek_-_3-delig_-_pijp_vorm_polished.jpg" },
+      { labelKey: "header.mega.rook.grinders",     href: "/rook-accessoires?cat=Cannabis-accessoires",    image: "https://www.uegholland.com/media/catalog/product/4/2/426032-3.jpg" },
     ],
   },
 ] as const;
