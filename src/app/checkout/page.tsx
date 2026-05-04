@@ -221,7 +221,7 @@ export default function CheckoutPage() {
             </div>
 
             {/* ── RIGHT: order summary ── */}
-            <aside className="lg:sticky lg:top-24 self-start">
+            <aside className="self-start">
               <div className="bg-white border border-gray-200 rounded-2xl p-5 sm:p-6 flex flex-col gap-4 shadow-sm">
                 <h2 className="font-montserrat text-base font-black text-[#2b3e51] tracking-tight">
                   {t("checkout.summary")}
