@@ -174,6 +174,16 @@ export type Dict = {
       zippoCare: { title: string; excerpt: string };
       clipperVsZippo: { title: string; excerpt: string };
     };
+    blog: {
+      backToOverview: string;
+      publishedOn: string;
+      writtenBy: string;
+      relatedTitle: string;
+      indexTitle: string;
+      indexLead: string;
+      notFoundTitle: string;
+      notFoundBody: string;
+    };
   };
   footer: {
     description: string;
@@ -375,6 +385,16 @@ const NL: Dict = {
       zippoChoice: { title: "Hoe kies je de perfecte Zippo voor jouw stijl?", excerpt: "Van gebürstet chrome tot gegraveerde limited editions — Zippo biedt meer dan 1400 modellen. We helpen je kiezen op basis van gebruik, persoonlijkheid en budget." },
       zippoCare: { title: "Zippo onderhoud: zo blijft jouw aansteker als nieuw", excerpt: "Een Zippo gaat een leven lang mee — maar alleen als je hem goed onderhoudt. Ontdek hoe je navult, de steen vervangt en de buitenkant polijst." },
       clipperVsZippo: { title: "Clipper vs Zippo: welke aansteker past bij jou?", excerpt: "Beide zijn legendarisch, maar voor heel verschillende gebruikers. We vergelijken vlam, navulbaarheid, design en prijs zodat jij de juiste keuze maakt." },
+    },
+    blog: {
+      backToOverview: "← Terug naar de kennisbank",
+      publishedOn: "Geplaatst op",
+      writtenBy: "door",
+      relatedTitle: "Lees ook",
+      indexTitle: "Kennisbank",
+      indexLead: "Alles wat je moet weten over aanstekers en rookaccessoires — van keuzehulp tot onderhoud.",
+      notFoundTitle: "Artikel niet gevonden",
+      notFoundBody: "Het artikel dat je zoekt bestaat niet (meer).",
     },
   },
   footer: {
@@ -578,6 +598,16 @@ const EN: Dict = {
       zippoCare: { title: "Zippo care: keep your lighter looking new", excerpt: "A Zippo lasts a lifetime — but only if you maintain it properly. Learn how to refill, replace the flint and polish the case." },
       clipperVsZippo: { title: "Clipper vs Zippo: which lighter suits you?", excerpt: "Both are legendary, but they serve very different users. We compare flame, refillability, design and price so you can make the right choice." },
     },
+    blog: {
+      backToOverview: "← Back to the knowledge base",
+      publishedOn: "Published on",
+      writtenBy: "by",
+      relatedTitle: "Read next",
+      indexTitle: "Knowledge base",
+      indexLead: "Everything you need to know about lighters and smoking accessories — from picking the right one to maintenance.",
+      notFoundTitle: "Article not found",
+      notFoundBody: "The article you're looking for doesn't exist (any more).",
+    },
   },
   footer: {
     description: "Nijmegen's largest tobacco specialist — specialised in lighters and smoking accessories. Online and at our physical store on Molenstraat.",
@@ -780,6 +810,16 @@ const DE: Dict = {
       zippoCare: { title: "Zippo-Pflege: So bleibt Ihr Feuerzeug wie neu", excerpt: "Ein Zippo hält ein Leben lang — aber nur, wenn Sie es richtig pflegen. Erfahren Sie, wie Sie nachfüllen, den Stein wechseln und das Gehäuse polieren." },
       clipperVsZippo: { title: "Clipper vs. Zippo: Welches Feuerzeug passt zu Ihnen?", excerpt: "Beide sind legendär, aber für sehr unterschiedliche Nutzer. Wir vergleichen Flamme, Nachfüllbarkeit, Design und Preis, damit Sie die richtige Wahl treffen." },
     },
+    blog: {
+      backToOverview: "← Zurück zur Wissensdatenbank",
+      publishedOn: "Veröffentlicht am",
+      writtenBy: "von",
+      relatedTitle: "Weiterlesen",
+      indexTitle: "Wissensdatenbank",
+      indexLead: "Alles Wissenswerte über Feuerzeuge und Raucherzubehör — von der Auswahl bis zur Pflege.",
+      notFoundTitle: "Artikel nicht gefunden",
+      notFoundBody: "Der gesuchte Artikel existiert nicht (mehr).",
+    },
   },
   footer: {
     description: "Der größte Tabakfachhandel in Nijmegen — spezialisiert auf Feuerzeuge und Raucherzubehör. Online und im Geschäft in der Molenstraat.",
@@ -981,6 +1021,16 @@ const FR: Dict = {
       zippoChoice: { title: "Comment choisir le Zippo parfait pour votre style ?", excerpt: "Du chrome brossé aux éditions limitées gravées — Zippo propose plus de 1 400 modèles. Nous vous aidons à choisir selon l'usage, la personnalité et le budget." },
       zippoCare: { title: "Entretien du Zippo : gardez votre briquet comme neuf", excerpt: "Un Zippo dure toute une vie — à condition d'en prendre soin. Découvrez comment le remplir, remplacer la pierre et polir le boîtier." },
       clipperVsZippo: { title: "Clipper vs Zippo : quel briquet vous convient ?", excerpt: "Tous deux sont légendaires, mais pour des utilisateurs très différents. Nous comparons flamme, rechargeabilité, design et prix pour vous aider à choisir." },
+    },
+    blog: {
+      backToOverview: "← Retour à la base de connaissances",
+      publishedOn: "Publié le",
+      writtenBy: "par",
+      relatedTitle: "À lire ensuite",
+      indexTitle: "Base de connaissances",
+      indexLead: "Tout ce qu'il faut savoir sur les briquets et accessoires fumeur — du choix à l'entretien.",
+      notFoundTitle: "Article introuvable",
+      notFoundBody: "L'article que vous cherchez n'existe pas (plus).",
     },
   },
   footer: {
