@@ -6,10 +6,10 @@ import { ArrowRight } from "lucide-react";
 import { useLocale } from "@/i18n/LocaleContext";
 
 const HERO_CLIPS = [
-  "https://assets.mixkit.co/videos/21065/21065-720.mp4",
+  "https://videos.pexels.com/video-files/7034146/7034146-hd_1280_720_25fps.mp4",
   "https://assets.mixkit.co/videos/40502/40502-720.mp4",
-  "https://assets.mixkit.co/videos/12288/12288-720.mp4",
-  "https://assets.mixkit.co/videos/47354/47354-720.mp4",
+  "https://videos.pexels.com/video-files/2544525/2544525-hd_1280_720_24fps.mp4",
+  "https://videos.pexels.com/video-files/7034154/7034154-hd_1280_720_25fps.mp4",
 ];
 const CLIP_DURATION_MS = 3000;
 
