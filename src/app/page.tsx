@@ -7,6 +7,7 @@ import QuickCategories from "@/components/v2/QuickCategories";
 import FeaturedProducts from "@/components/v2/FeaturedProducts";
 import BrandCarousel from "@/components/sections/BrandCarousel";
 import AboutSection from "@/components/v2/AboutSection";
+import ArticleSection from "@/components/sections/ArticleSection";
 import EmailCTA from "@/components/v2/EmailCTA";
 
 export default function Home() {
@@ -16,10 +17,11 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <HeroCarousel />
-        <CategoryShowcase />
         <QuickCategories />
+        <CategoryShowcase />
         <FeaturedProducts />
         <BrandCarousel />
+        <ArticleSection />
         <AboutSection />
       </main>
       <EmailCTA />
