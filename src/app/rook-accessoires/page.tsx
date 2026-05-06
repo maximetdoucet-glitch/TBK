@@ -53,7 +53,7 @@ const ALL_BRANDS = Object.entries(
 ).sort((a, b) => b[1] - a[1]);
 
 const SORT_OPTIONS = [
-  { label: "Aanbevolen", value: "recommended" },
+  { label: "Meest geliefd", value: "recommended" },
   { label: "Prijs ↑", value: "price_asc" },
   { label: "Prijs ↓", value: "price_desc" },
   { label: "Beoordeling", value: "rating" },
@@ -97,12 +97,18 @@ export default async function RookAccessoiresPage({
   if (sp.min_price) filtered = filtered.filter((p) => parseFloat(p.price) >= minPrice);
   if (sp.max_price) filtered = filtered.filter((p) => parseFloat(p.price) <= maxPrice);
 
+  const popKey = (p: typeof filtered[number]) =>
+    typeof p.popularityScore === "number" && p.popularityScore > 0
+      ? p.popularityScore
+      : p.rating * Math.log2(1 + p.reviewCount);
   if (activeSort === "price_asc")
     filtered = [...filtered].sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
   else if (activeSort === "price_desc")
     filtered = [...filtered].sort((a, b) => parseFloat(b.price) - parseFloat(a.price));
   else if (activeSort === "rating")
     filtered = [...filtered].sort((a, b) => b.rating - a.rating);
+  else
+    filtered = [...filtered].sort((a, b) => popKey(b) - popKey(a));
 
   const total = filtered.length;
   const totalPages = Math.max(1, Math.ceil(total / PER_PAGE));
