@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
+import SafeImage from "@/components/v2/SafeImage";
 import { ChevronRight, Tag, ShoppingBag } from "lucide-react";
 import Header from "@/components/v2/HeaderV2";
 import Footer from "@/components/v2/FooterV2";
@@ -388,13 +388,12 @@ function ActiveCard({
         href={`/product/${product.id}`}
         className="relative block overflow-hidden bg-[#f8f8f8] aspect-square p-4 sm:p-6"
       >
-        <Image
+        <SafeImage
           src={product.image}
           alt={product.name}
           width={280}
           height={280}
           className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
-          unoptimized
         />
         {/* SALE percentage badge */}
         <span className="absolute top-2 left-2 bg-[#e53e3e] text-white text-[9px] font-black px-2 py-0.5 rounded-sm tracking-wide">
@@ -435,13 +434,12 @@ function SoldCard({ item }: { item: SoldOutItem }) {
     <div className="group bg-white border border-gray-100 flex flex-col rounded-sm relative overflow-hidden">
       {/* Image with grayscale + overlay */}
       <div className="relative block overflow-hidden bg-[#f8f8f8] aspect-square p-4 sm:p-6">
-        <Image
+        <SafeImage
           src={item.image}
           alt={item.name}
           width={280}
           height={280}
           className="w-full h-full object-contain grayscale opacity-60"
-          unoptimized
         />
         <span className="absolute top-2 left-2 bg-[#2b3e51] text-white text-[9px] font-black px-2 py-0.5 rounded-sm tracking-wide">
           UITVERKOCHT

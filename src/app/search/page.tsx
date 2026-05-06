@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
+import SafeImage from "@/components/v2/SafeImage";
 import { Heart, ShoppingBag, ChevronRight, SearchX } from "lucide-react";
 import StarRating from "@/components/ui/StarRating";
 import Header from "@/components/v2/HeaderV2";
@@ -97,7 +97,7 @@ export default async function SearchPage({
                   className="bg-white border border-gray-100 hover:shadow-md transition-all duration-200 rounded-sm overflow-hidden flex flex-col group"
                 >
                   <Link href={`/product/${product.id}`} className="relative block aspect-square bg-gray-50">
-                    <Image
+                    <SafeImage
                       src={product.image}
                       alt={product.name}
                       fill

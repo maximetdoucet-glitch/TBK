@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import Image from "next/image";
+import SafeImage from "@/components/v2/SafeImage";
 import Link from "next/link";
 import { Heart, ShoppingBag, ArrowRight } from "lucide-react";
 import StarRow from "@/components/ui/StarRating";
@@ -90,13 +90,12 @@ function ProductCard({ product }: { product: Product }) {
     >
       <div className="relative aspect-square overflow-hidden bg-[#f4f5f6]">
         {/* multiply blend makes the product image's white bg invisible */}
-        <Image
+        <SafeImage
           src={product.image}
           alt={product.name}
           fill
           className="object-contain p-4 sm:p-6 transition-transform duration-500 group-hover:scale-105"
           style={{ mixBlendMode: "multiply" }}
-          unoptimized
         />
         {product.badge && (
           <div

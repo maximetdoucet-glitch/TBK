@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
+import SafeImage from "@/components/v2/SafeImage";
 import { Heart, ShoppingBag, ChevronRight, SlidersHorizontal } from "lucide-react";
 import StarRating from "@/components/ui/StarRating";
 import Header from "@/components/v2/HeaderV2";
@@ -438,13 +438,12 @@ export default async function KokersEtuisPage({
                         href={`/product/${product.id}`}
                         className="relative block overflow-hidden bg-[#f8f8f8] aspect-square p-4 sm:p-6"
                       >
-                        <Image
+                        <SafeImage
                           src={product.image}
                           alt={product.name}
                           width={280}
                           height={280}
                           className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
-                          unoptimized
                         />
                         {product.badge && (
                           <span className="absolute top-2 left-2 bg-[#f5a623] text-white text-[9px] font-black px-2 py-0.5 rounded-sm tracking-wide">
