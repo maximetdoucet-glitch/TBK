@@ -5,13 +5,20 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { useLocale } from "@/i18n/LocaleContext";
 
-const HERO_CLIPS = [
-  "https://videos.pexels.com/video-files/7034146/7034146-hd_1280_720_25fps.mp4",
-  "https://assets.mixkit.co/videos/40502/40502-720.mp4",
-  "https://videos.pexels.com/video-files/2544525/2544525-hd_1280_720_24fps.mp4",
-  "https://videos.pexels.com/video-files/7034154/7034154-hd_1280_720_25fps.mp4",
+type Clip = {
+  src: string;
+  durationMs: number;
+  filter?: string;
+};
+
+const HERO_CLIPS: Clip[] = [
+  // Open Zippo on black: needs ~6s to play through the flick action
+  { src: "https://videos.pexels.com/video-files/7034146/7034146-hd_1280_720_25fps.mp4", durationMs: 6000 },
+  { src: "https://assets.mixkit.co/videos/40502/40502-720.mp4", durationMs: 3000 },
+  // Moody flint-wheel: very dark in the source, brighten so it's visible
+  { src: "https://videos.pexels.com/video-files/2544525/2544525-hd_1280_720_24fps.mp4", durationMs: 3500, filter: "brightness(2) contrast(1.1) saturate(1.1)" },
+  { src: "https://videos.pexels.com/video-files/7034154/7034154-hd_1280_720_25fps.mp4", durationMs: 3000 },
 ];
-const CLIP_DURATION_MS = 3000;
 
 export default function HeroCarousel() {
   const { t } = useLocale();
@@ -19,11 +26,11 @@ export default function HeroCarousel() {
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
 
   useEffect(() => {
-    const id = setInterval(() => {
+    const timeout = setTimeout(() => {
       setActiveClip((i) => (i + 1) % HERO_CLIPS.length);
-    }, CLIP_DURATION_MS);
-    return () => clearInterval(id);
-  }, []);
+    }, HERO_CLIPS[activeClip].durationMs);
+    return () => clearTimeout(timeout);
+  }, [activeClip]);
 
   useEffect(() => {
     const v = videoRefs.current[activeClip];
@@ -43,16 +50,17 @@ export default function HeroCarousel() {
           className="group relative block overflow-hidden rounded-xl sm:rounded-2xl aspect-[1/1] sm:aspect-[16/9] lg:aspect-[21/9] bg-[#0a121c]"
         >
           {/* Background videos — stacked, fade between each */}
-          {HERO_CLIPS.map((src, i) => (
+          {HERO_CLIPS.map((clip, i) => (
             <video
-              key={src}
+              key={clip.src}
               ref={(el) => { videoRefs.current[i] = el; }}
-              src={src}
+              src={clip.src}
               autoPlay={i === 0}
               muted
               playsInline
               loop
               preload={i < 2 ? "auto" : "metadata"}
+              style={clip.filter ? { filter: clip.filter } : undefined}
               className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
                 i === activeClip ? "opacity-100" : "opacity-0"
               }`}
