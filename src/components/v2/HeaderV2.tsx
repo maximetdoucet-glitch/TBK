@@ -3,15 +3,14 @@
 import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 import {
-  Search, ShoppingCart, User, Heart, ChevronDown, Menu, X, Check,
+  ShoppingCart, User, Heart, ChevronDown, Menu, X, Check,
 } from "lucide-react";
-import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import { useLocale } from "@/i18n/LocaleContext";
 import type { Locale } from "@/i18n/translations";
 import { useCart } from "@/cart/CartContext";
+import SearchAutocomplete from "@/components/v2/SearchAutocomplete";
 
 // Circular SVG flags - clipped to circle, no external deps
 function FlagNL({ size = 20 }: { size?: number }) {
@@ -130,16 +129,6 @@ const MEGA_MENU = [
 export default function HeaderV2() {
   const [megaOpen, setMegaOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [searchFocused, setSearchFocused] = useState(false);
-  const [searchQuery, setSearchQuery] = useState("");
-  const router = useRouter();
-  function submitSearch(e: React.FormEvent) {
-    e.preventDefault();
-    const q = searchQuery.trim();
-    if (!q) return;
-    router.push(`/search?q=${encodeURIComponent(q)}`);
-    setMobileOpen(false);
-  }
   const [scrolled, setScrolled] = useState(false);
   const [localeOpen, setLocaleOpen] = useState(false);
   const { locale, setLocale, t } = useLocale();
@@ -209,30 +198,7 @@ export default function HeaderV2() {
         </Link>
 
         {/* Search - desktop only; mobile uses drawer */}
-        <form
-          onSubmit={submitSearch}
-          className={cn(
-            "hidden md:flex flex-1 relative transition-all duration-200",
-            searchFocused ? "max-w-2xl" : "max-w-xl"
-          )}
-        >
-          <Input
-            type="search"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder={t("header.searchPlaceholder")}
-            className="w-full h-10 pl-4 pr-12 rounded-full border-gray-200 bg-gray-50 focus:bg-white focus:border-[#f5a623] text-sm transition-all"
-            onFocus={() => setSearchFocused(true)}
-            onBlur={() => setSearchFocused(false)}
-          />
-          <button
-            type="submit"
-            aria-label="Zoeken"
-            className="absolute right-2 top-1/2 -translate-y-1/2 size-7 rounded-full flex items-center justify-center text-gray-400 hover:text-[#2b3e51] hover:bg-gray-100 transition-colors"
-          >
-            <Search className="size-4" />
-          </button>
-        </form>
+        <SearchAutocomplete variant="desktop" />
 
         {/* Actions - ml-auto pins to far right */}
         <div className="flex items-center gap-1 sm:gap-2 ml-auto">
@@ -523,22 +489,7 @@ export default function HeaderV2() {
 
             {/* Search */}
             <div className="px-5 py-4 border-b border-gray-100">
-              <form onSubmit={submitSearch} className="relative">
-                <Input
-                  type="search"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder={t("header.searchPlaceholder")}
-                  className="w-full h-11 pl-4 pr-11 rounded-full border-gray-200 bg-gray-50 focus:bg-white focus:border-[#f5a623] text-sm"
-                />
-                <button
-                  type="submit"
-                  aria-label="Zoeken"
-                  className="absolute right-2 top-1/2 -translate-y-1/2 size-8 rounded-full flex items-center justify-center text-gray-400 hover:text-[#2b3e51] hover:bg-gray-100 transition-colors"
-                >
-                  <Search className="size-4" />
-                </button>
-              </form>
+              <SearchAutocomplete variant="mobile" onNavigate={() => setMobileOpen(false)} />
             </div>
 
             {/* Nav */}
