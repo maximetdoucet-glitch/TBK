@@ -201,7 +201,7 @@ export type Dict = {
 const NL: Dict = {
   promo: {
     msg1: "Nieuw: Zippo Limited Edition 2025 collectie is binnen", msg1Cta: "Bekijk nu",
-    msg2: "Gratis verzending vanaf €80 — Voor 16:00 besteld, dezelfde dag verstuurd",
+    msg2: "Gratis verzending vanaf €80 — Standaard levertijd 2-3 werkdagen",
     msg3: "De grootste tabakspecialist van Nijmegen — Bezoek onze winkel", msg3Cta: "Routebeschrijving",
     close: "Sluiten", prev: "Vorige", next: "Volgende",
   },
@@ -219,7 +219,7 @@ const NL: Dict = {
       rook: { title: "Rook-accessoires", bruyerePipes: "Bruyère pijpen", pipeCutlery: "Pijp-bestek", grinders: "Tabaksgrinders" },
       viewAll: "Bekijk volledig assortiment →", deals: "Aanbiedingen", newItems: "Nieuwe artikelen",
     },
-    usp: { freeShipping: "Gratis verzending vanaf €80", sameDay: "Voor 16:00 besteld — zelfde dag verstuurd", freeReturns: "Gratis retourneren", securePay: "Veilig betalen via iDEAL & Klarna" },
+    usp: { freeShipping: "Gratis verzending vanaf €80", sameDay: "Standaard levertijd 2-3 werkdagen", freeReturns: "Gratis retourneren", securePay: "Veilig betalen via iDEAL & Klarna" },
     rating: "4.8 / 5 Google Reviews",
     mobileMenu: "Menu", mobileAccount: "Mijn account", mobileWishlist: "Verlanglijst",
   },
@@ -257,13 +257,13 @@ const NL: Dict = {
     para2: "Met jarenlange ervaring adviseren wij onze klanten zowel in onze fysieke winkel als online. Ons team bestaat uit echte kenners — geen callcenter, maar mensen die passie hebben voor het vak.",
     pillars: {
       dealer: { title: "Officieel dealer", body: "TBK is officieel gecertificeerd dealer van Zippo, Clipper, Colibri en Xikar. Elke aankoop is gegarandeerd authentiek." },
-      shipping: { title: "Snelle levering", body: "Voor 16:00 besteld, dezelfde dag verstuurd vanuit ons eigen magazijn in Nijmegen. Wereldwijd geleverd." },
+      shipping: { title: "Snelle levering", body: "Standaard levertijd is 2-3 werkdagen — verstuurd vanuit ons eigen magazijn in Nijmegen. Wereldwijd geleverd." },
       returns: { title: "Gratis retour", body: "Niet tevreden? Retourneer binnen 30 dagen gratis. Geen gedoe, geen vragen." },
       store: { title: "Fysieke winkel", body: "Bezoek ons in de Molenstraat 120 in hartje Nijmegen. Persoonlijk advies van echte kenners." },
     },
     faqEyebrow: "FAQ", faqHeading: "Veelgestelde vragen",
     faqs: {
-      shipping: { q: "Wanneer wordt mijn bestelling verzonden?", a: "Bestellingen op werkdagen vóór 16:00 worden dezelfde dag verstuurd via PostNL — op zaterdag verwerken we tot 13:00. Je ontvangt direct een bevestigingsmail met track & trace zodra je pakket is ingescand. Standaard levertijd binnen Nederland is 1–2 werkdagen." },
+      shipping: { q: "Wanneer wordt mijn bestelling verzonden?", a: "We verwerken je bestelling zo snel mogelijk en geven hem mee aan PostNL. Je ontvangt een bevestigingsmail met track & trace zodra je pakket is ingescand. Standaard levertijd is 2-3 werkdagen." },
       shippingCost: { q: "Betaal ik verzendkosten?", a: "Binnen Nederland is verzending volledig gratis vanaf €80. Onder dat bedrag rekenen we €4,95 voor standaard levering. Naar België geldt een gratis drempel van €100, daarna €6,95. Verzenden we naar andere landen, dan berekenen we het porto op basis van gewicht — je ziet het exacte bedrag altijd vóór het afrekenen." },
       returns: { q: "Kan ik mijn bestelling retourneren?", a: "Je hebt 30 dagen na ontvangst de tijd om te retourneren, gratis binnen Nederland. Stuur ons een e-mail met je ordernummer, dan ontvang je een voorgefrankeerd retourlabel. Producten dienen ongeopend en in originele verpakking te zijn. Na goedkeuring wordt het aankoopbedrag binnen 5 werkdagen teruggestort." },
       authentic: { q: "Zijn de producten authentiek?", a: "Zonder uitzondering. TBK is officieel gecertificeerd dealer van Zippo, Clipper, Colibri, Xikar en alle andere merken in ons assortiment. We kopen uitsluitend in bij erkende Europese distributeurs — nooit via marktplaatsen of derde partijen. Op alle Zippo-aanstekers ontvang je bovendien de levenslange fabrieksgarantie van Zippo zelf." },
@@ -413,7 +413,7 @@ const NL: Dict = {
 const EN: Dict = {
   promo: {
     msg1: "New: Zippo Limited Edition 2025 collection is in", msg1Cta: "Shop now",
-    msg2: "Free shipping from €80 — order before 4 PM, shipped the same day",
+    msg2: "Free shipping from €80 — standard delivery 2-3 working days",
     msg3: "Nijmegen's largest tobacco specialist — visit our store", msg3Cta: "Get directions",
     close: "Close", prev: "Previous", next: "Next",
   },
@@ -431,7 +431,7 @@ const EN: Dict = {
       rook: { title: "Smoking accessories", bruyerePipes: "Briar pipes", pipeCutlery: "Pipe tools", grinders: "Tobacco grinders" },
       viewAll: "View full assortment →", deals: "Deals", newItems: "New arrivals",
     },
-    usp: { freeShipping: "Free shipping from €80", sameDay: "Order before 4 PM — shipped same day", freeReturns: "Free returns", securePay: "Secure payment via iDEAL & Klarna" },
+    usp: { freeShipping: "Free shipping from €80", sameDay: "Standard delivery 2-3 working days", freeReturns: "Free returns", securePay: "Secure payment via iDEAL & Klarna" },
     rating: "4.8 / 5 Google Reviews",
     mobileMenu: "Menu", mobileAccount: "My account", mobileWishlist: "Wishlist",
   },
@@ -469,13 +469,13 @@ const EN: Dict = {
     para2: "With years of experience we advise our customers both in our physical store and online. Our team consists of true connoisseurs — no call center, just people with a passion for the craft.",
     pillars: {
       dealer: { title: "Authorised dealer", body: "TBK is an officially certified dealer of Zippo, Clipper, Colibri and Xikar. Every purchase is guaranteed authentic." },
-      shipping: { title: "Fast delivery", body: "Order before 4 PM and we ship the same day from our own warehouse in Nijmegen. Delivered worldwide." },
+      shipping: { title: "Fast delivery", body: "Standard delivery is 2-3 working days — shipped from our own warehouse in Nijmegen. Delivered worldwide." },
       returns: { title: "Free returns", body: "Not satisfied? Return free of charge within 30 days. No hassle, no questions." },
       store: { title: "Physical store", body: "Visit us at Molenstraat 120 in the heart of Nijmegen. Personal advice from real experts." },
     },
     faqEyebrow: "FAQ", faqHeading: "Frequently asked questions",
     faqs: {
-      shipping: { q: "When will my order be shipped?", a: "Orders placed on weekdays before 4 PM are shipped the same day via PostNL — on Saturdays we process until 1 PM. You'll receive a confirmation email with track & trace as soon as your parcel is scanned. Standard delivery within the Netherlands takes 1–2 working days." },
+      shipping: { q: "When will my order be shipped?", a: "We process your order as soon as possible and hand it over to PostNL. You'll receive a confirmation email with track & trace as soon as your parcel is scanned. Standard delivery time is 2-3 working days." },
       shippingCost: { q: "Do I pay shipping costs?", a: "Within the Netherlands, shipping is fully free from €80. Below that we charge €4.95 for standard delivery. To Belgium the free threshold is €100, after which it's €6.95. For other countries we calculate postage based on weight — you'll always see the exact amount before checkout." },
       returns: { q: "Can I return my order?", a: "You have 30 days after receipt to return your order, free within the Netherlands. Send us an email with your order number and you'll receive a prepaid return label. Products must be unopened and in their original packaging. After approval the purchase amount is refunded within 5 working days." },
       authentic: { q: "Are the products authentic?", a: "Without exception. TBK is an officially certified dealer of Zippo, Clipper, Colibri, Xikar and every other brand in our assortment. We buy exclusively from authorised European distributors — never via marketplaces or third parties. On all Zippo lighters you also receive Zippo's lifetime factory warranty." },
@@ -625,7 +625,7 @@ const EN: Dict = {
 const DE: Dict = {
   promo: {
     msg1: "Neu: Zippo Limited Edition 2025 Kollektion ist da", msg1Cta: "Jetzt entdecken",
-    msg2: "Kostenloser Versand ab €80 — vor 16:00 bestellt, am selben Tag versendet",
+    msg2: "Kostenloser Versand ab €80 — Standardlieferzeit 2-3 Werktage",
     msg3: "Der größte Tabakfachhandel in Nijmegen — besuchen Sie unser Geschäft", msg3Cta: "Wegbeschreibung",
     close: "Schließen", prev: "Zurück", next: "Weiter",
   },
@@ -643,7 +643,7 @@ const DE: Dict = {
       rook: { title: "Raucherzubehör", bruyerePipes: "Bruyère-Pfeifen", pipeCutlery: "Pfeifenbesteck", grinders: "Tabakmühlen" },
       viewAll: "Gesamtes Sortiment ansehen →", deals: "Angebote", newItems: "Neuheiten",
     },
-    usp: { freeShipping: "Kostenloser Versand ab €80", sameDay: "Vor 16:00 bestellt — taggleich versendet", freeReturns: "Kostenlose Rücksendung", securePay: "Sicher bezahlen via iDEAL & Klarna" },
+    usp: { freeShipping: "Kostenloser Versand ab €80", sameDay: "Standardlieferzeit 2-3 Werktage", freeReturns: "Kostenlose Rücksendung", securePay: "Sicher bezahlen via iDEAL & Klarna" },
     rating: "4.8 / 5 Google Bewertungen",
     mobileMenu: "Menü", mobileAccount: "Mein Konto", mobileWishlist: "Wunschliste",
   },
@@ -681,13 +681,13 @@ const DE: Dict = {
     para2: "Mit langjähriger Erfahrung beraten wir unsere Kunden im Geschäft wie auch online. Unser Team besteht aus echten Kennern — kein Callcenter, sondern Menschen mit Leidenschaft für das Handwerk.",
     pillars: {
       dealer: { title: "Offizieller Händler", body: "TBK ist offiziell zertifizierter Händler von Zippo, Clipper, Colibri und Xikar. Jeder Kauf ist garantiert authentisch." },
-      shipping: { title: "Schnelle Lieferung", body: "Vor 16:00 bestellt, am selben Tag aus unserem eigenen Lager in Nijmegen versendet. Weltweite Lieferung." },
+      shipping: { title: "Schnelle Lieferung", body: "Standardlieferzeit beträgt 2-3 Werktage — versendet aus unserem eigenen Lager in Nijmegen. Weltweite Lieferung." },
       returns: { title: "Kostenlose Rücksendung", body: "Nicht zufrieden? Rücksendung innerhalb von 30 Tagen kostenlos. Kein Aufwand, keine Fragen." },
       store: { title: "Ladengeschäft", body: "Besuchen Sie uns in der Molenstraat 120 im Herzen von Nijmegen. Persönliche Beratung von echten Kennern." },
     },
     faqEyebrow: "FAQ", faqHeading: "Häufig gestellte Fragen",
     faqs: {
-      shipping: { q: "Wann wird meine Bestellung versendet?", a: "Bestellungen werktags vor 16:00 werden am selben Tag per PostNL versendet — samstags bearbeiten wir bis 13:00. Sie erhalten sofort eine Bestätigungsmail mit Track & Trace, sobald Ihr Paket gescannt wurde. Standardlieferzeit innerhalb der Niederlande beträgt 1–2 Werktage." },
+      shipping: { q: "Wann wird meine Bestellung versendet?", a: "Wir bearbeiten Ihre Bestellung schnellstmöglich und übergeben sie an PostNL. Sobald Ihr Paket gescannt wurde, erhalten Sie eine Bestätigungsmail mit Track & Trace. Die Standardlieferzeit beträgt 2-3 Werktage." },
       shippingCost: { q: "Zahle ich Versandkosten?", a: "Innerhalb der Niederlande ist der Versand ab €80 vollständig kostenlos. Darunter berechnen wir €4,95 für die Standardlieferung. Nach Belgien gilt die kostenlose Schwelle von €100, danach €6,95. Versenden wir in andere Länder, berechnen wir das Porto nach Gewicht — den genauen Betrag sehen Sie immer vor dem Bezahlen." },
       returns: { q: "Kann ich meine Bestellung zurücksenden?", a: "Sie haben 30 Tage nach Erhalt Zeit zur Rücksendung, kostenlos innerhalb der Niederlande. Senden Sie uns eine E-Mail mit Ihrer Bestellnummer, dann erhalten Sie ein vorfrankiertes Retourenetikett. Produkte müssen ungeöffnet und in Originalverpackung sein. Nach Genehmigung wird der Kaufbetrag innerhalb von 5 Werktagen erstattet." },
       authentic: { q: "Sind die Produkte authentisch?", a: "Ohne Ausnahme. TBK ist offiziell zertifizierter Händler von Zippo, Clipper, Colibri, Xikar und allen weiteren Marken in unserem Sortiment. Wir kaufen ausschließlich bei autorisierten europäischen Distributoren — niemals über Marktplätze oder Drittanbieter. Auf alle Zippo-Feuerzeuge erhalten Sie zudem die lebenslange Werksgarantie von Zippo." },
@@ -837,7 +837,7 @@ const DE: Dict = {
 const FR: Dict = {
   promo: {
     msg1: "Nouveau : la collection Zippo Édition Limitée 2025 est arrivée", msg1Cta: "Découvrir",
-    msg2: "Livraison gratuite dès 80 € — commande avant 16 h, expédiée le jour même",
+    msg2: "Livraison gratuite dès 80 € — délai de livraison 2-3 jours ouvrés",
     msg3: "Le plus grand spécialiste du tabac à Nijmegen — visitez notre boutique", msg3Cta: "Itinéraire",
     close: "Fermer", prev: "Précédent", next: "Suivant",
   },
@@ -855,7 +855,7 @@ const FR: Dict = {
       rook: { title: "Accessoires fumeur", bruyerePipes: "Pipes en bruyère", pipeCutlery: "Outils à pipe", grinders: "Grinders à tabac" },
       viewAll: "Voir tout l'assortiment →", deals: "Promotions", newItems: "Nouveautés",
     },
-    usp: { freeShipping: "Livraison gratuite dès 80 €", sameDay: "Commande avant 16 h — expédiée le jour même", freeReturns: "Retours gratuits", securePay: "Paiement sécurisé via iDEAL & Klarna" },
+    usp: { freeShipping: "Livraison gratuite dès 80 €", sameDay: "Délai de livraison 2-3 jours ouvrés", freeReturns: "Retours gratuits", securePay: "Paiement sécurisé via iDEAL & Klarna" },
     rating: "4,8 / 5 Avis Google",
     mobileMenu: "Menu", mobileAccount: "Mon compte", mobileWishlist: "Favoris",
   },
@@ -893,13 +893,13 @@ const FR: Dict = {
     para2: "Forts d'une longue expérience, nous conseillons nos clients aussi bien en boutique qu'en ligne. Notre équipe est composée de véritables connaisseurs — pas de centre d'appels, mais des passionnés du métier.",
     pillars: {
       dealer: { title: "Revendeur officiel", body: "TBK est revendeur officiellement certifié de Zippo, Clipper, Colibri et Xikar. Chaque achat est authentique, garanti." },
-      shipping: { title: "Livraison rapide", body: "Commande avant 16 h, expédiée le jour même depuis notre propre entrepôt à Nijmegen. Livraison dans le monde entier." },
+      shipping: { title: "Livraison rapide", body: "Le délai de livraison standard est de 2 à 3 jours ouvrés — expédié depuis notre propre entrepôt à Nijmegen. Livraison dans le monde entier." },
       returns: { title: "Retours gratuits", body: "Pas satisfait ? Retournez gratuitement sous 30 jours. Sans tracas, sans questions." },
       store: { title: "Boutique physique", body: "Visitez-nous au Molenstraat 120, au cœur de Nijmegen. Conseils personnalisés par de véritables experts." },
     },
     faqEyebrow: "FAQ", faqHeading: "Questions fréquentes",
     faqs: {
-      shipping: { q: "Quand ma commande sera-t-elle expédiée ?", a: "Les commandes passées en semaine avant 16 h sont expédiées le jour même via PostNL — le samedi nous traitons jusqu'à 13 h. Vous recevez immédiatement un e-mail de confirmation avec suivi dès que votre colis est scanné. Le délai de livraison standard aux Pays-Bas est de 1 à 2 jours ouvrés." },
+      shipping: { q: "Quand ma commande sera-t-elle expédiée ?", a: "Nous traitons votre commande dans les meilleurs délais et la confions à PostNL. Vous recevez un e-mail de confirmation avec suivi dès que votre colis est scanné. Le délai de livraison standard est de 2 à 3 jours ouvrés." },
       shippingCost: { q: "Y a-t-il des frais de port ?", a: "Aux Pays-Bas, la livraison est entièrement gratuite à partir de 80 €. En dessous, nous facturons 4,95 € pour la livraison standard. Vers la Belgique, le seuil de gratuité est de 100 €, puis 6,95 €. Pour les autres pays, nous calculons le port en fonction du poids — vous voyez toujours le montant exact avant le paiement." },
       returns: { q: "Puis-je retourner ma commande ?", a: "Vous disposez de 30 jours après réception pour retourner votre commande, gratuitement aux Pays-Bas. Envoyez-nous un e-mail avec votre numéro de commande et vous recevrez une étiquette retour prépayée. Les produits doivent être non ouverts et dans leur emballage d'origine. Après validation, le montant est remboursé sous 5 jours ouvrés." },
       authentic: { q: "Les produits sont-ils authentiques ?", a: "Sans exception. TBK est revendeur officiellement certifié de Zippo, Clipper, Colibri, Xikar et de toutes les autres marques de notre assortiment. Nous nous fournissons exclusivement auprès de distributeurs européens agréés — jamais via des places de marché ou des tiers. Sur tous les briquets Zippo, vous bénéficiez en outre de la garantie usine à vie de Zippo." },

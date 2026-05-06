@@ -19,10 +19,10 @@ export default function VerzendenPage() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
         {[
           {
-            icon: Clock,
-            title: "Voor 16:00 besteld, dezelfde dag verstuurd",
+            icon: Package,
+            title: "Standaard levertijd 2-3 werkdagen",
             body:
-              "Op werkdagen pakken we elke bestelling die vóór 16:00 binnenkomt nog dezelfde dag in en geven we hem mee aan de bezorger.",
+              "We verwerken je bestelling zo snel mogelijk en geven hem mee aan PostNL of DHL. Vanaf het moment van bestellen ben je je pakket meestal binnen 2-3 werkdagen in handen.",
           },
           {
             icon: Truck,
@@ -31,10 +31,10 @@ export default function VerzendenPage() {
               "Onder dit bedrag rekenen we €4,95 (NL) of €7,95 (BE) — track & trace altijd inbegrepen via PostNL of DHL.",
           },
           {
-            icon: Package,
-            title: "Levertijd 1–3 werkdagen",
+            icon: Clock,
+            title: "Track & trace bij elk pakket",
             body:
-              "Binnen Nederland meestal de volgende werkdag. België gemiddeld 2 werkdagen. Drukke periodes kunnen tot 1 dag extra duren.",
+              "Zodra je pakket is ingescand ontvang je automatisch een mail met track & trace, zodat je 'm op de voet kunt volgen.",
           },
           {
             icon: Globe,
@@ -61,8 +61,8 @@ export default function VerzendenPage() {
       </h3>
       <p className="text-[13px] text-gray-500 leading-relaxed mb-3 max-w-2xl">
         Je kunt je bestelling ook gratis ophalen in onze winkel aan de Molenstraat 120
-        in Nijmegen. Je krijgt een mailtje zodra je bestelling klaarligt — meestal nog
-        dezelfde dag bij bestellingen vóór 14:00.
+        in Nijmegen. Je krijgt een mailtje zodra je bestelling klaarligt om opgehaald
+        te worden.
       </p>
 
       <h3 className="font-montserrat text-base font-black text-[#2b3e51] mt-8 mb-3">

@@ -9,7 +9,7 @@ const FAQS: { group: string; items: { q: string; a: string }[] }[] = [
     items: [
       {
         q: "Hoe lang duurt het voor mijn bestelling wordt verstuurd?",
-        a: "Op werkdagen pakken we elke bestelling die vóór 16:00 binnenkomt nog dezelfde dag in en geven we hem mee aan PostNL of DHL.",
+        a: "We pakken je bestelling zo snel mogelijk in en geven hem mee aan PostNL of DHL. De standaard levertijd is 2-3 werkdagen.",
       },
       {
         q: "Kan ik achteraf betalen?",

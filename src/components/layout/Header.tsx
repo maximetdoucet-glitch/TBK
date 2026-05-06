@@ -150,7 +150,7 @@ export default function Header() {
             </div>
             <div className="flex items-center gap-2 shrink-0">
               <Check className="size-3.5 text-primary shrink-0" />
-              <span><span className="text-gray-900">Voor 16:00 besteld</span>, dezelfde dag verstuurd</span>
+              <span><span className="text-gray-900">Standaard levertijd</span> 2-3 werkdagen</span>
             </div>
             <div className="flex items-center gap-2 shrink-0">
               <Check className="size-3.5 text-primary shrink-0" />

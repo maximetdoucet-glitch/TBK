@@ -246,7 +246,7 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
               <div className="flex flex-col gap-2.5 py-5 border-t border-b border-gray-100 mb-7">
                 {[
                   "Gratis verzending vanaf € 80,- (NL) & € 100,- (BE)",
-                  "Op werkdagen voor 16:00 besteld, dezelfde dag verstuurd",
+                  "Standaard levertijd 2-3 werkdagen",
                   "Gratis retourneren binnen Nederland",
                 ].map((item) => (
                   <div key={item} className="flex items-center gap-2.5">
@@ -285,8 +285,7 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
                     label: "Verzending & levering",
                     content: (
                       <p className="text-sm text-gray-500 leading-relaxed">
-                        Bestellingen geplaatst voor 16:00 worden dezelfde werkdag verstuurd.
-                        Levering in Nederland 1–2 werkdagen · België 2–3 werkdagen.
+                        Standaard levertijd is 2-3 werkdagen via PostNL of DHL.
                         Gratis verzending bij bestellingen vanaf € 80 (NL) / € 100 (BE).
                       </p>
                     ),
