@@ -10,7 +10,7 @@ import PriceRangeSlider, { PRICE_ABSOLUTE_MAX } from "@/components/v2/PriceRange
 import ZippoInfoSection from "@/components/v2/ZippoInfoSection";
 
 export const metadata = {
-  title: "Aanstekers — OneConnect Lightshop",
+  title: "Aanstekers - OneConnect Lightshop",
   description:
     "Ontdek 330+ aanstekers van Zippo, Clipper, Ronson en meer bij OneConnect Lightshop Nijmegen. Gratis verzending vanaf €50.",
 };
@@ -345,7 +345,7 @@ export default async function AanstekersPage({
                       href={buildUrl(sp, { min_price: undefined, max_price: undefined, page: "1" })}
                       className="flex items-center gap-1.5 text-[11px] font-bold px-3 py-1.5 bg-[#2b3e51] hover:bg-[#f5a623] text-white rounded-full transition-colors"
                     >
-                      €{sp.min_price ?? "0"} – €{sp.max_price ?? PRICE_ABSOLUTE_MAX} ✕
+                      €{sp.min_price ?? "0"} - €{sp.max_price ?? PRICE_ABSOLUTE_MAX} ✕
                     </Link>
                   )}
                   <Link

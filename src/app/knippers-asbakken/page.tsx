@@ -10,7 +10,7 @@ import PriceRangeSlider, { PRICE_ABSOLUTE_MAX } from "@/components/v2/PriceRange
 import KnippersAsbakkenInfoSection from "@/components/v2/KnippersAsbakkenInfoSection";
 
 export const metadata = {
-  title: "Knippers & Asbakken — OneConnect Lightshop",
+  title: "Knippers & Asbakken - OneConnect Lightshop",
   description:
     "Precisieknippers, elegante asbakken en sigaren-etuis van topmerken zoals Bookwill en Faro. Bestel online bij OneConnect Lightshop Nijmegen.",
 };
@@ -408,7 +408,7 @@ export default async function KnippersAsbakkenPage({
                       href={buildUrl(sp, { min_price: undefined, max_price: undefined, page: "1" })}
                       className="flex items-center gap-1.5 text-[11px] font-bold px-3 py-1.5 bg-[#2b3e51] hover:bg-[#f5a623] text-white rounded-full transition-colors"
                     >
-                      €{sp.min_price ?? "0"} – €{sp.max_price ?? PRICE_ABSOLUTE_MAX} ✕
+                      €{sp.min_price ?? "0"} - €{sp.max_price ?? PRICE_ABSOLUTE_MAX} ✕
                     </Link>
                   )}
                   <Link

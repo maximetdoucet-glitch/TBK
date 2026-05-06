@@ -10,9 +10,9 @@ import PriceRangeSlider, { PRICE_ABSOLUTE_MAX } from "@/components/v2/PriceRange
 import KokersEtuisInfoSection from "@/components/v2/KokersEtuisInfoSection";
 
 export const metadata = {
-  title: "Kokers & Etuis — OneConnect Lightshop",
+  title: "Kokers & Etuis - OneConnect Lightshop",
   description:
-    "Sigarettenkokers, etuis, filters en houders — stijlvol en praktisch. Bestel online bij OneConnect Lightshop Nijmegen.",
+    "Sigarettenkokers, etuis, filters en houders - stijlvol en praktisch. Bestel online bij OneConnect Lightshop Nijmegen.",
 };
 
 const PER_PAGE = 24;
@@ -408,7 +408,7 @@ export default async function KokersEtuisPage({
                       href={buildUrl(sp, { min_price: undefined, max_price: undefined, page: "1" })}
                       className="flex items-center gap-1.5 text-[11px] font-bold px-3 py-1.5 bg-[#2b3e51] hover:bg-[#f5a623] text-white rounded-full transition-colors"
                     >
-                      €{sp.min_price ?? "0"} – €{sp.max_price ?? PRICE_ABSOLUTE_MAX} ✕
+                      €{sp.min_price ?? "0"} - €{sp.max_price ?? PRICE_ABSOLUTE_MAX} ✕
                     </Link>
                   )}
                   <Link

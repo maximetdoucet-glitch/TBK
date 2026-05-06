@@ -39,12 +39,12 @@ export default function AccountLayout({ children }: { children: React.ReactNode 
 
         {/* Body */}
         <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          {/* Soft notice — account features in development */}
+          {/* Soft notice - account features in development */}
           <div className="mb-6 flex items-start gap-3 p-4 bg-[#f5a623]/6 border border-[#f5a623]/20 rounded-sm">
             <Info className="size-4 text-[#f5a623] flex-shrink-0 mt-0.5" />
             <p className="text-[12px] text-gray-600 leading-relaxed">
               <span className="font-bold text-[#2b3e51]">Account-functionaliteit is in ontwikkeling.</span>{" "}
-              Je kunt op dit moment al bestellen als gast — een persoonlijk account met
+              Je kunt op dit moment al bestellen als gast - een persoonlijk account met
               bestelhistorie en verlanglijst lanceren we later dit jaar. Wil je een seintje
               krijgen zodra het live staat? Mail naar{" "}
               <span className="font-bold text-[#2b3e51]">service@tbk-lightshop.nl</span>.

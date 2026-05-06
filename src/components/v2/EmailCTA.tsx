@@ -17,7 +17,7 @@ export default function EmailCTA() {
 
   return (
     <section className="relative overflow-hidden bg-[#0f0d0a]">
-      {/* Warm amber glow — centered */}
+      {/* Warm amber glow - centered */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <div className="w-[700px] h-[300px] bg-[#f5a623]/10 rounded-full blur-[90px]" />
       </div>
@@ -29,7 +29,7 @@ export default function EmailCTA() {
         {/* ── Desktop: 3-zone horizontal band ── */}
         <div className="hidden lg:grid grid-cols-[220px_1px_1fr_1px_1fr] items-center gap-0">
 
-          {/* Zone 1 — 10% anchor */}
+          {/* Zone 1 - 10% anchor */}
           <div className="flex flex-col items-center justify-center pr-10 gap-1 text-center">
             <span className="font-montserrat text-[88px] font-black text-[#f5a623] leading-none tracking-tighter">
               10%
@@ -47,7 +47,7 @@ export default function EmailCTA() {
           {/* Divider 1 */}
           <div className="self-stretch bg-white/8" />
 
-          {/* Zone 2 — offer text */}
+          {/* Zone 2 - offer text */}
           <div className="flex flex-col justify-center gap-3 px-10">
             <div className="flex items-center gap-2">
               <div className="size-1.5 rounded-full bg-[#f5a623]" />
@@ -67,7 +67,7 @@ export default function EmailCTA() {
           {/* Divider 2 */}
           <div className="self-stretch bg-white/8" />
 
-          {/* Zone 3 — form */}
+          {/* Zone 3 - form */}
           <div className="flex flex-col justify-center gap-4 pl-10">
             {submitted ? (
               <div className="flex flex-col gap-2 py-4">
@@ -80,7 +80,7 @@ export default function EmailCTA() {
               </div>
             ) : (
               <>
-                {/* Social proof — top */}
+                {/* Social proof - top */}
                 <div className="flex items-center gap-2.5">
                   <div className="flex -space-x-2">
                     {["bg-[#f5a623]", "bg-[#4a7c5e]", "bg-[#f5a623]", "bg-[#2b3e51]"].map((cls) => (
@@ -95,7 +95,7 @@ export default function EmailCTA() {
                   </p>
                 </div>
 
-                {/* Trust checks — middle */}
+                {/* Trust checks - middle */}
                 <div className="flex items-center gap-4 text-[11px] text-white/25">
                   {(["noSpam", "unsubscribe", "instant"] as const).map((k) => (
                     <span key={k} className="flex items-center gap-1.5">
@@ -105,7 +105,7 @@ export default function EmailCTA() {
                   ))}
                 </div>
 
-                {/* Form — bottom */}
+                {/* Form - bottom */}
                 <form onSubmit={handleSubmit} className="flex gap-2">
                   <input
                     type="email"

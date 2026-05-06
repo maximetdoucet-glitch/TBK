@@ -10,9 +10,9 @@ import PriceRangeSlider, { PRICE_ABSOLUTE_MAX } from "@/components/v2/PriceRange
 import RookAccessoiresInfoSection from "@/components/v2/RookAccessoiresInfoSection";
 
 export const metadata = {
-  title: "Rook-accessoires — OneConnect Lightshop",
+  title: "Rook-accessoires - OneConnect Lightshop",
   description:
-    "Tabakspijpen, bestek en grinders — vakkundig geselecteerd voor de echte liefhebber. Bestel online bij OneConnect Lightshop Nijmegen.",
+    "Tabakspijpen, bestek en grinders - vakkundig geselecteerd voor de echte liefhebber. Bestel online bij OneConnect Lightshop Nijmegen.",
 };
 
 const PER_PAGE = 24;
@@ -407,7 +407,7 @@ export default async function RookAccessoiresPage({
                       href={buildUrl(sp, { min_price: undefined, max_price: undefined, page: "1" })}
                       className="flex items-center gap-1.5 text-[11px] font-bold px-3 py-1.5 bg-[#2b3e51] hover:bg-[#f5a623] text-white rounded-full transition-colors"
                     >
-                      €{sp.min_price ?? "0"} – €{sp.max_price ?? PRICE_ABSOLUTE_MAX} ✕
+                      €{sp.min_price ?? "0"} - €{sp.max_price ?? PRICE_ABSOLUTE_MAX} ✕
                     </Link>
                   )}
                   <Link

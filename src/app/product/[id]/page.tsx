@@ -233,7 +233,7 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
                 </button>
               </div>
 
-              {/* Buy now — direct to checkout */}
+              {/* Buy now - direct to checkout */}
               <button
                 type="button"
                 onClick={handleBuyNow}

@@ -13,7 +13,7 @@ import { useLocale } from "@/i18n/LocaleContext";
 import type { Locale } from "@/i18n/translations";
 import { useCart } from "@/cart/CartContext";
 
-// Circular SVG flags — clipped to circle, no external deps
+// Circular SVG flags - clipped to circle, no external deps
 function FlagNL({ size = 20 }: { size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 20 20">
@@ -192,23 +192,23 @@ export default function HeaderV2() {
           <Menu className="size-6" />
         </button>
 
-        {/* Logo — links to homepage */}
+        {/* Logo - links to homepage */}
         <Link
           href="/preview"
           className="shrink-0 flex items-center gap-2 leading-none group cursor-pointer transition-opacity active:opacity-60 hover:opacity-90"
-          aria-label="Rokersbenodigheden — naar startpagina"
+          aria-label="Rokersbenodigdheden - naar startpagina"
         >
           <span className="flex flex-col leading-none text-[#2b3e51]">
             <span className="text-[17px] sm:text-[19px] font-black uppercase tracking-[0.15em]">
               Rokers
             </span>
             <span className="text-[9px] sm:text-[10px] font-semibold uppercase tracking-[0.42em] text-[#2b3e51]/55 mt-1">
-              benodigheden
+              benodigdheden
             </span>
           </span>
         </Link>
 
-        {/* Search — desktop only; mobile uses drawer */}
+        {/* Search - desktop only; mobile uses drawer */}
         <form
           onSubmit={submitSearch}
           className={cn(
@@ -234,7 +234,7 @@ export default function HeaderV2() {
           </button>
         </form>
 
-        {/* Actions — ml-auto pins to far right */}
+        {/* Actions - ml-auto pins to far right */}
         <div className="flex items-center gap-1 sm:gap-2 ml-auto">
 
           {/* Locale / currency picker */}
@@ -364,7 +364,7 @@ export default function HeaderV2() {
         </div>
       </div>
 
-      {/* ── Nav bar — hidden on mobile (handled by drawer) and when scrolled ── */}
+      {/* ── Nav bar - hidden on mobile (handled by drawer) and when scrolled ── */}
       <nav className={cn("w-full bg-[#2e4560] text-white relative transition-all duration-300 hidden lg:block", scrolled ? "h-0 overflow-hidden" : "overflow-visible")}>
         <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center h-11">
           {/* Assortiment mega button */}
@@ -475,7 +475,7 @@ export default function HeaderV2() {
         )}
       </nav>
 
-      {/* ── USP bar — hidden when scrolled ── */}
+      {/* ── USP bar - hidden when scrolled ── */}
       <div className={cn("w-full bg-gray-50 overflow-hidden transition-all duration-300", scrolled ? "max-h-0 py-0" : "max-h-12 py-2")}>
         {/* Desktop: static evenly-spaced row */}
         <div className="hidden sm:flex max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 items-center justify-between gap-6 overflow-x-auto scrollbar-none text-[10px] font-bold uppercase tracking-[0.1em] text-gray-500 whitespace-nowrap">
@@ -514,7 +514,7 @@ export default function HeaderV2() {
             <div className="flex items-center justify-between px-5 py-5 border-b border-gray-100">
               <span className="flex flex-col leading-none text-[#2b3e51]">
                 <span className="text-[16px] font-black uppercase tracking-[0.15em]">Rokers</span>
-                <span className="text-[9px] font-semibold uppercase tracking-[0.42em] text-[#2b3e51]/55 mt-1">benodigheden</span>
+                <span className="text-[9px] font-semibold uppercase tracking-[0.42em] text-[#2b3e51]/55 mt-1">benodigdheden</span>
               </span>
               <button type="button" aria-label={t("header.closeMenu")} onClick={() => setMobileOpen(false)} className="size-9 rounded-full bg-gray-50 flex items-center justify-center text-gray-500 hover:text-[#2b3e51] hover:bg-gray-100 transition-colors">
                 <X className="size-4" />

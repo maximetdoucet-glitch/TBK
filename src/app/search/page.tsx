@@ -8,7 +8,7 @@ import PromoBar from "@/components/v2/PromoBar";
 import { PRODUCTS } from "@/lib/products";
 
 export const metadata = {
-  title: "Zoekresultaten — OneConnect Lightshop",
+  title: "Zoekresultaten - OneConnect Lightshop",
   description: "Zoek door alle 449 producten van OneConnect Lightshop Nijmegen.",
 };
 
