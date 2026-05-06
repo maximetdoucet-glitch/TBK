@@ -3,6 +3,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import {
   Search, ShoppingCart, User, Heart, ChevronDown, Menu, X, Check,
 } from "lucide-react";
@@ -130,6 +131,15 @@ export default function HeaderV2() {
   const [megaOpen, setMegaOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [searchFocused, setSearchFocused] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const router = useRouter();
+  function submitSearch(e: React.FormEvent) {
+    e.preventDefault();
+    const q = searchQuery.trim();
+    if (!q) return;
+    router.push(`/search?q=${encodeURIComponent(q)}`);
+    setMobileOpen(false);
+  }
   const [scrolled, setScrolled] = useState(false);
   const [localeOpen, setLocaleOpen] = useState(false);
   const { locale, setLocale, t } = useLocale();
@@ -199,18 +209,30 @@ export default function HeaderV2() {
         </Link>
 
         {/* Search — desktop only; mobile uses drawer */}
-        <div className={cn(
-          "hidden md:flex flex-1 relative transition-all duration-200",
-          searchFocused ? "max-w-2xl" : "max-w-xl"
-        )}>
+        <form
+          onSubmit={submitSearch}
+          className={cn(
+            "hidden md:flex flex-1 relative transition-all duration-200",
+            searchFocused ? "max-w-2xl" : "max-w-xl"
+          )}
+        >
           <Input
+            type="search"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
             placeholder={t("header.searchPlaceholder")}
             className="w-full h-10 pl-4 pr-12 rounded-full border-gray-200 bg-gray-50 focus:bg-white focus:border-[#f5a623] text-sm transition-all"
             onFocus={() => setSearchFocused(true)}
             onBlur={() => setSearchFocused(false)}
           />
-          <Search className="absolute right-4 top-1/2 -translate-y-1/2 size-4 text-gray-400" />
-        </div>
+          <button
+            type="submit"
+            aria-label="Zoeken"
+            className="absolute right-2 top-1/2 -translate-y-1/2 size-7 rounded-full flex items-center justify-center text-gray-400 hover:text-[#2b3e51] hover:bg-gray-100 transition-colors"
+          >
+            <Search className="size-4" />
+          </button>
+        </form>
 
         {/* Actions — ml-auto pins to far right */}
         <div className="flex items-center gap-1 sm:gap-2 ml-auto">
@@ -501,13 +523,22 @@ export default function HeaderV2() {
 
             {/* Search */}
             <div className="px-5 py-4 border-b border-gray-100">
-              <div className="relative">
+              <form onSubmit={submitSearch} className="relative">
                 <Input
+                  type="search"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder={t("header.searchPlaceholder")}
                   className="w-full h-11 pl-4 pr-11 rounded-full border-gray-200 bg-gray-50 focus:bg-white focus:border-[#f5a623] text-sm"
                 />
-                <Search className="absolute right-4 top-1/2 -translate-y-1/2 size-4 text-gray-400" />
-              </div>
+                <button
+                  type="submit"
+                  aria-label="Zoeken"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 size-8 rounded-full flex items-center justify-center text-gray-400 hover:text-[#2b3e51] hover:bg-gray-100 transition-colors"
+                >
+                  <Search className="size-4" />
+                </button>
+              </form>
             </div>
 
             {/* Nav */}
