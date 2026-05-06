@@ -34,7 +34,7 @@ const FAQS: { group: string; items: { q: string; a: string }[] }[] = [
       },
       {
         q: "Kan ik mijn bestelling ophalen in de winkel?",
-        a: "Zeker. Kies in de checkout voor afhalen - je krijgt een mailtje zodra je bestelling klaarligt aan de Molenstraat 120 in Nijmegen.",
+        a: "Zeker. Kies in de checkout voor afhalen je krijgt een mailtje zodra je bestelling klaarligt aan de Molenstraat 120 in Nijmegen.",
       },
     ],
   },
@@ -46,8 +46,8 @@ const FAQS: { group: string; items: { q: string; a: string }[] }[] = [
         a: "14 dagen vanaf het moment dat je je bestelling ontvangt. Binnen Nederland sturen we het retourlabel kosteloos toe.",
       },
       {
-        q: "Mijn Zippo werkt niet meer - wat nu?",
-        a: "Zippo geeft levenslange garantie op al hun aanstekers. Lever je Zippo in bij ons in de winkel en wij regelen de reparatie of vervanging via Zippo zelf - kosteloos.",
+        q: "Mijn Zippo werkt niet meer wat nu?",
+        a: "Zippo geeft levenslange garantie op al hun aanstekers. Lever je Zippo in bij ons in de winkel en wij regelen de reparatie of vervanging via Zippo zelf kosteloos.",
       },
       {
         q: "Ik heb een product met gravure besteld, kan ik dit retourneren?",
@@ -60,7 +60,7 @@ const FAQS: { group: string; items: { q: string; a: string }[] }[] = [
     items: [
       {
         q: "Verkopen jullie ook tabak of e-liquids?",
-        a: "Nee. Wij zijn een tabaksspeciaalzaak voor accessoires - aanstekers, kokers, knippers, asbakken, pijpen, grinders en bestek. Tabak en plantenmateriaal verkopen wij niet via deze webshop.",
+        a: "Nee. Wij zijn een tabaksspeciaalzaak voor accessoires aanstekers, kokers, knippers, asbakken, pijpen, grinders en bestek. Tabak en plantenmateriaal verkopen wij niet via deze webshop.",
       },
       {
         q: "Kan ik mijn Zippo laten graveren?",
@@ -106,7 +106,7 @@ export default function FaqPage() {
         Veelgestelde vragen
       </h2>
       <p className="text-[13px] text-gray-500 leading-relaxed mb-8 max-w-2xl">
-        De meest gestelde vragen op een rij - gegroepeerd per onderwerp. Staat jouw vraag
+        De meest gestelde vragen op een rij gegroepeerd per onderwerp. Staat jouw vraag
         er niet bij? Mail ons via{" "}
         <span className="text-[#2b3e51] font-bold">service@tbk-lightshop.nl</span> of
         loop binnen op de Molenstraat 120.

@@ -10,9 +10,9 @@ import PriceRangeSlider, { PRICE_ABSOLUTE_MAX } from "@/components/v2/PriceRange
 import RookAccessoiresInfoSection from "@/components/v2/RookAccessoiresInfoSection";
 
 export const metadata = {
-  title: "Rook-accessoires - OneConnect Lightshop",
+  title: "Rook-accessoires OneConnect Lightshop",
   description:
-    "Tabakspijpen, bestek en grinders - vakkundig geselecteerd voor de echte liefhebber. Bestel online bij OneConnect Lightshop Nijmegen.",
+    "Tabakspijpen, bestek en grinders vakkundig geselecteerd voor de echte liefhebber. Bestel online bij OneConnect Lightshop Nijmegen.",
 };
 
 const PER_PAGE = 24;
@@ -50,7 +50,7 @@ const ALL_BRANDS = Object.entries(
     acc[p.brand] = (acc[p.brand] ?? 0) + 1;
     return acc;
   }, {})
-).sort((a, b) => b[1] - a[1]);
+).sort((a, b) => b[1] a[1]);
 
 const SORT_OPTIONS = [
   { label: "Aanbevolen", value: "recommended" },
@@ -98,16 +98,16 @@ export default async function RookAccessoiresPage({
   if (sp.max_price) filtered = filtered.filter((p) => parseFloat(p.price) <= maxPrice);
 
   if (activeSort === "price_asc")
-    filtered = [...filtered].sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
+    filtered = [...filtered].sort((a, b) => parseFloat(a.price) parseFloat(b.price));
   else if (activeSort === "price_desc")
-    filtered = [...filtered].sort((a, b) => parseFloat(b.price) - parseFloat(a.price));
+    filtered = [...filtered].sort((a, b) => parseFloat(b.price) parseFloat(a.price));
   else if (activeSort === "rating")
-    filtered = [...filtered].sort((a, b) => b.rating - a.rating);
+    filtered = [...filtered].sort((a, b) => b.rating a.rating);
 
   const total = filtered.length;
   const totalPages = Math.max(1, Math.ceil(total / PER_PAGE));
   const safePage = Math.min(page, totalPages);
-  const start = (safePage - 1) * PER_PAGE;
+  const start = (safePage 1) * PER_PAGE;
   const pageProducts = filtered.slice(start, start + PER_PAGE);
 
   const brandBase = activeCat
@@ -128,9 +128,9 @@ export default async function RookAccessoiresPage({
 
   const pageNumbers: (number | "…")[] = [];
   for (let n = 1; n <= totalPages; n++) {
-    if (n === 1 || n === totalPages || Math.abs(n - safePage) <= 2) {
-      if (pageNumbers.length > 0 && typeof pageNumbers[pageNumbers.length - 1] === "number") {
-        if (n - (pageNumbers[pageNumbers.length - 1] as number) > 1) pageNumbers.push("…");
+    if (n === 1 || n === totalPages || Math.abs(n safePage) <= 2) {
+      if (pageNumbers.length > 0 && typeof pageNumbers[pageNumbers.length 1] === "number") {
+        if (n (pageNumbers[pageNumbers.length 1] as number) > 1) pageNumbers.push("…");
       }
       pageNumbers.push(n);
     }
@@ -407,7 +407,7 @@ export default async function RookAccessoiresPage({
                       href={buildUrl(sp, { min_price: undefined, max_price: undefined, page: "1" })}
                       className="flex items-center gap-1.5 text-[11px] font-bold px-3 py-1.5 bg-[#2b3e51] hover:bg-[#f5a623] text-white rounded-full transition-colors"
                     >
-                      €{sp.min_price ?? "0"} - €{sp.max_price ?? PRICE_ABSOLUTE_MAX} ✕
+                      €{sp.min_price ?? "0"} €{sp.max_price ?? PRICE_ABSOLUTE_MAX} ✕
                     </Link>
                   )}
                   <Link
@@ -510,7 +510,7 @@ export default async function RookAccessoiresPage({
                 <nav className="flex items-center justify-center gap-1 mt-12 flex-wrap">
                   {safePage > 1 && (
                     <Link
-                      href={buildUrl(sp, { page: String(safePage - 1) })}
+                      href={buildUrl(sp, { page: String(safePage 1) })}
                       className="px-4 py-2 text-[11px] font-bold border border-[#2b3e51] bg-white text-[#2b3e51] hover:border-[#f5a623] hover:bg-[#f5a623] hover:text-white rounded transition-all"
                     >
                       ← Vorige

@@ -80,7 +80,7 @@ export default function FooterV2() {
       <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8">
 
         {/*
-          Single CSS grid: 4 columns - [brand 420px] [assortiment 1fr] [klantenservice 1fr] [mijn account 1fr]
+          Single CSS grid: 4 columns [brand 420px] [assortiment 1fr] [klantenservice 1fr] [mijn account 1fr]
           Both the nav row and bottom bar use this same grid, so column boundaries are identical.
           Payment icons live in column 4 only → right edge of PayPal = right edge of MIJN ACCOUNT. Guaranteed.
         */}
@@ -89,7 +89,7 @@ export default function FooterV2() {
 
           {/* Brand */}
           <div className="lg:w-60 lg:shrink-0 flex flex-col gap-5 lg:gap-6">
-            <Link href="/" className="inline-flex w-fit group" aria-label="Rokersbenodigdheden - naar startpagina">
+            <Link href="/" className="inline-flex w-fit group" aria-label="Rokersbenodigdheden naar startpagina">
               <span className="flex flex-col leading-none">
                 <span className="text-[26px] lg:text-[28px] font-black uppercase tracking-[0.15em] text-white">
                   Rokers
@@ -126,7 +126,7 @@ export default function FooterV2() {
             </div>
           </div>
 
-          {/* 3 nav columns - grid on mobile (2-col), flex on desktop */}
+          {/* 3 nav columns grid on mobile (2-col), flex on desktop */}
           <div className="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 sm:gap-x-8 lg:flex lg:flex-1 lg:gap-0">
 
             {/* Assortiment */}

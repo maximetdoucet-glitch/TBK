@@ -166,7 +166,7 @@ export default function CategoryShowcase() {
                     {name}
                   </h3>
 
-                  {/* Description - only on hover */}
+                  {/* Description only on hover */}
                   <div
                     className="transition-all duration-400 overflow-hidden"
                     style={{ maxHeight: isHovered ? 60 : 0, opacity: isHovered ? 1 : 0 }}
@@ -176,7 +176,7 @@ export default function CategoryShowcase() {
                     </p>
                   </div>
 
-                  {/* Stats - only on hover */}
+                  {/* Stats only on hover */}
                   <div
                     className="flex gap-4 transition-all duration-400 overflow-hidden"
                     style={{ maxHeight: isHovered ? 56 : 0, opacity: isHovered ? 1 : 0 }}
@@ -194,7 +194,7 @@ export default function CategoryShowcase() {
                     })}
                   </div>
 
-                  {/* Brands - only on hover */}
+                  {/* Brands only on hover */}
                   <div
                     className="flex flex-wrap gap-1 transition-all duration-400 overflow-hidden"
                     style={{ maxHeight: isHovered ? 48 : 0, opacity: isHovered ? 1 : 0, marginTop: isHovered ? "0.75rem" : 0 }}
@@ -214,7 +214,7 @@ export default function CategoryShowcase() {
                     ))}
                   </div>
 
-                  {/* CTA - only on hover */}
+                  {/* CTA only on hover */}
                   <div
                     className="transition-all duration-400 overflow-hidden"
                     style={{ maxHeight: isHovered ? 52 : 0, opacity: isHovered ? 1 : 0, marginTop: isHovered ? "1rem" : 0 }}

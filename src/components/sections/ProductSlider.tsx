@@ -15,7 +15,7 @@ const PRODUCTS = [
   { id: 1, name: "Rizla Vloei Oranje Box", description: "Volledige doos met 50 pakjes Rizla Oranje.", price: "24.50", oldPrice: "29.95", image: "/images/rizla.png", rating: 5, category: "Vloei" },
   { id: 2, name: "Zippo Street Chrome", description: "Klassieke Zippo met een robuuste chrome afwerking.", price: "39.95", image: "/images/hero_zippo.png", rating: 4, category: "Zippo" },
   { id: 3, name: "Mascotte Original Vloei Box", description: "Premium vloei van Nederlandse bodem.", price: "12.20", image: "/images/vloei.png", rating: 5, category: "Vloei" },
-  { id: 4, name: "Clipper Classic - Set", description: "Set van 4 iconische hervulbare aanstekers.", price: "12.50", image: "/images/clipper.png", rating: 5, category: "Aanstekers" },
+  { id: 4, name: "Clipper Classic Set", description: "Set van 4 iconische hervulbare aanstekers.", price: "12.50", image: "/images/clipper.png", rating: 5, category: "Aanstekers" },
   { id: 5, name: "Colibri V-Cut", description: "Hoogwaardige sigarenknipper met diepe V-snede.", price: "45.00", image: "/images/cutters.png", rating: 5, category: "Sigarenknippers" },
   { id: 6, name: "BIC Maxi J26", description: "De betrouwbaarste wegwerpaansteker ter wereld.", price: "1.95", image: "/images/featured_1.png", rating: 4, category: "Aanstekers" },
 ];

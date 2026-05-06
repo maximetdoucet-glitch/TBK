@@ -86,7 +86,7 @@ export default function AboutSection() {
       {/* ── About + Pillars ── */}
       <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 lg:gap-24 items-start">
-          {/* Left - brand story */}
+          {/* Left brand story */}
           <div>
             <p className="text-[10px] font-black uppercase tracking-[0.3em] text-[#f5a623] mb-3">
               {t("about.eyebrow")}
@@ -120,7 +120,7 @@ export default function AboutSection() {
             </div>
           </div>
 
-          {/* Right - FAQ */}
+          {/* Right FAQ */}
           <div className="lg:pt-2">
             <div className="flex items-end justify-between mb-6 sm:mb-8">
               <div>

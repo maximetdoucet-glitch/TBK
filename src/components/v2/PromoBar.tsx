@@ -25,7 +25,7 @@ export default function PromoBar() {
       <div className="max-w-[1300px] mx-auto px-3 sm:px-4 flex items-center justify-center gap-2 sm:gap-4 h-9 sm:h-9 relative pl-8 pr-9 sm:pl-12 sm:pr-12">
         {/* Prev */}
         <button
-          onClick={() => setCurrent((c) => (c - 1 + MESSAGES.length) % MESSAGES.length)}
+          onClick={() => setCurrent((c) => (c 1 + MESSAGES.length) % MESSAGES.length)}
           className="absolute left-4 text-white/40 hover:text-white transition-colors hidden sm:block"
           aria-label={t("promo.prev")}
         >

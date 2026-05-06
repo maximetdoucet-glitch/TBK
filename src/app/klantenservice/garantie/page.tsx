@@ -1,7 +1,7 @@
 import { ShieldCheck, Award, Wrench, Mail } from "lucide-react";
 
 export const metadata = {
-  title: "Garantiebeleid - OneConnect Lightshop",
+  title: "Garantiebeleid OneConnect Lightshop",
   description: "Wettelijke garantie + fabrikantengaranties op aanstekers en accessoires.",
 };
 
@@ -13,18 +13,18 @@ export default function GarantiePage() {
       </h2>
       <p className="text-[13px] text-gray-500 leading-relaxed mb-8 max-w-2xl">
         Op alles wat we verkopen krijg je minimaal de wettelijke conformiteitsgarantie.
-        Voor een aantal merken - Zippo voorop - geldt een aanvullende fabrikantsgarantie.
+        Voor een aantal merken Zippo voorop geldt een aanvullende fabrikantsgarantie.
       </p>
 
-      {/* Hero - Zippo lifetime warranty */}
+      {/* Hero Zippo lifetime warranty */}
       <div className="relative overflow-hidden bg-[#f5a623]/6 border border-[#f5a623]/25 rounded-sm p-8 mb-6">
         <div className="relative z-10 max-w-2xl">
           <Award className="size-8 text-[#f5a623] mb-4" />
           <h3 className="font-montserrat text-xl font-black text-[#2b3e51] tracking-tight mb-3">
-            Zippo - levenslange garantie, zonder uitzondering
+            Zippo levenslange garantie, zonder uitzondering
           </h3>
           <p className="text-[13px] text-gray-600 leading-relaxed">
-            Elke Zippo die ooit is gemaakt - van 1932 tot vandaag - valt onder de
+            Elke Zippo die ooit is gemaakt van 1932 tot vandaag valt onder de
             levenslange garantie van het merk. Geen aankoopbewijs nodig, geen tijdslimiet,
             geen kleine lettertjes. Lever je Zippo in onze winkel in en wij regelen de
             reparatie of vervanging via Zippo zelf, kosteloos.
@@ -51,7 +51,7 @@ export default function GarantiePage() {
             icon: Wrench,
             title: "Reparatieservice",
             body:
-              "Voor Zippo en enkele kwaliteitsknippers bieden we eigen reparatie en slijpservice in de winkel. Kom langs in de Molenstraat 120 voor een diagnose - meestal binnen 5 minuten klaar.",
+              "Voor Zippo en enkele kwaliteitsknippers bieden we eigen reparatie en slijpservice in de winkel. Kom langs in de Molenstraat 120 voor een diagnose meestal binnen 5 minuten klaar.",
           },
           {
             icon: Mail,
@@ -84,7 +84,7 @@ export default function GarantiePage() {
       </ul>
 
       <p className="text-[11px] text-gray-400 leading-relaxed max-w-2xl">
-        Twijfel je of jouw situatie onder de garantie valt? Mail ons gerust - we kijken
+        Twijfel je of jouw situatie onder de garantie valt? Mail ons gerust we kijken
         altijd of er een redelijke oplossing is, ook buiten de garantieperiode.
       </p>
     </article>

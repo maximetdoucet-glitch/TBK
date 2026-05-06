@@ -16,7 +16,7 @@ export default function HeroCarousel() {
           href="/aanstekers"
           className="group relative block overflow-hidden rounded-xl sm:rounded-2xl aspect-[1/1] sm:aspect-[16/9] lg:aspect-[21/9]"
         >
-          {/* Background image - top-aligned on mobile so the cluttered bottom of the photo is cropped out */}
+          {/* Background image top-aligned on mobile so the cluttered bottom of the photo is cropped out */}
           <Image
             src="https://images.unsplash.com/photo-1565555384748-b7032af559fc?w=1800&q=85&fit=crop"
             alt={t("hero.imageAlt")}
@@ -25,7 +25,7 @@ export default function HeroCarousel() {
             className="object-cover object-top sm:object-center transition-transform duration-700 group-hover:scale-[1.03]"
           />
 
-          {/* Dark overlay for text legibility - vertical gradient on mobile, horizontal on desktop */}
+          {/* Dark overlay for text legibility vertical gradient on mobile, horizontal on desktop */}
           <div
             aria-hidden
             className="absolute inset-0 sm:hidden"
@@ -43,7 +43,7 @@ export default function HeroCarousel() {
             }}
           />
 
-          {/* Content - title stacked above CTA, centered upper-middle on mobile, vertically centered on desktop */}
+          {/* Content title stacked above CTA, centered upper-middle on mobile, vertically centered on desktop */}
           <div className="relative z-10 h-full flex flex-col justify-center px-6 sm:px-12 lg:px-20 max-w-3xl">
             <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.35em] sm:tracking-[0.4em] text-[#f5a623] mb-3 sm:mb-4">
               {t("hero.eyebrow")}
