@@ -1,8 +1,8 @@
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 
 export const metadata = {
-  title: "Contact OneConnect Lightshop",
-  description: "Neem contact op met de Tabaksspeciaalzaak Nijmegen Molenstraat 120.",
+  title: "Contact - OneConnect Lightshop",
+  description: "Neem contact op met de Tabaksspeciaalzaak Nijmegen - Molenstraat 120.",
 };
 
 export default function ContactPage() {
@@ -13,7 +13,7 @@ export default function ContactPage() {
       </h2>
       <p className="text-[13px] text-gray-500 leading-relaxed mb-8 max-w-2xl">
         Een vraag over een product, een advies nodig of even langskomen voor een
-        Zippo-reparatie? Wij helpen je graag schriftelijk, telefonisch of in de winkel.
+        Zippo-reparatie? Wij helpen je graag - schriftelijk, telefonisch of in de winkel.
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

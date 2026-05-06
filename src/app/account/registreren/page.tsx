@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Registreren OneConnect Lightshop",
+  title: "Registreren - OneConnect Lightshop",
   description: "Maak een nieuw account aan bij OneConnect Lightshop.",
 };
 

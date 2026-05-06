@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Inloggen OneConnect Lightshop",
+  title: "Inloggen - OneConnect Lightshop",
   description: "Log in op je OneConnect Lightshop account.",
 };
 

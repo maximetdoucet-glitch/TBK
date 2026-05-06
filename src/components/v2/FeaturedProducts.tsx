@@ -18,7 +18,7 @@ function badgeColor(badge: string | null | undefined) {
 }
 
 
-// Curated featured product IDs spread across the 4 collections
+// Curated featured product IDs - spread across the 4 collections
 const FEATURED_IDS = [156, 151, 421, 414, 528, 92, 229, 226];
 
 function getFeatured(): Product[] {
@@ -28,7 +28,7 @@ function getFeatured(): Product[] {
   if (curated.length < 8) {
     const fill = PRODUCTS
       .filter((p) => !FEATURED_IDS.includes(p.id))
-      .sort((a, b) => b.rating a.rating || b.reviewCount a.reviewCount);
+      .sort((a, b) => b.rating - a.rating || b.reviewCount - a.reviewCount);
     return [...curated, ...fill].slice(0, 8);
   }
   return curated;

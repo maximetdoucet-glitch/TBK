@@ -1,18 +1,18 @@
 import { ShieldCheck, Lock } from "lucide-react";
 
 export const metadata = {
-  title: "Betaalmethoden OneConnect Lightshop",
+  title: "Betaalmethoden - OneConnect Lightshop",
   description: "Veilig betalen via iDEAL, creditcard, PayPal, Klarna en meer.",
 };
 
 const METHODS = [
-  { name: "iDEAL",       desc: "De meest gebruikte betaalmethode in Nederland direct via je eigen bank." },
-  { name: "Bancontact",  desc: "Voor onze Belgische klanten directe betaling via je bankkaart." },
+  { name: "iDEAL",       desc: "De meest gebruikte betaalmethode in Nederland - direct via je eigen bank." },
+  { name: "Bancontact",  desc: "Voor onze Belgische klanten - directe betaling via je bankkaart." },
   { name: "Visa",        desc: "Wereldwijd geaccepteerd, met 3D Secure verificatie." },
   { name: "Mastercard",  desc: "Geaccepteerd in alle landen die we beleveren, met 3D Secure." },
-  { name: "PayPal",      desc: "Veilig betalen zonder je kaartgegevens te delen kopersbescherming inbegrepen." },
-  { name: "Klarna",      desc: "Achteraf betalen binnen 14 of 30 dagen, of in 3 termijnen zonder rente." },
-  { name: "Apple Pay",   desc: "Eén tik op je iPhone of Mac geen handmatig invullen." },
+  { name: "PayPal",      desc: "Veilig betalen zonder je kaartgegevens te delen - kopersbescherming inbegrepen." },
+  { name: "Klarna",      desc: "Achteraf betalen binnen 14 of 30 dagen, of in 3 termijnen - zonder rente." },
+  { name: "Apple Pay",   desc: "Eén tik op je iPhone of Mac - geen handmatig invullen." },
   { name: "Google Pay",  desc: "Snelle checkout op Android-apparaten en in Chrome." },
 ];
 
@@ -24,7 +24,7 @@ export default function BetaalmethodenPage() {
       </h2>
       <p className="text-[13px] text-gray-500 leading-relaxed mb-8 max-w-2xl">
         We bieden alle gangbare betaalmethoden in Nederland en België. Iedere transactie
-        loopt via onze beveiligde betaalpartner wij zien of bewaren je betaalgegevens nooit.
+        loopt via onze beveiligde betaalpartner - wij zien of bewaren je betaalgegevens nooit.
       </p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-10">
@@ -46,7 +46,7 @@ export default function BetaalmethodenPage() {
             <p className="font-bold text-[#2b3e51] text-[13px] mb-1">SSL-versleuteling</p>
             <p className="text-[12px] text-gray-500 leading-relaxed">
               Alle gegevens die je invult tijdens de checkout worden versleuteld via een
-              256-bit SSL-verbinding herkenbaar aan het slotje in je browser.
+              256-bit SSL-verbinding - herkenbaar aan het slotje in je browser.
             </p>
           </div>
         </div>
@@ -55,7 +55,7 @@ export default function BetaalmethodenPage() {
           <div>
             <p className="font-bold text-[#2b3e51] text-[13px] mb-1">PCI-DSS gecertificeerd</p>
             <p className="text-[12px] text-gray-500 leading-relaxed">
-              Onze betaalprovider is PCI-DSS Level 1 gecertificeerd de strengste
+              Onze betaalprovider is PCI-DSS Level 1 gecertificeerd - de strengste
               standaard voor het verwerken van betaalgegevens.
             </p>
           </div>
@@ -64,7 +64,7 @@ export default function BetaalmethodenPage() {
 
       <p className="text-[11px] text-gray-400 leading-relaxed mt-8">
         Een betaalmethode niet zien die je verwacht? Mail ons via{" "}
-        <span className="text-[#2b3e51] font-bold">service@tbk-lightshop.nl</span> we
+        <span className="text-[#2b3e51] font-bold">service@tbk-lightshop.nl</span> - we
         breiden het aanbod regelmatig uit op basis van klantvraag.
       </p>
     </article>

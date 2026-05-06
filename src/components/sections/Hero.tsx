@@ -6,7 +6,7 @@ export default function Hero() {
   return (
     <section className="bg-white py-6 sm:py-10">
       <div className="container mx-auto max-w-[1300px] px-4 sm:px-6 lg:px-8">
-        {/* Hero banner tall on mobile, cinematic on desktop */}
+        {/* Hero banner - tall on mobile, cinematic on desktop */}
         <div className="relative bg-[#111] overflow-hidden group aspect-[4/3] sm:aspect-[16/7] md:aspect-[2048/540] border border-gray-100 shadow-xl">
           <div className="absolute inset-0 z-0">
              <Image
@@ -21,7 +21,7 @@ export default function Hero() {
 
           <div className="relative z-10 h-full flex flex-col justify-center px-6 py-8 sm:px-12 md:px-20 text-white max-w-xl">
              <span className="text-primary font-semibold text-[10px] uppercase tracking-[0.4em] mb-3">
-                TBK LIGHTSHOP NIJMEGEN
+                TBK LIGHTSHOP - NIJMEGEN
              </span>
              <h2 className="font-montserrat text-2xl sm:text-4xl md:text-5xl font-black tracking-tighter leading-[0.95] mb-4">
                 1400+ VERSCHILLENDE <br />

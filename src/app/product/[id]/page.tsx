@@ -78,7 +78,7 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
   }
 
   const discount = product.oldPrice
-    ? Math.round((1 Number(product.price) / Number(product.oldPrice)) * 100)
+    ? Math.round((1 - Number(product.price) / Number(product.oldPrice)) * 100)
     : null;
 
   return (
@@ -197,7 +197,7 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
               <div className="flex flex-wrap gap-3 mb-7">
                 <div className="flex items-center border border-gray-200 rounded-sm">
                   <button
-                    onClick={() => setQuantity((q) => Math.max(1, q 1))}
+                    onClick={() => setQuantity((q) => Math.max(1, q - 1))}
                     className="w-11 h-11 flex items-center justify-center text-lg text-[#2b3e51] hover:bg-gray-50 transition-colors"
                   >
                     −
@@ -233,7 +233,7 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
                 </button>
               </div>
 
-              {/* Buy now direct to checkout */}
+              {/* Buy now - direct to checkout */}
               <button
                 type="button"
                 onClick={handleBuyNow}

@@ -1,7 +1,7 @@
 import { Truck, Package, Globe, Clock } from "lucide-react";
 
 export const metadata = {
-  title: "Verzenden & leveren OneConnect Lightshop",
+  title: "Verzenden & leveren - OneConnect Lightshop",
   description: "Verzendkosten, levertijden en bezorgopties bij OneConnect Lightshop Nijmegen.",
 };
 
@@ -12,7 +12,7 @@ export default function VerzendenPage() {
         Verzenden & leveren
       </h2>
       <p className="text-[13px] text-gray-500 leading-relaxed mb-8 max-w-2xl">
-        We versturen vanuit ons eigen magazijn in Nijmegen snel, verzekerd en met
+        We versturen vanuit ons eigen magazijn in Nijmegen - snel, verzekerd en met
         bewuste verpakking.
       </p>
 
@@ -28,7 +28,7 @@ export default function VerzendenPage() {
             icon: Truck,
             title: "Gratis verzending vanaf €80 (NL) / €100 (BE)",
             body:
-              "Onder dit bedrag rekenen we €4,95 (NL) of €7,95 (BE) track & trace altijd inbegrepen via PostNL of DHL.",
+              "Onder dit bedrag rekenen we €4,95 (NL) of €7,95 (BE) - track & trace altijd inbegrepen via PostNL of DHL.",
           },
           {
             icon: Clock,
@@ -69,9 +69,9 @@ export default function VerzendenPage() {
         Bezorgers waarmee we werken
       </h3>
       <ul className="text-[13px] text-gray-500 leading-relaxed space-y-1 max-w-2xl">
-        <li>· <span className="font-bold text-[#2b3e51]">PostNL</span> standaard binnen Nederland</li>
-        <li>· <span className="font-bold text-[#2b3e51]">DHL</span> voor pakketten boven 5 kg en internationale zendingen</li>
-        <li>· <span className="font-bold text-[#2b3e51]">DPD</span> keuze in de checkout, leverdag-flexibiliteit</li>
+        <li>· <span className="font-bold text-[#2b3e51]">PostNL</span> - standaard binnen Nederland</li>
+        <li>· <span className="font-bold text-[#2b3e51]">DHL</span> - voor pakketten boven 5 kg en internationale zendingen</li>
+        <li>· <span className="font-bold text-[#2b3e51]">DPD</span> - keuze in de checkout, leverdag-flexibiliteit</li>
       </ul>
     </article>
   );

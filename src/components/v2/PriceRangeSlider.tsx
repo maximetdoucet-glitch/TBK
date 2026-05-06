@@ -106,7 +106,7 @@ export default function PriceRangeSlider({
         {/* Selected range highlight */}
         <div
           className="absolute h-[4px] bg-[#f5a623] rounded-full"
-          style={{ left: `${minPct}%`, right: `${100 maxPct}%` }}
+          style={{ left: `${minPct}%`, right: `${100 - maxPct}%` }}
         />
 
         {/* Min thumb */}
@@ -117,13 +117,13 @@ export default function PriceRangeSlider({
           step={1}
           value={min}
           onChange={(e) => {
-            const v = Math.min(Number(e.target.value), max 1);
+            const v = Math.min(Number(e.target.value), max - 1);
             setMin(v);
           }}
           onMouseUp={() => commit(min, max)}
           onTouchEnd={() => commit(min, max)}
           className={THUMB}
-          style={{ zIndex: min >= max 30 ? 5 : 3 }}
+          style={{ zIndex: min >= max - 30 ? 5 : 3 }}
           aria-label="Minimumprijs"
         />
 

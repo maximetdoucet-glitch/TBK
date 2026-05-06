@@ -18,7 +18,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-white/60 text-[11px] leading-relaxed uppercase tracking-widest font-bold pr-12">
-              De grootste tabakspecialist van Nijmegen gespecialiseerd in aanstekers en rookaccessoires. Gevestigd in hartje Nijmegen. Kwaliteit, service en vakmanschap staan centraal.
+              De grootste tabakspecialist van Nijmegen - gespecialiseerd in aanstekers en rookaccessoires. Gevestigd in hartje Nijmegen. Kwaliteit, service en vakmanschap staan centraal.
             </p>
             <div className="flex gap-4">
                {["IG", "FB", "X"].map((social) => (
@@ -81,7 +81,7 @@ export default function Footer() {
         <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
            <div className="flex flex-col gap-2">
               <p className="text-[9px] uppercase tracking-[0.4em] text-white/20 font-black">
-                 © {new Date().getFullYear()} TBK LIGHTSHOP NIJMEGEN
+                 © {new Date().getFullYear()} TBK LIGHTSHOP - NIJMEGEN
               </p>
               <div className="flex gap-12 text-[9px] font-black uppercase tracking-widest text-white/10">
                  <span>ALL RIGHTS RESERVED</span>

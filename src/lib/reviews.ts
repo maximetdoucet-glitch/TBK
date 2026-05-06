@@ -27,7 +27,7 @@ const REVIEW_POOL: { name: string; date: string; body: string }[] = [
   { name: "Kees",          date: "2025-10-28", body: "Doet het goed, maar de standaard vloeistof gaat wat snel op. Volgende keer 2 flesjes erbij." },
   { name: "Tess",          date: "2026-03-02", body: "Geweldig design en super degelijk. Aanrader!" },
   { name: "Bram",          date: "2025-11-19", body: "Werkt na anderhalf jaar nog steeds als een trein. Ouderwetse kwaliteit." },
-  { name: "Iris",          date: "2025-07-03", body: "Voor mijn vader gekocht hij is super tevreden. Echt mooi cadeau." },
+  { name: "Iris",          date: "2025-07-03", body: "Voor mijn vader gekocht - hij is super tevreden. Echt mooi cadeau." },
   { name: "Hugo",          date: "2025-09-25", body: "Niet helemaal wat ik verwacht had qua kleur, maar functioneel prima." },
   { name: "Lara",          date: "2025-12-30", body: "Zeer tevreden! Komt er ook een refill bij die ik makkelijk kon meebestellen." },
   { name: "Maarten",       date: "2025-08-04", body: "Goed product, snelle levering en mooi verpakt. Niets op aan te merken." },
@@ -53,7 +53,7 @@ export function getRatingDistribution(productId: number, count: number, avgRatin
   // Base shape: bell curve peaked at avgRating, exponential decay outward.
   const proportions: number[] = [];
   for (let r = 1; r <= 5; r++) {
-    const d = Math.abs(r avgRating);
+    const d = Math.abs(r - avgRating);
     proportions.push(Math.exp(-d * 1.55));
   }
 
@@ -70,8 +70,8 @@ export function getRatingDistribution(productId: number, count: number, avgRatin
   const exact = proportions.map((p) => (p / sum) * count);
   const counts = exact.map((v) => Math.floor(v));
   let used = counts.reduce((a, b) => a + b, 0);
-  const fracs = exact.map((v, i) => ({ i, frac: v counts[i] }));
-  fracs.sort((a, b) => b.frac a.frac);
+  const fracs = exact.map((v, i) => ({ i, frac: v - counts[i] }));
+  fracs.sort((a, b) => b.frac - a.frac);
   let k = 0;
   while (used < count) {
     counts[fracs[k % 5].i]++;
@@ -94,8 +94,8 @@ export function getReviewsForProduct(productId: number, count: number, avgRating
   const exact = dist.map((c) => (c / count) * visible);
   const visBuckets = exact.map((v) => Math.floor(v));
   let placed = visBuckets.reduce((a, b) => a + b, 0);
-  const fracs = exact.map((v, i) => ({ i, frac: v visBuckets[i] }));
-  fracs.sort((a, b) => b.frac a.frac);
+  const fracs = exact.map((v, i) => ({ i, frac: v - visBuckets[i] }));
+  fracs.sort((a, b) => b.frac - a.frac);
   let k = 0;
   while (placed < visible) {
     visBuckets[fracs[k % 5].i]++;
@@ -110,7 +110,7 @@ export function getReviewsForProduct(productId: number, count: number, avgRating
   }
   // Deterministic shuffle keyed off the product id
   const indexed = queue.map((rating, i) => ({ rating, key: hash(productId + i * 7919) }));
-  indexed.sort((a, b) => a.key b.key);
+  indexed.sort((a, b) => a.key - b.key);
 
   const out: Review[] = [];
   const poolStart = hash(productId) % REVIEW_POOL.length;

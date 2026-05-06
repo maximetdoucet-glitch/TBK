@@ -1,7 +1,7 @@
 import { Undo2, Calendar, PackageCheck, Euro } from "lucide-react";
 
 export const metadata = {
-  title: "Ruilen & retourneren OneConnect Lightshop",
+  title: "Ruilen & retourneren - OneConnect Lightshop",
   description: "14 dagen bedenktijd, gratis retourneren binnen Nederland.",
 };
 
@@ -39,7 +39,7 @@ export default function RetournerenPage() {
         Ruilen & retourneren
       </h2>
       <p className="text-[13px] text-gray-500 leading-relaxed mb-8 max-w-2xl">
-        14 dagen bedenktijd op alles wat je online bestelt zonder gedoe, zonder vragen.
+        14 dagen bedenktijd op alles wat je online bestelt - zonder gedoe, zonder vragen.
         Binnen Nederland sturen we het retourlabel kosteloos toe.
       </p>
 
@@ -59,7 +59,7 @@ export default function RetournerenPage() {
       </div>
 
       <h3 className="font-montserrat text-base font-black text-[#2b3e51] mb-4">
-        Zo werkt het in vier stappen
+        Zo werkt het - in vier stappen
       </h3>
 
       <ol className="space-y-4 mb-10 max-w-2xl">
@@ -87,7 +87,7 @@ export default function RetournerenPage() {
 
       <p className="text-[12px] text-gray-400 leading-relaxed max-w-2xl">
         Twijfel je of jouw artikel onder een uitzondering valt? Mail ons even voordat je
-        het terugstuurt we kijken altijd of er een oplossing is.
+        het terugstuurt - we kijken altijd of er een oplossing is.
       </p>
     </article>
   );

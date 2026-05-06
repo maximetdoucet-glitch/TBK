@@ -1,7 +1,7 @@
 import { User } from "lucide-react";
 import LockedState from "../_components/LockedState";
 
-export const metadata = { title: "Persoonlijke gegevens OneConnect Lightshop" };
+export const metadata = { title: "Persoonlijke gegevens - OneConnect Lightshop" };
 
 export default function GegevensPage() {
   return (

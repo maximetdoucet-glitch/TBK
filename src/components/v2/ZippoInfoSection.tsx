@@ -19,7 +19,7 @@ const STEPS = [
   {
     n: "03",
     title: "Vul bij",
-    desc: "Druppel Zippo-benzine langzaam op de watten tot ze verzadigd zijn niet overladen.",
+    desc: "Druppel Zippo-benzine langzaam op de watten tot ze verzadigd zijn - niet overladen.",
   },
   {
     n: "04",
@@ -36,7 +36,7 @@ const STEPS = [
 const FAQS = [
   {
     q: "Hoe lang gaat een Zippo mee?",
-    a: "Een Zippo heeft een levenslange garantie en gaat bij normaal gebruik generaties mee. De aanstekers worden al sinds 1932 op dezelfde manier gemaakt van staal, voor de eeuwigheid.",
+    a: "Een Zippo heeft een levenslange garantie en gaat bij normaal gebruik generaties mee. De aanstekers worden al sinds 1932 op dezelfde manier gemaakt - van staal, voor de eeuwigheid.",
   },
   {
     q: "Hoe weet ik of mijn Zippo origineel is?",
@@ -52,7 +52,7 @@ const FAQS = [
   },
   {
     q: "Mag ik een Zippo meenemen in het vliegtuig?",
-    a: "Een gevulde aansteker is niet toegestaan in handbagage. Een lege aansteker mag in sommige gevallen wel, maar regels verschillen per maatschappij check altijd van tevoren.",
+    a: "Een gevulde aansteker is niet toegestaan in handbagage. Een lege aansteker mag in sommige gevallen wel, maar regels verschillen per maatschappij - check altijd van tevoren.",
   },
   {
     q: "Hoe vaak moet ik bijvullen?",
@@ -60,7 +60,7 @@ const FAQS = [
   },
   {
     q: "Kan ik een Zippo laten graveren?",
-    a: "Ja. Veel modellen zijn geschikt voor gravure naam, datum of afbeelding. Kom langs in de Molenstraat 120 voor de mogelijkheden.",
+    a: "Ja. Veel modellen zijn geschikt voor gravure - naam, datum of afbeelding. Kom langs in de Molenstraat 120 voor de mogelijkheden.",
   },
 ];
 
@@ -123,7 +123,7 @@ export default function ZippoInfoSection() {
     <div>
 
       {/* ══════════════════════════════════════════════
-          SECTION 1 WHY ZIPPO  (white bg)
+          SECTION 1 - WHY ZIPPO  (white bg)
       ══════════════════════════════════════════════ */}
       <div className="bg-white border-t border-gray-100">
         <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -147,14 +147,14 @@ export default function ZippoInfoSection() {
               </span>
             </div>
             <p className="text-gray-500 text-[13px] mt-4 max-w-lg leading-relaxed">
-              Zippo wordt al gemaakt op dezelfde manier van 1932 tot nu. Niet omdat het goedkoop is, maar omdat het goed is.
+              Zippo wordt al gemaakt op dezelfde manier - van 1932 tot nu. Niet omdat het goedkoop is, maar omdat het goed is.
             </p>
           </div>
 
           {/* Bento grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
 
-            {/* Hero card spans 2 cols */}
+            {/* Hero card - spans 2 cols */}
             <div className="lg:col-span-2 relative overflow-hidden bg-[#f5a623]/6 border border-[#f5a623]/25 rounded-sm p-8 group hover:border-[#f5a623]/50 transition-all duration-300">
               <span
                 className="absolute right-6 bottom-2 font-montserrat font-black text-[#f5a623] select-none pointer-events-none leading-none text-[clamp(80px,10vw,140px)] opacity-[0.08]"
@@ -165,10 +165,10 @@ export default function ZippoInfoSection() {
               <div className="relative z-10">
                 <Shield className="size-8 text-[#f5a623] mb-5 opacity-90" />
                 <h3 className="font-montserrat text-xl font-black text-[#2b3e51] tracking-tight mb-3">
-                  Levenslange garantie zonder uitzondering
+                  Levenslange garantie - zonder uitzondering
                 </h3>
                 <p className="text-[13px] text-gray-500 leading-relaxed max-w-md">
-                  Elke Zippo die ooit is gemaakt van 1932 tot vandaag valt onder de levenslange garantie. Geen aankoopbewijs nodig, geen tijdslimiet, geen kleine lettertjes. Een kapotte scharnier van dertig jaar oud? Zippo repareert of vervangt hem, kosteloos. Dat is niet marketing; het staat gewoon in hun beleid.
+                  Elke Zippo die ooit is gemaakt - van 1932 tot vandaag - valt onder de levenslange garantie. Geen aankoopbewijs nodig, geen tijdslimiet, geen kleine lettertjes. Een kapotte scharnier van dertig jaar oud? Zippo repareert of vervangt hem, kosteloos. Dat is niet marketing; het staat gewoon in hun beleid.
                 </p>
                 <div className="mt-6 flex items-center gap-2 text-[#f5a623]">
                   <span className="text-[11px] font-black uppercase tracking-[0.2em]">Lifetime warranty since 1932</span>
@@ -177,29 +177,29 @@ export default function ZippoInfoSection() {
               </div>
             </div>
 
-            {/* Card 2 Navulbaar */}
+            {/* Card 2 - Navulbaar */}
             <div className="bg-gray-50 border border-gray-200 rounded-sm p-6 group hover:border-[#f5a623]/40 hover:bg-[#f5a623]/3 transition-all duration-300">
               <RefreshCw className="size-5 text-gray-400 mb-4 group-hover:text-[#f5a623] transition-colors duration-300" />
               <h3 className="font-montserrat text-[14px] font-black text-[#2b3e51] tracking-tight mb-2">
                 Navulbaar & milieuvriendelijk
               </h3>
               <p className="text-[12px] text-gray-500 leading-relaxed">
-                Een wegwerpaansteker gooi je na 3.000 vonken weg. Een Zippo vul je bij onbeperkt, voor een paar euro per jaar. Gebruik uitsluitend originele Zippo-benzine: andere soorten tasten de watten aan en geven ongewenste reukgeur.
+                Een wegwerpaansteker gooi je na 3.000 vonken weg. Een Zippo vul je bij - onbeperkt, voor een paar euro per jaar. Gebruik uitsluitend originele Zippo-benzine: andere soorten tasten de watten aan en geven ongewenste reukgeur.
               </p>
             </div>
 
-            {/* Card 3 Windbestendig */}
+            {/* Card 3 - Windbestendig */}
             <div className="bg-gray-50 border border-gray-200 rounded-sm p-6 group hover:border-[#f5a623]/40 hover:bg-[#f5a623]/3 transition-all duration-300">
               <Wind className="size-5 text-gray-400 mb-4 group-hover:text-[#f5a623] transition-colors duration-300" />
               <h3 className="font-montserrat text-[14px] font-black text-[#2b3e51] tracking-tight mb-2">
                 Windbestendig door ontwerp
               </h3>
               <p className="text-[12px] text-gray-500 leading-relaxed">
-                De perforaties in het binnenwerk laten lucht van onderaf toe en blokkeren zijwind. Dat is geen toeval het is een beproefd mechanisme dat al negen decennia onveranderd werkt, van bergkampen tot scheepsdekken.
+                De perforaties in het binnenwerk laten lucht van onderaf toe en blokkeren zijwind. Dat is geen toeval - het is een beproefd mechanisme dat al negen decennia onveranderd werkt, van bergkampen tot scheepsdekken.
               </p>
             </div>
 
-            {/* Card 4 Collector */}
+            {/* Card 4 - Collector */}
             <div className="sm:col-span-2 lg:col-span-1 bg-gray-50 border border-gray-200 rounded-sm p-6 group hover:border-[#f5a623]/40 hover:bg-[#f5a623]/3 transition-all duration-300">
               <Star className="size-5 text-gray-400 mb-4 group-hover:text-[#f5a623] transition-colors duration-300" />
               <h3 className="font-montserrat text-[14px] font-black text-[#2b3e51] tracking-tight mb-2">
@@ -215,7 +215,7 @@ export default function ZippoInfoSection() {
       </div>
 
       {/* ══════════════════════════════════════════════
-          SECTION 2 HOW TO REFILL  (white bg)
+          SECTION 2 - HOW TO REFILL  (white bg)
       ══════════════════════════════════════════════ */}
       <div className="bg-white border-t border-gray-100">
         <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 py-20">
@@ -224,7 +224,7 @@ export default function ZippoInfoSection() {
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-14">
             <div>
               <p className="text-[10px] font-black uppercase tracking-[0.35em] text-gray-400 mb-3">
-                Onderhoud Stap voor stap
+                Onderhoud - Stap voor stap
               </p>
               <h2 className="font-montserrat font-black text-[#2b3e51] tracking-tight leading-tight text-[clamp(28px,3.5vw,48px)]">
                 Bijvullen in<br />vijf stappen.
@@ -268,7 +268,7 @@ export default function ZippoInfoSection() {
       </div>
 
       {/* ══════════════════════════════════════════════
-          SECTION 3 FAQ
+          SECTION 3 - FAQ
           Left border treatment, numbered tags
       ══════════════════════════════════════════════ */}
       <div className="bg-[#0d1117] border-t border-white/6">
@@ -292,10 +292,10 @@ export default function ZippoInfoSection() {
                 </h2>
               </div>
               <p className="text-[12px] text-white/35 leading-relaxed mb-8">
-                Alles wat je wilt weten over gebruik, onderhoud en aankoop eerlijk en zonder omhaal.
+                Alles wat je wilt weten over gebruik, onderhoud en aankoop - eerlijk en zonder omhaal.
               </p>
 
-              {/* Contact card no border box, just inline */}
+              {/* Contact card - no border box, just inline */}
               <div className="space-y-3">
                 <p className="text-[10px] font-black uppercase tracking-[0.2em] text-white/20">
                   Niet gevonden?

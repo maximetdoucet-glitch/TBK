@@ -24,14 +24,14 @@ export type Faq = {
 };
 
 export type CategoryInfoData = {
-  // Section 1 Editorial intro + bento
+  // Section 1 - Editorial intro + bento
   aboutLabel: string;
   headlineDark: string;
   headlineAccent: string;
   introBody: string;
   bento: BentoCard[];
 
-  // Section 2 How-to steps
+  // Section 2 - How-to steps
   stepsLabel: string;
   stepsHeading: string;
   stepsTipIcon: LucideIcon;
@@ -40,7 +40,7 @@ export type CategoryInfoData = {
   bottomBadgeIcon: LucideIcon;
   bottomBadgeText: string;
 
-  // Section 3 FAQ
+  // Section 3 - FAQ
   faqHeadingDark: string;
   faqHeadingAccent: string;
   faqIntro: string;
@@ -97,7 +97,7 @@ export default function CategoryInfoSection({ data }: { data: CategoryInfoData }
 
   return (
     <div>
-      {/* Section 1 Editorial intro + bento */}
+      {/* Section 1 - Editorial intro + bento */}
       <div className="bg-white border-t border-gray-100">
         <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="flex items-center gap-3 mb-8">
@@ -177,7 +177,7 @@ export default function CategoryInfoSection({ data }: { data: CategoryInfoData }
         </div>
       </div>
 
-      {/* Section 2 Steps */}
+      {/* Section 2 - Steps */}
       <div className="bg-white border-t border-gray-100">
         <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-14">
@@ -235,7 +235,7 @@ export default function CategoryInfoSection({ data }: { data: CategoryInfoData }
         </div>
       </div>
 
-      {/* Section 3 FAQ */}
+      {/* Section 3 - FAQ */}
       <div className="bg-[#0d1117] border-t border-white/6">
         <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="grid grid-cols-1 lg:grid-cols-[300px_1fr] gap-16 items-start">

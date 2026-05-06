@@ -192,8 +192,8 @@ export default function ProductReviews({
     let out = filterStars == null ? reviews : reviews.filter((r) => r.rating === filterStars);
     out = [...out].sort((a, b) => {
       if (sortKey === "newest") return b.date.localeCompare(a.date);
-      if (sortKey === "highest") return b.rating a.rating;
-      return a.rating b.rating;
+      if (sortKey === "highest") return b.rating - a.rating;
+      return a.rating - b.rating;
     });
     return out;
   }, [reviews, filterStars, sortKey]);
@@ -266,7 +266,7 @@ export default function ProductReviews({
             <DistributionBar
               key={s}
               stars={s}
-              count={distribution[s 1]}
+              count={distribution[s - 1]}
               total={reviews.length}
               active={filterStars === s}
               onClick={() => setFilterStars(filterStars === s ? null : s)}
@@ -381,7 +381,7 @@ export default function ProductReviews({
               {t("reviews.filterAll")}
             </button>
             {[5, 4, 3, 2, 1].map((s) => {
-              const count = distribution[s 1];
+              const count = distribution[s - 1];
               if (count === 0) return null;
               const active = filterStars === s;
               return (

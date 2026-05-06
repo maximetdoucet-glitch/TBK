@@ -125,7 +125,7 @@ export default function CartDrawer() {
                         <button
                           type="button"
                           aria-label="-"
-                          onClick={() => setQty(item.id, item.quantity 1, item.variant)}
+                          onClick={() => setQty(item.id, item.quantity - 1, item.variant)}
                           disabled={item.quantity <= 1}
                           className="size-7 flex items-center justify-center text-[#2b3e51]/70 hover:bg-gray-50 disabled:text-gray-300 disabled:hover:bg-transparent transition-colors"
                         >
