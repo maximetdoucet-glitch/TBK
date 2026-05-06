@@ -3,6 +3,7 @@
 import React, { useState, use } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import SafeImage from "@/components/v2/SafeImage";
 import { useRouter } from "next/navigation";
 import { Heart, ShoppingBag, Check, ChevronDown, ArrowLeft, Zap } from "lucide-react";
 import StarRating from "@/components/ui/StarRating";
@@ -100,7 +101,7 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
             {/* ── LEFT: Gallery ── */}
             <div className="flex flex-col gap-3">
               <div className="relative bg-[#f8f8f8] aspect-square overflow-hidden flex items-center justify-center p-6 sm:p-12 rounded-sm">
-                <Image
+                <SafeImage
                   src={product.images[activeImg]}
                   alt={product.name}
                   width={500}
@@ -341,7 +342,7 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
                     className="group bg-white border border-gray-100 hover:shadow-md transition-all duration-300 block rounded-sm"
                   >
                     <div className="bg-[#f8f8f8] aspect-square overflow-hidden flex items-center justify-center p-4 sm:p-8">
-                      <Image
+                      <SafeImage
                         src={related.image}
                         alt={related.name}
                         width={200}

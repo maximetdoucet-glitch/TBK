@@ -8,9 +8,12 @@ type Props = Omit<ImageProps, "onError" | "onLoad"> & {
   fallbackLabel?: string;
 };
 
-export default function SafeImage({ fallbackLabel, alt, className, ...rest }: Props) {
+const MAX_RETRIES = 2;
+
+export default function SafeImage({ fallbackLabel, alt, className, src, ...rest }: Props) {
   const [errored, setErrored] = useState(false);
   const [loaded, setLoaded] = useState(false);
+  const [attempt, setAttempt] = useState(0);
 
   if (errored) {
     return (
@@ -27,12 +30,27 @@ export default function SafeImage({ fallbackLabel, alt, className, ...rest }: Pr
     );
   }
 
+  // Append cache-busting attempt counter so retries actually re-fetch
+  const finalSrc =
+    typeof src === "string" && attempt > 0
+      ? `${src}${src.includes("?") ? "&" : "?"}_r=${attempt}`
+      : src;
+
   return (
     <Image
       {...rest}
+      key={attempt}
+      src={finalSrc as ImageProps["src"]}
       alt={alt}
       className={`${className ?? ""} ${loaded ? "opacity-100" : "opacity-0"} transition-opacity duration-300`}
-      onError={() => setErrored(true)}
+      onError={() => {
+        if (attempt < MAX_RETRIES) {
+          // Wait briefly, then retry — handles cold-cache stalls on the optimizer
+          setTimeout(() => setAttempt((a) => a + 1), 600 * (attempt + 1));
+        } else {
+          setErrored(true);
+        }
+      }}
       onLoad={() => setLoaded(true)}
     />
   );

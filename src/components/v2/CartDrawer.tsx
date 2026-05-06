@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
+import SafeImage from "@/components/v2/SafeImage";
 import { X, Minus, Plus, Trash2, ShoppingBag, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useCart } from "@/cart/CartContext";
@@ -93,13 +93,12 @@ export default function CartDrawer() {
                 >
                   {/* Thumb */}
                   <div className="relative size-20 sm:size-24 shrink-0 rounded-lg bg-[#f4f5f6] overflow-hidden border border-gray-100">
-                    <Image
+                    <SafeImage
                       src={item.image}
                       alt={item.name}
                       fill
                       className="object-contain p-2"
                       style={{ mixBlendMode: "multiply" }}
-                      unoptimized
                     />
                   </div>
 
