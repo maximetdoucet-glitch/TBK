@@ -27,7 +27,7 @@ const REVIEW_POOL: { name: string; date: string; body: string }[] = [
   { name: "Kees",          date: "2025-10-28", body: "Doet het goed, maar de standaard vloeistof gaat wat snel op. Volgende keer 2 flesjes erbij." },
   { name: "Tess",          date: "2026-03-02", body: "Geweldig design en super degelijk. Aanrader!" },
   { name: "Bram",          date: "2025-11-19", body: "Werkt na anderhalf jaar nog steeds als een trein. Ouderwetse kwaliteit." },
-  { name: "Iris",          date: "2025-07-03", body: "Voor mijn vader gekocht - hij is super tevreden. Echt mooi cadeau." },
+  { name: "Iris",          date: "2025-07-03", body: "Voor mijn vader gekocht hij is super tevreden. Echt mooi cadeau." },
   { name: "Hugo",          date: "2025-09-25", body: "Niet helemaal wat ik verwacht had qua kleur, maar functioneel prima." },
   { name: "Lara",          date: "2025-12-30", body: "Zeer tevreden! Komt er ook een refill bij die ik makkelijk kon meebestellen." },
   { name: "Maarten",       date: "2025-08-04", body: "Goed product, snelle levering en mooi verpakt. Niets op aan te merken." },

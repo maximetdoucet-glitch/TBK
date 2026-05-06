@@ -1,7 +1,7 @@
 import { ShieldCheck, Award, Wrench, Mail } from "lucide-react";
 
 export const metadata = {
-  title: "Garantiebeleid - OneConnect Lightshop",
+  title: "Garantiebeleid OneConnect Lightshop",
   description: "Wettelijke garantie + fabrikantengaranties op aanstekers en accessoires.",
 };
 
@@ -51,7 +51,7 @@ export default function GarantiePage() {
             icon: Wrench,
             title: "Reparatieservice",
             body:
-              "Voor Zippo en enkele kwaliteitsknippers bieden we eigen reparatie en slijpservice in de winkel. Kom langs in de Molenstraat 120 voor een diagnose - meestal binnen 5 minuten klaar.",
+              "Voor Zippo en enkele kwaliteitsknippers bieden we eigen reparatie en slijpservice in de winkel. Kom langs in de Molenstraat 120 voor een diagnose meestal binnen 5 minuten klaar.",
           },
           {
             icon: Mail,

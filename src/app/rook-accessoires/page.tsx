@@ -10,9 +10,9 @@ import PriceRangeSlider, { PRICE_ABSOLUTE_MAX } from "@/components/v2/PriceRange
 import RookAccessoiresInfoSection from "@/components/v2/RookAccessoiresInfoSection";
 
 export const metadata = {
-  title: "Rook-accessoires - OneConnect Lightshop",
+  title: "Rook-accessoires OneConnect Lightshop",
   description:
-    "Tabakspijpen, bestek en grinders - vakkundig geselecteerd voor de echte liefhebber. Bestel online bij OneConnect Lightshop Nijmegen.",
+    "Tabakspijpen, bestek en grinders vakkundig geselecteerd voor de echte liefhebber. Bestel online bij OneConnect Lightshop Nijmegen.",
 };
 
 const PER_PAGE = 24;

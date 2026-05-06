@@ -1,8 +1,8 @@
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 
 export const metadata = {
-  title: "Contact - OneConnect Lightshop",
-  description: "Neem contact op met de Tabaksspeciaalzaak Nijmegen - Molenstraat 120.",
+  title: "Contact OneConnect Lightshop",
+  description: "Neem contact op met de Tabaksspeciaalzaak Nijmegen Molenstraat 120.",
 };
 
 export default function ContactPage() {

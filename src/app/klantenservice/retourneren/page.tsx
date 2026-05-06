@@ -1,7 +1,7 @@
 import { Undo2, Calendar, PackageCheck, Euro } from "lucide-react";
 
 export const metadata = {
-  title: "Ruilen & retourneren - OneConnect Lightshop",
+  title: "Ruilen & retourneren OneConnect Lightshop",
   description: "14 dagen bedenktijd, gratis retourneren binnen Nederland.",
 };
 

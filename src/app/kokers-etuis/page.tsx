@@ -10,9 +10,9 @@ import PriceRangeSlider, { PRICE_ABSOLUTE_MAX } from "@/components/v2/PriceRange
 import KokersEtuisInfoSection from "@/components/v2/KokersEtuisInfoSection";
 
 export const metadata = {
-  title: "Kokers & Etuis - OneConnect Lightshop",
+  title: "Kokers & Etuis OneConnect Lightshop",
   description:
-    "Sigarettenkokers, etuis, filters en houders - stijlvol en praktisch. Bestel online bij OneConnect Lightshop Nijmegen.",
+    "Sigarettenkokers, etuis, filters en houders stijlvol en praktisch. Bestel online bij OneConnect Lightshop Nijmegen.",
 };
 
 const PER_PAGE = 24;

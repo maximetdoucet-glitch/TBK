@@ -10,7 +10,7 @@ import PriceRangeSlider, { PRICE_ABSOLUTE_MAX } from "@/components/v2/PriceRange
 import KnippersAsbakkenInfoSection from "@/components/v2/KnippersAsbakkenInfoSection";
 
 export const metadata = {
-  title: "Knippers & Asbakken - OneConnect Lightshop",
+  title: "Knippers & Asbakken OneConnect Lightshop",
   description:
     "Precisieknippers, elegante asbakken en sigaren-etuis van topmerken zoals Bookwill en Faro. Bestel online bij OneConnect Lightshop Nijmegen.",
 };

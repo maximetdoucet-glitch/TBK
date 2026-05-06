@@ -19,7 +19,7 @@ const STEPS = [
   {
     n: "03",
     title: "Vul bij",
-    desc: "Druppel Zippo-benzine langzaam op de watten tot ze verzadigd zijn - niet overladen.",
+    desc: "Druppel Zippo-benzine langzaam op de watten tot ze verzadigd zijn niet overladen.",
   },
   {
     n: "04",
@@ -36,7 +36,7 @@ const STEPS = [
 const FAQS = [
   {
     q: "Hoe lang gaat een Zippo mee?",
-    a: "Een Zippo heeft een levenslange garantie en gaat bij normaal gebruik generaties mee. De aanstekers worden al sinds 1932 op dezelfde manier gemaakt - van staal, voor de eeuwigheid.",
+    a: "Een Zippo heeft een levenslange garantie en gaat bij normaal gebruik generaties mee. De aanstekers worden al sinds 1932 op dezelfde manier gemaakt van staal, voor de eeuwigheid.",
   },
   {
     q: "Hoe weet ik of mijn Zippo origineel is?",
@@ -52,7 +52,7 @@ const FAQS = [
   },
   {
     q: "Mag ik een Zippo meenemen in het vliegtuig?",
-    a: "Een gevulde aansteker is niet toegestaan in handbagage. Een lege aansteker mag in sommige gevallen wel, maar regels verschillen per maatschappij - check altijd van tevoren.",
+    a: "Een gevulde aansteker is niet toegestaan in handbagage. Een lege aansteker mag in sommige gevallen wel, maar regels verschillen per maatschappij check altijd van tevoren.",
   },
   {
     q: "Hoe vaak moet ik bijvullen?",
@@ -60,7 +60,7 @@ const FAQS = [
   },
   {
     q: "Kan ik een Zippo laten graveren?",
-    a: "Ja. Veel modellen zijn geschikt voor gravure - naam, datum of afbeelding. Kom langs in de Molenstraat 120 voor de mogelijkheden.",
+    a: "Ja. Veel modellen zijn geschikt voor gravure naam, datum of afbeelding. Kom langs in de Molenstraat 120 voor de mogelijkheden.",
   },
 ];
 

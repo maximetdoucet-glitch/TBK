@@ -10,7 +10,7 @@ const TABS = [
     icon: Award,
     title: "Materialen die het proces respecteren",
     body:
-      "Bruyère hout - de wortelknobbel van de heideboom - is sinds 1850 de standaard voor pijpen. Hittebestendig, geurneutraal, en het ontwikkelt na honderden vullingen een eigen rookkarakter. Onze grinders zijn vliegtuig-aluminium met diamantvormige tanden; ons bestek is messing dat niet roest in de tabak.",
+      "Bruyère hout de wortelknobbel van de heideboom is sinds 1850 de standaard voor pijpen. Hittebestendig, geurneutraal, en het ontwikkelt na honderden vullingen een eigen rookkarakter. Onze grinders zijn vliegtuig-aluminium met diamantvormige tanden; ons bestek is messing dat niet roest in de tabak.",
     fact: "Sinds 1850",
   },
   {
@@ -19,7 +19,7 @@ const TABS = [
     icon: Wrench,
     title: "Klein gereedschap, lange levensduur",
     body:
-      "Een 3-delig pijp-bestek (aandrukker, ruimer, prikker) houdt je pijp schoon en voorkomt verstopping. Grinders maak je handmatig schoon met warm water en een zachte borstel - niet in de vaatwasser. Goed onderhouden gereedschap gaat decennia mee.",
+      "Een 3-delig pijp-bestek (aandrukker, ruimer, prikker) houdt je pijp schoon en voorkomt verstopping. Grinders maak je handmatig schoon met warm water en een zachte borstel niet in de vaatwasser. Goed onderhouden gereedschap gaat decennia mee.",
     fact: "Decennia mee",
   },
   {
@@ -28,7 +28,7 @@ const TABS = [
     icon: Scale,
     title: "Verkoop volgens Nederlandse wetgeving",
     body:
-      "Wij verkopen uitsluitend rook-gereedschap en accessoires (pijpen, grinders, bestek) - geen tabak of plantenmateriaal via deze webshop. Verkoop aan personen onder de 18 jaar is niet toegestaan. Bij twijfel over leeftijd vragen wij om legitimatie bij ophalen of bezorging.",
+      "Wij verkopen uitsluitend rook-gereedschap en accessoires (pijpen, grinders, bestek) geen tabak of plantenmateriaal via deze webshop. Verkoop aan personen onder de 18 jaar is niet toegestaan. Bij twijfel over leeftijd vragen wij om legitimatie bij ophalen of bezorging.",
     fact: "18+ legitimatie",
   },
 ];

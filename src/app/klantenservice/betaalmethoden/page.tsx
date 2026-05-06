@@ -1,18 +1,18 @@
 import { ShieldCheck, Lock } from "lucide-react";
 
 export const metadata = {
-  title: "Betaalmethoden - OneConnect Lightshop",
+  title: "Betaalmethoden OneConnect Lightshop",
   description: "Veilig betalen via iDEAL, creditcard, PayPal, Klarna en meer.",
 };
 
 const METHODS = [
-  { name: "iDEAL",       desc: "De meest gebruikte betaalmethode in Nederland - direct via je eigen bank." },
-  { name: "Bancontact",  desc: "Voor onze Belgische klanten - directe betaling via je bankkaart." },
+  { name: "iDEAL",       desc: "De meest gebruikte betaalmethode in Nederland direct via je eigen bank." },
+  { name: "Bancontact",  desc: "Voor onze Belgische klanten directe betaling via je bankkaart." },
   { name: "Visa",        desc: "Wereldwijd geaccepteerd, met 3D Secure verificatie." },
   { name: "Mastercard",  desc: "Geaccepteerd in alle landen die we beleveren, met 3D Secure." },
-  { name: "PayPal",      desc: "Veilig betalen zonder je kaartgegevens te delen - kopersbescherming inbegrepen." },
-  { name: "Klarna",      desc: "Achteraf betalen binnen 14 of 30 dagen, of in 3 termijnen - zonder rente." },
-  { name: "Apple Pay",   desc: "Eén tik op je iPhone of Mac - geen handmatig invullen." },
+  { name: "PayPal",      desc: "Veilig betalen zonder je kaartgegevens te delen kopersbescherming inbegrepen." },
+  { name: "Klarna",      desc: "Achteraf betalen binnen 14 of 30 dagen, of in 3 termijnen zonder rente." },
+  { name: "Apple Pay",   desc: "Eén tik op je iPhone of Mac geen handmatig invullen." },
   { name: "Google Pay",  desc: "Snelle checkout op Android-apparaten en in Chrome." },
 ];
 

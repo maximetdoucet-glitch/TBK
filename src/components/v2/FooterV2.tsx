@@ -89,7 +89,7 @@ export default function FooterV2() {
 
           {/* Brand */}
           <div className="lg:w-60 lg:shrink-0 flex flex-col gap-5 lg:gap-6">
-            <Link href="/" className="inline-flex w-fit group" aria-label="Rokersbenodigdheden - naar startpagina">
+            <Link href="/" className="inline-flex w-fit group" aria-label="Rokersbenodigdheden naar startpagina">
               <span className="flex flex-col leading-none">
                 <span className="text-[26px] lg:text-[28px] font-black uppercase tracking-[0.15em] text-white">
                   Rokers

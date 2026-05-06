@@ -196,7 +196,7 @@ export default function HeaderV2() {
         <Link
           href="/preview"
           className="shrink-0 flex items-center gap-2 leading-none group cursor-pointer transition-opacity active:opacity-60 hover:opacity-90"
-          aria-label="Rokersbenodigdheden - naar startpagina"
+          aria-label="Rokersbenodigdheden naar startpagina"
         >
           <span className="flex flex-col leading-none text-[#2b3e51]">
             <span className="text-[17px] sm:text-[19px] font-black uppercase tracking-[0.15em]">

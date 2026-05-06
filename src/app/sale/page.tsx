@@ -7,7 +7,7 @@ import PromoBar from "@/components/v2/PromoBar";
 import { PRODUCTS, type Product } from "@/lib/products";
 
 export const metadata = {
-  title: "Sale - OneConnect Lightshop",
+  title: "Sale OneConnect Lightshop",
   description:
     "Tijdelijke aanbiedingen op aanstekers, kokers, knippers en pijp-accessoires bij OneConnect Lightshop Nijmegen. Op = op.",
 };
@@ -47,19 +47,19 @@ type SoldOutItem = {
 
 const SOLD_OUT: SoldOutItem[] = [
   // Aanstekers - 1 premium showcase + 1 upper-mid + 2 cheap entry points
-  { sku: "60004897", name: "Zippo - Ouija Board",                                 brand: "Zippo",    image: "https://www.uegholland.com/media/catalog/product/6/0/60004897-6_16.jpg", price: "229.90", category: "Aanstekers" },
-  { sku: "2007831",  name: "Zippo - Werewolf",                                    brand: "Zippo",    image: "https://www.uegholland.com/media/catalog/product/2/0/2007831_19.jpg",     price: "89.90",  category: "Aanstekers" },
-  { sku: "419112",   name: "Clipper Metal aansteker - Zwart Gradient (Giftbox)",  brand: "Clipper",  image: "https://www.uegholland.com/media/catalog/product/4/1/419112-1_9.jpg",     price: "13.20",  category: "Aanstekers" },
-  { sku: "424813",   name: "Zorr - Turbo aansteker Crown - Display (6-stuks)",    brand: "Zorr",     image: "https://www.uegholland.com/media/catalog/product/z/o/zorr_-_turbo_aansteker_-_crown_-_display_6-stuks__4.jpg", price: "11.50", category: "Aanstekers" },
+  { sku: "60004897", name: "Zippo Ouija Board",                                 brand: "Zippo",    image: "https://www.uegholland.com/media/catalog/product/6/0/60004897-6_16.jpg", price: "229.90", category: "Aanstekers" },
+  { sku: "2007831",  name: "Zippo Werewolf",                                    brand: "Zippo",    image: "https://www.uegholland.com/media/catalog/product/2/0/2007831_19.jpg",     price: "89.90",  category: "Aanstekers" },
+  { sku: "419112",   name: "Clipper Metal aansteker Zwart Gradient (Giftbox)",  brand: "Clipper",  image: "https://www.uegholland.com/media/catalog/product/4/1/419112-1_9.jpg",     price: "13.20",  category: "Aanstekers" },
+  { sku: "424813",   name: "Zorr Turbo aansteker Crown Display (6-stuks)",    brand: "Zorr",     image: "https://www.uegholland.com/media/catalog/product/z/o/zorr_-_turbo_aansteker_-_crown_-_display_6-stuks__4.jpg", price: "11.50", category: "Aanstekers" },
   // Kokers & Etuis - 2 upper-mid leather cases
-  { sku: "310411",   name: "Bookwill - Sigarettenkoker Leer Suede Zwart",         brand: "Bookwill", image: "https://www.uegholland.com/media/catalog/product/3/1/310411_1_22.jpg",    price: "43.00",  category: "Kokers & Etuis" },
-  { sku: "310415",   name: "Bookwill - Sigarettenkoker Leer Black Carbon",        brand: "Bookwill", image: "https://www.uegholland.com/media/catalog/product/3/1/310415_1_21.jpg",    price: "37.00",  category: "Kokers & Etuis" },
+  { sku: "310411",   name: "Bookwill Sigarettenkoker Leer Suede Zwart",         brand: "Bookwill", image: "https://www.uegholland.com/media/catalog/product/3/1/310411_1_22.jpg",    price: "43.00",  category: "Kokers & Etuis" },
+  { sku: "310415",   name: "Bookwill Sigarettenkoker Leer Black Carbon",        brand: "Bookwill", image: "https://www.uegholland.com/media/catalog/product/3/1/310415_1_21.jpg",    price: "37.00",  category: "Kokers & Etuis" },
   // Knippers & Asbakken - 1 premium humidor + 1 upper-mid cigar cutter
-  { sku: "425583",   name: "Bookwill Humidor - Kabinet 4-lades, 80 sigaren",      brand: "Bookwill", image: "https://www.uegholland.com/media/catalog/product/4/2/425583_7.jpg",       price: "199.50", category: "Knippers & Asbakken" },
-  { sku: "422394",   name: "FOX - Otello Sigarenknipper Chrome",                  brand: "Fox",      image: "https://www.uegholland.com/media/catalog/product/4/2/422394-1.jpg",       price: "89.95",  category: "Knippers & Asbakken" },
+  { sku: "425583",   name: "Bookwill Humidor Kabinet 4-lades, 80 sigaren",      brand: "Bookwill", image: "https://www.uegholland.com/media/catalog/product/4/2/425583_7.jpg",       price: "199.50", category: "Knippers & Asbakken" },
+  { sku: "422394",   name: "FOX Otello Sigarenknipper Chrome",                  brand: "Fox",      image: "https://www.uegholland.com/media/catalog/product/4/2/422394-1.jpg",       price: "89.95",  category: "Knippers & Asbakken" },
   // Rook-accessoires - Hookah + premium pipe filters
-  { sku: "422736",   name: "Hookah - Waterpijp set (2-slangen) Zwart, Alukoffer", brand: "Hookah",   image: "https://www.uegholland.com/media/catalog/product/h/o/hookah_-_waterpijp_2-slangen_-_zwart_-_in_alukoffer_26.jpg", price: "34.95", category: "Rook-accessoires" },
-  { sku: "420748",   name: "Big Ben - Premium 9mm Pijpfilters (200 stuks)",       brand: "Big Ben",  image: "https://www.uegholland.com/media/catalog/product/4/2/420748_3.jpg",       price: "33.25",  category: "Rook-accessoires" },
+  { sku: "422736",   name: "Hookah Waterpijp set (2-slangen) Zwart, Alukoffer", brand: "Hookah",   image: "https://www.uegholland.com/media/catalog/product/h/o/hookah_-_waterpijp_2-slangen_-_zwart_-_in_alukoffer_26.jpg", price: "34.95", category: "Rook-accessoires" },
+  { sku: "420748",   name: "Big Ben Premium 9mm Pijpfilters (200 stuks)",       brand: "Big Ben",  image: "https://www.uegholland.com/media/catalog/product/4/2/420748_3.jpg",       price: "33.25",  category: "Rook-accessoires" },
 ];
 
 // ─── Build interleaved render list - every 3rd slot is sold-out ──────────────
