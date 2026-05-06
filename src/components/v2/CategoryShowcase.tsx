@@ -114,12 +114,13 @@ export default function CategoryShowcase() {
                   style={{ transform: isHovered ? "scale(1.05)" : "scale(1)" }}
                 />
 
-                {/* Gradient overlay */}
+                {/* Gradient overlay - keeps the text legible over busy product imagery */}
                 <div
                   className="absolute inset-0 transition-opacity duration-500"
                   style={{
-                    background: "linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.15) 100%)",
-                    opacity: isHovered ? 1 : isOtherHovered ? 0.85 : 0.75,
+                    background:
+                      "linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.85) 35%, rgba(0,0,0,0.55) 65%, rgba(0,0,0,0.25) 100%)",
+                    opacity: isHovered ? 1 : isOtherHovered ? 0.9 : 0.85,
                   }}
                 />
 
@@ -161,6 +162,7 @@ export default function CategoryShowcase() {
                     style={{
                       fontSize: isHovered ? "2rem" : "1.1rem",
                       marginBottom: isHovered ? "0.75rem" : "0",
+                      textShadow: "0 2px 12px rgba(0,0,0,0.6)",
                     }}
                   >
                     {name}
@@ -169,9 +171,12 @@ export default function CategoryShowcase() {
                   {/* Description - only on hover */}
                   <div
                     className="transition-all duration-400 overflow-hidden"
-                    style={{ maxHeight: isHovered ? 60 : 0, opacity: isHovered ? 1 : 0 }}
+                    style={{ maxHeight: isHovered ? 80 : 0, opacity: isHovered ? 1 : 0 }}
                   >
-                    <p className="text-[12px] text-white/60 mb-4 leading-relaxed">
+                    <p
+                      className="text-[12px] text-white/85 mb-4 leading-relaxed"
+                      style={{ textShadow: "0 1px 6px rgba(0,0,0,0.7)" }}
+                    >
                       {description}
                     </p>
                   </div>
@@ -185,10 +190,10 @@ export default function CategoryShowcase() {
                       const statLabel = t(`categoryShowcase.${panel.tKey}.stats.${panel.statKeys[i]}`);
                       return (
                         <div key={panel.statKeys[i]} className="flex flex-col shrink-0">
-                          <span className="font-montserrat text-lg font-black leading-none" style={{ color: panel.accent }}>
+                          <span className="font-montserrat text-lg font-black leading-none" style={{ color: panel.accent, textShadow: "0 1px 6px rgba(0,0,0,0.6)" }}>
                             {value}
                           </span>
-                          <span className="text-[9px] text-white/45 mt-0.5 whitespace-nowrap">{statLabel}</span>
+                          <span className="text-[9px] text-white/75 mt-0.5 whitespace-nowrap" style={{ textShadow: "0 1px 4px rgba(0,0,0,0.7)" }}>{statLabel}</span>
                         </div>
                       );
                     })}
