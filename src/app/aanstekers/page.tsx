@@ -21,7 +21,7 @@ const ALL_LIGHTERS = PRODUCTS.filter((p) => p.category === "Aanstekers");
 
 const SUBCATEGORIES = [
   { label: "Zippo aanstekers", xmlCat: "Zippo-aanstekers" },
-  { label: "Alle aanstekers", xmlCat: "Aanstekers" },
+  { label: "Clipper & regulier", xmlCat: "Aanstekers" },
   { label: "Zippo accessoires", xmlCat: "Zippo-accessoires" },
 ];
 

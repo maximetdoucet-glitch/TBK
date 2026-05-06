@@ -26,6 +26,20 @@ const SUBCATEGORIES = [
   { label: "Sigarettenkokers & etuis", xmlCat: "Sigaretten-accessoires" },
 ];
 
+// Finer-grained sub-filters scoped by product name. Wired to ?sub=<key>.
+const SUB_FILTERS = [
+  { key: "kokers",   label: "Sigarettenkokers", match: (n: string) => /koker|case/i.test(n) },
+  { key: "filters",  label: "Filters & houders", match: (n: string) => /filter|houder|holder|tip(?!\s)/i.test(n) },
+  { key: "asbakken", label: "Asbakken",         match: (n: string) => /asbak|ashtray/i.test(n) },
+  { key: "rolling",  label: "Hulzen & papier",  match: (n: string) => /huls|vloei|papier|paper|tube|rolling/i.test(n) },
+] as const;
+type SubKey = typeof SUB_FILTERS[number]["key"];
+
+const SUB_COUNTS = SUB_FILTERS.reduce<Record<string, number>>((acc, s) => {
+  acc[s.key] = ALL_PRODUCTS.filter((p) => s.match(p.name)).length;
+  return acc;
+}, {});
+
 const CAT_COUNTS = ALL_PRODUCTS.reduce<Record<string, number>>((acc, p) => {
   if (p.xmlCategory) acc[p.xmlCategory] = (acc[p.xmlCategory] ?? 0) + 1;
   return acc;
@@ -51,6 +65,7 @@ function buildUrl(base: SP, overrides: SP): string {
   const merged = { ...base, ...overrides };
   const p = new URLSearchParams();
   if (merged.cat) p.set("cat", merged.cat);
+  if (merged.sub) p.set("sub", merged.sub);
   if (merged.brand) p.set("brand", merged.brand);
   if (merged.sort && merged.sort !== "recommended") p.set("sort", merged.sort);
   if (merged.min_price && merged.min_price !== "0") p.set("min_price", merged.min_price);
@@ -67,14 +82,18 @@ export default async function KokersEtuisPage({
 }) {
   const sp = await searchParams;
   const activeCat = sp.cat ?? "";
+  const activeSub = (sp.sub ?? "") as SubKey | "";
   const activeBrand = sp.brand ?? "";
   const activeSort = sp.sort ?? "recommended";
   const page = Math.max(1, parseInt(sp.page ?? "1", 10));
   const minPrice = parseFloat(sp.min_price ?? "0");
   const maxPrice = parseFloat(sp.max_price ?? String(PRICE_ABSOLUTE_MAX));
 
+  const subDef = SUB_FILTERS.find((s) => s.key === activeSub);
+
   let filtered = ALL_PRODUCTS;
   if (activeCat) filtered = filtered.filter((p) => p.xmlCategory === activeCat);
+  if (subDef) filtered = filtered.filter((p) => subDef.match(p.name));
   if (activeBrand) filtered = filtered.filter((p) => p.brand === activeBrand);
   if (sp.min_price) filtered = filtered.filter((p) => parseFloat(p.price) >= minPrice);
   if (sp.max_price) filtered = filtered.filter((p) => parseFloat(p.price) <= maxPrice);
@@ -213,6 +232,50 @@ export default async function KokersEtuisPage({
                 </div>
               )}
 
+              {/* Sub-filters by product type */}
+              <div className="px-5 py-4 border-b border-gray-100">
+                <p className="text-[11px] font-black uppercase tracking-[0.15em] text-[#2b3e51] mb-3">
+                  Type product
+                </p>
+                <ul className="space-y-1">
+                  <li>
+                    <Link
+                      href={buildUrl(sp, { sub: undefined, page: "1" })}
+                      className="flex items-center gap-2.5 py-1 group"
+                    >
+                      <span className={`w-4 h-4 rounded-full border-2 flex items-center justify-center flex-shrink-0 transition-colors ${!activeSub ? "border-[#2b3e51] bg-[#2b3e51]" : "border-gray-300 group-hover:border-[#2b3e51]"}`}>
+                        {!activeSub && <span className="w-1.5 h-1.5 rounded-full bg-white" />}
+                      </span>
+                      <span className={`text-[12px] transition-colors ${!activeSub ? "text-[#2b3e51] font-bold" : "text-gray-500 group-hover:text-[#2b3e51]"}`}>
+                        Alle types
+                      </span>
+                      <span className="ml-auto text-[10px] text-gray-300 tabular-nums">{ALL_PRODUCTS.length}</span>
+                    </Link>
+                  </li>
+                  {SUB_FILTERS.map(({ key, label }) => {
+                    const count = SUB_COUNTS[key] ?? 0;
+                    if (count === 0) return null;
+                    const isActive = activeSub === key;
+                    return (
+                      <li key={key}>
+                        <Link
+                          href={buildUrl(sp, { sub: isActive ? undefined : key, page: "1" })}
+                          className="flex items-center gap-2.5 py-1 group"
+                        >
+                          <span className={`w-4 h-4 rounded-full border-2 flex items-center justify-center flex-shrink-0 transition-colors ${isActive ? "border-[#2b3e51] bg-[#2b3e51]" : "border-gray-300 group-hover:border-[#2b3e51]"}`}>
+                            {isActive && <span className="w-1.5 h-1.5 rounded-full bg-white" />}
+                          </span>
+                          <span className={`text-[12px] transition-colors ${isActive ? "text-[#2b3e51] font-bold" : "text-gray-500 group-hover:text-[#2b3e51]"}`}>
+                            {label}
+                          </span>
+                          <span className="ml-auto text-[10px] text-gray-300 tabular-nums">{count}</span>
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+
               <div className="px-5 py-4 border-b border-gray-100">
                 <p className="text-[11px] font-black uppercase tracking-[0.15em] text-[#2b3e51] mb-3">
                   Merken
@@ -314,7 +377,7 @@ export default async function KokersEtuisPage({
                 </div>
               </div>
 
-              {(activeCat || activeBrand || hasPriceFilter) && (
+              {(activeCat || activeSub || activeBrand || hasPriceFilter) && (
                 <div className="flex flex-wrap items-center gap-2 mb-5">
                   {activeCat && (
                     <Link
@@ -322,6 +385,14 @@ export default async function KokersEtuisPage({
                       className="flex items-center gap-1.5 text-[11px] font-bold px-3 py-1.5 bg-[#2b3e51] hover:bg-[#f5a623] text-white rounded-full transition-colors"
                     >
                       {activeCatLabel} ✕
+                    </Link>
+                  )}
+                  {subDef && (
+                    <Link
+                      href={buildUrl(sp, { sub: undefined, page: "1" })}
+                      className="flex items-center gap-1.5 text-[11px] font-bold px-3 py-1.5 bg-[#2b3e51] hover:bg-[#f5a623] text-white rounded-full transition-colors"
+                    >
+                      {subDef.label} ✕
                     </Link>
                   )}
                   {activeBrand && (
