@@ -4,6 +4,7 @@ import "./globals.css";
 import { LocaleProvider } from "@/i18n/LocaleContext";
 import { CartProvider } from "@/cart/CartContext";
 import CartDrawer from "@/components/v2/CartDrawer";
+import AgeGate from "@/components/v2/AgeGate";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -32,6 +33,7 @@ export default function RootLayout({
           <CartProvider>
             {children}
             <CartDrawer />
+            <AgeGate />
           </CartProvider>
         </LocaleProvider>
       </body>
