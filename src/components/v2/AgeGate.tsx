@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Flame, ShieldCheck } from "lucide-react";
+import { ShieldCheck } from "lucide-react";
 import { useLocale } from "@/i18n/LocaleContext";
 
 const STORAGE_KEY = "tbk-age-verified";
@@ -114,16 +114,16 @@ export default function AgeGate() {
 
         <div className="px-7 sm:px-9 pt-8 pb-7">
           {/* Brand mark */}
-          <div className="flex items-center justify-between mb-6">
-            <div className="flex items-center gap-2">
-              <div className="w-9 h-9 rounded-full bg-[#2b3e51] flex items-center justify-center">
-                <Flame className="size-4 text-[#f5a623]" strokeWidth={2.5} />
-              </div>
-              <span className="font-montserrat text-[10px] font-black uppercase tracking-[0.25em] text-[#2b3e51]">
-                {c.brand}
+          <div className="flex items-start justify-between mb-6">
+            <span className="flex flex-col leading-none text-[#2b3e51]">
+              <span className="font-montserrat text-[22px] font-black uppercase tracking-[0.15em]">
+                Rokers
               </span>
-            </div>
-            <span className="inline-flex items-center gap-1.5 text-[10px] font-black uppercase tracking-[0.18em] text-[#2b3e51]/70">
+              <span className="font-montserrat text-[10px] font-semibold uppercase tracking-[0.42em] text-[#2b3e51]/55 mt-1.5">
+                benodigdheden
+              </span>
+            </span>
+            <span className="inline-flex items-center gap-1.5 text-[10px] font-black uppercase tracking-[0.18em] text-[#2b3e51]/70 mt-1">
               <ShieldCheck className="size-3.5" />
               {c.eyebrow}
             </span>
