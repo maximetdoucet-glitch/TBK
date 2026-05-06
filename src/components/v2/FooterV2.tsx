@@ -173,8 +173,12 @@ export default function FooterV2() {
           {/* Legal links */}
           <div className="flex flex-wrap items-center gap-x-5 gap-y-1">
             <span className="text-[11px] text-white/25">© {new Date().getFullYear()} {t("footer.copyright")}</span>
-            {(["privacy", "terms", "cookies"] as const).map((k) => (
-              <Link key={k} href="#" className="text-[11px] text-white/25 hover:text-white/60 transition-colors">{t(`footer.legal.${k}`)}</Link>
+            {([
+              { k: "privacy", href: "/privacybeleid" },
+              { k: "terms", href: "/algemene-voorwaarden" },
+              { k: "cookies", href: "/cookiebeleid" },
+            ] as const).map(({ k, href }) => (
+              <Link key={k} href={href} className="text-[11px] text-white/25 hover:text-white/60 transition-colors">{t(`footer.legal.${k}`)}</Link>
             ))}
           </div>
 
