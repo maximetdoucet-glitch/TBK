@@ -20,9 +20,9 @@ type Article = {
 };
 
 const ARTICLES: Article[] = [
-  { id: 1, itemKey: "zippoChoice", categoryKey: "lighters", image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=85&fit=crop", href: "/blog/zippo-kiezen", readTime: "5 min", featured: true },
-  { id: 2, itemKey: "zippoCare", categoryKey: "maintenance", image: "https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=800&q=85&fit=crop", href: "/blog/zippo-onderhoud", readTime: "4 min", featured: false },
-  { id: 3, itemKey: "clipperVsZippo", categoryKey: "comparison", image: "https://images.unsplash.com/photo-1574169208507-84376144848b?w=800&q=85&fit=crop", href: "/blog/clipper-vs-zippo", readTime: "3 min", featured: false },
+  { id: 1, itemKey: "zippoChoice", categoryKey: "lighters", image: "https://images.unsplash.com/photo-1543750747-927e0e817a89?w=1200&q=85&fit=crop", href: "/blog/zippo-kiezen", readTime: "5 min", featured: true },
+  { id: 2, itemKey: "zippoCare", categoryKey: "maintenance", image: "https://images.unsplash.com/photo-1586173806883-cd00208f7ab1?w=800&q=85&fit=crop", href: "/blog/zippo-onderhoud", readTime: "4 min", featured: false },
+  { id: 3, itemKey: "clipperVsZippo", categoryKey: "comparison", image: "https://images.unsplash.com/photo-1576682631235-90941f11cf04?w=800&q=85&fit=crop", href: "/blog/clipper-vs-zippo", readTime: "3 min", featured: false },
 ];
 
 function FeaturedCard({ article }: { article: Article }) {
