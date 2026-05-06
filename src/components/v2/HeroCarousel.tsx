@@ -8,15 +8,25 @@ import { useLocale } from "@/i18n/LocaleContext";
 type Clip = {
   src: string;
   durationMs: number;
+  startSec?: number;
   filter?: string;
+  /** CSS transform applied to the <video>. Used to push the subject off-center
+   *  so it doesn't sit behind the title text. */
+  transform?: string;
 };
 
 const HERO_CLIPS: Clip[] = [
-  // Open Zippo on black: needs ~6s to play through the flick action
-  { src: "https://videos.pexels.com/video-files/7034146/7034146-hd_1280_720_25fps.mp4", durationMs: 6000 },
+  // Open Zippo on black: skip the first 1s so the finger/flick comes in faster
+  { src: "https://videos.pexels.com/video-files/7034146/7034146-hd_1280_720_25fps.mp4", durationMs: 5000, startSec: 1 },
   { src: "https://assets.mixkit.co/videos/40502/40502-720.mp4", durationMs: 3000 },
-  // Moody flint-wheel: very dark in the source, brighten so it's visible
-  { src: "https://videos.pexels.com/video-files/2544525/2544525-hd_1280_720_24fps.mp4", durationMs: 3500, filter: "brightness(2) contrast(1.1) saturate(1.1)" },
+  // Flint-wheel macro: brighten so it's visible, mirror so the lighter sits
+  // on the right of the frame (off the title which lives in the left column).
+  {
+    src: "https://videos.pexels.com/video-files/2544525/2544525-hd_1280_720_24fps.mp4",
+    durationMs: 3500,
+    filter: "brightness(2) contrast(1.1) saturate(1.1)",
+    transform: "scaleX(-1)",
+  },
   { src: "https://videos.pexels.com/video-files/7034154/7034154-hd_1280_720_25fps.mp4", durationMs: 3000 },
 ];
 
@@ -35,7 +45,7 @@ export default function HeroCarousel() {
   useEffect(() => {
     const v = videoRefs.current[activeClip];
     if (v) {
-      v.currentTime = 0;
+      v.currentTime = HERO_CLIPS[activeClip].startSec ?? 0;
       v.play().catch(() => {});
     }
   }, [activeClip]);
@@ -60,7 +70,11 @@ export default function HeroCarousel() {
               playsInline
               loop
               preload={i < 2 ? "auto" : "metadata"}
-              style={clip.filter ? { filter: clip.filter } : undefined}
+              style={
+                clip.filter || clip.transform
+                  ? { filter: clip.filter, transform: clip.transform }
+                  : undefined
+              }
               className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
                 i === activeClip ? "opacity-100" : "opacity-0"
               }`}
