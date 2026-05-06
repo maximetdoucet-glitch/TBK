@@ -57,7 +57,8 @@ export default function HeroCarousel() {
               {t("hero.titleLine2")}
             </h1>
             <p
-              className="text-white/80 mt-4 sm:mt-5 max-w-xl leading-relaxed text-[13px] sm:text-[15px] lg:text-[17px]"
+              className="text-white mt-4 sm:mt-5 max-w-xl leading-relaxed text-[13px] sm:text-[15px] lg:text-[17px] font-medium"
+              style={{ textShadow: "0 1px 12px rgba(10,18,28,0.85), 0 1px 2px rgba(10,18,28,0.6)" }}
             >
               {t("hero.description")}
             </p>
@@ -72,6 +73,7 @@ export default function HeroCarousel() {
         </Link>
 
       </div>
+
     </section>
   );
 }
