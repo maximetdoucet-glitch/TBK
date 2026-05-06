@@ -6,11 +6,14 @@ import { ArrowRight } from "lucide-react";
 import { useLocale } from "@/i18n/LocaleContext";
 
 const CATS = [
-  { key: "zippo", href: "/aanstekers", image: "https://www.uegholland.com/media/catalog/product/6/0/60004741-5_18.jpg" },
-  { key: "clipper", href: "/aanstekers", image: "https://www.uegholland.com/media/catalog/product/1/8/184170_conf.jpg" },
-  { key: "cigaretteAcc", href: "/kokers-etuis", image: "https://www.uegholland.com/media/catalog/product/9/7/970713_18.jpg" },
-  { key: "cigarAcc", href: "/knippers-asbakken", image: "https://www.uegholland.com/media/catalog/product/2/7/270078_1_22.jpg" },
-  { key: "pipesAcc", href: "/rook-accessoires", image: "https://www.uegholland.com/media/catalog/product/b/o/bookwill_-_pijp-bestek_-_3-delig_-_basic.jpg" },
+  { key: "zippo",        href: "/aanstekers?cat=Zippo-aanstekers",   image: "https://www.uegholland.com/media/catalog/product/6/0/60004741-5_18.jpg" },
+  { key: "clipper",      href: "/aanstekers?cat=Aanstekers",         image: "https://www.uegholland.com/media/catalog/product/1/8/184170_conf.jpg" },
+  { key: "zippoAcc",     href: "/aanstekers?cat=Zippo-accessoires",  image: "https://www.uegholland.com/media/catalog/product/_/0/_0260_60001255.jpg" },
+  { key: "cigaretteAcc", href: "/kokers-etuis",                       image: "https://www.uegholland.com/media/catalog/product/9/7/970713_18.jpg" },
+  { key: "vloei",        href: "/kokers-etuis?sub=filters",           image: "https://www.uegholland.com/media/catalog/product/4/2/426469.jpg" },
+  { key: "knippers",     href: "/knippers-asbakken?sub=knippers",     image: "https://www.uegholland.com/media/catalog/product/9/1/910112_1_41.jpg" },
+  { key: "asbakken",     href: "/knippers-asbakken?sub=asbakken",     image: "https://www.uegholland.com/media/catalog/product/4/2/420746_25.jpg" },
+  { key: "pipesAcc",     href: "/rook-accessoires",                   image: "https://www.uegholland.com/media/catalog/product/b/o/bookwill_-_pijp-bestek_-_3-delig_-_basic.jpg" },
 ] as const;
 
 export default function QuickCategories() {

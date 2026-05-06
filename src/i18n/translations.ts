@@ -34,7 +34,7 @@ export type Dict = {
   };
   quickCategories: {
     label: string;
-    items: { zippo: string; clipper: string; cigaretteAcc: string; cigarAcc: string; pipesAcc: string };
+    items: { zippo: string; clipper: string; zippoAcc: string; cigaretteAcc: string; vloei: string; knippers: string; asbakken: string; pipesAcc: string };
   };
   categoryShowcase: {
     eyebrow: string; heading: string; viewAll: string; cta: string;
@@ -232,7 +232,7 @@ const NL: Dict = {
   },
   quickCategories: {
     label: "Snel navigeren",
-    items: { zippo: "Zippo aanstekers", clipper: "Clipper aanstekers", cigaretteAcc: "Sigaretten-accessoires", cigarAcc: "Sigaren-accessoires", pipesAcc: "Pijpen & accessoires" },
+    items: { zippo: "Zippo aanstekers", clipper: "Clipper aanstekers", zippoAcc: "Zippo accessoires", cigaretteAcc: "Sigaretten-accessoires", vloei: "Vloei & filters", knippers: "Sigarenknippers", asbakken: "Asbakken", pipesAcc: "Pijpen & accessoires" },
   },
   categoryShowcase: {
     eyebrow: "Ons assortiment", heading: "Productcategorieën", viewAll: "Alles bekijken", cta: "Bekijk collectie",
@@ -444,7 +444,7 @@ const EN: Dict = {
   },
   quickCategories: {
     label: "Quick navigation",
-    items: { zippo: "Zippo lighters", clipper: "Clipper lighters", cigaretteAcc: "Cigarette accessories", cigarAcc: "Cigar accessories", pipesAcc: "Pipes & accessories" },
+    items: { zippo: "Zippo lighters", clipper: "Clipper lighters", zippoAcc: "Zippo accessories", cigaretteAcc: "Cigarette accessories", vloei: "Papers & filters", knippers: "Cigar cutters", asbakken: "Ashtrays", pipesAcc: "Pipes & accessories" },
   },
   categoryShowcase: {
     eyebrow: "Our assortment", heading: "Product categories", viewAll: "View all", cta: "Shop collection",
@@ -656,7 +656,7 @@ const DE: Dict = {
   },
   quickCategories: {
     label: "Schnellzugriff",
-    items: { zippo: "Zippo Feuerzeuge", clipper: "Clipper Feuerzeuge", cigaretteAcc: "Zigarettenzubehör", cigarAcc: "Zigarrenzubehör", pipesAcc: "Pfeifen & Zubehör" },
+    items: { zippo: "Zippo Feuerzeuge", clipper: "Clipper Feuerzeuge", zippoAcc: "Zippo Zubehör", cigaretteAcc: "Zigarettenzubehör", vloei: "Blättchen & Filter", knippers: "Zigarrenscheren", asbakken: "Aschenbecher", pipesAcc: "Pfeifen & Zubehör" },
   },
   categoryShowcase: {
     eyebrow: "Unser Sortiment", heading: "Produktkategorien", viewAll: "Alle ansehen", cta: "Kollektion ansehen",
@@ -868,7 +868,7 @@ const FR: Dict = {
   },
   quickCategories: {
     label: "Navigation rapide",
-    items: { zippo: "Briquets Zippo", clipper: "Briquets Clipper", cigaretteAcc: "Accessoires cigarettes", cigarAcc: "Accessoires cigares", pipesAcc: "Pipes & accessoires" },
+    items: { zippo: "Briquets Zippo", clipper: "Briquets Clipper", zippoAcc: "Accessoires Zippo", cigaretteAcc: "Accessoires cigarettes", vloei: "Feuilles & filtres", knippers: "Coupe-cigares", asbakken: "Cendriers", pipesAcc: "Pipes & accessoires" },
   },
   categoryShowcase: {
     eyebrow: "Notre assortiment", heading: "Catégories de produits", viewAll: "Tout voir", cta: "Voir la collection",
