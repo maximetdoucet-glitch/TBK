@@ -18,20 +18,37 @@ function badgeColor(badge: string | null | undefined) {
 }
 
 
-// Curated featured product IDs - spread across the 4 collections
-const FEATURED_IDS = [156, 151, 421, 414, 528, 92, 229, 226];
+// Sort by external-popularity score (Bol.com / Amazon.nl review counts × rating)
+// scraped via scripts/scrape-popularity.mjs. Falls back to in-house rating.
+function popularityKey(p: Product): number {
+  if (typeof p.popularityScore === "number" && p.popularityScore > 0) {
+    return p.popularityScore;
+  }
+  return p.rating * Math.log2(1 + p.reviewCount);
+}
 
 function getFeatured(): Product[] {
-  const byId = new Map(PRODUCTS.map((p) => [p.id, p]));
-  const curated = FEATURED_IDS.map((id) => byId.get(id)).filter(Boolean) as Product[];
-  // Fill any missing slots with the highest-rated remaining products
-  if (curated.length < 8) {
-    const fill = PRODUCTS
-      .filter((p) => !FEATURED_IDS.includes(p.id))
-      .sort((a, b) => b.rating - a.rating || b.reviewCount - a.reviewCount);
-    return [...curated, ...fill].slice(0, 8);
+  // Spread across the 4 main categories so the row isn't all Zippos
+  const PER_CAT = 2;
+  const buckets = new Map<string, Product[]>();
+  const sorted = [...PRODUCTS].sort((a, b) => popularityKey(b) - popularityKey(a));
+  for (const p of sorted) {
+    const arr = buckets.get(p.category) ?? [];
+    if (arr.length < PER_CAT) {
+      arr.push(p);
+      buckets.set(p.category, arr);
+    }
   }
-  return curated;
+  const picked = Array.from(buckets.values()).flat();
+  // If we didn't fill 8 slots (small categories), top up with global ranking
+  if (picked.length < 8) {
+    const seen = new Set(picked.map((p) => p.id));
+    for (const p of sorted) {
+      if (picked.length >= 8) break;
+      if (!seen.has(p.id)) picked.push(p);
+    }
+  }
+  return picked.slice(0, 8);
 }
 
 function getTabProducts(tab: string): Product[] {

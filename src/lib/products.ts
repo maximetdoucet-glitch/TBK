@@ -19,6 +19,10 @@ export type Product = {
   variants: { label: string; values: string[] };
   specs: { label: string; value: string }[];
   inStock: boolean;
+  popularityRating?: number;
+  popularityReviewCount?: number;
+  popularitySource?: "bol" | "amazon" | "none";
+  popularityScore?: number;
 };
 
 export const PRODUCTS: Product[] = rawProducts as Product[];

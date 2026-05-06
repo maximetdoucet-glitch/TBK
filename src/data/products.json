@@ -38,7 +38,11 @@
         "value": "041689560010"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.6,
+    "popularityReviewCount": 4787,
+    "popularitySource": "amazon",
+    "popularityScore": 56.235954209940104
   },
   {
     "id": 25,
@@ -79,7 +83,11 @@
         "value": "041689200657"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 5
   },
   {
     "id": 38,
@@ -120,7 +128,11 @@
         "value": "4045233144790"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.4,
+    "popularityReviewCount": 79,
+    "popularitySource": "bol",
+    "popularityScore": 27.8164836175044
   },
   {
     "id": 61,
@@ -161,7 +173,11 @@
         "value": "4028464101053"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 5
   },
   {
     "id": 62,
@@ -202,7 +218,11 @@
         "value": "9007013511593"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 5
   },
   {
     "id": 63,
@@ -243,7 +263,11 @@
         "value": "5412128579132"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.5,
+    "popularityReviewCount": 29,
+    "popularitySource": "bol",
+    "popularityScore": 22.081007680238333
   },
   {
     "id": 64,
@@ -284,7 +308,11 @@
         "value": "5412128579446"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.7,
+    "popularityReviewCount": 25,
+    "popularitySource": "bol",
+    "popularityScore": 22.092066675263133
   },
   {
     "id": 65,
@@ -325,7 +353,11 @@
         "value": "5412128570306"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.3,
+    "popularityReviewCount": 38,
+    "popularitySource": "bol",
+    "popularityScore": 22.72722954110767
   },
   {
     "id": 66,
@@ -366,7 +398,11 @@
         "value": "0070330600065"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.1,
+    "popularityReviewCount": 88,
+    "popularitySource": "bol",
+    "popularityScore": 26.55050706696223
   },
   {
     "id": 67,
@@ -407,7 +443,11 @@
         "value": "5412128590335"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 2.8,
+    "popularityReviewCount": 25,
+    "popularitySource": "bol",
+    "popularityScore": 13.161231210795057
   },
   {
     "id": 68,
@@ -448,7 +488,11 @@
         "value": "9010151007385"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 3.3,
+    "popularityReviewCount": 9,
+    "popularitySource": "bol",
+    "popularityScore": 10.962362713128295
   },
   {
     "id": 69,
@@ -489,7 +533,11 @@
         "value": "9008122220703"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.5,
+    "popularityReviewCount": 2,
+    "popularitySource": "bol",
+    "popularityScore": 7.132331253245202
   },
   {
     "id": 70,
@@ -530,7 +578,11 @@
         "value": "9008122220444"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.5,
+    "popularityReviewCount": 2,
+    "popularitySource": "bol",
+    "popularityScore": 7.132331253245202
   },
   {
     "id": 71,
@@ -571,7 +623,11 @@
         "value": "9007013509767"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.6,
+    "popularityReviewCount": 472,
+    "popularitySource": "amazon",
+    "popularityScore": 40.874203317361214
   },
   {
     "id": 72,
@@ -612,7 +668,11 @@
         "value": "9008122095776"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 3.3,
+    "popularityReviewCount": 3,
+    "popularitySource": "bol",
+    "popularityScore": 6.6
   },
   {
     "id": 73,
@@ -653,7 +713,11 @@
         "value": "9008122095745"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 3.3,
+    "popularityReviewCount": 3,
+    "popularitySource": "bol",
+    "popularityScore": 6.6
   },
   {
     "id": 74,
@@ -694,7 +758,11 @@
         "value": "4251944219584"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 3.3,
+    "popularityReviewCount": 3,
+    "popularitySource": "bol",
+    "popularityScore": 6.6
   },
   {
     "id": 75,
@@ -735,7 +803,11 @@
         "value": "9008122093505"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.5,
+    "popularityReviewCount": 2,
+    "popularitySource": "bol",
+    "popularityScore": 7.132331253245202
   },
   {
     "id": 76,
@@ -776,7 +848,11 @@
         "value": "9007013395810"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.5,
+    "popularityReviewCount": 2,
+    "popularitySource": "bol",
+    "popularityScore": 7.132331253245202
   },
   {
     "id": 77,
@@ -817,7 +893,11 @@
         "value": "9010151006913"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.5,
+    "popularityReviewCount": 2,
+    "popularitySource": "bol",
+    "popularityScore": 7.132331253245202
   },
   {
     "id": 78,
@@ -858,7 +938,11 @@
         "value": "9007013535933"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 2,
+    "popularitySource": "bol",
+    "popularityScore": 7.92481250360578
   },
   {
     "id": 79,
@@ -899,7 +983,11 @@
         "value": "6474464482896"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.2,
+    "popularityReviewCount": 13,
+    "popularitySource": "bol",
+    "popularityScore": 15.990890672641939
   },
   {
     "id": 80,
@@ -940,7 +1028,11 @@
         "value": "4033215017965"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.4,
+    "popularityReviewCount": 277,
+    "popularitySource": "bol",
+    "popularityScore": 35.72334071998343
   },
   {
     "id": 81,
@@ -981,7 +1073,11 @@
         "value": "9008122226019"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4,
+    "popularityReviewCount": 7,
+    "popularitySource": "bol",
+    "popularityScore": 12
   },
   {
     "id": 82,
@@ -1022,7 +1118,11 @@
         "value": "191693115635"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.3,
+    "popularityReviewCount": 23,
+    "popularitySource": "bol",
+    "popularityScore": 19.71533875310097
   },
   {
     "id": 83,
@@ -1063,7 +1163,11 @@
         "value": "9007013529666"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.7,
+    "popularityReviewCount": 11,
+    "popularitySource": "bol",
+    "popularityScore": 16.849323753389434
   },
   {
     "id": 85,
@@ -1104,7 +1208,11 @@
         "value": "5412128579460"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.7,
+    "popularityReviewCount": 25,
+    "popularitySource": "bol",
+    "popularityScore": 22.092066675263133
   },
   {
     "id": 86,
@@ -1145,7 +1253,11 @@
         "value": "5412128579477"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.7,
+    "popularityReviewCount": 25,
+    "popularitySource": "bol",
+    "popularityScore": 22.092066675263133
   },
   {
     "id": 87,
@@ -1186,7 +1298,11 @@
         "value": "9010151025938"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 3,
+    "popularitySource": "bol",
+    "popularityScore": 10
   },
   {
     "id": 90,
@@ -1227,7 +1343,11 @@
         "value": "9007013504205"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.7,
+    "popularityReviewCount": 100,
+    "popularitySource": "bol",
+    "popularityScore": 31.293593968933436
   },
   {
     "id": 91,
@@ -1268,7 +1388,11 @@
         "value": "9007013071318"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.7,
+    "popularityReviewCount": 100,
+    "popularitySource": "bol",
+    "popularityScore": 31.293593968933436
   },
   {
     "id": 92,
@@ -1309,7 +1433,11 @@
         "value": "9007013411718"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 5
   },
   {
     "id": 94,
@@ -1350,7 +1478,11 @@
         "value": "4251944219171"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 3.3,
+    "popularityReviewCount": 3,
+    "popularitySource": "bol",
+    "popularityScore": 6.6
   },
   {
     "id": 95,
@@ -1391,7 +1523,11 @@
         "value": "9008122092744"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 3.3,
+    "popularityReviewCount": 3,
+    "popularitySource": "bol",
+    "popularityScore": 6.6
   },
   {
     "id": 96,
@@ -1432,7 +1568,11 @@
         "value": "4031872921113"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.4,
+    "popularityReviewCount": 277,
+    "popularitySource": "bol",
+    "popularityScore": 35.72334071998343
   },
   {
     "id": 97,
@@ -1473,7 +1613,11 @@
         "value": "9007013501365"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 2.3,
+    "popularityReviewCount": 14,
+    "popularitySource": "bol",
+    "popularityScore": 8.985848369899593
   },
   {
     "id": 98,
@@ -1514,7 +1658,11 @@
         "value": "8053675915546"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.5,
+    "popularityReviewCount": 2,
+    "popularitySource": "bol",
+    "popularityScore": 7.132331253245202
   },
   {
     "id": 100,
@@ -1555,7 +1703,11 @@
         "value": "191693533194"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.3,
+    "popularityReviewCount": 23,
+    "popularitySource": "bol",
+    "popularityScore": 19.71533875310097
   },
   {
     "id": 101,
@@ -1596,7 +1748,11 @@
         "value": "191693733532"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 10,
+    "popularitySource": "amazon",
+    "popularityScore": 17.297158093186486
   },
   {
     "id": 102,
@@ -1637,7 +1793,11 @@
         "value": "191693175622"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.3,
+    "popularityReviewCount": 23,
+    "popularitySource": "bol",
+    "popularityScore": 19.71533875310097
   },
   {
     "id": 118,
@@ -1678,7 +1838,11 @@
         "value": "191693764932"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 5
   },
   {
     "id": 119,
@@ -1719,7 +1883,11 @@
         "value": "191693764901"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 5
   },
   {
     "id": 120,
@@ -1760,7 +1928,11 @@
         "value": "191693263169"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 5
   },
   {
     "id": 121,
@@ -1801,7 +1973,11 @@
         "value": "191693764888"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.7,
+    "popularityReviewCount": 3,
+    "popularitySource": "bol",
+    "popularityScore": 9.4
   },
   {
     "id": 122,
@@ -1842,7 +2018,11 @@
         "value": "191693768077"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4,
+    "popularityReviewCount": 4,
+    "popularitySource": "bol",
+    "popularityScore": 9.287712379549449
   },
   {
     "id": 123,
@@ -1883,7 +2063,11 @@
         "value": "191693768329"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 5
   },
   {
     "id": 124,
@@ -1924,7 +2108,11 @@
         "value": "191693764246"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.2,
+    "popularityReviewCount": 2762,
+    "popularitySource": "amazon",
+    "popularityScore": 48.01448335661247
   },
   {
     "id": 125,
@@ -1965,7 +2153,11 @@
         "value": "191693262797"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.4,
+    "popularityReviewCount": 79,
+    "popularitySource": "bol",
+    "popularityScore": 27.8164836175044
   },
   {
     "id": 126,
@@ -2006,7 +2198,11 @@
         "value": "041689170295"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 5
   },
   {
     "id": 127,
@@ -2047,7 +2243,11 @@
         "value": "191693594348"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.3,
+    "popularityReviewCount": 23,
+    "popularitySource": "bol",
+    "popularityScore": 19.71533875310097
   },
   {
     "id": 128,
@@ -2088,7 +2288,11 @@
         "value": "191693772142"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 3.7,
+    "popularityReviewCount": 3,
+    "popularitySource": "bol",
+    "popularityScore": 7.4
   },
   {
     "id": 129,
@@ -2129,7 +2333,11 @@
         "value": "191693768183"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.3,
+    "popularityReviewCount": 23,
+    "popularitySource": "bol",
+    "popularityScore": 19.71533875310097
   },
   {
     "id": 130,
@@ -2170,7 +2378,11 @@
         "value": "191693767995"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4,
+    "popularityReviewCount": 4,
+    "popularitySource": "bol",
+    "popularityScore": 9.287712379549449
   },
   {
     "id": 131,
@@ -2211,7 +2423,11 @@
         "value": "191693269611"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.7,
+    "popularityReviewCount": 5672,
+    "popularitySource": "amazon",
+    "popularityScore": 58.608511898753314
   },
   {
     "id": 132,
@@ -2252,7 +2468,11 @@
         "value": "191693269567"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 5
   },
   {
     "id": 133,
@@ -2293,7 +2513,11 @@
         "value": "4045233261237"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.6,
+    "popularityReviewCount": 2669,
+    "popularitySource": "amazon",
+    "popularityScore": 52.36007052224461
   },
   {
     "id": 134,
@@ -2334,7 +2558,11 @@
         "value": "191693269635"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.4,
+    "popularityReviewCount": 79,
+    "popularitySource": "bol",
+    "popularityScore": 27.8164836175044
   },
   {
     "id": 135,
@@ -2375,7 +2603,11 @@
         "value": "191693771633"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.3,
+    "popularityReviewCount": 23,
+    "popularitySource": "bol",
+    "popularityScore": 19.71533875310097
   },
   {
     "id": 136,
@@ -2416,7 +2648,11 @@
         "value": "191693771664"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 5
   },
   {
     "id": 137,
@@ -2457,7 +2693,11 @@
         "value": "191693269543"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 2,
+    "popularitySource": "bol",
+    "popularityScore": 7.92481250360578
   },
   {
     "id": 138,
@@ -2498,7 +2738,11 @@
         "value": "191693768336"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.4,
+    "popularityReviewCount": 79,
+    "popularitySource": "bol",
+    "popularityScore": 27.8164836175044
   },
   {
     "id": 139,
@@ -2539,7 +2783,11 @@
         "value": "191693768121"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 5
   },
   {
     "id": 140,
@@ -2580,7 +2828,11 @@
         "value": "191693269512"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 5
   },
   {
     "id": 141,
@@ -2621,7 +2873,11 @@
         "value": "191693269529"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.5,
+    "popularityReviewCount": 15995,
+    "popularitySource": "amazon",
+    "popularityScore": 62.84440604614558
   },
   {
     "id": 142,
@@ -2662,7 +2918,11 @@
         "value": "4045233464560"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.4,
+    "popularityReviewCount": 19,
+    "popularitySource": "bol",
+    "popularityScore": 19.0164836175044
   },
   {
     "id": 143,
@@ -2703,7 +2963,11 @@
         "value": "191693272314"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 2,
+    "popularitySource": "bol",
+    "popularityScore": 7.92481250360578
   },
   {
     "id": 144,
@@ -2744,7 +3008,11 @@
         "value": "191693768107"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 2,
+    "popularitySource": "bol",
+    "popularityScore": 7.92481250360578
   },
   {
     "id": 145,
@@ -2785,7 +3053,11 @@
         "value": "4045233678257"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.8,
+    "popularityReviewCount": 8,
+    "popularitySource": "bol",
+    "popularityScore": 15.215640006923097
   },
   {
     "id": 146,
@@ -2826,7 +3098,11 @@
         "value": "191693262773"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 5
   },
   {
     "id": 147,
@@ -2867,7 +3143,11 @@
         "value": "191693764291"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 5
   },
   {
     "id": 148,
@@ -2908,7 +3188,11 @@
         "value": "041689170400"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.3,
+    "popularityReviewCount": 23,
+    "popularitySource": "bol",
+    "popularityScore": 19.71533875310097
   },
   {
     "id": 149,
@@ -2949,7 +3233,11 @@
         "value": "041689170202"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.3,
+    "popularityReviewCount": 23,
+    "popularitySource": "bol",
+    "popularityScore": 19.71533875310097
   },
   {
     "id": 150,
@@ -2990,7 +3278,11 @@
         "value": "041689170509"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.3,
+    "popularityReviewCount": 23,
+    "popularitySource": "bol",
+    "popularityScore": 19.71533875310097
   },
   {
     "id": 151,
@@ -3031,7 +3323,11 @@
         "value": "041689170608"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.3,
+    "popularityReviewCount": 23,
+    "popularitySource": "bol",
+    "popularityScore": 19.71533875310097
   },
   {
     "id": 152,
@@ -3072,7 +3368,11 @@
         "value": "191693764918"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.7,
+    "popularityReviewCount": 5672,
+    "popularitySource": "amazon",
+    "popularityScore": 58.608511898753314
   },
   {
     "id": 153,
@@ -3113,7 +3413,11 @@
         "value": "191693764413"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 5
   },
   {
     "id": 154,
@@ -3154,7 +3458,11 @@
         "value": "191693768053"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.4,
+    "popularityReviewCount": 17,
+    "popularitySource": "bol",
+    "popularityScore": 18.347670006346174
   },
   {
     "id": 155,
@@ -3195,7 +3503,11 @@
         "value": "191693768008"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 5
   },
   {
     "id": 156,
@@ -3236,7 +3548,11 @@
         "value": "191693764833"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 5
   },
   {
     "id": 157,
@@ -3277,7 +3593,11 @@
         "value": "041689170806"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.3,
+    "popularityReviewCount": 23,
+    "popularitySource": "bol",
+    "popularityScore": 19.71533875310097
   },
   {
     "id": 158,
@@ -3318,7 +3638,11 @@
         "value": "041689170127"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.3,
+    "popularityReviewCount": 23,
+    "popularitySource": "bol",
+    "popularityScore": 19.71533875310097
   },
   {
     "id": 159,
@@ -3359,7 +3683,11 @@
         "value": "3661075377434"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 3.6,
+    "popularityReviewCount": 22,
+    "popularitySource": "bol",
+    "popularityScore": 16.284823041805247
   },
   {
     "id": 160,
@@ -3400,7 +3728,11 @@
         "value": "3661075371623"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 3.6,
+    "popularityReviewCount": 22,
+    "popularitySource": "bol",
+    "popularityScore": 16.284823041805247
   },
   {
     "id": 161,
@@ -3441,7 +3773,11 @@
         "value": "3661075375744"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 9,
+    "popularitySource": "bol",
+    "popularityScore": 16.609640474436812
   },
   {
     "id": 162,
@@ -3482,7 +3818,11 @@
         "value": "3661075241179"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.7,
+    "popularityReviewCount": 82,
+    "popularitySource": "bol",
+    "popularityScore": 29.962685327330547
   },
   {
     "id": 163,
@@ -3523,7 +3863,11 @@
         "value": "3661075241179"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.5,
+    "popularityReviewCount": 2,
+    "popularitySource": "bol",
+    "popularityScore": 7.132331253245202
   },
   {
     "id": 164,
@@ -3564,7 +3908,11 @@
         "value": "3661075378745"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4,
+    "popularityReviewCount": 4,
+    "popularitySource": "bol",
+    "popularityScore": 9.287712379549449
   },
   {
     "id": 165,
@@ -3605,7 +3953,11 @@
         "value": "3661075368791"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4,
+    "popularityReviewCount": 4,
+    "popularitySource": "bol",
+    "popularityScore": 9.287712379549449
   },
   {
     "id": 166,
@@ -3646,7 +3998,11 @@
         "value": "3661075369958"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 9,
+    "popularitySource": "bol",
+    "popularityScore": 16.609640474436812
   },
   {
     "id": 167,
@@ -3687,7 +4043,11 @@
         "value": "3661075367282"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 5
   },
   {
     "id": 168,
@@ -3728,7 +4088,11 @@
         "value": "3661075367343"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.3,
+    "popularityReviewCount": 3,
+    "popularitySource": "bol",
+    "popularityScore": 8.6
   },
   {
     "id": 169,
@@ -3769,7 +4133,11 @@
         "value": "3661075366698"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 3.4,
+    "popularityReviewCount": 8,
+    "popularitySource": "bol",
+    "popularityScore": 10.777745004903862
   },
   {
     "id": 170,
@@ -3810,7 +4178,11 @@
         "value": "3661075366711"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.4,
+    "popularityReviewCount": 257,
+    "popularitySource": "amazon",
+    "popularityScore": 35.24939992386232
   },
   {
     "id": 171,
@@ -3851,7 +4223,11 @@
         "value": "3661075367459"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 3.6,
+    "popularityReviewCount": 22,
+    "popularitySource": "bol",
+    "popularityScore": 16.284823041805247
   },
   {
     "id": 172,
@@ -3892,7 +4268,11 @@
         "value": "3661075367541"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 3.6,
+    "popularityReviewCount": 22,
+    "popularitySource": "bol",
+    "popularityScore": 16.284823041805247
   },
   {
     "id": 173,
@@ -3933,7 +4313,11 @@
         "value": "3661075369439"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 2,
+    "popularityReviewCount": 6,
+    "popularitySource": "bol",
+    "popularityScore": 5.614709844115208
   },
   {
     "id": 174,
@@ -3974,7 +4358,11 @@
         "value": "3661075361327"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 3.4,
+    "popularityReviewCount": 8,
+    "popularitySource": "bol",
+    "popularityScore": 10.777745004903862
   },
   {
     "id": 175,
@@ -4015,7 +4403,11 @@
         "value": "3661075358570"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 2,
+    "popularitySource": "bol",
+    "popularityScore": 7.92481250360578
   },
   {
     "id": 176,
@@ -4056,7 +4448,11 @@
         "value": "3661075371180"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 3,
+    "popularitySource": "bol",
+    "popularityScore": 10
   },
   {
     "id": 177,
@@ -4097,7 +4493,11 @@
         "value": "3661075371692"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 2.3,
+    "popularityReviewCount": 3,
+    "popularitySource": "bol",
+    "popularityScore": 4.6
   },
   {
     "id": 178,
@@ -4138,7 +4538,11 @@
         "value": "3661075371753"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 2,
+    "popularitySource": "bol",
+    "popularityScore": 7.92481250360578
   },
   {
     "id": 179,
@@ -4179,7 +4583,11 @@
         "value": "3661075236854"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 2,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 2
   },
   {
     "id": 180,
@@ -4220,7 +4628,11 @@
         "value": "3661075364571"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 3.6,
+    "popularityReviewCount": 22,
+    "popularitySource": "bol",
+    "popularityScore": 16.284823041805247
   },
   {
     "id": 181,
@@ -4261,7 +4673,11 @@
         "value": "3661075360597"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 3.8,
+    "popularityReviewCount": 17,
+    "popularitySource": "bol",
+    "popularityScore": 15.845715005480786
   },
   {
     "id": 182,
@@ -4302,7 +4718,11 @@
         "value": "3661075363642"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 9,
+    "popularitySource": "bol",
+    "popularityScore": 16.609640474436812
   },
   {
     "id": 183,
@@ -4343,7 +4763,11 @@
         "value": "3661075147525"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 1,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 1
   },
   {
     "id": 184,
@@ -4384,7 +4808,9 @@
         "value": "3661075361471"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularitySource": "none",
+    "popularityScore": 0
   },
   {
     "id": 185,
@@ -4425,7 +4851,11 @@
         "value": "3661075261085"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 3.4,
+    "popularityReviewCount": 8,
+    "popularitySource": "bol",
+    "popularityScore": 10.777745004903862
   },
   {
     "id": 186,
@@ -4466,7 +4896,11 @@
         "value": "3661075361112"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 5
   },
   {
     "id": 187,
@@ -4507,7 +4941,11 @@
         "value": "3661075300128"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.7,
+    "popularityReviewCount": 25,
+    "popularitySource": "bol",
+    "popularityScore": 22.092066675263133
   },
   {
     "id": 188,
@@ -4548,7 +4986,11 @@
         "value": "3661075211240"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.4,
+    "popularityReviewCount": 7,
+    "popularitySource": "bol",
+    "popularityScore": 13.200000000000001
   },
   {
     "id": 189,
@@ -4589,7 +5031,11 @@
         "value": "3661075283490"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.4,
+    "popularityReviewCount": 7,
+    "popularitySource": "bol",
+    "popularityScore": 13.200000000000001
   },
   {
     "id": 190,
@@ -4630,7 +5076,11 @@
         "value": "3661075266196"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 4,
+    "popularitySource": "bol",
+    "popularityScore": 11.60964047443681
   },
   {
     "id": 191,
@@ -4671,7 +5121,11 @@
         "value": "3661075159757"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.4,
+    "popularityReviewCount": 7,
+    "popularitySource": "bol",
+    "popularityScore": 13.200000000000001
   },
   {
     "id": 192,
@@ -4712,7 +5166,11 @@
         "value": "3661075344986"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.8,
+    "popularityReviewCount": 8,
+    "popularitySource": "amazon",
+    "popularityScore": 15.215640006923097
   },
   {
     "id": 193,
@@ -4753,7 +5211,11 @@
         "value": "3661075307530"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 3.6,
+    "popularityReviewCount": 22,
+    "popularitySource": "bol",
+    "popularityScore": 16.284823041805247
   },
   {
     "id": 194,
@@ -4794,7 +5256,11 @@
         "value": "3661075354077"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 9,
+    "popularitySource": "bol",
+    "popularityScore": 16.609640474436812
   },
   {
     "id": 195,
@@ -4835,7 +5301,11 @@
         "value": "3661075038472"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 9,
+    "popularitySource": "bol",
+    "popularityScore": 16.609640474436812
   },
   {
     "id": 196,
@@ -4876,7 +5346,11 @@
         "value": "3661075341725"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 9,
+    "popularitySource": "bol",
+    "popularityScore": 16.609640474436812
   },
   {
     "id": 197,
@@ -4917,7 +5391,11 @@
         "value": "3661075241292"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 3.6,
+    "popularityReviewCount": 27,
+    "popularitySource": "bol",
+    "popularityScore": 17.306477719407376
   },
   {
     "id": 198,
@@ -4958,7 +5436,11 @@
         "value": "3661075341664"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 9,
+    "popularitySource": "bol",
+    "popularityScore": 16.609640474436812
   },
   {
     "id": 199,
@@ -4999,7 +5481,11 @@
         "value": "3661075364632"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 9,
+    "popularitySource": "bol",
+    "popularityScore": 16.609640474436812
   },
   {
     "id": 202,
@@ -5040,7 +5526,11 @@
         "value": "8447218231529"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 2.3,
+    "popularityReviewCount": 3,
+    "popularitySource": "bol",
+    "popularityScore": 4.6
   },
   {
     "id": 203,
@@ -5081,7 +5571,11 @@
         "value": "4895151854468"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 3.1,
+    "popularityReviewCount": 17,
+    "popularitySource": "bol",
+    "popularityScore": 12.926767504471169
   },
   {
     "id": 204,
@@ -5122,7 +5616,11 @@
         "value": "9007013118396"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.6,
+    "popularityReviewCount": 14,
+    "popularitySource": "bol",
+    "popularityScore": 17.971696739799185
   },
   {
     "id": 205,
@@ -5163,7 +5661,11 @@
         "value": "9007013145880"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 5
   },
   {
     "id": 206,
@@ -5204,7 +5706,11 @@
         "value": "9007013143305"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.7,
+    "popularityReviewCount": 7,
+    "popularitySource": "bol",
+    "popularityScore": 14.100000000000001
   },
   {
     "id": 207,
@@ -5245,7 +5751,11 @@
         "value": "9007013143763"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.3,
+    "popularityReviewCount": 7,
+    "popularitySource": "bol",
+    "popularityScore": 12.899999999999999
   },
   {
     "id": 208,
@@ -5286,7 +5796,11 @@
         "value": "9007013143046"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 9,
+    "popularitySource": "bol",
+    "popularityScore": 16.609640474436812
   },
   {
     "id": 209,
@@ -5327,7 +5841,11 @@
         "value": "9007013143244"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 3.6,
+    "popularityReviewCount": 22,
+    "popularitySource": "bol",
+    "popularityScore": 16.284823041805247
   },
   {
     "id": 210,
@@ -5368,7 +5886,11 @@
         "value": "9007013143275"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 3.6,
+    "popularityReviewCount": 22,
+    "popularitySource": "bol",
+    "popularityScore": 16.284823041805247
   },
   {
     "id": 211,
@@ -5409,7 +5931,11 @@
         "value": "9007013105921"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 3.6,
+    "popularityReviewCount": 11,
+    "popularitySource": "bol",
+    "popularityScore": 12.905865002596162
   },
   {
     "id": 212,
@@ -5450,7 +5976,11 @@
         "value": "9007013141929"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.6,
+    "popularityReviewCount": 14,
+    "popularitySource": "bol",
+    "popularityScore": 17.971696739799185
   },
   {
     "id": 213,
@@ -5491,7 +6021,11 @@
         "value": "9007013142124"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.2,
+    "popularityReviewCount": 5,
+    "popularitySource": "bol",
+    "popularityScore": 10.856842503028856
   },
   {
     "id": 214,
@@ -5532,7 +6066,11 @@
         "value": "9007013146290"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.2,
+    "popularityReviewCount": 5,
+    "popularitySource": "bol",
+    "popularityScore": 10.856842503028856
   },
   {
     "id": 215,
@@ -5573,7 +6111,11 @@
         "value": "9007013142094"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 3.3,
+    "popularityReviewCount": 3,
+    "popularitySource": "bol",
+    "popularityScore": 6.6
   },
   {
     "id": 216,
@@ -5614,7 +6156,11 @@
         "value": "9007013148591"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 1,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 1
   },
   {
     "id": 217,
@@ -5655,7 +6201,11 @@
         "value": "9007013142148"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.5,
+    "popularityReviewCount": 2,
+    "popularitySource": "bol",
+    "popularityScore": 7.132331253245202
   },
   {
     "id": 218,
@@ -5696,7 +6246,11 @@
         "value": "9007013142162"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4,
+    "popularityReviewCount": 1,
+    "popularitySource": "amazon",
+    "popularityScore": 4
   },
   {
     "id": 219,
@@ -5737,7 +6291,11 @@
         "value": "9007013142315"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.1,
+    "popularityReviewCount": 7,
+    "popularitySource": "bol",
+    "popularityScore": 12.299999999999999
   },
   {
     "id": 220,
@@ -5778,7 +6336,11 @@
         "value": "9007013145149"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 5
   },
   {
     "id": 221,
@@ -5819,7 +6381,11 @@
         "value": "9007013435912"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 1,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 1
   },
   {
     "id": 222,
@@ -5860,7 +6426,11 @@
         "value": "9007013145354"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.5,
+    "popularityReviewCount": 53,
+    "popularitySource": "bol",
+    "popularityScore": 25.896993759735608
   },
   {
     "id": 223,
@@ -5901,7 +6471,11 @@
         "value": "9007013145347"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.5,
+    "popularityReviewCount": 53,
+    "popularitySource": "bol",
+    "popularityScore": 25.896993759735608
   },
   {
     "id": 224,
@@ -5942,7 +6516,11 @@
         "value": "9010151000591"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.6,
+    "popularityReviewCount": 34,
+    "popularitySource": "bol",
+    "popularityScore": 23.594701877946843
   },
   {
     "id": 225,
@@ -5983,7 +6561,11 @@
         "value": "9010151000577"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.6,
+    "popularityReviewCount": 34,
+    "popularitySource": "bol",
+    "popularityScore": 23.594701877946843
   },
   {
     "id": 226,
@@ -6024,7 +6606,11 @@
         "value": "7630433101000"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.5,
+    "popularityReviewCount": 478,
+    "popularitySource": "bol",
+    "popularityScore": 40.06746830581281
   },
   {
     "id": 227,
@@ -6065,7 +6651,11 @@
         "value": "9010151007538"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.4,
+    "popularityReviewCount": 5,
+    "popularitySource": "bol",
+    "popularityScore": 11.373835003173088
   },
   {
     "id": 228,
@@ -6106,7 +6696,11 @@
         "value": "9007013141868"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 3.4,
+    "popularityReviewCount": 8,
+    "popularitySource": "bol",
+    "popularityScore": 10.777745004903862
   },
   {
     "id": 229,
@@ -6147,7 +6741,11 @@
         "value": "9010151022340"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 3.3,
+    "popularityReviewCount": 3,
+    "popularitySource": "bol",
+    "popularityScore": 6.6
   },
   {
     "id": 230,
@@ -6188,7 +6786,11 @@
         "value": "7630433101840"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 5
   },
   {
     "id": 231,
@@ -6229,7 +6831,11 @@
         "value": "7630433109730"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 5
   },
   {
     "id": 232,
@@ -6270,7 +6876,11 @@
         "value": "4895151856271"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.6,
+    "popularityReviewCount": 80,
+    "popularitySource": "bol",
+    "popularityScore": 29.16331001326927
   },
   {
     "id": 233,
@@ -6311,7 +6921,11 @@
         "value": "9007013147808"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.1,
+    "popularityReviewCount": 7,
+    "popularitySource": "bol",
+    "popularityScore": 12.299999999999999
   },
   {
     "id": 234,
@@ -6352,7 +6966,11 @@
         "value": "9007013146986"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.1,
+    "popularityReviewCount": 7,
+    "popularitySource": "bol",
+    "popularityScore": 12.299999999999999
   },
   {
     "id": 235,
@@ -6393,7 +7011,11 @@
         "value": "9007013143824"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.1,
+    "popularityReviewCount": 7,
+    "popularitySource": "bol",
+    "popularityScore": 12.299999999999999
   },
   {
     "id": 236,
@@ -6434,7 +7056,11 @@
         "value": "9007013143640"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.1,
+    "popularityReviewCount": 7,
+    "popularitySource": "bol",
+    "popularityScore": 12.299999999999999
   },
   {
     "id": 237,
@@ -6475,7 +7101,11 @@
         "value": "9007013143671"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.1,
+    "popularityReviewCount": 7,
+    "popularitySource": "bol",
+    "popularityScore": 12.299999999999999
   },
   {
     "id": 238,
@@ -6516,7 +7146,11 @@
         "value": "9007013143589"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.1,
+    "popularityReviewCount": 7,
+    "popularitySource": "bol",
+    "popularityScore": 12.299999999999999
   },
   {
     "id": 239,
@@ -6557,7 +7191,11 @@
         "value": "9007013143497"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.1,
+    "popularityReviewCount": 7,
+    "popularitySource": "bol",
+    "popularityScore": 12.299999999999999
   },
   {
     "id": 240,
@@ -6598,7 +7236,11 @@
         "value": "9007013143466"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.1,
+    "popularityReviewCount": 7,
+    "popularitySource": "bol",
+    "popularityScore": 12.299999999999999
   },
   {
     "id": 241,
@@ -6639,7 +7281,11 @@
         "value": "9007013141073"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.1,
+    "popularityReviewCount": 7,
+    "popularitySource": "bol",
+    "popularityScore": 12.299999999999999
   },
   {
     "id": 242,
@@ -6680,7 +7326,11 @@
         "value": "9007013141011"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.1,
+    "popularityReviewCount": 7,
+    "popularitySource": "bol",
+    "popularityScore": 12.299999999999999
   },
   {
     "id": 243,
@@ -6721,7 +7371,11 @@
         "value": "9007013138721"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.3,
+    "popularityReviewCount": 3,
+    "popularitySource": "bol",
+    "popularityScore": 8.6
   },
   {
     "id": 244,
@@ -6762,7 +7416,11 @@
         "value": "9007013140984"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.1,
+    "popularityReviewCount": 7,
+    "popularitySource": "bol",
+    "popularityScore": 12.299999999999999
   },
   {
     "id": 245,
@@ -6803,7 +7461,11 @@
         "value": "9007013140823"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4,
+    "popularityReviewCount": 3,
+    "popularitySource": "bol",
+    "popularityScore": 8
   },
   {
     "id": 246,
@@ -6844,7 +7506,11 @@
         "value": "4895151854765"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.6,
+    "popularityReviewCount": 80,
+    "popularitySource": "bol",
+    "popularityScore": 29.16331001326927
   },
   {
     "id": 247,
@@ -6885,7 +7551,11 @@
         "value": "4895151854765"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.6,
+    "popularityReviewCount": 80,
+    "popularitySource": "bol",
+    "popularityScore": 29.16331001326927
   },
   {
     "id": 248,
@@ -6926,7 +7596,11 @@
         "value": "4895151854765"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.6,
+    "popularityReviewCount": 80,
+    "popularitySource": "bol",
+    "popularityScore": 29.16331001326927
   },
   {
     "id": 249,
@@ -6967,7 +7641,11 @@
         "value": "4895151854765"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 5
   },
   {
     "id": 250,
@@ -7008,7 +7686,11 @@
         "value": "4045233943157"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 3.4,
+    "popularityReviewCount": 66,
+    "popularitySource": "bol",
+    "popularityScore": 20.624703247556425
   },
   {
     "id": 251,
@@ -7049,7 +7731,11 @@
         "value": "4895151813014"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 3.1,
+    "popularityReviewCount": 17,
+    "popularitySource": "bol",
+    "popularityScore": 12.926767504471169
   },
   {
     "id": 252,
@@ -7090,7 +7776,11 @@
         "value": "9007013154097"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 3.1,
+    "popularityReviewCount": 17,
+    "popularitySource": "bol",
+    "popularityScore": 12.926767504471169
   },
   {
     "id": 253,
@@ -7131,7 +7821,9 @@
         "value": "8412766177766"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularitySource": "none",
+    "popularityScore": 0
   },
   {
     "id": 254,
@@ -7172,7 +7864,11 @@
         "value": "8412766172167"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 4
   },
   {
     "id": 255,
@@ -7213,7 +7909,11 @@
         "value": "8412766186713"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 3,
+    "popularityReviewCount": 2,
+    "popularitySource": "bol",
+    "popularityScore": 4.754887502163468
   },
   {
     "id": 256,
@@ -7254,7 +7954,9 @@
         "value": "8412766047113"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularitySource": "none",
+    "popularityScore": 0
   },
   {
     "id": 257,
@@ -7295,7 +7997,11 @@
         "value": "3661075391539"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.3,
+    "popularityReviewCount": 3,
+    "popularitySource": "bol",
+    "popularityScore": 8.6
   },
   {
     "id": 258,
@@ -7336,7 +8042,11 @@
         "value": "3661075270094"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 3.3,
+    "popularityReviewCount": 36,
+    "popularitySource": "bol",
+    "popularityScore": 17.191196106575536
   },
   {
     "id": 259,
@@ -7377,7 +8087,9 @@
         "value": "3661075274696"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularitySource": "none",
+    "popularityScore": 0
   },
   {
     "id": 260,
@@ -7418,7 +8130,11 @@
         "value": "3661075369927"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 3.6,
+    "popularityReviewCount": 22,
+    "popularitySource": "bol",
+    "popularityScore": 16.284823041805247
   },
   {
     "id": 261,
@@ -7459,7 +8175,11 @@
         "value": "3661075388621"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 7,
+    "popularitySource": "bol",
+    "popularityScore": 15
   },
   {
     "id": 262,
@@ -7500,7 +8220,9 @@
         "value": "3661075266530"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularitySource": "none",
+    "popularityScore": 0
   },
   {
     "id": 263,
@@ -7541,7 +8263,9 @@
         "value": "3661075311346"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularitySource": "none",
+    "popularityScore": 0
   },
   {
     "id": 264,
@@ -7582,7 +8306,11 @@
         "value": "3661075346522"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 2.5,
+    "popularityReviewCount": 2,
+    "popularitySource": "bol",
+    "popularityScore": 3.96240625180289
   },
   {
     "id": 265,
@@ -7623,7 +8351,11 @@
         "value": "3661075391669"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.7,
+    "popularityReviewCount": 25,
+    "popularitySource": "bol",
+    "popularityScore": 22.092066675263133
   },
   {
     "id": 266,
@@ -7664,7 +8396,11 @@
         "value": "3661075390464"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.5,
+    "popularityReviewCount": 2,
+    "popularitySource": "bol",
+    "popularityScore": 7.132331253245202
   },
   {
     "id": 267,
@@ -7705,7 +8441,11 @@
         "value": "3661075138370"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 3.6,
+    "popularityReviewCount": 22,
+    "popularitySource": "bol",
+    "popularityScore": 16.284823041805247
   },
   {
     "id": 268,
@@ -7746,7 +8486,9 @@
         "value": "3661075267766"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularitySource": "none",
+    "popularityScore": 0
   },
   {
     "id": 269,
@@ -7787,7 +8529,11 @@
         "value": "3661075266783"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 5
   },
   {
     "id": 270,
@@ -7828,7 +8574,11 @@
         "value": "3661075359768"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 1,
+    "popularityReviewCount": 4,
+    "popularitySource": "bol",
+    "popularityScore": 2.321928094887362
   },
   {
     "id": 271,
@@ -7869,7 +8619,11 @@
         "value": "3661075394370"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.3,
+    "popularityReviewCount": 3,
+    "popularitySource": "bol",
+    "popularityScore": 8.6
   },
   {
     "id": 272,
@@ -7910,7 +8664,9 @@
         "value": "3661075360702"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularitySource": "none",
+    "popularityScore": 0
   },
   {
     "id": 273,
@@ -7951,7 +8707,11 @@
         "value": "3661075387563"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 3.6,
+    "popularityReviewCount": 22,
+    "popularitySource": "bol",
+    "popularityScore": 16.284823041805247
   },
   {
     "id": 274,
@@ -7992,7 +8752,11 @@
         "value": "3661075363437"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 3.6,
+    "popularityReviewCount": 19,
+    "popularitySource": "bol",
+    "popularityScore": 15.558941141594506
   },
   {
     "id": 275,
@@ -8033,7 +8797,11 @@
         "value": "3661075369385"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.6,
+    "popularityReviewCount": 291,
+    "popularitySource": "amazon",
+    "popularityScore": 37.67319297084808
   },
   {
     "id": 276,
@@ -8074,7 +8842,9 @@
         "value": "3661075293284"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularitySource": "none",
+    "popularityScore": 0
   },
   {
     "id": 277,
@@ -8115,7 +8885,11 @@
         "value": "4045233951152"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.4,
+    "popularityReviewCount": 79,
+    "popularitySource": "bol",
+    "popularityScore": 27.8164836175044
   },
   {
     "id": 278,
@@ -8156,7 +8930,11 @@
         "value": "4045233945199"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 2,
+    "popularitySource": "bol",
+    "popularityScore": 7.92481250360578
   },
   {
     "id": 279,
@@ -8197,7 +8975,11 @@
         "value": "4045233057625"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.4,
+    "popularityReviewCount": 79,
+    "popularitySource": "bol",
+    "popularityScore": 27.8164836175044
   },
   {
     "id": 280,
@@ -8238,7 +9020,11 @@
         "value": "4045233027536"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 5
   },
   {
     "id": 286,
@@ -8279,7 +9065,11 @@
         "value": "9010151001680"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.8,
+    "popularityReviewCount": 4,
+    "popularitySource": "bol",
+    "popularityScore": 11.145254855459338
   },
   {
     "id": 287,
@@ -8320,7 +9110,11 @@
         "value": "9010151019302"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 1,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 1
   },
   {
     "id": 288,
@@ -8361,7 +9155,11 @@
         "value": "9010151019326"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.8,
+    "popularityReviewCount": 4,
+    "popularitySource": "bol",
+    "popularityScore": 11.145254855459338
   },
   {
     "id": 289,
@@ -8402,7 +9200,11 @@
         "value": "7630433106098"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.4,
+    "popularityReviewCount": 277,
+    "popularitySource": "bol",
+    "popularityScore": 35.72334071998343
   },
   {
     "id": 290,
@@ -8443,7 +9245,11 @@
         "value": "7630433106050"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.8,
+    "popularityReviewCount": 4,
+    "popularitySource": "bol",
+    "popularityScore": 11.145254855459338
   },
   {
     "id": 291,
@@ -8484,7 +9290,11 @@
         "value": "9010151019340"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.2,
+    "popularityReviewCount": 115,
+    "popularitySource": "bol",
+    "popularityScore": 28.803520179535802
   },
   {
     "id": 292,
@@ -8525,7 +9335,11 @@
         "value": "9007013148638"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.1,
+    "popularityReviewCount": 66,
+    "popularitySource": "bol",
+    "popularityScore": 24.870965680876864
   },
   {
     "id": 293,
@@ -8566,7 +9380,11 @@
         "value": "9007013148782"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.5,
+    "popularityReviewCount": 81,
+    "popularitySource": "bol",
+    "popularityScore": 28.608984020781378
   },
   {
     "id": 294,
@@ -8607,7 +9425,11 @@
         "value": "9007013522155"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.3,
+    "popularityReviewCount": 767,
+    "popularitySource": "amazon",
+    "popularityScore": 41.21533875310097
   },
   {
     "id": 296,
@@ -8648,7 +9470,11 @@
         "value": "9007013147310"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 5
   },
   {
     "id": 297,
@@ -8689,7 +9515,11 @@
         "value": "9007013147273"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 5
   },
   {
     "id": 298,
@@ -8730,7 +9560,11 @@
         "value": "9007013147297"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 5
   },
   {
     "id": 299,
@@ -8771,7 +9605,11 @@
         "value": "9007013515171"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 5
   },
   {
     "id": 300,
@@ -8812,7 +9650,11 @@
         "value": "9007013149062"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.6,
+    "popularityReviewCount": 14,
+    "popularitySource": "bol",
+    "popularityScore": 17.971696739799185
   },
   {
     "id": 301,
@@ -8853,7 +9695,11 @@
         "value": "9007013149086"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.4,
+    "popularityReviewCount": 84,
+    "popularitySource": "bol",
+    "popularityScore": 28.20132011900589
   },
   {
     "id": 302,
@@ -8894,7 +9740,11 @@
         "value": "9007013142193"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 9,
+    "popularitySource": "bol",
+    "popularityScore": 16.609640474436812
   },
   {
     "id": 303,
@@ -8935,7 +9785,11 @@
         "value": "9007013134716"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 9,
+    "popularitySource": "bol",
+    "popularityScore": 16.609640474436812
   },
   {
     "id": 304,
@@ -8976,7 +9830,11 @@
         "value": "9007013530457"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 9,
+    "popularitySource": "bol",
+    "popularityScore": 16.609640474436812
   },
   {
     "id": 305,
@@ -9017,7 +9875,11 @@
         "value": "9007013146955"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 5
   },
   {
     "id": 306,
@@ -9058,7 +9920,11 @@
         "value": "9007013143121"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 3.6,
+    "popularityReviewCount": 22,
+    "popularitySource": "bol",
+    "popularityScore": 16.284823041805247
   },
   {
     "id": 307,
@@ -9099,7 +9965,11 @@
         "value": "9007013146474"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 5
   },
   {
     "id": 308,
@@ -9140,7 +10010,11 @@
         "value": "9007013143152"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 10,
+    "popularitySource": "bol",
+    "popularityScore": 17.297158093186486
   },
   {
     "id": 309,
@@ -9181,7 +10055,11 @@
         "value": "9007013131647"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 3.6,
+    "popularityReviewCount": 22,
+    "popularitySource": "bol",
+    "popularityScore": 16.284823041805247
   },
   {
     "id": 310,
@@ -9222,7 +10100,11 @@
         "value": "9007013147259"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 3.4,
+    "popularityReviewCount": 8,
+    "popularitySource": "bol",
+    "popularityScore": 10.777745004903862
   },
   {
     "id": 311,
@@ -9263,7 +10145,11 @@
         "value": "9007013131593"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 3.6,
+    "popularityReviewCount": 22,
+    "popularitySource": "bol",
+    "popularityScore": 16.284823041805247
   },
   {
     "id": 312,
@@ -9304,7 +10190,11 @@
         "value": "9007013150518"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 3.6,
+    "popularityReviewCount": 22,
+    "popularitySource": "bol",
+    "popularityScore": 16.284823041805247
   },
   {
     "id": 313,
@@ -9345,7 +10235,11 @@
         "value": "9007013150570"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 3.6,
+    "popularityReviewCount": 22,
+    "popularitySource": "bol",
+    "popularityScore": 16.284823041805247
   },
   {
     "id": 314,
@@ -9386,7 +10280,11 @@
         "value": "9007013148829"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 5
   },
   {
     "id": 315,
@@ -9427,7 +10325,11 @@
         "value": "9007013143091"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 1.5,
+    "popularityReviewCount": 2,
+    "popularitySource": "bol",
+    "popularityScore": 2.377443751081734
   },
   {
     "id": 316,
@@ -9468,7 +10370,11 @@
         "value": "9007013150549"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 3.6,
+    "popularityReviewCount": 22,
+    "popularitySource": "bol",
+    "popularityScore": 16.284823041805247
   },
   {
     "id": 317,
@@ -9509,7 +10415,11 @@
         "value": "9007013148690"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.7,
+    "popularityReviewCount": 25,
+    "popularitySource": "bol",
+    "popularityScore": 22.092066675263133
   },
   {
     "id": 318,
@@ -9550,7 +10460,11 @@
         "value": "9007013149116"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 5
   },
   {
     "id": 319,
@@ -9591,7 +10505,11 @@
         "value": "9007013151317"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 5
   },
   {
     "id": 320,
@@ -9632,7 +10550,11 @@
         "value": "8710993017382"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.4,
+    "popularityReviewCount": 67,
+    "popularitySource": "amazon",
+    "popularityScore": 26.784836501501495
   },
   {
     "id": 321,
@@ -9673,7 +10595,11 @@
         "value": "8710993017931"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.4,
+    "popularityReviewCount": 67,
+    "popularitySource": "amazon",
+    "popularityScore": 26.784836501501495
   },
   {
     "id": 322,
@@ -9714,7 +10640,11 @@
         "value": "8710993013599"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.7,
+    "popularityReviewCount": 58,
+    "popularitySource": "amazon",
+    "popularityScore": 27.648422332000656
   },
   {
     "id": 323,
@@ -9755,7 +10685,11 @@
         "value": "8710993013346"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.3,
+    "popularityReviewCount": 1622,
+    "popularitySource": "amazon",
+    "popularityScore": 45.85712332355628
   },
   {
     "id": 324,
@@ -9796,7 +10730,11 @@
         "value": "8710993013292"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.7,
+    "popularityReviewCount": 31,
+    "popularitySource": "amazon",
+    "popularityScore": 23.5
   },
   {
     "id": 325,
@@ -9837,7 +10775,11 @@
         "value": "8710993013247"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.7,
+    "popularityReviewCount": 31,
+    "popularitySource": "amazon",
+    "popularityScore": 23.5
   },
   {
     "id": 326,
@@ -9878,7 +10820,11 @@
         "value": "8710993009257"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.3,
+    "popularityReviewCount": 3,
+    "popularitySource": "bol",
+    "popularityScore": 8.6
   },
   {
     "id": 327,
@@ -9919,7 +10865,11 @@
         "value": "8710993008182"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.3,
+    "popularityReviewCount": 4,
+    "popularitySource": "bol",
+    "popularityScore": 9.984290808015658
   },
   {
     "id": 328,
@@ -9960,7 +10910,11 @@
         "value": "8710993012585"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 4,
+    "popularitySource": "bol",
+    "popularityScore": 11.60964047443681
   },
   {
     "id": 329,
@@ -10001,7 +10955,11 @@
         "value": "8710993013636"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.3,
+    "popularityReviewCount": 71,
+    "popularitySource": "amazon",
+    "popularityScore": 26.53067750620194
   },
   {
     "id": 335,
@@ -10042,7 +11000,11 @@
         "value": "4045233645358"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.4,
+    "popularityReviewCount": 79,
+    "popularitySource": "bol",
+    "popularityScore": 27.8164836175044
   },
   {
     "id": 348,
@@ -10083,7 +11045,11 @@
         "value": "191693280586"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 3.7,
+    "popularityReviewCount": 3,
+    "popularitySource": "bol",
+    "popularityScore": 7.4
   },
   {
     "id": 349,
@@ -10124,7 +11090,11 @@
         "value": "191693738223"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4,
+    "popularityReviewCount": 1,
+    "popularitySource": "amazon",
+    "popularityScore": 4
   },
   {
     "id": 350,
@@ -10165,7 +11135,11 @@
         "value": "4045233690006"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 5
   },
   {
     "id": 351,
@@ -10206,7 +11180,11 @@
         "value": "4895151876972"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 2,
+    "popularityReviewCount": 2,
+    "popularitySource": "bol",
+    "popularityScore": 3.169925001442312
   },
   {
     "id": 352,
@@ -10247,7 +11225,11 @@
         "value": "4895151827042"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 1,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 1
   },
   {
     "id": 353,
@@ -10288,7 +11270,11 @@
         "value": "4895151813601"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 1,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 1
   },
   {
     "id": 354,
@@ -10329,7 +11315,11 @@
         "value": "4895151843325"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.7,
+    "popularityReviewCount": 3,
+    "popularitySource": "bol",
+    "popularityScore": 9.4
   },
   {
     "id": 355,
@@ -10370,7 +11360,11 @@
         "value": "4895151873117"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 1,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 1
   },
   {
     "id": 356,
@@ -10411,7 +11405,11 @@
         "value": "8447218273321"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 2.7,
+    "popularityReviewCount": 9,
+    "popularitySource": "bol",
+    "popularityScore": 8.96920585619588
   },
   {
     "id": 357,
@@ -10452,7 +11450,11 @@
         "value": "8447218273055"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 3.7,
+    "popularityReviewCount": 3,
+    "popularitySource": "bol",
+    "popularityScore": 7.4
   },
   {
     "id": 358,
@@ -10493,7 +11495,11 @@
         "value": "8447218272997"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 3.7,
+    "popularityReviewCount": 3,
+    "popularitySource": "bol",
+    "popularityScore": 7.4
   },
   {
     "id": 359,
@@ -10534,7 +11540,11 @@
         "value": "8447218271204"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 3,
+    "popularityReviewCount": 2,
+    "popularitySource": "bol",
+    "popularityScore": 4.754887502163468
   },
   {
     "id": 360,
@@ -10575,7 +11585,11 @@
         "value": "9007013140540"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 9,
+    "popularitySource": "bol",
+    "popularityScore": 16.609640474436812
   },
   {
     "id": 361,
@@ -10616,7 +11630,11 @@
         "value": "9007013147464"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 5
   },
   {
     "id": 362,
@@ -10657,7 +11675,11 @@
         "value": "9007013139018"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 9,
+    "popularitySource": "bol",
+    "popularityScore": 16.609640474436812
   },
   {
     "id": 363,
@@ -10698,7 +11720,11 @@
         "value": "041689240967"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 4
   },
   {
     "id": 364,
@@ -10739,7 +11765,11 @@
         "value": "041689110567"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.3,
+    "popularityReviewCount": 3,
+    "popularitySource": "bol",
+    "popularityScore": 8.6
   },
   {
     "id": 365,
@@ -10780,7 +11810,11 @@
         "value": "041689110550"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.3,
+    "popularityReviewCount": 3,
+    "popularitySource": "bol",
+    "popularityScore": 8.6
   },
   {
     "id": 366,
@@ -10821,7 +11855,11 @@
         "value": "041689110581"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.3,
+    "popularityReviewCount": 3,
+    "popularitySource": "bol",
+    "popularityScore": 8.6
   },
   {
     "id": 367,
@@ -10862,7 +11900,11 @@
         "value": "041689107901"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.5,
+    "popularityReviewCount": 2,
+    "popularitySource": "bol",
+    "popularityScore": 7.132331253245202
   },
   {
     "id": 368,
@@ -10903,7 +11945,11 @@
         "value": "041689417116"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.4,
+    "popularityReviewCount": 79,
+    "popularitySource": "bol",
+    "popularityScore": 27.8164836175044
   },
   {
     "id": 369,
@@ -10944,7 +11990,11 @@
         "value": "041689152673"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 3,
+    "popularitySource": "bol",
+    "popularityScore": 10
   },
   {
     "id": 370,
@@ -10985,7 +12035,11 @@
         "value": "4045233001901"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.7,
+    "popularityReviewCount": 1057,
+    "popularitySource": "amazon",
+    "popularityScore": 47.221482386935925
   },
   {
     "id": 371,
@@ -11026,7 +12080,11 @@
         "value": "4045233019050"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.5,
+    "popularityReviewCount": 237,
+    "popularitySource": "amazon",
+    "popularityScore": 35.52667993488575
   },
   {
     "id": 372,
@@ -11067,7 +12125,11 @@
         "value": "4045233021985"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4,
+    "popularityReviewCount": 4,
+    "popularitySource": "bol",
+    "popularityScore": 9.287712379549449
   },
   {
     "id": 373,
@@ -11108,7 +12170,11 @@
         "value": "041689333546"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.6,
+    "popularityReviewCount": 219,
+    "popularitySource": "amazon",
+    "popularityScore": 35.794254682213435
   },
   {
     "id": 374,
@@ -11149,7 +12215,11 @@
         "value": "041689204921"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 5
   },
   {
     "id": 375,
@@ -11190,7 +12260,11 @@
         "value": "4045233019708"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.7,
+    "popularityReviewCount": 178,
+    "popularitySource": "amazon",
+    "popularityScore": 35.17393415314201
   },
   {
     "id": 376,
@@ -11231,7 +12305,11 @@
         "value": "4045233020728"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4,
+    "popularityReviewCount": 4,
+    "popularitySource": "bol",
+    "popularityScore": 9.287712379549449
   },
   {
     "id": 377,
@@ -11272,7 +12350,11 @@
         "value": "041689200671"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 2,
+    "popularitySource": "bol",
+    "popularityScore": 7.92481250360578
   },
   {
     "id": 378,
@@ -11313,7 +12395,11 @@
         "value": "191693008067"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.8,
+    "popularityReviewCount": 88,
+    "popularitySource": "bol",
+    "popularityScore": 31.083520468638707
   },
   {
     "id": 379,
@@ -11354,7 +12440,11 @@
         "value": "041689117986"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 2,
+    "popularitySource": "bol",
+    "popularityScore": 7.92481250360578
   },
   {
     "id": 380,
@@ -11395,7 +12485,11 @@
         "value": "191693041866"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4,
+    "popularityReviewCount": 3,
+    "popularitySource": "bol",
+    "popularityScore": 8
   },
   {
     "id": 381,
@@ -11436,7 +12530,11 @@
         "value": "191693096835"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4,
+    "popularityReviewCount": 4,
+    "popularitySource": "bol",
+    "popularityScore": 9.287712379549449
   },
   {
     "id": 382,
@@ -11477,7 +12575,11 @@
         "value": "191693142969"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 3.7,
+    "popularityReviewCount": 10,
+    "popularitySource": "bol",
+    "popularityScore": 12.799896988958
   },
   {
     "id": 383,
@@ -11518,7 +12620,11 @@
         "value": "191693148824"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.4,
+    "popularityReviewCount": 79,
+    "popularitySource": "bol",
+    "popularityScore": 27.8164836175044
   },
   {
     "id": 384,
@@ -11559,7 +12665,11 @@
         "value": "041689102371"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.4,
+    "popularityReviewCount": 79,
+    "popularitySource": "bol",
+    "popularityScore": 27.8164836175044
   },
   {
     "id": 385,
@@ -11600,7 +12710,11 @@
         "value": "191693199321"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.5,
+    "popularityReviewCount": 15995,
+    "popularitySource": "amazon",
+    "popularityScore": 62.84440604614558
   },
   {
     "id": 386,
@@ -11641,7 +12755,11 @@
         "value": "041689253912"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 3.7,
+    "popularityReviewCount": 10,
+    "popularitySource": "bol",
+    "popularityScore": 12.799896988958
   },
   {
     "id": 387,
@@ -11682,7 +12800,11 @@
         "value": "041689260767"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.3,
+    "popularityReviewCount": 3,
+    "popularitySource": "bol",
+    "popularityScore": 8.6
   },
   {
     "id": 388,
@@ -11723,7 +12845,11 @@
         "value": "4045233568596"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 5
   },
   {
     "id": 389,
@@ -11764,7 +12890,11 @@
         "value": "4045233012457"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4,
+    "popularityReviewCount": 4,
+    "popularitySource": "bol",
+    "popularityScore": 9.287712379549449
   },
   {
     "id": 390,
@@ -11805,7 +12935,11 @@
         "value": "191693235692"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.5,
+    "popularityReviewCount": 80,
+    "popularitySource": "amazon",
+    "popularityScore": 28.52932501298081
   },
   {
     "id": 391,
@@ -11846,7 +12980,11 @@
         "value": "4251944214589"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 3.3,
+    "popularityReviewCount": 3,
+    "popularitySource": "bol",
+    "popularityScore": 6.6
   },
   {
     "id": 392,
@@ -11887,7 +13025,11 @@
         "value": "041689112400"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4,
+    "popularityReviewCount": 4,
+    "popularitySource": "bol",
+    "popularityScore": 9.287712379549449
   },
   {
     "id": 393,
@@ -11928,7 +13070,11 @@
         "value": "041689112202"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 2,
+    "popularitySource": "bol",
+    "popularityScore": 7.92481250360578
   },
   {
     "id": 394,
@@ -11969,7 +13115,11 @@
         "value": "041689204464"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.4,
+    "popularityReviewCount": 79,
+    "popularitySource": "bol",
+    "popularityScore": 27.8164836175044
   },
   {
     "id": 395,
@@ -12010,7 +13160,11 @@
         "value": "041689130084"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 2.5,
+    "popularityReviewCount": 2,
+    "popularitySource": "bol",
+    "popularityScore": 3.96240625180289
   },
   {
     "id": 396,
@@ -12051,7 +13205,11 @@
         "value": "041689112806"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 3,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 3
   },
   {
     "id": 397,
@@ -12092,7 +13250,11 @@
         "value": "041689283780"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 2,
+    "popularitySource": "bol",
+    "popularityScore": 7.92481250360578
   },
   {
     "id": 398,
@@ -12133,7 +13295,11 @@
         "value": "4045233015960"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.4,
+    "popularityReviewCount": 5799,
+    "popularitySource": "amazon",
+    "popularityScore": 55.00808361357011
   },
   {
     "id": 399,
@@ -12174,7 +13340,11 @@
         "value": "041689114008"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 2,
+    "popularitySource": "bol",
+    "popularityScore": 7.92481250360578
   },
   {
     "id": 400,
@@ -12215,7 +13385,11 @@
         "value": "191693172034"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 4
   },
   {
     "id": 401,
@@ -12256,7 +13430,11 @@
         "value": "191693787696"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.6,
+    "popularityReviewCount": 2207,
+    "popularitySource": "amazon",
+    "popularityScore": 51.09921250117957
   },
   {
     "id": 402,
@@ -12297,7 +13475,11 @@
         "value": "9007013148720"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 1,
+    "popularityReviewCount": 3,
+    "popularitySource": "bol",
+    "popularityScore": 2
   },
   {
     "id": 403,
@@ -12338,7 +13520,11 @@
         "value": "041689684723"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "amazon",
+    "popularityScore": 5
   },
   {
     "id": 404,
@@ -12379,7 +13565,11 @@
         "value": "191693505481"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 5,
+    "popularitySource": "amazon",
+    "popularityScore": 12.92481250360578
   },
   {
     "id": 405,
@@ -12420,7 +13610,11 @@
         "value": "191693719123"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.8,
+    "popularityReviewCount": 88,
+    "popularitySource": "bol",
+    "popularityScore": 31.083520468638707
   },
   {
     "id": 406,
@@ -12461,7 +13655,11 @@
         "value": "191693505474"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 5
   },
   {
     "id": 407,
@@ -12502,7 +13700,11 @@
         "value": "191693206005"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.6,
+    "popularityReviewCount": 992,
+    "popularitySource": "amazon",
+    "popularityScore": 45.79598957463052
   },
   {
     "id": 408,
@@ -12543,7 +13745,11 @@
         "value": "191693254761"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4,
+    "popularityReviewCount": 4,
+    "popularitySource": "bol",
+    "popularityScore": 9.287712379549449
   },
   {
     "id": 409,
@@ -12584,7 +13790,11 @@
         "value": "191693709094"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.3,
+    "popularityReviewCount": 23,
+    "popularitySource": "bol",
+    "popularityScore": 19.71533875310097
   },
   {
     "id": 410,
@@ -12625,7 +13835,11 @@
         "value": "191693280852"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.4,
+    "popularityReviewCount": 79,
+    "popularitySource": "bol",
+    "popularityScore": 27.8164836175044
   },
   {
     "id": 411,
@@ -12666,7 +13880,11 @@
         "value": "191693800470"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 2,
+    "popularitySource": "bol",
+    "popularityScore": 7.92481250360578
   },
   {
     "id": 412,
@@ -12707,7 +13925,11 @@
         "value": "191693795080"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.6,
+    "popularityReviewCount": 4,
+    "popularitySource": "amazon",
+    "popularityScore": 10.680869236481865
   },
   {
     "id": 413,
@@ -12748,7 +13970,11 @@
         "value": "191693280807"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 5
   },
   {
     "id": 414,
@@ -12789,7 +14015,11 @@
         "value": "191693280814"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 5
   },
   {
     "id": 415,
@@ -12830,7 +14060,11 @@
         "value": "191693795066"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 3.7,
+    "popularityReviewCount": 10,
+    "popularitySource": "bol",
+    "popularityScore": 12.799896988958
   },
   {
     "id": 416,
@@ -12871,7 +14105,11 @@
         "value": "191693795301"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 2,
+    "popularitySource": "bol",
+    "popularityScore": 7.92481250360578
   },
   {
     "id": 417,
@@ -12912,7 +14150,11 @@
         "value": "4045233654657"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.7,
+    "popularityReviewCount": 718,
+    "popularitySource": "amazon",
+    "popularityScore": 44.602285414064696
   },
   {
     "id": 418,
@@ -12953,7 +14195,11 @@
         "value": "4045233305412"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.2,
+    "popularityReviewCount": 29,
+    "popularitySource": "amazon",
+    "popularityScore": 20.60894050155578
   },
   {
     "id": 419,
@@ -12994,7 +14240,11 @@
         "value": "4045233210631"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.8,
+    "popularityReviewCount": 78,
+    "popularitySource": "amazon",
+    "popularityScore": 30.258147591250093
   },
   {
     "id": 420,
@@ -13035,7 +14285,11 @@
         "value": "191693280753"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.4,
+    "popularityReviewCount": 79,
+    "popularitySource": "bol",
+    "popularityScore": 27.8164836175044
   },
   {
     "id": 421,
@@ -13076,7 +14330,11 @@
         "value": "191693280760"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.5,
+    "popularityReviewCount": 910,
+    "popularitySource": "amazon",
+    "popularityScore": 44.240882597109234
   },
   {
     "id": 422,
@@ -13117,7 +14375,11 @@
         "value": "191693280784"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.1,
+    "popularityReviewCount": 12,
+    "popularitySource": "amazon",
+    "popularityScore": 15.171802844378476
   },
   {
     "id": 423,
@@ -13158,7 +14420,11 @@
         "value": "191693281620"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 1,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 1
   },
   {
     "id": 424,
@@ -13199,7 +14465,11 @@
         "value": "191693281736"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.6,
+    "popularityReviewCount": 3126,
+    "popularitySource": "amazon",
+    "popularityScore": 53.40859211805518
   },
   {
     "id": 425,
@@ -13240,7 +14510,11 @@
         "value": "191693803488"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 6,
+    "popularitySource": "amazon",
+    "popularityScore": 14.03677461028802
   },
   {
     "id": 426,
@@ -13281,7 +14555,11 @@
         "value": "191693803471"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 3,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 3
   },
   {
     "id": 427,
@@ -13322,7 +14600,11 @@
         "value": "191693794946"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 5
   },
   {
     "id": 428,
@@ -13363,7 +14645,11 @@
         "value": "191693803600"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.5,
+    "popularityReviewCount": 2,
+    "popularitySource": "amazon",
+    "popularityScore": 7.132331253245202
   },
   {
     "id": 429,
@@ -13404,7 +14690,11 @@
         "value": "191693802160"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.7,
+    "popularityReviewCount": 5672,
+    "popularitySource": "amazon",
+    "popularityScore": 58.608511898753314
   },
   {
     "id": 430,
@@ -13445,7 +14735,11 @@
         "value": "0041689240042"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.3,
+    "popularityReviewCount": 19,
+    "popularitySource": "bol",
+    "popularityScore": 18.58429080801566
   },
   {
     "id": 431,
@@ -13486,7 +14780,11 @@
         "value": "191693771695"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 4,
+    "popularitySource": "amazon",
+    "popularityScore": 11.60964047443681
   },
   {
     "id": 432,
@@ -13527,7 +14825,11 @@
         "value": "191693280708"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 5
   },
   {
     "id": 433,
@@ -13568,7 +14870,11 @@
         "value": "0041689240035"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.4,
+    "popularityReviewCount": 79,
+    "popularitySource": "bol",
+    "popularityScore": 27.8164836175044
   },
   {
     "id": 434,
@@ -13609,7 +14915,11 @@
         "value": "191693802139"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.5,
+    "popularityReviewCount": 15995,
+    "popularitySource": "amazon",
+    "popularityScore": 62.84440604614558
   },
   {
     "id": 435,
@@ -13650,7 +14960,11 @@
         "value": "191693772081"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.4,
+    "popularityReviewCount": 79,
+    "popularitySource": "bol",
+    "popularityScore": 27.8164836175044
   },
   {
     "id": 436,
@@ -13691,7 +15005,11 @@
         "value": "191693803785"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.7,
+    "popularityReviewCount": 5672,
+    "popularitySource": "amazon",
+    "popularityScore": 58.608511898753314
   },
   {
     "id": 437,
@@ -13732,7 +15050,11 @@
         "value": "191693280715"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 5
   },
   {
     "id": 438,
@@ -13773,7 +15095,11 @@
         "value": "191693802108"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 5
   },
   {
     "id": 439,
@@ -13814,7 +15140,11 @@
         "value": "191693802795"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.4,
+    "popularityReviewCount": 79,
+    "popularitySource": "bol",
+    "popularityScore": 27.8164836175044
   },
   {
     "id": 440,
@@ -13855,7 +15185,11 @@
         "value": "191693772098"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 1,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 1
   },
   {
     "id": 441,
@@ -13896,7 +15230,11 @@
         "value": "191693803273"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.3,
+    "popularityReviewCount": 19,
+    "popularitySource": "bol",
+    "popularityScore": 18.58429080801566
   },
   {
     "id": 442,
@@ -13937,7 +15275,11 @@
         "value": "191693771688"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.3,
+    "popularityReviewCount": 23,
+    "popularitySource": "bol",
+    "popularityScore": 19.71533875310097
   },
   {
     "id": 443,
@@ -13978,7 +15320,11 @@
         "value": "191693803266"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 5
   },
   {
     "id": 444,
@@ -14019,7 +15365,11 @@
         "value": "191693803778"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 5
   },
   {
     "id": 445,
@@ -14060,7 +15410,11 @@
         "value": "191693269536"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 5
   },
   {
     "id": 446,
@@ -14101,7 +15455,11 @@
         "value": "191693802191"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 2,
+    "popularitySource": "amazon",
+    "popularityScore": 7.92481250360578
   },
   {
     "id": 447,
@@ -14142,7 +15500,11 @@
         "value": "191693764819"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 1,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 1
   },
   {
     "id": 448,
@@ -14183,7 +15545,11 @@
         "value": "191693281774"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 5
   },
   {
     "id": 449,
@@ -14224,7 +15590,11 @@
         "value": "191693281583"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 5
   },
   {
     "id": 450,
@@ -14265,7 +15635,11 @@
         "value": "191693280609"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 2,
+    "popularitySource": "bol",
+    "popularityScore": 7.92481250360578
   },
   {
     "id": 451,
@@ -14306,7 +15680,11 @@
         "value": "191693802146"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.5,
+    "popularityReviewCount": 260,
+    "popularitySource": "amazon",
+    "popularityScore": 36.12557698456448
   },
   {
     "id": 452,
@@ -14347,7 +15725,11 @@
         "value": "191693802122"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4,
+    "popularityReviewCount": 4,
+    "popularitySource": "bol",
+    "popularityScore": 9.287712379549449
   },
   {
     "id": 453,
@@ -14388,7 +15770,11 @@
         "value": "191693280562"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.4,
+    "popularityReviewCount": 79,
+    "popularitySource": "bol",
+    "popularityScore": 27.8164836175044
   },
   {
     "id": 454,
@@ -14429,7 +15815,11 @@
         "value": "191693281675"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "amazon",
+    "popularityScore": 5
   },
   {
     "id": 455,
@@ -14470,7 +15860,11 @@
         "value": "191693803495"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.8,
+    "popularityReviewCount": 8,
+    "popularitySource": "bol",
+    "popularityScore": 15.215640006923097
   },
   {
     "id": 456,
@@ -14511,7 +15905,11 @@
         "value": "191693280593"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 3.7,
+    "popularityReviewCount": 3,
+    "popularitySource": "bol",
+    "popularityScore": 7.4
   },
   {
     "id": 457,
@@ -14552,7 +15950,11 @@
         "value": "191693803594"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 1,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 1
   },
   {
     "id": 458,
@@ -14593,7 +15995,11 @@
         "value": "191693803587"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 5
   },
   {
     "id": 459,
@@ -14634,7 +16040,11 @@
         "value": "191693280661"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 5
   },
   {
     "id": 460,
@@ -14675,7 +16085,11 @@
         "value": "191693803730"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 2,
+    "popularitySource": "bol",
+    "popularityScore": 7.92481250360578
   },
   {
     "id": 461,
@@ -14716,7 +16130,11 @@
         "value": "191693803723"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 5
   },
   {
     "id": 462,
@@ -14757,7 +16175,11 @@
         "value": "191693803754"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 5
   },
   {
     "id": 463,
@@ -14798,7 +16220,11 @@
         "value": "191693795042"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.5,
+    "popularityReviewCount": 2,
+    "popularitySource": "bol",
+    "popularityScore": 7.132331253245202
   },
   {
     "id": 464,
@@ -14839,7 +16265,11 @@
         "value": "191693803761"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 5
   },
   {
     "id": 465,
@@ -14880,7 +16310,11 @@
         "value": "191693800425"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.5,
+    "popularityReviewCount": 6,
+    "popularitySource": "bol",
+    "popularityScore": 12.63309714925922
   },
   {
     "id": 466,
@@ -14921,7 +16355,11 @@
         "value": "191693800463"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 2,
+    "popularitySource": "bol",
+    "popularityScore": 7.92481250360578
   },
   {
     "id": 467,
@@ -14962,7 +16400,11 @@
         "value": "191693280630"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 3.4,
+    "popularityReviewCount": 66,
+    "popularitySource": "bol",
+    "popularityScore": 20.624703247556425
   },
   {
     "id": 468,
@@ -15003,7 +16445,11 @@
         "value": "191693281538"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.3,
+    "popularityReviewCount": 23,
+    "popularitySource": "bol",
+    "popularityScore": 19.71533875310097
   },
   {
     "id": 469,
@@ -15044,7 +16490,11 @@
         "value": "191693281781"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.3,
+    "popularityReviewCount": 79,
+    "popularitySource": "bol",
+    "popularityScore": 27.184290808015657
   },
   {
     "id": 470,
@@ -15085,7 +16535,11 @@
         "value": "191693281651"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 5
   },
   {
     "id": 471,
@@ -15126,7 +16580,11 @@
         "value": "191693280494"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.2,
+    "popularityReviewCount": 5,
+    "popularitySource": "bol",
+    "popularityScore": 10.856842503028856
   },
   {
     "id": 472,
@@ -15167,7 +16625,11 @@
         "value": "191693281484"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.6,
+    "popularityReviewCount": 3001,
+    "popularitySource": "amazon",
+    "popularityScore": 53.137858003455165
   },
   {
     "id": 473,
@@ -15208,7 +16670,11 @@
         "value": "191693794960"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 5
   },
   {
     "id": 474,
@@ -15249,7 +16715,11 @@
         "value": "191693804362"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 3,
+    "popularitySource": "bol",
+    "popularityScore": 10
   },
   {
     "id": 475,
@@ -15290,7 +16760,11 @@
         "value": "4045233785696"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.4,
+    "popularityReviewCount": 79,
+    "popularitySource": "bol",
+    "popularityScore": 27.8164836175044
   },
   {
     "id": 476,
@@ -15331,7 +16805,11 @@
         "value": "191693281606"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 3.7,
+    "popularityReviewCount": 3,
+    "popularitySource": "bol",
+    "popularityScore": 7.4
   },
   {
     "id": 477,
@@ -15372,7 +16850,11 @@
         "value": "191693280623"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.3,
+    "popularityReviewCount": 23,
+    "popularitySource": "bol",
+    "popularityScore": 19.71533875310097
   },
   {
     "id": 478,
@@ -15413,7 +16895,11 @@
         "value": "191693280845"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 2,
+    "popularitySource": "bol",
+    "popularityScore": 7.92481250360578
   },
   {
     "id": 479,
@@ -15454,7 +16940,11 @@
         "value": "191693280517"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 3,
+    "popularitySource": "bol",
+    "popularityScore": 10
   },
   {
     "id": 480,
@@ -15495,7 +16985,11 @@
         "value": "191693280678"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 5
   },
   {
     "id": 481,
@@ -15536,7 +17030,11 @@
         "value": "191693279108"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 4
   },
   {
     "id": 482,
@@ -15577,7 +17075,11 @@
         "value": "191693280746"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4,
+    "popularityReviewCount": 4,
+    "popularitySource": "bol",
+    "popularityScore": 9.287712379549449
   },
   {
     "id": 483,
@@ -15618,7 +17120,11 @@
         "value": "191693280722"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.3,
+    "popularityReviewCount": 23,
+    "popularitySource": "bol",
+    "popularityScore": 19.71533875310097
   },
   {
     "id": 484,
@@ -15659,7 +17165,11 @@
         "value": "191693800432"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 5
   },
   {
     "id": 485,
@@ -15700,7 +17210,11 @@
         "value": "191693800456"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 3,
+    "popularitySource": "bol",
+    "popularityScore": 10
   },
   {
     "id": 486,
@@ -15741,7 +17255,11 @@
         "value": "191693280524"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 1,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 1
   },
   {
     "id": 487,
@@ -15782,7 +17300,11 @@
         "value": "191693280531"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.3,
+    "popularityReviewCount": 23,
+    "popularitySource": "bol",
+    "popularityScore": 19.71533875310097
   },
   {
     "id": 488,
@@ -15823,7 +17345,11 @@
         "value": "191693802801"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 5
   },
   {
     "id": 489,
@@ -15864,7 +17390,11 @@
         "value": "191693280555"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 5
   },
   {
     "id": 490,
@@ -15905,7 +17435,11 @@
         "value": "191693281385"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.3,
+    "popularityReviewCount": 23,
+    "popularitySource": "bol",
+    "popularityScore": 19.71533875310097
   },
   {
     "id": 491,
@@ -15946,7 +17480,11 @@
         "value": "191693281415"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.3,
+    "popularityReviewCount": 23,
+    "popularitySource": "bol",
+    "popularityScore": 19.71533875310097
   },
   {
     "id": 492,
@@ -15987,7 +17525,11 @@
         "value": "191693281835"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.7,
+    "popularityReviewCount": 464,
+    "popularitySource": "amazon",
+    "popularityScore": 41.64710845817836
   },
   {
     "id": 493,
@@ -16028,7 +17570,11 @@
         "value": "4895151855298"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 1,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 1
   },
   {
     "id": 494,
@@ -16069,7 +17615,11 @@
         "value": "8447218273079"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 3,
+    "popularityReviewCount": 2,
+    "popularitySource": "bol",
+    "popularityScore": 4.754887502163468
   },
   {
     "id": 495,
@@ -16110,7 +17660,11 @@
         "value": "8447218271266"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 2.7,
+    "popularityReviewCount": 9,
+    "popularitySource": "bol",
+    "popularityScore": 8.96920585619588
   },
   {
     "id": 496,
@@ -16151,7 +17705,11 @@
         "value": "8447218269249"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 3,
+    "popularityReviewCount": 2,
+    "popularitySource": "bol",
+    "popularityScore": 4.754887502163468
   },
   {
     "id": 497,
@@ -16192,7 +17750,11 @@
         "value": "5905527251322"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 9,
+    "popularitySource": "bol",
+    "popularityScore": 16.609640474436812
   },
   {
     "id": 498,
@@ -16233,7 +17795,11 @@
         "value": "5905527251384"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 2.9,
+    "popularityReviewCount": 8,
+    "popularitySource": "bol",
+    "popularityScore": 9.192782504182706
   },
   {
     "id": 499,
@@ -16274,7 +17840,11 @@
         "value": "5905527251599"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4,
+    "popularityReviewCount": 3,
+    "popularitySource": "bol",
+    "popularityScore": 8
   },
   {
     "id": 500,
@@ -16315,7 +17885,11 @@
         "value": "5905527251568"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.3,
+    "popularityReviewCount": 3,
+    "popularitySource": "bol",
+    "popularityScore": 8.6
   },
   {
     "id": 501,
@@ -16356,7 +17930,11 @@
         "value": "5905527251537"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 3.5,
+    "popularityReviewCount": 2,
+    "popularitySource": "bol",
+    "popularityScore": 5.547368752524046
   },
   {
     "id": 502,
@@ -16397,7 +17975,11 @@
         "value": "5905527251506"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.3,
+    "popularityReviewCount": 3,
+    "popularitySource": "bol",
+    "popularityScore": 8.6
   },
   {
     "id": 503,
@@ -16438,7 +18020,11 @@
         "value": "5905527251476"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 4
   },
   {
     "id": 504,
@@ -16479,7 +18065,11 @@
         "value": "5905527250448"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "amazon",
+    "popularityScore": 5
   },
   {
     "id": 505,
@@ -16520,7 +18110,11 @@
         "value": "5905527250431"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 5
   },
   {
     "id": 506,
@@ -16561,7 +18155,11 @@
         "value": "5905527250462"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.4,
+    "popularityReviewCount": 65,
+    "popularitySource": "amazon",
+    "popularityScore": 26.595334125177196
   },
   {
     "id": 507,
@@ -16602,7 +18200,11 @@
         "value": "5905527250455"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 3,
+    "popularitySource": "amazon",
+    "popularityScore": 10
   },
   {
     "id": 508,
@@ -16643,7 +18245,11 @@
         "value": "5905527250486"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 2.5,
+    "popularityReviewCount": 4,
+    "popularitySource": "bol",
+    "popularityScore": 5.804820237218405
   },
   {
     "id": 509,
@@ -16684,7 +18290,11 @@
         "value": "5905527250479"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.2,
+    "popularityReviewCount": 228,
+    "popularitySource": "amazon",
+    "popularityScore": 32.92465591000717
   },
   {
     "id": 510,
@@ -16725,7 +18335,11 @@
         "value": "5905527250875"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 2.5,
+    "popularityReviewCount": 4,
+    "popularitySource": "bol",
+    "popularityScore": 5.804820237218405
   },
   {
     "id": 511,
@@ -16766,7 +18380,11 @@
         "value": "5905527250868"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.2,
+    "popularityReviewCount": 947,
+    "popularitySource": "amazon",
+    "popularityScore": 41.53272164537269
   },
   {
     "id": 512,
@@ -16807,7 +18425,11 @@
         "value": "5905527250851"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.3,
+    "popularityReviewCount": 1548,
+    "popularitySource": "amazon",
+    "popularityScore": 45.56762214379514
   },
   {
     "id": 513,
@@ -16848,7 +18470,9 @@
         "value": "5905527250905"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularitySource": "none",
+    "popularityScore": 0
   },
   {
     "id": 514,
@@ -16889,7 +18513,11 @@
         "value": "5905527250899"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 1,
+    "popularityReviewCount": 2,
+    "popularitySource": "bol",
+    "popularityScore": 1.584962500721156
   },
   {
     "id": 515,
@@ -16930,7 +18558,11 @@
         "value": "5905527250882"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "amazon",
+    "popularityScore": 5
   },
   {
     "id": 516,
@@ -16971,7 +18603,11 @@
         "value": "5905527250936"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.3,
+    "popularityReviewCount": 1548,
+    "popularitySource": "amazon",
+    "popularityScore": 45.56762214379514
   },
   {
     "id": 517,
@@ -17012,7 +18648,11 @@
         "value": "5905527250929"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 3.8,
+    "popularityReviewCount": 11,
+    "popularitySource": "bol",
+    "popularityScore": 13.622857502740393
   },
   {
     "id": 518,
@@ -17053,7 +18693,11 @@
         "value": "5905527250912"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "amazon",
+    "popularityScore": 5
   },
   {
     "id": 519,
@@ -17094,7 +18738,11 @@
         "value": "5905527251674"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 5
   },
   {
     "id": 520,
@@ -17135,7 +18783,11 @@
         "value": "5905527251667"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.5,
+    "popularityReviewCount": 106,
+    "popularitySource": "amazon",
+    "popularityScore": 30.336601438805165
   },
   {
     "id": 521,
@@ -17176,7 +18828,11 @@
         "value": "5905527250301"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 5
   },
   {
     "id": 522,
@@ -17217,7 +18873,11 @@
         "value": "8447218281418"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 2.7,
+    "popularityReviewCount": 9,
+    "popularitySource": "bol",
+    "popularityScore": 8.96920585619588
   },
   {
     "id": 523,
@@ -17258,7 +18918,11 @@
         "value": "8447218281906"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 2.7,
+    "popularityReviewCount": 9,
+    "popularitySource": "bol",
+    "popularityScore": 8.96920585619588
   },
   {
     "id": 524,
@@ -17299,7 +18963,11 @@
         "value": "8447218279873"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 2.7,
+    "popularityReviewCount": 9,
+    "popularitySource": "bol",
+    "popularityScore": 8.96920585619588
   },
   {
     "id": 525,
@@ -17340,7 +19008,11 @@
         "value": "8447218279866"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 3.3,
+    "popularityReviewCount": 4,
+    "popularitySource": "bol",
+    "popularityScore": 7.662362713128295
   },
   {
     "id": 526,
@@ -17381,7 +19053,11 @@
         "value": "8447218277343"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 5
   },
   {
     "id": 527,
@@ -17422,7 +19098,11 @@
         "value": "8447218277794"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 3,
+    "popularityReviewCount": 2,
+    "popularitySource": "bol",
+    "popularityScore": 4.754887502163468
   },
   {
     "id": 528,
@@ -17463,7 +19143,11 @@
         "value": "8447218280992"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 3,
+    "popularityReviewCount": 2,
+    "popularitySource": "bol",
+    "popularityScore": 4.754887502163468
   },
   {
     "id": 529,
@@ -17504,7 +19188,11 @@
         "value": "8447218279910"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 3,
+    "popularityReviewCount": 2,
+    "popularitySource": "bol",
+    "popularityScore": 4.754887502163468
   },
   {
     "id": 530,
@@ -17545,7 +19233,11 @@
         "value": "8447218280299"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 5
   },
   {
     "id": 531,
@@ -17586,7 +19278,11 @@
         "value": "8447218279897"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 3,
+    "popularityReviewCount": 2,
+    "popularitySource": "bol",
+    "popularityScore": 4.754887502163468
   },
   {
     "id": 532,
@@ -17627,7 +19323,11 @@
         "value": "8447218280312"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 2.7,
+    "popularityReviewCount": 9,
+    "popularitySource": "bol",
+    "popularityScore": 8.96920585619588
   },
   {
     "id": 533,
@@ -17668,7 +19368,11 @@
         "value": "8447218279934"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 3,
+    "popularityReviewCount": 2,
+    "popularitySource": "bol",
+    "popularityScore": 4.754887502163468
   },
   {
     "id": 534,
@@ -17709,7 +19413,11 @@
         "value": "3661075408572"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 3.6,
+    "popularityReviewCount": 22,
+    "popularitySource": "bol",
+    "popularityScore": 16.284823041805247
   },
   {
     "id": 535,
@@ -17750,7 +19458,11 @@
         "value": "3661075365615"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 3.6,
+    "popularityReviewCount": 22,
+    "popularitySource": "bol",
+    "popularityScore": 16.284823041805247
   },
   {
     "id": 536,
@@ -17791,7 +19503,11 @@
         "value": "3661075142216"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 3.6,
+    "popularityReviewCount": 22,
+    "popularitySource": "bol",
+    "popularityScore": 16.284823041805247
   },
   {
     "id": 537,
@@ -17832,7 +19548,11 @@
         "value": "3661075405854"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 3.6,
+    "popularityReviewCount": 22,
+    "popularitySource": "bol",
+    "popularityScore": 16.284823041805247
   },
   {
     "id": 538,
@@ -17873,7 +19593,11 @@
         "value": "3661075405823"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 3.6,
+    "popularityReviewCount": 22,
+    "popularitySource": "bol",
+    "popularityScore": 16.284823041805247
   },
   {
     "id": 539,
@@ -17914,7 +19638,11 @@
         "value": "3661075335533"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 3.6,
+    "popularityReviewCount": 22,
+    "popularitySource": "bol",
+    "popularityScore": 16.284823041805247
   },
   {
     "id": 540,
@@ -17955,7 +19683,11 @@
         "value": "3661075141172"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.8,
+    "popularityReviewCount": 10,
+    "popularitySource": "bol",
+    "popularityScore": 16.605271769459026
   },
   {
     "id": 541,
@@ -17996,7 +19728,11 @@
         "value": "3661075295981"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.1,
+    "popularityReviewCount": 7,
+    "popularitySource": "bol",
+    "popularityScore": 12.299999999999999
   },
   {
     "id": 542,
@@ -18037,7 +19773,11 @@
         "value": "3661075402310"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.1,
+    "popularityReviewCount": 7,
+    "popularitySource": "bol",
+    "popularityScore": 12.299999999999999
   },
   {
     "id": 543,
@@ -18078,7 +19818,11 @@
         "value": "3661075307141"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 2,
+    "popularityReviewCount": 6,
+    "popularitySource": "bol",
+    "popularityScore": 5.614709844115208
   },
   {
     "id": 544,
@@ -18119,7 +19863,11 @@
         "value": "3661075410964"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 3.6,
+    "popularityReviewCount": 22,
+    "popularitySource": "bol",
+    "popularityScore": 16.284823041805247
   },
   {
     "id": 545,
@@ -18160,7 +19908,11 @@
         "value": "9007013396336"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 9,
+    "popularitySource": "bol",
+    "popularityScore": 16.609640474436812
   },
   {
     "id": 546,
@@ -18201,7 +19953,11 @@
         "value": "9007013396282"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 3,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 3
   },
   {
     "id": 547,
@@ -18242,7 +19998,11 @@
         "value": "9007013146825"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 1,
+    "popularitySource": "bol",
+    "popularityScore": 5
   },
   {
     "id": 548,
@@ -18283,7 +20043,11 @@
         "value": "9007013143367"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 9,
+    "popularitySource": "bol",
+    "popularityScore": 16.609640474436812
   },
   {
     "id": 549,
@@ -18324,7 +20088,11 @@
         "value": "9007013140939"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 9,
+    "popularitySource": "bol",
+    "popularityScore": 16.609640474436812
   },
   {
     "id": 550,
@@ -18365,7 +20133,11 @@
         "value": "9007013140908"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 5,
+    "popularityReviewCount": 9,
+    "popularitySource": "bol",
+    "popularityScore": 16.609640474436812
   },
   {
     "id": 551,
@@ -18406,6 +20178,10 @@
         "value": "3661075402341"
       }
     ],
-    "inStock": true
+    "inStock": true,
+    "popularityRating": 4.1,
+    "popularityReviewCount": 7,
+    "popularitySource": "bol",
+    "popularityScore": 12.299999999999999
   }
 ]
