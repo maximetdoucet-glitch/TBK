@@ -11,7 +11,7 @@ const PANELS = [
     id: "aanstekers",
     tKey: "aanstekers",
     href: "/aanstekers",
-    image: "https://images.unsplash.com/photo-1565555384748-b7032af559fc?w=1400&q=85&fit=crop",
+    image: "https://images.unsplash.com/photo-1576682631235-90941f11cf04?w=1400&q=85&fit=crop",
     accent: "#f5a623",
     icon: Flame,
     statValues: ["170+", "149", "12"],
