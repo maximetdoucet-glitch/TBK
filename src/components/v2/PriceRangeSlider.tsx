@@ -11,10 +11,14 @@ function buildUrl(
   max: number,
   cat?: string,
   brand?: string,
-  sort?: string
+  sort?: string,
+  q?: string,
+  sub?: string
 ): string {
   const p = new URLSearchParams();
+  if (q) p.set("q", q);
   if (cat) p.set("cat", cat);
+  if (sub) p.set("sub", sub);
   if (brand) p.set("brand", brand);
   if (sort && sort !== "recommended") p.set("sort", sort);
   if (min > 0) p.set("min_price", String(min));
@@ -29,6 +33,8 @@ type Props = {
   cat?: string;
   brand?: string;
   sort?: string;
+  q?: string;
+  sub?: string;
 };
 
 const THUMB =
@@ -63,6 +69,8 @@ export default function PriceRangeSlider({
   cat,
   brand,
   sort,
+  q,
+  sub,
 }: Props) {
   const router = useRouter();
   const pathname = usePathname() || "/aanstekers";
@@ -71,9 +79,9 @@ export default function PriceRangeSlider({
 
   const commit = useCallback(
     (lo: number, hi: number) => {
-      router.push(buildUrl(pathname, lo, hi, cat, brand, sort));
+      router.push(buildUrl(pathname, lo, hi, cat, brand, sort, q, sub));
     },
-    [pathname, cat, brand, sort, router]
+    [pathname, cat, brand, sort, q, sub, router]
   );
 
   const minPct = (min / PRICE_ABSOLUTE_MAX) * 100;
