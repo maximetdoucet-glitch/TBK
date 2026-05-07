@@ -6,14 +6,14 @@ import { ArrowRight } from "lucide-react";
 import { useLocale } from "@/i18n/LocaleContext";
 
 const SUBCATEGORIES = [
-  { key: "zippo", count: 170, href: "/aanstekers?categorie=zippo-aanstekers", image: "https://www.uegholland.com/media/catalog/product/6/0/60006392_8.jpg" },
-  { key: "clipper", count: 149, href: "/aanstekers?categorie=aanstekers", image: "https://www.uegholland.com/media/catalog/product/4/1/418915330.jpg" },
-  { key: "jetflame", count: 36, href: "/aanstekers?categorie=aanstekers", image: "https://www.uegholland.com/media/catalog/product/1/8/184170_conf.jpg" },
-  { key: "zippoAcc", count: 12, href: "/aanstekers?categorie=zippo-accessoires", image: "https://www.uegholland.com/media/catalog/product/6/0/60001324-1.jpg" },
-  { key: "kokers", count: 70, href: "#", image: "https://www.uegholland.com/media/catalog/product/9/7/970713_18.jpg" },
-  { key: "knippers", count: 28, href: "#", image: "https://www.uegholland.com/media/catalog/product/2/7/270078_1_22.jpg" },
-  { key: "rook", count: 15, href: "#", image: "https://www.uegholland.com/media/catalog/product/2/7/279803_1_33.jpg" },
-  { key: "pipeCutlery", count: 6, href: "#", image: "https://www.uegholland.com/media/catalog/product/b/o/bookwill_-_pijp-bestek_-_3-delig_-_basic.jpg" },
+  { key: "zippo", count: 170, href: "/aanstekers?cat=Zippo-aanstekers", image: "https://www.uegholland.com/media/catalog/product/6/0/60006392_8.jpg" },
+  { key: "clipper", count: 149, href: "/aanstekers?cat=Aanstekers", image: "https://www.uegholland.com/media/catalog/product/4/1/418915330.jpg" },
+  { key: "jetflame", count: 36, href: "/aanstekers?cat=Aanstekers", image: "https://www.uegholland.com/media/catalog/product/1/8/184170_conf.jpg" },
+  { key: "zippoAcc", count: 12, href: "/aanstekers?cat=Zippo-accessoires", image: "https://www.uegholland.com/media/catalog/product/6/0/60001324-1.jpg" },
+  { key: "kokers", count: 70, href: "/kokers-etuis", image: "https://www.uegholland.com/media/catalog/product/9/7/970713_18.jpg" },
+  { key: "knippers", count: 28, href: "/knippers-asbakken", image: "https://www.uegholland.com/media/catalog/product/2/7/270078_1_22.jpg" },
+  { key: "rook", count: 15, href: "/rook-accessoires", image: "https://www.uegholland.com/media/catalog/product/2/7/279803_1_33.jpg" },
+  { key: "pipeCutlery", count: 6, href: "/rook-accessoires?sub=bestek", image: "https://www.uegholland.com/media/catalog/product/b/o/bookwill_-_pijp-bestek_-_3-delig_-_basic.jpg" },
 ] as const;
 
 export default function SubcategoryNav() {
