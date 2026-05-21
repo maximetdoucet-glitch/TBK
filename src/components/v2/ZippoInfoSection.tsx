@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Flame, RefreshCw, Wind, Shield, Star, MessageCircle, ChevronRight } from "lucide-react";
+import { useLocale } from "@/i18n/LocaleContext";
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -33,36 +34,6 @@ const STEPS = [
   },
 ];
 
-const FAQS = [
-  {
-    q: "Hoe lang gaat een Zippo mee?",
-    a: "Een Zippo heeft een levenslange garantie en gaat bij normaal gebruik generaties mee. De aanstekers worden al sinds 1932 op dezelfde manier gemaakt van staal, voor de eeuwigheid.",
-  },
-  {
-    q: "Hoe weet ik of mijn Zippo origineel is?",
-    a: "Kijk op de bodem: een echte Zippo heeft een datumcode, strakke scharnier, de verende klik van het deksel en een nette naad. Koop uitsluitend bij erkende verkopers zoals OneConnect.",
-  },
-  {
-    q: "Welke brandstof gebruik ik?",
-    a: "Gebruik altijd originele Zippo-benzine. Andere benzinesoorten beschadigen de watten en geven meer reukgeur. Verkrijgbaar bij ons in de winkel en webshop.",
-  },
-  {
-    q: "Hoe vervang ik de vuursteentjes?",
-    a: "Draai de schroef onderaan het binnenwerk eruit. Haal veer en oud steentje weg, leg een nieuw Zippo-steentje in, veer erop, schroef terug. Klaar in minder dan een minuut.",
-  },
-  {
-    q: "Mag ik een Zippo meenemen in het vliegtuig?",
-    a: "Een gevulde aansteker is niet toegestaan in handbagage. Een lege aansteker mag in sommige gevallen wel, maar regels verschillen per maatschappij check altijd van tevoren.",
-  },
-  {
-    q: "Hoe vaak moet ik bijvullen?",
-    a: "Bij dagelijks gebruik gemiddeld elke 1–2 weken. Benzine verdampt ook als je hem niet gebruikt, dus vul bij wanneer de vlam zwakker wordt.",
-  },
-  {
-    q: "Kan ik een Zippo laten graveren?",
-    a: "Ja. Veel modellen zijn geschikt voor gravure - naam, datum of afbeelding. Kom langs in onze winkel (Molenstraat 120 of Lange Hezelstraat 26 in Nijmegen) voor de mogelijkheden.",
-  },
-];
 
 // ─── FAQ Item ────────────────────────────────────────────────────────────────
 
@@ -119,6 +90,8 @@ function FaqItem({ index, q, a }: { index: number; q: string; a: string }) {
 // ─── Main Component ──────────────────────────────────────────────────────────
 
 export default function ZippoInfoSection() {
+  const { dict } = useLocale();
+  const faqData = dict.categoryFaqs.zippo;
   return (
     <div>
 
@@ -287,7 +260,7 @@ export default function ZippoInfoSection() {
                 </h2>
               </div>
               <p className="text-[12px] text-white/35 leading-relaxed mb-8">
-                Alles wat je wilt weten over gebruik, onderhoud en aankoop - eerlijk en zonder verkooppraatjes.
+                {faqData.intro}
               </p>
 
               {/* Contact card - no border box, just inline */}
@@ -318,8 +291,8 @@ export default function ZippoInfoSection() {
 
             {/* Right: FAQ items */}
             <div className="space-y-1">
-              {FAQS.map((faq, i) => (
-                <FaqItem key={faq.q} index={i} q={faq.q} a={faq.a} />
+              {faqData.items.map((faq, i) => (
+                <FaqItem key={i} index={i} q={faq.q} a={faq.a} />
               ))}
             </div>
 

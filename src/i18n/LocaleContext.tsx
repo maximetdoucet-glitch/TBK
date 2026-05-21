@@ -9,6 +9,9 @@ type Ctx = {
   locale: Locale;
   setLocale: (l: Locale) => void;
   t: (key: string) => string;
+  // Raw locale dictionary — use when you need a structured value (array,
+  // nested object) that `t()` can't return.
+  dict: Dict;
 };
 
 const LocaleContext = createContext<Ctx | null>(null);
@@ -67,8 +70,10 @@ export function LocaleProvider({ children }: { children: React.ReactNode }) {
     [locale]
   );
 
+  const dict = translations[locale] ?? translations.NL;
+
   return (
-    <LocaleContext.Provider value={{ locale, setLocale, t }}>
+    <LocaleContext.Provider value={{ locale, setLocale, t, dict }}>
       {children}
     </LocaleContext.Provider>
   );

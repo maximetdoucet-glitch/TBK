@@ -2,6 +2,7 @@
 
 import { Scissors, Award, Wind, Flame, Hand, Wrench } from "lucide-react";
 import CategoryInfoSection, { type CategoryInfoData } from "./CategoryInfoSection";
+import { useLocale } from "@/i18n/LocaleContext";
 
 const DATA: CategoryInfoData = {
   aboutLabel: "Alles over sigaren-accessoires",
@@ -72,40 +73,13 @@ const DATA: CategoryInfoData = {
 
   faqHeadingDark: "Vragen over",
   faqHeadingAccent: "sigaren-accessoires?",
-  faqIntro:
-    "Welke knipper voor welke sigaar, hoe je een goede asbak herkent, en wat een etui echt moet kunnen eerlijk uitgelegd.",
-  faqs: [
-    {
-      q: "Welke knipper is het beste guillotine, V-cut of punch?",
-      a: "Voor de meeste sigaren: guillotine een rechte snede, voorspelbare trek. V-cut concentreert de rook richting tong en accentueert smaak populair bij robusto's. Punch maakt een klein gaatje, geeft een geconcentreerde trek maar minder rookvolume. Beginners kiezen guillotine; daar gaat zelden iets mis.",
-    },
-    {
-      q: "Kan ik mijn knipper laten slijpen?",
-      a: "Ja, kwalitatieve knippers zoals Bookwill en Faro hebben verwisselbare of slijpbare lemmeten. Breng hem langs in onze winkel; voor een paar euro snijdt hij weer als nieuw. Goedkope wegwerpknippers laten zich helaas niet slijpen daarom investeer je beter in één goede.",
-    },
-    {
-      q: "Waarom een sigaren-asbak en geen gewone?",
-      a: "Een sigaar duurt 30–90 minuten. In die tijd vormt zich een lange askolom die je liever niet afklopt. Sigaren-asbakken hebben uitsparingen breed genoeg om een sigaar rustig neer te leggen zonder dat de as eraf valt, en zijn diep genoeg om geen geur te verspreiden.",
-    },
-    {
-      q: "Hoe lang houdt een sigaar in een etui?",
-      a: "In een goed cederhouten etui blijft een sigaar 5–7 dagen in optimale conditie genoeg voor een lang weekend of zakenreis. Voor langer (weken tot maanden) is een humidor met vocht-regulatie nodig. Een etui is voor onderweg, niet voor opslag.",
-    },
-    {
-      q: "Welke kant van de sigaar knip ik?",
-      a: "De cap de gesloten, afgeronde kant. De andere kant (de voet) is de open kant die je aansteekt. Knip altijd net voor de schouder, het zichtbare lijntje waar de cap aan de wikkel is bevestigd. Knip je in de schouder, dan valt de wikkel uit.",
-    },
-    {
-      q: "Mag ik mijn sigarenetui in de koelkast bewaren?",
-      a: "Liever niet. Koelkasten zijn droog en koud slecht voor sigaren. Bewaar het etui op kamertemperatuur (16–22°C), uit direct zonlicht. Een lade of kast is prima. Een humidor blijft de gouden standaard voor langere bewaring.",
-    },
-    {
-      q: "Is een dure asbak echt beter dan een goedkope?",
-      a: "Voor sigaren: ja. Goedkope asbakken zijn vaak licht, plaatstalen, met scherpe randen. Een Faro-asbak is gegoten massief, weegt 800g+, kantelt niet en heeft gepolijste uitsparingen die de sigaar niet beschadigen. Het verschil voel je elke avond opnieuw.",
-    },
-  ],
+  // faqIntro + faqs are filled in at render-time from the active locale
+  faqIntro: "",
+  faqs: [],
 };
 
 export default function KnippersAsbakkenInfoSection() {
-  return <CategoryInfoSection data={DATA} />;
+  const { dict } = useLocale();
+  const localized = dict.categoryFaqs.knippers;
+  return <CategoryInfoSection data={{ ...DATA, faqIntro: localized.intro, faqs: localized.items }} />;
 }

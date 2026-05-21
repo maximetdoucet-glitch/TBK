@@ -2,6 +2,7 @@
 
 import { Box, Filter, Sparkles, Award, Droplet, Wrench } from "lucide-react";
 import CategoryInfoSection, { type CategoryInfoData } from "./CategoryInfoSection";
+import { useLocale } from "@/i18n/LocaleContext";
 
 const DATA: CategoryInfoData = {
   aboutLabel: "Alles over kokers, etuis & filters",
@@ -72,40 +73,13 @@ const DATA: CategoryInfoData = {
 
   faqHeadingDark: "Vragen over",
   faqHeadingAccent: "kokers & etuis?",
-  faqIntro:
-    "Welk materiaal past bij jou, hoe vaak vervang je filters, en waarom een houder echt verschil maakt alles eerlijk uitgelegd.",
-  faqs: [
-    {
-      q: "Wat is het verschil tussen een koker en een etui?",
-      a: "Een koker is meestal van metaal, opent met een klikmechanisme en houdt sigaretten op hun plaats. Een etui is vaak van leer of textiel, soepeler in de hand en beschermt vooral tegen krassen en vocht. Beiden voorkomen breuk kies op basis van stijl en gebruik.",
-    },
-    {
-      q: "Hoe vaak moet ik een filter in een sigarettenhouder vervangen?",
-      a: "Bij een Denicotea-houder met actieve-koolfilter elke 5 tot 10 sigaretten. Je merkt het zelf: de trek wordt zwaarder en de smaak vlakker als het filter verzadigd is. Reservefilters bestel je per setje van 10 of 50.",
-    },
-    {
-      q: "Kan ik mijn leren etui wassen?",
-      a: "Niet met water. Stof verwijder je met een droge doek; vlekken behandel je met een licht vochtige doek en speciale lederreiniger. Twee keer per jaar lederbalsem houdt het soepel. Onderdompelen of in de wasmachine vernielt het leer onherroepelijk.",
-    },
-    {
-      q: "Welke kokergrootte heb ik nodig?",
-      a: "Standaard 84mm sigaretten passen in nagenoeg alle kokers in onze collectie. Voor 100mm (lange) sigaretten kies je expliciet een 'long' uitvoering. Capaciteit varieert van 10 (zakformaat) tot 20 (een hele pakje).",
-    },
-    {
-      q: "Werken filterhouders ook bij sigaren?",
-      a: "Voor sigaren gebruik je speciale sigarenhouders of pijpfilters ze hebben een grotere doorgang en vaak een andere filterstructuur. Onze sigaarafdeling onder Knippers & Asbakken heeft de bijpassende accessoires.",
-    },
-    {
-      q: "Is een houder met filter beter dan zonder?",
-      a: "Voor wie minder teer wil inademen: ja, aanzienlijk. Tests tonen 30–60% reductie in teer en nicotine bij goed onderhouden actieve-koolfilters. Voor wie de pure smaak wil: nee, een houder zonder filter behoudt het volle aroma.",
-    },
-    {
-      q: "Hoe lang gaat een goede koker mee?",
-      a: "Bij normaal gebruik decennia. Metalen kokers van Belbox of Denicotea zijn vaak nog functioneel na 30+ jaar alleen het scharniermechanisme kan slijten. Leer ontwikkelt patina en wordt mooier met de jaren, mits goed onderhouden.",
-    },
-  ],
+  // faqIntro + faqs are filled in at render-time from the active locale
+  faqIntro: "",
+  faqs: [],
 };
 
 export default function KokersEtuisInfoSection() {
-  return <CategoryInfoSection data={DATA} />;
+  const { dict } = useLocale();
+  const localized = dict.categoryFaqs.kokers;
+  return <CategoryInfoSection data={{ ...DATA, faqIntro: localized.intro, faqs: localized.items }} />;
 }

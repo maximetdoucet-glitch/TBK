@@ -196,6 +196,11 @@ export type Dict = {
     legal: { privacy: string; terms: string; cookies: string };
     socials: { instagram: string; facebook: string };
   };
+  categoryFaqs: {
+    zippo: { intro: string; items: { q: string; a: string }[] };
+    kokers: { intro: string; items: { q: string; a: string }[] };
+    knippers: { intro: string; items: { q: string; a: string }[] };
+  };
 };
 
 const NL: Dict = {
@@ -407,6 +412,44 @@ const NL: Dict = {
     copyright: "Rokersbenodigdheden Nijmegen",
     legal: { privacy: "Privacybeleid", terms: "Algemene voorwaarden", cookies: "Cookiebeleid" },
     socials: { instagram: "Instagram", facebook: "Facebook" },
+  },
+  categoryFaqs: {
+    zippo: {
+      intro: "Alles wat je wilt weten over gebruik, onderhoud en aankoop - eerlijk en zonder verkooppraatjes.",
+      items: [
+        { q: "Hoe lang gaat een Zippo mee?", a: "Een Zippo heeft een levenslange garantie en gaat bij normaal gebruik generaties mee. De aanstekers worden al sinds 1932 op dezelfde manier gemaakt - van staal, voor de eeuwigheid." },
+        { q: "Hoe weet ik of mijn Zippo origineel is?", a: "Kijk op de bodem: een echte Zippo heeft een datumcode, strakke scharnier, de verende klik van het deksel en een nette naad. Koop uitsluitend bij erkende verkopers zoals OneConnect." },
+        { q: "Welke brandstof gebruik ik?", a: "Gebruik altijd originele Zippo-benzine. Andere benzinesoorten beschadigen de watten en geven meer reukgeur. Verkrijgbaar bij ons in de winkel en webshop." },
+        { q: "Hoe vervang ik de vuursteentjes?", a: "Draai de schroef onderaan het binnenwerk eruit. Haal veer en oud steentje weg, leg een nieuw Zippo-steentje in, veer erop, schroef terug. Klaar in minder dan een minuut." },
+        { q: "Mag ik een Zippo meenemen in het vliegtuig?", a: "Een gevulde aansteker is niet toegestaan in handbagage. Een lege aansteker mag in sommige gevallen wel, maar regels verschillen per maatschappij - check altijd van tevoren." },
+        { q: "Hoe vaak moet ik bijvullen?", a: "Bij dagelijks gebruik gemiddeld elke 1-2 weken. Benzine verdampt ook als je hem niet gebruikt, dus vul bij wanneer de vlam zwakker wordt." },
+        { q: "Kan ik een Zippo laten graveren?", a: "Ja. Veel modellen zijn geschikt voor gravure - naam, datum of afbeelding. Kom langs in onze winkel (Molenstraat 120 of Lange Hezelstraat 26 in Nijmegen) voor de mogelijkheden." },
+      ],
+    },
+    kokers: {
+      intro: "Welk materiaal past bij jou, hoe vaak vervang je filters, en waarom een houder echt verschil maakt - alles eerlijk uitgelegd.",
+      items: [
+        { q: "Wat is het verschil tussen een koker en een etui?", a: "Een koker is meestal van metaal, opent met een klikmechanisme en houdt sigaretten op hun plaats. Een etui is vaak van leer of textiel, soepeler in de hand en beschermt vooral tegen krassen en vocht. Beiden voorkomen breuk - kies op basis van stijl en gebruik." },
+        { q: "Hoe vaak moet ik een filter in een sigarettenhouder vervangen?", a: "Bij een Denicotea-houder met actieve-koolfilter elke 5 tot 10 sigaretten. Je merkt het zelf: de trek wordt zwaarder en de smaak vlakker als het filter verzadigd is. Reservefilters bestel je per setje van 10 of 50." },
+        { q: "Kan ik mijn leren etui wassen?", a: "Niet met water. Stof verwijder je met een droge doek; vlekken behandel je met een licht vochtige doek en speciale lederreiniger. Twee keer per jaar lederbalsem houdt het soepel. Onderdompelen of in de wasmachine vernielt het leer onherroepelijk." },
+        { q: "Welke kokergrootte heb ik nodig?", a: "Standaard 84mm sigaretten passen in nagenoeg alle kokers in onze collectie. Voor 100mm (lange) sigaretten kies je expliciet een 'long' uitvoering. Capaciteit varieert van 10 (zakformaat) tot 20 (een hele pakje)." },
+        { q: "Werken filterhouders ook bij sigaren?", a: "Voor sigaren gebruik je speciale sigarenhouders of pijpfilters - ze hebben een grotere doorgang en vaak een andere filterstructuur. Onze sigaarafdeling onder Knippers & Asbakken heeft de bijpassende accessoires." },
+        { q: "Is een houder met filter beter dan zonder?", a: "Voor wie minder teer wil inademen: ja, aanzienlijk. Tests tonen 30-60% reductie in teer en nicotine bij goed onderhouden actieve-koolfilters. Voor wie de pure smaak wil: nee, een houder zonder filter behoudt het volle aroma." },
+        { q: "Hoe lang gaat een goede koker mee?", a: "Bij normaal gebruik decennia. Metalen kokers van Belbox of Denicotea zijn vaak nog functioneel na 30+ jaar - alleen het scharniermechanisme kan slijten. Leer ontwikkelt patina en wordt mooier met de jaren, mits goed onderhouden." },
+      ],
+    },
+    knippers: {
+      intro: "Welke knipper voor welke sigaar, hoe je een goede asbak herkent, en wat een etui echt moet kunnen - eerlijk uitgelegd.",
+      items: [
+        { q: "Welke knipper is het beste - guillotine, V-cut of punch?", a: "Voor de meeste sigaren: guillotine - een rechte snede, voorspelbare trek. V-cut concentreert de rook richting tong en accentueert smaak - populair bij robusto's. Punch maakt een klein gaatje, geeft een geconcentreerde trek maar minder rookvolume. Beginners kiezen guillotine; daar gaat zelden iets mis." },
+        { q: "Kan ik mijn knipper laten slijpen?", a: "Ja, kwalitatieve knippers zoals Bookwill en Faro hebben verwisselbare of slijpbare lemmeten. Breng hem langs in onze winkel; voor een paar euro snijdt hij weer als nieuw. Goedkope wegwerpknippers laten zich helaas niet slijpen - daarom investeer je beter in één goede." },
+        { q: "Waarom een sigaren-asbak en geen gewone?", a: "Een sigaar duurt 30-90 minuten. In die tijd vormt zich een lange askolom die je liever niet afklopt. Sigaren-asbakken hebben uitsparingen breed genoeg om een sigaar rustig neer te leggen zonder dat de as eraf valt, en zijn diep genoeg om geen geur te verspreiden." },
+        { q: "Hoe lang houdt een sigaar in een etui?", a: "In een goed cederhouten etui blijft een sigaar 5-7 dagen in optimale conditie - genoeg voor een lang weekend of zakenreis. Voor langer (weken tot maanden) is een humidor met vocht-regulatie nodig. Een etui is voor onderweg, niet voor opslag." },
+        { q: "Welke kant van de sigaar knip ik?", a: "De cap - de gesloten, afgeronde kant. De andere kant (de voet) is de open kant die je aansteekt. Knip altijd net voor de schouder, het zichtbare lijntje waar de cap aan de wikkel is bevestigd. Knip je in de schouder, dan valt de wikkel uit." },
+        { q: "Mag ik mijn sigarenetui in de koelkast bewaren?", a: "Liever niet. Koelkasten zijn droog en koud - slecht voor sigaren. Bewaar het etui op kamertemperatuur (16-22°C), uit direct zonlicht. Een lade of kast is prima. Een humidor blijft de gouden standaard voor langere bewaring." },
+        { q: "Is een dure asbak echt beter dan een goedkope?", a: "Voor sigaren: ja. Goedkope asbakken zijn vaak licht, plaatstalen, met scherpe randen. Een Faro-asbak is gegoten massief, weegt 800g+, kantelt niet en heeft gepolijste uitsparingen die de sigaar niet beschadigen. Het verschil voel je elke avond opnieuw." },
+      ],
+    },
   },
 };
 
@@ -620,6 +663,44 @@ const EN: Dict = {
     legal: { privacy: "Privacy policy", terms: "Terms & conditions", cookies: "Cookie policy" },
     socials: { instagram: "Instagram", facebook: "Facebook" },
   },
+  categoryFaqs: {
+    zippo: {
+      intro: "Everything you want to know about use, maintenance and purchase - honest and without the sales pitch.",
+      items: [
+        { q: "How long does a Zippo last?", a: "A Zippo comes with a lifetime warranty and, in normal use, lasts for generations. The lighters have been built the same way since 1932 - steel, made to outlast you." },
+        { q: "How do I know my Zippo is original?", a: "Check the bottom: a real Zippo has a date code, a tight hinge, the springy click of the lid and a clean seam. Only buy from authorised resellers like OneConnect." },
+        { q: "Which fuel should I use?", a: "Always use original Zippo lighter fluid. Other fuels damage the wick and give off more odour. Available in our shop and webshop." },
+        { q: "How do I replace the flints?", a: "Unscrew the screw at the bottom of the insert. Remove the spring and the old flint, drop in a new Zippo flint, replace the spring, screw back in. Done in under a minute." },
+        { q: "Can I take a Zippo on a plane?", a: "A filled lighter is not allowed in hand luggage. An empty lighter is sometimes permitted, but rules vary by airline - always check beforehand." },
+        { q: "How often do I need to refill?", a: "With daily use, on average every 1-2 weeks. Lighter fluid also evaporates when you don't use it, so top up when the flame weakens." },
+        { q: "Can I have a Zippo engraved?", a: "Yes. Many models are suitable for engraving - name, date or image. Come by our shop (Molenstraat 120 or Lange Hezelstraat 26 in Nijmegen) to discuss the options." },
+      ],
+    },
+    kokers: {
+      intro: "Which material suits you, how often to change filters, and why a holder genuinely makes a difference - explained honestly.",
+      items: [
+        { q: "What is the difference between a case and a sleeve?", a: "A case is usually metal, opens with a click mechanism and keeps cigarettes in place. A sleeve is often leather or fabric, softer in the hand and mainly protects against scratches and moisture. Both prevent breakage - choose based on style and use." },
+        { q: "How often should I replace the filter in a cigarette holder?", a: "In a Denicotea holder with an activated-charcoal filter, every 5 to 10 cigarettes. You'll notice it yourself: the draw gets heavier and the taste flatter when the filter is saturated. Replacement filters are sold in sets of 10 or 50." },
+        { q: "Can I wash my leather sleeve?", a: "Not with water. Remove dust with a dry cloth; treat stains with a slightly damp cloth and dedicated leather cleaner. Apply leather balm twice a year to keep it supple. Submerging it or putting it in the washing machine ruins the leather permanently." },
+        { q: "What case size do I need?", a: "Standard 84mm cigarettes fit in virtually every case in our collection. For 100mm (long) cigarettes choose a 'long' version explicitly. Capacity ranges from 10 (pocket size) to 20 (a full pack)." },
+        { q: "Do filter holders also work for cigars?", a: "For cigars you use dedicated cigar holders or pipe filters - they have a larger bore and often a different filter structure. Our cigar department under Cutters & Ashtrays carries the matching accessories." },
+        { q: "Is a holder with filter better than without?", a: "For those who want to inhale less tar: yes, considerably. Tests show 30-60% reduction in tar and nicotine with a well-maintained activated-charcoal filter. For those who want pure flavour: no, a holder without filter preserves the full aroma." },
+        { q: "How long does a good case last?", a: "With normal use, decades. Metal cases from Belbox or Denicotea are often still functional after 30+ years - only the hinge mechanism can wear out. Leather develops patina and gets better with age, provided it is well maintained." },
+      ],
+    },
+    knippers: {
+      intro: "Which cutter for which cigar, how to recognise a good ashtray, and what a case really needs to do - explained honestly.",
+      items: [
+        { q: "Which cutter is best - guillotine, V-cut or punch?", a: "For most cigars: guillotine - a straight cut, predictable draw. V-cut concentrates the smoke toward the tongue and accentuates flavour - popular with robustos. Punch makes a small hole, giving a concentrated draw but less smoke volume. Beginners choose guillotine; little can go wrong with it." },
+        { q: "Can I have my cutter sharpened?", a: "Yes, quality cutters from Bookwill and Faro have replaceable or re-sharpenable blades. Bring it to our shop; for a few euros it cuts like new again. Cheap disposable cutters unfortunately can't be sharpened - which is why investing in one good cutter pays off." },
+        { q: "Why a cigar ashtray and not a regular one?", a: "A cigar lasts 30-90 minutes. In that time a long column of ash forms that you'd rather not tap off. Cigar ashtrays have rests wide enough to lay a cigar down without the ash falling off, and are deep enough not to spread smell." },
+        { q: "How long does a cigar last in a case?", a: "In a good cedar-lined case a cigar stays in optimal condition for 5-7 days - enough for a long weekend or business trip. For longer (weeks to months) you need a humidor with humidity control. A case is for travel, not for storage." },
+        { q: "Which end of the cigar do I cut?", a: "The cap - the closed, rounded end. The other end (the foot) is the open end you light. Always cut just before the shoulder, the visible line where the cap meets the wrapper. Cut into the shoulder and the wrapper unravels." },
+        { q: "Can I store my cigar case in the fridge?", a: "Better not. Fridges are dry and cold - bad for cigars. Store the case at room temperature (16-22°C), out of direct sunlight. A drawer or cabinet is fine. A humidor remains the gold standard for longer storage." },
+        { q: "Is an expensive ashtray really better than a cheap one?", a: "For cigars: yes. Cheap ashtrays are often light, thin steel, with sharp edges. A Faro ashtray is solid cast, weighs 800g+, doesn't tip and has polished rests that don't damage the cigar. The difference you feel every evening." },
+      ],
+    },
+  },
 };
 
 const DE: Dict = {
@@ -832,6 +913,44 @@ const DE: Dict = {
     legal: { privacy: "Datenschutz", terms: "AGB", cookies: "Cookie-Richtlinie" },
     socials: { instagram: "Instagram", facebook: "Facebook" },
   },
+  categoryFaqs: {
+    zippo: {
+      intro: "Alles, was Sie über Gebrauch, Pflege und Kauf wissen möchten - ehrlich und ohne Verkaufsgespräch.",
+      items: [
+        { q: "Wie lange hält ein Zippo?", a: "Ein Zippo hat eine lebenslange Garantie und überdauert bei normalem Gebrauch Generationen. Die Feuerzeuge werden seit 1932 gleich gebaut - aus Stahl, für die Ewigkeit." },
+        { q: "Woran erkenne ich ein originales Zippo?", a: "Schauen Sie auf den Boden: ein echtes Zippo hat einen Datumscode, ein straffes Scharnier, den federnden Klick des Deckels und eine saubere Naht. Kaufen Sie ausschließlich bei autorisierten Händlern wie OneConnect." },
+        { q: "Welchen Brennstoff verwende ich?", a: "Verwenden Sie immer originales Zippo-Benzin. Andere Brennstoffe beschädigen den Docht und verursachen mehr Geruch. Erhältlich in unserem Geschäft und Webshop." },
+        { q: "Wie ersetze ich die Feuersteine?", a: "Drehen Sie die Schraube am Boden des Einsatzes heraus. Entfernen Sie Feder und alten Stein, legen Sie einen neuen Zippo-Stein ein, Feder darauf, Schraube wieder rein. In weniger als einer Minute fertig." },
+        { q: "Darf ich ein Zippo im Flugzeug mitnehmen?", a: "Ein gefülltes Feuerzeug ist im Handgepäck nicht erlaubt. Ein leeres Feuerzeug ist manchmal gestattet, doch die Regeln unterscheiden sich je nach Fluggesellschaft - prüfen Sie das immer vorab." },
+        { q: "Wie oft muss ich nachfüllen?", a: "Bei täglichem Gebrauch durchschnittlich alle 1-2 Wochen. Benzin verdunstet auch ohne Gebrauch, also füllen Sie nach, sobald die Flamme schwächer wird." },
+        { q: "Kann ich ein Zippo gravieren lassen?", a: "Ja. Viele Modelle eignen sich für Gravuren - Name, Datum oder Bild. Kommen Sie in unserem Geschäft (Molenstraat 120 oder Lange Hezelstraat 26 in Nijmegen) vorbei, um die Möglichkeiten zu besprechen." },
+      ],
+    },
+    kokers: {
+      intro: "Welches Material passt zu Ihnen, wie oft müssen Filter gewechselt werden und warum ein Halter wirklich einen Unterschied macht - ehrlich erklärt.",
+      items: [
+        { q: "Was ist der Unterschied zwischen einem Etui und einer Hülle?", a: "Ein Etui ist meist aus Metall, öffnet sich per Klickmechanismus und hält die Zigaretten an Ort und Stelle. Eine Hülle ist häufig aus Leder oder Stoff, geschmeidiger in der Hand und schützt vor allem vor Kratzern und Feuchtigkeit. Beide verhindern Bruch - wählen Sie nach Stil und Gebrauch." },
+        { q: "Wie oft muss ich den Filter im Zigarettenhalter wechseln?", a: "Bei einem Denicotea-Halter mit Aktivkohlefilter alle 5 bis 10 Zigaretten. Sie merken es selbst: der Zug wird schwerer und der Geschmack flacher, wenn der Filter gesättigt ist. Ersatzfilter bestellen Sie im Set von 10 oder 50." },
+        { q: "Kann ich meine Lederhülle waschen?", a: "Nicht mit Wasser. Staub entfernen Sie mit einem trockenen Tuch; Flecken behandeln Sie mit einem leicht feuchten Tuch und speziellem Lederreiniger. Zweimal jährlich Lederbalsam hält es geschmeidig. Eintauchen oder Waschmaschine ruinieren das Leder unwiderruflich." },
+        { q: "Welche Etui-Größe brauche ich?", a: "Standard-Zigaretten von 84mm passen in nahezu alle Etuis unserer Kollektion. Für 100mm-Zigaretten (lang) wählen Sie ausdrücklich eine 'Long'-Ausführung. Die Kapazität reicht von 10 (Taschenformat) bis 20 (eine ganze Packung)." },
+        { q: "Funktionieren Filterhalter auch bei Zigarren?", a: "Für Zigarren verwenden Sie spezielle Zigarrenhalter oder Pfeifenfilter - sie haben einen größeren Durchgang und oft eine andere Filterstruktur. Unsere Zigarrenabteilung unter Cutter & Aschenbecher führt das passende Zubehör." },
+        { q: "Ist ein Halter mit Filter besser als ohne?", a: "Wer weniger Teer einatmen möchte: ja, deutlich. Tests zeigen eine Reduktion von 30-60% bei Teer und Nikotin mit gepflegtem Aktivkohlefilter. Wer den puren Geschmack will: nein, ein Halter ohne Filter erhält das volle Aroma." },
+        { q: "Wie lange hält ein gutes Etui?", a: "Bei normalem Gebrauch jahrzehntelang. Metalletuis von Belbox oder Denicotea sind oft noch nach 30+ Jahren funktionstüchtig - nur das Scharnier kann verschleißen. Leder entwickelt Patina und wird mit den Jahren schöner, sofern es gut gepflegt wird." },
+      ],
+    },
+    knippers: {
+      intro: "Welcher Cutter für welche Zigarre, wie Sie einen guten Aschenbecher erkennen und was ein Etui wirklich können muss - ehrlich erklärt.",
+      items: [
+        { q: "Welcher Cutter ist am besten - Guillotine, V-Cut oder Punch?", a: "Für die meisten Zigarren: Guillotine - ein gerader Schnitt, vorhersehbarer Zug. V-Cut lenkt den Rauch zur Zunge und betont den Geschmack - beliebt bei Robustos. Punch macht ein kleines Loch, gibt einen konzentrierten Zug, aber weniger Rauchvolumen. Anfänger wählen die Guillotine; damit geht selten etwas schief." },
+        { q: "Kann ich meinen Cutter schärfen lassen?", a: "Ja, hochwertige Cutter wie Bookwill und Faro haben austauschbare oder nachschleifbare Klingen. Bringen Sie ihn in unser Geschäft; für ein paar Euro schneidet er wieder wie neu. Billige Wegwerf-Cutter lassen sich leider nicht schärfen - daher investieren Sie besser in einen guten." },
+        { q: "Warum einen Zigarrenaschenbecher und keinen normalen?", a: "Eine Zigarre dauert 30-90 Minuten. In dieser Zeit bildet sich eine lange Aschesäule, die man lieber nicht abklopft. Zigarrenaschenbecher haben Auflagen breit genug, um eine Zigarre ruhig abzulegen, ohne dass die Asche herunterfällt, und sind tief genug, um keinen Geruch zu verbreiten." },
+        { q: "Wie lange hält eine Zigarre im Etui?", a: "In einem guten Etui mit Zedernholzfutter bleibt eine Zigarre 5-7 Tage in optimalem Zustand - genug für ein langes Wochenende oder eine Geschäftsreise. Für längere Lagerung (Wochen bis Monate) ist ein Humidor mit Feuchteregulierung nötig. Ein Etui ist für unterwegs, nicht für die Lagerung." },
+        { q: "Welche Seite der Zigarre schneide ich?", a: "Die Kappe - die geschlossene, abgerundete Seite. Die andere Seite (der Fuß) ist die offene Seite, die Sie anzünden. Schneiden Sie immer kurz vor der Schulter, der sichtbaren Linie, an der die Kappe mit dem Deckblatt verbunden ist. Schneiden Sie in die Schulter, fällt das Deckblatt auseinander." },
+        { q: "Darf ich mein Zigarrenetui im Kühlschrank aufbewahren?", a: "Besser nicht. Kühlschränke sind trocken und kalt - schlecht für Zigarren. Bewahren Sie das Etui bei Zimmertemperatur auf (16-22°C), nicht in direktem Sonnenlicht. Eine Schublade oder ein Schrank ist ideal. Ein Humidor bleibt der Goldstandard für längere Aufbewahrung." },
+        { q: "Ist ein teurer Aschenbecher wirklich besser als ein günstiger?", a: "Für Zigarren: ja. Günstige Aschenbecher sind oft leicht, aus dünnem Blech, mit scharfen Kanten. Ein Faro-Aschenbecher ist massiv gegossen, wiegt 800g+, kippt nicht und hat polierte Auflagen, die die Zigarre nicht beschädigen. Den Unterschied spüren Sie jeden Abend aufs Neue." },
+      ],
+    },
+  },
 };
 
 const FR: Dict = {
@@ -1043,6 +1162,44 @@ const FR: Dict = {
     copyright: "Rokersbenodigdheden Nijmegen",
     legal: { privacy: "Confidentialité", terms: "Conditions générales", cookies: "Politique cookies" },
     socials: { instagram: "Instagram", facebook: "Facebook" },
+  },
+  categoryFaqs: {
+    zippo: {
+      intro: "Tout ce que vous voulez savoir sur l'utilisation, l'entretien et l'achat - sans détour et sans baratin commercial.",
+      items: [
+        { q: "Combien de temps dure un Zippo ?", a: "Un Zippo bénéficie d'une garantie à vie et, en usage normal, traverse les générations. Les briquets sont fabriqués de la même façon depuis 1932 - en acier, faits pour durer." },
+        { q: "Comment savoir si mon Zippo est authentique ?", a: "Regardez le dessous : un vrai Zippo porte un code de date, une charnière ajustée, le clic du couvercle ressort et une soudure nette. Achetez uniquement chez des revendeurs agréés comme OneConnect." },
+        { q: "Quel carburant utiliser ?", a: "Utilisez toujours l'essence Zippo d'origine. D'autres carburants endommagent la mèche et dégagent plus d'odeur. Disponible en boutique et dans notre webshop." },
+        { q: "Comment remplacer les pierres ?", a: "Dévissez la vis sous l'insert. Retirez le ressort et l'ancienne pierre, placez une pierre Zippo neuve, replacez le ressort et revissez. Fait en moins d'une minute." },
+        { q: "Puis-je emporter un Zippo en avion ?", a: "Un briquet rempli est interdit en cabine. Un briquet vide est parfois autorisé, mais les règles diffèrent selon la compagnie - vérifiez toujours au préalable." },
+        { q: "À quelle fréquence faut-il remplir ?", a: "En usage quotidien, environ toutes les 1 à 2 semaines. L'essence s'évapore même sans usage, remplissez dès que la flamme faiblit." },
+        { q: "Puis-je faire graver un Zippo ?", a: "Oui. De nombreux modèles se prêtent à la gravure - prénom, date ou motif. Passez en boutique (Molenstraat 120 ou Lange Hezelstraat 26 à Nijmegen) pour voir les possibilités." },
+      ],
+    },
+    kokers: {
+      intro: "Quelle matière vous correspond, à quelle fréquence changer les filtres et pourquoi un fume-cigarette change vraiment les choses - expliqué simplement.",
+      items: [
+        { q: "Quelle est la différence entre un étui et une pochette ?", a: "L'étui est généralement en métal, s'ouvre par un mécanisme à clic et maintient les cigarettes en place. La pochette est souvent en cuir ou en tissu, plus souple en main et protège surtout contre les rayures et l'humidité. Les deux évitent la casse - choisissez selon le style et l'usage." },
+        { q: "À quelle fréquence remplacer le filtre d'un fume-cigarette ?", a: "Dans un Denicotea à filtre charbon actif, toutes les 5 à 10 cigarettes. Vous le sentez vous-même : le tirage devient plus difficile et le goût s'aplatit lorsque le filtre est saturé. Les filtres de rechange sont vendus par 10 ou par 50." },
+        { q: "Puis-je laver ma pochette en cuir ?", a: "Pas à l'eau. Retirez la poussière au chiffon sec ; traitez les taches avec un chiffon légèrement humide et un nettoyant cuir dédié. Deux fois par an un baume cuir le garde souple. Le tremper ou le passer en machine ruine le cuir définitivement." },
+        { q: "Quelle taille d'étui me faut-il ?", a: "Les cigarettes standard de 84mm rentrent dans presque tous les étuis de notre collection. Pour les 100mm (longues), choisissez explicitement une version 'long'. La capacité va de 10 (format poche) à 20 (un paquet entier)." },
+        { q: "Les fume-cigarettes fonctionnent-ils aussi pour les cigares ?", a: "Pour les cigares, utilisez des fume-cigares spécifiques ou des filtres à pipe - le canal est plus large et la structure du filtre souvent différente. Notre rayon cigares sous Coupe-cigares & cendriers propose les accessoires adaptés." },
+        { q: "Un fume-cigarette avec filtre est-il préférable ?", a: "Pour qui veut inhaler moins de goudron : oui, nettement. Les tests montrent 30 à 60 % de réduction de goudron et de nicotine avec un filtre charbon actif bien entretenu. Pour qui veut un goût pur : non, un fume-cigarette sans filtre conserve tout l'arôme." },
+        { q: "Combien de temps dure un bon étui ?", a: "En usage normal, des décennies. Les étuis métalliques de Belbox ou Denicotea sont souvent encore fonctionnels après 30 ans - seul le mécanisme de charnière peut s'user. Le cuir développe une patine et s'embellit avec le temps, à condition d'être bien entretenu." },
+      ],
+    },
+    knippers: {
+      intro: "Quel coupe-cigare pour quel cigare, comment reconnaître un bon cendrier, et ce qu'un étui doit vraiment savoir faire - expliqué simplement.",
+      items: [
+        { q: "Quel coupe-cigare est le meilleur - guillotine, V-cut ou punch ?", a: "Pour la plupart des cigares : guillotine - une coupe droite, un tirage prévisible. Le V-cut concentre la fumée vers la langue et accentue les arômes - apprécié des robustos. Le punch perce un petit trou, donne un tirage concentré mais moins de fumée. Les débutants choisissent la guillotine ; on s'y trompe rarement." },
+        { q: "Puis-je faire affûter mon coupe-cigare ?", a: "Oui, les coupe-cigares de qualité comme Bookwill et Faro ont des lames remplaçables ou ré-affûtables. Apportez-le en boutique ; pour quelques euros il coupe à nouveau comme neuf. Les coupe-cigares jetables bon marché ne s'affûtent malheureusement pas - mieux vaut investir dans un bon modèle." },
+        { q: "Pourquoi un cendrier à cigares plutôt qu'un cendrier classique ?", a: "Un cigare se fume en 30 à 90 minutes. Pendant ce temps, une longue colonne de cendre se forme qu'on préfère ne pas faire tomber. Les cendriers à cigares ont des reposoirs assez larges pour y poser un cigare sans que la cendre tombe, et sont suffisamment profonds pour ne pas dégager d'odeur." },
+        { q: "Combien de temps un cigare se conserve-t-il dans un étui ?", a: "Dans un bon étui doublé de bois de cèdre, un cigare reste en condition optimale 5 à 7 jours - suffisant pour un long week-end ou un voyage d'affaires. Au-delà (semaines ou mois), il faut une cave à cigares régulée en humidité. L'étui sert pour le transport, pas pour le stockage." },
+        { q: "De quel côté couper le cigare ?", a: "La tête - le côté fermé et arrondi. L'autre côté (le pied) est l'extrémité ouverte qu'on allume. Coupez toujours juste avant l'épaule, la ligne visible où la tête rejoint la cape. Couper dans l'épaule fait défaire la cape." },
+        { q: "Puis-je conserver mon étui à cigares au réfrigérateur ?", a: "Mieux vaut éviter. Les réfrigérateurs sont secs et froids - mauvais pour les cigares. Conservez l'étui à température ambiante (16-22°C), à l'abri du soleil direct. Un tiroir ou une armoire fait l'affaire. Une cave à cigares reste la référence pour une conservation prolongée." },
+        { q: "Un cendrier cher est-il vraiment meilleur qu'un bon marché ?", a: "Pour les cigares : oui. Les cendriers bon marché sont souvent légers, en tôle fine, avec des arêtes vives. Un cendrier Faro est en fonte massive, pèse 800g et plus, ne bascule pas et présente des reposoirs polis qui ne marquent pas le cigare. La différence se sent chaque soir." },
+      ],
+    },
   },
 };
 
