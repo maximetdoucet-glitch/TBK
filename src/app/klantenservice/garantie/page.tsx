@@ -49,9 +49,9 @@ export default function GarantiePage() {
           },
           {
             icon: Wrench,
-            title: "Reparatieservice",
+            title: "Zippo levenslange garantie",
             body:
-              "Voor Zippo en enkele kwaliteitsknippers bieden we eigen reparatie en slijpservice in de winkel. Kom langs in de Molenstraat 120 voor een diagnose meestal binnen 5 minuten klaar.",
+              "Werkt jouw Zippo niet meer naar behoren? Lever hem in bij Tabak Molenstraat of Tabaksspeciaalzaak Lange Hezelstraat in Nijmegen, of stuur hem op. Wij sturen je Zippo door naar Zippo Manufacturing in de Verenigde Staten - zij repareren of vervangen het mechaniek kosteloos onder de levenslange fabrieksgarantie.",
           },
           {
             icon: Mail,

@@ -13,8 +13,9 @@ export default function ContactPage() {
         Contact
       </h2>
       <p className="text-[13px] text-gray-500 leading-relaxed mb-8 max-w-2xl">
-        Een vraag over een product, een advies nodig of even langskomen voor een
-        Zippo-reparatie? Wij helpen je graag - schriftelijk, telefonisch of in de winkel.
+        Een vraag over een product, een advies nodig of langskomen om een Zippo
+        in te leveren onder de levenslange fabrieksgarantie? Wij helpen je graag -
+        schriftelijk, telefonisch of in een van onze twee winkels in Nijmegen.
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -72,9 +73,9 @@ export default function ContactPage() {
 
       <div className="mt-10 p-6 bg-[#f5a623]/6 border border-[#f5a623]/20 rounded-sm">
         <p className="text-[12px] text-[#2b3e51] leading-relaxed">
-          <span className="font-black">Tip:</span> Voor Zippo-reparaties, gravures en
-          persoonlijk advies kom je het beste even langs in de winkel. Onze specialisten
-          helpen je in een paar minuten verder.
+          <span className="font-black">Tip:</span> Voor gravures, persoonlijk advies of
+          het inleveren van een Zippo onder fabrieksgarantie kom je het beste even langs
+          in een van onze winkels. Onze specialisten helpen je in een paar minuten verder.
         </p>
       </div>
     </article>

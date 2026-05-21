@@ -27,14 +27,27 @@ function lookup(dict: Dict, key: string): string {
 }
 
 export function LocaleProvider({ children }: { children: React.ReactNode }) {
+  // Lazy initializer reads the stored locale synchronously on first client render.
+  // On the server it always returns NL (no localStorage), and the very first client
+  // render matches that for hydration safety; the second render picks up the stored
+  // value via the useEffect below.
   const [locale, setLocaleState] = useState<Locale>("NL");
+  const [hydrated, setHydrated] = useState(false);
 
   useEffect(() => {
     try {
       const stored = localStorage.getItem(STORAGE_KEY) as Locale | null;
       if (stored && stored in translations) setLocaleState(stored);
     } catch {}
+    setHydrated(true);
   }, []);
+
+  // Keep <html lang> in sync once we know the real locale client-side.
+  useEffect(() => {
+    if (hydrated && typeof document !== "undefined") {
+      document.documentElement.lang = locale.toLowerCase();
+    }
+  }, [hydrated, locale]);
 
   const setLocale = useCallback((l: Locale) => {
     setLocaleState(l);

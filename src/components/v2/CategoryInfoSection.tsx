@@ -269,6 +269,12 @@ export default function CategoryInfoSection({ data }: { data: CategoryInfoData }
                 <div className="flex items-center gap-2 group cursor-pointer">
                   <MessageCircle className="size-4 text-[#f5a623] opacity-0" />
                   <span className="text-[12px] text-white/50 group-hover:text-white/80 transition-colors">
+                    Lange Hezelstraat 26, Nijmegen
+                  </span>
+                </div>
+                <div className="flex items-center gap-2 group cursor-pointer">
+                  <MessageCircle className="size-4 text-[#f5a623] opacity-0" />
+                  <span className="text-[12px] text-white/50 group-hover:text-white/80 transition-colors">
                     service@tbk-lightshop.nl
                   </span>
                 </div>

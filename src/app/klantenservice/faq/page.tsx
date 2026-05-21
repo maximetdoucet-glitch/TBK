@@ -47,7 +47,7 @@ const FAQS: { group: string; items: { q: string; a: string }[] }[] = [
       },
       {
         q: "Mijn Zippo werkt niet meer wat nu?",
-        a: "Zippo geeft levenslange garantie op al hun aanstekers. Lever je Zippo in bij ons in de winkel en wij regelen de reparatie of vervanging via Zippo zelf kosteloos.",
+        a: "Zippo geeft levenslange fabrieksgarantie op het mechaniek van al hun aanstekers. Lever je Zippo in bij Tabak Molenstraat of Tabaksspeciaalzaak Lange Hezelstraat in Nijmegen, of stuur hem op. Wij sturen hem door naar Zippo Manufacturing - zij repareren of vervangen hem kosteloos.",
       },
       {
         q: "Ik heb een product met gravure besteld, kan ik dit retourneren?",
@@ -64,7 +64,7 @@ const FAQS: { group: string; items: { q: string; a: string }[] }[] = [
       },
       {
         q: "Kan ik mijn Zippo laten graveren?",
-        a: "Ja. We graveren in onze winkel naam, datum, tekst of een eigen ontwerp. Loop binnen aan de Molenstraat 120 voor de mogelijkheden en levertijd.",
+        a: "Ja. We graveren in onze winkel naam, datum, tekst of een eigen ontwerp. Loop binnen bij Tabak Molenstraat (Molenstraat 120) of Tabaksspeciaalzaak Lange Hezelstraat (Lange Hezelstraat 26) in Nijmegen voor de mogelijkheden en levertijd.",
       },
       {
         q: "Welke pijp past bij een beginner?",
@@ -109,7 +109,8 @@ export default function FaqPage() {
         De meest gestelde vragen op een rij - gegroepeerd per onderwerp. Staat jouw vraag
         er niet bij? Mail ons via{" "}
         <span className="text-[#2b3e51] font-bold">service@tbk-lightshop.nl</span> of
-        loop binnen op de Molenstraat 120.
+        loop binnen bij Tabak Molenstraat (Molenstraat 120) of Tabaksspeciaalzaak
+        Lange Hezelstraat (Lange Hezelstraat 26) in Nijmegen.
       </p>
 
       <div className="space-y-8">

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Flame, RefreshCw, Wind, Shield, Wrench, Star, MessageCircle, ChevronRight } from "lucide-react";
+import { Flame, RefreshCw, Wind, Shield, Star, MessageCircle, ChevronRight } from "lucide-react";
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -60,7 +60,7 @@ const FAQS = [
   },
   {
     q: "Kan ik een Zippo laten graveren?",
-    a: "Ja. Veel modellen zijn geschikt voor gravure naam, datum of afbeelding. Kom langs in de Molenstraat 120 voor de mogelijkheden.",
+    a: "Ja. Veel modellen zijn geschikt voor gravure - naam, datum of afbeelding. Kom langs in onze winkel (Molenstraat 120 of Lange Hezelstraat 26 in Nijmegen) voor de mogelijkheden.",
   },
 ];
 
@@ -259,11 +259,6 @@ export default function ZippoInfoSection() {
             ))}
           </div>
 
-          {/* Bottom badge */}
-          <div className="mt-10 flex items-center gap-3 text-gray-300">
-            <Wrench className="size-4" />
-            <span className="text-[11px] font-bold uppercase tracking-[0.2em]">Zippo reparatieservice beschikbaar in onze winkel</span>
-          </div>
         </div>
       </div>
 
@@ -292,7 +287,7 @@ export default function ZippoInfoSection() {
                 </h2>
               </div>
               <p className="text-[12px] text-white/35 leading-relaxed mb-8">
-                Alles wat je wilt weten over gebruik, onderhoud en aankoop - eerlijk en zonder omhaal.
+                Alles wat je wilt weten over gebruik, onderhoud en aankoop - eerlijk en zonder verkooppraatjes.
               </p>
 
               {/* Contact card - no border box, just inline */}
@@ -304,6 +299,12 @@ export default function ZippoInfoSection() {
                   <MessageCircle className="size-4 text-[#f5a623]" />
                   <span className="text-[12px] text-white/50 group-hover:text-white/80 transition-colors">
                     Molenstraat 120, Nijmegen
+                  </span>
+                </div>
+                <div className="flex items-center gap-2 group cursor-pointer">
+                  <MessageCircle className="size-4 text-[#f5a623] opacity-0" />
+                  <span className="text-[12px] text-white/50 group-hover:text-white/80 transition-colors">
+                    Lange Hezelstraat 26, Nijmegen
                   </span>
                 </div>
                 <div className="flex items-center gap-2 group cursor-pointer">
