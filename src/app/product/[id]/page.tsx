@@ -36,10 +36,10 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
         <main className="flex-1 flex items-center justify-center">
           <div className="text-center">
             <p className="text-6xl font-semibold text-[#2b3e51] mb-3">404</p>
-            <p className="text-sm text-gray-400 mb-8">Product niet gevonden</p>
+            <p className="text-sm text-gray-400 mb-8">{t("product.notFound")}</p>
             <Link href="/aanstekers">
               <Button className="bg-[#f5a623] hover:bg-[#6b8e6b] rounded-sm text-sm px-8 h-11">
-                Terug naar aanstekers
+                {t("product.notFoundCta")}
               </Button>
             </Link>
           </div>
@@ -48,6 +48,16 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
       </div>
     );
   }
+
+  // Map the product's category to the matching collection page + nav key
+  // so the breadcrumb + "Back to collection" link reflect the real category.
+  const CATEGORY_META: Record<string, { href: string; navKey: string }> = {
+    "Aanstekers":           { href: "/aanstekers",         navKey: "header.nav.aanstekers" },
+    "Kokers & Etuis":       { href: "/kokers-etuis",       navKey: "header.nav.kokersEtuis" },
+    "Knippers & Asbakken":  { href: "/knippers-asbakken",  navKey: "header.nav.knippersAsbakken" },
+    "Rook-accessoires":     { href: "/rook-accessoires",   navKey: "header.nav.rookAccessoires" },
+  };
+  const categoryMeta = CATEGORY_META[product.category] ?? CATEGORY_META["Aanstekers"];
 
   function buildCartItem() {
     if (!product) return null;
@@ -91,9 +101,9 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
         <div className="container mx-auto max-w-[1300px] px-4 sm:px-6 lg:px-8 py-8 sm:py-10">
           {/* Breadcrumb */}
           <nav className="flex items-center gap-2 text-xs text-gray-400 mb-6 lg:mb-10 overflow-hidden">
-            <Link href="/" className="hover:text-[#2b3e51] transition-colors shrink-0">Home</Link>
+            <Link href="/" className="hover:text-[#2b3e51] transition-colors shrink-0">{t("product.breadcrumbHome")}</Link>
             <span className="shrink-0">/</span>
-            <Link href="/aanstekers" className="hover:text-[#2b3e51] transition-colors shrink-0">Aanstekers</Link>
+            <Link href={categoryMeta.href} className="hover:text-[#2b3e51] transition-colors shrink-0">{t(categoryMeta.navKey)}</Link>
             <span className="shrink-0">/</span>
             <span className="text-[#2b3e51] truncate">{product.name}</span>
           </nav>
@@ -152,7 +162,7 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
               <div className="flex items-center gap-3 mb-6">
                 <StarRating rating={product.rating} size={16} />
                 <span className="text-xs text-gray-400">
-                  {product.rating.toFixed(1)} / 5 · {product.reviewCount} beoordelingen
+                  {product.rating.toFixed(1)} / 5 · {product.reviewCount} {t("product.reviewsLabel")}
                 </span>
               </div>
 
@@ -224,9 +234,9 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
                   }`}
                 >
                   {added ? (
-                    <><Check className="size-4 mr-2" /> {t("featuredProducts.addedToCart")}</>
+                    <><Check className="size-4 mr-2" /> {t("product.addedToCart")}</>
                   ) : (
-                    <><ShoppingBag className="size-4 mr-2" /> {t("header.cart")}</>
+                    <><ShoppingBag className="size-4 mr-2" /> {t("product.addToCart")}</>
                   )}
                 </Button>
 
@@ -248,11 +258,11 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
 
               {/* Trust Badges */}
               <div className="flex flex-col gap-2.5 py-5 border-t border-b border-gray-100 mb-7">
-                {[
-                  "Gratis verzending vanaf € 80,- (NL) & € 100,- (BE)",
-                  "Standaard levertijd 2-3 werkdagen",
-                  "Gratis retourneren binnen Nederland",
-                ].map((item) => (
+                {([
+                  t("product.trust.freeShipping"),
+                  t("product.trust.sameDay"),
+                  t("product.trust.freeReturns"),
+                ] as const).map((item) => (
                   <div key={item} className="flex items-center gap-2.5">
                     <Check className="size-3.5 text-[#f5a623] shrink-0" />
                     <span className="text-xs text-gray-500">{item}</span>
@@ -265,14 +275,14 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
                 {[
                   {
                     key: "beschrijving",
-                    label: "Productomschrijving",
+                    label: t("product.accordion.description"),
                     content: (
                       <p className="text-sm text-gray-500 leading-relaxed">{product.longDescription}</p>
                     ),
                   },
                   {
                     key: "specs",
-                    label: "Specificaties",
+                    label: t("product.accordion.specs"),
                     content: (
                       <div className="flex flex-col gap-2.5">
                         {product.specs.map((s) => (
@@ -286,11 +296,10 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
                   },
                   {
                     key: "levering",
-                    label: "Verzending & levering",
+                    label: t("product.accordion.shipping"),
                     content: (
                       <p className="text-sm text-gray-500 leading-relaxed">
-                        Standaard levertijd is 2-3 werkdagen via PostNL of DHL.
-                        Gratis verzending bij bestellingen vanaf € 80 (NL) / € 100 (BE).
+                        {t("product.accordion.shippingBody")}
                       </p>
                     ),
                   },
@@ -326,12 +335,12 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
           {/* Related Products */}
           <div className="mt-12 lg:mt-20 pt-10 lg:pt-12 border-t border-gray-100">
             <div className="flex justify-between items-center mb-8">
-              <h2 className="text-xl font-semibold text-[#2b3e51]">Gerelateerde producten</h2>
+              <h2 className="text-xl font-semibold text-[#2b3e51]">{t("product.relatedHeading")}</h2>
               <Link
-                href="/aanstekers"
+                href={categoryMeta.href}
                 className="flex items-center gap-1.5 text-xs text-[#f5a623] hover:text-[#2b3e51] transition-colors"
               >
-                <ArrowLeft className="size-3" /> Terug naar collectie
+                <ArrowLeft className="size-3" /> {t("product.backToCollection")}
               </Link>
             </div>
 

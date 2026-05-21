@@ -201,6 +201,25 @@ export type Dict = {
     kokers: { intro: string; items: { q: string; a: string }[] };
     knippers: { intro: string; items: { q: string; a: string }[] };
   };
+  product: {
+    breadcrumbHome: string;
+    notFound: string;
+    notFoundCta: string;
+    reviewsLabel: string;
+    addToCart: string;
+    addedToCart: string;
+    buyNow: string;
+    trust: { freeShipping: string; sameDay: string; freeReturns: string };
+    accordion: {
+      description: string;
+      specs: string;
+      shipping: string;
+      shippingBody: string;
+    };
+    relatedHeading: string;
+    backToCollection: string;
+  };
+  shippingNote: { eligible: string; notEligible: string };
 };
 
 const NL: Dict = {
@@ -450,6 +469,32 @@ const NL: Dict = {
         { q: "Is een dure asbak echt beter dan een goedkope?", a: "Voor sigaren: ja. Goedkope asbakken zijn vaak licht, plaatstalen, met scherpe randen. Een Faro-asbak is gegoten massief, weegt 800g+, kantelt niet en heeft gepolijste uitsparingen die de sigaar niet beschadigen. Het verschil voel je elke avond opnieuw." },
       ],
     },
+  },
+  product: {
+    breadcrumbHome: "Home",
+    notFound: "Product niet gevonden",
+    notFoundCta: "Terug naar de collectie",
+    reviewsLabel: "beoordelingen",
+    addToCart: "In winkelwagen",
+    addedToCart: "Toegevoegd",
+    buyNow: "Direct bestellen",
+    trust: {
+      freeShipping: "Gratis verzending vanaf € 80 (NL) & € 100 (BE)",
+      sameDay: "Voor 17:00 besteld = vandaag verzonden",
+      freeReturns: "14 dagen retourneren binnen Nederland",
+    },
+    accordion: {
+      description: "Productomschrijving",
+      specs: "Specificaties",
+      shipping: "Verzending & levering",
+      shippingBody: "Bestel je vóór 17:00 op een werkdag, dan gaat je pakket dezelfde dag nog op de bus bij PostNL. Standaard levertijd binnen Nederland is 1-2 werkdagen. Gratis verzending bij bestellingen vanaf € 80 (NL) / € 100 (BE).",
+    },
+    relatedHeading: "Gerelateerde producten",
+    backToCollection: "Terug naar collectie",
+  },
+  shippingNote: {
+    eligible: "Voor 17:00 besteld = vandaag verzonden",
+    notEligible: "Niet beschikbaar voor same-day verzending",
   },
 };
 
@@ -701,6 +746,32 @@ const EN: Dict = {
       ],
     },
   },
+  product: {
+    breadcrumbHome: "Home",
+    notFound: "Product not found",
+    notFoundCta: "Back to the collection",
+    reviewsLabel: "reviews",
+    addToCart: "Add to cart",
+    addedToCart: "Added",
+    buyNow: "Buy now",
+    trust: {
+      freeShipping: "Free shipping from € 80 (NL) & € 100 (BE)",
+      sameDay: "Order by 5 pm = same-day shipping",
+      freeReturns: "14-day returns within the Netherlands",
+    },
+    accordion: {
+      description: "Product description",
+      specs: "Specifications",
+      shipping: "Shipping & delivery",
+      shippingBody: "Order before 5 pm on a working day and your parcel goes out with PostNL the same day. Standard delivery within the Netherlands is 1-2 working days. Free shipping from € 80 (NL) / € 100 (BE).",
+    },
+    relatedHeading: "Related products",
+    backToCollection: "Back to collection",
+  },
+  shippingNote: {
+    eligible: "Order by 5 pm = same-day shipping",
+    notEligible: "Not eligible for same-day shipping",
+  },
 };
 
 const DE: Dict = {
@@ -951,6 +1022,32 @@ const DE: Dict = {
       ],
     },
   },
+  product: {
+    breadcrumbHome: "Startseite",
+    notFound: "Produkt nicht gefunden",
+    notFoundCta: "Zurück zur Kollektion",
+    reviewsLabel: "Bewertungen",
+    addToCart: "In den Warenkorb",
+    addedToCart: "Hinzugefügt",
+    buyNow: "Sofort kaufen",
+    trust: {
+      freeShipping: "Kostenloser Versand ab € 80 (NL) & € 100 (BE)",
+      sameDay: "Vor 17 Uhr bestellt = heute versendet",
+      freeReturns: "14 Tage Rückgaberecht innerhalb der Niederlande",
+    },
+    accordion: {
+      description: "Produktbeschreibung",
+      specs: "Spezifikationen",
+      shipping: "Versand & Lieferung",
+      shippingBody: "Bestellungen, die werktags vor 17:00 Uhr eingehen, versenden wir noch am selben Tag mit PostNL. Standardlieferzeit innerhalb der Niederlande beträgt 1-2 Werktage. Kostenloser Versand ab € 80 (NL) / € 100 (BE).",
+    },
+    relatedHeading: "Ähnliche Produkte",
+    backToCollection: "Zurück zur Kollektion",
+  },
+  shippingNote: {
+    eligible: "Vor 17 Uhr bestellt = heute versendet",
+    notEligible: "Nicht für Same-Day-Versand verfügbar",
+  },
 };
 
 const FR: Dict = {
@@ -1200,6 +1297,32 @@ const FR: Dict = {
         { q: "Un cendrier cher est-il vraiment meilleur qu'un bon marché ?", a: "Pour les cigares : oui. Les cendriers bon marché sont souvent légers, en tôle fine, avec des arêtes vives. Un cendrier Faro est en fonte massive, pèse 800g et plus, ne bascule pas et présente des reposoirs polis qui ne marquent pas le cigare. La différence se sent chaque soir." },
       ],
     },
+  },
+  product: {
+    breadcrumbHome: "Accueil",
+    notFound: "Produit introuvable",
+    notFoundCta: "Retour à la collection",
+    reviewsLabel: "avis",
+    addToCart: "Ajouter au panier",
+    addedToCart: "Ajouté",
+    buyNow: "Acheter maintenant",
+    trust: {
+      freeShipping: "Livraison gratuite dès 80 € (NL) & 100 € (BE)",
+      sameDay: "Commandé avant 17h = expédié le jour même",
+      freeReturns: "Retour sous 14 jours aux Pays-Bas",
+    },
+    accordion: {
+      description: "Description du produit",
+      specs: "Caractéristiques",
+      shipping: "Expédition & livraison",
+      shippingBody: "Pour toute commande passée avant 17h un jour ouvré, votre colis part le jour même chez PostNL. Délai de livraison standard aux Pays-Bas : 1-2 jours ouvrés. Livraison gratuite à partir de 80 € (NL) / 100 € (BE).",
+    },
+    relatedHeading: "Produits associés",
+    backToCollection: "Retour à la collection",
+  },
+  shippingNote: {
+    eligible: "Commandé avant 17h = expédié le jour même",
+    notEligible: "Non éligible à l'expédition le jour même",
   },
 };
 
