@@ -267,6 +267,18 @@ export type Dict = {
     countAfter: string;
     startTyping: string;
     catalogTagline: string;
+    autocomplete: {
+      clearQuery: string;
+      submit: string;
+      productsSection: string;
+      categoriesSection: string;
+      noResultsBeforeQuery: string;
+      noResultsAfterQuery: string;
+      tryBrand: string;
+      allResultsForBefore: string;
+      productSingular: string;
+      productPlural: string;
+    };
   };
   sale: {
     breadcrumb: string;
@@ -278,6 +290,18 @@ export type Dict = {
     heroTagline: string;
     toolbarOver: string;
     toolbarSoldOut: string;
+  };
+  accountLogin: {
+    heading: string;
+    intro: string;
+    emailLabel: string;
+    emailPlaceholder: string;
+    passwordLabel: string;
+    forgot: string;
+    remember: string;
+    submit: string;
+    noAccount: string;
+    registerHere: string;
   };
 };
 
@@ -607,6 +631,18 @@ const NL: Dict = {
     countAfter: " producten gevonden",
     startTyping: "Type een zoekterm om te beginnen",
     catalogTagline: "449 producten · Grootste tabakspecialist van Nijmegen",
+    autocomplete: {
+      clearQuery: "Wis zoekopdracht",
+      submit: "Zoeken",
+      productsSection: "Producten",
+      categoriesSection: "Categorieën",
+      noResultsBeforeQuery: "Geen resultaten voor \"",
+      noResultsAfterQuery: "\"",
+      tryBrand: "Probeer een merk (Zippo, Clipper) of categorie.",
+      allResultsForBefore: "Alle resultaten voor \"",
+      productSingular: "product",
+      productPlural: "producten",
+    },
   },
   sale: {
     breadcrumb: "Sale",
@@ -618,6 +654,18 @@ const NL: Dict = {
     heroTagline: "Op = op · Tabaksspeciaalzaak Nijmegen",
     toolbarOver: "over",
     toolbarSoldOut: "uitverkocht",
+  },
+  accountLogin: {
+    heading: "Inloggen",
+    intro: "Log in om je bestellingen, verlanglijst en persoonlijke gegevens in één plek terug te vinden.",
+    emailLabel: "E-mailadres",
+    emailPlaceholder: "naam@voorbeeld.nl",
+    passwordLabel: "Wachtwoord",
+    forgot: "Vergeten?",
+    remember: "Onthoud mij op dit apparaat",
+    submit: "Inloggen",
+    noAccount: "Nog geen account?",
+    registerHere: "Registreer hier",
   },
 };
 
@@ -947,6 +995,18 @@ const EN: Dict = {
     countAfter: " products found",
     startTyping: "Type a search term to begin",
     catalogTagline: "449 products · Largest tobacco specialist in Nijmegen",
+    autocomplete: {
+      clearQuery: "Clear search",
+      submit: "Search",
+      productsSection: "Products",
+      categoriesSection: "Categories",
+      noResultsBeforeQuery: "No results for \"",
+      noResultsAfterQuery: "\"",
+      tryBrand: "Try a brand (Zippo, Clipper) or category.",
+      allResultsForBefore: "All results for \"",
+      productSingular: "product",
+      productPlural: "products",
+    },
   },
   sale: {
     breadcrumb: "Sale",
@@ -958,6 +1018,18 @@ const EN: Dict = {
     heroTagline: "While stocks last · Tabaksspeciaalzaak Nijmegen",
     toolbarOver: "left",
     toolbarSoldOut: "sold out",
+  },
+  accountLogin: {
+    heading: "Sign in",
+    intro: "Sign in to find your orders, wishlist and personal details in one place.",
+    emailLabel: "Email address",
+    emailPlaceholder: "name@example.com",
+    passwordLabel: "Password",
+    forgot: "Forgot?",
+    remember: "Remember me on this device",
+    submit: "Sign in",
+    noAccount: "No account yet?",
+    registerHere: "Register here",
   },
 };
 
@@ -1287,6 +1359,18 @@ const DE: Dict = {
     countAfter: " Produkte gefunden",
     startTyping: "Geben Sie einen Suchbegriff ein",
     catalogTagline: "449 Produkte · Größter Tabakspezialist in Nijmegen",
+    autocomplete: {
+      clearQuery: "Suche leeren",
+      submit: "Suchen",
+      productsSection: "Produkte",
+      categoriesSection: "Kategorien",
+      noResultsBeforeQuery: "Keine Ergebnisse für \"",
+      noResultsAfterQuery: "\"",
+      tryBrand: "Versuchen Sie eine Marke (Zippo, Clipper) oder Kategorie.",
+      allResultsForBefore: "Alle Ergebnisse für \"",
+      productSingular: "Produkt",
+      productPlural: "Produkte",
+    },
   },
   sale: {
     breadcrumb: "Sale",
@@ -1298,6 +1382,18 @@ const DE: Dict = {
     heroTagline: "Solange der Vorrat reicht · Tabaksspeciaalzaak Nijmegen",
     toolbarOver: "übrig",
     toolbarSoldOut: "ausverkauft",
+  },
+  accountLogin: {
+    heading: "Anmelden",
+    intro: "Melden Sie sich an, um Ihre Bestellungen, Wunschliste und persönliche Daten an einem Ort zu finden.",
+    emailLabel: "E-Mail-Adresse",
+    emailPlaceholder: "name@beispiel.de",
+    passwordLabel: "Passwort",
+    forgot: "Vergessen?",
+    remember: "Auf diesem Gerät angemeldet bleiben",
+    submit: "Anmelden",
+    noAccount: "Noch kein Konto?",
+    registerHere: "Hier registrieren",
   },
 };
 
@@ -1627,6 +1723,18 @@ const FR: Dict = {
     countAfter: " produits trouvés",
     startTyping: "Saisissez un terme de recherche",
     catalogTagline: "449 produits · Le plus grand spécialiste tabac à Nijmegen",
+    autocomplete: {
+      clearQuery: "Effacer la recherche",
+      submit: "Rechercher",
+      productsSection: "Produits",
+      categoriesSection: "Catégories",
+      noResultsBeforeQuery: "Aucun résultat pour « ",
+      noResultsAfterQuery: " »",
+      tryBrand: "Essayez une marque (Zippo, Clipper) ou une catégorie.",
+      allResultsForBefore: "Tous les résultats pour « ",
+      productSingular: "produit",
+      productPlural: "produits",
+    },
   },
   sale: {
     breadcrumb: "Sale",
@@ -1638,6 +1746,18 @@ const FR: Dict = {
     heroTagline: "Jusqu'à épuisement des stocks · Tabaksspeciaalzaak Nijmegen",
     toolbarOver: "restants",
     toolbarSoldOut: "épuisé",
+  },
+  accountLogin: {
+    heading: "Connexion",
+    intro: "Connectez-vous pour retrouver vos commandes, votre liste de souhaits et vos informations personnelles au même endroit.",
+    emailLabel: "Adresse e-mail",
+    emailPlaceholder: "nom@exemple.fr",
+    passwordLabel: "Mot de passe",
+    forgot: "Oublié ?",
+    remember: "Se souvenir de moi sur cet appareil",
+    submit: "Connexion",
+    noAccount: "Pas encore de compte ?",
+    registerHere: "Inscrivez-vous ici",
   },
 };
 

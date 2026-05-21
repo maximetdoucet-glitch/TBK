@@ -50,7 +50,8 @@ export default function SearchAutocomplete({
   variant?: Variant;
   onNavigate?: () => void;
 }) {
-  const { t } = useLocale();
+  const { t, dict } = useLocale();
+  const ac = dict.search.autocomplete;
   const router = useRouter();
   const [query, setQuery] = useState("");
   const [open, setOpen] = useState(false);
@@ -182,7 +183,7 @@ export default function SearchAutocomplete({
         {query && (
           <button
             type="button"
-            aria-label="Wis zoekopdracht"
+            aria-label={ac.clearQuery}
             onClick={() => {
               setQuery("");
               setActiveIndex(-1);
@@ -194,7 +195,7 @@ export default function SearchAutocomplete({
         )}
         <button
           type="submit"
-          aria-label="Zoeken"
+          aria-label={ac.submit}
           className={cn(
             "absolute right-2 top-1/2 -translate-y-1/2 rounded-full flex items-center justify-center text-gray-400 hover:text-[#2b3e51] hover:bg-gray-100 transition-colors",
             variant === "desktop" ? "size-7" : "size-8"
@@ -213,10 +214,10 @@ export default function SearchAutocomplete({
           {empty && (
             <div className="px-5 py-8 text-center">
               <p className="font-montserrat text-[13px] font-bold text-[#2b3e51] mb-1">
-                Geen resultaten voor &quot;{trimmed}&quot;
+                {ac.noResultsBeforeQuery}{trimmed}{ac.noResultsAfterQuery}
               </p>
               <p className="text-[12px] text-gray-500">
-                Probeer een merk (Zippo, Clipper) of categorie.
+                {ac.tryBrand}
               </p>
             </div>
           )}
@@ -224,7 +225,7 @@ export default function SearchAutocomplete({
           {products.length > 0 && (
             <div className="py-2">
               <div className="px-4 py-1.5 text-[10px] font-black uppercase tracking-[0.2em] text-[#2b3e51]/60">
-                Producten
+                {ac.productsSection}
               </div>
               <ul>
                 {products.map((p, i) => {
@@ -271,7 +272,7 @@ export default function SearchAutocomplete({
           {categories.length > 0 && (
             <div className="py-2 border-t border-gray-100">
               <div className="px-4 py-1.5 text-[10px] font-black uppercase tracking-[0.2em] text-[#2b3e51]/60">
-                Categorieën
+                {ac.categoriesSection}
               </div>
               <ul>
                 {categories.map((c, i) => {
@@ -292,7 +293,7 @@ export default function SearchAutocomplete({
                           {c.name}
                         </span>
                         <span className="text-[11px] text-gray-500">
-                          {c.count} {c.count === 1 ? "product" : "producten"}
+                          {c.count} {c.count === 1 ? ac.productSingular : ac.productPlural}
                         </span>
                       </Link>
                     </li>
@@ -314,7 +315,7 @@ export default function SearchAutocomplete({
                   : "text-[#2b3e51] hover:bg-[#2b3e51] hover:text-white"
               )}
             >
-              <span>Alle resultaten voor &quot;{trimmed}&quot;</span>
+              <span>{ac.allResultsForBefore}{trimmed}{ac.noResultsAfterQuery}</span>
               <ArrowRight className="size-3.5" />
             </button>
           )}
