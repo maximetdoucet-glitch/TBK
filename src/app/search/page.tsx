@@ -148,7 +148,7 @@ export default async function SearchPage({
             <nav className="flex items-center gap-1.5 text-[11px] text-white/40 mb-4">
               <Link href="/" className="hover:text-white transition-colors">Home</Link>
               <ChevronRight className="size-3" />
-              <span className="text-white/70">Zoekresultaten</span>
+              <span className="text-white/70">{dict.search.breadcrumb}</span>
               {activeCat && (
                 <>
                   <ChevronRight className="size-3" />
@@ -165,14 +165,14 @@ export default async function SearchPage({
             <div className="flex items-end justify-between flex-wrap gap-4">
               <div>
                 <h1 className="font-montserrat text-2xl font-black text-white tracking-tight">
-                  {query ? <>Resultaten voor &ldquo;{query}&rdquo;</> : "Zoeken"}
+                  {query ? <>{dict.search.headingForBefore}&ldquo;{query}&rdquo;</> : dict.search.headingDefault}
                 </h1>
                 <p className="text-white/35 text-[11px] mt-1">
-                  {query ? `${total} ${total === 1 ? "product" : "producten"} gevonden` : "Type een zoekterm om te beginnen"}
+                  {query ? `${dict.search.countBefore}${total}${dict.search.countAfter}` : dict.search.startTyping}
                 </p>
               </div>
               <p className="text-white/25 text-[11px] hidden md:block tracking-wide">
-                449 producten · Grootste tabakspecialist van Nijmegen
+                {dict.search.catalogTagline}
               </p>
             </div>
           </div>

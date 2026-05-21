@@ -179,7 +179,7 @@ export default async function SalePage({
             <nav className="flex items-center gap-1.5 text-[11px] text-white/40 mb-4">
               <Link href="/" className="hover:text-white transition-colors">Home</Link>
               <ChevronRight className="size-3" />
-              <span className="text-white/70">Sale</span>
+              <span className="text-white/70">{dict.sale.breadcrumb}</span>
               {activeCat && (
                 <>
                   <ChevronRight className="size-3" />
@@ -194,15 +194,15 @@ export default async function SalePage({
                 </div>
                 <div>
                   <h1 className="font-montserrat text-2xl font-black text-white tracking-tight">
-                    {activeCat ? `Sale · ${activeCat}` : "Sale · Tijdelijke aanbiedingen"}
+                    {activeCat ? `${dict.sale.heroTitlePrefix}${activeCat}` : dict.sale.heroTitleAll}
                   </h1>
                   <p className="text-white/35 text-[11px] mt-1">
-                    Nog {totalActiveFiltered} stuks op voorraad uit onze premium sale-collectie · {totalSoldFiltered} uitverkocht
+                    {dict.sale.heroSubBefore}{totalActiveFiltered}{dict.sale.heroSubMiddle}{totalSoldFiltered}{dict.sale.heroSubAfter}
                   </p>
                 </div>
               </div>
               <p className="text-white/25 text-[11px] hidden md:block tracking-wide">
-                Op = op · Tabaksspeciaalzaak Nijmegen
+                {dict.sale.heroTagline}
               </p>
             </div>
           </div>
@@ -271,8 +271,8 @@ export default async function SalePage({
               {/* Toolbar */}
               <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
                 <p className="text-[11px] text-gray-400">
-                  <span className="font-bold text-[#e53e3e]">{totalActiveFiltered} over</span>
-                  {" "}· <span className="font-bold text-gray-500">{totalSoldFiltered} uitverkocht</span>
+                  <span className="font-bold text-[#e53e3e]">{totalActiveFiltered} {dict.sale.toolbarOver}</span>
+                  {" "}· <span className="font-bold text-gray-500">{totalSoldFiltered} {dict.sale.toolbarSoldOut}</span>
                   {totalPages > 1 && (
                     <>
                       {" "}·{" "}

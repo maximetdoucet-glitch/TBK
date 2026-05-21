@@ -260,6 +260,24 @@ export type Dict = {
     noResultsBodyBefore: string;
     noResultsBodyAfter: string;
     allResults: string;
+    breadcrumb: string;
+    headingDefault: string;
+    headingForBefore: string;
+    countBefore: string;
+    countAfter: string;
+    startTyping: string;
+    catalogTagline: string;
+  };
+  sale: {
+    breadcrumb: string;
+    heroTitleAll: string;
+    heroTitlePrefix: string;
+    heroSubBefore: string;
+    heroSubMiddle: string;
+    heroSubAfter: string;
+    heroTagline: string;
+    toolbarOver: string;
+    toolbarSoldOut: string;
   };
 };
 
@@ -582,6 +600,24 @@ const NL: Dict = {
     noResultsBodyBefore: "We konden niets vinden voor ",
     noResultsBodyAfter: ". Probeer een ander woord, merk of categorie.",
     allResults: "Alle resultaten",
+    breadcrumb: "Zoekresultaten",
+    headingDefault: "Zoeken",
+    headingForBefore: "Resultaten voor ",
+    countBefore: "",
+    countAfter: " producten gevonden",
+    startTyping: "Type een zoekterm om te beginnen",
+    catalogTagline: "449 producten · Grootste tabakspecialist van Nijmegen",
+  },
+  sale: {
+    breadcrumb: "Sale",
+    heroTitleAll: "Sale · Tijdelijke aanbiedingen",
+    heroTitlePrefix: "Sale · ",
+    heroSubBefore: "Nog ",
+    heroSubMiddle: " stuks op voorraad uit onze premium sale-collectie · ",
+    heroSubAfter: " uitverkocht",
+    heroTagline: "Op = op · Tabaksspeciaalzaak Nijmegen",
+    toolbarOver: "over",
+    toolbarSoldOut: "uitverkocht",
   },
 };
 
@@ -904,6 +940,24 @@ const EN: Dict = {
     noResultsBodyBefore: "We couldn't find anything for ",
     noResultsBodyAfter: ". Try a different word, brand or category.",
     allResults: "All results",
+    breadcrumb: "Search results",
+    headingDefault: "Search",
+    headingForBefore: "Results for ",
+    countBefore: "",
+    countAfter: " products found",
+    startTyping: "Type a search term to begin",
+    catalogTagline: "449 products · Largest tobacco specialist in Nijmegen",
+  },
+  sale: {
+    breadcrumb: "Sale",
+    heroTitleAll: "Sale · Limited-time offers",
+    heroTitlePrefix: "Sale · ",
+    heroSubBefore: "Still ",
+    heroSubMiddle: " items left from our premium sale collection · ",
+    heroSubAfter: " sold out",
+    heroTagline: "While stocks last · Tabaksspeciaalzaak Nijmegen",
+    toolbarOver: "left",
+    toolbarSoldOut: "sold out",
   },
 };
 
@@ -1226,6 +1280,24 @@ const DE: Dict = {
     noResultsBodyBefore: "Wir konnten nichts finden für ",
     noResultsBodyAfter: ". Versuchen Sie ein anderes Wort, eine Marke oder Kategorie.",
     allResults: "Alle Ergebnisse",
+    breadcrumb: "Suchergebnisse",
+    headingDefault: "Suche",
+    headingForBefore: "Ergebnisse für ",
+    countBefore: "",
+    countAfter: " Produkte gefunden",
+    startTyping: "Geben Sie einen Suchbegriff ein",
+    catalogTagline: "449 Produkte · Größter Tabakspezialist in Nijmegen",
+  },
+  sale: {
+    breadcrumb: "Sale",
+    heroTitleAll: "Sale · Befristete Angebote",
+    heroTitlePrefix: "Sale · ",
+    heroSubBefore: "Noch ",
+    heroSubMiddle: " Stück auf Lager aus unserer Premium-Sale-Kollektion · ",
+    heroSubAfter: " ausverkauft",
+    heroTagline: "Solange der Vorrat reicht · Tabaksspeciaalzaak Nijmegen",
+    toolbarOver: "übrig",
+    toolbarSoldOut: "ausverkauft",
   },
 };
 
@@ -1548,6 +1620,24 @@ const FR: Dict = {
     noResultsBodyBefore: "Nous n'avons rien trouvé pour ",
     noResultsBodyAfter: ". Essayez un autre mot, une marque ou une catégorie.",
     allResults: "Tous les résultats",
+    breadcrumb: "Résultats de recherche",
+    headingDefault: "Rechercher",
+    headingForBefore: "Résultats pour ",
+    countBefore: "",
+    countAfter: " produits trouvés",
+    startTyping: "Saisissez un terme de recherche",
+    catalogTagline: "449 produits · Le plus grand spécialiste tabac à Nijmegen",
+  },
+  sale: {
+    breadcrumb: "Sale",
+    heroTitleAll: "Sale · Offres à durée limitée",
+    heroTitlePrefix: "Sale · ",
+    heroSubBefore: "Encore ",
+    heroSubMiddle: " pièces en stock de notre collection sale premium · ",
+    heroSubAfter: " épuisé",
+    heroTagline: "Jusqu'à épuisement des stocks · Tabaksspeciaalzaak Nijmegen",
+    toolbarOver: "restants",
+    toolbarSoldOut: "épuisé",
   },
 };
 
