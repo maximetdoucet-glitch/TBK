@@ -28,9 +28,11 @@ function popularityKey(p: Product): number {
   return p.rating * Math.log2(1 + p.reviewCount);
 }
 
+const FEATURED_COUNT = 12;
+
 function getFeatured(): Product[] {
   // Spread across the 4 main categories so the row isn't all Zippos
-  const PER_CAT = 2;
+  const PER_CAT = 3;
   const buckets = new Map<string, Product[]>();
   const sorted = [...PRODUCTS].sort((a, b) => popularityKey(b) - popularityKey(a));
   for (const p of sorted) {
@@ -41,25 +43,25 @@ function getFeatured(): Product[] {
     }
   }
   const picked = Array.from(buckets.values()).flat();
-  // If we didn't fill 8 slots (small categories), top up with global ranking
-  if (picked.length < 8) {
+  // If we didn't fill all slots (small categories), top up with global ranking
+  if (picked.length < FEATURED_COUNT) {
     const seen = new Set(picked.map((p) => p.id));
     for (const p of sorted) {
-      if (picked.length >= 8) break;
+      if (picked.length >= FEATURED_COUNT) break;
       if (!seen.has(p.id)) picked.push(p);
     }
   }
-  return picked.slice(0, 8);
+  return picked.slice(0, FEATURED_COUNT);
 }
 
 function getTabProducts(tab: string): Product[] {
   if (tab === "nieuw") {
-    return PRODUCTS.filter((p) => p.xmlCategory === "Zippo-aanstekers").slice(0, 8);
+    return PRODUCTS.filter((p) => p.xmlCategory === "Zippo-aanstekers").slice(0, FEATURED_COUNT);
   }
   if (tab === "sale") {
     return PRODUCTS.filter(
       (p) => p.category === "Aanstekers" && parseFloat(p.price) <= 14
-    ).slice(0, 8);
+    ).slice(0, FEATURED_COUNT);
   }
   return getFeatured();
 }

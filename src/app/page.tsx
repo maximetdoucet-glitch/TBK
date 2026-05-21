@@ -3,7 +3,6 @@ import Footer from "@/components/v2/FooterV2";
 import PromoBar from "@/components/v2/PromoBar";
 import HeroCarousel from "@/components/v2/HeroCarousel";
 import CategoryShowcase from "@/components/v2/CategoryShowcase";
-import QuickCategories from "@/components/v2/QuickCategories";
 import FeaturedProducts from "@/components/v2/FeaturedProducts";
 import BrandCarousel from "@/components/sections/BrandCarousel";
 import AboutSection from "@/components/v2/AboutSection";
@@ -17,9 +16,8 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <HeroCarousel />
-        <QuickCategories />
-        <CategoryShowcase />
         <FeaturedProducts />
+        <CategoryShowcase />
         <BrandCarousel />
         <ArticleSection />
         <AboutSection />
