@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import SafeImage from "@/components/v2/SafeImage";
 import ShippingNote from "@/components/v2/ShippingNote";
 import Link from "next/link";
-import { Heart, ShoppingBag, ArrowRight } from "lucide-react";
+import { Heart, ShoppingBag, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import StarRow from "@/components/ui/StarRating";
 import { cn } from "@/lib/utils";
 import { PRODUCTS, type Product } from "@/lib/products";
@@ -180,6 +180,14 @@ export default function FeaturedProducts() {
   ];
 
   const filtered = getTabProducts(activeTab);
+  const scrollerRef = useRef<HTMLDivElement | null>(null);
+  const scrollByCard = (dir: 1 | -1) => {
+    const el = scrollerRef.current;
+    if (!el) return;
+    const card = el.querySelector<HTMLElement>("[data-card]");
+    const step = card ? card.offsetWidth + 16 : el.clientWidth * 0.8;
+    el.scrollBy({ left: dir * step * 2, behavior: "smooth" });
+  };
 
   return (
     <section className="bg-[#f8f8f8] py-10 sm:py-16">
@@ -209,10 +217,37 @@ export default function FeaturedProducts() {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2.5 sm:gap-4">
-          {filtered.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
+        <div className="relative">
+          <button
+            type="button"
+            onClick={() => scrollByCard(-1)}
+            aria-label="Vorige producten"
+            className="hidden sm:flex absolute left-2 top-1/2 -translate-y-1/2 z-10 size-11 rounded-full bg-white shadow-lg border border-gray-100 items-center justify-center text-[#2b3e51] hover:bg-[#f5a623] hover:text-white hover:border-[#f5a623] transition-all"
+          >
+            <ChevronLeft className="size-5" />
+          </button>
+          <div
+            ref={scrollerRef}
+            className="flex gap-2.5 sm:gap-4 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-2 -mx-4 px-4 sm:mx-0 sm:px-0 [&::-webkit-scrollbar]:hidden [scrollbar-width:none]"
+          >
+            {filtered.map((product) => (
+              <div
+                key={product.id}
+                data-card
+                className="snap-start shrink-0 w-[55%] sm:w-[calc((100%-2rem)/3)] lg:w-[calc((100%-3rem)/4)]"
+              >
+                <ProductCard product={product} />
+              </div>
+            ))}
+          </div>
+          <button
+            type="button"
+            onClick={() => scrollByCard(1)}
+            aria-label="Volgende producten"
+            className="flex absolute right-2 top-1/2 -translate-y-1/2 z-10 size-11 rounded-full bg-[#2b3e51] shadow-lg items-center justify-center text-white hover:bg-[#f5a623] transition-all"
+          >
+            <ChevronRight className="size-5" />
+          </button>
         </div>
 
         <div className="mt-8 sm:mt-10 flex justify-center">
