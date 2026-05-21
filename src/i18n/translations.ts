@@ -131,6 +131,18 @@ export type Dict = {
     emptyState: string;
     emptyStateCta: string;
     required: string;
+    delivery: {
+      sectionTitle: string;
+      sectionNote: string;
+      home: string;
+      homeNote: string;
+      pickupPrefix: string;
+      free: string;
+      pickupHintBefore: string;
+      pickupHintAfter: string;
+      pickupNameSection: string;
+      summaryPickup: string;
+    };
   };
   reviews: {
     eyebrow: string;
@@ -358,6 +370,18 @@ const NL: Dict = {
     emptyState: "Je winkelwagen is leeg.",
     emptyStateCta: "Begin met winkelen",
     required: "Verplicht",
+    delivery: {
+      sectionTitle: "Bezorging of afhalen",
+      sectionNote: "Kies waar je je bestelling wilt ontvangen",
+      home: "Thuisbezorgd",
+      homeNote: "Via PostNL · 1-2 werkdagen",
+      pickupPrefix: "Afhalen — ",
+      free: "Gratis",
+      pickupHintBefore: "Je ontvangt een mail zodra je bestelling klaarligt in ",
+      pickupHintAfter: ". Neem je orderbevestiging en een geldig ID mee.",
+      pickupNameSection: "Naam voor afhalen",
+      summaryPickup: "Afhalen in winkel",
+    },
   },
   reviews: {
     eyebrow: "Klantbeoordelingen",
@@ -634,6 +658,18 @@ const EN: Dict = {
     emptyState: "Your cart is empty.",
     emptyStateCta: "Start shopping",
     required: "Required",
+    delivery: {
+      sectionTitle: "Delivery or pickup",
+      sectionNote: "Choose where you want to receive your order",
+      home: "Home delivery",
+      homeNote: "Via PostNL · 1-2 working days",
+      pickupPrefix: "Pickup — ",
+      free: "Free",
+      pickupHintBefore: "You'll receive an email as soon as your order is ready at ",
+      pickupHintAfter: ". Please bring your order confirmation and a valid ID.",
+      pickupNameSection: "Name for pickup",
+      summaryPickup: "In-store pickup",
+    },
   },
   reviews: {
     eyebrow: "Customer reviews",
@@ -910,6 +946,18 @@ const DE: Dict = {
     emptyState: "Ihr Warenkorb ist leer.",
     emptyStateCta: "Mit dem Einkauf beginnen",
     required: "Pflichtfeld",
+    delivery: {
+      sectionTitle: "Lieferung oder Abholung",
+      sectionNote: "Wählen Sie, wo Sie Ihre Bestellung erhalten möchten",
+      home: "Heimlieferung",
+      homeNote: "Via PostNL · 1-2 Werktage",
+      pickupPrefix: "Abholung — ",
+      free: "Gratis",
+      pickupHintBefore: "Sie erhalten eine E-Mail, sobald Ihre Bestellung bereitliegt in ",
+      pickupHintAfter: ". Bitte bringen Sie Ihre Bestellbestätigung und einen gültigen Ausweis mit.",
+      pickupNameSection: "Name für die Abholung",
+      summaryPickup: "Abholung im Geschäft",
+    },
   },
   reviews: {
     eyebrow: "Kundenbewertungen",
@@ -1186,6 +1234,18 @@ const FR: Dict = {
     emptyState: "Votre panier est vide.",
     emptyStateCta: "Commencer mes achats",
     required: "Obligatoire",
+    delivery: {
+      sectionTitle: "Livraison ou retrait",
+      sectionNote: "Choisissez où recevoir votre commande",
+      home: "Livraison à domicile",
+      homeNote: "Via PostNL · 1-2 jours ouvrés",
+      pickupPrefix: "Retrait — ",
+      free: "Gratuit",
+      pickupHintBefore: "Vous recevrez un e-mail dès que votre commande sera prête au ",
+      pickupHintAfter: ". Munissez-vous de votre confirmation de commande et d'une pièce d'identité valide.",
+      pickupNameSection: "Nom pour le retrait",
+      summaryPickup: "Retrait en boutique",
+    },
   },
   reviews: {
     eyebrow: "Avis clients",

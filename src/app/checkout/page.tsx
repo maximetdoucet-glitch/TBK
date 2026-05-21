@@ -161,12 +161,12 @@ export default function CheckoutPage() {
               </Section>
 
               {/* Delivery method */}
-              <Section title="Bezorging of afhalen" subtitle="Kies waar je je bestelling wilt ontvangen">
+              <Section title={t("checkout.delivery.sectionTitle")} subtitle={t("checkout.delivery.sectionNote")}>
                 <div className="flex flex-col gap-2">
                   {([
-                    { key: "home",        icon: Home,  title: "Thuisbezorgd",                       sub: "Via PostNL — 2–3 werkdagen" },
-                    { key: "molenstraat", icon: Store, title: `Afhalen — ${PICKUP_LOCATIONS.molenstraat.name}`,  sub: PICKUP_LOCATIONS.molenstraat.address },
-                    { key: "hezelstraat", icon: Store, title: `Afhalen — ${PICKUP_LOCATIONS.hezelstraat.name}`,  sub: PICKUP_LOCATIONS.hezelstraat.address },
+                    { key: "home",        icon: Home,  title: t("checkout.delivery.home"),                                                                sub: t("checkout.delivery.homeNote") },
+                    { key: "molenstraat", icon: Store, title: t("checkout.delivery.pickupPrefix") + PICKUP_LOCATIONS.molenstraat.name,                    sub: PICKUP_LOCATIONS.molenstraat.address },
+                    { key: "hezelstraat", icon: Store, title: t("checkout.delivery.pickupPrefix") + PICKUP_LOCATIONS.hezelstraat.name,                    sub: PICKUP_LOCATIONS.hezelstraat.address },
                   ] as { key: DeliveryKey; icon: typeof Home; title: string; sub: string }[]).map(({ key, icon: Icon, title, sub }) => (
                     <label
                       key={key}
@@ -192,7 +192,7 @@ export default function CheckoutPage() {
                       </div>
                       {key !== "home" && (
                         <span className="text-[10px] font-black uppercase tracking-widest text-emerald-600 shrink-0">
-                          Gratis
+                          {t("checkout.delivery.free")}
                         </span>
                       )}
                     </label>
@@ -200,13 +200,15 @@ export default function CheckoutPage() {
                 </div>
                 {isPickup && (
                   <p className="text-[12px] text-gray-500 leading-relaxed">
-                    Je ontvangt een mail zodra je bestelling klaarligt in <span className="font-semibold text-[#2b3e51]">{PICKUP_LOCATIONS[delivery as Exclude<DeliveryKey, "home">].name}</span>. Neem je orderbevestiging en een geldig ID mee.
+                    {t("checkout.delivery.pickupHintBefore")}
+                    <span className="font-semibold text-[#2b3e51]">{PICKUP_LOCATIONS[delivery as Exclude<DeliveryKey, "home">].name}</span>
+                    {t("checkout.delivery.pickupHintAfter")}
                   </p>
                 )}
               </Section>
 
               {/* Shipping / pickup contact */}
-              <Section title={isPickup ? "Naam voor afhalen" : t("checkout.shippingAddress")}>
+              <Section title={isPickup ? t("checkout.delivery.pickupNameSection") : t("checkout.shippingAddress")}>
                 <div className="grid grid-cols-2 gap-4">
                   <Field id="first" label={t("checkout.firstName")} value={firstName} onChange={setFirst} required />
                   <Field id="last" label={t("checkout.lastName")} value={lastName} onChange={setLast} required />
@@ -323,7 +325,7 @@ export default function CheckoutPage() {
                     <span className="font-bold text-[#2b3e51] tabular-nums">€ {subtotal.toFixed(2)}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-500">{isPickup ? "Afhalen in winkel" : t("cart.shipping")}</span>
+                    <span className="text-gray-500">{isPickup ? t("checkout.delivery.summaryPickup") : t("cart.shipping")}</span>
                     <span className="font-bold text-[#2b3e51] tabular-nums">
                       {isPickup || shippingFree
                         ? <span className="text-emerald-600">{t("cart.shippingFree")}</span>
