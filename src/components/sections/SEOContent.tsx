@@ -4,7 +4,7 @@ import { CheckCircle2, HelpCircle } from "lucide-react";
 const FAQS = [
   { q: "Wanneer wordt mijn bestelling verzonden?", a: "We verwerken je bestelling zo snel mogelijk en geven hem mee aan PostNL. Standaard levertijd is 2-3 werkdagen." },
   { q: "Betaal ik verzendkosten?", a: "Verzending is gratis vanaf € 80,- binnen Nederland en € 100,- naar België." },
-  { q: "Kan ik mijn bestelling retourneren?", a: "Ja, binnen Nederland kun je gratis retourneren binnen 30 dagen na ontvangst." },
+  { q: "Kan ik mijn bestelling retourneren?", a: "Ja, binnen Nederland kun je gratis retourneren binnen 14 dagen na ontvangst." },
 ];
 
 export default function SEOContent() {
