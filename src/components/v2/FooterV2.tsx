@@ -90,7 +90,7 @@ export default function FooterV2() {
           {/* Brand */}
           <div className="lg:w-60 lg:shrink-0 flex flex-col gap-5 lg:gap-6">
             <Link href="/" className="inline-flex w-fit group" aria-label="Rokersbenodigdheden naar startpagina">
-              <span className="flex flex-col leading-none">
+              <span className="flex flex-col items-center leading-none">
                 <span className="text-[26px] lg:text-[28px] font-black uppercase tracking-[0.15em] text-white">
                   Rokers
                 </span>
@@ -102,9 +102,36 @@ export default function FooterV2() {
             <p className="text-white/45 text-[13px] leading-relaxed max-w-md lg:max-w-none">
               {t("footer.description")}
             </p>
+
+            {/* Twee fysieke winkels */}
+            <div className="space-y-4">
+              <p className="text-[10px] font-black uppercase tracking-[0.2em] text-white/60">
+                Onze 2 winkels in Nijmegen
+              </p>
+
+              <div className="space-y-1.5">
+                <p className="text-[12px] font-bold uppercase tracking-wider text-white/80">
+                  Tabak Molenstraat
+                </p>
+                <div className="flex items-start gap-3 text-[12px] text-white/40">
+                  <MapPin className="size-3.5 text-[#f5a623] shrink-0 mt-0.5" />
+                  <span>Molenstraat 120, 6511 HG Nijmegen</span>
+                </div>
+              </div>
+
+              <div className="space-y-1.5">
+                <p className="text-[12px] font-bold uppercase tracking-wider text-white/80">
+                  Tabaksspeciaalzaak Lange Hezelstraat
+                </p>
+                <div className="flex items-start gap-3 text-[12px] text-white/40">
+                  <MapPin className="size-3.5 text-[#f5a623] shrink-0 mt-0.5" />
+                  <span>Lange Hezelstraat 26, 6511 CK Nijmegen</span>
+                </div>
+              </div>
+            </div>
+
             <ul className="space-y-3">
               {[
-                { icon: MapPin, text: "Molenstraat 120, 6511 HG Nijmegen" },
                 { icon: Phone, text: "+31 (0)24 123 4567" },
                 { icon: Mail, text: "service@tbk-lightshop.nl" },
               ].map(({ icon: Icon, text }) => (

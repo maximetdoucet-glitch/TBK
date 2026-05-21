@@ -187,7 +187,7 @@ export default function HeaderV2() {
           className="shrink-0 flex items-center gap-2 leading-none group cursor-pointer transition-opacity active:opacity-60 hover:opacity-90"
           aria-label="Rokersbenodigdheden naar startpagina"
         >
-          <span className="flex flex-col leading-none text-[#2b3e51]">
+          <span className="flex flex-col items-center leading-none text-[#2b3e51]">
             <span className="text-[17px] sm:text-[19px] font-black uppercase tracking-[0.15em]">
               Rokers
             </span>
@@ -478,7 +478,7 @@ export default function HeaderV2() {
           <div className="absolute left-0 top-0 bottom-0 w-[88%] max-w-[340px] bg-white flex flex-col shadow-2xl">
             {/* Header */}
             <div className="flex items-center justify-between px-5 py-5 border-b border-gray-100">
-              <span className="flex flex-col leading-none text-[#2b3e51]">
+              <span className="flex flex-col items-center leading-none text-[#2b3e51]">
                 <span className="text-[16px] font-black uppercase tracking-[0.15em]">Rokers</span>
                 <span className="text-[9px] font-semibold uppercase tracking-[0.42em] text-[#2b3e51]/55 mt-1">benodigdheden</span>
               </span>
