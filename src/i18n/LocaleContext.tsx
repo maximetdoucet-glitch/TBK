@@ -1,9 +1,20 @@
 "use client";
 
 import React, { createContext, useContext, useEffect, useState, useCallback } from "react";
+import { useRouter } from "next/navigation";
 import { translations, type Locale, type Dict } from "./translations";
 
 const STORAGE_KEY = "tbk-locale";
+// Cookie consumed by the server-side getServerLocale() helper so RSC payloads
+// render in the user's chosen language. Keep the name in sync with src/i18n/server.ts.
+const LOCALE_COOKIE = "tbk-locale";
+
+function writeLocaleCookie(value: Locale) {
+  if (typeof document === "undefined") return;
+  // 1-year lifetime, root path, lax-secure defaults
+  const oneYear = 60 * 60 * 24 * 365;
+  document.cookie = `${LOCALE_COOKIE}=${value}; max-age=${oneYear}; path=/; samesite=lax`;
+}
 
 type Ctx = {
   locale: Locale;
@@ -36,11 +47,18 @@ export function LocaleProvider({ children }: { children: React.ReactNode }) {
   // value via the useEffect below.
   const [locale, setLocaleState] = useState<Locale>("NL");
   const [hydrated, setHydrated] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     try {
       const stored = localStorage.getItem(STORAGE_KEY) as Locale | null;
-      if (stored && stored in translations) setLocaleState(stored);
+      if (stored && stored in translations) {
+        setLocaleState(stored);
+        // Mirror to cookie so server components pick up the right locale on
+        // subsequent navigations (the cookie may not exist yet if the user
+        // last set the locale before the cookie was wired up).
+        writeLocaleCookie(stored);
+      }
     } catch {}
     setHydrated(true);
   }, []);
@@ -55,10 +73,15 @@ export function LocaleProvider({ children }: { children: React.ReactNode }) {
   const setLocale = useCallback((l: Locale) => {
     setLocaleState(l);
     try { localStorage.setItem(STORAGE_KEY, l); } catch {}
+    writeLocaleCookie(l);
     if (typeof document !== "undefined") {
       document.documentElement.lang = l.toLowerCase();
     }
-  }, []);
+    // Re-fetch any server-rendered content so RSC chrome (collection-page
+    // sidebar, pagination, etc. that reads getServerLocale) picks up the
+    // newly-set locale cookie.
+    router.refresh();
+  }, [router]);
 
   const t = useCallback(
     (key: string) => {

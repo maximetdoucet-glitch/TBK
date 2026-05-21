@@ -7,6 +7,7 @@ import Header from "@/components/v2/HeaderV2";
 import Footer from "@/components/v2/FooterV2";
 import { PRODUCTS } from "@/lib/products";
 import PriceRangeSlider, { PRICE_ABSOLUTE_MAX } from "@/components/v2/PriceRangeSlider";
+import { getServerDict } from "@/i18n/server";
 
 export const metadata = {
   title: "Zoekresultaten OneConnect Lightshop",
@@ -22,12 +23,14 @@ const CATEGORIES = [
   { label: "Rook-accessoires", value: "Rook-accessoires" },
 ];
 
-const SORT_OPTIONS = [
-  { label: "Meest geliefd", value: "recommended" },
-  { label: "Prijs ↑", value: "price_asc" },
-  { label: "Prijs ↓", value: "price_desc" },
-  { label: "Beoordeling", value: "rating" },
-];
+const SORT_VALUES = ["recommended", "price_asc", "price_desc", "rating"] as const;
+type SortKey = "recommended" | "priceAsc" | "priceDesc" | "rating";
+const SORT_VALUE_TO_KEY: Record<(typeof SORT_VALUES)[number], SortKey> = {
+  recommended: "recommended",
+  price_asc: "priceAsc",
+  price_desc: "priceDesc",
+  rating: "rating",
+};
 
 type SP = Record<string, string | undefined>;
 
@@ -55,6 +58,8 @@ export default async function SearchPage({
   searchParams: Promise<SP>;
 }) {
   const sp = await searchParams;
+  const dict = await getServerDict();
+  const tCol = dict.collection;
   const query = (sp.q ?? "").trim();
   const tokens = tokenize(query);
   const activeCat = sp.cat ?? "";
@@ -177,14 +182,14 @@ export default async function SearchPage({
         <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
           {!query ? (
             <div className="text-center py-20 border border-dashed border-gray-200 rounded bg-white">
-              <p className="text-gray-500 text-sm">Gebruik de zoekbalk hierboven om producten te vinden.</p>
+              <p className="text-gray-500 text-sm">{dict.search.promptHero}</p>
             </div>
           ) : matchingQuery.length === 0 ? (
             <div className="text-center py-20 border border-dashed border-gray-200 rounded bg-white">
               <SearchX className="size-10 text-gray-300 mx-auto mb-3" />
-              <p className="text-[#2b3e51] font-bold text-base mb-1">Geen producten gevonden</p>
+              <p className="text-[#2b3e51] font-bold text-base mb-1">{dict.search.noResultsHeading}</p>
               <p className="text-gray-500 text-sm mb-6">
-                We konden niets vinden voor &ldquo;{query}&rdquo;. Probeer een ander woord, merk of categorie.
+                {dict.search.noResultsBodyBefore}&ldquo;{query}&rdquo;{dict.search.noResultsBodyAfter}
               </p>
               <div className="flex items-center justify-center gap-2 flex-wrap">
                 {["Zippo", "Clipper", "aansteker", "asbak", "etui"].map((s) => (
@@ -206,7 +211,7 @@ export default async function SearchPage({
                 {/* Categorieën */}
                 <div className="px-5 py-4 border-b border-gray-100">
                   <p className="text-[11px] font-black uppercase tracking-[0.15em] text-[#2b3e51] mb-3">
-                    Categorieën
+                    {tCol.sidebar.categoriesHeading}
                   </p>
                   <ul className="space-y-1">
                     <li>
@@ -218,7 +223,7 @@ export default async function SearchPage({
                           {!activeCat && <span className="w-1.5 h-1.5 rounded-full bg-white" />}
                         </span>
                         <span className={`text-[12px] transition-colors ${!activeCat ? "text-[#2b3e51] font-bold" : "text-gray-500 group-hover:text-[#2b3e51]"}`}>
-                          Alle resultaten
+                          {dict.search.allResults}
                         </span>
                         <span className="ml-auto text-[10px] text-gray-300 tabular-nums">{matchingQuery.length}</span>
                       </Link>
@@ -251,7 +256,7 @@ export default async function SearchPage({
                 {scopedBrands.length > 0 && (
                   <div className="px-5 py-4 border-b border-gray-100">
                     <p className="text-[11px] font-black uppercase tracking-[0.15em] text-[#2b3e51] mb-3">
-                      Merken
+                      {tCol.sidebar.brandsHeading}
                     </p>
                     <ul className="space-y-1 max-h-[300px] overflow-y-auto pr-1">
                       <li>
@@ -263,7 +268,7 @@ export default async function SearchPage({
                             {!activeBrand && <span className="w-1.5 h-1.5 rounded-full bg-white" />}
                           </span>
                           <span className={`text-[12px] transition-colors ${!activeBrand ? "text-[#2b3e51] font-bold" : "text-gray-500 group-hover:text-[#2b3e51]"}`}>
-                            Alle merken
+                            {tCol.sidebar.allBrands}
                           </span>
                         </Link>
                       </li>
@@ -293,7 +298,7 @@ export default async function SearchPage({
                 {/* Prijs */}
                 <div className="px-5 py-4">
                   <p className="text-[11px] font-black uppercase tracking-[0.15em] text-[#2b3e51] mb-3">
-                    Prijs
+                    {tCol.sidebar.priceHeading}
                   </p>
                   <PriceRangeSlider
                     initMin={minPrice}
@@ -308,7 +313,7 @@ export default async function SearchPage({
                       href={buildUrl(sp, { min_price: undefined, max_price: undefined, page: "1" })}
                       className="block text-center text-[10px] text-[#2b3e51] hover:text-[#f5a623] mt-3 transition-colors"
                     >
-                      Prijs filter wissen
+                      {tCol.sidebar.clearPriceFilter}
                     </Link>
                   )}
                 </div>
@@ -324,28 +329,28 @@ export default async function SearchPage({
                       className="lg:hidden flex items-center gap-1.5 text-[11px] font-bold text-[#2b3e51] border border-gray-200 bg-white px-3 py-2 rounded"
                     >
                       <SlidersHorizontal className="size-3.5" />
-                      Filters
+                      {tCol.toolbar.filters}
                     </button>
                     <p className="text-[11px] text-gray-400">
                       <span className="font-bold text-[#2b3e51]">
                         {total > 0 ? `${start + 1}–${Math.min(start + PER_PAGE, total)}` : "0"}
                       </span>{" "}
-                      van {total} producten
+                      {tCol.toolbar.ofProducts} {total} {tCol.toolbar.productsWord}
                     </p>
                   </div>
                   <div className="flex items-center gap-1.5 flex-wrap">
-                    <span className="text-[11px] text-gray-400 hidden sm:inline">Sorteren:</span>
-                    {SORT_OPTIONS.map((opt) => (
+                    <span className="text-[11px] text-gray-400 hidden sm:inline">{tCol.toolbar.sortLabel}</span>
+                    {SORT_VALUES.map((value) => (
                       <Link
-                        key={opt.value}
-                        href={buildUrl(sp, { sort: opt.value, page: "1" })}
+                        key={value}
+                        href={buildUrl(sp, { sort: value, page: "1" })}
                         className={`text-[11px] px-3 py-1.5 border rounded-full transition-all ${
-                          activeSort === opt.value
+                          activeSort === value
                             ? "border-[#2b3e51] bg-[#2b3e51] text-white"
                             : "border-[#2b3e51] bg-white text-[#2b3e51] hover:border-[#f5a623] hover:bg-[#f5a623] hover:text-white"
                         }`}
                       >
-                        {opt.label}
+                        {tCol.toolbar.sortOptions[SORT_VALUE_TO_KEY[value]]}
                       </Link>
                     ))}
                   </div>
@@ -382,7 +387,7 @@ export default async function SearchPage({
                       href={`/search?q=${encodeURIComponent(query)}`}
                       className="text-[11px] px-3 py-1.5 border border-[#2b3e51] bg-white text-[#2b3e51] rounded-full hover:border-[#f5a623] hover:bg-[#f5a623] hover:text-white transition-colors"
                     >
-                      Wis alle filters
+                      {tCol.chips.clearAll}
                     </Link>
                   </div>
                 )}
@@ -390,12 +395,12 @@ export default async function SearchPage({
                 {/* Grid */}
                 {pageProducts.length === 0 ? (
                   <div className="text-center py-24">
-                    <p className="text-gray-400 font-semibold">Geen producten gevonden</p>
+                    <p className="text-gray-400 font-semibold">{tCol.empty.noProducts}</p>
                     <Link
                       href={`/search?q=${encodeURIComponent(query)}`}
                       className="text-[#f5a623] text-sm mt-2 inline-block underline"
                     >
-                      Wis filters
+                      {tCol.empty.clearFilters}
                     </Link>
                   </div>
                 ) : (
@@ -486,7 +491,7 @@ export default async function SearchPage({
                         href={buildUrl(sp, { page: String(safePage - 1) })}
                         className="px-4 py-2 text-[11px] font-bold border border-[#2b3e51] bg-white text-[#2b3e51] hover:border-[#f5a623] hover:bg-[#f5a623] hover:text-white rounded transition-all"
                       >
-                        ← Vorige
+                        {tCol.pagination.prev}
                       </Link>
                     )}
                     {pageNumbers.map((item, i) =>
@@ -511,7 +516,7 @@ export default async function SearchPage({
                         href={buildUrl(sp, { page: String(safePage + 1) })}
                         className="px-4 py-2 text-[11px] font-bold border border-[#2b3e51] bg-white text-[#2b3e51] hover:border-[#f5a623] hover:bg-[#f5a623] hover:text-white rounded transition-all"
                       >
-                        Volgende →
+                        {tCol.pagination.next}
                       </Link>
                     )}
                   </nav>
@@ -519,7 +524,7 @@ export default async function SearchPage({
 
                 {totalPages > 1 && (
                   <p className="text-center text-[11px] text-gray-400 mt-3">
-                    Pagina {safePage} van {totalPages}
+                    {tCol.pagination.pageWord} {safePage} {tCol.pagination.ofWord} {totalPages}
                   </p>
                 )}
               </div>

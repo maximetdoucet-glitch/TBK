@@ -7,6 +7,7 @@ import Header from "@/components/v2/HeaderV2";
 import Footer from "@/components/v2/FooterV2";
 import { PRODUCTS } from "@/lib/products";
 import PriceRangeSlider, { PRICE_ABSOLUTE_MAX } from "@/components/v2/PriceRangeSlider";
+import { getServerDict } from "@/i18n/server";
 import RookAccessoiresInfoSection from "@/components/v2/RookAccessoiresInfoSection";
 
 export const metadata = {
@@ -52,12 +53,14 @@ const ALL_BRANDS = Object.entries(
   }, {})
 ).sort((a, b) => b[1] - a[1]);
 
-const SORT_OPTIONS = [
-  { label: "Meest geliefd", value: "recommended" },
-  { label: "Prijs ↑", value: "price_asc" },
-  { label: "Prijs ↓", value: "price_desc" },
-  { label: "Beoordeling", value: "rating" },
-];
+const SORT_VALUES = ["recommended", "price_asc", "price_desc", "rating"] as const;
+type SortKey = "recommended" | "priceAsc" | "priceDesc" | "rating";
+const SORT_VALUE_TO_KEY: Record<(typeof SORT_VALUES)[number], SortKey> = {
+  recommended: "recommended",
+  price_asc: "priceAsc",
+  price_desc: "priceDesc",
+  rating: "rating",
+};
 
 type SP = Record<string, string | undefined>;
 
@@ -81,6 +84,8 @@ export default async function RookAccessoiresPage({
   searchParams: Promise<Record<string, string | undefined>>;
 }) {
   const sp = await searchParams;
+  const dict = await getServerDict();
+  const tCol = dict.collection;
   const activeCat = sp.cat ?? "";
   const activeSub = (sp.sub ?? "") as SubKey | "";
   const subDef = SUB_FILTERS.find((s) => s.key === activeSub);
@@ -194,7 +199,7 @@ export default async function RookAccessoiresPage({
               {showSubcatBlock && (
                 <div className="px-5 py-4 border-b border-gray-100">
                   <p className="text-[11px] font-black uppercase tracking-[0.15em] text-[#2b3e51] mb-3">
-                    Categorieën
+                    {tCol.sidebar.categoriesHeading}
                   </p>
                   <ul className="space-y-1">
                     <li>
@@ -206,7 +211,7 @@ export default async function RookAccessoiresPage({
                           {!activeCat && <span className="w-1.5 h-1.5 rounded-full bg-white" />}
                         </span>
                         <span className={`text-[12px] transition-colors ${!activeCat ? "text-[#2b3e51] font-bold" : "text-gray-500 group-hover:text-[#2b3e51]"}`}>
-                          Alle {COLLECTION_NAME.toLowerCase()}
+                          {tCol.sidebar.allInCategory}
                         </span>
                         <span className="ml-auto text-[10px] text-gray-300 tabular-nums">{ALL_PRODUCTS.length}</span>
                       </Link>
@@ -239,7 +244,7 @@ export default async function RookAccessoiresPage({
               {/* Sub-filters by product type */}
               <div className="px-5 py-4 border-b border-gray-100">
                 <p className="text-[11px] font-black uppercase tracking-[0.15em] text-[#2b3e51] mb-3">
-                  Type product
+                  {tCol.sidebar.typeHeading}
                 </p>
                 <ul className="space-y-1">
                   <li>
@@ -251,7 +256,7 @@ export default async function RookAccessoiresPage({
                         {!activeSub && <span className="w-1.5 h-1.5 rounded-full bg-white" />}
                       </span>
                       <span className={`text-[12px] transition-colors ${!activeSub ? "text-[#2b3e51] font-bold" : "text-gray-500 group-hover:text-[#2b3e51]"}`}>
-                        Alle types
+                        {tCol.sidebar.allTypes}
                       </span>
                       <span className="ml-auto text-[10px] text-gray-300 tabular-nums">{ALL_PRODUCTS.length}</span>
                     </Link>
@@ -282,7 +287,7 @@ export default async function RookAccessoiresPage({
 
               <div className="px-5 py-4 border-b border-gray-100">
                 <p className="text-[11px] font-black uppercase tracking-[0.15em] text-[#2b3e51] mb-3">
-                  Merken
+                  {tCol.sidebar.brandsHeading}
                 </p>
                 <ul className="space-y-1">
                   <li>
@@ -294,7 +299,7 @@ export default async function RookAccessoiresPage({
                         {!activeBrand && <span className="w-1.5 h-1.5 rounded-full bg-white" />}
                       </span>
                       <span className={`text-[12px] transition-colors ${!activeBrand ? "text-[#2b3e51] font-bold" : "text-gray-500 group-hover:text-[#2b3e51]"}`}>
-                        Alle merken
+                        {tCol.sidebar.allBrands}
                       </span>
                     </Link>
                   </li>
@@ -322,7 +327,7 @@ export default async function RookAccessoiresPage({
 
               <div className="px-5 py-4">
                 <p className="text-[11px] font-black uppercase tracking-[0.15em] text-[#2b3e51] mb-3">
-                  Prijs
+                  {tCol.sidebar.priceHeading}
                 </p>
                 <PriceRangeSlider
                   initMin={minPrice}
@@ -336,7 +341,7 @@ export default async function RookAccessoiresPage({
                     href={buildUrl(sp, { min_price: undefined, max_price: undefined, page: "1" })}
                     className="block text-center text-[10px] text-[#2b3e51] hover:text-[#f5a623] mt-3 transition-colors"
                   >
-                    Prijs filter wissen
+                    {tCol.sidebar.clearPriceFilter}
                   </Link>
                 )}
               </div>
@@ -354,28 +359,28 @@ export default async function RookAccessoiresPage({
                     className="lg:hidden flex items-center gap-1.5 text-[11px] font-bold text-[#2b3e51] border border-gray-200 bg-white px-3 py-2 rounded"
                   >
                     <SlidersHorizontal className="size-3.5" />
-                    Filters
+                    {tCol.toolbar.filters}
                   </button>
                   <p className="text-[11px] text-gray-400">
                     <span className="font-bold text-[#2b3e51]">
                       {total > 0 ? `${start + 1}–${Math.min(start + PER_PAGE, total)}` : "0"}
                     </span>{" "}
-                    van {total} producten
+                    {tCol.toolbar.ofProducts} {total} {tCol.toolbar.productsWord}
                   </p>
                 </div>
                 <div className="flex items-center gap-1.5 flex-wrap">
-                  <span className="text-[11px] text-gray-400 hidden sm:inline">Sorteren:</span>
-                  {SORT_OPTIONS.map((opt) => (
+                  <span className="text-[11px] text-gray-400 hidden sm:inline">{tCol.toolbar.sortLabel}</span>
+                  {SORT_VALUES.map((value) => (
                     <Link
-                      key={opt.value}
-                      href={buildUrl(sp, { sort: opt.value, page: "1" })}
+                      key={value}
+                      href={buildUrl(sp, { sort: value, page: "1" })}
                       className={`text-[11px] px-3 py-1.5 border rounded-full transition-all ${
-                        activeSort === opt.value
+                        activeSort === value
                           ? "border-[#2b3e51] bg-[#2b3e51] text-white"
                           : "border-[#2b3e51] bg-white text-[#2b3e51] hover:border-[#f5a623] hover:bg-[#f5a623] hover:text-white"
                       }`}
                     >
-                      {opt.label}
+                      {tCol.toolbar.sortOptions[SORT_VALUE_TO_KEY[value]]}
                     </Link>
                   ))}
                 </div>
@@ -419,14 +424,14 @@ export default async function RookAccessoiresPage({
                     href={COLLECTION_SLUG}
                     className="text-[11px] px-3 py-1.5 border border-[#2b3e51] bg-white text-[#2b3e51] rounded-full hover:border-[#f5a623] hover:bg-[#f5a623] hover:text-white transition-colors"
                   >
-                    Wis alle filters
+                    {tCol.chips.clearAll}
                   </Link>
                 </div>
               )}
 
               {pageProducts.length === 0 ? (
                 <div className="text-center py-24">
-                  <p className="text-gray-400 font-semibold">Geen producten gevonden</p>
+                  <p className="text-gray-400 font-semibold">{tCol.empty.noProducts}</p>
                   <Link href={COLLECTION_SLUG} className="text-[#f5a623] text-sm mt-2 inline-block underline">
                     Wis filters
                   </Link>
@@ -518,7 +523,7 @@ export default async function RookAccessoiresPage({
                       href={buildUrl(sp, { page: String(safePage - 1) })}
                       className="px-4 py-2 text-[11px] font-bold border border-[#2b3e51] bg-white text-[#2b3e51] hover:border-[#f5a623] hover:bg-[#f5a623] hover:text-white rounded transition-all"
                     >
-                      ← Vorige
+                      {tCol.pagination.prev}
                     </Link>
                   )}
                   {pageNumbers.map((item, i) =>
@@ -543,7 +548,7 @@ export default async function RookAccessoiresPage({
                       href={buildUrl(sp, { page: String(safePage + 1) })}
                       className="px-4 py-2 text-[11px] font-bold border border-[#2b3e51] bg-white text-[#2b3e51] hover:border-[#f5a623] hover:bg-[#f5a623] hover:text-white rounded transition-all"
                     >
-                      Volgende →
+                      {tCol.pagination.next}
                     </Link>
                   )}
                 </nav>
@@ -551,7 +556,7 @@ export default async function RookAccessoiresPage({
 
               {totalPages > 1 && (
                 <p className="text-center text-[11px] text-gray-400 mt-3">
-                  Pagina {safePage} van {totalPages}
+                  {tCol.pagination.pageWord} {safePage} {tCol.pagination.ofWord} {totalPages}
                 </p>
               )}
             </div>

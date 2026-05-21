@@ -5,6 +5,7 @@ import ShippingNote from "@/components/v2/ShippingNote";
 import Header from "@/components/v2/HeaderV2";
 import Footer from "@/components/v2/FooterV2";
 import { PRODUCTS, type Product } from "@/lib/products";
+import { getServerDict } from "@/i18n/server";
 
 export const metadata = {
   title: "Sale OneConnect Lightshop",
@@ -116,6 +117,8 @@ export default async function SalePage({
   searchParams: Promise<Record<string, string | undefined>>;
 }) {
   const sp = await searchParams;
+  const dict = await getServerDict();
+  const tCol = dict.collection;
   const activeCat = sp.cat ?? "";
   const requestedPage = Math.max(1, parseInt(sp.page ?? "1", 10));
 
@@ -217,7 +220,7 @@ export default async function SalePage({
               {/* Categorieën */}
               <div className="px-5 py-4 border-b border-gray-100">
                 <p className="text-[11px] font-black uppercase tracking-[0.15em] text-[#2b3e51] mb-3">
-                  Categorieën
+                  {tCol.sidebar.categoriesHeading}
                 </p>
                 <ul className="space-y-1">
                   <li>
@@ -229,7 +232,7 @@ export default async function SalePage({
                         {!activeCat && <span className="w-1.5 h-1.5 rounded-full bg-white" />}
                       </span>
                       <span className={`text-[12px] transition-colors ${!activeCat ? "text-[#2b3e51] font-bold" : "text-gray-500 group-hover:text-[#2b3e51]"}`}>
-                        Alle categorieën
+                        {tCol.sidebar.allInCategory}
                       </span>
                       <span className="ml-auto text-[10px] text-gray-300 tabular-nums">{allCount}</span>
                     </Link>
@@ -274,7 +277,7 @@ export default async function SalePage({
                     <>
                       {" "}·{" "}
                       <span className="text-gray-400">
-                        Pagina {page} van {totalPages}
+                        {tCol.pagination.pageWord} {page} {tCol.pagination.ofWord} {totalPages}
                       </span>
                     </>
                   )}
@@ -284,7 +287,7 @@ export default async function SalePage({
                     href="/sale"
                     className="text-[11px] px-3 py-1.5 border border-[#2b3e51] bg-white text-[#2b3e51] hover:border-[#f5a623] hover:bg-[#f5a623] hover:text-white rounded-full transition-all"
                   >
-                    Wis filters
+                    {tCol.empty.clearFilters}
                   </Link>
                 )}
               </div>
@@ -304,9 +307,9 @@ export default async function SalePage({
               {/* Product grid */}
               {entries.length === 0 ? (
                 <div className="text-center py-24">
-                  <p className="text-gray-400 font-semibold">Geen producten gevonden</p>
+                  <p className="text-gray-400 font-semibold">{tCol.empty.noProducts}</p>
                   <Link href="/sale" className="text-[#f5a623] text-sm mt-2 inline-block underline">
-                    Wis filters
+                    {tCol.empty.clearFilters}
                   </Link>
                 </div>
               ) : (

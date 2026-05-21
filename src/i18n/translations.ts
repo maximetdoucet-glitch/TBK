@@ -232,6 +232,35 @@ export type Dict = {
     backToCollection: string;
   };
   shippingNote: { eligible: string; notEligible: string };
+  collection: {
+    sidebar: {
+      categoriesHeading: string;
+      allInCategory: string;
+      typeHeading: string;
+      allTypes: string;
+      brandsHeading: string;
+      allBrands: string;
+      priceHeading: string;
+      clearPriceFilter: string;
+    };
+    toolbar: {
+      filters: string;
+      ofProducts: string; // template piece — used as "{showing} {ofProducts} {total} producten"
+      productsWord: string;
+      sortLabel: string;
+      sortOptions: { recommended: string; priceAsc: string; priceDesc: string; rating: string };
+    };
+    chips: { clearAll: string };
+    empty: { noProducts: string; clearFilters: string };
+    pagination: { prev: string; next: string; pageWord: string; ofWord: string };
+  };
+  search: {
+    promptHero: string;
+    noResultsHeading: string;
+    noResultsBodyBefore: string;
+    noResultsBodyAfter: string;
+    allResults: string;
+  };
 };
 
 const NL: Dict = {
@@ -519,6 +548,40 @@ const NL: Dict = {
   shippingNote: {
     eligible: "Voor 17:00 besteld = vandaag verzonden",
     notEligible: "Niet beschikbaar voor same-day verzending",
+  },
+  collection: {
+    sidebar: {
+      categoriesHeading: "Categorieën",
+      allInCategory: "Alle producten",
+      typeHeading: "Type product",
+      allTypes: "Alle types",
+      brandsHeading: "Merken",
+      allBrands: "Alle merken",
+      priceHeading: "Prijs",
+      clearPriceFilter: "Prijs filter wissen",
+    },
+    toolbar: {
+      filters: "Filters",
+      ofProducts: "van",
+      productsWord: "producten",
+      sortLabel: "Sorteren:",
+      sortOptions: {
+        recommended: "Meest geliefd",
+        priceAsc: "Prijs ↑",
+        priceDesc: "Prijs ↓",
+        rating: "Beoordeling",
+      },
+    },
+    chips: { clearAll: "Wis alle filters" },
+    empty: { noProducts: "Geen producten gevonden", clearFilters: "Wis filters" },
+    pagination: { prev: "← Vorige", next: "Volgende →", pageWord: "Pagina", ofWord: "van" },
+  },
+  search: {
+    promptHero: "Gebruik de zoekbalk hierboven om producten te vinden.",
+    noResultsHeading: "Geen producten gevonden",
+    noResultsBodyBefore: "We konden niets vinden voor ",
+    noResultsBodyAfter: ". Probeer een ander woord, merk of categorie.",
+    allResults: "Alle resultaten",
   },
 };
 
@@ -808,6 +871,40 @@ const EN: Dict = {
     eligible: "Order by 5 pm = same-day shipping",
     notEligible: "Not eligible for same-day shipping",
   },
+  collection: {
+    sidebar: {
+      categoriesHeading: "Categories",
+      allInCategory: "All products",
+      typeHeading: "Product type",
+      allTypes: "All types",
+      brandsHeading: "Brands",
+      allBrands: "All brands",
+      priceHeading: "Price",
+      clearPriceFilter: "Clear price filter",
+    },
+    toolbar: {
+      filters: "Filters",
+      ofProducts: "of",
+      productsWord: "products",
+      sortLabel: "Sort:",
+      sortOptions: {
+        recommended: "Most loved",
+        priceAsc: "Price ↑",
+        priceDesc: "Price ↓",
+        rating: "Rating",
+      },
+    },
+    chips: { clearAll: "Clear all filters" },
+    empty: { noProducts: "No products found", clearFilters: "Clear filters" },
+    pagination: { prev: "← Previous", next: "Next →", pageWord: "Page", ofWord: "of" },
+  },
+  search: {
+    promptHero: "Use the search bar above to find products.",
+    noResultsHeading: "No products found",
+    noResultsBodyBefore: "We couldn't find anything for ",
+    noResultsBodyAfter: ". Try a different word, brand or category.",
+    allResults: "All results",
+  },
 };
 
 const DE: Dict = {
@@ -1096,6 +1193,40 @@ const DE: Dict = {
     eligible: "Vor 17 Uhr bestellt = heute versendet",
     notEligible: "Nicht für Same-Day-Versand verfügbar",
   },
+  collection: {
+    sidebar: {
+      categoriesHeading: "Kategorien",
+      allInCategory: "Alle Produkte",
+      typeHeading: "Produkttyp",
+      allTypes: "Alle Typen",
+      brandsHeading: "Marken",
+      allBrands: "Alle Marken",
+      priceHeading: "Preis",
+      clearPriceFilter: "Preisfilter zurücksetzen",
+    },
+    toolbar: {
+      filters: "Filter",
+      ofProducts: "von",
+      productsWord: "Produkten",
+      sortLabel: "Sortieren:",
+      sortOptions: {
+        recommended: "Beliebteste",
+        priceAsc: "Preis ↑",
+        priceDesc: "Preis ↓",
+        rating: "Bewertung",
+      },
+    },
+    chips: { clearAll: "Alle Filter löschen" },
+    empty: { noProducts: "Keine Produkte gefunden", clearFilters: "Filter löschen" },
+    pagination: { prev: "← Zurück", next: "Weiter →", pageWord: "Seite", ofWord: "von" },
+  },
+  search: {
+    promptHero: "Verwenden Sie die Suchleiste oben, um Produkte zu finden.",
+    noResultsHeading: "Keine Produkte gefunden",
+    noResultsBodyBefore: "Wir konnten nichts finden für ",
+    noResultsBodyAfter: ". Versuchen Sie ein anderes Wort, eine Marke oder Kategorie.",
+    allResults: "Alle Ergebnisse",
+  },
 };
 
 const FR: Dict = {
@@ -1383,6 +1514,40 @@ const FR: Dict = {
   shippingNote: {
     eligible: "Commandé avant 17h = expédié le jour même",
     notEligible: "Non éligible à l'expédition le jour même",
+  },
+  collection: {
+    sidebar: {
+      categoriesHeading: "Catégories",
+      allInCategory: "Tous les produits",
+      typeHeading: "Type de produit",
+      allTypes: "Tous les types",
+      brandsHeading: "Marques",
+      allBrands: "Toutes les marques",
+      priceHeading: "Prix",
+      clearPriceFilter: "Effacer le filtre de prix",
+    },
+    toolbar: {
+      filters: "Filtres",
+      ofProducts: "sur",
+      productsWord: "produits",
+      sortLabel: "Trier :",
+      sortOptions: {
+        recommended: "Les plus aimés",
+        priceAsc: "Prix ↑",
+        priceDesc: "Prix ↓",
+        rating: "Note",
+      },
+    },
+    chips: { clearAll: "Effacer tous les filtres" },
+    empty: { noProducts: "Aucun produit trouvé", clearFilters: "Effacer les filtres" },
+    pagination: { prev: "← Précédent", next: "Suivant →", pageWord: "Page", ofWord: "sur" },
+  },
+  search: {
+    promptHero: "Utilisez la barre de recherche ci-dessus pour trouver des produits.",
+    noResultsHeading: "Aucun produit trouvé",
+    noResultsBodyBefore: "Nous n'avons rien trouvé pour ",
+    noResultsBodyAfter: ". Essayez un autre mot, une marque ou une catégorie.",
+    allResults: "Tous les résultats",
   },
 };
 
