@@ -1,6 +1,7 @@
 import Link from "next/link";
 import SafeImage from "@/components/v2/SafeImage";
 import { Heart, ShoppingBag, ChevronRight, SlidersHorizontal } from "lucide-react";
+import ShippingNote from "@/components/v2/ShippingNote";
 import StarRating from "@/components/ui/StarRating";
 import Header from "@/components/v2/HeaderV2";
 import Footer from "@/components/v2/FooterV2";
@@ -506,6 +507,7 @@ export default async function KnippersAsbakkenPage({
                             <ShoppingBag className="size-4 text-white" />
                           </button>
                         </div>
+                        <ShippingNote sameDay={product.sameDayDelivery} className="mt-2" />
                       </div>
                     </div>
                   ))}

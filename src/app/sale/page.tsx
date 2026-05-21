@@ -1,6 +1,7 @@
 import Link from "next/link";
 import SafeImage from "@/components/v2/SafeImage";
 import { ChevronRight, Tag, ShoppingBag } from "lucide-react";
+import ShippingNote from "@/components/v2/ShippingNote";
 import Header from "@/components/v2/HeaderV2";
 import Footer from "@/components/v2/FooterV2";
 import PromoBar from "@/components/v2/PromoBar";
@@ -424,6 +425,7 @@ function ActiveCard({
             <ShoppingBag className="size-4 text-white" />
           </button>
         </div>
+        <ShippingNote sameDay={product.sameDayDelivery} className="mt-2" />
       </div>
     </div>
   );

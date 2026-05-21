@@ -23,6 +23,9 @@ export type Product = {
   popularityReviewCount?: number;
   popularitySource?: "bol" | "amazon" | "none";
   popularityScore?: number;
+  // Same-day shipping eligibility. Defaults to true when omitted.
+  // Set to false on individual products that cannot be shipped same day.
+  sameDayDelivery?: boolean;
 };
 
 export const PRODUCTS: Product[] = rawProducts as Product[];

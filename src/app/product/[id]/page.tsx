@@ -10,6 +10,7 @@ import StarRating from "@/components/ui/StarRating";
 import Header from "@/components/v2/HeaderV2";
 import Footer from "@/components/v2/FooterV2";
 import ProductReviews from "@/components/v2/ProductReviews";
+import ShippingNote from "@/components/v2/ShippingNote";
 import { Button } from "@/components/ui/button";
 import { PRODUCTS } from "@/lib/products";
 import { useCart } from "@/cart/CartContext";
@@ -242,6 +243,8 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
               >
                 <Zap className="size-4" /> {t("cart.buyNow")}
               </button>
+
+              <ShippingNote sameDay={product.sameDayDelivery} className="mb-3 text-sm sm:text-sm" />
 
               {/* Trust Badges */}
               <div className="flex flex-col gap-2.5 py-5 border-t border-b border-gray-100 mb-7">

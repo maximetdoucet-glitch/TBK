@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import SafeImage from "@/components/v2/SafeImage";
+import ShippingNote from "@/components/v2/ShippingNote";
 import Link from "next/link";
 import { Heart, ShoppingBag, ArrowRight } from "lucide-react";
 import StarRow from "@/components/ui/StarRating";
@@ -144,6 +145,7 @@ function ProductCard({ product }: { product: Product }) {
           {product.name}
         </h3>
         <StarRating rating={product.rating} count={product.reviewCount} />
+        <ShippingNote sameDay={product.sameDayDelivery} className="mt-1.5 sm:mt-2" />
         <div className="flex items-center justify-between mt-2.5 sm:mt-3 pt-2.5 sm:pt-3 border-t border-gray-50 gap-2">
           <span className="font-montserrat text-lg sm:text-xl font-black text-[#2b3e51]">
             € {price.toFixed(2)}
