@@ -1,5 +1,4 @@
 // Preview route - v2 design. Original page.tsx is completely untouched.
-import PromoBar from "@/components/v2/PromoBar";
 import HeaderV2 from "@/components/v2/HeaderV2";
 import HeroCarousel from "@/components/v2/HeroCarousel";
 import CategoryShowcase from "@/components/v2/CategoryShowcase";
@@ -15,7 +14,6 @@ import BrandCarousel from "@/components/sections/BrandCarousel";
 export default function PreviewPage() {
   return (
     <div className="flex flex-col min-h-screen">
-      <PromoBar />
       <HeaderV2 />
       <main className="flex-1">
         <HeroCarousel />

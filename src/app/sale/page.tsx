@@ -4,7 +4,6 @@ import { ChevronRight, Tag, ShoppingBag } from "lucide-react";
 import ShippingNote from "@/components/v2/ShippingNote";
 import Header from "@/components/v2/HeaderV2";
 import Footer from "@/components/v2/FooterV2";
-import PromoBar from "@/components/v2/PromoBar";
 import { PRODUCTS, type Product } from "@/lib/products";
 
 export const metadata = {
@@ -167,7 +166,6 @@ export default async function SalePage({
 
   return (
     <div className="flex flex-col min-h-screen">
-      <PromoBar />
       <Header />
 
       <main className="flex-1 bg-[#f8f9fa]">

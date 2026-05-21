@@ -5,7 +5,6 @@ import ShippingNote from "@/components/v2/ShippingNote";
 import StarRating from "@/components/ui/StarRating";
 import Header from "@/components/v2/HeaderV2";
 import Footer from "@/components/v2/FooterV2";
-import PromoBar from "@/components/v2/PromoBar";
 import { PRODUCTS } from "@/lib/products";
 import PriceRangeSlider, { PRICE_ABSOLUTE_MAX } from "@/components/v2/PriceRangeSlider";
 import KokersEtuisInfoSection from "@/components/v2/KokersEtuisInfoSection";
@@ -146,7 +145,6 @@ export default async function KokersEtuisPage({
 
   return (
     <div className="flex flex-col min-h-screen">
-      <PromoBar />
       <Header />
 
       <main className="flex-1 bg-[#f8f9fa]">

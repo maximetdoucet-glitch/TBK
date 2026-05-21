@@ -2,13 +2,11 @@ import Link from "next/link";
 import { ChevronRight, Info } from "lucide-react";
 import Header from "@/components/v2/HeaderV2";
 import Footer from "@/components/v2/FooterV2";
-import PromoBar from "@/components/v2/PromoBar";
 import Sidebar from "./_components/Sidebar";
 
 export default function AccountLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex flex-col min-h-screen">
-      <PromoBar />
       <Header />
 
       <main className="flex-1 bg-[#f8f9fa]">
