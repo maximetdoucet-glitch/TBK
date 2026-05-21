@@ -2,7 +2,8 @@ import { MapPin, Phone, Mail, Clock } from "lucide-react";
 
 export const metadata = {
   title: "Contact OneConnect Lightshop",
-  description: "Neem contact op met de Tabaksspeciaalzaak Nijmegen Molenstraat 120.",
+  description:
+    "Neem contact op met onze 2 winkels in Nijmegen: Tabak Molenstraat 120 en Tabaksspeciaalzaak Lange Hezelstraat 26.",
 };
 
 export default function ContactPage() {
@@ -20,8 +21,13 @@ export default function ContactPage() {
         {[
           {
             icon: MapPin,
-            label: "Bezoek ons",
+            label: "Tabak Molenstraat",
             lines: ["Molenstraat 120", "6511 HG Nijmegen", "Nederland"],
+          },
+          {
+            icon: MapPin,
+            label: "Tabaksspeciaalzaak Lange Hezelstraat",
+            lines: ["Lange Hezelstraat 26", "6511 CK Nijmegen", "Nederland"],
           },
           {
             icon: Phone,
@@ -35,7 +41,7 @@ export default function ContactPage() {
           },
           {
             icon: Clock,
-            label: "Openingstijden",
+            label: "Openingstijden (beide winkels)",
             lines: [
               "Maandag t/m vrijdag · 09:00–18:00",
               "Zaterdag · 10:00–17:00",

@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Check, ShieldCheck, Truck, ArrowRight } from "lucide-react";
+import { Check, ShieldCheck, Truck, ArrowRight, Home, Store } from "lucide-react";
 import Header from "@/components/v2/HeaderV2";
 import Footer from "@/components/v2/FooterV2";
 import { useCart } from "@/cart/CartContext";
@@ -13,6 +13,18 @@ import { cn } from "@/lib/utils";
 const FREE_SHIPPING_THRESHOLD = 80;
 
 type PaymentKey = "ideal" | "card" | "klarna" | "paypal";
+type DeliveryKey = "home" | "molenstraat" | "hezelstraat";
+
+const PICKUP_LOCATIONS: Record<Exclude<DeliveryKey, "home">, { name: string; address: string }> = {
+  molenstraat: {
+    name: "Tabak Molenstraat",
+    address: "Molenstraat 120, 6511 HG Nijmegen",
+  },
+  hezelstraat: {
+    name: "Tabaksspeciaalzaak Lange Hezelstraat",
+    address: "Lange Hezelstraat 26, 6511 CK Nijmegen",
+  },
+};
 
 export default function CheckoutPage() {
   const { items, subtotal, clear } = useCart();
@@ -28,12 +40,14 @@ export default function CheckoutPage() {
   const [postcode, setPostcode] = useState("");
   const [country, setCountry] = useState("Nederland");
   const [payment, setPayment] = useState<PaymentKey>("ideal");
+  const [delivery, setDelivery] = useState<DeliveryKey>("home");
 
   const [placing, setPlacing] = useState(false);
   const [orderId, setOrderId] = useState<string | null>(null);
 
+  const isPickup = delivery !== "home";
   const shippingFree = subtotal >= FREE_SHIPPING_THRESHOLD;
-  const shippingCost = shippingFree ? 0 : 4.95;
+  const shippingCost = isPickup ? 0 : shippingFree ? 0 : 4.95;
   const total = subtotal + shippingCost;
 
   function handleSubmit(e: React.FormEvent) {
@@ -146,34 +160,83 @@ export default function CheckoutPage() {
                 <Field id="phone" type="tel" label={t("checkout.phone")} value={phone} onChange={setPhone} />
               </Section>
 
-              {/* Shipping address */}
-              <Section title={t("checkout.shippingAddress")}>
+              {/* Delivery method */}
+              <Section title="Bezorging of afhalen" subtitle="Kies waar je je bestelling wilt ontvangen">
+                <div className="flex flex-col gap-2">
+                  {([
+                    { key: "home",        icon: Home,  title: "Thuisbezorgd",                       sub: "Via PostNL — 2–3 werkdagen" },
+                    { key: "molenstraat", icon: Store, title: `Afhalen — ${PICKUP_LOCATIONS.molenstraat.name}`,  sub: PICKUP_LOCATIONS.molenstraat.address },
+                    { key: "hezelstraat", icon: Store, title: `Afhalen — ${PICKUP_LOCATIONS.hezelstraat.name}`,  sub: PICKUP_LOCATIONS.hezelstraat.address },
+                  ] as { key: DeliveryKey; icon: typeof Home; title: string; sub: string }[]).map(({ key, icon: Icon, title, sub }) => (
+                    <label
+                      key={key}
+                      className={cn(
+                        "flex items-start gap-3 px-4 py-3.5 bg-white border rounded-lg cursor-pointer transition-colors",
+                        delivery === key
+                          ? "border-[#f5a623] ring-1 ring-[#f5a623]/30"
+                          : "border-gray-200 hover:border-gray-300"
+                      )}
+                    >
+                      <input
+                        type="radio"
+                        name="delivery"
+                        value={key}
+                        checked={delivery === key}
+                        onChange={() => setDelivery(key)}
+                        className="accent-[#f5a623] mt-0.5"
+                      />
+                      <Icon className="size-5 text-[#f5a623] shrink-0 mt-0.5" />
+                      <div className="flex-1 min-w-0">
+                        <p className="text-sm font-semibold text-[#2b3e51]">{title}</p>
+                        <p className="text-[12px] text-gray-500 mt-0.5">{sub}</p>
+                      </div>
+                      {key !== "home" && (
+                        <span className="text-[10px] font-black uppercase tracking-widest text-emerald-600 shrink-0">
+                          Gratis
+                        </span>
+                      )}
+                    </label>
+                  ))}
+                </div>
+                {isPickup && (
+                  <p className="text-[12px] text-gray-500 leading-relaxed">
+                    Je ontvangt een mail zodra je bestelling klaarligt in <span className="font-semibold text-[#2b3e51]">{PICKUP_LOCATIONS[delivery as Exclude<DeliveryKey, "home">].name}</span>. Neem je orderbevestiging en een geldig ID mee.
+                  </p>
+                )}
+              </Section>
+
+              {/* Shipping / pickup contact */}
+              <Section title={isPickup ? "Naam voor afhalen" : t("checkout.shippingAddress")}>
                 <div className="grid grid-cols-2 gap-4">
                   <Field id="first" label={t("checkout.firstName")} value={firstName} onChange={setFirst} required />
                   <Field id="last" label={t("checkout.lastName")} value={lastName} onChange={setLast} required />
                 </div>
-                <Field id="addr" label={t("checkout.address")} value={address} onChange={setAddress} required />
-                <Field id="addr2" label={t("checkout.addressLine2")} value={address2} onChange={setAddress2} />
-                <div className="grid grid-cols-[1fr_1.5fr] gap-4">
-                  <Field id="zip" label={t("checkout.postcode")} value={postcode} onChange={setPostcode} required />
-                  <Field id="city" label={t("checkout.city")} value={city} onChange={setCity} required />
-                </div>
-                <div>
-                  <label htmlFor="country" className="block text-[11px] font-bold uppercase tracking-widest text-[#2b3e51]/60 mb-2">
-                    {t("checkout.country")}
-                  </label>
-                  <select
-                    id="country"
-                    value={country}
-                    onChange={(e) => setCountry(e.target.value)}
-                    className="w-full h-11 px-4 bg-white border border-gray-200 rounded-lg text-sm text-[#2b3e51] outline-none focus:border-[#f5a623] transition-colors"
-                  >
-                    <option>Nederland</option>
-                    <option>België</option>
-                    <option>Deutschland</option>
-                    <option>France</option>
-                  </select>
-                </div>
+                {!isPickup && (
+                  <>
+                    <Field id="addr" label={t("checkout.address")} value={address} onChange={setAddress} required />
+                    <Field id="addr2" label={t("checkout.addressLine2")} value={address2} onChange={setAddress2} />
+                    <div className="grid grid-cols-[1fr_1.5fr] gap-4">
+                      <Field id="zip" label={t("checkout.postcode")} value={postcode} onChange={setPostcode} required />
+                      <Field id="city" label={t("checkout.city")} value={city} onChange={setCity} required />
+                    </div>
+                    <div>
+                      <label htmlFor="country" className="block text-[11px] font-bold uppercase tracking-widest text-[#2b3e51]/60 mb-2">
+                        {t("checkout.country")}
+                      </label>
+                      <select
+                        id="country"
+                        value={country}
+                        onChange={(e) => setCountry(e.target.value)}
+                        className="w-full h-11 px-4 bg-white border border-gray-200 rounded-lg text-sm text-[#2b3e51] outline-none focus:border-[#f5a623] transition-colors"
+                      >
+                        <option>Nederland</option>
+                        <option>België</option>
+                        <option>Deutschland</option>
+                        <option>France</option>
+                      </select>
+                    </div>
+                  </>
+                )}
               </Section>
 
               {/* Payment */}
@@ -260,9 +323,11 @@ export default function CheckoutPage() {
                     <span className="font-bold text-[#2b3e51] tabular-nums">€ {subtotal.toFixed(2)}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-500">{t("cart.shipping")}</span>
+                    <span className="text-gray-500">{isPickup ? "Afhalen in winkel" : t("cart.shipping")}</span>
                     <span className="font-bold text-[#2b3e51] tabular-nums">
-                      {shippingFree ? <span className="text-emerald-600">{t("cart.shippingFree")}</span> : `€ ${shippingCost.toFixed(2)}`}
+                      {isPickup || shippingFree
+                        ? <span className="text-emerald-600">{t("cart.shippingFree")}</span>
+                        : `€ ${shippingCost.toFixed(2)}`}
                     </span>
                   </div>
                   <div className="flex justify-between pt-2 mt-1 border-t border-gray-100">

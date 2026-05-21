@@ -16,9 +16,9 @@ export type Dict = {
     nav: { aanstekers: string; kokersEtuis: string; knippersAsbakken: string; rookAccessoires: string; sale: string; klantenservice: string };
     mega: {
       aanstekers: { title: string; zippo: string; clipper: string; zippoAcc: string };
-      kokers: { title: string; cigaretteCases: string; filters: string; ashtrays: string };
-      knippers: { title: string; cigarCutters: string; cigarCases: string; cigarAshtrays: string };
-      rook: { title: string; bruyerePipes: string; pipeCutlery: string; grinders: string };
+      kokers: { title: string; cigaretteCases: string; filters: string; ashtrays: string; rolling: string };
+      knippers: { title: string; cigarCutters: string; cigarCases: string; cigarAshtrays: string; humidors: string };
+      rook: { title: string; bruyerePipes: string; pipeCutlery: string; grinders: string; cannabis: string };
       viewAll: string; deals: string; newItems: string;
     };
     usp: { freeShipping: string; sameDay: string; freeReturns: string; securePay: string };
@@ -214,9 +214,9 @@ const NL: Dict = {
     nav: { aanstekers: "Aanstekers", kokersEtuis: "Kokers & Etuis", knippersAsbakken: "Knippers & Asbakken", rookAccessoires: "Rook-accessoires", sale: "Sale", klantenservice: "Klantenservice" },
     mega: {
       aanstekers: { title: "Aanstekers", zippo: "Zippo aanstekers", clipper: "Clipper & regulier", zippoAcc: "Zippo accessoires" },
-      kokers: { title: "Kokers & Etuis", cigaretteCases: "Sigarettenkokers", filters: "Filters & houders", ashtrays: "Asbakken" },
-      knippers: { title: "Knippers & Asbakken", cigarCutters: "Sigarenknippers", cigarCases: "Sigaren-etuis", cigarAshtrays: "Sigaren-asbakken" },
-      rook: { title: "Rook-accessoires", bruyerePipes: "Bruyère pijpen", pipeCutlery: "Pijp-bestek", grinders: "Tabaksgrinders" },
+      kokers: { title: "Kokers & Etuis", cigaretteCases: "Sigarettenkokers", filters: "Filters & houders", ashtrays: "Asbakken", rolling: "Hulzen & vloei" },
+      knippers: { title: "Knippers & Asbakken", cigarCutters: "Sigarenknippers", cigarCases: "Sigaren-etuis", cigarAshtrays: "Sigaren-asbakken", humidors: "Humidors" },
+      rook: { title: "Rook-accessoires", bruyerePipes: "Bruyère pijpen", pipeCutlery: "Pijp-bestek", grinders: "Tabaksgrinders", cannabis: "Cannabis-accessoires" },
       viewAll: "Bekijk volledig assortiment →", deals: "Aanbiedingen", newItems: "Nieuwe artikelen",
     },
     usp: { freeShipping: "Gratis verzending vanaf €80", sameDay: "Standaard levertijd 2-3 werkdagen", freeReturns: "Gratis retourneren", securePay: "Veilig betalen via iDEAL & Klarna" },
@@ -426,9 +426,9 @@ const EN: Dict = {
     nav: { aanstekers: "Lighters", kokersEtuis: "Cases & Sleeves", knippersAsbakken: "Cutters & Ashtrays", rookAccessoires: "Smoking accessories", sale: "Sale", klantenservice: "Customer service" },
     mega: {
       aanstekers: { title: "Lighters", zippo: "Zippo lighters", clipper: "Clipper & regular", zippoAcc: "Zippo accessories" },
-      kokers: { title: "Cases & Sleeves", cigaretteCases: "Cigarette cases", filters: "Filters & holders", ashtrays: "Ashtrays" },
-      knippers: { title: "Cutters & Ashtrays", cigarCutters: "Cigar cutters", cigarCases: "Cigar cases", cigarAshtrays: "Cigar ashtrays" },
-      rook: { title: "Smoking accessories", bruyerePipes: "Briar pipes", pipeCutlery: "Pipe tools", grinders: "Tobacco grinders" },
+      kokers: { title: "Cases & Sleeves", cigaretteCases: "Cigarette cases", filters: "Filters & holders", ashtrays: "Ashtrays", rolling: "Tubes & rolling paper" },
+      knippers: { title: "Cutters & Ashtrays", cigarCutters: "Cigar cutters", cigarCases: "Cigar cases", cigarAshtrays: "Cigar ashtrays", humidors: "Humidors" },
+      rook: { title: "Smoking accessories", bruyerePipes: "Briar pipes", pipeCutlery: "Pipe tools", grinders: "Tobacco grinders", cannabis: "Cannabis accessories" },
       viewAll: "View full assortment →", deals: "Deals", newItems: "New arrivals",
     },
     usp: { freeShipping: "Free shipping from €80", sameDay: "Standard delivery 2-3 working days", freeReturns: "Free returns", securePay: "Secure payment via iDEAL & Klarna" },
@@ -638,9 +638,9 @@ const DE: Dict = {
     nav: { aanstekers: "Feuerzeuge", kokersEtuis: "Etuis & Hüllen", knippersAsbakken: "Cutter & Aschenbecher", rookAccessoires: "Raucherzubehör", sale: "Sale", klantenservice: "Kundenservice" },
     mega: {
       aanstekers: { title: "Feuerzeuge", zippo: "Zippo Feuerzeuge", clipper: "Clipper & Standard", zippoAcc: "Zippo Zubehör" },
-      kokers: { title: "Etuis & Hüllen", cigaretteCases: "Zigarettenetuis", filters: "Filter & Halter", ashtrays: "Aschenbecher" },
-      knippers: { title: "Cutter & Aschenbecher", cigarCutters: "Zigarrencutter", cigarCases: "Zigarrenetuis", cigarAshtrays: "Zigarren-Aschenbecher" },
-      rook: { title: "Raucherzubehör", bruyerePipes: "Bruyère-Pfeifen", pipeCutlery: "Pfeifenbesteck", grinders: "Tabakmühlen" },
+      kokers: { title: "Etuis & Hüllen", cigaretteCases: "Zigarettenetuis", filters: "Filter & Halter", ashtrays: "Aschenbecher", rolling: "Hülsen & Papier" },
+      knippers: { title: "Cutter & Aschenbecher", cigarCutters: "Zigarrencutter", cigarCases: "Zigarrenetuis", cigarAshtrays: "Zigarren-Aschenbecher", humidors: "Humidore" },
+      rook: { title: "Raucherzubehör", bruyerePipes: "Bruyère-Pfeifen", pipeCutlery: "Pfeifenbesteck", grinders: "Tabakmühlen", cannabis: "Cannabis-Zubehör" },
       viewAll: "Gesamtes Sortiment ansehen →", deals: "Angebote", newItems: "Neuheiten",
     },
     usp: { freeShipping: "Kostenloser Versand ab €80", sameDay: "Standardlieferzeit 2-3 Werktage", freeReturns: "Kostenlose Rücksendung", securePay: "Sicher bezahlen via iDEAL & Klarna" },
@@ -850,9 +850,9 @@ const FR: Dict = {
     nav: { aanstekers: "Briquets", kokersEtuis: "Étuis & pochettes", knippersAsbakken: "Coupe-cigares & cendriers", rookAccessoires: "Accessoires fumeur", sale: "Soldes", klantenservice: "Service client" },
     mega: {
       aanstekers: { title: "Briquets", zippo: "Briquets Zippo", clipper: "Clipper & classiques", zippoAcc: "Accessoires Zippo" },
-      kokers: { title: "Étuis & pochettes", cigaretteCases: "Étuis à cigarettes", filters: "Filtres & fume-cigarette", ashtrays: "Cendriers" },
-      knippers: { title: "Coupe-cigares & cendriers", cigarCutters: "Coupe-cigares", cigarCases: "Étuis à cigares", cigarAshtrays: "Cendriers à cigares" },
-      rook: { title: "Accessoires fumeur", bruyerePipes: "Pipes en bruyère", pipeCutlery: "Outils à pipe", grinders: "Grinders à tabac" },
+      kokers: { title: "Étuis & pochettes", cigaretteCases: "Étuis à cigarettes", filters: "Filtres & fume-cigarette", ashtrays: "Cendriers", rolling: "Tubes & papier" },
+      knippers: { title: "Coupe-cigares & cendriers", cigarCutters: "Coupe-cigares", cigarCases: "Étuis à cigares", cigarAshtrays: "Cendriers à cigares", humidors: "Caves à cigares" },
+      rook: { title: "Accessoires fumeur", bruyerePipes: "Pipes en bruyère", pipeCutlery: "Outils à pipe", grinders: "Grinders à tabac", cannabis: "Accessoires cannabis" },
       viewAll: "Voir tout l'assortiment →", deals: "Promotions", newItems: "Nouveautés",
     },
     usp: { freeShipping: "Livraison gratuite dès 80 €", sameDay: "Délai de livraison 2-3 jours ouvrés", freeReturns: "Retours gratuits", securePay: "Paiement sécurisé via iDEAL & Klarna" },
