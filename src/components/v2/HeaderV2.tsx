@@ -80,13 +80,13 @@ const CURRENCIES = [
   { code: "USD", symbol: "$", label: "US Dollar" },
 ];
 
-const NAV_ITEMS = [
-  { key: "aanstekers", href: "/aanstekers" },
-  { key: "kokersEtuis", href: "/kokers-etuis" },
-  { key: "knippersAsbakken", href: "/knippers-asbakken" },
-  { key: "rookAccessoires", href: "/rook-accessoires" },
-  { key: "sale", href: "/sale", accent: true },
-] as const;
+type NavSub = { labelKey: string; href: string; image: string };
+type NavItem = {
+  key: string;
+  href: string;
+  accent?: boolean;
+  subs?: ReadonlyArray<NavSub>;
+};
 
 // Subcategory links use the `?cat=<xmlCategory>` filter that the listing
 // pages already understand. Images are pulled from real catalog products
@@ -126,8 +126,16 @@ const MEGA_MENU = [
   },
 ] as const;
 
+const NAV_ITEMS: ReadonlyArray<NavItem> = [
+  { key: "aanstekers",        href: "/aanstekers",         subs: MEGA_MENU[0].items },
+  { key: "kokersEtuis",       href: "/kokers-etuis",       subs: MEGA_MENU[1].items },
+  { key: "knippersAsbakken",  href: "/knippers-asbakken",  subs: MEGA_MENU[2].items },
+  { key: "rookAccessoires",   href: "/rook-accessoires",   subs: MEGA_MENU[3].items },
+  { key: "sale",              href: "/sale",               accent: true },
+  { key: "klantenservice",    href: "/klantenservice" },
+];
+
 export default function HeaderV2() {
-  const [megaOpen, setMegaOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [localeOpen, setLocaleOpen] = useState(false);
@@ -135,19 +143,11 @@ export default function HeaderV2() {
   const { count: cartCount, openDrawer } = useCart();
   const selectedLocale = LOCALES.find((l) => l.code === locale) ?? LOCALES[0];
   const [selectedCurrency, setSelectedCurrency] = useState(CURRENCIES[0]);
-  const megaRef = useRef<HTMLDivElement>(null);
-  const megaBtnRef = useRef<HTMLButtonElement>(null);
   const localeRef = useRef<HTMLDivElement>(null);
 
-  // Close mega menu on outside click
+  // Close locale picker on outside click
   useEffect(() => {
     function handler(e: MouseEvent) {
-      if (
-        megaRef.current && !megaRef.current.contains(e.target as Node) &&
-        megaBtnRef.current && !megaBtnRef.current.contains(e.target as Node)
-      ) {
-        setMegaOpen(false);
-      }
       if (localeRef.current && !localeRef.current.contains(e.target as Node)) {
         setLocaleOpen(false);
       }
@@ -333,40 +333,76 @@ export default function HeaderV2() {
       {/* ── Nav bar - hidden on mobile (handled by drawer) and when scrolled ── */}
       <nav className={cn("w-full bg-[#2e4560] text-white relative transition-all duration-300 hidden lg:block", scrolled ? "h-0 overflow-hidden" : "overflow-visible")}>
         <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center h-11">
-          {/* Assortiment mega button */}
-          <button
-            ref={megaBtnRef}
-            onClick={() => setMegaOpen((o) => !o)}
-            className={cn(
-              "flex items-center gap-2 h-full px-5 font-bold uppercase tracking-widest text-[11px] transition-colors shrink-0",
-              megaOpen ? "bg-[#f5a623]" : "bg-[#f5a623] hover:bg-[#e0890d]"
-            )}
-          >
-            <Menu className="size-4" />
-            {t("header.assortiment")}
-            <ChevronDown className={cn("size-3.5 transition-transform duration-200", megaOpen && "rotate-180")} />
-          </button>
-
-          {/* Nav links */}
-          <div className="hidden lg:flex items-center h-full divide-x divide-white/10 border-l border-white/10">
+          {/* Nav links — hover the category to see its subcategories */}
+          <ul className="flex items-center h-full divide-x divide-white/10 border-x border-white/10">
             {NAV_ITEMS.map((item) => {
-              const accent = "accent" in item ? item.accent : false;
+              const label = t(`header.nav.${item.key}`);
+              const accent = item.accent === true;
+              const subs = item.subs;
               return (
-                <Link
-                  key={item.key}
-                  href={item.href}
-                  className={cn(
-                    "px-5 h-full flex items-center text-[11px] font-bold uppercase tracking-widest transition-colors",
-                    accent
-                      ? "text-[#f5a623] hover:text-[#f5a623]/80"
-                      : "hover:bg-white/10 text-white/90 hover:text-white"
+                <li key={item.key} className="relative h-full group">
+                  <Link
+                    href={item.href}
+                    className={cn(
+                      "px-5 h-full flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-widest transition-colors",
+                      accent
+                        ? "text-[#f5a623] hover:text-[#f5a623]/80"
+                        : "hover:bg-white/10 text-white/90 hover:text-white"
+                    )}
+                  >
+                    {label}
+                    {subs && subs.length > 0 && (
+                      <ChevronDown className="size-3 opacity-60 transition-transform duration-200 group-hover:rotate-180" />
+                    )}
+                  </Link>
+
+                  {/* Hover dropdown — visible only when the li is hovered/focused */}
+                  {subs && subs.length > 0 && (
+                    <div
+                      className="absolute left-0 top-full pt-2 z-50 hidden group-hover:block group-focus-within:block"
+                    >
+                      <div className="min-w-[280px] bg-white text-[#2b3e51] shadow-2xl rounded-b-lg border-t-2 border-[#f5a623] overflow-hidden">
+                        <ul className="py-2">
+                          {subs.map((sub) => {
+                            const subLabel = t(sub.labelKey);
+                            return (
+                              <li key={sub.labelKey}>
+                                <Link
+                                  href={sub.href}
+                                  className="flex items-center gap-3 px-3 py-2.5 hover:bg-gray-50 transition-colors group/sub"
+                                >
+                                  <div className="size-10 rounded-md overflow-hidden bg-gray-100 shrink-0 border border-gray-100">
+                                    <Image
+                                      src={sub.image}
+                                      alt={subLabel}
+                                      width={40}
+                                      height={40}
+                                      className="object-cover w-full h-full transition-transform duration-300 group-hover/sub:scale-105"
+                                    />
+                                  </div>
+                                  <span className="text-sm font-semibold group-hover/sub:text-[#f5a623] transition-colors">
+                                    {subLabel}
+                                  </span>
+                                </Link>
+                              </li>
+                            );
+                          })}
+                          <li className="border-t border-gray-100 mt-1 pt-1">
+                            <Link
+                              href={item.href}
+                              className="block px-3 py-2.5 text-[11px] font-bold uppercase tracking-widest text-[#f5a623] hover:bg-gray-50 transition-colors"
+                            >
+                              {t("header.mega.viewAll")}
+                            </Link>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
                   )}
-                >
-                  {t(`header.nav.${item.key}`)}
-                </Link>
+                </li>
               );
             })}
-          </div>
+          </ul>
 
           {/* Google rating */}
           <div className="hidden md:flex items-center gap-2 ml-auto text-[10px] font-bold tracking-widest">
@@ -376,69 +412,6 @@ export default function HeaderV2() {
             <span className="text-white/60">{t("header.rating")}</span>
           </div>
         </div>
-
-        {/* ── Mega menu dropdown ── */}
-        {megaOpen && (
-          <div
-            ref={megaRef}
-            className="absolute top-full left-0 right-0 bg-white text-[#2b3e51] shadow-2xl z-50 border-t-2 border-[#f5a623]"
-          >
-            <div className="max-w-[1300px] mx-auto px-8 py-8">
-              <div className="grid grid-cols-4 gap-8">
-                {MEGA_MENU.map((group) => (
-                  <div key={group.titleKey}>
-                    <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#2b3e51]/40 mb-4 border-b border-gray-100 pb-2">
-                      {t(group.titleKey)}
-                    </p>
-                    <ul className="space-y-1">
-                      {group.items.map((item) => {
-                        const label = t(item.labelKey);
-                        return (
-                          <li key={item.labelKey}>
-                            <Link
-                              href={item.href}
-                              onClick={() => setMegaOpen(false)}
-                              className="flex items-center gap-3 py-2.5 px-3 rounded-lg hover:bg-gray-50 transition-colors group"
-                            >
-                              <div className="size-10 rounded-md overflow-hidden bg-gray-100 shrink-0 border border-gray-100">
-                                <Image
-                                  src={item.image}
-                                  alt={label}
-                                  width={40}
-                                  height={40}
-                                  className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
-                                />
-                              </div>
-                              <span className="text-sm font-semibold group-hover:text-[#f5a623] transition-colors">
-                                {label}
-                              </span>
-                            </Link>
-                          </li>
-                        );
-                      })}
-                    </ul>
-                  </div>
-                ))}
-
-                {/* Featured promo tile */}
-                <div className="col-span-3 lg:col-span-0 lg:hidden xl:block mt-2 lg:mt-0">
-                </div>
-              </div>
-
-              <div className="mt-6 pt-6 border-t border-gray-100 flex items-center gap-6">
-                <Link href="#" onClick={() => setMegaOpen(false)} className="text-[11px] font-bold uppercase tracking-widest text-[#f5a623] hover:underline">
-                  {t("header.mega.viewAll")}
-                </Link>
-                <Link href="#" onClick={() => setMegaOpen(false)} className="text-[11px] font-bold uppercase tracking-widest text-[#2b3e51]/40 hover:text-[#2b3e51] transition-colors">
-                  {t("header.mega.deals")}
-                </Link>
-                <Link href="#" onClick={() => setMegaOpen(false)} className="text-[11px] font-bold uppercase tracking-widest text-[#2b3e51]/40 hover:text-[#2b3e51] transition-colors">
-                  {t("header.mega.newItems")}
-                </Link>
-              </div>
-            </div>
-          </div>
-        )}
       </nav>
 
       {/* ── USP bar - hidden when scrolled ── */}

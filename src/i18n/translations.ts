@@ -13,7 +13,7 @@ export type Dict = {
     chooseLanguage: string; chooseCurrency: string;
     account: string; wishlist: string; cart: string;
     assortiment: string;
-    nav: { aanstekers: string; kokersEtuis: string; knippersAsbakken: string; rookAccessoires: string; sale: string };
+    nav: { aanstekers: string; kokersEtuis: string; knippersAsbakken: string; rookAccessoires: string; sale: string; klantenservice: string };
     mega: {
       aanstekers: { title: string; zippo: string; clipper: string; zippoAcc: string };
       kokers: { title: string; cigaretteCases: string; filters: string; ashtrays: string };
@@ -211,7 +211,7 @@ const NL: Dict = {
     chooseLanguage: "Kies uw taal", chooseCurrency: "Kies uw valuta",
     account: "Account", wishlist: "Verlanglijst", cart: "Winkelwagen",
     assortiment: "Assortiment",
-    nav: { aanstekers: "Aanstekers", kokersEtuis: "Kokers & Etuis", knippersAsbakken: "Knippers & Asbakken", rookAccessoires: "Rook-accessoires", sale: "Sale" },
+    nav: { aanstekers: "Aanstekers", kokersEtuis: "Kokers & Etuis", knippersAsbakken: "Knippers & Asbakken", rookAccessoires: "Rook-accessoires", sale: "Sale", klantenservice: "Klantenservice" },
     mega: {
       aanstekers: { title: "Aanstekers", zippo: "Zippo aanstekers", clipper: "Clipper & regulier", zippoAcc: "Zippo accessoires" },
       kokers: { title: "Kokers & Etuis", cigaretteCases: "Sigarettenkokers", filters: "Filters & houders", ashtrays: "Asbakken" },
@@ -423,7 +423,7 @@ const EN: Dict = {
     chooseLanguage: "Choose your language", chooseCurrency: "Choose your currency",
     account: "Account", wishlist: "Wishlist", cart: "Cart",
     assortiment: "Shop",
-    nav: { aanstekers: "Lighters", kokersEtuis: "Cases & Sleeves", knippersAsbakken: "Cutters & Ashtrays", rookAccessoires: "Smoking accessories", sale: "Sale" },
+    nav: { aanstekers: "Lighters", kokersEtuis: "Cases & Sleeves", knippersAsbakken: "Cutters & Ashtrays", rookAccessoires: "Smoking accessories", sale: "Sale", klantenservice: "Customer service" },
     mega: {
       aanstekers: { title: "Lighters", zippo: "Zippo lighters", clipper: "Clipper & regular", zippoAcc: "Zippo accessories" },
       kokers: { title: "Cases & Sleeves", cigaretteCases: "Cigarette cases", filters: "Filters & holders", ashtrays: "Ashtrays" },
@@ -635,7 +635,7 @@ const DE: Dict = {
     chooseLanguage: "Sprache wählen", chooseCurrency: "Währung wählen",
     account: "Konto", wishlist: "Wunschliste", cart: "Warenkorb",
     assortiment: "Sortiment",
-    nav: { aanstekers: "Feuerzeuge", kokersEtuis: "Etuis & Hüllen", knippersAsbakken: "Cutter & Aschenbecher", rookAccessoires: "Raucherzubehör", sale: "Sale" },
+    nav: { aanstekers: "Feuerzeuge", kokersEtuis: "Etuis & Hüllen", knippersAsbakken: "Cutter & Aschenbecher", rookAccessoires: "Raucherzubehör", sale: "Sale", klantenservice: "Kundenservice" },
     mega: {
       aanstekers: { title: "Feuerzeuge", zippo: "Zippo Feuerzeuge", clipper: "Clipper & Standard", zippoAcc: "Zippo Zubehör" },
       kokers: { title: "Etuis & Hüllen", cigaretteCases: "Zigarettenetuis", filters: "Filter & Halter", ashtrays: "Aschenbecher" },
@@ -847,7 +847,7 @@ const FR: Dict = {
     chooseLanguage: "Choisissez votre langue", chooseCurrency: "Choisissez votre devise",
     account: "Compte", wishlist: "Favoris", cart: "Panier",
     assortiment: "Boutique",
-    nav: { aanstekers: "Briquets", kokersEtuis: "Étuis & pochettes", knippersAsbakken: "Coupe-cigares & cendriers", rookAccessoires: "Accessoires fumeur", sale: "Soldes" },
+    nav: { aanstekers: "Briquets", kokersEtuis: "Étuis & pochettes", knippersAsbakken: "Coupe-cigares & cendriers", rookAccessoires: "Accessoires fumeur", sale: "Soldes", klantenservice: "Service client" },
     mega: {
       aanstekers: { title: "Briquets", zippo: "Briquets Zippo", clipper: "Clipper & classiques", zippoAcc: "Accessoires Zippo" },
       kokers: { title: "Étuis & pochettes", cigaretteCases: "Étuis à cigarettes", filters: "Filtres & fume-cigarette", ashtrays: "Cendriers" },
