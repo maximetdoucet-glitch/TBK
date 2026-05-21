@@ -170,6 +170,66 @@ export default function HeaderV2() {
 
   return (
     <header className={cn("w-full bg-white sticky top-0 z-50 transition-shadow duration-300", scrolled ? "shadow-md" : "shadow-sm")}>
+      {/* ── USP bar (above logo row) — hidden when scrolled ── */}
+      <div className={cn("w-full bg-gray-50 border-b border-gray-100 overflow-hidden transition-all duration-300", scrolled ? "max-h-0 py-0" : "max-h-12 py-2")}>
+        {/* Desktop: USP items + trust badges */}
+        <div className="hidden md:flex max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 items-center gap-6 text-[10px] font-bold uppercase tracking-[0.1em] text-gray-600 whitespace-nowrap">
+          <div className="flex items-center gap-6 flex-1 min-w-0 overflow-hidden">
+            {(["sameDay", "freeShipping", "freeReturns", "securePay"] as const).map((k) => (
+              <div key={k} className="flex items-center gap-1.5 shrink-0">
+                <Check className="size-3 text-[#f5a623] shrink-0" />
+                <span>{t(`header.usp.${k}`)}</span>
+              </div>
+            ))}
+          </div>
+          {/* Trust badges */}
+          <div className="flex items-center gap-4 shrink-0 normal-case tracking-normal">
+            {/* Trustpilot */}
+            <div className="flex items-center gap-1.5 text-[#2b3e51]">
+              <div className="flex text-[#00b67a] text-[11px] leading-none">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              </div>
+              <span className="text-[10px] font-bold tabular-nums">4.6/5</span>
+              <span className="text-[10px] font-bold text-[#00b67a]">Trustpilot</span>
+            </div>
+            {/* Webshop Trustmark */}
+            <Link
+              href="https://www.keurmerk.info"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 text-[10px] font-black uppercase tracking-[0.1em] text-[#2b3e51] border border-[#2b8a5f] rounded px-2 py-1 hover:bg-[#2b8a5f]/5 transition-colors"
+            >
+              <svg viewBox="0 0 16 16" className="size-3 text-[#2b8a5f]" fill="currentColor" aria-hidden>
+                <path d="M8 1l5 2.5v4c0 3-2.2 6-5 7.5C5.2 13.5 3 10.5 3 7.5v-4L8 1z" />
+                <path d="M6.2 8.2l1.3 1.3 2.8-2.8" stroke="#fff" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+              </svg>
+              <span>Webshop Trustmark</span>
+            </Link>
+          </div>
+        </div>
+
+        {/* Mobile: marquee USPs */}
+        <div className="md:hidden overflow-hidden text-[10px] font-bold uppercase tracking-[0.1em] text-gray-600 whitespace-nowrap">
+          <div className="usp-marquee inline-flex gap-8 pl-4 will-change-transform">
+            {[0, 1].map((dup) => (
+              <div key={dup} className="flex items-center gap-8 shrink-0" {...(dup === 1 ? { "aria-hidden": "true" } : {})}>
+                {(["sameDay", "freeShipping", "freeReturns", "securePay"] as const).map((k) => (
+                  <div key={k} className="flex items-center gap-1.5 shrink-0">
+                    <Check className="size-3 text-[#f5a623] shrink-0" />
+                    <span>{t(`header.usp.${k}`)}</span>
+                  </div>
+                ))}
+                <span className="flex items-center gap-1 shrink-0 normal-case tracking-normal">
+                  <span className="text-[#00b67a]">★★★★★</span>
+                  <span className="text-[10px] font-bold text-[#00b67a]">Trustpilot</span>
+                </span>
+                <span className="flex items-center gap-1 shrink-0 text-[#2b8a5f]">Webshop Trustmark</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
       {/* ── Top row: logo / search / actions ── */}
       <div className={cn(
         "max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center gap-3 md:gap-6 transition-all duration-300",
@@ -416,36 +476,6 @@ export default function HeaderV2() {
           </div>
         </div>
       </nav>
-
-      {/* ── USP bar - hidden when scrolled ── */}
-      <div className={cn("w-full bg-gray-50 overflow-hidden transition-all duration-300", scrolled ? "max-h-0 py-0" : "max-h-12 py-2")}>
-        {/* Desktop: static evenly-spaced row */}
-        <div className="hidden sm:flex max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 items-center justify-between gap-6 overflow-x-auto scrollbar-none text-[10px] font-bold uppercase tracking-[0.1em] text-gray-500 whitespace-nowrap">
-          {(["freeShipping", "freeReturns", "securePay"] as const).map((k) => (
-            <div key={k} className="flex items-center gap-1.5 shrink-0">
-              <Check className="size-3 text-[#f5a623] shrink-0" />
-              <span>{t(`header.usp.${k}`)}</span>
-            </div>
-          ))}
-        </div>
-
-        {/* Mobile: continuous marquee */}
-        <div className="sm:hidden overflow-hidden text-[10px] font-bold uppercase tracking-[0.1em] text-gray-500 whitespace-nowrap">
-          <div className="usp-marquee inline-flex gap-8 pl-4 will-change-transform">
-            {/* Duplicate the list so the loop reads seamlessly */}
-            {[0, 1].map((dup) => (
-              <div key={dup} className="flex items-center gap-8 shrink-0" {...(dup === 1 ? { "aria-hidden": "true" } : {})}>
-                {(["freeShipping", "freeReturns", "securePay"] as const).map((k) => (
-                  <div key={k} className="flex items-center gap-1.5 shrink-0">
-                    <Check className="size-3 text-[#f5a623] shrink-0" />
-                    <span>{t(`header.usp.${k}`)}</span>
-                  </div>
-                ))}
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
 
       {/* ── Mobile drawer ── */}
       {mobileOpen && (

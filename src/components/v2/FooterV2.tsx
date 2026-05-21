@@ -94,36 +94,36 @@ export default function FooterV2() {
                 <span className="text-[26px] lg:text-[28px] font-black uppercase tracking-[0.15em] text-white">
                   Rokers
                 </span>
-                <span className="text-[12px] lg:text-[13px] font-semibold uppercase tracking-[0.42em] text-white/45 mt-1.5">
+                <span className="text-[12px] lg:text-[13px] font-semibold uppercase tracking-[0.42em] text-white/85 mt-1.5">
                   benodigdheden
                 </span>
               </span>
             </Link>
-            <p className="text-white/45 text-[13px] leading-relaxed max-w-md lg:max-w-none">
+            <p className="text-white/85 text-[13px] leading-relaxed max-w-md lg:max-w-none">
               {t("footer.description")}
             </p>
 
             {/* Twee fysieke winkels */}
             <div className="space-y-4">
-              <p className="text-[10px] font-black uppercase tracking-[0.2em] text-white/60">
+              <p className="text-[10px] font-black uppercase tracking-[0.2em] text-white">
                 Onze 2 winkels in Nijmegen
               </p>
 
               <div className="space-y-1.5">
-                <p className="text-[12px] font-bold uppercase tracking-wider text-white/80">
+                <p className="text-[12px] font-bold uppercase tracking-wider text-white">
                   Tabak Molenstraat
                 </p>
-                <div className="flex items-start gap-3 text-[12px] text-white/40">
+                <div className="flex items-start gap-3 text-[12px] text-white/85">
                   <MapPin className="size-3.5 text-[#f5a623] shrink-0 mt-0.5" />
                   <span>Molenstraat 120, 6511 HG Nijmegen</span>
                 </div>
               </div>
 
               <div className="space-y-1.5">
-                <p className="text-[12px] font-bold uppercase tracking-wider text-white/80">
+                <p className="text-[12px] font-bold uppercase tracking-wider text-white">
                   Tabaksspeciaalzaak Lange Hezelstraat
                 </p>
-                <div className="flex items-start gap-3 text-[12px] text-white/40">
+                <div className="flex items-start gap-3 text-[12px] text-white/85">
                   <MapPin className="size-3.5 text-[#f5a623] shrink-0 mt-0.5" />
                   <span>Lange Hezelstraat 26, 6511 CK Nijmegen</span>
                 </div>
@@ -135,7 +135,7 @@ export default function FooterV2() {
                 { icon: Phone, text: "+31 (0)24 123 4567" },
                 { icon: Mail, text: "service@tbk-lightshop.nl" },
               ].map(({ icon: Icon, text }) => (
-                <li key={text} className="flex items-center gap-3 text-[12px] text-white/40 hover:text-white/70 transition-colors">
+                <li key={text} className="flex items-center gap-3 text-[12px] text-white/85 hover:text-white transition-colors">
                   <Icon className="size-3.5 text-[#f5a623] shrink-0" />
                   {text}
                 </li>
@@ -146,7 +146,7 @@ export default function FooterV2() {
                 { label: "Instagram", href: "https://www.instagram.com/tabaksspeciaalzaaknijmegen", svg: <svg viewBox="0 0 24 24" className="size-4" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none" /></svg> },
                 { label: "Facebook", href: "https://www.facebook.com/61558015454029/", svg: <svg viewBox="0 0 24 24" className="size-4" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg> },
               ].map(({ label, href, svg }) => (
-                <Link key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label} className="size-9 rounded-lg border border-white/10 flex items-center justify-center text-white/40 hover:text-white hover:border-[#f5a623] hover:bg-[#f5a623]/10 transition-all">
+                <Link key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label} className="size-9 rounded-lg border border-white/10 flex items-center justify-center text-white/85 hover:text-white hover:border-[#f5a623] hover:bg-[#f5a623]/10 transition-all">
                   {svg}
                 </Link>
               ))}
@@ -158,36 +158,36 @@ export default function FooterV2() {
 
             {/* Assortiment */}
             <div className="lg:flex-1 lg:px-6">
-              <p className="text-[10px] font-black uppercase tracking-[0.2em] text-white/30 mb-4 lg:mb-6 pb-3 border-b border-white/8">{t("footer.sections.assortiment")}</p>
+              <p className="text-[10px] font-black uppercase tracking-[0.2em] text-white mb-4 lg:mb-6 pb-3 border-b border-white/8">{t("footer.sections.assortiment")}</p>
               <ul className="space-y-3">
                 {LINKS.shop.map((l) => (
-                  <li key={l.key}><Link href={l.href} className="text-[13px] text-white/50 hover:text-white transition-colors">{t(`footer.shop.${l.key}`)}</Link></li>
+                  <li key={l.key}><Link href={l.href} className="text-[13px] text-white/90 hover:text-white transition-colors">{t(`footer.shop.${l.key}`)}</Link></li>
                 ))}
               </ul>
             </div>
 
             {/* Klantenservice */}
             <div className="lg:flex-1 lg:px-6">
-              <p className="text-[10px] font-black uppercase tracking-[0.2em] text-white/30 mb-4 lg:mb-6 pb-3 border-b border-white/8">{t("footer.sections.klantenservice")}</p>
+              <p className="text-[10px] font-black uppercase tracking-[0.2em] text-white mb-4 lg:mb-6 pb-3 border-b border-white/8">{t("footer.sections.klantenservice")}</p>
               <ul className="space-y-3">
                 {LINKS.service.map((l) => (
-                  <li key={l.key}><Link href={l.href} className="text-[13px] text-white/50 hover:text-white transition-colors">{t(`footer.service.${l.key}`)}</Link></li>
+                  <li key={l.key}><Link href={l.href} className="text-[13px] text-white/90 hover:text-white transition-colors">{t(`footer.service.${l.key}`)}</Link></li>
                 ))}
               </ul>
             </div>
 
             {/* Mijn account */}
             <div className="col-span-2 sm:col-span-1 lg:flex-1 lg:px-6">
-              <p className="text-[10px] font-black uppercase tracking-[0.2em] text-white/30 mb-4 lg:mb-6 pb-3 border-b border-white/8">{t("footer.sections.account")}</p>
+              <p className="text-[10px] font-black uppercase tracking-[0.2em] text-white mb-4 lg:mb-6 pb-3 border-b border-white/8">{t("footer.sections.account")}</p>
               <ul className="space-y-3">
                 {LINKS.account.map((l) => (
-                  <li key={l.key}><Link href={l.href} className="text-[13px] text-white/50 hover:text-white transition-colors">{t(`footer.accountLinks.${l.key}`)}</Link></li>
+                  <li key={l.key}><Link href={l.href} className="text-[13px] text-white/90 hover:text-white transition-colors">{t(`footer.accountLinks.${l.key}`)}</Link></li>
                 ))}
               </ul>
               <div className="mt-6 lg:mt-8 flex lg:justify-end lg:-mr-6">
                 <div className="inline-flex flex-col items-center border border-white/8 px-4 py-3 rounded-lg">
-                  <span className="text-[9px] font-black uppercase tracking-[0.3em] text-white/25">{t("footer.badge.eyebrow")}</span>
-                  <span className="font-montserrat text-lg font-black tracking-tight text-white/30 mt-1">{t("footer.badge.city")}</span>
+                  <span className="text-[9px] font-black uppercase tracking-[0.3em] text-white">{t("footer.badge.eyebrow")}</span>
+                  <span className="font-montserrat text-lg font-black tracking-tight text-white mt-1">{t("footer.badge.city")}</span>
                 </div>
               </div>
             </div>
@@ -199,13 +199,13 @@ export default function FooterV2() {
 
           {/* Legal links */}
           <div className="flex flex-wrap items-center gap-x-5 gap-y-1">
-            <span className="text-[11px] text-white/25">© {new Date().getFullYear()} {t("footer.copyright")}</span>
+            <span className="text-[11px] text-white">© {new Date().getFullYear()} {t("footer.copyright")}</span>
             {([
               { k: "privacy", href: "/privacybeleid" },
               { k: "terms", href: "/algemene-voorwaarden" },
               { k: "cookies", href: "/cookiebeleid" },
             ] as const).map(({ k, href }) => (
-              <Link key={k} href={href} className="text-[11px] text-white/25 hover:text-white/60 transition-colors">{t(`footer.legal.${k}`)}</Link>
+              <Link key={k} href={href} className="text-[11px] text-white hover:text-white transition-colors">{t(`footer.legal.${k}`)}</Link>
             ))}
           </div>
 
